@@ -1,0 +1,58 @@
+// Store May9 Version
+$may9Version = "May9 Pro 1.0";
+
+
+//////////// Basic setup ////////////
+
+// Inizialize DAG Menu Procedure
+catchQuiet(dagMenuProc("", ""));
+
+// Inizialize Break Connections
+channelBoxCommand -break;
+
+//Two Sided Lighting On, XRay Components
+string $presetForView1 = "modelEditor -e -acx 1 -tsl 1 modelPanel1;";
+scriptJob -e "NewSceneOpened" $presetForView1;
+
+string $presetForView2 = "modelEditor -e -acx 1 -tsl 1 modelPanel2;";
+scriptJob -e "NewSceneOpened" $presetForView2;
+
+string $presetForView3 = "modelEditor -e -acx 1 -tsl 1 modelPanel3;";
+scriptJob -e "NewSceneOpened" $presetForView3;
+
+string $presetForView4 = "modelEditor -e -acx 1 -tsl 1 modelPanel4;";
+scriptJob -e "NewSceneOpened" $presetForView4;
+
+// Enable Anti-alias and Floating Point Render Target
+string $HWantiAlias = "setAttr \"hardwareRenderingGlobals.lineAAEnable\" 1; setAttr \"hardwareRenderingGlobals.multiSampleEnable\" 1; setAttr \"hardwareRenderingGlobals.floatingPointRTEnable\" 1";
+string $osVer = `about -os`;
+$osTest = `gmatch $osVer "*mac*"`;
+if ($osTest == 1) {
+	//scriptJob -e "NewSceneOpened" $HWantiAlias;
+} else {
+	scriptJob -e "NewSceneOpened" $HWantiAlias;
+};
+
+// Clean UI when change scene
+string $CloseHypershade = "CloseHypershade";
+scriptJob -e "NewSceneOpened" $CloseHypershade;
+scriptJob -e "SceneOpened" $CloseHypershade;
+scriptJob -e "flushingScene" $CloseHypershade;
+
+// Set Manipulators Pick Range to 8
+selectPref -mcb 8;
+
+// Run intPlay
+da_intPlay;
+
+// Preload 2 Bone IK and Spring IK
+ik2Bsolver;
+ikSpringSolver;
+
+/////////// Scripts setup ///////////
+
+// Preload nParticleConverter
+source da_nParticleConverter.mel;
+
+// Preload nParticleConverter
+source da_interactiveBooleans.mel;

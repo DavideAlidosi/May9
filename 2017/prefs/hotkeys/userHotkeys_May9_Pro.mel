@@ -1,0 +1,75 @@
+//Maya Preference 2017 (Release 1)
+//
+//
+
+//
+// The hotkey set
+//
+hotkeySet -source "Maya_Default" -current May9_Pro;
+//
+// The hotkey contexts and hotkeys
+//
+hotkey -keyShortcut "`" -ctl -alt -name ("SmoothingDisplayToggleNameCommand");
+hotkey -keyShortcut "Return" -ctl -name ("ClearFreezeNameCommand");
+hotkey -keyShortcut "c" -ctl -alt -sht -name ("PolyCreaseToolNameCommand");
+hotkey -keyShortcut "\\" -ctl -name ("LastOpInStackNameCommand");
+hotkey -keyShortcut "Space" -ctl -alt -name ("rjCMDSearchHK");
+hotkey -keyShortcut "4" -alt -name ("layoutPerspGraphNameCommand");
+hotkey -keyShortcut "|" -ctl -alt -name ("SmoothingDisplayShowBothNameCommand");
+hotkey -keyShortcut "t" -alt -name ("ToolSettingsNameCommand");
+hotkey -keyShortcut "a" -cmd -name ("ShowAttributeEditorOrChannelBoxNameCommand");
+hotkey -keyShortcut "1" -alt -name ("layoutHypershadePerspNameCommand");
+hotkey -keyShortcut "k" -alt -name ("ToggleColorManagementNameCommand");
+hotkey -keyShortcut "o" -alt -name ("LayoutOutlinerNameCommand");
+hotkey -keyShortcut "9" -alt -name ("LayoutPerspScriptNameCommand");
+hotkey -keyShortcut "7" -alt -name ("layoutPerspComponentNameCommand");
+hotkey -keyShortcut "8" -ctl -alt -name ("PaintEffectsPanelNameCommand");
+hotkey -keyShortcut "l" -alt -name ("openColorEditorNameCommand");
+hotkey -keyShortcut "s" -ctl -alt -sht -name ("DeleteStaticChannelsNameCommand");
+hotkey -keyShortcut "3" -alt -name ("layoutPerspUVNameCommand");
+hotkey -keyShortcut "\\" -ctl -alt -name ("SmoothingDisplayToggleNameCommand");
+hotkey -keyShortcut "z" -name ("MMtoKey_PressNameCommand");
+hotkey -keyShortcut "z" -releaseName ("MMtoKey_ReleaseNameCommand");
+hotkey -keyShortcut "*" -ctl -name ("SmoothProxyNameCommand");
+hotkey -keyShortcut "6" -alt -name ("LayoutPerspPoseEditorNameCommand");
+hotkey -keyShortcut "~" -ctl -alt -name ("SmoothingDisplayShowBothNameCommand");
+hotkey -keyShortcut "`" -ctl -name ("LastOpInStackNameCommand");
+hotkey -keyShortcut "8" -alt -name ("LayoutPerspRelationNameCommand");
+hotkey -keyShortcut "z" -ctl -alt -sht -name ("MMtoKeymanagerNameCommand");
+hotkey -keyShortcut "|" -ctl -name ("SmoothProxyNameCommand");
+hotkey -keyShortcut "|" -name ("ManipToggleNameCommand");
+hotkey -keyShortcut "2" -alt -name ("layoutPerspNodeNameCommand");
+hotkey -keyShortcut "Return" -ctl -alt -name ("TogglePanZoomPressNameCommand");
+hotkey -keyShortcut "Return" -ctl -alt -releaseName ("TogglePanZoomReleaseNameCommand");
+hotkey -keyShortcut "g" -alt -name ("ToggleGridNameCommand");
+hotkey -keyShortcut "8" -name ("ProgressiveIPRNameCommand");
+hotkey -keyShortcut "i" -alt -name ("ModelingToolkitNameCommand");
+hotkey -keyShortcut "z" -ctl -alt -name ("RevertToSaveNameCommand");
+hotkey -keyShortcut "5" -alt -name ("layoutPerspBlendShapeEditorNameCommand");
+hotkey -keyShortcut "k" -releaseName ("ThimeDraggerNoSmoothNameCommand");
+hotkey -keyShortcut "k" -name ("TimeDraggerSmoothNameCommand");
+hotkey -keyShortcut "p" -ctl -name ("ParentAndPositionNameCommand");
+hotkey -keyShortcut "`" -releaseName ("STRSTweakModeOffNameCommand");
+hotkey -keyShortcut "f" -ctl -name ("FrameOnlySelectedNameCommand");
+hotkey -keyShortcut "`" -name ("STRSTweakModeOnNameCommand");
+hotkey -keyShortcut "q" -ctl -alt -sht -name ("MMtoKeyReloadNameCommand");
+hotkey -keyShortcut "0" -alt -name ("layoutSinglePerspNameCommand");
+hotkey -keyShortcut "Return" -alt -name ("CenterPivotNameCommand");
+hotkey -keyShortcut "~" -name ("ManipToggleNameCommand");
+hotkey -keyShortcut "u" -alt -name ("ToggleShelfNameCommand");
+hotkeyCtx -type "Editor" -addClient "timeEditorPanel";
+hotkeyCtx -type "Editor" -addClient "outlinerPanel";
+hotkeyCtx -type "Editor" -addClient "posePanel";
+hotkeyCtx -type "Editor" -addClient "graphEditor";
+hotkeyCtx -type "Editor" -addClient "hyperShadePanel";
+hotkeyCtx -type "Editor" -addClient "hyperGraphPanel";
+hotkeyCtx -type "Editor" -addClient "shapePanel";
+hotkeyCtx -type "Editor" -addClient "profilerPanel";
+hotkeyCtx -type "Editor" -addClient "nodeEditorPanel";
+hotkeyCtx -type "Editor" -addClient "cteEditor";
+hotkeyCtx -type "Editor" -addClient "polyTexturePlacementPanel";
+hotkeyCtx -type "Tool" -addClient "SymmetrizeUVBrush";
+hotkeyCtx -type "Tool" -addClient "Unfold3DBrush";
+hotkeyCtx -type "Tool" -addClient "sculptMeshCache";
+hotkeyCtx -type "Tool" -addClient "texSculptCacheContext";
+hotkeyCtx -type "Tool" -addClient "texCutContext";
