@@ -93,9 +93,7 @@ Main preferences change:
 
 
 For more information:
-
 fb.com/May9Prefs
-davide@alidosi.com
 
 
 A special tanks to Andrey Menshikov, for the hard work on our amazing MMtoKey, and to Pavel Korolyov for his Simple Connector.
