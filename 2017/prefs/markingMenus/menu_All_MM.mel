@@ -352,32 +352,6 @@
             menuEditorMenuItem10;
 
         menuItem
-            -label "Toggle Resolution Gate" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ToggleResolutionGate;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "ResolutionGate.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
             -label "Batch Render" 
             -divider 0
             -subMenu 0
@@ -494,7 +468,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "NW" 
+            -radialPosition "W" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -505,6 +479,32 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
+
+        menuItem
+            -label "TX Manager" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "TxManager" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NW" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "TXManagerShelf.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
 
     setParent -m ..;
 
@@ -1691,6 +1691,32 @@
             menuEditorMenuItem2;
 
         menuItem
+            -label "Annotation" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateAnnotateNode" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "W" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "annotation.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
             -label "Particle Style" 
             -divider 0
             -subMenu 1
@@ -1705,6 +1731,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "out_particle.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -1834,7 +1861,7 @@
         setParent -m ..;
 
         menuItem
-            -label "Fields" 
+            -label "Add Fields" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1848,6 +1875,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "posRadial.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -2104,32 +2132,6 @@
 
         setParent -m ..;
 
-        menuItem
-            -label "Annotation" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateAnnotateNode" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "annotation.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
     setParent -m ..;
 
     menuItem
@@ -2358,220 +2360,6 @@
             menuEditorMenuItem6;
 
         menuItem
-            -label "Evaluation Mode" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-            menuItem
-                -label "DG" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "evaluationManager -mode \"off\";\ninViewMessage -pos topCenter -msg \"DG evaluation set\" -fade;\nParallelNoOverride;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Parallel" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "evaluationManager -mode parallel;\ninViewMessage -pos topCenter -msg \"Parallel evaluation set\" -fade;\nevaluator -en on -name dynamics;\nParallelOverride;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Serial" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "evaluationManager -mode serial;\ninViewMessage -pos topCenter -msg \"Serial evaluation set\" -fade;\nParallelNoOverride;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-        setParent -m ..;
-
-        menuItem
-            -label "GPU Override" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-            menuItem
-                -label "Restart" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "evaluationManager -mode parallel;\nturnOffOpenCLEvaluatorActive;\noptionVar -iv gpuOverride true;\nturnOnOpenCLEvaluatorActive;\ninViewMessage -pos topCenter -msg \"GPU evaluation restart\" -fade;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "N" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator" 
-                -subMenu 0
-                -tearOff 0
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Enable" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "evaluationManager -mode parallel;\noptionVar -iv gpuOverride true;\nturnOnOpenCLEvaluatorActive;\ninViewMessage -pos topCenter -msg \"GPU evaluation enable\" -fade;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "Disable" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "optionVar -iv gpuOverride false;\nturnOffOpenCLEvaluatorActive;\ninViewMessage -pos topCenter -msg \"GPU evaluation disable\" -fade;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-        setParent -m ..;
-
-        menuItem
             -label "Attach To Motion Path" 
             -divider 0
             -subMenu 0
@@ -2647,6 +2435,31 @@
             -longDivider 1
             menuEditorMenuItem13;
 
+        menuItem
+            -label "Evaluation Toolkit" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "EvaluationToolkit" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "reverseOrder.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
+
     setParent -m ..;
 
     menuItem
@@ -2699,58 +2512,6 @@
             menuEditorMenuItem1;
 
         menuItem
-            -label "Edit Bookmarks" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "BookmarkEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "editBookmark.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Add Image Plane" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AddImagePlane" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "ImagePlane.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
             -label "Select Similar" 
             -divider 0
             -subMenu 0
@@ -2764,7 +2525,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "SE" 
+            -radialPosition "NW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2801,62 +2562,11 @@
             menuEditorMenuItem9;
 
         menuItem
-            -label "Toggle Grid" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ToggleGrid" 
-            -keyEquivalent "G" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "Grid.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "menuEditorMenuItem15" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "GridOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
             -label "Toggle HUD Info" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD" 
+            -command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2904,6 +2614,84 @@
             menuEditorMenuItem4;
 
         menuItem
+            -label "Clean Main Camera" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ClearPersp;\nviewSet -h" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "hyperShadeResetCameraView.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Reset Renderglobals" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ResetUI;\nunifiedRenderGlobalsWindow" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "rvRenderGlobals.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+        menuItem
+            -label "Delete Unknown Nodes" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "DeleteUnknownNode" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "deleteGeneric.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+        menuItem
             -label "Cache Manager" 
             -divider 0
             -subMenu 1
@@ -2918,6 +2706,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "nClothCacheReplaceFrames.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -3257,6 +3046,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "addCreateGeneric.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -3361,127 +3151,7 @@
 
         setParent -m ..;
 
-        menuItem
-            -label "Cleanup" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
-
-            menuItem
-                -label "Main Camera" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ClearPersp;\nviewSet -h" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Render Globals" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ResetUI;\nunifiedRenderGlobalsWindow" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem5;
-
-            menuItem
-                -label "Unknown Nodes" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "DeleteUnknownNode" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem7;
-
-        setParent -m ..;
-
     setParent -m ..;
-
-    menuItem
-        -label "Open Scene" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "OpenScene" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "folder-open.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
 
     menuItem
         -label "Set Project" 
@@ -3509,29 +3179,6 @@
         menuEditorMenuItem1;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
-
-    menuItem
         -label "Project Window" 
         -divider 0
         -subMenu 0
@@ -3555,6 +3202,54 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
+    menuItem
+        -label "Content Browser" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "folder-open.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
 
 setParent -m ..;
 

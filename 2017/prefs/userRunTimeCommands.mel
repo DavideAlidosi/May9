@@ -203,14 +203,6 @@ runTimeCommand
 	ToggleComponentMode;
 
 runTimeCommand
-	-annotation "Toggle resolution gate"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("proc string getActiveModelPanel() { \nstring $activeModelPanel = \"\";\nstring $activePanel = `getPanel -wf`;\nif (\"modelPanel\" == `getPanel -to $activePanel`) {\n$activeModelPanel = $activePanel;\n}\nreturn $activeModelPanel;\n}\nstring $currPanel = getActiveModelPanel();\n\nif ($currPanel != \"\"){\nstring $currCam = `modelEditor -q -camera $currPanel`;\n\nstring $FilmGateState = `camera -q -displayFilmGate $currCam`;\nstring $ResolutionGateState = `camera -q - displayResolution $currCam`;\n\nif ($ResolutionGateState == 0) {\ncamera -e -displayFilmGate off - displayResolution on -overscan 1.3 $currCam;\n}\nelse {\ncamera -e -displayFilmGate off - displayResolution off -overscan 1.0 $currCam;\n}\n}")
-	ToggleResolutionGate;
-
-runTimeCommand
 	-annotation "Toggle UV and Object Mode"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
@@ -483,14 +475,6 @@ runTimeCommand
 	nParticleSelfCollide;
 
 runTimeCommand
-	-annotation "Open Bookmark Editor"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\ncameraBookmarkEditor $camera;")
-	BookmarkEditor;
-
-runTimeCommand
 	-annotation "Enable Surface Snap on Selected Brush"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
@@ -555,14 +539,6 @@ runTimeCommand
 	BrushNoOccupyAttraction;
 
 runTimeCommand
-	-annotation "Add Image Plane on Current Camera"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("python (\"MMtoKey.release()\");\nSelectCamera;\nPickWalkDown;\nstring $mySel[] = `ls -sl`; \nimportImagePlane $mySel;")
-	AddImagePlane;
-
-runTimeCommand
 	-annotation "Enable Occupy Volume on Line Modifier"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
@@ -601,22 +577,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{ \n$size=`getAttr -s ($each +\".pnts\")`;\n$text=\"setAttr \"+$each+\".pnts[0:\"+($size-1)+\"]\";\nfor($i=0;$i<$size;$i++){\n$text=$text+\" 0 0 0\";\n}\neval $text;\n}")
 	ResetTweakPoint;
-
-runTimeCommand
-	-annotation "Enable Parallel Evaluation Override"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mayaVer = `about -iv`;\n$extTest = `gmatch $mayaVer \"*Extension*\"`;\nif ($extTest == 1) {\n\tevaluator -name dynamics -c \"disablingNodes=unsupported\";\n    evaluator -name dynamics -c \"handledNodes=dynamics\";\n    evaluator -name dynamics -c \"action=evaluate\";\n} else {\n    { \n    string $result = `confirmDialog -title \"Confirm Parallel Override\" -message \"This command enable Parallel Evaluation on Nucleus but break Maya Fluids.\\nWARNING: in version prior to SP3 can cause critical instability. Are you sure?\" \n    -button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n    -cancelButton \"No\" -dismissString \"No\"`;\n    \n    if ($result == \"Yes\") {\n    evaluationManager -mode parallel;\n    UpdateEvaluationManagerHUDVisibility;\n    evaluator -en off -name dynamics -c \"disablingNodes=unsupported\";\n    evaluator -en off -name dynamics -c \"handledNodes=dynamics\";\n    evaluator -en off -name dynamics -c \"action=evaluate\";\n    inViewMessage -pos topCenter -msg \"Parallel Override enable\" -fade;\n    }\n    else inViewMessage -pos topCenter -msg \"Parallel Override cancelled\" -fade;\n    }\n}")
-	ParallelOverride;
-
-runTimeCommand
-	-annotation "Disable Parallel Evaluation Override"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mayaVer = `about -iv`;\n$extTest = `gmatch $mayaVer \"*Extension*\"`;\nif ($extTest == 1) {\n    evaluator -name dynamics -c \"disablingNodes=legacy2016\";\n    evaluator -name dynamics -c \"handledNodes=none\";\n    evaluator -name dynamics -c \"action=none\";\n} else {\n    evaluator -en on -name dynamics -c \"disablingNodes=legacy2016\";\n    evaluator -en on -name dynamics -c \"handledNodes=none\";\n    evaluator -en on -name dynamics -c \"action=none\";\n    inViewMessage -pos topCenter -msg \"Parallel Override disable\" -fade;\n}")
-	ParallelNoOverride;
 
 runTimeCommand
 	-annotation "Enable Follicle Braid"
