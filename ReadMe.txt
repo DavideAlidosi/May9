@@ -90,10 +90,12 @@ Main preferences change:
 - Brush optimization
 - Paint Skin Tool now use custom colors
 - Script Editor have enable the Command Completition
+- Disable Mouse Wheel Zoom
 
 
 For more information:
 fb.com/May9Prefs
+youtube.com/c/May9
 
 
 A special tanks to Andrey Menshikov, for the hard work on our amazing MMtoKey, and to Pavel Korolyov for his Simple Connector.
