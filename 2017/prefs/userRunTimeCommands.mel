@@ -1035,28 +1035,12 @@ runTimeCommand
 	aiSkyDome;
 
 runTimeCommand
-	-annotation "Open Tool Property"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("toolPropertyWindow -inMainWindow true")
-	toolProperty;
-
-runTimeCommand
 	-annotation "Create a MASH Network for Voxelize a Mash"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("// Store selection and creation of MASH network\nstring $mySel[] = `ls -sl`;\nselect $mySel[0];\nMASHnewNetwork(\"MASH#\");\nstring $myMashNerwork[] = `listConnections -s true -d false`;\n\n// Create connection and set MASH to Voxelize\nconnectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n\nsetAttr ($myMashNerwork[0] + \".arrangement\") 4;\nsetAttr ($myMashNerwork[0] + \".meshType\") 6;\n\n// Set hidden order and open Attribute Editor wondow\nhide $mySel[1];\nshowHidden $mySel[0];\n\nselect $myMashNerwork[0];\n\nopenAEWindow;")
 	mashVoxelizer;
-
-runTimeCommand
-	-annotation "Open Simple Connector UI"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("import pk_simpleConnector\nreload(pk_simpleConnector)")
-	OpenSimpleConnector;
 
 runTimeCommand
 	-annotation "Toggle Tool Settings"
