@@ -98,4 +98,8 @@ fb.com/May9Prefs
 youtube.com/c/May9
 
 
-A special tanks to Andrey Menshikov, for the hard work on our amazing MMtoKey, and to Pavel Korolyov for his Simple Connector.
+A special tanks to:
+Andrey Menshikov, for the hard work on our amazing MMtoKey
+Pavel Korolyov, for Simple Connector
+Thibault Houdon, for Helios
+Jefri Haryono, for Rain Curves From Edges

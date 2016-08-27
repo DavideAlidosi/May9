@@ -236,6 +236,22 @@ all_commands = {
 	"Color Management On":"mc.colorManagementOn()",
 	"Color Management Off":"mc.colorManagementOff()",
 	"Curves form Edges":"mc.CurvesFromEdges()",
+	"Layout Hypershade and Persp":"mc.layoutHypershadePersp()",
+	"Layout Persp and Node Editor":"mc.layoutPerspNode()",
+	"Layout Persp and UV Editor":"mc.layoutPerspUV()",
+	"Layout Persp and Graph Editor":"mc.layoutPerspGraph()",
+	"Layout Persp and Blend Shape Editor":"mc.layoutPerspBlendShapeEditor()",
+	"Layout Persp and Pose Editor":"mc.LayoutPerspPoseEditor()",
+	"Layout Persp and Component Editor":"mc.layoutPerspComponent()",
+	"Layout Persp and Relationship Editor":"mc.LayoutPerspRelation()",
+	"Layout Persp and Script Editor":"mc.LayoutPerspScript()",
+	"Enable Outliner in Layout":"mc.LayoutOutliner()",
+	"Layout Single Perspective":"mc.layoutSinglePersp()",
+	"Toggle Component and Object Mode":"mc.ToggleComponentMode()",
+	"Toggle UV and Object Mode":"mc.ToggleUV()",
+	"Select Object by Material":"mc.SelectObjectMaterial()",
+	"Parent and Position":"mc.ParentAndPosition()",
+	
 
 
 }
