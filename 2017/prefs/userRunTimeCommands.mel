@@ -1098,3 +1098,19 @@ runTimeCommand
 	-command ("import pk_simpleConnector\nreload(pk_simpleConnector)")
 	openSimpleConnector;
 
+runTimeCommand
+	-annotation "Open Helios, Textual Commander"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("Helios.Helios()")
+	HeliosUI;
+
+runTimeCommand
+	-annotation "Convert Multiple Edges to Curves"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("rainCurvesFromEdges")
+	CurvesFromEdges;
+

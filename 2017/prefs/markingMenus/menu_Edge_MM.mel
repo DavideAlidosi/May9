@@ -1,5 +1,5 @@
 	commonReflectionOptionsPopup();
-
+	
     menuItem
         -label "Bevel" 
         -divider 0
@@ -325,7 +325,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem17;
 
     menuItem
         -label "Crease Tool" 
@@ -374,7 +374,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem10;
+        menuEditorMenuItem19;
 
     menuItem
         -label "separator" 
@@ -429,7 +429,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "CreateCurveFromPoly" 
+        -command "rainCurvesFromEdges" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -448,30 +448,6 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem20;
-
-    menuItem
-        -label "menuEditorMenuItem25" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateCurveFromPolyOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem12;
 
     menuItem
         -label "separator" 
