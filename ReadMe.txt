@@ -62,6 +62,7 @@ ALT + L = Color Picker
 ALT + G = Toggle grid
 ALT + K = Toggle Color Management
 ALT + Enter = Center Pivot
+SHIFT + Enter = Helios, textual line commander
 ~ = Orient Manipulators Toggle
 8 = Start IPR
 K + Drag = Smooth playback mode
@@ -94,11 +95,14 @@ Main preferences change:
 
 
 For more information:
+
 fb.com/May9Prefs
 youtube.com/c/May9
+github.com/DavideAlidosi/May9
 
 
 A special tanks to:
+
 Andrey Menshikov, for the hard work on our amazing MMtoKey
 Pavel Korolyov, for Simple Connector
 Thibault Houdon, for Helios
