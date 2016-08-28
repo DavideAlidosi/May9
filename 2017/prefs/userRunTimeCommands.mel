@@ -1098,3 +1098,19 @@ runTimeCommand
 	-command ("rainCurvesFromEdges")
 	CurvesFromEdges;
 
+runTimeCommand
+	-annotation "Display Joints As Bone"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".drawStyle\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Joints As Bone\" -fade;")
+	JointsAsBone;
+
+runTimeCommand
+	-annotation "Display Joints As None"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".drawStyle\") 2;\n}\ninViewMessage -pos topCenter -msg \"Display Joints As None\" -fade;")
+	JointsAsNone;
+
