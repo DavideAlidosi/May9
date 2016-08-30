@@ -678,7 +678,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem3;
 
     menuItem
         -label "separator" 
@@ -728,80 +728,7 @@
         menuItem
             -label "Adaptive OpenSubdiv" 
             -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "OpenSubdAdapt" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "OpenSubdiv" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "OpenSubd" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Maya Subdiv" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "MayaSubd" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
+            -subMenu 1
             -tearOff 0
             -altModifier 0
             -optionModifier 0
@@ -812,16 +739,65 @@
             -enable 1
             -data 0
             -allowOptionBoxes 1
-            -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem4;
+            menuEditorMenuItem9;
+
+            menuItem
+                -label "On" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "OpenSubdAdapt" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Off" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "OpenSubdNoAdapt" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+        setParent -m ..;
 
         menuItem
-            -label "Displace" 
+            -label "Viewport Displace" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1033,7 +1009,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem1;
 
         menuItem
             -label "Subdiv to Poly" 
@@ -5026,7 +5002,7 @@
             -image "xgLibrary.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
