@@ -243,14 +243,6 @@ runTimeCommand
 	ToggleXRayJointsSkin;
 
 runTimeCommand
-	-annotation "Toggle XRay Visibility on seleted object(s)"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[]=`ls -sl`;\n\nstring $objs[];\nint $i;\n\nfor($s in $mySel){\n    $objs[$i++]=$s;\n}\n\nfor($o in $objs){\n    int $status[]=`displaySurface -q -x $o`;\n    displaySurface -x (!$status[0]) $o;\n}")
-	ToggleXRay;
-
-runTimeCommand
 	-annotation "Expand Shade Network"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
@@ -759,7 +751,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleCurvesTag = (($ToggleCurvesTag + 1) % 2);\n\nif ($ToggleCurvesTag)\n{\n\tmodelEditor -e -nurbsCurves 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Curves visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsCurves 1 $panel;\n    inViewMessage -pos topCenter -msg \"Curves visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -nurbsCurves $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -nurbsCurves 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Curves visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsCurves 1 $panel;\n    inViewMessage -pos topCenter -msg \"Curves visibility ON\" -fade;\n}")
 	ToggleNurbsCurvesVis;
 
 runTimeCommand
@@ -767,7 +759,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleNurbsTag = (($ToggleNurbsTag + 1) % 2);\n\nif ($ToggleNurbsTag)\n{\n\tmodelEditor -e -nurbsSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"NURBS visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"NURBS visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -nurbsSurfaces $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -nurbsSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"NURBS visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"NURBS visibility ON\" -fade;\n}")
 	ToggleNurbsVis;
 
 runTimeCommand
@@ -775,7 +767,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleSubdivTag = (($ToggleSubdivTag + 1) % 2);\n\nif ($ToggleSubdivTag)\n{\n\tmodelEditor -e -subdivSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -subdivSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -subdivSurfaces $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -subdivSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -subdivSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility ON\" -fade;\n}")
 	ToggleSubVis;
 
 runTimeCommand
@@ -783,7 +775,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $TogglePolyTag = (($TogglePolyTag + 1) % 2);\n\nif ($TogglePolyTag)\n{\n\tmodelEditor -e -polymeshes 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Polygons visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -polymeshes 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Polygons visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -polymeshes $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -polymeshes 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Polygons visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -polymeshes 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Polygons visibility ON\" -fade;\n}")
 	TogglePolyVis;
 
 runTimeCommand
@@ -791,7 +783,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleLightTag = (($ToggleLightTag + 1) % 2);\n\nif ($ToggleLightTag)\n{\n\tmodelEditor -e -lights 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Light visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -lights 1 $panel;\n    inViewMessage -pos topCenter -msg \"Light visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -lights $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -lights 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Light visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -lights 1 $panel;\n    inViewMessage -pos topCenter -msg \"Light visibility ON\" -fade;\n}")
 	ToggleLightVis;
 
 runTimeCommand
@@ -799,7 +791,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleJointTag = (($ToggleJointTag + 1) % 2);\n\nif ($ToggleJointTag)\n{\n\tmodelEditor -e -joints 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Joints visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -joints 1 $panel;\n    inViewMessage -pos topCenter -msg \"Joints visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -joints $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -joints 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Joints visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -joints 1 $panel;\n    inViewMessage -pos topCenter -msg \"Joints visibility ON\" -fade;\n}")
 	ToggleJointVis;
 
 runTimeCommand
@@ -807,7 +799,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleIkTag = (($ToggleIkTag + 1) % 2);\n\nif ($ToggleIkTag)\n{\n\tmodelEditor -e -ikHandles 0 $panel;\n\tinViewMessage -pos topCenter -msg \"IK Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -ikHandles 1 $panel;\n    inViewMessage -pos topCenter -msg \"IK Handles visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -ikHandles $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -ikHandles 0 $panel;\n\tinViewMessage -pos topCenter -msg \"IK Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -ikHandles 1 $panel;\n    inViewMessage -pos topCenter -msg \"IK Handles visibility ON\" -fade;\n}")
 	ToggleIkVis;
 
 runTimeCommand
@@ -815,7 +807,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleDefTag = (($ToggleDefTag + 1) % 2);\n\nif ($ToggleDefTag)\n{\n\tmodelEditor -e -deformers 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Deformers visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -deformers 1 $panel;\n    inViewMessage -pos topCenter -msg \"Deformers visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -deformers $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -deformers 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Deformers visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -deformers 1 $panel;\n    inViewMessage -pos topCenter -msg \"Deformers visibility ON\" -fade;\n}")
 	ToggleDefVis;
 
 runTimeCommand
@@ -823,7 +815,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\nint $ToggleLocTag = (($ToggleLocTag + 1) % 2);\n\nif ($ToggleLocTag)\n{\n\tmodelEditor -e -locators 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Locator Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -locators 1 $panel;\n    inViewMessage -pos topCenter -msg \"Locator Handles visibility ON\" -fade;\n}")
+	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -locators $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -locators 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Locator Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -locators 1 $panel;\n    inViewMessage -pos topCenter -msg \"Locator Handles visibility ON\" -fade;\n}")
 	ToggleLocVis;
 
 runTimeCommand
