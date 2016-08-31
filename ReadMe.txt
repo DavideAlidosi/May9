@@ -1,4 +1,4 @@
-May9 pro 1.0.2 for Autodesk Maya 2017
+May9 pro 1.0.3 for Autodesk Maya 2017
 
 Installation Instruction:
 
@@ -92,6 +92,7 @@ Main preferences change:
 - Paint Skin Tool now use custom colors
 - Script Editor have enable the Command Completition
 - Disable Mouse Wheel Zoom
+- HDR and EXR file is set to Raw colorspace for prevent Arnold double expose
 
 
 For more information:
