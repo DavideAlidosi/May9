@@ -1,55 +1,5 @@
 
     menuItem
-        -label "Bevel" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BevelPolygon;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyBevel.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem10;
-
-    menuItem
-        -label "menuEditorMenuItem11" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BevelPolygonOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
-
-    menuItem
         -label "Multi Cut Tool" 
         -divider 0
         -subMenu 0
@@ -419,7 +369,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -545,7 +495,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "S" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -605,6 +555,56 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
+
+    menuItem
+        -label "Bevel" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "BevelPolygon;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyBevel.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
+
+    menuItem
+        -label "menuEditorMenuItem11" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "BevelPolygonOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
 
     menuItem
         -label "Toggle Border Edges" 
@@ -678,7 +678,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuEditorMenuItem1;
 
     menuItem
         -label "separator" 

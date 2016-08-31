@@ -49,6 +49,9 @@ da_intPlay;
 ik2Bsolver;
 ikSpringSolver;
 
+// Show Assigned Materials and Render Filter in Outliner
+scriptJob -runOnce true -idleEvent "outlinerEditor -e -showAssignedMaterials true outlinerPanel1;outlinerEditor -edit -renderFilterVisible true outlinerPanel1";
+
 /////////// Scripts setup ///////////
 
 // Preload nParticleConverter

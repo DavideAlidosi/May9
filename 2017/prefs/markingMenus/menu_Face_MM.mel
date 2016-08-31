@@ -1,5 +1,7 @@
 	commonReflectionOptionsPopup();
-
+	
+	commonSelectOptionsPopup();
+	
     menuItem
         -label "Bridge" 
         -divider 0
@@ -166,7 +168,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "E" 
+        -radialPosition "NW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -216,7 +218,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "S" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -251,56 +253,6 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
-
-    menuItem
-        -label "Extract" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ExtractFace" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyChipOff.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem28;
-
-    menuItem
-        -label "menuEditorMenuItem29" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ExtractFaceOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem29;
 
     menuItem
         -label "Transform" 
@@ -349,7 +301,56 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Extract" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ExtractFace" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyChipOff.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem28;
+
+    menuItem
+        -label "menuEditorMenuItem29" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ExtractFaceOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
 
     menuItem
         -label "Duplicate" 
@@ -398,7 +399,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem14;
+        menuEditorMenuItem20;
 
     menuItem
         -label "separator" 
@@ -2298,12 +2299,13 @@
             -image "xgIG_creation.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
 
         menuItem
+            -label "menuEditorMenuItem7" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -2321,7 +2323,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem7;
@@ -2369,7 +2371,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem8;

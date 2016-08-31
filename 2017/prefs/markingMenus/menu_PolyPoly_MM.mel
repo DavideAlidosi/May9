@@ -153,56 +153,6 @@
         menuEditorMenuItem4;
 
     menuItem
-        -label "Bevel" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BevelPolygon;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyBevel.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem18;
-
-    menuItem
-        -label "menuEditorMenuItem19" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BevelPolygonOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem19;
-
-    menuItem
         -label "Smooth" 
         -divider 0
         -subMenu 0
@@ -216,7 +166,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -583,56 +533,6 @@
         menuEditorMenuItem25;
 
     menuItem
-        -label "Extrude" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrude" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyExtrudeFacet.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem24;
-
-    menuItem
-        -label "menuEditorMenuItem27" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrudeOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem27;
-
-    menuItem
         -label "Trans Attr" 
         -divider 0
         -subMenu 0
@@ -683,6 +583,56 @@
         menuEditorMenuItem16;
 
     menuItem
+        -label "Bevel" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "BevelPolygon;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyBevel.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem18;
+
+    menuItem
+        -label "menuEditorMenuItem19" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "BevelPolygonOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
+
+    menuItem
         -label "Modeling Toolkit" 
         -divider 0
         -subMenu 0
@@ -706,6 +656,56 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
+
+    menuItem
+        -label "Extrude" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "PolyExtrude" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyExtrudeFacet.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem24;
+
+    menuItem
+        -label "menuEditorMenuItem27" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "PolyExtrudeOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem12;
 
     menuItem
         -label "Toggle Border Edges" 
@@ -779,7 +779,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem7;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Voxelize Mesh" 
@@ -867,7 +867,7 @@
             -allowOptionBoxes 1
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem9;
@@ -892,7 +892,7 @@
                 -enableCommandRepeat 1
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
@@ -916,7 +916,7 @@
                 -enableCommandRepeat 1
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem2;

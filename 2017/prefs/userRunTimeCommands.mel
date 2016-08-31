@@ -119,7 +119,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("setNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"Single Perspective layout\" -fade;")
+	-command ("setNamedPanelLayout \"Four View\";\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"Single Perspective layout\" -fade;")
 	layoutSinglePersp;
 
 runTimeCommand
