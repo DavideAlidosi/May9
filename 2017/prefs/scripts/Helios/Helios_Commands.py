@@ -253,6 +253,23 @@ all_commands = {
 	"Select Object by Material":"mc.SelectObjectMaterial()",
 	"Parent and Position":"mc.ParentAndPosition()",
 	"Simple Connector":"mc.openSimpleConnector()",
-
+	"Toggle Curves Visibility":"mc.ToggleNurbsCurvesVis()",
+	"Toggle Nurbs Visibility":"mc.ToggleNurbsVis()",
+	"Toggle Subdiv Visibility":"mc.ToggleSubVis()",
+	"Toggle Poly Visibility":"mc.TogglePolyVis()",
+	"Toggle Light Visibility":"mc.ToggleLightVis()",
+	"Toggle Joint Visibility":"mc.ToggleJointVis()",
+	"Toggle IK Handles Visibility":"mc.ToggleIkVis()",
+	"Toggle Deformers Visibility":"mc.ToggleDefVis()",
+	"Toggle Locator Visibility":"mc.ToggleLocVis()",
+	"Content Browser":"mel.eval('ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");')",
+	"Evaluation Toolkit":"mc.EvaluationToolkit()",
+	"Quick Rig":"mc.QuickRigEditor()",
+	"Render Setup":"mc.RenderSetupWindow()",
+	"Light Editor":"mc.LightList()",
+	"Render View IPR":"mc.ProgressiveIPR()",
+	"TX Manager":"mc.TxManager()",
+	"SkyDome Light":"mc.aiSkyDome()",
+	
 
 }

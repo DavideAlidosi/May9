@@ -43,6 +43,7 @@ Press and release Z = Enable the contextual Hotkey based on selection, combinati
 
 May9 Pro hotkeys:
 
+CTRL + SHIFT + ALT + M = Toggle Shelf
 CTRL + SHIFT + ALT + S = Delete Static Channels
 CTRL + SHIFT + ALT + Z = MMtoKey Manager
 CTRL + SHIFT + ALT + Q = MMtoKey Resetter
@@ -55,7 +56,6 @@ CTRL + P = Parent and position
 CTRL + ALT + 8 = Paint Effects Panel
 ALT + 1 to 0 = Layouts
 ALT + T = Toggle Tools Preference Settings
-ALT + U = Toggle Shelf
 ALT + I = Raise Modeling Toolkit
 ALT + O = Outliner
 ALT + L = Color Picker
