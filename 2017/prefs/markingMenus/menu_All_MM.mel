@@ -2208,11 +2208,11 @@
             menuEditorMenuItem3;
 
         menuItem
-            -label "MASH Selected" 
+            -label "MASH Editor" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "LoadMASH;\nMASHnewNetwork(\"MASH#\");" 
+            -command "MASHOutliner" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2225,7 +2225,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "ae_MASH_Waiter.png" 
+            -image "MASH_Editor.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -3028,102 +3028,6 @@
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem18;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Plug-in Loaders" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "addCreateGeneric.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-            menuItem
-                -label "Bullet" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "LoadBullet" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Muscle" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "LoadMuscle;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "Game Pipeline" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "LoadGames" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
 
         setParent -m ..;
 

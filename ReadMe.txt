@@ -85,7 +85,6 @@ Main preferences change:
 - Hidden attribute in connections exposed
 - Membrane Deformer exposed
 - Legacy Subdivision Surface exposed
-- Manage and clean-up of default plug-ins
 - Hotbox have no transparency
 - Incremental save is enable and limited to 5 increments
 - Brush optimization

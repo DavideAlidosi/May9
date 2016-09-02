@@ -155,38 +155,6 @@ runTimeCommand
 	ResetUI;
 
 runTimeCommand
-	-annotation "Load Bullet Plug-in"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`pluginInfo -q -loaded bullet` == 0)\n{\n\tcatchQuiet(`loadPlugin \"bullet\"`);\n}\n\nif (`pluginInfo -q -loaded AbcBullet` == 0)\n{\n\tinViewMessage -pos topCenter -msg \"Bullet loaded\" -fade;\n\tcatchQuiet(`loadPlugin \"AbcBullet\"`);\n}else{\n\tinViewMessage -pos topCenter -msg \"Bullet already loaded\" -fade;\n}\n")
-	LoadBullet;
-
-runTimeCommand
-	-annotation "Load Muscle Plug-in"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`pluginInfo -q -loaded MayaMuscle` == 0)\n{\n\tinViewMessage -pos topCenter -msg \"Muscle loaded\" -fade;\n\tcatchQuiet(`loadPlugin \"MayaMuscle\"`);\n}else{\n\tinViewMessage -pos topCenter -msg \"Muscle already loaded\" -fade;\n}")
-	LoadMuscle;
-
-runTimeCommand
-	-annotation "Load Games Plug-ins"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`pluginInfo -q -loaded Substance` == 0){\n\tcatchQuiet(`loadPlugin \"Substance\"`);\n}\n\nif (`pluginInfo -q -loaded objExport` == 0){\n\tcatchQuiet(`loadPlugin \"objExport\"`);\n}\n\nif (`pluginInfo -q -loaded shaderFXPlugin` == 0){\n\tcatchQuiet(`loadPlugin \"shaderFXPlugin\"`);\n}\n\nif (`pluginInfo -q -loaded gameFbxExporter` == 0){\n\tcatchQuiet(`loadPlugin \"gameFbxExporter\"`);\n}\n\nif (`pluginInfo -q -loaded GamePipeline` == 0){\n\tinViewMessage -pos topCenter -msg \"Game Pipeline loaded\" -fade;\n\tcatchQuiet(`loadPlugin \"GamePipeline\"`);\n} else {\n\tinViewMessage -pos topCenter -msg \"Game Pipeline already loaded\" -fade;\n}\n")
-	LoadGames;
-
-runTimeCommand
-	-annotation "MASH Plugins"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`pluginInfo -q -loaded MASH` == 0)\n\tcatchQuiet(`loadPlugin \"MASH\"`)\n")
-	LoadMASH;
-
-runTimeCommand
 	-annotation "Toggle Component Object Mode"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
