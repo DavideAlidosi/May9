@@ -171,14 +171,6 @@ runTimeCommand
 	LoadMuscle;
 
 runTimeCommand
-	-annotation "Load Cache Plug-ins"
-	-category "Custom Scripts.May9_Pro"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`pluginInfo -q -loaded AbcImport` == 0){\n\tcatchQuiet(`loadPlugin \"AbcImport\"`);\n}\n\nif (`pluginInfo -q -loaded AbcExport` == 0){\n\tcatchQuiet(`loadPlugin \"AbcExport\"`);\n}\n\nif (`pluginInfo -q -loaded sceneAssembly` == 0){\n\tinViewMessage -pos topCenter -msg \"Alembic loaded\" -fade;\n\tcatchQuiet(`loadPlugin \"sceneAssembly\"`);\n}else{\n\tinViewMessage -pos topCenter -msg \"Alembic already loaded\" -fade;\n}")
-	LoadCache;
-
-runTimeCommand
 	-annotation "Load Games Plug-ins"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
