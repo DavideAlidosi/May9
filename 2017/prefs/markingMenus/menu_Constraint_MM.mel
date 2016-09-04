@@ -299,5 +299,30 @@
         -longDivider 1
         menuEditorMenuItem7;
 
+    menuItem
+        -label "Connect selected Muscle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "cMuscle_connectToSystem(); " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "cMuscle_skin_connMus.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
 setParent -m ..;
 

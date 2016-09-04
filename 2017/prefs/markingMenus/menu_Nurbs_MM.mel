@@ -246,7 +246,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem4;
+        menuEditorMenuItem2;
 
     menuItem
         -label "Convert to Legacy Subdiv" 
@@ -295,7 +295,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuEditorMenuItem3;
 
     menuItem
         -label "separator" 
@@ -315,7 +315,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem20;
@@ -340,12 +340,13 @@
         -image "cluster.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem22;
 
     menuItem
+        -label "menuEditorMenuItem24" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -363,10 +364,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem24;
+        menuEditorMenuItem4;
 
     menuItem
         -label "Lattice" 
@@ -415,7 +416,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem15;
+        menuEditorMenuItem7;
 
     menuItem
         -label "separator" 
@@ -487,7 +488,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem16;
+        menuEditorMenuItem8;
 
     menuItem
         -label "Particle Style" 
@@ -632,6 +633,79 @@
             menuEditorMenuItem5;
 
     setParent -m ..;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
+    menuItem
+        -label "Muscle Builder" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "cMuscleBuilder(); " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "cMuscle_muscle_muscleBuilder.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem16;
+
+    menuItem
+        -label "Custom Muscle Shapes" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "cMuscleSplineDeformerShapeUI(); " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "cMuscle_muscle_muscleShapes.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem24;
 
 setParent -m ..;
 

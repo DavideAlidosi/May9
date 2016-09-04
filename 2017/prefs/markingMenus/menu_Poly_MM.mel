@@ -75,32 +75,6 @@
             menuEditorMenuItem3;
 
         menuItem
-            -label "3D Paint Tool" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "Art3dPaintToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "art3dPaint.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
             -label "Paint Hair Follicle" 
             -divider 0
             -subMenu 0
@@ -302,6 +276,58 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
+
+        menuItem
+            -label "Paint Muscle Weights" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "cMusclePaint(); " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cMuscle_skin_paint.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "3D Paint Tool" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "Art3dPaintToolOptions;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "S" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "art3dPaint.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
 
     setParent -m ..;
 
@@ -532,31 +558,6 @@
         menuEditorMenuItem16;
 
     menuItem
-        -label "Modeling Toolkit" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "showModelingToolkit" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "modelToolkit.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
         -label "Bevel" 
         -divider 0
         -subMenu 0
@@ -605,6 +606,31 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
+
+    menuItem
+        -label "Modeling Toolkit" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "showModelingToolkit" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "modelToolkit.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
 
     menuItem
         -label "Toggle Border Edges" 
@@ -678,7 +704,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem9;
 
     menuItem
         -label "separator" 
@@ -1742,6 +1768,79 @@
             menuEditorMenuItem7;
 
         menuItem
+            -label "Convert Smooth Skin to Muscle System" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "cMuscleConvertSkin(); " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cMuscle_skin_convert.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem22;
+
+        menuItem
+            -label "Apply Default Muscle Weights" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "cMuscleWeightDefaultUI(); " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cMuscle_skin_applyDefault.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem21;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem14;
+
+        menuItem
             -label "Unbind Skin" 
             -divider 0
             -subMenu 0
@@ -1788,7 +1887,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem12;
+            menuEditorMenuItem15;
 
     setParent -m ..;
 

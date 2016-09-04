@@ -295,7 +295,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("import MMtoKey\nreload(MMtoKey)")
+	-command ("MMtoKey.release_1('', 0)\nimport MMtoKey\nreload(MMtoKey)")
 	MMtoKeyReload;
 
 runTimeCommand
@@ -803,7 +803,7 @@ runTimeCommand
 	LightList;
 
 runTimeCommand
-	-annotation ""
+	-annotation "Enable MMtoKey"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "python"
@@ -811,7 +811,7 @@ runTimeCommand
 	MMtoKey_press;
 
 runTimeCommand
-	-annotation ""
+	-annotation "Disable MMtoKey"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "python"
