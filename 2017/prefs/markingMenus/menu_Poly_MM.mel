@@ -303,32 +303,6 @@
             -longDivider 1
             menuEditorMenuItem4;
 
-        menuItem
-            -label "Paint Muscle Weights" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "cMusclePaint(); " 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "cMuscle_skin_paint.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
     setParent -m ..;
 
     menuItem
@@ -704,7 +678,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuEditorMenuItem1;
 
     menuItem
         -label "separator" 
@@ -1572,7 +1546,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem15;
 
         menuItem
             -label "Delta Mush" 
@@ -1620,7 +1594,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem17;
 
         menuItem
             -label "Membrane" 
@@ -1693,7 +1667,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem19;
 
         menuItem
             -label "Texture" 
@@ -1742,7 +1716,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem20;
 
         menuItem
             -label "separator" 
@@ -1793,7 +1767,32 @@
             menuEditorMenuItem21;
 
         menuItem
-            -label "Convert Smooth Skin to Muscle System" 
+            -label "Paint Muscle Weights" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "cMusclePaint(); " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cMuscle_skin_paint.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem24;
+
+        menuItem
+            -label "Smooth Skin to Muscle System" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -1887,7 +1886,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem12;
+            menuEditorMenuItem23;
 
     setParent -m ..;
 
