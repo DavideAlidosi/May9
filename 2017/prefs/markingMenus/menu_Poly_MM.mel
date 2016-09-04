@@ -298,7 +298,7 @@
             -image "cMuscle_skin_paint.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -704,7 +704,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuEditorMenuItem1;
 
     menuItem
         -label "separator" 
@@ -1572,7 +1572,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem12;
 
         menuItem
             -label "Delta Mush" 
@@ -1620,7 +1620,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem17;
 
         menuItem
             -label "Membrane" 
@@ -1693,7 +1693,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem19;
 
         menuItem
             -label "Texture" 
@@ -1742,7 +1742,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem20;
 
         menuItem
             -label "separator" 
@@ -1768,31 +1768,6 @@
             menuEditorMenuItem7;
 
         menuItem
-            -label "Convert Smooth Skin to Muscle System" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "cMuscleConvertSkin(); " 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "cMuscle_skin_convert.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem22;
-
-        menuItem
             -label "Apply Default Muscle Weights" 
             -divider 0
             -subMenu 0
@@ -1816,6 +1791,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem21;
+
+        menuItem
+            -label "Convert Smooth Skin to Muscle System" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "cMuscleConvertSkin(); " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cMuscle_skin_convert.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem22;
 
         menuItem
             -label "separator" 
@@ -1887,7 +1887,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem15;
+            menuEditorMenuItem23;
 
     setParent -m ..;
 
