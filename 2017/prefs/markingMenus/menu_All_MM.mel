@@ -2785,7 +2785,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem2;
+                menuEditorMenuItem17;
 
             menuItem
                 -label "Delete nCache" 
@@ -2882,7 +2882,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem6;
+                menuEditorMenuItem18;
 
             menuItem
                 -label "Delete Fluid Cache" 
@@ -2931,7 +2931,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem8;
+                menuEditorMenuItem19;
 
             menuItem
                 -label "separator" 
@@ -3003,7 +3003,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem11;
+                menuEditorMenuItem20;
 
             menuItem
                 -label "Delete Geometry Cache" 
@@ -3052,7 +3052,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem13;
+                menuEditorMenuItem21;
 
             menuItem
                 -label "separator" 
@@ -3072,7 +3072,7 @@
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem14;
@@ -3097,7 +3097,7 @@
                 -image "cMuscle_skin_cacheCreate.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem15;
@@ -3122,10 +3122,131 @@
                 -image "cMuscle_skin_cacheDelete.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem16;
+
+            menuItem
+                -label "separator" 
+                -divider 1
+                -dividerLabel "separator" 
+                -subMenu 0
+                -tearOff 0
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem22;
+
+            menuItem
+                -label "Import GPU Cache" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doGpuCacheImportArgList 1 {\"0\",\"0\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilImport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem23;
+
+            menuItem
+                -label "Export Selection to GPU Cache" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilExport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem24;
+
+            menuItem
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "GpuCacheExportSelectionOptions" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem25;
+
+            menuItem
+                -label "Refresh All GPU Cache" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "GpuCacheRefreshAll" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "QR_refresh.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem26;
 
         setParent -m ..;
 
