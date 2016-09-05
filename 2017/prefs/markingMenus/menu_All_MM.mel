@@ -429,6 +429,32 @@
             menuEditorMenuItem3;
 
         menuItem
+            -label "Render View" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "RenderViewWindow" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NW" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "rvOpenWindow.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem7;
+
+        menuItem
             -label "File Path Editor" 
             -divider 0
             -subMenu 0
@@ -502,32 +528,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
-
-        menuItem
-            -label "Render View" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RenderViewWindow" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvOpenWindow.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
 
     setParent -m ..;
 
@@ -1481,7 +1481,7 @@
             -image "Light.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -2394,7 +2394,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "W" 
+            -radialPosition "NW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2520,7 +2520,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "NW" 
+            -radialPosition "W" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
