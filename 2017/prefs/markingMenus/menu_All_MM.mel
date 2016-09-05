@@ -2233,11 +2233,11 @@
             menuEditorMenuItem3;
 
         menuItem
-            -label "MASH Editor" 
+            -label "Create MASH" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "MASHOutliner" 
+            -command "MASHnewNetwork(\"MASH#\")" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2250,13 +2250,37 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "MASH_Editor.png" 
+            -image "MASH_CreateNetwork.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
+
+        menuItem
+            -label "menuEditorMenuItem10" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "MASHOutliner" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
 
         menuItem
             -label "Flow Path Object" 
@@ -2785,7 +2809,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem17;
+                menuEditorMenuItem2;
 
             menuItem
                 -label "Delete nCache" 
@@ -2882,7 +2906,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem18;
+                menuEditorMenuItem6;
 
             menuItem
                 -label "Delete Fluid Cache" 
@@ -2931,7 +2955,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem19;
+                menuEditorMenuItem8;
 
             menuItem
                 -label "separator" 
@@ -3003,7 +3027,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem20;
+                menuEditorMenuItem11;
 
             menuItem
                 -label "Delete Geometry Cache" 
@@ -3052,7 +3076,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem21;
+                menuEditorMenuItem13;
 
             menuItem
                 -label "separator" 
@@ -3145,7 +3169,7 @@
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem22;
@@ -3170,7 +3194,7 @@
                 -image "greasePencilImport.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem23;
@@ -3195,12 +3219,13 @@
                 -image "greasePencilExport.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem24;
 
             menuItem
+                -label "menuEditorMenuItem25" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -3218,10 +3243,10 @@
                 -enableCommandRepeat 0
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem25;
+                menuEditorMenuItem17;
 
             menuItem
                 -label "Refresh All GPU Cache" 
@@ -3243,10 +3268,129 @@
                 -image "QR_refresh.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem26;
+
+            menuItem
+                -label "separator" 
+                -divider 1
+                -dividerLabel "separator" 
+                -subMenu 0
+                -tearOff 0
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem18;
+
+            menuItem
+                -label "Import Alembic" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilImport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem19;
+
+            menuItem
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "AlembicImportOptions" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem20;
+
+            menuItem
+                -label "Export Selection to Alembic" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doAlembicExportArgList 7 {\"0\",\"2\",\"1\",\"24\",\"1\",\"0\",\"-0.2\",\"0.2\",\"0\",\"0\",\"\",\"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"\",\"\",\"\",\"\",\"0\",\"0\",\"0\",\"2\",\"1\",\"0\",\"0\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilExport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem21;
+
+            menuItem
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "AlembicExportSelectionOptions" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem25;
 
         setParent -m ..;
 
