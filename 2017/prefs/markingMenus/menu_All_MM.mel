@@ -326,32 +326,6 @@
         menuEditorMenuItem33;
 
         menuItem
-            -label "File Path Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "FilePathEditor;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "da_filePath.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
             -label "Batch Render" 
             -divider 0
             -subMenu 0
@@ -365,7 +339,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "S" 
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -400,32 +374,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem5;
-
-        menuItem
-            -label "Transfer Maps" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "performSurfaceSampling 1" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "displacementMap_64.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
 
         menuItem
             -label "Render Sequence" 
@@ -481,6 +429,31 @@
             menuEditorMenuItem3;
 
         menuItem
+            -label "File Path Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "FilePathEditor;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_filePath.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
+
+        menuItem
             -label "TX Manager" 
             -divider 0
             -subMenu 0
@@ -494,7 +467,6 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "NW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -505,6 +477,57 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
+
+        menuItem
+            -label "Transfer Maps" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "performSurfaceSampling 1" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "displacementMap_64.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "Render View" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "RenderViewWindow" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NW" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "rvOpenWindow.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem7;
 
     setParent -m ..;
 
@@ -758,57 +781,6 @@
             menuEditorMenuItem10;
 
         menuItem
-            -label "Simple Connector" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "openSimpleConnector" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_geoConnectable.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Quick Rig" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "QuickRigEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "QR_QuickRigTool.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
             -label "Rivet Constraint" 
             -divider 0
             -subMenu 0
@@ -833,6 +805,82 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
+
+        menuItem
+            -label "Quick Rig" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "QuickRigEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "N" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "QR_QuickRigTool.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+        menuItem
+            -label "Simple Connector" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "openSimpleConnector" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_geoConnectable.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
+            -label "Connection Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ConnectionEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_list.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
 
     setParent -m ..;
 
@@ -1300,7 +1348,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
+            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -1387,32 +1435,6 @@
             menuEditorMenuItem9;
 
         menuItem
-            -label "Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LightList" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "lightEditor.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
             -label "SkyDome" 
             -divider 0
             -subMenu 0
@@ -1426,7 +1448,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "S" 
+            -radialPosition "NW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -1437,6 +1459,82 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
+
+        menuItem
+            -label "Photometric" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "aiPhotometric" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "N" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "Light.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Light Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LightList" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "lightEditor.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem11;
+
+        menuItem
+            -label "Light Linking" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LightCentricLightLinkingEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_defaultLightList.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
 
     setParent -m ..;
 
@@ -2459,11 +2557,11 @@
             menuEditorMenuItem12;
 
         menuItem
-            -label "Set Driven Key" 
+            -label "Playblast" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "SetDrivenKeyOptions" 
+            -command "PlayblastWindow" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2476,13 +2574,37 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "setDrivenKeyframe.png" 
+            -image "playblast.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem13;
+            menuEditorMenuItem14;
+
+        menuItem
+            -label "menuEditorMenuItem16" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "PlayblastOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem16;
 
         menuItem
             -label "Evaluation Toolkit" 
@@ -2508,6 +2630,56 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem15;
+
+        menuItem
+            -label "Set Driven Key" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SetDrivenKeyOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "setDrivenKeyframe.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
+
+        menuItem
+            -label "Expression Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ExpressionEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_expression.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem11;
 
     setParent -m ..;
 
@@ -3291,7 +3463,7 @@
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem18;
@@ -3316,12 +3488,13 @@
                 -image "greasePencilImport.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem19;
 
             menuItem
+                -label "menuEditorMenuItem20" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -3339,7 +3512,7 @@
                 -enableCommandRepeat 0
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem20;
@@ -3364,12 +3537,13 @@
                 -image "greasePencilExport.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem21;
 
             menuItem
+                -label "menuEditorMenuItem25" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -3387,7 +3561,7 @@
                 -enableCommandRepeat 0
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem25;
