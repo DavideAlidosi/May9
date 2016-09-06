@@ -339,7 +339,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
+            -radialPosition "NW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -389,7 +389,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "SW" 
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -442,7 +442,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "NW" 
+            -radialPosition "SW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -528,6 +528,58 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
+
+        menuItem
+            -label "Rendering Flags" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "RenderFlagsWindow" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "menuIconRenderSettings.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
+
+        menuItem
+            -label "Shading Group Attributes" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "AttributeEditor;\nscriptJob -runOnce true -idleEvent \"ShadingGroupAttributeEditor\"" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "S" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_shadingEngine.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem9;
 
     setParent -m ..;
 
