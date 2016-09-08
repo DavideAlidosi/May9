@@ -270,6 +270,7 @@ all_commands = {
 	"Render View IPR":"mc.ProgressiveIPR()",
 	"TX Manager":"mc.TxManager()",
 	"SkyDome Light":"mc.aiSkyDome()",
+	"River Constraint":"mel.eval('djRivet')",
 	
 
 }
