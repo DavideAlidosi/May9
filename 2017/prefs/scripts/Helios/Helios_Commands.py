@@ -271,11 +271,6 @@ all_commands = {
 	"TX Manager":"mc.TxManager()",
 	"SkyDome Light":"mc.aiSkyDome()",
 	"River Constraint":"mel.eval('djRivet')",
-	"Toggle Persp to Ortho Camera":"PerspToggle()",
-	"Go to Front Camera":"GoToFront()",
-	"Go to Side Camera":"GoToSide()",
-	"Go to Top Camera":"GoToTop()",
-	"Go to Persp Camera":"GoToPersp()",
 	
 
 }
