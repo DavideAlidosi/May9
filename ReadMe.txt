@@ -1,4 +1,4 @@
-May9 pro 1.0.4 for Autodesk Maya 2017
+May9 pro 1.0.5 for Autodesk Maya 2017
 
 Installation Instruction:
 
@@ -61,8 +61,13 @@ ALT + O = Outliner
 ALT + L = Color Picker
 ALT + G = Toggle grid
 ALT + K = Toggle Color Management
-ALT + Enter = Center Pivot
+ALT + Enter = Toggle perspective to orthographic camera
+SHIFT + ALT + Enter = Center Pivot
 SHIFT + Enter = Helios, textual line commander
+SHIFT + UP = Side View
+SHIFT + RIGHT = Front View
+SHIFT + DOWN = Top View
+SHIFT + LEFT = Persp View
 ~ = Orient Manipulators Toggle
 8 = Start IPR
 K + Drag = Smooth playback mode
