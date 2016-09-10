@@ -1,11 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "Outliner" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+        -command "switchPanelToType Outliner" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -14,23 +13,23 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "N" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem4;
+        menuItem64;
 
     menuItem
-        -label "Weighted Tangents" 
+        -label "Graph Editor" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+        -command "switchPanelToType GraphEditor" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -45,119 +44,17 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -enableCommandRepeat 1
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem5;
+        menuItem65;
 
     menuItem
-        -label "Insert Keyframe" 
+        -label "Dope Sheet" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "setKeyframe -insert" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
-
-    menuItem
-        -label "Delete Static Channels" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannels" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
-
-    menuItem
-        -label "Set Driven Key" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetDrivenKeyOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
-        -label "Simplify Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
+        -command "switchPanelToType DopeSheet" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -172,43 +69,93 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -enableCommandRepeat 1
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuItem66;
 
     menuItem
-        -label "menuEditorMenuItem8" 
+        -label "Hypergraph" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
+        -command "switchPanelToType Hypergraph" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
-        -optionBox 1
+        -optionBox 0
         -enable 1
         -data 0
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
-        -enableCommandRepeat 0
+        -enableCommandRepeat 1
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuItem67;
 
     menuItem
-        -label "Select Curve" 
+        -label "Node Editor" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ToggleCurveSelection" 
+        -command "switchPanelToType NodeEditor" 
         -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem68;
+
+    menuItem
+        -label "Hypershade" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "switchPanelToType Hypershade" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem69;
+
+    menuItem
+        -label "Render View" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "switchPanelToType RenderView" 
+        -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
@@ -225,7 +172,32 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuItem70;
+
+    menuItem
+        -label "Sets" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "switchPanelToType SetEditor" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem71;
 
 setParent -m ..;
 

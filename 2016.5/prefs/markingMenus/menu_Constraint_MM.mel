@@ -1,11 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "Point Constraint" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+        -command "PointConstraint;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -14,23 +13,48 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "NW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "posConstraint.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem4;
+        menuEditorMenuItem11;
 
     menuItem
-        -label "Weighted Tangents" 
+        -label "menuEditorMenuItem12" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+        -command "PointConstraintOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Aim Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "AimConstraint;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -43,19 +67,144 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "aimConstraint.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem5;
+        menuEditorMenuItem13;
 
     menuItem
-        -label "Insert Keyframe" 
+        -label "menuEditorMenuItem14" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "setKeyframe -insert" 
+        -command "AimConstraintOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Orient Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performOrientConstraint 0;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "orientConstraint.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
+    menuItem
+        -label "menuEditorMenuItem16" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "OrientConstraintOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Scale Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "scaleConstraint;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "scaleConstraint.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem17;
+
+    menuItem
+        -label "menuEditorMenuItem18" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ScaleConstraintOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Parent Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ParentConstraint;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -68,20 +217,44 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
+        -image "parentConstraint.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem19;
 
     menuItem
-        -label "Delete Static Channels" 
+        -label "menuEditorMenuItem20" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannels" 
+        -command "ParentConstraintOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
+        -label "IK Spline Handle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKSplineHandleTool;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -94,7 +267,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
+        -image "kinSplineHandle.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -107,7 +280,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
+        -command "IKSplineHandleToolOptions;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -127,11 +300,11 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem7;
 
     menuItem
-        -label "Set Driven Key" 
+        -label "Connect selected Muscle" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "SetDrivenKeyOptions" 
+        -command "cMuscle_connectToSystem(); " 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -140,92 +313,16 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
-        -label "Simplify Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
-
-    menuItem
-        -label "menuEditorMenuItem8" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
-
-    menuItem
-        -label "Select Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleCurveSelection" 
-        -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -image "cMuscle_skin_connMus.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuEditorMenuItem8;
 
 setParent -m ..;
 

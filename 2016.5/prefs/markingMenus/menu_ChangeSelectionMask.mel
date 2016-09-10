@@ -1,61 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "NURBS Mask" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-    menuItem
-        -label "Weighted Tangents" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "Insert Keyframe" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setKeyframe -insert" 
+        -command "setSelectMode nurbsModeling NURBS" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -67,71 +16,20 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -radialPosition "N" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
-
-    menuItem
-        -label "Delete Static Channels" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannels" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem7;
+        menuItem84;
 
     menuItem
-        -label "Set Driven Key" 
+        -label "Hierarchy" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "SetDrivenKeyOptions" 
+        -command "setSelectMode hierarchy Hierarchy" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -143,21 +41,45 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
+        -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem2;
+        menuItem85;
 
     menuItem
-        -label "Simplify Curve" 
+        -label "Animation Mask" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
+        -command "setSelectMode animation Animation" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem86;
+
+    menuItem
+        -label "Deformations Mask" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setSelectMode deformations Deformations" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -169,46 +91,96 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -radialPosition "SE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuItem87;
 
     menuItem
-        -label "menuEditorMenuItem8" 
+        -label "Dynamics Mask" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
+        -command "setSelectMode dynamics Dynamics" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
-        -optionBox 1
+        -optionBox 0
         -enable 1
         -data 0
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuItem88;
 
     menuItem
-        -label "Select Curve" 
+        -label "Polygons Mask" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ToggleCurveSelection" 
+        -command "setSelectMode polyModeling Polygons" 
         -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem89;
+
+    menuItem
+        -label "Rendering Mask" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setSelectMode rendering Rendering" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem90;
+
+    menuItem
+        -label "Object/Components" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "if ( `selectMode -q -component` ) { setSelectMode objects Objects; } \t\t\t else { setSelectMode components Components; }" 
+        -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
@@ -219,13 +191,13 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -radialPosition "NW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuItem91;
 
 setParent -m ..;
 

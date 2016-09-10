@@ -1,0 +1,36 @@
+global proc da_intPlay()
+{
+    string $ctrlUI;
+    string $ctrlUI_controlName;
+    string $command;
+    string $layout;
+    $command = "InteractivePlayback;";
+
+    $ctrlsUI = `lsUI -type control MayaWindow`;
+    for ($ctrlUI in $ctrlsUI)
+    {
+        if ((`match "symbolButton" $ctrlUI`) == "symbolButton")
+            if (`symbolButton -q -c $ctrlUI`=="playButtonBackward")
+            {
+                $layout = `symbolButton -q -p $ctrlUI`;
+                
+                // store the current name of the control
+                $ctrlUI_controlName = $ctrlUI;
+                
+                deleteUI $ctrlUI;
+                $stepBtn = `symbolButton -p $layout -image "intPlay.png" -c $command -ann "Interactive Playback. Pressing the ESC key will stop playback." stepBtn`;
+            }
+    }
+    
+    $ctrlsUI = `lsUI -type control MayaWindow`;
+    for ($ctrlUI in $ctrlsUI)
+    {
+        if ((`match "symbolButton" $ctrlUI`) == "symbolButton")
+            if (`symbolButton -q -c $ctrlUI`=="playButtonForward")
+                symbolButton -e -c "play -state (!`play -q -state`);" $ctrlUI;
+    }    
+    
+    // add a column to the timeSlider layout and recreate the play backwards button
+    gridLayout -e -nc (`gridLayout -q -nc $layout` + 1) $layout;
+    symbolButton -m 0 -p $layout $ctrlUI_controlName;
+}

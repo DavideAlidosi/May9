@@ -1,0 +1,103 @@
+
+    menuItem
+        -label "Plane On" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setAttr \"nucleus1.usePlane\" 1;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Plane Off" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setAttr \"nucleus1.usePlane\" 0;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "PhysicallyBased Off" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "NucleusPhysicallyBasedOff" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "PhysicallyBased On" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "NucleusPhysicallyBasedOn" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+setParent -m ..;
+

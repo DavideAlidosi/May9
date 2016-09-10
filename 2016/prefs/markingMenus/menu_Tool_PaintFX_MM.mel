@@ -1,0 +1,105 @@
+
+    menuItem
+        -label "Get Brush" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "{VisorWindow;string $pnl=visorPanelName();if(size($pnl)>0) visorPanelMenuCommand( $pnl, \"selectOrCreateTabByLabel Paint Effects\");}" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "paintEffectsBrushesLarge.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Reset Template Brush" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ResetTemplateBrush" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "resetTemplateBrush.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Get Settings from Selected Stroke" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "GetSettingsFromSelectedStroke" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Apply Settings to Selected Strokes" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ApplySettingsToSelectedStroke" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+setParent -m ..;
+

@@ -1,4 +1,3 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
         -label "Non-weighted Tangents" 
@@ -200,32 +199,6 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
-
-    menuItem
-        -label "Select Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleCurveSelection" 
-        -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
 
 setParent -m ..;
 

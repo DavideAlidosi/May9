@@ -1,61 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "Single Perspective" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-    menuItem
-        -label "Weighted Tangents" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "Insert Keyframe" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setKeyframe -insert" 
+        -command "setNamedPanelLayout \"Single Perspective View\";" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -68,70 +17,19 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuItem56;
 
     menuItem
-        -label "Delete Static Channels" 
+        -label "Hypershade/Render/Persp" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannels" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
-
-    menuItem
-        -label "Set Driven Key" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetDrivenKeyOptions" 
+        -command "setNamedPanelLayout \"Hypershade/Render/Persp\";" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -144,20 +42,19 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem2;
+        menuItem57;
 
     menuItem
-        -label "Simplify Curve" 
+        -label "Hypershade/Outliner/Persp" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
+        -command "setNamedPanelLayout \"Hypershade/Outliner/Persp\";" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -172,43 +69,118 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -enableCommandRepeat 1
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuItem58;
 
     menuItem
-        -label "menuEditorMenuItem8" 
+        -label "Hypershade/Persp" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
+        -command "setNamedPanelLayout \"Hypershade/Persp\";" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
-        -optionBox 1
+        -optionBox 0
         -enable 1
         -data 0
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
-        -enableCommandRepeat 0
+        -enableCommandRepeat 1
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuItem59;
 
     menuItem
-        -label "Select Curve" 
+        -label "Toggle Outliner" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ToggleCurveSelection" 
+        -command "ToggleOutliner" 
         -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem60;
+
+    menuItem
+        -label "Persp/Graph/Outliner" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setNamedPanelLayout \"Persp/Graph/Outliner\";" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem61;
+
+    menuItem
+        -label "Persp/Graph" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setNamedPanelLayout \"Persp/Graph\";" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem62;
+
+    menuItem
+        -label "Persp/Relationship Editor" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setNamedPanelLayout \"Persp/Relationship Editor\";" 
+        -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
@@ -225,7 +197,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuItem63;
 
 setParent -m ..;
 

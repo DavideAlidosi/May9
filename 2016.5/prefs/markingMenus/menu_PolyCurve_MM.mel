@@ -1,61 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "Project Curve On Mesh" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-    menuItem
-        -label "Weighted Tangents" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "Insert Keyframe" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setKeyframe -insert" 
+        -command "ProjectCurveOnMesh;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -68,7 +17,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
+        -image "projectCurve_Poly.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -77,11 +26,35 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem1;
 
     menuItem
-        -label "Delete Static Channels" 
+        -label "menuEditorMenuItem2" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannels" 
+        -command "ProjectCurveOnMeshOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Split Mesh With Projected Curve" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SplitMeshWithProjectedCurve" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -94,20 +67,122 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
+        -image "projectCurveSplit_Poly.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem7" 
+        -label "menuEditorMenuItem4" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
+        -command "SplitMeshWithProjectedCurveOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Position Along Curve" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "PositionAlongCurve" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "positionAlongCurve.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem17;
+
+    menuItem
+        -label "Instance Along Curve" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "instanceAlongCurve" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "instanceAlongCurve.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
+    menuItem
+        -label "Wire Deformer" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "WireTool;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "addWire.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
+        -label "menuEditorMenuItem6" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "WireToolOptions;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -127,11 +202,11 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem7;
 
     menuItem
-        -label "Set Driven Key" 
+        -label "Make Curve Dynamic" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "SetDrivenKeyOptions" 
+        -command "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"};" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -140,49 +215,24 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
+        -radialPosition "NW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
+        -image "hairDynamicCurves.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem2;
+        menuEditorMenuItem6;
 
     menuItem
-        -label "Simplify Curve" 
+        -label "menuEditorMenuItem9" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
-
-    menuItem
-        -label "menuEditorMenuItem8" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
+        -command "MakeCurvesDynamicOptions;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -199,16 +249,15 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuEditorMenuItem9;
 
     menuItem
-        -label "Select Curve" 
+        -label "Curve Warp Deformer" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ToggleCurveSelection" 
+        -command "createCurveWarp;" 
         -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
@@ -216,16 +265,17 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "flowPathObj.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuEditorMenuItem12;
 
 setParent -m ..;
 

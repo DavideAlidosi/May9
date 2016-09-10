@@ -1,0 +1,107 @@
+
+    menuItem
+        -label "Delete Unused Nodes" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "deleteActive.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Select Object With Material" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SelectObjectMaterial" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "aselect.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Texture Link Editor" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "TextureCentricUVLinkingEditor" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "menuIconWindow.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
+
+    menuItem
+        -label "Duplicate Shading Network" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "duplicateReference.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+setParent -m ..;
+

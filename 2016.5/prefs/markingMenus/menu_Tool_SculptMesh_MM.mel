@@ -1,11 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "Mirror X" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+        -command "sculptMeshCacheCtx -e -mirror 4 `currentCtx`;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -14,7 +13,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "SW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -23,65 +22,14 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem4;
+        menuEditorMenuItem13;
 
     menuItem
-        -label "Weighted Tangents" 
+        -label "Mirror Y" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "Insert Keyframe" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setKeyframe -insert" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
-
-    menuItem
-        -label "Delete Static Channels" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannels" 
+        -command "sculptMeshCacheCtx -e -mirror 5 `currentCtx`;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -94,70 +42,19 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem14;
 
     menuItem
-        -label "menuEditorMenuItem7" 
+        -label "Mirror Z" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
-
-    menuItem
-        -label "Set Driven Key" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetDrivenKeyOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
-        -label "Simplify Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
+        -command "sculptMeshCacheCtx -e -mirror 6 `currentCtx`;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -175,14 +72,65 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuEditorMenuItem15;
 
     menuItem
-        -label "menuEditorMenuItem8" 
+        -label "Mirror Off" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
+        -command "sculptMeshCacheCtx -e -mirror 0 `currentCtx`;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem20;
+
+    menuItem
+        -label "Freeze" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetMeshFreezeTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "Freeze.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "menuEditorMenuItem12" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ShowMeshFreezeToolOptions" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -199,16 +147,65 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuEditorMenuItem24;
 
     menuItem
-        -label "Select Curve" 
+        -label "Sculpt" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ToggleCurveSelection" 
+        -command "SetMeshSculptTool" 
         -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "Sculpt.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem25;
+
+    menuItem
+        -label "menuEditorMenuItem27" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ShowMeshSculptToolOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem27;
+
+    menuItem
+        -label "Grab" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetMeshGrabTool" 
+        -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
@@ -220,12 +217,87 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "Grab.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "menuEditorMenuItem2" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ShowMeshGrabToolOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Imprint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetMeshImprintTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "Imprint.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem16;
+
+    menuItem
+        -label "menuEditorMenuItem17" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ShowMeshImprintToolOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
 
 setParent -m ..;
 

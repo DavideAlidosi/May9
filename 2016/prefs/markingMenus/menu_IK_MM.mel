@@ -1,61 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "Pole Vector Constraint" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-    menuItem
-        -label "Weighted Tangents" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "Insert Keyframe" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setKeyframe -insert" 
+        -command "PoleVectorConstraint;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -68,7 +17,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
+        -image "poleVectorConstraint.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -77,37 +26,11 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem1;
 
     menuItem
-        -label "Delete Static Channels" 
+        -label "menuEditorMenuItem2" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannels" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
+        -command "PoleVectorConstraintOptions;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -124,14 +47,40 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem7;
+        menuEditorMenuItem2;
 
     menuItem
-        -label "Set Driven Key" 
+        -label "Create Locator" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "SetDrivenKeyOptions" 
+        -command "CreateLocator;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "locator.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+    menuItem
+        -label "Create Circle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "CreateNURBSCircle;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -144,45 +93,20 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
+        -image "circle.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem2;
+        menuEditorMenuItem15;
 
     menuItem
-        -label "Simplify Curve" 
+        -label "menuEditorMenuItem16" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
-
-    menuItem
-        -label "menuEditorMenuItem8" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
+        -command "CreateNURBSCircleOptions;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -199,16 +123,15 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuEditorMenuItem16;
 
     menuItem
-        -label "Select Curve" 
+        -label "Add Fluid Emitter" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ToggleCurveSelection" 
+        -command "FluidEmitter" 
         -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
@@ -216,16 +139,143 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "fluidEmitterAdd.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem18;
+
+    menuItem
+        -label "menuEditorMenuItem21" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "FluidEmitterOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem21;
+
+    menuItem
+        -label "Set Fluid Initial State" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetInitialState" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "fluidInitialStateSet.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem22;
+
+    menuItem
+        -label "menuEditorMenuItem23" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetInitialStateOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem23;
+
+    menuItem
+        -label "Assign Field to Selected" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "AffectSelectedObject" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "connectField.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Dynamic Relationships" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "DynamicRelationshipEditor" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "menuIconWindow.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuEditorMenuItem4;
 
 setParent -m ..;
 

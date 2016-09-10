@@ -1,61 +1,10 @@
-int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
-        -label "Non-weighted Tangents" 
+        -label "Pencil" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-    menuItem
-        -label "Weighted Tangents" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "Insert Keyframe" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setKeyframe -insert" 
+        -command "setGreasePencilType 1;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -68,7 +17,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
+        -image "greasePencilPencil.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -77,11 +26,11 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem1;
 
     menuItem
-        -label "Delete Static Channels" 
+        -label "Eraser" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DeleteStaticChannels" 
+        -command "setGreasePencilType 4;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -94,57 +43,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "deleteGeneric.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeleteStaticChannelsOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
-
-    menuItem
-        -label "Set Driven Key" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetDrivenKeyOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
+        -image "greasePencilEraser.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -153,11 +52,89 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem2;
 
     menuItem
-        -label "Simplify Curve" 
+        -label "Remove Frame" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 3 graphEditor1GraphEd;" 
+        -command "removeGreasePencilFrameAtCurrentTime();" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "greasePencilDeleteFrame.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Add Frame" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "createOrEditGreasePencilFrameAtCurrentTime();" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "greasePencilAddFrame.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Pre-Frame Ghost" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "toggleGreasePencilPreFrameCount();" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "greasePencilPreGhostOn.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
+        -label "Post-Frame Ghost" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "toggleGreasePencilPostFrameCount();" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -170,45 +147,21 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "greasePencilPostGhostOn.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuEditorMenuItem6;
 
     menuItem
-        -label "menuEditorMenuItem8" 
+        -label "Marker" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performSimplify 4 graphEditor1GraphEd;" 
+        -command "setGreasePencilType 2;" 
         -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
-
-    menuItem
-        -label "Select Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleCurveSelection" 
-        -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
@@ -220,12 +173,39 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "greasePencilMarker.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem9;
+        menuEditorMenuItem7;
+
+    menuItem
+        -label "Soft Pencil" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setGreasePencilType 3;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "greasePencilSoftPencil.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
 
 setParent -m ..;
 

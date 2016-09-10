@@ -1,0 +1,726 @@
+
+    menuItem
+        -label "Edit" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "editRenderPass.png" 
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
+
+        menuItem
+            -label "Center Pivot" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CenterPivot" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "menuIconModify.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+        menuItem
+            -label "Delete History" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "DeleteHistory" 
+            -keyEquivalent "D" 
+            -altModifier 1
+            -optionModifier 1
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 1
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "clearHistory.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "Freeze Transform" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "FreezeTransformations" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "N" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "UV_Freeze_Tool.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+        menuItem
+            -label "menuEditorMenuItem6" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "FreezeTransformationsOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem6;
+
+        menuItem
+            -label "Input Order" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ListInputOperations" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "S" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "input.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
+
+        menuItem
+            -label "Delete Locked" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "DeleteLockedNode" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "deleteActive.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Create Set" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateSet" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NW" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_objectSet.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+    setParent -m ..;
+
+    menuItem
+        -label "Select" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "highlightSelect.png" 
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+        menuItem
+            -label "Hierarchy" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SelectHierarchy" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "selectByHierarchy.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "All" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SelectAll" 
+            -keyEquivalent "A" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 1
+            -shiftModifier 1
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "N" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "aselect.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "None" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SelectNone" 
+            -keyEquivalent "D" 
+            -altModifier 1
+            -optionModifier 1
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "hotkeyFieldClear.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+        menuItem
+            -label "Inverse" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "InvertSelection" 
+            -keyEquivalent "I" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 1
+            -shiftModifier 1
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "invertSelection.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "By Shader" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SelectObjectMaterial" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NW" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_phongE.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+    setParent -m ..;
+
+    menuItem
+        -label "Sort" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "alignObjects.png" 
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+        menuItem
+            -label "Align" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "setToolTo alignToolCtx" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "alignTool.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Snap" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "setToolTo snapTogetherToolCtx" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "S" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "snapTogetherTool.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Match" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -image "polyAlignUVs.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+            menuItem
+                -label "All Transforms" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchTransform" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "E" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "nodeGrapherModeAllLarge.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Pivots" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchPivots" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "SE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "pickPivotComp.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Translation" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchTranslation" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "move_M.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+            menuItem
+                -label "Rotation" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchRotation" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "N" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "rotate_M.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem4;
+
+            menuItem
+                -label "Scaling" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchScaling" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NW" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "scale_M.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem5;
+
+        setParent -m ..;
+
+    setParent -m ..;
+
+    menuItem
+        -label "Duplicate" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "DuplicateWithTransform" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "da_duplicate.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "menuEditorMenuItem3" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "DuplicateSpecialOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Show" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "showBatchRender.png" 
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+        menuItem
+            -label "Local Axes" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ToggleLocalRotationAxes;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyNormalSetToFace.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
+
+        menuItem
+            -label "XRay Mode" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "dR_objectXrayTGL" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "XRay.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
+
+    setParent -m ..;
+
+setParent -m ..;
+

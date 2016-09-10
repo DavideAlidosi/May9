@@ -1,0 +1,374 @@
+
+    menuItem
+        -label "Grab" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetGrabBrushTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_grab.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "menuEditorMenuItem2" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetGrabBrushToolOption" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Freeze" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetFreezeBrushTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_freeze.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "menuEditorMenuItem4" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetFreezeBrushToolOption" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Length" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetLengthBrushTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_length.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
+        -label "menuEditorMenuItem6" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetLengthBrushToolOption" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Mirror Off" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "xgmPlaceBrushContext -e -bst 0 `currentCtx`;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
+
+    menuItem
+        -label "Mirror Z" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "xgmPlaceBrushContext -e -bst 3 `currentCtx`;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
+
+    menuItem
+        -label "Mirror Y" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "xgmPlaceBrushContext -e -bst 2 `currentCtx`;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
+
+    menuItem
+        -label "Mirror X" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "xgmPlaceBrushContext -e -bst 1 `currentCtx`;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem12;
+
+    menuItem
+        -label "Comb" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetCombBrushTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_comb.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem13;
+
+    menuItem
+        -label "menuEditorMenuItem14" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetCombBrushToolOption" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+    menuItem
+        -label "Mesh Collide" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
+        menuItem
+            -label "On" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "xgmCombBrushContext -e -enableCollision 1 `currentCtx`;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Off" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "xgmCombBrushContext -e -enableCollision 0 `currentCtx`;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+    setParent -m ..;
+
+setParent -m ..;
+
