@@ -389,7 +389,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
+            -radialPosition "W" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -416,7 +416,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "W" 
+            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -429,11 +429,37 @@
             menuEditorMenuItem3;
 
         menuItem
-            -label "Render View" 
+            -label "Rendering Flags" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "RenderViewWindow" 
+            -command "RenderFlagsWindow" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "menuIconRenderSettings.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
+
+        menuItem
+            -label "Shade Attributes" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "AttributeEditor;\nscriptJob -runOnce true -idleEvent \"ShadingGroupAttributeEditor\"" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -446,13 +472,13 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "rvOpenWindow.png" 
+            -image "out_shadingEngine.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem9;
 
         menuItem
             -label "File Path Editor" 
@@ -530,11 +556,11 @@
             menuEditorMenuItem4;
 
         menuItem
-            -label "Rendering Flags" 
+            -label "Playblast" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "RenderFlagsWindow" 
+            -command "PlayblastWindow" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -543,43 +569,40 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "NE" 
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "menuIconRenderSettings.png" 
+            -image "playblast.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem7;
 
         menuItem
-            -label "Shading Group Attributes" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "AttributeEditor;\nscriptJob -runOnce true -idleEvent \"ShadingGroupAttributeEditor\"" 
+            -command "PlayblastOptions" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
             -ctrlModifier 0
             -shiftModifier 0
-            -optionBox 0
+            -optionBox 1
             -enable 1
             -data 0
-            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_shadingEngine.png" 
+            -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem9;
+            menuEditorMenuItem11;
 
     setParent -m ..;
 
@@ -1001,12 +1024,13 @@
             -image "kinHandle.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem17;
 
         menuItem
+            -label "menuEditorMenuItem18" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -1024,7 +1048,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem18;
@@ -1050,12 +1074,13 @@
             -image "kinSplineHandle.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem19;
 
         menuItem
+            -label "menuEditorMenuItem20" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -1073,7 +1098,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem20;
@@ -2490,7 +2515,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
+            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2540,7 +2565,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "E" 
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2666,7 +2691,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "S" 
+            -radialPosition "NE" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2753,56 +2778,6 @@
             menuEditorMenuItem12;
 
         menuItem
-            -label "Playblast" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PlayblastWindow" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "playblast.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "menuEditorMenuItem16" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PlayblastOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
             -label "Evaluation Toolkit" 
             -divider 0
             -subMenu 0
@@ -2876,6 +2851,32 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
+
+        menuItem
+            -label "Define Driven Key" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "generateSetDrivenCommand;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_setDriven.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem14;
 
     setParent -m ..;
 
