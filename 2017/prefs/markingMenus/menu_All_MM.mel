@@ -1,3 +1,8 @@
+	
+	if( !`optionVar -exists NParticleStyle` )
+		optionVar -stringValue NParticleStyle "Points";
+
+	string $style = `optionVar -query NParticleStyle`;
 
     menuItem
         -label "Polygons" 
@@ -2088,6 +2093,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Points\";" 
+				-radioButton ($style == "Points")
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -2112,6 +2118,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Balls\";" 
+				-radioButton ($style == "Balls")
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -2136,6 +2143,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
+				-radioButton ($style == "Cloud")
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -2160,6 +2168,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
+				-radioButton ($style == "ThickCloud")
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -2184,6 +2193,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Water\";" 
+				-radioButton ($style == "Water")
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -2857,7 +2867,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "generateSetDrivenCommand;" 
+            -command "CereateSetDriven" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
