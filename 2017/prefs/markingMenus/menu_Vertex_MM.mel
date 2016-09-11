@@ -1083,6 +1083,7 @@
 
         menuItem
             -label "Particle Style" 
+			-image "out_particle.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1108,6 +1109,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Points\";" 
+				-image "nPartPoints.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1132,6 +1134,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Balls\";" 
+				-image "nPartBalls.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1156,6 +1159,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
+				-image "nPartCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1180,6 +1184,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
+				-image "nPartThickCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1204,6 +1209,7 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Water\";" 
+				-image "nPartWater.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1225,7 +1231,8 @@
         setParent -m ..;
 
         menuItem
-            -label "Fields" 
+            -label "Add Fields" 
+			-image "posRadial.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
