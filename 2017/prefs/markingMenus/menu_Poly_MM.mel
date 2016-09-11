@@ -678,7 +678,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem9;
 
     menuItem
         -label "separator" 
@@ -1546,7 +1546,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem15;
+            menuEditorMenuItem2;
 
         menuItem
             -label "Delta Mush" 
@@ -1594,7 +1594,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem17;
+            menuEditorMenuItem3;
 
         menuItem
             -label "Membrane" 
@@ -1667,7 +1667,30 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem19;
+            menuEditorMenuItem6;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
 
         menuItem
             -label "Texture" 
@@ -1716,7 +1739,56 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem20;
+            menuEditorMenuItem8;
+
+        menuItem
+            -label "Paint Texture" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "artAttrToolScript 4 \"textureDeformer\"" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "paintTextureDeformer.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem17;
+
+        menuItem
+            -label "menuEditorMenuItem29" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "artAttrToolScript 3 \"textureDeformer\"" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
 
         menuItem
             -label "separator" 
@@ -1786,7 +1858,7 @@
             -image "cMuscle_skin_paint.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem24;
@@ -1886,7 +1958,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem23;
+            menuEditorMenuItem19;
 
     setParent -m ..;
 
@@ -2373,7 +2445,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem1;
 
         menuItem
             -label "Set Harden Edge" 
@@ -2513,7 +2585,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "da_show.png" 
+            -image "RS_visible.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -2933,7 +3005,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem31;
 
         menuItem
             -label "Create Passive Collider" 
@@ -2982,7 +3054,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem33;
 
         menuItem
             -label "Set Initial State" 
@@ -3079,7 +3151,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem35;
 
         menuItem
             -label "Fill Object With Particle" 
@@ -3128,7 +3200,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem9;
+            menuEditorMenuItem36;
 
         menuItem
             -label "Particle Instancer" 
@@ -3177,11 +3249,10 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem13;
+            menuEditorMenuItem37;
 
         menuItem
             -label "Particle Style" 
-			-image "out_particle.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -3195,6 +3266,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "out_particle.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -3207,7 +3279,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Points\";" 
-				-image "nPartPoints.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -3219,6 +3290,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3232,7 +3304,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Balls\";" 
-				-image "nPartBalls.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -3244,6 +3315,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3257,7 +3329,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
-				-image "nPartCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -3269,6 +3340,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3282,7 +3354,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
-				-image "nPartThickCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -3294,6 +3365,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3307,7 +3379,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Water\";" 
-				-image "nPartWater.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -3319,6 +3390,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3398,7 +3470,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem17;
+            menuEditorMenuItem38;
 
         menuItem
             -label "separator" 
@@ -3470,7 +3542,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem21;
+            menuEditorMenuItem39;
 
         menuItem
             -label "Create Passive Rigid Body" 
@@ -3519,11 +3591,10 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem24;
+            menuEditorMenuItem40;
 
         menuItem
             -label "Add Fields" 
-			-image "posRadial.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -3537,6 +3608,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "posRadial.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -3808,6 +3880,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "constraint.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -3934,6 +4007,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "fluidInitialStateSet.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -4011,7 +4085,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem25;
+            menuEditorMenuItem41;
 
         menuItem
             -label "Make Fluid Collide" 
@@ -4060,7 +4134,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem26;
+            menuEditorMenuItem42;
 
         menuItem
             -label "separator" 

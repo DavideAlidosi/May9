@@ -18,7 +18,7 @@ global proc da_intPlay()
                 $ctrlUI_controlName = $ctrlUI;
                 
                 deleteUI $ctrlUI;
-                $stepBtn = `symbolButton -p $layout -image "intPlay.png" -c $command -ann "Interactive Playback. Pressing the ESC key will stop playback." stepBtn`;
+                $stepBtn = `symbolButton -p $layout -image "interactivePlayback.png" -c $command -ann "Interactive Playback. Pressing the ESC key will stop playback." stepBtn`;
             }
     }
     
