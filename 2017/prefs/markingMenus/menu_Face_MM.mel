@@ -301,7 +301,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem2;
 
     menuItem
         -label "Extract" 
@@ -350,7 +350,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem14;
+        menuEditorMenuItem3;
 
     menuItem
         -label "Duplicate" 
@@ -399,7 +399,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem20;
+        menuEditorMenuItem14;
 
     menuItem
         -label "separator" 
@@ -812,7 +812,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem10;
+            menuEditorMenuItem2;
 
         menuItem
             -label "Lattice" 
@@ -861,56 +861,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Texture Deformer" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateTextureDeformer;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "textureDeformer.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem10" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateTextureDeformerOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem4;
 
     setParent -m ..;
 
@@ -1500,7 +1451,6 @@
 
         menuItem
             -label "Particle Style" 
-			-image "out_particle.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1514,6 +1464,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "out_particle.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -1526,7 +1477,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Points\";" 
-				-image "nPartPoints.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1539,6 +1489,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1552,7 +1503,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Balls\";" 
-				-image "nPartBalls.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1564,6 +1514,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1577,7 +1528,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
-				-image "nPartCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1589,6 +1539,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1602,7 +1553,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
-				-image "nPartThickCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1614,6 +1564,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1627,7 +1578,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Water\";" 
-				-image "nPartWater.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1639,6 +1589,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1650,7 +1601,6 @@
 
         menuItem
             -label "Add Fields" 
-			-image "posRadial.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1664,6 +1614,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "posRadial.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 

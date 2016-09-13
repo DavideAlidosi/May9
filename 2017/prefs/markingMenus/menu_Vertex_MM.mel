@@ -378,54 +378,6 @@
         menuEditorMenuItem26;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem32;
-
-    menuItem
-        -label "Display Vertices IDs" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleVertIDs" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "reorderIDs.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem27;
-
-    menuItem
         -label "Transfer Vertex Order" 
         -divider 0
         -subMenu 0
@@ -860,7 +812,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem10;
+            menuEditorMenuItem3;
 
         menuItem
             -label "Lattice" 
@@ -909,56 +861,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Texture Deformer" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateTextureDeformer;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "textureDeformer.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "menuEditorMenuItem9" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateTextureDeformerOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem5;
 
     setParent -m ..;
 
@@ -1083,7 +986,6 @@
 
         menuItem
             -label "Particle Style" 
-			-image "out_particle.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1097,6 +999,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "out_particle.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -1109,7 +1012,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Points\";" 
-				-image "nPartPoints.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1121,6 +1023,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1134,7 +1037,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Balls\";" 
-				-image "nPartBalls.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1146,6 +1048,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1159,7 +1062,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
-				-image "nPartCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1171,6 +1073,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1184,7 +1087,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
-				-image "nPartThickCloud.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1196,6 +1098,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1209,7 +1112,6 @@
                 -subMenu 0
                 -tearOff 0
                 -command "optionVar -stringValue NParticleStyle \"Water\";" 
-				-image "nPartWater.png"
                 -altModifier 0
                 -optionModifier 0
                 -commandModifier 0
@@ -1221,6 +1123,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1232,7 +1135,6 @@
 
         menuItem
             -label "Add Fields" 
-			-image "posRadial.png" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1246,6 +1148,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "posRadial.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 

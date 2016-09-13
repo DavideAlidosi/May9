@@ -1,4 +1,4 @@
-May9 pro 1.0.6 for Autodesk Maya 2017
+May9 pro 1.0.7 for Autodesk Maya 2017
 
 Installation Instruction:
 
