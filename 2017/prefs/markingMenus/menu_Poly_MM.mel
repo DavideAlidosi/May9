@@ -776,6 +776,29 @@
             menuEditorMenuItem4;
 
         menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
+
+        menuItem
             -label "Vertices IDs" 
             -divider 0
             -subMenu 0
@@ -799,6 +822,56 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
+
+        menuItem
+            -label "Face Triangles" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "TogglePolygonFaceTriangles       polyOptions -r -dt 1" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyTriangulate.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem11;
+
+        menuItem
+            -label "Face Centers" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "TogglePolygonFaceCenters" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyConvertToContainedFaces.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
 
         menuItem
             -label "separator" 
@@ -893,7 +966,7 @@
             -image "borderEdge.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
