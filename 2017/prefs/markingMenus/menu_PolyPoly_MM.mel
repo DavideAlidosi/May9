@@ -754,7 +754,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem19;
 
     menuItem
         -label "Voxelize Mesh" 
@@ -827,31 +827,6 @@
         menuEditorMenuItem14;
 
         menuItem
-            -label "Face Normals" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ToggleFaceNormalDisplay" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polyNormalsConform.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
             -label "Vertex Normals" 
             -divider 0
             -subMenu 0
@@ -877,55 +852,7 @@
             menuEditorMenuItem2;
 
         menuItem
-            -label "Normals Size" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ChangeNormalSize" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "resizeWindow.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Vertices IDs" 
+            -label "Vertex IDs" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -950,6 +877,54 @@
             menuEditorMenuItem4;
 
         menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
+
+        menuItem
+            -label "Face Normals" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ToggleFaceNormalDisplay" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyNormalsConform.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
             -label "Face Triangles" 
             -divider 0
             -subMenu 0
@@ -969,7 +944,7 @@
             -image "polyTriangulate.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
@@ -1096,6 +1071,54 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem8;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
+            -label "Normals Size" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ChangeNormalSize" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "resizeWindow.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
 
     setParent -m ..;
 
