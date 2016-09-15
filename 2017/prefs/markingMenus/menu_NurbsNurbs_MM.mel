@@ -571,7 +571,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem7;
+        menuEditorMenuItem19;
 
     menuItem
         -label "Convert to Legacy Subdiv" 
@@ -620,7 +620,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem12;
+        menuEditorMenuItem24;
 
     menuItem
         -label "separator" 
@@ -665,12 +665,13 @@
         -image "cluster.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem17;
 
     menuItem
+        -label "menuEditorMenuItem18" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -688,10 +689,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem18;
+        menuEditorMenuItem30;
 
     menuItem
         -label "Lattice" 
@@ -740,7 +741,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem13;
+        menuEditorMenuItem32;
 
     menuItem
         -label "separator" 
@@ -812,11 +813,10 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem15;
+        menuEditorMenuItem33;
 
     menuItem
         -label "Particle Style" 
-		-image "out_particle.png" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -830,6 +830,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+        -image "out_particle.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
@@ -842,7 +843,6 @@
             -subMenu 0
             -tearOff 0
             -command "optionVar -stringValue NParticleStyle \"Points\";" 
-			-image "nPartPoints.png"
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -855,6 +855,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartPoints.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -868,7 +869,6 @@
             -subMenu 0
             -tearOff 0
             -command "optionVar -stringValue NParticleStyle \"Balls\";" 
-			-image "nPartBalls.png"
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -880,6 +880,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartBalls.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -893,7 +894,6 @@
             -subMenu 0
             -tearOff 0
             -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
-			-image "nPartCloud.png"
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -905,6 +905,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartCloud.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -918,7 +919,6 @@
             -subMenu 0
             -tearOff 0
             -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
-			-image "nPartThickCloud.png"
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -930,6 +930,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartThickCloud.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -943,7 +944,6 @@
             -subMenu 0
             -tearOff 0
             -command "optionVar -stringValue NParticleStyle \"Water\";" 
-			-image "nPartWater.png"
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -955,6 +955,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartWater.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -963,6 +964,54 @@
             menuEditorMenuItem5;
 
     setParent -m ..;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem34;
+
+    menuItem
+        -label "Convert to Muscle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "cMuscle_makeMuscle(0); " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "cMuscle_muscle_convertToMuscle.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem35;
 
 setParent -m ..;
 
