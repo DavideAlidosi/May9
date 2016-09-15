@@ -113,3 +113,4 @@ Pavel Korolyov, for Simple Connector
 Thibault Houdon, for Helios
 Jefri Haryono, for Rain Curves From Edges
 David Johnson, for djRivet
+Charlie Wales, for Offset Keyframes

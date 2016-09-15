@@ -68,7 +68,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
+        -image "keyIntoclip.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -153,7 +153,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem2;
 
     menuItem
-        -label "Simplify Curve" 
+        -label "Simplify Curves" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -170,6 +170,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "da_simplifyCurve.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -222,10 +223,36 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -enableCommandRepeat 1
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
+
+    menuItem
+        -label "Offset Keys" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "craOffsetKeys" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_animCurveTA.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
 
 setParent -m ..;
 
