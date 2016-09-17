@@ -271,6 +271,7 @@ all_commands = {
 	"TX Manager":"mc.TxManager()",
 	"SkyDome Light":"mc.aiSkyDome()",
 	"River Constraint":"mel.eval('djRivet')",
+	"Offset Keys":"mel.eval('craOffsetKeys')",
 	
 
 }
