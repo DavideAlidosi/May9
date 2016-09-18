@@ -116,7 +116,6 @@ all_commands = {
     "Component Editor":"mc.ComponentEditor()",
     "Attribute SpreadSheet":"mc.SpreadSheetEditor()",
     "Connection Editor":"mc.ConnectionEditor()",
-    "Visor":"mc.VisorWindow()",
     "Asset Editor":"mc.AssetEditor()",
     "Namespace Editor":"mc.NamespaceEditor()",
     "File Path Editor":"mc.FilePathEditor()",
