@@ -1,4 +1,4 @@
-May9 pro 1.0.7 for Autodesk Maya 2017
+May9 pro 1.0.8 for Autodesk Maya 2017
 
 Installation Instruction:
 
@@ -60,6 +60,7 @@ ALT + I = Raise Modeling Toolkit
 ALT + O = Outliner
 ALT + L = Color Picker
 ALT + G = Toggle grid
+ALT + U = Toggle Wireframe on Shaded
 ALT + K = Toggle Color Management
 ALT + Enter = Toggle perspective to orthographic camera
 SHIFT + ALT + P = Center Pivot
@@ -109,9 +110,9 @@ github.com/DavideAlidosi/May9
 
 A special tanks to:
 
-Andrey Menshikov, for the hard work on our amazing MMtoKey
-Pavel Korolyov, for Simple Connector
-Thibault Houdon, for Helios
-Jefri Haryono, for Rain Curves From Edges
-David Johnson, for djRivet
-Charlie Wales, for Offset Keyframes
+Andrey Menshikov for the hard work on our amazing MMtoKey
+Pavel Korolyov for Simple Connector
+Thibault Houdon for Helios
+Jefri Haryono for Rain Curves From Edges
+David Johnson for djRivet
+Carlos Rico Adega for Offset Keyframes

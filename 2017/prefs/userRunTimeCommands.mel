@@ -203,6 +203,14 @@ runTimeCommand
 	ToggleXRayJointsSkin;
 
 runTimeCommand
+	-annotation "Toggle Wireframe on Saded"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $selectedPanel = `getPanel -wf`;\nint $shadedWireState = `modelEditor -q -wos $selectedPanel`;\nif(`modelEditor -ex $selectedPanel`)\n{\n    setWireframeOnShadedOption (!$shadedWireState) $selectedPanel;\n}")
+	ToggleWireOnShade;
+
+runTimeCommand
 	-annotation "Expand Shade Network"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
