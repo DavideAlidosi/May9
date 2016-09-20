@@ -211,6 +211,14 @@ runTimeCommand
 	ToggleWireOnShade;
 
 runTimeCommand
+	-annotation "Toggle DAG Node in Outliner"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -showDagOnly false outlinerPanel1;\nelse\n\toutlinerEditor -edit -showDagOnly true outlinerPanel1;")
+	ToggleDagNode;
+
+runTimeCommand
 	-annotation "Expand Shade Network"
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
@@ -257,6 +265,22 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\n}\ninViewMessage -pos topCenter -msg \"Adaptive OpenSubdiv disable on selectet object(s)\" -fade;")
 	OpenSubdNoAdapt;
+
+runTimeCommand
+	-annotation "Enable Open Subdiv Display Subdivision"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 1;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions enable on selectet object(s)\" -fade;")
+	OpenSubdSudivision;
+
+runTimeCommand
+	-annotation "Disable Open Subdiv Display Subdivision"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions disable on selectet object(s)\" -fade;")
+	OpenSubdNoSubdivision;
 
 runTimeCommand
 	-annotation "Enable OpenCL on OpenSubd"
