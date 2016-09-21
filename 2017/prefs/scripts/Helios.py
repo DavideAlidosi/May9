@@ -34,15 +34,15 @@ class HeliosGUI(QWidget):
 
         self.cur_path = os.path.dirname(os.path.realpath(__file__)).replace("\\", "/")
         
-        if not os.path.isfile(self.cur_path + "/commands/_commands_use_frequency.pkl"):
-            open(self.cur_path + "/commands/_commands_use_frequency.pkl", "a")
+        if not os.path.isfile(self.cur_path + "/Helios/commands/_commands_use_frequency.pkl"):
+            open(self.cur_path + "/Helios/commands/_commands_use_frequency.pkl", "a")
 
-        if not os.path.isfile(self.cur_path + "/commands/_last_used_command.ini"):
-            open(self.cur_path + "/commands/_last_used_command.ini", "a")
+        if not os.path.isfile(self.cur_path + "/Helios/commands/_last_used_command.ini"):
+            open(self.cur_path + "/Helios/commands/_last_used_command.ini", "a")
 
         # Get list of commands frequency       
         self.commands_use_frequency = {}
-        commands_frequency_file = open(self.cur_path + "/commands/_commands_use_frequency.pkl", 'rb')
+        commands_frequency_file = open(self.cur_path + "/Helios/commands/_commands_use_frequency.pkl", 'rb')
         try:
             self.commands_use_frequency = pickle.load(commands_frequency_file)
         except:
@@ -51,14 +51,14 @@ class HeliosGUI(QWidget):
         commands_frequency_file.close()
 
         # Get name of last used command
-        last_command_file = open(self.cur_path + "/commands/_last_used_command.ini", "r")
+        last_command_file = open(self.cur_path + "/Helios/commands/_last_used_command.ini", "r")
         self.last_command = last_command_file.read()
         last_command_file.close()
 
         self.time_total = []
 
         # Get list of all commands
-        self.Helios_Commands_init = glob("{0}/commands/*".format(self.cur_path))
+        self.Helios_Commands_init = glob("{0}/Helios/commands/*".format(self.cur_path))
         self.Helios_Commands_init = [os.path.split(command)[-1].replace(".py", "") for command in self.Helios_Commands_init if not "ini" in command and not "pkl" in command]
         self.Helios_Commands = []
         self.Helios_Commands_init = [command.replace("-advanced", "") for command in self.Helios_Commands_init]
@@ -69,7 +69,7 @@ class HeliosGUI(QWidget):
 
         self.navigation_dir = "down"
         self.scroll_counter = 4
-        with open(self.cur_path + "/misc/style.css", "r") as fh:
+        with open(self.cur_path + "/Helios/style/style.css", "r") as fh:
             if maya_version == 2016:
                 self.setStyleSheet('\nQWidget\n{\n\tbackground-color: rgba(50, 50, 50, 1);\n}' + fh.read())
             elif maya_version == 2017:
@@ -415,14 +415,14 @@ class customFrame(QFrame):
         if "?" in self.gui.searchLineEdit.text():
             self.gui.close()
             if modifiers == Qt.ControlModifier:
-                if os.path.isfile('{0}/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name)):
-                    subprocess.call(['notepad.exe', '{0}/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name)])
+                if os.path.isfile('{0}/Helios/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name)):
+                    subprocess.call(['notepad.exe', '{0}/Helios/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name)])
                 else:
                     mc.inViewMessage(message="Script {0}-advanced.py doesn't exist".format(self.frame_name), pos='topCenter', fade=True, fadeStayTime=1500, fadeInTime=250, fadeOutTime=250)
         
             else:
-                if os.path.isfile('{0}/commands/{1}.py'.format(self.gui.cur_path, self.frame_name)):
-                    subprocess.call(['notepad.exe', '{0}/commands/{1}.py'.format(self.gui.cur_path, self.frame_name)])
+                if os.path.isfile('{0}/Helios/commands/{1}.py'.format(self.gui.cur_path, self.frame_name)):
+                    subprocess.call(['notepad.exe', '{0}/Helios/commands/{1}.py'.format(self.gui.cur_path, self.frame_name)])
                 else:
                     mc.inViewMessage(message="Script {0}.py doesn't exist".format(self.frame_name), pos='topCenter', fade=True, fadeStayTime=1500, fadeInTime=250, fadeOutTime=250)
         
@@ -431,10 +431,10 @@ class customFrame(QFrame):
 
             if modifiers == Qt.ControlModifier:
                 try:
-                    exec(compile(open('{0}/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name)).read(), '{0}/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name), 'exec'))
+                    exec(compile(open('{0}/Helios/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name)).read(), '{0}/Helios/commands/{1}-advanced.py'.format(self.gui.cur_path, self.frame_name), 'exec'))
                 except Exception, e:
                     try:
-                        errorLog = open(self.gui.cur_path + "/commands/errorLog.txt", "w")
+                        errorLog = open(self.gui.cur_path + "/Helios/commands/errorLog.txt", "w")
                         errorLog.write(str(e))
                     except:
                         pass
@@ -442,17 +442,17 @@ class customFrame(QFrame):
                     mc.inViewMessage(message="Errors occured while executing '{0}'".format(self.frame_name), pos='topCenter', fade=True, fadeStayTime=750, fadeInTime=250, fadeOutTime=250)
             else:
                 try:
-                    exec(compile(open('{0}/commands/{1}.py'.format(self.gui.cur_path, self.frame_name)).read(), '{0}/commands/{1}.py'.format(self.gui.cur_path, self.frame_name), 'exec'))
+                    exec(compile(open('{0}/Helios/commands/{1}.py'.format(self.gui.cur_path, self.frame_name)).read(), '{0}/Helios/commands/{1}.py'.format(self.gui.cur_path, self.frame_name), 'exec'))
                 except Exception, e:
                     try:
-                        errorLog = open(self.gui.cur_path + "/commands/errorLog.txt", "w")
+                        errorLog = open(self.gui.cur_path + "/Helios/commands/errorLog.txt", "w")
                         errorLog.write(str(e))
                     except:
                         pass
                     print(str(e))
                     mc.inViewMessage(message="Errors occured while executing '{0}'".format(self.frame_name), pos='topCenter', fade=True, fadeStayTime=750, fadeInTime=250, fadeOutTime=250)
             
-            last_command_file = open(self.gui.cur_path + "/commands/_last_used_command.ini", "w")
+            last_command_file = open(self.gui.cur_path + "/Helios/commands/_last_used_command.ini", "w")
             last_command_file.write(self.frame_name)
             last_command_file.close()
 
@@ -461,7 +461,7 @@ class customFrame(QFrame):
             except:
                 self.gui.commands_use_frequency[self.frame_name] = 1
 
-            afile = open(self.gui.cur_path + "/commands/_commands_use_frequency.pkl", 'wb')
+            afile = open(self.gui.cur_path + "/Helios/commands/_commands_use_frequency.pkl", 'wb')
             pickle.dump(self.gui.commands_use_frequency, afile)
             afile.close()
 
