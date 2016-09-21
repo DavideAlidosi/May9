@@ -653,7 +653,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem11;
+        menuEditorMenuItem1;
 
     menuItem
         -label "separator" 
@@ -1176,7 +1176,7 @@
             -allowOptionBoxes 1
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -1200,7 +1200,7 @@
                 -enableCommandRepeat 1
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
@@ -1224,7 +1224,7 @@
                 -enableCommandRepeat 1
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem2;
@@ -3296,7 +3296,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem31;
+            menuEditorMenuItem5;
 
         menuItem
             -label "Create Passive Collider" 
@@ -3345,55 +3345,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem33;
-
-        menuItem
-            -label "Set Initial State" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setNClothStartState;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "hairStartFromCurrent.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem7;
 
         menuItem
             -label "Emit Particle" 
@@ -3442,7 +3394,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem35;
+            menuEditorMenuItem8;
 
         menuItem
             -label "Fill Object With Particle" 
@@ -3491,7 +3443,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem36;
+            menuEditorMenuItem9;
 
         menuItem
             -label "Particle Instancer" 
@@ -3540,7 +3492,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem37;
+            menuEditorMenuItem13;
 
         menuItem
             -label "Particle Style" 
@@ -3692,29 +3644,6 @@
         setParent -m ..;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
             -label "Create Hair" 
             -divider 0
             -subMenu 0
@@ -3761,7 +3690,32 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem38;
+            menuEditorMenuItem17;
+
+        menuItem
+            -label "Set Initial State" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "setNClothStartState;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "hairStartFromCurrent.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
 
         menuItem
             -label "separator" 
@@ -3833,7 +3787,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem39;
+            menuEditorMenuItem21;
 
         menuItem
             -label "Create Passive Rigid Body" 
@@ -3882,7 +3836,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem40;
+            menuEditorMenuItem24;
 
         menuItem
             -label "Add Fields" 
@@ -4376,7 +4330,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem41;
+            menuEditorMenuItem25;
 
         menuItem
             -label "Make Fluid Collide" 
@@ -4425,7 +4379,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem42;
+            menuEditorMenuItem26;
 
         menuItem
             -label "separator" 

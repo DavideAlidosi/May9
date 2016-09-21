@@ -215,8 +215,24 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -showDagOnly false outlinerPanel1;\nelse\n\toutlinerEditor -edit -showDagOnly true outlinerPanel1;")
+	-command ("int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -dag false outlinerPanel1;\nelse\n\toutlinerEditor -edit -dag true outlinerPanel1;")
 	ToggleDagNode;
+
+runTimeCommand
+	-annotation "Toggle Material Node in Outliner"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $MaterialCheck = `outlinerEditor -q -sam outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -sam false outlinerPanel1;\nelse\n\toutlinerEditor -edit -sam true outlinerPanel1;")
+	ToggleMaterial;
+
+runTimeCommand
+	-annotation "Toggle Shapes Node in Outliner"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $MaterialCheck = `outlinerEditor -q -shp outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -shp false outlinerPanel1;\nelse\n\toutlinerEditor -edit -shp true outlinerPanel1;")
+	ToggleShapes;
 
 runTimeCommand
 	-annotation "Expand Shade Network"

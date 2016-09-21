@@ -1,4 +1,6 @@
 	int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;
+	int $ShapesCheck = `outlinerEditor -q -shp outlinerPanel1`;
+	int $MaterialCheck = `outlinerEditor -q -sam outlinerPanel1`;
 
     menuItem
         -label "Duplicate" 
@@ -178,6 +180,56 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
+		
+	menuItem
+        -label "Shapes" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+		-command "ToggleShapes" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+		-checkBox (1 == $ShapesCheck)
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+		
+	menuItem
+        -label "Materials" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+		-command "ToggleMaterial" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+		-checkBox (1 == $MaterialCheck)
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
 
 setParent -m ..;
 

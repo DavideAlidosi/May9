@@ -857,154 +857,6 @@
             menuEditorMenuItem11;
 
         menuItem
-            -label "Simple Connector" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "openSimpleConnector" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_geoConnectable.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Connection Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ConnectionEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_list.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "Add Attribute" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AddAttribute;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "publishAttributes.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Edit Attribute" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RenameAttribute" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "setEdEditMode.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
-            -label "Delete Attribute" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "DeleteAttribute" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "unpublishAttributes.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
             -label "IK Handle" 
             -divider 0
             -subMenu 0
@@ -1103,6 +955,203 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem20;
+
+        menuItem
+            -label "Simple Connector" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "openSimpleConnector" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_geoConnectable.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
+            -label "Connection Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ConnectionEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_list.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
+
+        menuItem
+            -label "Attributes" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -image "attributes.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem22;
+
+            menuItem
+                -label "Add" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "AddAttribute;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "publishAttributes.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Edit" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "RenameAttribute" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "setEdEditMode.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Delete" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "DeleteAttribute" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "unpublishAttributes.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+        setParent -m ..;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem23;
+
+        menuItem
+            -label "Quick Rig" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "QuickRigEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "QR_QuickRigTool.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem21;
 
     setParent -m ..;
 
@@ -2883,11 +2932,11 @@
             menuEditorMenuItem14;
 
         menuItem
-            -label "Evaluation Toolkit" 
+            -label "Bake Animation" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "EvaluationToolkit" 
+            -command "BakeSimulation" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2899,13 +2948,37 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "reverseOrder.png" 
+            -image "bakeAnimation.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem15;
+            menuEditorMenuItem17;
+
+        menuItem
+            -label "menuEditorMenuItem18" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "BakeSimulationOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem20;
 
         menuItem
             -label "Set Driven Key" 
@@ -2956,6 +3029,54 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem16;
+
+        menuItem
+            -label "Evaluation Toolkit" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "EvaluationToolkit" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "reverseOrder.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
 
     setParent -m ..;
 
@@ -3909,7 +4030,7 @@
             menuEditorMenuItem3;
 
             menuItem
-                -label "nCache Create" 
+                -label "Create nCache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -3955,10 +4076,10 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem2;
+                menuEditorMenuItem27;
 
             menuItem
-                -label "nCache Delete" 
+                -label "Delete nCache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4006,7 +4127,7 @@
                 menuEditorMenuItem4;
 
             menuItem
-                -label "Fluid Create" 
+                -label "Create Fluid Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4052,10 +4173,10 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem6;
+                menuEditorMenuItem28;
 
             menuItem
-                -label "Fluid Delete" 
+                -label "Delete Fluid Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4101,7 +4222,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem8;
+                menuEditorMenuItem29;
 
             menuItem
                 -label "separator" 
@@ -4127,7 +4248,7 @@
                 menuEditorMenuItem9;
 
             menuItem
-                -label "Geometry Create" 
+                -label "Create Geometry Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4173,10 +4294,10 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem11;
+                menuEditorMenuItem30;
 
             menuItem
-                -label "Geometry Delete" 
+                -label "Delete Geometry Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4222,7 +4343,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem13;
+                menuEditorMenuItem31;
 
             menuItem
                 -label "separator" 
@@ -4248,7 +4369,7 @@
                 menuEditorMenuItem14;
 
             menuItem
-                -label "Muscle Create" 
+                -label "Create Muscle Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4273,7 +4394,7 @@
                 menuEditorMenuItem15;
 
             menuItem
-                -label "Muscle Delete" 
+                -label "Delete Muscle Node Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4321,32 +4442,7 @@
                 menuEditorMenuItem17;
 
             menuItem
-                -label "GPU Cache Import" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doGpuCacheImportArgList 1 {\"0\",\"0\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilImport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem18;
-
-            menuItem
-                -label "GPU Cache Export Selection" 
+                -label "Export Selection to GPU Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -4392,7 +4488,32 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem20;
+                menuEditorMenuItem32;
+
+            menuItem
+                -label "Import GPU Cache" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doGpuCacheImportArgList 1 {\"0\",\"0\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilImport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem18;
 
             menuItem
                 -label "Refresh GPU Cache" 
@@ -4443,55 +4564,6 @@
                 menuEditorMenuItem22;
 
             menuItem
-                -label "Alembic Import" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilImport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem23;
-
-            menuItem
-                -label "menuEditorMenuItem24" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "AlembicImportOptions" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem24;
-
-            menuItem
                 -label "Export Selection to Alembic" 
                 -divider 0
                 -subMenu 0
@@ -4538,7 +4610,56 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem26;
+                menuEditorMenuItem34;
+
+            menuItem
+                -label "Import Alembic" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilImport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem23;
+
+            menuItem
+                -label "menuEditorMenuItem24" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "AlembicImportOptions" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem35;
 
         setParent -m ..;
 
