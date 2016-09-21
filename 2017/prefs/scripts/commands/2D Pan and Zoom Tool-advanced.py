@@ -1,0 +1,2 @@
+mc.PanZoomTool()
+mc.ToolSettingsWindow()

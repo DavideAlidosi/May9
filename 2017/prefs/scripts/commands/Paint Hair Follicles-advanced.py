@@ -1,0 +1,1 @@
+mel.eval('paintHairTool 1;')

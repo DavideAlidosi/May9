@@ -8,4 +8,5 @@ import boss.BossEditor as be
 import MMtoKey
 
 #Preload Helios
-from Helios import Helios
+import sys
+import Helios

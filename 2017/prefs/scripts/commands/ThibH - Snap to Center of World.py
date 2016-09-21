@@ -1,0 +1,1 @@
+mel.eval('global proc rmCenterObjects(int $ft){string $sel[] = `ls -sl`;string $obj;for ($obj in $sel){move -rpr 0 0 0 $obj;if ($ft == 1){select -r $obj ;FreezeTransformations;makeIdentity -apply true -t 1 -r 1 -s 1 -n 0;}}select -r $sel;}rmCenterObjects(0);')

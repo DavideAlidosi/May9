@@ -1,0 +1,2 @@
+mc.GreasePencilTool()
+mc.createGreasePencilWindow()

@@ -1,0 +1,1 @@
+mel.eval('polyMirrorFace -ws 1  -direction 5 -mergeMode 1 -ch 1;')

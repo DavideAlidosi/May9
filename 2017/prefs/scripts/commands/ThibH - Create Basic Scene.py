@@ -1,0 +1,8 @@
+mc.polyPlane(w=24, h=24, sx=1, sy=1, ch=1)
+mc.polyCube(w=3, h=3, d=3)
+mc.move(0, 1.5, 0)
+mc.CreateAreaLight()
+mc.move(12, 12, 12)
+mc.scale(5, 5, 5)
+mc.rotate(-30, 45, 0)
+mc.select(cl=True)

@@ -1,0 +1,7 @@
+cube = mc.polyCube()
+mc.scale(10, 10, 10)
+mc.polyBevel(fraction=0.05, offsetAsFraction=1, autoFit=1, segments=3, worldSpace=1, fillNgons=1, ch=1)
+mc.polySoftEdge(a=180, ch=1)
+mc.setAttr(cube[0] + ".translateY", 5)
+mc.select(cl=True)
+mc.select(cube)

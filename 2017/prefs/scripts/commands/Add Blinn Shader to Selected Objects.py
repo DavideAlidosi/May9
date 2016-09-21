@@ -1,0 +1,5 @@
+sel = mc.ls(sl=True)
+shader = mel.eval('createRenderNodeCB -asShader "surfaceShader" blinn "";')
+mc.select(sel)
+mel.eval('sets -e -forceElement ' + shader + 'SG;')
+mc.select(shader)
