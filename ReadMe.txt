@@ -74,6 +74,11 @@ SHIFT + LEFT = Persp View
 8 = Start IPR
 K + Drag = Smooth playback mode
 
+OS X only:
+
+- CMD + Space = Full screen toggle
+- CMD + Enter = Helios, textual line commander
+
 
 Changed hotkeys:
 
