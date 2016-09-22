@@ -1,4 +1,6 @@
-
+	int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
+	int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
+	
     menuItem
         -label "Polygons" 
         -divider 0
@@ -299,6 +301,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
+
+        menuItem
+            -label "Interactive Creation" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "toggleCreatePolyPrimitiveAsTool" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+			-checkBox (1 == $PolyIntCheck)
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
 
     setParent -m ..;
 
@@ -1479,6 +1506,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem12;
+
+        menuItem
+            -label "Interactive Creation" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "toggleCreateNurbsPrimitiveAsTool;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+			-checkBox (1 == $NurbsIntCheck)
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
 
     setParent -m ..;
 
