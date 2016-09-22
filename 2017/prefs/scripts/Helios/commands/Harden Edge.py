@@ -1,1 +1,0 @@
-mel.eval('polySoftEdge -a 0 -ch 1;')

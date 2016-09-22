@@ -1,1 +1,0 @@
-mc.mc.EmitFromObjectOptions()

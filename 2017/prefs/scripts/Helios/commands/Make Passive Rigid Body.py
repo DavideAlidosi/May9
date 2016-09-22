@@ -1,1 +1,0 @@
-RigidBody.CreateRigidSet().executeCommandCB(True)

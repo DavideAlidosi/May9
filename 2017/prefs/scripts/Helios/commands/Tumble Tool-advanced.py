@@ -1,2 +1,0 @@
-mc.TumbleTool()
-mc.ToolSettingsWindow()

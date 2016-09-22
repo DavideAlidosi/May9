@@ -1,1 +1,0 @@
-mel.eval('XgCreateDescriptionEditor;')

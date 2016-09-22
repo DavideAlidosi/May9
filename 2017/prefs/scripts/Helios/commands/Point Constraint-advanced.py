@@ -1,1 +1,0 @@
-mc.pointConstraint(mo=True, weight=1)

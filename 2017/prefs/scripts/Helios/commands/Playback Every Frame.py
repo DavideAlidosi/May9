@@ -1,1 +1,0 @@
-mc.playbackOptions(playbackSpeed=0, by=1)

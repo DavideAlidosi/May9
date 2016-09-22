@@ -1,1 +1,0 @@
-mc.Create3DContainerEmitter()

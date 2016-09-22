@@ -1,1 +1,0 @@
-mel.eval('createNConstraint tearableSurface 0;')

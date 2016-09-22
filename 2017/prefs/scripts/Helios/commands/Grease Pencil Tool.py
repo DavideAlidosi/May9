@@ -1,2 +1,0 @@
-mc.GreasePencilTool()
-mc.createGreasePencilWindow()

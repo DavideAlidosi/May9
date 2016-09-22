@@ -1,1 +1,0 @@
-mel.eval('polyCBoolOp -op 2 -ch 1 -preserveColor 0 -classification 2')

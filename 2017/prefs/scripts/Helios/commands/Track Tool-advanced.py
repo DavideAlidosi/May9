@@ -1,2 +1,0 @@
-mc.TrackTool()
-mc.ToolSettingsWindow()

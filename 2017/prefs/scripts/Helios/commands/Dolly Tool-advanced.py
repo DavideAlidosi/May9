@@ -1,2 +1,0 @@
-mc.DollyTool()
-mc.ToolSettingsWindow()

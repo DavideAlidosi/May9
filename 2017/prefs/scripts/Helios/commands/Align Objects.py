@@ -1,1 +1,0 @@
-mel.eval('align -atl -x Mid -y Mid -z Mid;')
