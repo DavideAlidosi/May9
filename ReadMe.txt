@@ -60,7 +60,6 @@ ALT + I = Raise Modeling Toolkit
 ALT + O = Outliner
 ALT + L = Color Picker
 ALT + G = Toggle grid
-ALT + U = Toggle Wireframe on Shaded
 ALT + K = Toggle Color Management
 ALT + Enter = Toggle perspective to orthographic camera
 SHIFT + ALT + P = Center Pivot
@@ -72,9 +71,7 @@ SHIFT + LEFT = Persp View
 ~ = Orient Manipulators Toggle
 8 = Start IPR
 K + Drag = Smooth playback mode
-CMD + Space = Full screen toggle
- (
-OSX only)
+CMD + Space = Toggle Full Screen (OSX only)
 
 
 Changed hotkeys:
@@ -87,6 +84,7 @@ Main preferences change:
 
 - Two side lighting is enable (as in Maya 2014)
 - Animate Camera Transition is enable (as in Maya 2014)
+- Interactive Creation is enable (as in Maya 2015)
 - Anti-aliasing and the Floating Point Render are enable by default in VP 2.0 on Windows and Linux machine
 - Playback Speed is set to Play Every Frame, Max Real-time
 - X-Ray Active Component is enable
