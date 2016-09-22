@@ -70,6 +70,7 @@ SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
 ~ = Orient Manipulators Toggle
 8 = Start IPR
+Home = Reset Transformations
 K + Drag = Smooth playback mode
 CMD + Space = Toggle Full Screen (OSX only)
 
