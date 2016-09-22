@@ -65,7 +65,6 @@ ALT + K = Toggle Color Management
 ALT + Enter = Toggle perspective to orthographic camera
 SHIFT + ALT + P = Center Pivot
 SHIFT + ALT + F = Freeze Transformation
-SHIFT + Enter = Helios, textual line commander
 SHIFT + UP = Side View
 SHIFT + RIGHT = Front View
 SHIFT + DOWN = Top View
@@ -73,11 +72,9 @@ SHIFT + LEFT = Persp View
 ~ = Orient Manipulators Toggle
 8 = Start IPR
 K + Drag = Smooth playback mode
-
-OS X only:
-
-- CMD + Space = Full screen toggle
-- CMD + Enter = Helios, textual line commander
+CMD + Space = Full screen toggle
+ (
+OSX only)
 
 
 Changed hotkeys:
@@ -116,7 +113,6 @@ A special tanks to:
 
 Andrey Menshikov for the hard work on our amazing MMtoKey
 Pavel Korolyov for Simple Connector
-Thibault Houdon for Helios
 Jefri Haryono for Rain Curves From Edges
 David Johnson for djRivet
 Carlos Rico Adega for Offset Keyframes

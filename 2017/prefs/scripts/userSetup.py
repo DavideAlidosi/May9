@@ -6,6 +6,3 @@ import boss.BossEditor as be
 
 #Preload MMtoKey
 import MMtoKey
-
-#Preload Helios
-from Helios import Helios
