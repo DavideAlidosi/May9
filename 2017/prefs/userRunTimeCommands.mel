@@ -1146,3 +1146,11 @@ runTimeCommand
 	-command ("int $wExist = `window -ex setDrivenWnd`;\nif ( $wExist == 0 )\n\tSetDrivenKeyOptions;\nelse\n\tgenerateSetDrivenCommand;")
 	CereateSetDriven;
 
+runTimeCommand
+	-annotation "Find Maya Menu"
+	-category "Custom Scripts.May9_Pro"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("findMenuItem")
+	findMenu;
+

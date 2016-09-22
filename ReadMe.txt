@@ -23,7 +23,6 @@ Linux
 
 Quick start:
 
-
 Press and hold Z + Left mouse button = Enable the contextual Marking Menus based on selection, combination of selection or panels
 Press and hold Z + Middle mouse button = Enable the Universal Marking MenuEnable or one of this tool contextual Marking Menu:
 	- 3D Paint tool
@@ -70,6 +69,7 @@ SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
 ~ = Orient Manipulators Toggle
 8 = Start IPR
+? = Find Maya Menu
 Home = Reset Transformations
 K + Drag = Smooth playback mode
 CMD + Space = Toggle Full Screen (OSX only)
