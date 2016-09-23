@@ -167,7 +167,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $UVTag = (($UVTag + 1) % 2);\n\nif ($UVTag)\n{\n\tchangeSelectMode -component; selectType -ocm -alc false; selectType -alc false; selectType -puv true; selectType -suv true;\n}\nelse\n{\n    dR_modeObject;\n}")
+	-command ("$mySel=`ls -sl -fl`;\n\nif (size(`filterExpand -sm 24 $mySel`)!=0 || size(`filterExpand -sm 73 $mySel`)!=0)\n    dR_modeObject;\nelse\n    dR_modeUV;\n")
 	ToggleUV;
 
 runTimeCommand
@@ -615,7 +615,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $ManipTag = (($ManipTag + 1) % 2);\n\nif ($ManipTag)\n{\n    manipMoveContext -e -mode 0 Move;\n\tmanipRotateContext -e -mode 0 Rotate;\n\tmanipScaleContext -e -mode 0 Scale;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nelse\n{\n    manipMoveContext -e -mode 9 Move;\n\tmanipRotateContext -e -mode 9 Rotate;\n\tmanipScaleContext -e -mode 9 Scale;\n\tinViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}")
+	-command ("string $ToolCheck = (`currentCtx`);\n\nint $MoveCheck = (`manipMoveContext -q -mode Move`);\nint $RotateCheck = (`manipRotateContext -q -mode Rotate`);\nint $ScaleCheck = (`manipScaleContext -q -mode Scale`);\n\nif ($MoveCheck != 9 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 9 Move;\n    inViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($MoveCheck != 0 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 0 Move;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($RotateCheck != 9 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 9 Rotate;\n    inViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($RotateCheck != 0 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 0 Rotate;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 9 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 9 Scale;\n\tinViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 0 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 0 Scale;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}")
 	ManipToggleComp;
 
 runTimeCommand
@@ -623,7 +623,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $ManipTag = (($ManipTag + 1) % 2);\n\nif ($ManipTag)\n{\n    manipMoveContext -e -mode 0 Move;\n\tmanipRotateContext -e -mode 0 Rotate;\n\tmanipScaleContext -e -mode 0 Scale;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nelse\n{\n    manipMoveContext -e -mode 2 Move;\n\tmanipRotateContext -e -mode 2 Rotate;\n\tmanipScaleContext -e -mode 2 Scale;\n\tinViewMessage -pos topCenter -msg \"World Axis Orientation\" -fade;\n}")
+	-command ("string $ToolCheck = (`currentCtx`);\n\nint $MoveCheck = (`manipMoveContext -q -mode Move`);\nint $RotateCheck = (`manipRotateContext -q -mode Rotate`);\nint $ScaleCheck = (`manipScaleContext -q -mode Scale`);\n\nif ($MoveCheck != 2 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 2 Move;\n    inViewMessage -pos topCenter -msg \"World Axis Orientation\" -fade;\n}\nif ($MoveCheck != 0 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 0 Move;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($RotateCheck != 2 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 2 Rotate;\n    inViewMessage -pos topCenter -msg \"Gimbal Axis Orientation\" -fade;\n}\nif ($RotateCheck != 0 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 0 Rotate;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 2 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 2 Scale;\n    inViewMessage -pos topCenter -msg \"World Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 0 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 0 Scale;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}")
 	ManipToggleTrans;
 
 runTimeCommand
