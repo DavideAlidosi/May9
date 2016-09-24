@@ -653,7 +653,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem11;
 
     menuItem
         -label "separator" 
@@ -4550,7 +4550,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem11;
+            menuEditorMenuItem3;
 
         menuItem
             -label "Interactive Brush" 
@@ -5314,7 +5314,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\nxgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;\nxgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool" 
+            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -5339,7 +5339,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;\nxgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;\nxgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool" 
+            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -5356,7 +5356,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem6;
 
         menuItem
             -label "Primitives to Poly" 
@@ -5405,7 +5405,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem16;
+            menuEditorMenuItem7;
 
         menuItem
             -label "separator" 

@@ -4,7 +4,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\nxgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;\nxgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool" 
+        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -20,16 +20,17 @@
         -image "xgGuideSculptTool.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
+        -label "menuEditorMenuItem2" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;\nxgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;\nxgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool" 
+        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -43,7 +44,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
@@ -69,7 +70,7 @@
         -image "xgGuideContext.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
@@ -95,12 +96,13 @@
         -image "xgPolyConvert.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
+        -label "menuEditorMenuItem5" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -118,7 +120,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
