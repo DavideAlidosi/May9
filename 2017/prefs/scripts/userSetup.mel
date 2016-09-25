@@ -42,7 +42,7 @@ scriptJob -e "flushingScene" $CloseHypershade;
 // Set Manipulators Pick Range to 8
 selectPref -mcb 8;
 
-// Run intPlay
+// Run Interactive Play
 da_intPlay;
 
 // Preload 2 Bone IK and Spring IK
@@ -54,11 +54,14 @@ scriptJob -runOnce true -idleEvent "outlinerEditor -e -showAssignedMaterials tru
 
 /////////// Scripts setup ///////////
 
-// Preload nParticleConverter
+// Preload nParticle Converter
 source da_nParticleConverter.mel;
 
-// Preload nParticleConverter
+// Preload Interactive Booleans
 source da_interactiveBooleans.mel;
 
-// Preload rainCurves
+// Preload XGen Brush Mangemen
+source da_XGenBrushMangement.mel;
+
+// Preload Rain Curves from Edges
 source rainCurves.mel;
