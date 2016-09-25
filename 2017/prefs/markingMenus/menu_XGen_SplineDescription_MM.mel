@@ -13,7 +13,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "SW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -263,7 +263,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "SW" 
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -298,6 +298,56 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem18;
+
+    menuItem
+        -label "Clump" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetClumpBrushTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_clump.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem22;
+
+    menuItem
+        -label "menuEditorMenuItem24" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetClumpBrushToolOption" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem24;
 
     menuItem
         -label "Freeze" 
@@ -346,7 +396,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem12;
+        menuEditorMenuItem4;
 
     menuItem
         -label "Select" 
@@ -395,7 +445,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem19;
+        menuEditorMenuItem8;
 
     menuItem
         -label "separator" 
@@ -415,7 +465,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem20;
@@ -459,19 +509,20 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
+        -radialPosition "NW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -image "xgIG_cut.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem21;
 
     menuItem
+        -label "menuEditorMenuItem23" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -489,59 +540,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem23;
-
-    menuItem
-        -label "Clump" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetClumpBrushTool" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgIG_clump.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem22;
-
-    menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetClumpBrushToolOption" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem24;
+        menuEditorMenuItem12;
 
 setParent -m ..;
 
