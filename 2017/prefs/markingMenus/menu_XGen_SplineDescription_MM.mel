@@ -370,12 +370,13 @@
         -image "xgIG_density.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem17;
 
     menuItem
+        -label "menuEditorMenuItem18" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -393,10 +394,35 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem18;
+
+    menuItem
+        -label "Interactive Groom Editor" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgCreateIgSplineEditor" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_editor.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
 
 setParent -m ..;
 

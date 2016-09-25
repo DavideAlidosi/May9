@@ -20,13 +20,12 @@
         -image "xgGuideSculptTool.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -44,17 +43,17 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Guides Tool" 
+        -label "Mirror Guides X-axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "XgGuideTool" 
+        -command "xgmFlipGuides( python(\"xgui.createDescriptionEditor(False).currentDescription()\") )" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -63,24 +62,24 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "S" 
+        -radialPosition "W" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "xgGuideContext.png" 
+        -image "xgFlipGuides.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Primitives to Poly" 
+        -label "Select Description" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")" 
+        -command "python(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\");\npython(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\")" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -89,66 +88,17 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "E" 
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "xgPolyConvert.png" 
+        -image "xgSelectionToggle.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
-
-    menuItem
-        -label "menuEditorMenuItem5" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "XGen Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgDEditor.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
 
 setParent -m ..;
 

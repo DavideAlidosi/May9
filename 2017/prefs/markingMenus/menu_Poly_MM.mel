@@ -4504,54 +4504,6 @@
         menuEditorMenuItem32;
 
         menuItem
-            -label "Open Description Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "C:/Program Files/Autodesk/Maya2017/plug-ins/xgen//icons/xgDEditor.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem17;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem18;
-
-        menuItem
             -label "Create Interactive Groom" 
             -divider 0
             -subMenu 0
@@ -5285,6 +5237,31 @@
         setParent -m ..;
 
         menuItem
+            -label "Interactive Groom Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "XgCreateIgSplineEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "xgIG_editor.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem19;
+
+        menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator" 
@@ -5404,7 +5381,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem4;
 
         menuItem
             -label "Primitives to Poly" 
@@ -5453,14 +5430,14 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem6;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
+            -label "XGen Editor" 
+            -divider 0
             -subMenu 0
             -tearOff 0
+            -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -5472,11 +5449,13 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "xgDEditor.png" 
+            -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem17;
 
         menuItem
             -label "XGen Library" 
@@ -5502,31 +5481,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
-
-        menuItem
-            -label "Export Mesh as Archive" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "XgExportArchive" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "da_xgExportDescription.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
 
     setParent -m ..;
 
