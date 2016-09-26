@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<using package='std'/>
+	<template name='NEpyExpression'>
+		<attribute name='OF' type='maya.float'>
+			<label>OF</label>
+		</attribute>
+		<attribute name='OV' type='maya.double3'>
+			<label>OV</label>
+		</attribute>
+		<attribute name='OM' type='maya.matrix'>
+			<label>OM</label>
+		</attribute>
+		<attribute name='time' type='maya.double'>
+			<label>Time</label>
+		</attribute>
+		<attribute name='N' type='maya.message'>
+			<label>N</label>
+		</attribute>
+		<attribute name='F' type='maya.float'>
+			<label>F</label>
+		</attribute>
+		<attribute name='V' type='maya.double3'>
+			<label>V</label>
+		</attribute>
+		<attribute name='M' type='maya.matrix'>
+			<label>M</label>
+		</attribute>
+		<attribute name='inColor' type='maya.float3'>
+			<label>In Color</label>
+		</attribute>
+		<attribute name='inMesh' type='maya.mesh'>
+			<label>In Mesh</label>
+		</attribute>
+	</template>
+	<view name='NEDefault' template='NEpyExpression'>
+		<property name='OF'/>
+		<property name='OV'/>
+		<property name='OM'/>
+		<property name='time'/>
+		<property name='N'/>
+		<property name='F'/>
+		<property name='V'/>
+		<property name='M'/>
+		<property name='inColor'/>
+		<property name='inMesh'/>
+	</view>
+</templates>

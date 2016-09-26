@@ -156,7 +156,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Component Object Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("toggleSelMode; \nselectType -smp 0 -sme 0 -smf 0 -smu 0 -pv 0 -pe 0 -pf 0 -puv 0 -meshComponents 1;")
@@ -164,7 +164,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle UV and Object Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$mySel=`ls -sl -fl`;\n\nif (size(`filterExpand -sm 24 $mySel`)!=0 || size(`filterExpand -sm 73 $mySel`)!=0)\n    dR_modeObject;\nelse\n    dR_modeUV;\n")
@@ -172,7 +172,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Color Management On and Off"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $cmStatus = `colorManagementPrefs -q -cme`;\n\nif ($cmStatus == 0)\n{\n\tcolorManagementOn;\n\tinViewMessage -pos topCenter -msg \"Color Management on\" -fade;\n}\nelse\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Color Management off\" -fade;\n}")
@@ -180,7 +180,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Ramp Visibility in Paint Skin Tool"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tartAttrCtx -e -useColorRamp false artAttrSkinContext ; artisanUpdateRampColorEnable;\n}\nelse\n{\n\tartAttrCtx -e -useColorRamp true artAttrSkinContext ; artisanUpdateRampColorEnable;\n}")
@@ -188,7 +188,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Selection and Paint in Paint Skin Tool"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tartAttrSkinPaintModePaintSelect 0 artAttrSkinPaintCtx;\n}\nelse\n{\n\tartAttrSkinPaintModePaintSelect 1 artAttrSkinPaintCtx;\n}")
@@ -196,7 +196,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Xray Joints in Paint Skin Tool"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tartAttrSkinPaintCtx -e -xrayJoints false `currentCtx`;\n}\nelse\n{\n\tartAttrSkinPaintCtx -e -xrayJoints true `currentCtx`;\n}")
@@ -204,7 +204,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Wireframe on Saded"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $selectedPanel = `getPanel -wf`;\nint $shadedWireState = `modelEditor -q -wos $selectedPanel`;\nif(`modelEditor -ex $selectedPanel`)\n{\n    setWireframeOnShadedOption (!$shadedWireState) $selectedPanel;\n}")
@@ -212,7 +212,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle DAG Node in Outliner"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -dag false outlinerPanel1;\nelse\n\toutlinerEditor -edit -dag true outlinerPanel1;")
@@ -220,7 +220,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Material Node in Outliner"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $MaterialCheck = `outlinerEditor -q -sam outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -sam false outlinerPanel1;\nelse\n\toutlinerEditor -edit -sam true outlinerPanel1;")
@@ -228,7 +228,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Shapes Node in Outliner"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $MaterialCheck = `outlinerEditor -q -shp outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -shp false outlinerPanel1;\nelse\n\toutlinerEditor -edit -shp true outlinerPanel1;")
@@ -268,7 +268,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Set Adaptive OpenSubdiv as Subdivision"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 6;\nsetAttr ($each +\".showDisplacements\") 0;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"Adaptive OpenSubdiv enable on selectet object(s)\" -fade;")
@@ -276,7 +276,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Set OpenSubdiv as Subdivision"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\n}\ninViewMessage -pos topCenter -msg \"Adaptive OpenSubdiv disable on selectet object(s)\" -fade;")
@@ -284,7 +284,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Open Subdiv Display Subdivision"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 1;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions enable on selectet object(s)\" -fade;")
@@ -292,7 +292,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Open Subdiv Display Subdivision"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions disable on selectet object(s)\" -fade;")
@@ -300,7 +300,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable OpenCL on OpenSubd"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".enableOpenCL\") 1;\n}\ninViewMessage -pos topCenter -msg \"OpenCL enable on selectet object(s)\" -fade;")
@@ -308,7 +308,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable OpenCL on OpenSubd"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".enableOpenCL\") 0;\n}\ninViewMessage -pos topCenter -msg \"OpenCL disable on selectet object(s)\" -fade;")
@@ -316,7 +316,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable OpenSubd Displace"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 6;\nsetAttr ($each +\".showDisplacements\") 1;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace enable on selected object(s)\" -fade;")
@@ -324,7 +324,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable OpenSubd Displace"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Subdivision"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\nsetAttr ($each +\".showDisplacements\") 0;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace disable on selected object(s)\" -fade;")
@@ -332,7 +332,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Set MM based on cursor position"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("MMtoKey.ui()")
@@ -340,7 +340,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Cleanup and Reload MMtoKey"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("MMtoKey.release_1('', 0)\nimport MMtoKey\nreload(MMtoKey)")
@@ -564,7 +564,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Reset Tweak Points to Zero"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{ \n$size=`getAttr -s ($each +\".pnts\")`;\n$text=\"setAttr \"+$each+\".pnts[0:\"+($size-1)+\"]\";\nfor($i=0;$i<$size;$i++){\n$text=$text+\" 0 0 0\";\n}\neval $text;\n}")
@@ -612,7 +612,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Switch Manipulator Modes for Componets"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $ToolCheck = (`currentCtx`);\n\nint $MoveCheck = (`manipMoveContext -q -mode Move`);\nint $RotateCheck = (`manipRotateContext -q -mode Rotate`);\nint $ScaleCheck = (`manipScaleContext -q -mode Scale`);\n\nif ($MoveCheck != 9 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 9 Move;\n    inViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($MoveCheck != 0 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 0 Move;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($RotateCheck != 9 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 9 Rotate;\n    inViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($RotateCheck != 0 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 0 Rotate;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 9 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 9 Scale;\n\tinViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 0 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 0 Scale;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}")
@@ -620,7 +620,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Switch Manipulator Modes for Transform"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $ToolCheck = (`currentCtx`);\n\nint $MoveCheck = (`manipMoveContext -q -mode Move`);\nint $RotateCheck = (`manipRotateContext -q -mode Rotate`);\nint $ScaleCheck = (`manipScaleContext -q -mode Scale`);\n\nif ($MoveCheck != 2 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 2 Move;\n    inViewMessage -pos topCenter -msg \"World Axis Orientation\" -fade;\n}\nif ($MoveCheck != 0 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 0 Move;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($RotateCheck != 2 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 2 Rotate;\n    inViewMessage -pos topCenter -msg \"Gimbal Axis Orientation\" -fade;\n}\nif ($RotateCheck != 0 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 0 Rotate;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 2 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 2 Scale;\n    inViewMessage -pos topCenter -msg \"World Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 0 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 0 Scale;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}")
@@ -628,7 +628,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Switch Manipulator Modes"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $myCollection[] = `ls -sl`;\nint $n = size($myCollection);\n\nif($n > 0){\n    string $id = `nodeType $myCollection[0]`;\n    \n    print ($id + \"\\n\");\n    print ($n + \"\\n\");\n     \n    if($id == \"mesh\"){ \n    \n        string $faces[] = `filterExpand -sm 34`;\n        string $vertices[] = `filterExpand -sm 31`;\n        string $edges[] = `filterExpand -sm 32`;\n        \n        if(size($faces)>0 || size($vertices)>0 || size($edges)>0){\n            ManipToggleComp;                  \n        }        \n                \n    }else if($id == \"transform\"){\n        ManipToggleTrans;\n         \n    }else if($id == \"nurbsSurface\"){\n        \n        string $isoparms[] = `filterExpand -sm 45`;\n        int $totalIsoparms = size($isoparms);\n        string $patches[] = `filterExpand -sm 72`;\n        int $totalPatches = size($patches);\n        \n        if($totalIsoparms > 0){\n            ManipToggleComp;           \n        }\n        if($totalPatches > 0){\n            ManipToggleComp;\n        }\n    }else{\n        ManipToggleTrans;\n    }   \n}\nif ($n == 0){\n    print (\"Select component(s) or object(s)\");\n}")
@@ -692,7 +692,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Component Object Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$hilite = `ls -hilite`; \n$obj = `ls -dag -sl`; \nif (size( $hilite)) { \nsetSelectMode(\"objects\", \"Objects\"); \nselect -r $obj $hilite; \n} else { \nsetSelectMode(\"components\", \"Components\"); \n}")
@@ -700,7 +700,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Manipulator Snap"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tdR_setTransformStepSnapMode 1;\n\tinViewMessage -pos topCenter -msg \"Manipulator Snap ON\" -fade;\n}\nelse\n{\n\tdR_setTransformStepSnapMode 0;\n\tinViewMessage -pos topCenter -msg \"Manipulator Snap OFF\" -fade;\n}")
@@ -756,7 +756,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Nurbs Curves Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -nurbsCurves $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -nurbsCurves 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Curves visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsCurves 1 $panel;\n    inViewMessage -pos topCenter -msg \"Curves visibility ON\" -fade;\n}")
@@ -764,7 +764,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Nurbs Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -nurbsSurfaces $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -nurbsSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"NURBS visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"NURBS visibility ON\" -fade;\n}")
@@ -772,7 +772,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Subdiv Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -subdivSurfaces $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -subdivSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -subdivSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility ON\" -fade;\n}")
@@ -780,7 +780,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Poly Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -polymeshes $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -polymeshes 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Polygons visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -polymeshes 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Polygons visibility ON\" -fade;\n}")
@@ -788,7 +788,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Light Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -lights $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -lights 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Light visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -lights 1 $panel;\n    inViewMessage -pos topCenter -msg \"Light visibility ON\" -fade;\n}")
@@ -796,7 +796,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Joint Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -joints $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -joints 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Joints visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -joints 1 $panel;\n    inViewMessage -pos topCenter -msg \"Joints visibility ON\" -fade;\n}")
@@ -804,7 +804,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle IK Handles Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -ikHandles $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -ikHandles 0 $panel;\n\tinViewMessage -pos topCenter -msg \"IK Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -ikHandles 1 $panel;\n    inViewMessage -pos topCenter -msg \"IK Handles visibility ON\" -fade;\n}")
@@ -812,7 +812,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Deformers Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -deformers $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -deformers 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Deformers visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -deformers 1 $panel;\n    inViewMessage -pos topCenter -msg \"Deformers visibility ON\" -fade;\n}")
@@ -820,7 +820,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Locator Visibility"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -locators $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -locators 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Locator Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -locators 1 $panel;\n    inViewMessage -pos topCenter -msg \"Locator Handles visibility ON\" -fade;\n}")
@@ -852,7 +852,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable MMtoKey"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("MMtoKey.press_1(False, False, False, '')")
@@ -860,7 +860,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable MMtoKey"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("MMtoKey.release_1('', 0)")
@@ -940,7 +940,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Legacy Subdiv Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $LegacySubdivTag = (($LegacySubdivTag + 1) % 2);\n\nif ($LegacySubdivTag)\n{\n\tLegacySubdivPolyMode;\n}\nelse\n{\n    LegacySubdivStandardMode;\n}")
@@ -1100,7 +1100,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Persp to Ortho Camera"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("da_perspToggle()")
@@ -1153,4 +1153,44 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("findMenuItem")
 	findMenu;
+
+runTimeCommand
+	-annotation "Load SOuP"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`pluginInfo -q -loaded SOuP` == 0){\n\tcatchQuiet(`loadPlugin \"SOuP\"`);\n}")
+	LoadSOUP;
+
+runTimeCommand
+	-annotation "Show and edit UV in Viewport"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import maya.cmds as cmds\noriginalMesh = cmds.ls(sl=1)\nMapToMeshNode = cmds.createNode('mapToMesh')\ncmds.connectAttr(originalMesh[0]+'.worldMesh', MapToMeshNode+'.inMesh')\nUVsMesh = cmds.duplicate(originalMesh, n=originalMesh[0]+'_UV_Editable_Mesh')\ncmds.connectAttr(MapToMeshNode+'.outMesh', UVsMesh[0]+'.inMesh')\nMeshToMapNode = cmds.createNode('meshToMap')\nFinalMesh = cmds.duplicate(originalMesh,  n=originalMesh[0]+'_UV_Mapped_Mesh')\ncmds.connectAttr(originalMesh[0]+'.outMesh', MeshToMapNode+'.inMesh')\ncmds.connectAttr(UVsMesh[0]+'.outMesh', MeshToMapNode+'.inMesh2')\ncmds.connectAttr(MeshToMapNode+'.outMesh', FinalMesh[0]+'.inMesh')\ncmds.hide(originalMesh)")
+	ViewportUV;
+
+runTimeCommand
+	-annotation "Bake Deformation to Skin Mesh"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("joint = cmds.ls(sl=1)\nbakeDefsToFkSkel_SOuP().bake(joint[0], nodes=None, maxInfluences=8, useRootJoint=True)")
+	BakeDeformationToSkinJoint;
+
+runTimeCommand
+	-annotation "Bake Arbitrary Deformation to Skin Joints"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $toolWarning = `confirmDialog -title \"Bake Deforms to Joints\" -message \"This command bake all vertex deformation to joints, but can be a long task.\\nAre you sure to continue?\" \n    -button \"Yes\" -button \"No\" -defaultButton \"No\" \n    -cancelButton \"No\" -dismissString \"No\"`;\n\nif ($toolWarning == \"Yes\")\n\tpython (\"bakeArbDefs_SOuP().bake(samples=200, voxelBinding=False)\");\n\nelse\n\tinViewMessage -pos topCenter -msg \"Bake Deforms to Joints cancelled\" -fade;")
+	BakeArbitraryDeformation;
+
+runTimeCommand
+	-annotation "Apply Shatter Effect to Selected Mesh"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import maya.cmds as cmds\ninitialGeo = cmds.ls(sl=1)\ncmds.duplicate(initialGeo)\ncmds.hide(initialGeo)\ntoShatterTrans = cmds.ls(sl=1)\ncmds.pickWalk(direction='down')\ntoShatterGeo = cmds.ls(sl=1)\nlocatorShatter = cmds.createNode('locator')\ncmds.parent(toShatterGeo,locatorShatter)\ncmds.ClearFreeze(toShatterGeo)\nvolumeScatter = cmds.createNode('scatter')\ncmds.setAttr(volumeScatter+'.pointDensity',250)\ncmds.connectAttr(toShatterTrans[0]+'.worldMatrix[0]', volumeScatter+'.inWorldMatrix')\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', volumeScatter+'.inGeometry')\nshatterOperator = cmds.createNode('shatter')\ncmds.setAttr(shatterOperator+'.distance',0.01)\ncmds.setAttr(shatterOperator+'.autoEvaluate',1)\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', shatterOperator+'.inGeometry')\ncmds.connectAttr(volumeScatter+'.outPositionPP', shatterOperator+'.inPositionPP')\nShatterGeo = cmds.duplicate(toShatterGeo)\ncmds.connectAttr(shatterOperator+'.outGeometry', ShatterGeo[0]+'.inMesh')\ncmds.hide(toShatterTrans)\ncmds.select(ShatterGeo)\ncmds.ResetTweakPoint(ShatterGeo)")
+	ShatterMesh;
 

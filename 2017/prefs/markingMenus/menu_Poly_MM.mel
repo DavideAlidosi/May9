@@ -656,6 +656,31 @@
         menuEditorMenuItem1;
 
     menuItem
+        -label "Bake Vertex to Joints" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "LoadSOUP;\nBakeArbitraryDeformation" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_joint.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
+
+    menuItem
         -label "separator" 
         -divider 1
         -dividerLabel "separator" 
@@ -1910,7 +1935,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem20;
 
         menuItem
             -label "Delta Mush" 
@@ -1958,7 +1983,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem23;
 
         menuItem
             -label "Membrane" 
@@ -2031,7 +2056,32 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem25;
+
+        menuItem
+            -label "Shatter" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LoadSOUP;\nShatterMesh" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "shatter.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem29;
 
         menuItem
             -label "separator" 
@@ -2103,7 +2153,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem26;
 
         menuItem
             -label "Paint Texture" 
@@ -2152,7 +2202,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem12;
+            menuEditorMenuItem27;
 
         menuItem
             -label "separator" 
@@ -2322,7 +2372,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem19;
+            menuEditorMenuItem28;
 
     setParent -m ..;
 
@@ -2365,7 +2415,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "polySelectUV.png" 
+            -image "polyGridUV.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -2639,6 +2689,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem15;
+
+        menuItem
+            -label "UV to Viewport" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LoadSOUP;\nViewportUV" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polySetCurrentUVSet.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem17;
 
     setParent -m ..;
 

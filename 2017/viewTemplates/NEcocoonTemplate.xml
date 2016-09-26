@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<using package='std'/>
+	<template name='NEcocoon'>
+		<attribute name='outPositionPP' type='maya.vectorArray'>
+			<label>Out Position PP</label>
+		</attribute>
+		<attribute name='outDirectionPP' type='maya.vectorArray'>
+			<label>Out Direction PP</label>
+		</attribute>
+		<attribute name='outScalePP' type='maya.vectorArray'>
+			<label>Out Scale PP</label>
+		</attribute>
+		<attribute name='outRgbaPP' type='maya.doubleArray'>
+			<label>Out Rgba PP</label>
+		</attribute>
+		<attribute name='outThicknessPP' type='maya.doubleArray'>
+			<label>Out Thickness PP</label>
+		</attribute>
+		<attribute name='outLinksMesh' type='maya.mesh'>
+			<label>Out Links Mesh</label>
+		</attribute>
+		<attribute name='outFacesMesh' type='maya.mesh'>
+			<label>Out Faces Mesh</label>
+		</attribute>
+		<attribute name='inPositionPP' type='maya.vectorArray'>
+			<label>In Position PP</label>
+		</attribute>
+		<attribute name='inRefPositionPP' type='maya.vectorArray'>
+			<label>In Ref Position PP</label>
+		</attribute>
+		<attribute name='inRgbaPP' type='maya.vectorArray'>
+			<label>In Rgba PP</label>
+		</attribute>
+		<attribute name='inThicknessPP' type='maya.doubleArray'>
+			<label>In Thickness PP</label>
+		</attribute>
+	</template>
+	<view name='NEDefault' template='NEcocoon'>
+		<property name='outPositionPP'/>
+		<property name='outDirectionPP'/>
+		<property name='outScalePP'/>
+		<property name='outRgbaPP'/>
+		<property name='outThicknessPP'/>
+		<property name='outLinksMesh'/>
+		<property name='outFacesMesh'/>
+		<property name='inPositionPP'/>
+		<property name='inRefPositionPP'/>
+		<property name='inRgbaPP'/>
+		<property name='inThicknessPP'/>
+	</view>
+</templates>

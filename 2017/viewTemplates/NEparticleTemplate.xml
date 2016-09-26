@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<using package='std'/>
+	<template name='NEparticle'>
+		<attribute name='matrix' type='maya.matrix'>
+			<label>Matrix</label>
+		</attribute>
+		<attribute name='inverseMatrix' type='maya.matrix'>
+			<label>Inverse Matrix</label>
+		</attribute>
+		<attribute name='worldMatrix' type='maya.matrix'>
+			<label>World Matrix</label>
+		</attribute>
+		<attribute name='worldInverseMatrix' type='maya.matrix'>
+			<label>World Inverse Matrix</label>
+		</attribute>
+		<attribute name='parentMatrix' type='maya.matrix'>
+			<label>Parent Matrix</label>
+		</attribute>
+		<attribute name='parentInverseMatrix' type='maya.matrix'>
+			<label>Parent Inverse Matrix</label>
+		</attribute>
+		<attribute name='isFull' type='maya.bool'>
+			<label>Is Full</label>
+		</attribute>
+		<attribute name='fieldData' type='maya.TdataCompound'>
+			<label>Field Data</label>
+		</attribute>
+		<attribute name='ppFieldData' type='maya.newParticles'>
+			<label>Pp Field Data</label>
+		</attribute>
+		<attribute name='startTime' type='maya.time'>
+			<label>Start Time</label>
+		</attribute>
+		<attribute name='timeStepSize' type='maya.time'>
+			<label>Time Step Size</label>
+		</attribute>
+		<attribute name='output' type='maya.time'>
+			<label>Output</label>
+		</attribute>
+		<attribute name='instanceData' type='maya.TdataCompound'>
+			<label>Instance Data</label>
+		</attribute>
+		<attribute name='startFrame' type='maya.double'>
+			<label>Start Frame</label>
+		</attribute>
+		<attribute name='currentTime' type='maya.time'>
+			<label>Current Time</label>
+		</attribute>
+		<attribute name='inputGeometry' type='maya.lattice'>
+			<label>Input Geometry</label>
+		</attribute>
+		<attribute name='deformedPosition' type='maya.vectorArray'>
+			<label>Deformed Position</label>
+		</attribute>
+		<attribute name='position' type='maya.vectorArray'>
+			<label>Position</label>
+		</attribute>
+		<attribute name='velocity' type='maya.vectorArray'>
+			<label>Velocity</label>
+		</attribute>
+		<attribute name='rgbPP' type='maya.vectorArray'>
+			<label>Rgb PP</label>
+		</attribute>
+		<attribute name='input' type='maya.time'>
+			<label>Input</label>
+		</attribute>
+		<attribute name='inheritFactor' type='maya.double'>
+			<label>Inherit Factor</label>
+		</attribute>
+		<attribute name='seed' type='maya.long'>
+			<label>Seed</label>
+		</attribute>
+		<attribute name='inputForce' type='maya.vectorArray'>
+			<label>Input Force</label>
+		</attribute>
+		<attribute name='newParticles' type='maya.newParticles'>
+			<label>New Particles</label>
+		</attribute>
+	</template>
+	<view name='NEDefault' template='NEparticle'>
+		<property name='matrix'/>
+		<property name='inverseMatrix'/>
+		<property name='worldMatrix'/>
+		<property name='worldInverseMatrix'/>
+		<property name='parentMatrix'/>
+		<property name='parentInverseMatrix'/>
+		<property name='isFull'/>
+		<property name='fieldData'/>
+		<property name='ppFieldData'/>
+		<property name='startTime'/>
+		<property name='timeStepSize'/>
+		<property name='output'/>
+		<property name='instanceData'/>
+		<property name='startFrame'/>
+		<property name='currentTime'/>
+		<property name='inputGeometry'/>
+		<property name='deformedPosition'/>
+		<property name='position'/>
+		<property name='velocity'/>
+		<property name='rgbPP'/>
+		<property name='input'/>
+		<property name='inheritFactor'/>
+		<property name='seed'/>
+		<property name='inputForce'/>
+		<property name='newParticles'/>
+	</view>
+</templates>
