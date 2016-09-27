@@ -1,105 +1,5 @@
 
     menuItem
-        -label "Aim Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AimConstraint;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "aimConstraint.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem13;
-
-    menuItem
-        -label "menuEditorMenuItem14" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AimConstraintOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
-        -label "Parent Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ParentConstraint;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "parentConstraint.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem19;
-
-    menuItem
-        -label "menuEditorMenuItem20" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ParentConstraintOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
         -label "Rivet Constraint" 
         -divider 0
         -subMenu 0
@@ -126,6 +26,81 @@
         menuEditorMenuItem1;
 
     menuItem
+        -label "Remove Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "doRemoveConstraintTarget 1  { \"all\",\"0\"};" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "menuIconConstraints.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Parent Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ParentConstraint;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "parentConstraint.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ParentConstraintOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
         -label "Scale Constraint" 
         -divider 0
         -subMenu 0
@@ -149,7 +124,7 @@
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem4;
+        menuEditorMenuItem5;
 
     menuItem
         -divider 0
@@ -175,11 +150,11 @@
         menuEditorMenuItem6;
 
     menuItem
-        -label "Remove Constraint" 
+        -label "Aim Constraint" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doRemoveConstraintTarget 1  { \"all\",\"0\"};" 
+        -command "AimConstraint;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -188,17 +163,66 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "menuIconConstraints.png" 
+        -image "aimConstraint.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "AimConstraintOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
+    menuItem
+        -label "Connect selected Muscle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "cMuscle_connectToSystem(); " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "cMuscle_skin_connMus.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
 
 setParent -m ..;
 
