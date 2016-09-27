@@ -4,7 +4,7 @@
 
 runTimeCommand
 	-annotation "Cleare History end Freeze Transformation"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("delete -ch;\nFreezeTransformations;")
@@ -124,7 +124,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Open AE to Last Operation"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $his[] = `listHistory -leaf true`; \nif( size($his)>1 ){\nshowEditorExact($his[1]);\n}\nelse{\nerror \"can't find last operator in stack.\";\n}")
@@ -132,7 +132,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Set Object Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("SelectToggleMode;\ntoggleSelMode;")
@@ -140,7 +140,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Recreate the persp camera if needed"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $camera = findStartUpCamera( \"persp\" );\nstring $camera2[] = `camera -n persp -hc \"viewSet -p %camera\"`;\n\ncamera -e -sc 0 $camera; delete \"persp\";\nrename $camera2[0] \"persp\";\ncamera -e -sc 1 \"persp\";")
@@ -148,7 +148,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Reset UI in case of failure"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if(`window -exists unifiedRenderGlobalsWindow`)\n\t{deleteUI unifiedRenderGlobalsWindow;}\nelse\n\t{print \"\";};\nbuildNewSceneUI;")
@@ -252,7 +252,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Create a Flatten Surface From Curves"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("bevelPlus -po 1 -ns 1 -cap 2 -pom 2 -ed 0 -ch 1;\npolyMergeVertex  -d 0.0001 -am 1 -ch 1;\nSelectToggleMode;\ntoggleSelMode;")
@@ -260,7 +260,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Revert the current scene at last save"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $test = `file -q -sn`;\n\nif (size($test)){\n\tstring $result = `confirmDialog -title \"Confirm\" -message \"Revert to Saved?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($result == \"Yes\") {\n\tstring $currentScenePath = `file -q -sn`;\n\tfile -f -open $currentScenePath;\n\tinViewMessage -pos topCenter -msg \"Revert to Saved\" -fade;\n\t}\n\telse inViewMessage -pos topCenter -msg \"Revert cancelled\" -fade;\n}\n\nelse{\n\tconfirmDialog -title \"Untitled scene\" -message \"Is not possible revert untitled scene.\"\n\t-button \"OK\" -defaultButton \"OK\";\n}")
@@ -348,7 +348,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Add Divisions to Polygonal Object"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("Triangulate;\npolyQuad  -a 30 -kgb 1 -ktb 1 -khe 1 -ws 1 -ch 1")
@@ -428,7 +428,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "List Input Operations on Object"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \ndetachHistoryTable $mySel[0] 0 input \"\";\nselect $mySel;")
@@ -556,7 +556,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Parent and Position"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("Parent;\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".translate\") -type \"double3\" 0 0 0;\nsetAttr ($each +\".rotate\") -type \"double3\" 0 0 0;\n}")
@@ -572,7 +572,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Follicle Braid"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".braid\") 1;\n}")
@@ -580,7 +580,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Follicle Braid"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".braid\") 0;\n}")
@@ -604,7 +604,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Apply Sculpt Deformer on Custom Shape"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $sculptGeo[] = `ls -sl`;\nsculpt -sculptTool $sculptGeo[1] -mode flip -insideMode even -maxDisplacement 0.1 -dropoffType linear -dropoffDistance 2.3 -groupWithLocator 0 -objectCentered 1 $sculptGeo[0];")
@@ -652,7 +652,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Multi Component Selection on Selected Polygons"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `filterExpand -ex true -selectionMask 12`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($mySel[$i], \"meshComponents\");")
@@ -660,7 +660,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Control Vertex Selection on Selected Curves"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `filterExpand -ex true -selectionMask 9`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($mySel[$i], \"controlVertex\");")
@@ -668,7 +668,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Lattice Point Selection on Selected Lattice"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `filterExpand -ex true -selectionMask 6`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($mySel[$i], \"latticePoint\");")
@@ -676,7 +676,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Go to Component Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setSelectMode(\"components\", \"Components\"); ")
@@ -684,7 +684,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Revert Selection to Componento Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$hilite = `ls -hilite`; \n$obj = `ls -dag -sl`; \nsetSelectMode(\"objects\", \"Objects\"); \nselect -r $obj $hilite; ")
@@ -964,7 +964,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Go from Create Node to Mesh Node"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s $mySel`;\nselect $myShape;\nPickWalkUp")
@@ -972,7 +972,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Open Arnold TX Manager"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded mtoa` == 0)\n{\n\tcatch(`loadPlugin \"mtoa\"`);\n\tpython( \"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldTxManager()\" );\n}\nelse\n{\n\tpython( \"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldTxManager()\" );\n}")
@@ -980,7 +980,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Arnold Render Curves"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\nif ( `objExists CurveShader` ) {\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n} else {\n    createNode aiStandard -n CurveShader;\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n}\n\ninViewMessage -pos topCenter -msg \"Arnold enable on selected curve(s)\" -fade;")
@@ -988,7 +988,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Arnold Render Curves"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".aiRenderCurve\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Arnold render disable on selected curve(s)\" -fade;")
@@ -996,7 +996,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Arnold Light Normalization"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiNormalize\") 1;\n\ninViewMessage -pos topCenter -msg \"Light Normalization On\" -fade;")
@@ -1004,7 +1004,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Arnold Light Normalization"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiNormalize\") 0;\n\ninViewMessage -pos topCenter -msg \"Light Normalization Off\" -fade;")
@@ -1012,7 +1012,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Create AiPhotometric Light"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.utils as mutils; mutils.createLocator(\"aiPhotometricLight\", asLight=True)")
@@ -1020,7 +1020,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Create AiSkyDome Light"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.utils as mutils; mutils.createLocator(\"aiSkyDomeLight\", asLight=True)")
@@ -1028,7 +1028,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Create a MASH Network for Voxelize a Mash"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("// Store selection and creation of MASH network\nstring $mySel[] = `ls -sl`;\nselect $mySel[0];\nMASHnewNetwork(\"MASH#\");\nstring $myMashNerwork[] = `listConnections -s true -d false`;\n\n// Create connection and set MASH to Voxelize\nconnectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n\nsetAttr ($myMashNerwork[0] + \".arrangement\") 4;\nsetAttr ($myMashNerwork[0] + \".meshType\") 6;\n\n// Set hidden order and open Attribute Editor wondow\nhide $mySel[1];\nshowHidden $mySel[0];\n\nselect $myMashNerwork[0];\n\nopenAEWindow;")
@@ -1036,7 +1036,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Tool Settings"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("ToggleToolSettings")
@@ -1044,7 +1044,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Open Bifrost Ocean Simulation"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("be.BossEditor()")
@@ -1052,7 +1052,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Raise Modeling Toolkit UI"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("showModelingToolkit")
@@ -1060,7 +1060,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Open Color Editor UI"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("colorEditor")
@@ -1068,7 +1068,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Open Simple Connector UI"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import pk_simpleConnector\nreload(pk_simpleConnector)")
@@ -1076,7 +1076,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Convert Multiple Edges to Curves"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("rainCurvesFromEdges")
@@ -1084,7 +1084,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Display Joints As Bone"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".drawStyle\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Joints As Bone\" -fade;")
@@ -1092,7 +1092,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Display Joints As None"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".drawStyle\") 2;\n}\ninViewMessage -pos topCenter -msg \"Display Joints As None\" -fade;")
@@ -1108,7 +1108,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Go to Front Camera"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Front View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Front View\" -fade;")
@@ -1116,7 +1116,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Go to Side Camera"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Side View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Side View\" -fade;")
@@ -1124,7 +1124,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Go to Top Camera"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Top View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Top View\" -fade;")
@@ -1132,7 +1132,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Go to Persp Camera"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Persp View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Persp View\" -fade;")
@@ -1140,7 +1140,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Create Set Driven Key or Window"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $wExist = `window -ex setDrivenWnd`;\nif ( $wExist == 0 )\n\tSetDrivenKeyOptions;\nelse\n\tgenerateSetDrivenCommand;")
@@ -1148,7 +1148,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Find Maya Menu"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("findMenuItem")
