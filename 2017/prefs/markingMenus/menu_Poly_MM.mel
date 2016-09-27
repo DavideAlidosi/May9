@@ -653,7 +653,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem13;
 
     menuItem
         -label "Bake Vertex to Joints" 
@@ -675,7 +675,7 @@
         -image "out_joint.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
@@ -2493,7 +2493,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem11;
 
         menuItem
             -label "Planar" 
@@ -2542,7 +2542,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem4;
+            menuEditorMenuItem12;
 
         menuItem
             -label "Cylindrical" 
@@ -2591,7 +2591,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem13;
 
         menuItem
             -label "Spherical" 
@@ -2640,7 +2640,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem14;
 
         menuItem
             -label "separator" 
@@ -2664,6 +2664,54 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem9;
+
+        menuItem
+            -label "Auto Seams" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "performPolyAutoSeamUV 0" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyAutoSeams.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem18;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "performPolyAutoSeamUV 1" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem20;
 
         menuItem
             -label "UV Borders" 

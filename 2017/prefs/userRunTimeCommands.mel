@@ -1182,8 +1182,8 @@ runTimeCommand
 	-annotation "Bake Arbitrary Deformation to Skin Joints"
 	-category "Custom Scripts.May9_Pro.SOuP"
 	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $toolWarning = `confirmDialog -title \"Bake Deforms to Joints\" -message \"This command bake all vertex deformation to joints, but can be a long task.\\nAre you sure to continue?\" \n    -button \"Yes\" -button \"No\" -defaultButton \"No\" \n    -cancelButton \"No\" -dismissString \"No\"`;\n\nif ($toolWarning == \"Yes\")\n\tpython (\"bakeArbDefs_SOuP().bake(samples=200, voxelBinding=False)\");\n\nelse\n\tinViewMessage -pos topCenter -msg \"Bake Deforms to Joints cancelled\" -fade;")
+	-commandLanguage "python"
+	-command ("bakeArbDefs_SOuP().bake(samples=200, voxelBinding=False)")
 	BakeArbitraryDeformation;
 
 runTimeCommand
