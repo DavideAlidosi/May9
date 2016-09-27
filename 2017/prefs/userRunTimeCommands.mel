@@ -12,7 +12,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Color Management On"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("colorManagementPrefs -e -cme 1;")
@@ -20,7 +20,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Color Management Off"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("colorManagementPrefs -e -cme 0;")
@@ -28,7 +28,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Show Up and Down Stream in HyperShade"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");")
@@ -36,7 +36,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Hypershade and Persp"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Hypershade\";\ninViewMessage -pos topCenter -msg \"Persp and Hypershade layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -44,7 +44,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and Node Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Node Editor\";\ninViewMessage -pos topCenter -msg \"Persp and Node Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -52,7 +52,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and UV Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/UV Editor\";\ninViewMessage -pos topCenter -msg \"Persp and UV Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -60,7 +60,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and Graph Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Graph\";\ninViewMessage -pos topCenter -msg \"Persp and Animate layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -68,7 +68,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and Blend Shape Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Blend Shape Editor\";\ninViewMessage -pos topCenter -msg \"Persp and Blend Shape Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -76,7 +76,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and Pose Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Pose Editor\";\ninViewMessage -pos topCenter -msg \"Persp and Pose Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -84,7 +84,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and Component Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Component Editor\";\ninViewMessage -pos topCenter -msg \"Persp and Component Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -92,7 +92,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and Relationship Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Relationship Editor\";\ninViewMessage -pos topCenter -msg \"Persp and Relationship Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -100,7 +100,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Persp and Script Editor"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Script Editor/Persp\";\ninViewMessage -pos topCenter -msg \"Persp and Script Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
@@ -108,7 +108,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Outliner in layout"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("ToggleOutliner")
@@ -116,7 +116,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Single Perspective"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $perspPanel = `getPanel -wl \"Persp View\"`;\ndoSwitchPanes(1, {\"single\", $perspPanel});\ninViewMessage -pos topCenter -msg \"Single Perspective / Four View layout\" -fade;")
@@ -172,7 +172,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Toggle Color Management On and Off"
-	-category "Custom Scripts.May9_Pro.Toggle"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $cmStatus = `colorManagementPrefs -q -cme`;\n\nif ($cmStatus == 0)\n{\n\tcolorManagementOn;\n\tinViewMessage -pos topCenter -msg \"Color Management on\" -fade;\n}\nelse\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Color Management off\" -fade;\n}")
@@ -236,7 +236,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Expand Shade Network"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");AttributeEditor;")
@@ -244,7 +244,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Switch Color Managment Based on Render Engine"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"mentalRay\")\n{\n\tcolorManagementOn;\n\tinViewMessage -pos topCenter -msg \"Linear workflow is set for Mental Ray\" -fade;\n\tsetAttr \"defaultRenderGlobals.enableDefaultLight\" 0;\n\tsetAttr \"miDefaultFramebuffer.datatype\" 5;\n}\nelse if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\")\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Arnold render is setted and color management is off\" -fade;\n}\nelse if (`getAttr defaultRenderGlobals.currentRenderer` == \"mayaSoftware\")\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Maya Software render is setted and color management is off\" -fade;\n}\nelse\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Unknown render setted and color management is off\" -fade;\n}")
@@ -356,7 +356,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Select Object by Material"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nhyperShade -objects $mySel")
@@ -364,7 +364,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Select Current Camera"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nselect $camera;")
@@ -372,7 +372,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Look Through Selected"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$currentPanel = `getPanel -withFocus`; \n$panelType = `getPanel -to $currentPanel`;\n$selObj = `ls -sl -l`;\nif ($panelType == \"modelPanel\")\n{\nlookThru $currentPanel $selObj;\n}")
@@ -380,7 +380,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Bifrost Continuous Emission"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[7] + \".bifrostContinuousEmission\") 1;\n\ninViewMessage -pos topCenter -msg \"Continuous emission enable on selected emitter(s)\" -fade;")
@@ -388,7 +388,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Bifrost Continuous Emission"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[7] + \".bifrostContinuousEmission\") 0;\n\ninViewMessage -pos topCenter -msg \"Continuous emission disabled on selected emitter(s)\" -fade;")
@@ -396,7 +396,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Bifrost Mesh"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nsetAttr ($mySel[0] + \".meshingEnable\") 1;\n\ninViewMessage -pos topCenter -msg \"Bifrost mesh enable on selected simulation\" -fade;")
@@ -404,7 +404,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Bifrost Mesh"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nsetAttr ($mySel[0] + \".meshingEnable\") 0;\n\ninViewMessage -pos topCenter -msg \"Bifrost mesh disable on selected simulation\" -fade;")
@@ -412,7 +412,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Bifrost Gravity"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[1] + \".gravityMagnitude\") 9.8;\n\ninViewMessage -pos topCenter -msg \"Bifrost gravity set at 9.8 on selected simulation\" -fade;")
@@ -420,7 +420,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Bifrost Gravity"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[1] + \".gravityMagnitude\") 0;\n\ninViewMessage -pos topCenter -msg \"Bifrost gravity disable on selected simulation\" -fade;")
@@ -436,7 +436,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "nParticle Ignore Nucleous Gravity Solver"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".ignoreSolverGravity\") 1;\n}\ninViewMessage -pos topCenter -msg \"nParticle ignore Nucleous gravity solver\" -fade;")
@@ -444,7 +444,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "nParticle use Nucleous gravity solver"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".ignoreSolverGravity\") 0;\n}\ninViewMessage -pos topCenter -msg \"nParticle use Nucleous gravity solver\" -fade;")
@@ -452,7 +452,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "nParticle not Self Collide"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".selfCollide\") 0;\n}\ninViewMessage -pos topCenter -msg \"nParticle not Self Collide\" -fade;")
@@ -460,7 +460,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "nParticle Self Collide"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".selfCollide\") 1;\n}\ninViewMessage -pos topCenter -msg \"nParticle Self Collide\" -fade;")
@@ -468,7 +468,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Surface Snap on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceSnap\") 1;\n}\ninViewMessage -pos topCenter -msg \"Surface Snap On\" -fade;")
@@ -476,7 +476,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Surface Snap on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceSnap\") 0;\n}\ninViewMessage -pos topCenter -msg \"Surface Snap Off\" -fade;")
@@ -484,7 +484,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Surface Collide Outside on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 1;\nsetAttr ($each +\".collideMethod\") 0;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Outside On\" -fade;")
@@ -492,7 +492,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Surface Collide Inside on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 1;\nsetAttr ($each +\".collideMethod\") 1;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Inside On\" -fade;")
@@ -500,7 +500,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Surface Collide Both on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 1;\nsetAttr ($each +\".collideMethod\") 2;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Both On\" -fade;")
@@ -508,7 +508,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Surface Collide on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 0;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Off\" -fade;")
@@ -516,7 +516,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Occupy Attraction on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".occupyAttraction\") 2;\nsetAttr ($each +\".occupyBranchTermination\") 1;\n}\ninViewMessage -pos topCenter -msg \"Occupy Attraction On\" -fade;")
@@ -524,7 +524,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Occupy Attraction on Selected Brush"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".occupyAttraction\") 0;\nsetAttr ($each +\".occupyBranchTermination\") 0;\n}\ninViewMessage -pos topCenter -msg \"Occupy Attraction Off\" -fade;")
@@ -532,7 +532,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Occupy Volume on Line Modifier"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".shape\") 1;\nsetAttr ($each +\".widthScale\") 1;\nsetAttr ($each +\".occupyAttraction\") 5;\nsetAttr ($each +\".occupyBranchTermination\") 1;\n}\ninViewMessage -pos topCenter -msg \"Occupy Volume On\" -fade;")
@@ -540,7 +540,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Occupy Volume on Line Modifier"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.PaintFX"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".occupyAttraction\") 0;\nsetAttr ($each +\".occupyBranchTermination\") 0;\n}\ninViewMessage -pos topCenter -msg \"Occupy Volume Off\" -fade;")
@@ -548,7 +548,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Closed Hypershade Panel"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ( `panel -ex hyperShadePanel1` ) {\n    deleteUI -pnl hyperShadePanel1;\n}")
@@ -588,7 +588,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Delete Unknown Node"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $gffu[] = `ls -type unknown`;\nfor ($rfo in $gffu) \n{\n\tlockNode -lock off $rfo;\n\tdelete $rfo; \n}")
@@ -596,7 +596,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Delete Selected Node(s)"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $gffu[] = `ls -sl`;\nfor ($rfo in $gffu) \n{\n\tlockNode -lock off $rfo;\n\tdelete $rfo; \n}")
@@ -636,7 +636,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "UV Selection on Selected Objects"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$mySel = `ls -sl -l`;\ndoMenuComponentSelection(\"$mySel\", \"puv\");")
@@ -644,7 +644,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Particle Selection on Selected Simulation"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$mySel = `ls -sl -l`;\ndoMenuComponentSelection(\"$mySel\", \"particle\");")
@@ -708,7 +708,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Bevel Curve(s) for Text"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("bevelPlus -constructionHistory true  -normalsOutwards true  -range false  -polygon 1 -tolerance 0.01 -numberOfSides 4 -js true  -width 0.01 -depth 0.01 -extrudeDepth 0.1 -capSides 4 -bevelInside 0 -outerStyle 0 -innerStyle 0 -polyOutMethod 2 -polyOutCount 200 -polyOutExtrusionType 3 -polyOutExtrusionSamples 4 -polyOutCurveType 3 -polyOutCurveSamples 15 -polyOutUseChordHeightRatio 0;")
@@ -716,7 +716,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Time Dragger in Smooth Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("storeLastAction( \"restoreLastContext \" + `currentCtx` );setToolTo TimeDragger;timeControl -e -snap false $gPlayBackSlider;")
@@ -724,7 +724,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Time Dragger in Smooth Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("invokeLastAction;\ntimeControl -e -snap true $gPlayBackSlider;\nint $n = `currentTime -query`;\ncurrentTime -edit $n;")
@@ -732,7 +732,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Frame Only Selected Object into a Hierarchy"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkDown;\nfitPanel -selected;\nPickWalkUp")
@@ -740,7 +740,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Simple UV Based Deformer"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("transferAttributes -transferPositions 1 -transferNormals 0 -transferUVs 2 -transferColors 2 -sampleSpace 3 -sourceUvSpace \"map1\" -targetUvSpace \"map1\" -searchMethod 3-flipUVs 0 -colorBorders 1 ;")
@@ -748,7 +748,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Auto IPR on all render region for all render engine"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n}\nelse{ \n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}")
@@ -828,7 +828,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Double Side on Selected"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s $mySel`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($myShape[$i] + \".doubleSided\") 1;\n}")
@@ -836,7 +836,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Double Side on Selected"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s $mySel`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($myShape[$i] + \".doubleSided\") 0;\n}")
@@ -844,7 +844,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Open light List Panel UI"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("callPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};")
@@ -868,7 +868,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Show HG Connection of a node(s)"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("showDGLevel hyperGraphPanel1HyperGraphEd;")
@@ -876,7 +876,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Insert Keyframe On the Line Graph"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setKeyframe -insert")
@@ -884,7 +884,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Save Current Render as Image"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("renderWindowMenuCommand saveImage renderView")
@@ -892,7 +892,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Create Transform nConstraint"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("performCreateDynamicConstraint 0 \"transform\";")
@@ -900,7 +900,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Edit Current light"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("ShowManipulators;AttributeEditor")
@@ -908,7 +908,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Edit Current Deformer"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("ShowManipulators;LastOpInStack")
@@ -916,7 +916,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Edit Current Camera"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("LookThruSelected;AttributeEditor;")
@@ -924,7 +924,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Legacy Subdiv in Poly Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -o`;subdGivenIntoPolyMode $mySel[0] 1 0 0 0;inViewMessage -pos topCenter -msg \"Poly Mode\" -fade;")
@@ -932,7 +932,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Legacy Subdiv in Standard Mode"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -o`;subdGivenIntoHierMode $mySel[0];inViewMessage -pos topCenter -msg \"Subd Mode\" -fade;")
@@ -948,7 +948,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Physically Based"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor($i=0;$i<size($mySel);$i++){\n    applyPresetToNode $mySel[$i] \"\" \"\" \"PhysicallyBased\" 1;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Enable\" -fade;")
@@ -956,7 +956,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Physically Based"
-	-category "Custom Scripts.May9_Pro"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor($i=0;$i<size($mySel);$i++){\n    applyPresetToNode $mySel[$i] \"\" \"\" \"Default\" 1;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Disable\" -fade;")
