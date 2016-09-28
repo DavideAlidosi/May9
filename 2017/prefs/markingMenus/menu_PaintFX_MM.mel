@@ -127,6 +127,32 @@
         menuEditorMenuItem5;
 
     menuItem
+        -label "Get Brush" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint_Effects/Airbrush/\");" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "paintEffectsBrushesLarge.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
+    menuItem
         -label "Surface Snap" 
         -divider 0
         -subMenu 1
@@ -527,32 +553,6 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
-
-    menuItem
-        -label "Get Brush" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "{VisorWindow;string $pnl=visorPanelName();if(size($pnl)>0) visorPanelMenuCommand( $pnl, \"selectOrCreateTabByLabel Paint Effects\");}" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "paintEffectsBrushesLarge.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem15;
 
 setParent -m ..;
 

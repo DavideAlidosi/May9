@@ -56,7 +56,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "{VisorWindow;string $pnl=visorPanelName();if(size($pnl)>0) visorPanelMenuCommand( $pnl, \"selectOrCreateTabByLabel Paint Effects\");}" 
+        -command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint_Effects/Airbrush/\");" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0

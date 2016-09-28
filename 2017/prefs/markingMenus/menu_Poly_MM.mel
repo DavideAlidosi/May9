@@ -53,7 +53,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "ArtPaintAttrToolOptions;" 
+            -command "ArtPaintAttrTool" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -73,6 +73,30 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
+
+        menuItem
+            -label "menuEditorMenuItem13" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ArtPaintAttrToolOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
 
         menuItem
             -label "Paint Hair Follicle" 
@@ -129,7 +153,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "ArtPaintSkinWeightsToolOptions" 
+            -command "ArtPaintSkinWeightsTool" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -151,11 +175,35 @@
             menuEditorMenuItem9;
 
         menuItem
-            -label "3D UV Grab" 
+            -label "menuEditorMenuItem1" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\ntextureWindow -edit -displaySolidMap 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayDistortion 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayCheckered 1 polyTexturePlacementPanel1;" 
+            -command "ArtPaintSkinWeightsToolOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Smooth Skin Weight" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SmoothSkinWeightPaint" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -164,17 +212,41 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "SW" 
+            -radialPosition "W" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "UV_3D_Grab_Brush.png" 
+            -image "artPaintSelect.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
+
+        menuItem
+            -label "menuEditorMenuItem14" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SmoothSkinWeightPaint;\nToolProperty" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem14;
 
         menuItem
             -label "Paint Effects" 
@@ -190,7 +262,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "W" 
+            -radialPosition "SW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -207,7 +279,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "PaintOnPaintableObjects;\nMakePaintable;\n{VisorWindow;string $pnl=visorPanelName();if(size($pnl)>0) visorPanelMenuCommand( $pnl, \"selectOrCreateTabByLabel Paint Effects\");};" 
+            -command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint_Effects/Airbrush/\");" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -282,7 +354,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "Art3dPaintToolOptions;" 
+            -command "Art3dPaintTool" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -302,6 +374,30 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
+
+        menuItem
+            -label "menuEditorMenuItem12" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "Art3dPaintToolOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
 
     setParent -m ..;
 
@@ -660,7 +756,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "LoadSOUP;\nBakeArbitraryDeformation" 
+        -command "BakeArbitraryDeformation" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -2063,7 +2159,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "LoadSOUP;\nShatterMesh" 
+            -command "ShatterMesh" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2424,6 +2520,31 @@
             menuEditorMenuItem10;
 
         menuItem
+            -label "3D UV Grab" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\ntextureWindow -edit -displaySolidMap 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayDistortion 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayCheckered 1 polyTexturePlacementPanel1;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "UV_3D_Grab_Brush.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem21;
+
+        menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator" 
@@ -2493,7 +2614,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem11;
+            menuEditorMenuItem12;
 
         menuItem
             -label "Planar" 
@@ -2542,7 +2663,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem12;
+            menuEditorMenuItem13;
 
         menuItem
             -label "Cylindrical" 
@@ -2591,7 +2712,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem13;
+            menuEditorMenuItem14;
 
         menuItem
             -label "Spherical" 
@@ -2640,7 +2761,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem19;
 
         menuItem
             -label "separator" 
@@ -2685,12 +2806,13 @@
             -image "polyAutoSeams.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem18;
 
         menuItem
+            -label "menuEditorMenuItem20" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -2708,7 +2830,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem20;
@@ -2743,7 +2865,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "LoadSOUP;\nViewportUV" 
+            -command "ViewportUV" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2932,7 +3054,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem1;
 
         menuItem
             -label "Set Harden Edge" 
