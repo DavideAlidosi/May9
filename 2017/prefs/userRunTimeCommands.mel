@@ -1156,7 +1156,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Load SOuP"
-	-category "Custom Scripts.May9_Pro.SOuP"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded SOuP` == 0){\n\tcatchQuiet(`loadPlugin \"SOuP\"`);\n}")
@@ -1164,7 +1164,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Show and edit UV in Viewport"
-	-category "Custom Scripts.May9_Pro.SOuP"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("maya.mel.eval(\"LoadSOUP\")\n\nimport maya.cmds as cmds\noriginalMesh = cmds.ls(sl=1)\nMapToMeshNode = cmds.createNode('mapToMesh')\ncmds.connectAttr(originalMesh[0]+'.worldMesh', MapToMeshNode+'.inMesh')\nUVsMesh = cmds.duplicate(originalMesh, n=originalMesh[0]+'_UV_Editable_Mesh')\ncmds.connectAttr(MapToMeshNode+'.outMesh', UVsMesh[0]+'.inMesh')\nMeshToMapNode = cmds.createNode('meshToMap')\nFinalMesh = cmds.duplicate(originalMesh,  n=originalMesh[0]+'_UV_Mapped_Mesh')\ncmds.connectAttr(originalMesh[0]+'.outMesh', MeshToMapNode+'.inMesh')\ncmds.connectAttr(UVsMesh[0]+'.outMesh', MeshToMapNode+'.inMesh2')\ncmds.connectAttr(MeshToMapNode+'.outMesh', FinalMesh[0]+'.inMesh')\ncmds.hide(originalMesh)")
@@ -1172,7 +1172,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Bake Deformation to Skin Mesh"
-	-category "Custom Scripts.May9_Pro.SOuP"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("maya.mel.eval(\"LoadSOUP\")\n\nimport maya.cmds as cmds\njoint = cmds.ls(sl=1)\nbakeDefsToFkSkel_SOuP().bake(joint[0], nodes=None, maxInfluences=8, useRootJoint=True)")
@@ -1180,7 +1180,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Bake Arbitrary Deformation to Skin Joints"
-	-category "Custom Scripts.May9_Pro.SOuP"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("maya.mel.eval(\"LoadSOUP\")\n\nbakeArbDefs_SOuP().bake(samples=200, voxelBinding=False)")
@@ -1188,7 +1188,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Apply Shatter Effect to Selected Mesh"
-	-category "Custom Scripts.May9_Pro.SOuP"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("maya.mel.eval(\"LoadSOUP\")\n\nimport maya.cmds as cmds\ninitialGeo = cmds.ls(sl=1)\ncmds.duplicate(initialGeo)\ncmds.hide(initialGeo)\ntoShatterTrans = cmds.ls(sl=1)\ncmds.pickWalk(direction='down')\ntoShatterGeo = cmds.ls(sl=1)\nlocatorShatter = cmds.createNode('locator')\ncmds.parent(toShatterGeo,locatorShatter)\ncmds.ClearFreeze(toShatterGeo)\nvolumeScatter = cmds.createNode('scatter')\ncmds.setAttr(volumeScatter+'.pointDensity',250)\ncmds.connectAttr(toShatterTrans[0]+'.worldMatrix[0]', volumeScatter+'.inWorldMatrix')\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', volumeScatter+'.inGeometry')\nshatterOperator = cmds.createNode('shatter')\ncmds.setAttr(shatterOperator+'.distance',0.01)\ncmds.setAttr(shatterOperator+'.autoEvaluate',1)\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', shatterOperator+'.inGeometry')\ncmds.connectAttr(volumeScatter+'.outPositionPP', shatterOperator+'.inPositionPP')\nShatterGeo = cmds.duplicate(toShatterGeo)\ncmds.connectAttr(shatterOperator+'.outGeometry', ShatterGeo[0]+'.inMesh')\ncmds.hide(toShatterTrans)\ncmds.select(ShatterGeo)\ncmds.ResetTweakPoint(ShatterGeo)")
@@ -1196,7 +1196,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Load Smooth Skin Cluster Weight"
-	-category "Custom Scripts.May9_Pro.SmoothSkinWeight"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SmoothSkinWeight"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded smoothSkinClusterWeight` == 0){\n\tcatchQuiet(`loadPlugin \"smoothSkinClusterWeight\"`);\n}")
@@ -1204,7 +1204,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Smooth Skin Cluster Weight Paint"
-	-category "Custom Scripts.May9_Pro.SmoothSkinWeight"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SmoothSkinWeight"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("LoadSmoothSkinWeight;\nbr_smoothSkinClusterWeightPaint")
@@ -1212,7 +1212,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Smooth Skin Cluster Weight Flood"
-	-category "Custom Scripts.May9_Pro.SmoothSkinWeight"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SmoothSkinWeight"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("LoadSmoothSkinWeight;\nbr_smoothSkinClusterWeightFlood 0")
@@ -1220,7 +1220,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Smooth Skin Cluster Weight Flood Options"
-	-category "Custom Scripts.May9_Pro.SmoothSkinWeight"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SmoothSkinWeight"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("LoadSmoothSkinWeight;\nbr_smoothSkinClusterWeightFlood 1")
@@ -1236,9 +1236,17 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Open SoftClusterEX UI"
-	-category "Custom Scripts.May9_Pro.Modeling"
+	-category "Custom Scripts.May9_Pro.Plug-ins"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("SoftClusterEX.launch()")
 	SoftClusterUI;
+
+runTimeCommand
+	-annotation "Contour Deformer"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("maya.mel.eval(\"LoadSOUP\")\n\ncontourDeformer_SOuP().main()")
+	ContourDeformer;
 

@@ -749,7 +749,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem13;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Bake Vertex to Joints" 
@@ -2031,7 +2031,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem20;
+            menuEditorMenuItem2;
 
         menuItem
             -label "Delta Mush" 
@@ -2079,7 +2079,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem23;
+            menuEditorMenuItem3;
 
         menuItem
             -label "Membrane" 
@@ -2152,7 +2152,32 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem25;
+            menuEditorMenuItem6;
+
+        menuItem
+            -label "Contour" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ContourDeformer" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "GreasePencil.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem20;
 
         menuItem
             -label "Shatter" 
@@ -2249,7 +2274,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem26;
+            menuEditorMenuItem8;
 
         menuItem
             -label "Paint Texture" 
@@ -2298,7 +2323,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem27;
+            menuEditorMenuItem12;
 
         menuItem
             -label "separator" 
@@ -2468,7 +2493,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem28;
+            menuEditorMenuItem19;
 
     setParent -m ..;
 
