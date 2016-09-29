@@ -1234,3 +1234,11 @@ runTimeCommand
 	-command ("toolPropertyWindow -inMainWindow true")
 	ToolProperty;
 
+runTimeCommand
+	-annotation "Open SoftClusterEX UI"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("SoftClusterEX.launch()")
+	SoftClusterUI;
+

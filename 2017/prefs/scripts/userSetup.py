@@ -6,3 +6,6 @@ import boss.BossEditor as be
 
 #Preload MMtoKey
 import MMtoKey
+
+#Preload MMtoKey
+import SoftClusterEX

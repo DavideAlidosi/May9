@@ -301,7 +301,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem11;
 
     menuItem
         -label "Detach" 
@@ -375,7 +375,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem10;
+        menuEditorMenuItem12;
 
     menuItem
         -label "Edges to Curve" 
@@ -812,7 +812,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem4;
+            menuEditorMenuItem10;
 
         menuItem
             -label "Lattice" 
@@ -861,7 +861,32 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem11;
+
+        menuItem
+            -label "Soft Cluster" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SoftClusterUI" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "softClusterEXBanner.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem9;
 
         menuItem
             -label "separator" 
@@ -881,7 +906,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
@@ -906,12 +931,13 @@
             -image "smoothSkinWeights.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem8;
 
         menuItem
+            -label "menuEditorMenuItem9" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -929,10 +955,10 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem9;
+            menuEditorMenuItem12;
 
     setParent -m ..;
 
