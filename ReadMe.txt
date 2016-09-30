@@ -118,3 +118,4 @@ Carlos Rico Adega for Offset Keyframes
 Peter Shipkov for SOuP
 Ingo Clements for Smooth Skin Cluster Weight
 Webber Huang for Soft Cluster EX
+Mariano Merchante for Instance Along Curve

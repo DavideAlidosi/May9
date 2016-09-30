@@ -1250,3 +1250,11 @@ runTimeCommand
 	-command ("maya.mel.eval(\"LoadSOUP\")\n\ncontourDeformer_SOuP().main()")
 	ContourDeformer;
 
+runTimeCommand
+	-annotation "Convet Polygons to NURBS surface"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("doSubdivCreate( \"2\", { \"1\",\"1\",\"10000\",\"128\"} );\ndoSubdivToNurbs( {\"1\",\"1\",\"0\"} );\nhyperShade -assign initialShadingGroup;")
+	PolyToNurbs;
+
