@@ -431,7 +431,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "if (`isUIComponentVisible(\"Tool Settings\")`) {\n\tArt3dPaintTool;\n} else {\n\ttoolPropertyWindow -inMainWindow true;\n    toggleUIComponentVisibility(\"Tool Settings\");\n    Art3dPaintTool;\n}" 
+            -command "Art3dPaintToolOptions;\nDisplayShadedAndTextured" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -451,30 +451,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem19;
-
-        menuItem
-            -label "menuEditorMenuItem20" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "Art3dPaintToolOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem20;
 
         menuItem
             -label "Paint Hair Follicle" 
@@ -1233,9 +1209,9 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
-		-image "da_PolygonsToNurbs.png" 
+        -image "da_PolygonsToNurbs.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem19;
@@ -1260,7 +1236,7 @@
             -image "da_PolygonsToNurbs.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -1283,7 +1259,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -1308,12 +1284,13 @@
             -image "polyToSubdivs.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
+            -label "menuEditorMenuItem4" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -1331,7 +1308,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
@@ -1356,7 +1333,7 @@
             -image "subdivCreate.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem5;
