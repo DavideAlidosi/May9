@@ -354,7 +354,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "Art3dPaintTool" 
+            -command "if (`isUIComponentVisible(\"Tool Settings\")`) {\n\tArt3dPaintTool;\n} else {\n\ttoolPropertyWindow -inMainWindow true;\n    toggleUIComponentVisibility(\"Tool Settings\");\n    Art3dPaintTool;\n}" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2174,7 +2174,7 @@
             -image "GreasePencil.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem20;
