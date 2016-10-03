@@ -2884,30 +2884,6 @@
             menuEditorMenuItem1;
 
         menuItem
-            -label "menuEditorMenuItem6" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "GreasePencilTool; toolPropertyWindow -inMainWindow true;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
             -label "Attach To Motion Path" 
             -divider 0
             -subMenu 0
@@ -2956,81 +2932,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem12;
-
-        menuItem
-            -label "Define Driven Key" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CereateSetDriven" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "keyIntoclip.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "Bake Animation" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "BakeSimulation" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "bakeAnimation.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem17;
-
-        menuItem
-            -label "menuEditorMenuItem18" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "BakeSimulationOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem20;
 
         menuItem
             -label "Set Driven Key" 
@@ -3129,6 +3030,55 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem15;
+
+        menuItem
+            -label "Bake Animation" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "doBakeSimulationArgList 8 { \"1\",\"0\",\"10\",\"1\",\"0\",\"0\",\"1\",\"1\",\"0\",\"1\",\"animationList\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"1\" };" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "bakeAnimation.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem19;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "BakeSimulationOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem20;
 
     setParent -m ..;
 

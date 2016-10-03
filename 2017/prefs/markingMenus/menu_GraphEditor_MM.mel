@@ -127,32 +127,6 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         menuEditorMenuItem7;
 
     menuItem
-        -label "Set Driven Key" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetDrivenKeyOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
         -label "Simplify Curves" 
         -divider 0
         -subMenu 0
@@ -166,7 +140,7 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "SE" 
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -209,11 +183,11 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -tearOff 0
         -command "ToggleCurveSelection" 
         -altModifier 0
-		-checkBox (1 == $selectCurvesCheck)
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
+        -checkBox (1 == $selectCurvesCheck)
         -optionBox 0
         -enable 1
         -data 0
@@ -242,17 +216,41 @@ int $selectCurvesCheck = `selectType -q -animCurve`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "SW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -image "out_animCurveTA.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
+
+    menuItem
+        -label "Set Driven Key" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetDrivenKeyOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "setDrivenKeyframe.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
 
 setParent -m ..;
 

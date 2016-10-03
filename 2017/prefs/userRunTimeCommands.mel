@@ -1139,14 +1139,6 @@ runTimeCommand
 	GoToPersp;
 
 runTimeCommand
-	-annotation "Create Set Driven Key or Window"
-	-category "Custom Scripts.May9_Pro.Animate"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("int $wExist = `window -ex setDrivenWnd`;\nif ( $wExist == 0 )\n\tSetDrivenKeyOptions;\nelse\n\tgenerateSetDrivenCommand;")
-	CereateSetDriven;
-
-runTimeCommand
 	-annotation "Find Maya Menu"
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
