@@ -99,6 +99,14 @@ runTimeCommand
 	LayoutPerspRelation;
 
 runTimeCommand
+	-annotation "Layout Persp Reference"
+	-category "Custom Scripts.May9_Pro.Layout"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"Persp/Reference Editor\";\ninViewMessage -pos topCenter -msg \"Persp and Reference Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
+	LayoutPerspReference;
+
+runTimeCommand
 	-annotation "Layout Persp and Script Editor"
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""

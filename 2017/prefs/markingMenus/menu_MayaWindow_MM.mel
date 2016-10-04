@@ -384,12 +384,38 @@
             menuEditorMenuItem8;
 
         menuItem
+            -label "Persp/Reference" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LayoutPerspReference" 
+            -keyEquivalent "9" 
+            -altModifier 1
+            -optionModifier 1
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "perspMultiOutlinerLayout.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
             -label "Persp/Script Editor" 
             -divider 0
             -subMenu 0
             -tearOff 0
             -command "LayoutPerspScript" 
-            -keyEquivalent "9" 
+            -keyEquivalent "'" 
             -altModifier 1
             -optionModifier 1
             -commandModifier 0
