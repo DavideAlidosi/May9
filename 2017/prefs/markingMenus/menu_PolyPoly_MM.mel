@@ -2907,7 +2907,6 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2924,7 +2923,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\ntextureWindow -edit -displaySolidMap 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayDistortion 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayCheckered 1 polyTexturePlacementPanel1;" 
+            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2939,10 +2938,33 @@
             -image "UV_3D_Grab_Brush.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem13;
+            menuEditorMenuItem14;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
 
         menuItem
             -label "separator" 

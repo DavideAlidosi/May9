@@ -725,7 +725,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem13;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Bake Vertex to Joints" 
@@ -2574,7 +2574,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\ntextureWindow -edit -displaySolidMap 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayDistortion 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayCheckered 1 polyTexturePlacementPanel1;" 
+            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2593,6 +2593,29 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem21;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
 
         menuItem
             -label "separator" 
@@ -2664,7 +2687,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem12;
+            menuEditorMenuItem14;
 
         menuItem
             -label "Planar" 
@@ -2713,7 +2736,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem13;
+            menuEditorMenuItem19;
 
         menuItem
             -label "Cylindrical" 
@@ -2762,7 +2785,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem20;
 
         menuItem
             -label "Spherical" 
@@ -2811,7 +2834,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem19;
+            menuEditorMenuItem22;
 
         menuItem
             -label "separator" 
@@ -2883,7 +2906,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem20;
+            menuEditorMenuItem23;
 
         menuItem
             -label "UV Borders" 
