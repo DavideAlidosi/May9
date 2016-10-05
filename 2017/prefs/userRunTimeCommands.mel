@@ -1266,3 +1266,11 @@ runTimeCommand
 	-command ("string $mesh[] = `ls -sl -ni -typ \"mesh\"`;\nstring $membrane[] = `ls -sl -ni -typ \"membrane\"`;\n\nconnectAttr -f ($mesh[0] + \".worldMesh\") ($membrane[0] + \".collideMesh\");")
 	membraneCollider;
 
+runTimeCommand
+	-annotation "Load and Run Instance Along Curve"
+	-category "Custom Scripts.May9_Pro.Plug-ins"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`pluginInfo -q -loaded instanceAlongCurve` == 0){\n\tcatchQuiet(`loadPlugin \"instanceAlongCurve\"`);\n}\ninstanceAlongCurve")
+	runInstanceAlongCurve;
+
