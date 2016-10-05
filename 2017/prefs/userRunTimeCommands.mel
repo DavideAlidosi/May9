@@ -1258,3 +1258,11 @@ runTimeCommand
 	-command ("doSubdivCreate( \"2\", { \"1\",\"1\",\"10000\",\"128\"} );\ndoSubdivToNurbs( {\"1\",\"1\",\"0\"} );\nhyperShade -assign initialShadingGroup;")
 	PolyToNurbs;
 
+runTimeCommand
+	-annotation "Connect a Mesh to Membrane Collide"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mesh[] = `ls -sl -ni -typ \"mesh\"`;\nstring $membrane[] = `ls -sl -ni -typ \"membrane\"`;\n\nconnectAttr -f ($mesh[0] + \".worldMesh\") ($membrane[0] + \".collideMesh\");")
+	membraneCollider;
+
