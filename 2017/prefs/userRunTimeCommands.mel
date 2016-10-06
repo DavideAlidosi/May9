@@ -1035,6 +1035,14 @@ runTimeCommand
 	aiSkyDome;
 
 runTimeCommand
+	-annotation "Create ai Mesh Light"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.doCreateMeshLight()")
+	aiMeshLight;
+
+runTimeCommand
 	-annotation "Create a MASH Network for Voxelize a Mash"
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
