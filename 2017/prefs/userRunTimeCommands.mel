@@ -1,4 +1,4 @@
-//Maya Preference 2016.5 (Release 1)
+//Maya Preference 2017 (Release 1)
 //
 //
 
@@ -1281,12 +1281,4 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded instanceAlongCurve` == 0){\n\tcatchQuiet(`loadPlugin \"instanceAlongCurve\"`);\n}\ninstanceAlongCurve")
 	runInstanceAlongCurve;
-
-runTimeCommand
-	-annotation "Toggle Docked Outliner as in Maya 2017"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if ( `dockControl -ex $dockedOutliner` ){\n    deleteUI -ctl $dockedOutliner;\n\tOutlinerWindow;\n\tscriptJob -runOnce true -idleEvent \"deleteUI outlinerPanel1Window\";\n}\nelse{\n    global string $gMainWindow;\n    $singlelLayout = `paneLayout -cn single -p $gMainWindow`;\n    $dockedOutliner = `dockControl -l \"Outliner\" -aa \"left\" -aa \"right\" -a \"left\" -w 230 -con $singlelLayout`;\n    OutlinerWindow;\n    evalDeferred(\"control -e -p \" + $singlelLayout + \" outlinerPanel1Window;\");\n\n\toutlinerEditor -e -showAssignedMaterials true outlinerPanel1;\n\toutlinerEditor -edit -renderFilterVisible true outlinerPanel1;\n}")
-	ToggleOutliner;
 
