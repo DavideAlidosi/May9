@@ -378,54 +378,6 @@
         menuEditorMenuItem10;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
-
-    menuItem
-        -label "Toggle Border Edges" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleBorderEdges;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "borderEdge.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem21;
-
-    menuItem
         -label "Edges to Curve" 
         -divider 0
         -subMenu 0
@@ -510,7 +462,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
-            -image "menuIconDeformations.png" 
+            -image "bendNLD.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -860,7 +812,32 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Soft Cluster" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SoftClusterUI" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "softClusterEXBanner.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem9;
 
         menuItem
             -label "Lattice" 
@@ -912,11 +889,11 @@
             menuEditorMenuItem4;
 
         menuItem
-            -label "Texture Deformer" 
-            -divider 0
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
             -subMenu 0
             -tearOff 0
-            -command "CreateTextureDeformer;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -928,20 +905,43 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "textureDeformer.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem6;
+
+        menuItem
+            -label "Smooth Skin Flood" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SmoothSkinWeightFlood" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "smoothSkinWeights.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem8;
 
         menuItem
-            -label "menuEditorMenuItem6" 
+            -label "menuEditorMenuItem9" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "CreateTextureDeformerOptions;" 
+            -command "SmoothSkinWeightFloodOptions" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -958,7 +958,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem5;
 
     setParent -m ..;
 
@@ -1036,7 +1036,7 @@
             menuEditorMenuItem2;
 
         menuItem
-            -label "Toggle UV Borders" 
+            -label "UV Borders" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -1342,6 +1342,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "out_particle.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -1365,6 +1366,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1389,6 +1391,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1413,6 +1416,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1437,6 +1441,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1461,6 +1466,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1471,7 +1477,7 @@
         setParent -m ..;
 
         menuItem
-            -label "Fields" 
+            -label "Add Fields" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -1485,6 +1491,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "posRadial.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 

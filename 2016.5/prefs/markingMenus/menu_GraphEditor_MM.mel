@@ -1,3 +1,4 @@
+int $selectCurvesCheck = `selectType -q -animCurve`;
 
     menuItem
         -label "Non-weighted Tangents" 
@@ -67,7 +68,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "addCreateGeneric.png" 
+        -image "keyIntoclip.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -126,33 +127,7 @@
         menuEditorMenuItem7;
 
     menuItem
-        -label "Set Driven Key" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetDrivenKeyOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setDrivenKeyframe.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
-        -label "Simplify Curve" 
+        -label "Simplify Curves" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -165,10 +140,11 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "SE" 
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "da_simplifyCurve.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -199,6 +175,82 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
+
+    menuItem
+        -label "Select Curve" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ToggleCurveSelection" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -checkBox (1 == $selectCurvesCheck)
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
+
+    menuItem
+        -label "Offset Keys" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "craOffsetKeys" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_animCurveTA.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
+
+    menuItem
+        -label "Set Driven Key" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetDrivenKeyOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "setDrivenKeyframe.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
 
 setParent -m ..;
 

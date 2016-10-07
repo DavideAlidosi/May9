@@ -1,4 +1,6 @@
-
+	int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
+	int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
+	
     menuItem
         -label "Polygons" 
         -divider 0
@@ -300,6 +302,31 @@
             -longDivider 1
             menuEditorMenuItem10;
 
+        menuItem
+            -label "Interactive Creation" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "toggleCreatePolyPrimitiveAsTool" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+			-checkBox (1 == $PolyIntCheck)
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
     setParent -m ..;
 
     menuItem
@@ -389,7 +416,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
+            -radialPosition "W" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -416,7 +443,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "W" 
+            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -429,11 +456,37 @@
             menuEditorMenuItem3;
 
         menuItem
-            -label "Render View" 
+            -label "Rendering Flags" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "RenderViewWindow" 
+            -command "RenderFlagsWindow" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "menuIconRenderSettings.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
+
+        menuItem
+            -label "Shade Attributes" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "AttributeEditor;\nscriptJob -runOnce true -idleEvent \"ShadingGroupAttributeEditor\"" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -446,13 +499,13 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "rvOpenWindow.png" 
+            -image "out_shadingEngine.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem9;
 
         menuItem
             -label "File Path Editor" 
@@ -530,11 +583,11 @@
             menuEditorMenuItem4;
 
         menuItem
-            -label "Rendering Flags" 
+            -label "Playblast" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "RenderFlagsWindow" 
+            -command "PlayblastWindow" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -543,43 +596,41 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "NE" 
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "menuIconRenderSettings.png" 
+            -image "playblast.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem7;
 
         menuItem
-            -label "Shading Group Attributes" 
+            -label "menuEditorMenuItem11" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "AttributeEditor;\nscriptJob -runOnce true -idleEvent \"ShadingGroupAttributeEditor\"" 
+            -command "PlayblastOptions" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
             -ctrlModifier 0
             -shiftModifier 0
-            -optionBox 0
+            -optionBox 1
             -enable 1
             -data 0
-            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_shadingEngine.png" 
+            -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem9;
+            menuEditorMenuItem11;
 
     setParent -m ..;
 
@@ -833,6 +884,106 @@
             menuEditorMenuItem11;
 
         menuItem
+            -label "IK Handle" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "IKHandleTool;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NW" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "kinHandle.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem17;
+
+        menuItem
+            -label "menuEditorMenuItem18" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "IKHandleToolOptions;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem18;
+
+        menuItem
+            -label "IK Spline Handle" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "IKSplineHandleTool;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "W" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "kinSplineHandle.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem19;
+
+        menuItem
+            -label "menuEditorMenuItem20" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "IKSplineHandleToolOptions;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem20;
+
+        menuItem
             -label "Simple Connector" 
             -divider 0
             -subMenu 0
@@ -883,6 +1034,105 @@
             menuEditorMenuItem13;
 
         menuItem
+            -label "Attributes" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -image "attributes.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem22;
+
+            menuItem
+                -label "Add" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "AddAttribute;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "publishAttributes.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Edit" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "RenameAttribute" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "setEdEditMode.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Delete" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "DeleteAttribute" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "unpublishAttributes.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+        setParent -m ..;
+
+        menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator" 
@@ -903,14 +1153,14 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem23;
 
         menuItem
-            -label "Add Attribute" 
+            -label "Quick Rig" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "AddAttribute;" 
+            -command "QuickRigEditor" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -922,161 +1172,13 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "publishAttributes.png" 
+            -image "QR_QuickRigTool.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Edit Attribute" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RenameAttribute" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "setEdEditMode.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
-            -label "Delete Attribute" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "DeleteAttribute" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "unpublishAttributes.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "IK Handle" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKHandleTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "kinHandle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem17;
-
-        menuItem
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKHandleToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem18;
-
-        menuItem
-            -label "IK Spline Handle" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKSplineHandleTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "kinSplineHandle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem19;
-
-        menuItem
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKSplineHandleToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem20;
+            menuEditorMenuItem21;
 
     setParent -m ..;
 
@@ -1404,6 +1506,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem12;
+
+        menuItem
+            -label "Interactive Creation" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "toggleCreateNurbsPrimitiveAsTool;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+			-checkBox (1 == $NurbsIntCheck)
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
 
     setParent -m ..;
 
@@ -1758,56 +1885,6 @@
         menuEditorMenuItem6;
 
         menuItem
-            -label "Paint Effects" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PaintEffectsTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "paintEffectsTool.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "menuEditorMenuItem4" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "{VisorWindow;string $pnl=visorPanelName();if(size($pnl)>0) visorPanelMenuCommand( $pnl, \"selectOrCreateTabByLabel Paint Effects\");};" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
             -label "Locator" 
             -divider 0
             -subMenu 0
@@ -1834,32 +1911,6 @@
             menuEditorMenuItem5;
 
         menuItem
-            -label "Distance Tool" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "DistanceTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "distanceDim.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
             -label "Camera" 
             -divider 0
             -subMenu 0
@@ -1873,7 +1924,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "E" 
+            -radialPosition "SW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2010,11 +2061,62 @@
             menuEditorMenuItem2;
 
         menuItem
-            -label "Annotation" 
+            -label "Duplicate" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "CreateAnnotateNode" 
+            -command "DuplicateWithTransform" 
+            -keyEquivalent "D" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 1
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_duplicate.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
+            -label "menuEditorMenuItem13" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "DuplicateSpecialOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
+
+        menuItem
+            -label "Paint Effects" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2027,13 +2129,63 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "annotation.png" 
+            -image "paintEffectsTool.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem12;
+            menuEditorMenuItem17;
+
+        menuItem
+            -label "menuEditorMenuItem18" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem18;
+
+        menuItem
+            -label "Instance Along Curve" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "runInstanceAlongCurve" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "instanceAlongCurve.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
 
         menuItem
             -label "Particle Style" 
@@ -2074,6 +2226,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -2098,6 +2251,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -2122,6 +2276,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -2146,6 +2301,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -2170,6 +2326,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -2451,6 +2608,54 @@
 
         setParent -m ..;
 
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
+
+        menuItem
+            -label "Input Order" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ListInputOperations" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "nodeGrapherNext.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem16;
+
     setParent -m ..;
 
     menuItem
@@ -2490,7 +2695,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
+            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2540,7 +2745,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "E" 
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2666,7 +2871,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "S" 
+            -radialPosition "NE" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2677,30 +2882,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem6" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "GreasePencilTool; toolPropertyWindow -inMainWindow true;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
 
         menuItem
             -label "Attach To Motion Path" 
@@ -2753,81 +2934,6 @@
             menuEditorMenuItem12;
 
         menuItem
-            -label "Playblast" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PlayblastWindow" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "playblast.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "menuEditorMenuItem16" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PlayblastOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "Evaluation Toolkit" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "EvaluationToolkit" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "reverseOrder.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
             -label "Set Driven Key" 
             -divider 0
             -subMenu 0
@@ -2877,6 +2983,103 @@
             -longDivider 1
             menuEditorMenuItem11;
 
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem16;
+
+        menuItem
+            -label "Evaluation Toolkit" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "EvaluationToolkit" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "reverseOrder.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
+
+        menuItem
+            -label "Bake Animation" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "doBakeSimulationArgList 8 { \"1\",\"0\",\"10\",\"1\",\"0\",\"0\",\"1\",\"1\",\"0\",\"1\",\"animationList\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"1\" };" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "bakeAnimation.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem19;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "BakeSimulationOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem20;
+
     setParent -m ..;
 
     menuItem
@@ -2903,139 +3106,10 @@
         menuEditorMenuItem17;
 
         menuItem
-            -label "Select Camera" 
+            -label "Show" 
             -divider 0
-            -subMenu 0
+            -subMenu 1
             -tearOff 0
-            -command "SelectCamera" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "Camera.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Select Similar" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "SelectSimilar" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "selectSimilar.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "menuEditorMenuItem9" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "SelectSimilarOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Toggle HUD Info" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "info.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "Profiler" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ProfilerTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_timeEditorTrack.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Clean Main Camera" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ClearPersp;\nviewSet -h" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -3046,48 +3120,99 @@
             -data 0
             -radialPosition "SE" 
             -allowOptionBoxes 1
-            -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "hyperShadeResetCameraView.png" 
-            -echoCommand 0
+            -image "showBatchRender.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem6;
+
+            menuItem
+                -label "Local Axes" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "ToggleLocalRotationAxes;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "E" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "polyNormalSetToFace.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "XRay Mode" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "dR_objectXrayTGL" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "S" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "XRay.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "HUD Info" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "SE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "info.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+        setParent -m ..;
 
         menuItem
-            -label "Reset Renderglobals" 
+            -label "Edit" 
             -divider 0
-            -subMenu 0
+            -subMenu 1
             -tearOff 0
-            -command "ResetUI;\nunifiedRenderGlobalsWindow" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvRenderGlobals.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Delete Unknown Nodes" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "DeleteUnknownNode" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -3098,18 +3223,691 @@
             -data 0
             -radialPosition "E" 
             -allowOptionBoxes 1
-            -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "deleteGeneric.png" 
-            -echoCommand 0
+            -image "editRenderPass.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem7;
+
+            menuItem
+                -label "Freeze Transform" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "FreezeTransformations" 
+                -keyEquivalent "F" 
+                -altModifier 1
+                -optionModifier 1
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 1
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "UV_Freeze_Tool.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "menuEditorMenuItem3" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "FreezeTransformationsOptions" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+            menuItem
+                -label "Delete History" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "DeleteHistory" 
+                -keyEquivalent "D" 
+                -altModifier 1
+                -optionModifier 1
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 1
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "E" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "clearHistory.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem4;
+
+            menuItem
+                -label "Center Pivot" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "CenterPivot" 
+                -keyEquivalent "P" 
+                -altModifier 1
+                -optionModifier 1
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 1
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "SE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "menuIconModify.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem5;
+
+            menuItem
+                -label "Delete Locked" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "DeleteLockedNode" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "S" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "deleteActive.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem6;
+
+            menuItem
+                -label "Delete Unknown Nodes" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "DeleteUnknownNode" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "N" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "deleteGeneric.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem7;
+
+        setParent -m ..;
 
         menuItem
-            -label "Cache Manager" 
+            -label "Select" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -image "highlightSelect.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
+
+            menuItem
+                -label "None" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "SelectNone" 
+                -keyEquivalent "D" 
+                -altModifier 1
+                -optionModifier 1
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "SE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "hotkeyFieldClear.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Hierarchy" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "SelectHierarchy" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "selectByHierarchy.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+            menuItem
+                -label "All" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "SelectAll" 
+                -keyEquivalent "A" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 1
+                -shiftModifier 1
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "E" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "aselect.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem4;
+
+            menuItem
+                -label "Similar" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "SelectSimilar" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NW" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "selectSimilar.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem6;
+
+            menuItem
+                -label "menuEditorMenuItem7" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "SelectSimilarOptions" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem7;
+
+            menuItem
+                -label "Camera" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "SelectCamera" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "N" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "Camera.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem8;
+
+        setParent -m ..;
+
+        menuItem
+            -label "Reset" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NW" 
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -image "hyperShadeResetCameraView.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
+
+            menuItem
+                -label "Main Camera" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "ClearPersp;\nviewSet -h" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NW" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "hyperShadeResetCameraView.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Render Settings" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "ResetUI;\nunifiedRenderGlobalsWindow" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "W" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "rvRenderGlobals.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+        setParent -m ..;
+
+        menuItem
+            -label "Match" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SW" 
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -image "polyAlignUVs.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+            menuItem
+                -label "Scaling" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchScaling" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NW" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "scale_M.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Rotation" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchRotation" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "W" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "rotate_M.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Translation" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchTranslation" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "SW" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "move_M.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+            menuItem
+                -label "All Transforms" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchTransform" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "S" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "nodeGrapherModeAllLarge.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem4;
+
+            menuItem
+                -label "Pivots" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "MatchPivots" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "SE" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "pickPivotComp.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem5;
+
+        setParent -m ..;
+
+        menuItem
+            -label "Measure" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "W" 
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -image "out_distanceDimShape.png" 
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+            menuItem
+                -label "Distance Tool" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "DistanceTool" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "W" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "distanceDim.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Arc Length Tool" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "ArcLengthTool" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "NW" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "arcLengthDim.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Parameter Tool" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "ParameterTool" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "SW" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "paramDim.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+        setParent -m ..;
+
+        menuItem
+            -label "Cache" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -3123,12 +3921,12 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
-            -image "nClothCacheReplaceFrames.png" 
+            -image "nClothCacheCreate.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem11;
+            menuEditorMenuItem3;
 
             menuItem
                 -label "Create nCache" 
@@ -3177,7 +3975,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem2;
+                menuEditorMenuItem27;
 
             menuItem
                 -label "Delete nCache" 
@@ -3274,7 +4072,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem6;
+                menuEditorMenuItem28;
 
             menuItem
                 -label "Delete Fluid Cache" 
@@ -3323,7 +4121,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem8;
+                menuEditorMenuItem29;
 
             menuItem
                 -label "separator" 
@@ -3395,7 +4193,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem11;
+                menuEditorMenuItem30;
 
             menuItem
                 -label "Delete Geometry Cache" 
@@ -3444,7 +4242,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem13;
+                menuEditorMenuItem31;
 
             menuItem
                 -label "separator" 
@@ -3540,32 +4338,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem22;
-
-            menuItem
-                -label "Import GPU Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doGpuCacheImportArgList 1 {\"0\",\"0\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilImport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem23;
+                menuEditorMenuItem17;
 
             menuItem
                 -label "Export Selection to GPU Cache" 
@@ -3590,10 +4363,10 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem24;
+                menuEditorMenuItem19;
 
             menuItem
-                -label "menuEditorMenuItem25" 
+                -label "menuEditorMenuItem20" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -3614,10 +4387,35 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem17;
+                menuEditorMenuItem32;
 
             menuItem
-                -label "Refresh All GPU Cache" 
+                -label "Import GPU Cache" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doGpuCacheImportArgList 1 {\"0\",\"0\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilImport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem18;
+
+            menuItem
+                -label "Refresh GPU Cache" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -3639,7 +4437,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem26;
+                menuEditorMenuItem21;
 
             menuItem
                 -label "separator" 
@@ -3662,56 +4460,7 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem18;
-
-            menuItem
-                -label "Import Alembic" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilImport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem19;
-
-            menuItem
-                -label "menuEditorMenuItem20" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "AlembicImportOptions" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem20;
+                menuEditorMenuItem22;
 
             menuItem
                 -label "Export Selection to Alembic" 
@@ -3736,10 +4485,10 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem21;
+                menuEditorMenuItem25;
 
             menuItem
-                -label "menuEditorMenuItem25" 
+                -label "menuEditorMenuItem26" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -3760,9 +4509,109 @@
                 -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
-                menuEditorMenuItem25;
+                menuEditorMenuItem34;
+
+            menuItem
+                -label "Import Alembic" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "greasePencilImport.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem23;
+
+            menuItem
+                -label "menuEditorMenuItem24" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "AlembicImportOptions" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem35;
 
         setParent -m ..;
+
+        menuItem
+            -label "Profiler" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ProfilerTool" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_timeEditorTrack.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "Align Tool" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "setToolTo alignToolCtx" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "S" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "alignTool.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
 
     setParent -m ..;
 

@@ -1,8 +1,8 @@
 #Preload Crease Set Editor
 from maya.app.general import creaseSetEditor
 
-#Preload MMtoKey
+#Preload MM to Key
 import MMtoKey
 
-#Preload Helios
-from Helios import Helios
+#Preload Soft Cluster EX
+import SoftClusterEX

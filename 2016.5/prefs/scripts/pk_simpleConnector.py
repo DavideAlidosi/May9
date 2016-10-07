@@ -50,7 +50,7 @@ from functools import partial
 if cmds.window("connectorWindow", ex=True):
 	cmds.deleteUI("connectorWindow", window=True)
 
-window = cmds.window("connectorWindow", title = "Simple Connector", sizeable = True, toolbox=True)
+window = cmds.window("connectorWindow", title = "Simple Connector", sizeable = False, toolbox=True)
 mainLayout = cmds.columnLayout(rowSpacing = 2)
 
 source = ''
