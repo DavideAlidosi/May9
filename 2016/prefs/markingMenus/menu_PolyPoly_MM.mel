@@ -226,11 +226,11 @@
         menuEditorMenuItem32;
 
         menuItem
-            -label "Paint Hair Follicle" 
+            -label "Paint Effects" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "paintHairTool 0;" 
+            -command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -239,24 +239,24 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "E" 
+            -radialPosition "SW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "hairPaint.png" 
+            -image "paintEffectsTool.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem4;
+            menuEditorMenuItem9;
 
         menuItem
-            -label "menuEditorMenuItem5" 
+            -label "menuEditorMenuItem12" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "paintHairTool 1;" 
+            -command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -273,14 +273,64 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem12;
+
+        menuItem
+            -label "Smooth Skin Weight" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SmoothSkinWeightPaint" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "W" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "artPaintSelect.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
+
+        menuItem
+            -label "menuEditorMenuItem14" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "SmoothSkinWeightPaint;\nToolProperty" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem14;
 
         menuItem
             -label "Paint Skin Weights" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "ArtPaintSkinWeightsToolOptions" 
+            -command "ArtPaintSkinWeightsTool" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -299,118 +349,14 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem15;
 
         menuItem
-            -label "Paint Attributes" 
+            -label "menuEditorMenuItem16" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "ArtPaintAttrToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "artAttr.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "3D Paint Tool" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "Art3dPaintToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "art3dPaint.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "3D UV Grab" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\ntextureWindow -edit -displaySolidMap 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayDistortion 0 polyTexturePlacementPanel1;\ntextureWindow -edit -displayCheckered 1 polyTexturePlacementPanel1;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "UV_3D_Grab_Brush.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Paint Effects" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "paintEffectsTool.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "menuEditorMenuItem3" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PaintOnPaintableObjects;\nMakePaintable;\n{VisorWindow;string $pnl=visorPanelName();if(size($pnl)>0) visorPanelMenuCommand( $pnl, \"selectOrCreateTabByLabel Paint Effects\");};" 
+            -command "ArtPaintSkinWeightsToolOptions" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -427,7 +373,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem16;
 
         menuItem
             -label "Sculpt Geometry" 
@@ -454,10 +400,10 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem10;
+            menuEditorMenuItem17;
 
         menuItem
-            -label "menuEditorMenuItem11" 
+            -label "menuEditorMenuItem18" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -478,7 +424,133 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem11;
+            menuEditorMenuItem18;
+
+        menuItem
+            -label "3D Paint Tool" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "Art3dPaintToolOptions;\nDisplayShadedAndTextured" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "NE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "art3dPaint.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem19;
+
+        menuItem
+            -label "Paint Hair Follicle" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "paintHairTool 0;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "E" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "hairPaint.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem21;
+
+        menuItem
+            -label "menuEditorMenuItem22" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "paintHairTool 1;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem22;
+
+        menuItem
+            -label "Paint Attributes" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ArtPaintAttrTool" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SE" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "artAttr.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem23;
+
+        menuItem
+            -label "menuEditorMenuItem24" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ArtPaintAttrToolOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem24;
 
     setParent -m ..;
 
@@ -708,31 +780,6 @@
         menuEditorMenuItem10;
 
     menuItem
-        -label "Toggle Border Edges" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleBorderEdges" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "borderEdge.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem26;
-
-    menuItem
         -label "Mirror Geometries" 
         -divider 0
         -subMenu 0
@@ -779,7 +826,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem14;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Voxelize Mesh" 
@@ -828,6 +875,470 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem23;
+
+    menuItem
+        -label "Component Display" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "RS_visible.png" 
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+        menuItem
+            -label "Vertex Normals" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ToggleVertexNormalDisplay" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_edgeNormals.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Vertex IDs" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ToggleVertIDs" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "reorderIDs.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
+
+        menuItem
+            -label "Face Normals" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ToggleFaceNormalDisplay" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyNormalsConform.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Face Triangles" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "TogglePolygonFaceTriangles       polyOptions -r -dt 1" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyTriangulate.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem11;
+
+        menuItem
+            -label "Face Centers" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "TogglePolygonFaceCenters" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyConvertToContainedFaces.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem9;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+        menuItem
+            -label "Standard Edges" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "TogglePolyDisplayEdges" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_standardEdge.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem6;
+
+        menuItem
+            -label "Soft/Hard Edges" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "TogglePolyDisplaySoftEdges" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyDuplicateEdgeLoop.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem7;
+
+        menuItem
+            -label "Border Edges" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ToggleBorderEdges;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "borderEdge.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
+            -label "Normals Size" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ChangeNormalSize" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "resizeWindow.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+    setParent -m ..;
+
+    menuItem
+        -label "Convert Surface" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "da_PolygonsToNurbs.png" 
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem19;
+
+        menuItem
+            -label "Poly to NURBS" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "PolyToNurbs" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_PolygonsToNurbs.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Poly to Legacy Subdiv" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyToSubdivs.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+        menuItem
+            -label "menuEditorMenuItem4" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateSubdivSurfaceOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "Subdiv to Poly" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreatePolyFromPreview" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "subdivCreate.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+    setParent -m ..;
 
     menuItem
         -label "Subdivision" 
@@ -995,6 +1506,78 @@
         setParent -m ..;
 
         menuItem
+            -label "Display Subdivision" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+            menuItem
+                -label "On" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "OpenSubdSudivision" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "N" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Off" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "OpenSubdNoSubdivision" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+        setParent -m ..;
+
+        menuItem
             -label "OpenCL" 
             -divider 0
             -subMenu 1
@@ -1065,103 +1648,6 @@
                 menuEditorMenuItem2;
 
         setParent -m ..;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Poly to Legacy Subdiv" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polyToSubdivs.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "menuEditorMenuItem9" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateSubdivSurfaceOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Subdiv to Poly" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolyFromPreview" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "subdivCreate.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
 
     setParent -m ..;
 
@@ -1446,7 +1932,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
-            -image "menuIconDeformations.png" 
+            -image "bendNLD.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -1796,7 +2282,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem9;
+            menuEditorMenuItem1;
 
         menuItem
             -label "Delta Mush" 
@@ -1844,7 +2330,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem25;
+            menuEditorMenuItem2;
 
         menuItem
             -label "Membrane" 
@@ -1917,7 +2403,32 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem27;
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "Contour" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ContourDeformer" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "GreasePencil.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem29;
 
         menuItem
             -label "Wrap" 
@@ -1966,7 +2477,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem28;
+            menuEditorMenuItem6;
 
         menuItem
             -label "ShrinkWrap" 
@@ -2015,7 +2526,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem29;
+            menuEditorMenuItem7;
 
         menuItem
             -label "UV Based" 
@@ -2041,6 +2552,127 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem16;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem27;
+
+        menuItem
+            -label "Texture" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateTextureDeformer;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "textureDeformer.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem28;
+
+        menuItem
+            -label "menuEditorMenuItem32" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateTextureDeformerOptions;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem9;
+
+        menuItem
+            -label "Paint Texture" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "artAttrToolScript 4 \"textureDeformer\"" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "paintTextureDeformer.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem30;
+
+        menuItem
+            -label "menuEditorMenuItem33" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "artAttrToolScript 3 \"textureDeformer\"" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem13;
 
         menuItem
             -label "separator" 
@@ -2112,7 +2744,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem30;
+            menuEditorMenuItem20;
 
         menuItem
             -label "Remove Influence to Skin" 
@@ -2186,7 +2818,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem31;
+            menuEditorMenuItem24;
 
         menuItem
             -label "Unbind Skin" 
@@ -2235,7 +2867,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem32;
+            menuEditorMenuItem25;
 
     setParent -m ..;
 
@@ -2275,17 +2907,65 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "polySelectUV.png" 
+            -image "polyGridUV.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
+
+        menuItem
+            -label "3D UV Grab" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "UV_3D_Grab_Brush.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem14;
+
+        menuItem
+            -label "menuEditorMenuItem15" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
 
         menuItem
             -label "separator" 
@@ -2823,79 +3503,6 @@
             -longDivider 1
             menuEditorMenuItem14;
 
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Toggle Display" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ToggleFaceNormalDisplay;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "da_show.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Change Size" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setPolygonDisplaySettings(\"normalSize\");" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "resizeWindow.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
     setParent -m ..;
 
     menuItem
@@ -3288,54 +3895,6 @@
             menuEditorMenuItem6;
 
         menuItem
-            -label "Set Initial State" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setNClothStartState;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "hairStartFromCurrent.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem24;
-
-        menuItem
             -label "Emit Particle" 
             -divider 0
             -subMenu 0
@@ -3448,6 +4007,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "out_particle.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -3472,6 +4032,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3496,6 +4057,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3520,6 +4082,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3544,6 +4107,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3568,6 +4132,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -3576,29 +4141,6 @@
                 menuEditorMenuItem5;
 
         setParent -m ..;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem27;
 
         menuItem
             -label "Create Hair" 
@@ -3648,6 +4190,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem13;
+
+        menuItem
+            -label "Set Initial State" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "setNClothStartState;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "hairStartFromCurrent.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
 
         menuItem
             -label "separator" 
@@ -3771,7 +4338,7 @@
             menuEditorMenuItem16;
 
         menuItem
-            -label "Fields" 
+            -label "Add Fields" 
             -divider 0
             -subMenu 1
             -tearOff 0
@@ -3785,6 +4352,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "posRadial.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -4056,36 +4624,12 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "constraint.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem41;
-
-            menuItem
-                -label "Nail" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "constrain -nail " 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "constraint.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem5;
 
             menuItem
                 -label "Pin" 
@@ -4107,7 +4651,7 @@
                 -image "constraint.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 1
+                -boldFont 0
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
@@ -4162,31 +4706,6 @@
                 -longDivider 1
                 menuEditorMenuItem3;
 
-            menuItem
-                -label "Barrier" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "constrain -barrier -o 0 0 0 " 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "constraint.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
         setParent -m ..;
 
         menuItem
@@ -4206,6 +4725,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "fluidInitialStateSet.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -5165,6 +5685,31 @@
         setParent -m ..;
 
         menuItem
+            -label "Interactive Groom Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "XgCreateIgSplineEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "xgIG_editor.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem19;
+
+        menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator" 
@@ -5242,7 +5787,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;\nxgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;\nxgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool" 
+            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -5260,7 +5805,31 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem15;
+
+        menuItem
+            -label "menuEditorMenuItem16" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
 
         menuItem
             -label "Primitives to Poly" 
@@ -5309,14 +5878,14 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem10;
+            menuEditorMenuItem13;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
+            -label "XGen Editor" 
+            -divider 0
             -subMenu 0
             -tearOff 0
+            -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -5328,11 +5897,13 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "xgDEditor.png" 
+            -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem18;
 
         menuItem
             -label "XGen Library" 
@@ -5358,31 +5929,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem12;
-
-        menuItem
-            -label "Export Meshes as Archive" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "XgExportArchive;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "xgDEditor.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
 
     setParent -m ..;
 

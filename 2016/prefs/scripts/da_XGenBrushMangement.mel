@@ -1,0 +1,307 @@
+/*
+XGen Brush Mangement 1.0
+
+The MIT License (MIT)
+
+Copyright (c) 2016 Davide Alidosi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+global proc da_XGenBrushMangement_MirrorOff(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 0 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 0 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_MirrorX(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 1 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 1 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_MirrorY(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 2 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 2 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_MirrorZ(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 3 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 3 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_CollisionOn(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -ec 1`currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -ec 1 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_CollisionOff(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -ec 0`currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -ec 0 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}

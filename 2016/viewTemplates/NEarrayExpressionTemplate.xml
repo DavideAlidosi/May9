@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<template name='NEarrayExpression'>
+		<attribute name='outArray' type='maya.vectorArray'>
+			<label>Out Array</label>
+		</attribute>
+		<attribute name='outArray2' type='maya.vectorArray'>
+			<label>Out Array 2</label>
+		</attribute>
+		<attribute name='outArray3' type='maya.vectorArray'>
+			<label>Out Array 3</label>
+		</attribute>
+		<attribute name='outArray4' type='maya.vectorArray'>
+			<label>Out Array 4</label>
+		</attribute>
+		<attribute name='outArray5' type='maya.vectorArray'>
+			<label>Out Array 5</label>
+		</attribute>
+		<attribute name='inArray' type='maya.vectorArray'>
+			<label>In Array</label>
+		</attribute>
+		<attribute name='inArray2' type='maya.vectorArray'>
+			<label>In Array 2</label>
+		</attribute>
+		<attribute name='inArray3' type='maya.vectorArray'>
+			<label>In Array 3</label>
+		</attribute>
+		<attribute name='inArray4' type='maya.vectorArray'>
+			<label>In Array 4</label>
+		</attribute>
+		<attribute name='inArray5' type='maya.vectorArray'>
+			<label>In Array 5</label>
+		</attribute>
+	</template>
+	<view name='NEDefault' template='NEarrayExpression'>
+		<property name='outArray'/>
+		<property name='outArray2'/>
+		<property name='outArray3'/>
+		<property name='outArray4'/>
+		<property name='outArray5'/>
+		<property name='inArray'/>
+		<property name='inArray2'/>
+		<property name='inArray3'/>
+		<property name='inArray4'/>
+		<property name='inArray5'/>
+	</view>
+</templates>

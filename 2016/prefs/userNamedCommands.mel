@@ -261,12 +261,6 @@ nameCommand
 	CenterPivotNameCommand;
 
 nameCommand
-	-annotation "HeliosUINameCommand"
-	-sourceType "mel"
-	-command ("HeliosUI")
-	HeliosUINameCommand;
-
-nameCommand
 	-annotation "PerspToggleNameCommand"
 	-sourceType "mel"
 	-command ("PerspToggle")
@@ -297,8 +291,38 @@ nameCommand
 	GoToPerspNameCommand;
 
 nameCommand
-	-annotation "DockedOutlinersNameCommand"
+	-annotation "FreezeTransformationsNameCommand"
 	-sourceType "mel"
-	-command ("DockedOutliners")
-	DockedOutlinersNameCommand;
+	-command ("FreezeTransformations")
+	FreezeTransformationsNameCommand;
+
+nameCommand
+	-annotation "ToggleWireOnShadeNameCommand"
+	-sourceType "mel"
+	-command ("ToggleWireOnShade")
+	ToggleWireOnShadeNameCommand;
+
+nameCommand
+	-annotation "toggleMainWindowFullScreenModeNameCommand"
+	-sourceType "mel"
+	-command ("toggleMainWindowFullScreenMode")
+	toggleMainWindowFullScreenModeNameCommand;
+
+nameCommand
+	-annotation "ResetTransformationsNameCommand"
+	-sourceType "mel"
+	-command ("ResetTransformations")
+	ResetTransformationsNameCommand;
+
+nameCommand
+	-annotation "findMenuNameCommand"
+	-sourceType "mel"
+	-command ("findMenu")
+	findMenuNameCommand;
+
+nameCommand
+	-annotation "LayoutPerspReferenceNameCommand"
+	-sourceType "mel"
+	-command ("LayoutPerspReference")
+	LayoutPerspReferenceNameCommand;
 

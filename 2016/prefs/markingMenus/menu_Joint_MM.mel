@@ -26,32 +26,6 @@
         menuEditorMenuItem2;
 
     menuItem
-        -label "Joint Size" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "jdsWin;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "resizeWindow.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
-
-    menuItem
         -label "Go To Bind Pose" 
         -divider 0
         -subMenu 0
@@ -76,56 +50,6 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
-
-    menuItem
-        -label "Pose Interpolator" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performInterpolatorAdd 0" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "pi-add.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
-
-    menuItem
-        -label "menuEditorMenuItem9" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performInterpolatorAdd 1" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
 
     menuItem
         -label "Mirror Joint" 
@@ -176,6 +100,84 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
+
+    menuItem
+        -label "Remove Joints" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "RemoveJoint" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "kinRemove.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Insert Joints" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "InsertJointTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "kinInsert.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem17;
+
+    menuItem
+        -label "Select Hierarchy" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SelectHierarchy" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "selectByHierarchy.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
 
     menuItem
         -label "Display As" 
@@ -273,7 +275,7 @@
         menuEditorMenuItem14;
 
     menuItem
-        -label "Convert Surface to Muscle/Bone" 
+        -label "Convert to Bone" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -323,7 +325,7 @@
         menuEditorMenuItem15;
 
     menuItem
-        -label "Apply Muscle System Skin Deformer" 
+        -label "Apply Muscle Deformer" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -348,11 +350,11 @@
         menuEditorMenuItem16;
 
     menuItem
-        -label "Remove Joints" 
-        -divider 0
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -command "RemoveJoint" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -361,24 +363,21 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "SE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "kinRemove.png" 
-        -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem4;
+        menuEditorMenuItem5;
 
     menuItem
-        -label "Insert Joints" 
+        -label "Joint Size" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "InsertJointTool" 
+        -command "jdsWin;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -387,17 +386,114 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "kinInsert.png" 
+        -image "resizeWindow.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "IK Spline Handle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKSplineHandleTool;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "kinSplineHandle.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem17;
+        menuEditorMenuItem9;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKSplineHandleToolOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem18;
+
+    menuItem
+        -label "IK Handle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKHandleTool;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "kinHandle.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem19;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKHandleToolOptions;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem20;
 
 setParent -m ..;
 

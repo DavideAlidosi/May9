@@ -527,11 +527,11 @@
         menuEditorMenuItem31;
 
     menuItem
-        -label "Spiral Around Curves" 
+        -label "Instance Along Curve" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "spiralCurve -sr 2.0 -adr 1.0 -ppl 10 -ln 10.0 -sm 0" 
+        -command "runInstanceAlongCurve" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -543,37 +543,13 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "modifyCurl.png" 
+        -image "instanceAlongCurve.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
-
-    menuItem
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "spiralCurveSetupUI" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
+        menuEditorMenuItem32;
 
     menuItem
         -label "Paint FX to Curves" 
@@ -695,7 +671,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem13;
+        menuEditorMenuItem20;
 
     menuItem
         -label "Flat Surface" 
@@ -769,7 +745,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem15;
+        menuEditorMenuItem22;
 
     menuItem
         -label "separator" 
@@ -831,7 +807,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
-            -image "menuIconDeformations.png" 
+            -image "bendNLD.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -1536,6 +1512,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
+            -image "out_particle.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -1560,6 +1537,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1584,6 +1562,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1608,6 +1587,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1632,6 +1612,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1
@@ -1656,6 +1637,7 @@
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
+                -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
                 -boldFont 1

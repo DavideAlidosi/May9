@@ -1,7 +1,7 @@
 	commonTexReflectionOptionsPopup();
 	
 	commonTexSelectOptionsPopup();
-
+	
     menuItem
         -label "Cut UV Edges" 
         -divider 0
@@ -59,7 +59,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "Unfold3D -u -ite 1 -p 1 -bi 1 -tf 1 -ms 1024 -rs 2;" 
+        -command "performUnfold 0" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -79,6 +79,29 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performUnfold 1" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem20;
 
     menuItem
         -label "Smooth" 
@@ -159,7 +182,56 @@
         menuEditorMenuItem13;
 
     menuItem
-        -label "Toggle UV Borders" 
+        -label "Auto Seams" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyAutoSeamUV 0" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyAutoSeams.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+    menuItem
+        -label "menuEditorMenuItem18" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyAutoSeamUV 1" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem19;
+
+    menuItem
+        -label "UV Borders" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -226,7 +298,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
