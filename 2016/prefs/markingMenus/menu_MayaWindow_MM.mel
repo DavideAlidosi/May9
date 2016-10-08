@@ -1,4 +1,3 @@
-	da_commonObjectOptionsPopup();
 
     menuItem
         -label "Front View" 
@@ -280,7 +279,7 @@
             menuEditorMenuItem4;
 
         menuItem
-            -label "Persp/Shape Editor" 
+            -label "Persp/BlendShape Editor" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -306,38 +305,12 @@
             menuEditorMenuItem5;
 
         menuItem
-            -label "Persp/Pose Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LayoutPerspPoseEditor" 
-            -keyEquivalent "6" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspRelationshipEditorLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
             -label "Persp/Component Editor" 
             -divider 0
             -subMenu 0
             -tearOff 0
             -command "layoutPerspComponent" 
-            -keyEquivalent "7" 
+            -keyEquivalent "6" 
             -altModifier 1
             -optionModifier 1
             -commandModifier 0
@@ -363,7 +336,7 @@
             -subMenu 0
             -tearOff 0
             -command "LayoutPerspRelation" 
-            -keyEquivalent "8" 
+            -keyEquivalent "7" 
             -altModifier 1
             -optionModifier 1
             -commandModifier 0
@@ -389,7 +362,7 @@
             -subMenu 0
             -tearOff 0
             -command "LayoutPerspReference" 
-            -keyEquivalent "9" 
+            -keyEquivalent "8" 
             -altModifier 1
             -optionModifier 1
             -commandModifier 0
@@ -415,7 +388,7 @@
             -subMenu 0
             -tearOff 0
             -command "LayoutPerspScript" 
-            -keyEquivalent "'" 
+            -keyEquivalent "9" 
             -altModifier 1
             -optionModifier 1
             -commandModifier 0
