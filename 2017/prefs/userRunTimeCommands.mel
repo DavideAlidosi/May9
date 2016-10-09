@@ -347,14 +347,6 @@ runTimeCommand
 	MMtoKeyManager;
 
 runTimeCommand
-	-annotation "Cleanup and Reload MMtoKey"
-	-category "Custom Scripts.May9_Pro.MMtoKey"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("MMtoKey.release_selected('', 0)\nimport MMtoKey\nreload(MMtoKey)")
-	MMtoKeyReload;
-
-runTimeCommand
 	-annotation "Add Divisions to Polygonal Object"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
