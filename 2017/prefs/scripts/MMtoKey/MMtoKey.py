@@ -5,6 +5,7 @@ import os
 
 
 class Node(object):
+
     def __init__(self, menu='', command='', language=0, outside=0):
         self.menu = menu
         self.command = command
@@ -21,7 +22,10 @@ class Node(object):
     def getCommand(self):
         try:
             if self.outside:
-                return self.language, open('%s/scripts/%s.script' % (MMtoKey.PATH, self.command), 'r').read()
+                open_file = open('%s/scripts/%s.script' % (MMtoKey.PATH, self.command), 'r')
+                command = open_file.read()
+                open_file.close()
+                return self.language, command
             else:
                 return self.language, self.command
         except IOError:
@@ -35,32 +39,32 @@ class Node(object):
         self.outside = outside
 
     def writeNode(self, node_name, file_save):
-        file_save.write(b'%s%s%s%s%s%s%s%s' %
-                        (struct.pack('B', len(self.menu)), self.menu,
-                         struct.pack('B', len(self.command)), self.command,
-                         struct.pack('B', self.language), struct.pack('B', self.outside),
-                         struct.pack('B', len(node_name)), node_name))
+        file_save.write(b'%s' * 8 % (struct.pack('B', len(self.menu)), self.menu,
+                        struct.pack('B', len(self.command)), self.command,
+                        struct.pack('B', self.language), struct.pack('B', self.outside),
+                        struct.pack('B', len(node_name)), node_name))
 
     def getCommandName(self):
         return '%s.script' % self.command if self.outside else ''
 
 
 class PanelNode(Node):
+
     def __init__(self, menu='', command='', language=0, outside=0, search=6, names=0):
         Node.__init__(self, menu, command, language, outside)
         self.search = search
         self.names = names
 
     def writeNode(self, node_name, file_save):
-        file_save.write(b'%s%s%s%s%s%s%s%s%s%s' %
-                        (struct.pack('B', len(self.menu)), self.menu,
-                         struct.pack('B', len(self.command)), self.command,
-                         struct.pack('B', self.language), struct.pack('B', self.outside),
-                         struct.pack('B', self.search), struct.pack('B', self.names),
-                         struct.pack('B', len(node_name)), node_name))
+        file_save.write(b'%s' * 10 % (struct.pack('B', len(self.menu)), self.menu,
+                        struct.pack('B', len(self.command)), self.command,
+                        struct.pack('B', self.language), struct.pack('B', self.outside),
+                        struct.pack('B', self.search), struct.pack('B', self.names),
+                        struct.pack('B', len(node_name)), node_name))
 
 
 class MMtoKey(object):
+
     PATH = os.path.dirname(__file__)
     EMPTY_NODE = Node()
     POSITION = 'N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW'
@@ -105,16 +109,16 @@ class MMtoKey(object):
             for node in self.PANELS:
                 self.DATA_PANEL[node[1:]] = PanelNode(search=int(node[0]))
         finally:
-            self.isOpenMenu = False
-            self.currentNode = None
-            self.currentNodePreset = self.EMPTY_NODE
+            self._is_open_menu = False
+            self._current_node = None
+            self._current_node_preset = self.EMPTY_NODE
             self.activePreset = ''
 
     @staticmethod
     def _cleanMenu():
-        if cmds.popupMenu('MMtoKey_LMB', exists=True):
+        while cmds.popupMenu('MMtoKey_LMB', exists=True):
             cmds.deleteUI('MMtoKey_LMB')
-        if cmds.popupMenu('MMtoKey_MMB', exists=True):
+        while cmds.popupMenu('MMtoKey_MMB', exists=True):
             cmds.deleteUI('MMtoKey_MMB')
 
     def _import_0(self, file_data):
@@ -266,14 +270,12 @@ class MMtoKey(object):
 
         if search_type == 1:     # by prefix
             for name in self.DATA_NAME:
-                length = len(name)
-                if selected[:length] == name:
+                if selected.find(name) == 0:
                     return self.DATA_NAME[name]
 
         elif search_type == 2:   # by suffix
             for name in self.DATA_NAME:
-                length = len(name)
-                if selected[length:] == name:
+                if selected.rfind(name) == len(selected) - len(name):
                     return self.DATA_NAME[name]
 
         elif search_type == 3:   # any search
@@ -308,9 +310,9 @@ class MMtoKey(object):
                 return node
         return preset
 
-    def press_1(self, menu, **mod):
-        self.isOpenMenu = False
-        self.currentNode = self.EMPTY_NODE
+    def press_selected(self, menu, **mod):
+        self._is_open_menu = False
+        self._current_node = self.EMPTY_NODE
         self._cleanMenu()
         context = cmds.currentCtx()     # context marking menu
         cmds.contextInfo(context, title=True)
@@ -325,25 +327,25 @@ class MMtoKey(object):
         if menu:
             mel.eval('source "menu_%s";' % menu)
             return
-        self.currentNode = self._findNode()
-        if self.currentNode.menu:
-            mel.eval('source "menu_%s";' % self.currentNode.menu)
+        self._current_node = self._findNode()
+        if self._current_node.menu:
+            mel.eval('source "menu_%s";' % self._current_node.menu)
         elif self.pref_special_0:
             mel.eval('source "menu_%s";' % self.pref_special_0)
 
-    def release_1(self, command, language):
+    def release_selected(self, command, language):
         self._cleanMenu()
-        if self.isOpenMenu:
+        if self._is_open_menu:
             return
         if not command:
-            language, command = self.currentNode.getCommand()
+            language, command = self._current_node.getCommand()
         if language:
             exec(command)
         else:
             mel.eval(command)
 
-    def press_0(self, **mod):
-        self.isOpenMenu = False
+    def press_preset(self, **mod):
+        self._is_open_menu = False
         self._cleanMenu()
         position = self.POSITION if self.pref_preset_radial else ()
         cmds.popupMenu('MMtoKey_MMB', b=2, aob=True, mm=True, p=self._getPanel(), pmc=self._openMarkingMenu, **mod)
@@ -355,15 +357,15 @@ class MMtoKey(object):
             except IndexError:
                 cmds.menuItem(stp='python', c='MMtoKey.mmtokey.changePreset("%s")' % preset, l=preset)
 
-        if self.currentNodePreset.menu:
+        if self._current_node_preset.menu:
             cmds.popupMenu('MMtoKey_LMB', b=1, aob=True, mm=True, p=self._getPanel(), pmc=self._openMarkingMenu, **mod)
-            mel.eval('source "menu_%s";' % self.currentNodePreset.menu)
+            mel.eval('source "menu_%s";' % self._current_node_preset.menu)
 
-    def release_0(self):
+    def release_preset(self):
         self._cleanMenu()
-        if self.isOpenMenu:
+        if self._is_open_menu:
             return
-        language, command = self.currentNodePreset.getCommand()
+        language, command = self._current_node_preset.getCommand()
         if language:
             exec(command)
         else:
@@ -371,18 +373,19 @@ class MMtoKey(object):
 
     def changePreset(self, preset):
         self.activePreset = preset
-        self.currentNodePreset = self.DATA_PRESET[preset]
+        self._current_node_preset = self.DATA_PRESET[preset]
         if cmds.headsUpDisplay('MMtoKeyHUD', ex=True):
             cmds.headsUpDisplay('MMtoKeyHUD', remove=True)
         if self.pref_hud:
             cmds.headsUpDisplay('MMtoKeyHUD', s=self.pref_hud_x, b=self.pref_hud_y, l='MMtoKey preset', ba='center',
-                                lfs='large', dfs='large', c=self._activePreset, ev='idle')
+                                lfs='large', dfs='large', c=self._activePreset, ev='NewSceneOpened')
 
     def _activePreset(self):
+        print "active"
         return self.activePreset
 
     def _openMarkingMenu(self, *args):
-        self.isOpenMenu = True
+        self._is_open_menu = True
 
     @staticmethod
     def _getPanel():

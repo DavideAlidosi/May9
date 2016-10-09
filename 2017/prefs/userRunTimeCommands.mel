@@ -351,7 +351,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("MMtoKey.release_1('', 0)\nimport MMtoKey\nreload(MMtoKey)")
+	-command ("MMtoKey.release_selected('', 0)\nimport MMtoKey\nreload(MMtoKey)")
 	MMtoKeyReload;
 
 runTimeCommand
@@ -863,7 +863,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("MMtoKey.press_1(False, False, False, '')")
+	-command ("MMtoKey.press_selected(menu='', ctl=False, alt=False, sh=False)")
 	MMtoKey_press;
 
 runTimeCommand
@@ -871,7 +871,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("MMtoKey.release_1('', 0)")
+	-command ("MMtoKey.release_selected('', 0)")
 	MMtoKey_release;
 
 runTimeCommand

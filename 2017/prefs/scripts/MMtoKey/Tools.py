@@ -1,20 +1,28 @@
-from PySide2 import QtCore, QtWidgets
+try:    # under Maya 2017
+    from PySide import QtCore
+    from PySide.QtGui import *
+    import shiboken
+except ImportError:     # Maya 2017 and above
+    from PySide2 import QtCore
+    from PySide2.QtGui import *
+    from PySide2.QtWidgets import *
+    import shiboken2 as shiboken
 import maya.cmds as cmds
 import maya.OpenMayaUI as omui
 import maya.mel as mel
-import shiboken2
 import MMtoKey
 import os
 import re
 
 
-MAYA_WINDOW = shiboken2.wrapInstance(long(omui.MQtUtil.mainWindow()), QtWidgets.QWidget)
-VERSION = '1.0.4'
+MAYA_WINDOW = shiboken.wrapInstance(long(omui.MQtUtil.mainWindow()), QWidget)
+VERSION = '1.0.5'
 
 
-class Button(QtWidgets.QLabel):
+class Button(QLabel):
+
     def __init__(self, parent, geo, style, execute):
-        QtWidgets.QLabel.__init__(self, parent)
+        QLabel.__init__(self, parent)
         self.setGeometry(*geo)
         self.STYLE = style
         self.EXECUTE = execute
@@ -36,6 +44,7 @@ class Button(QtWidgets.QLabel):
 
 
 class TextButtonFlat(Button):
+
     def __init__(self, parent, geo, style, execute, text):
         Button.__init__(self, parent, geo, style, execute)
         self.setText(self.STYLE.TEXT_FORMAT % text)
@@ -47,6 +56,7 @@ class TextButtonFlat(Button):
 
 
 class TextLeverFlat(Button):
+
     def __init__(self, parent, geo, style, execute, text_list, values_list):
         Button.__init__(self, parent, geo, style, execute)
         self.index = 0
@@ -69,26 +79,29 @@ class TextLeverFlat(Button):
         self.setText(self.STYLE.TEXT_FORMAT % self.TEXT_LIST[self.index])
 
 
-class Text(QtWidgets.QLabel):
+class Text(QLabel):
+
     def __init__(self, parent, geo, style, text):
-        QtWidgets.QLabel.__init__(self, parent)
+        QLabel.__init__(self, parent)
         self.setGeometry(*geo)
         self.setAlignment(style.ALIGN)
         self.setStyleSheet(style.LEAVE_EVENT)
         self.setText(style.TEXT_FORMAT % text)
 
 
-class SpinBox(QtWidgets.QSpinBox):
+class SpinBox(QSpinBox):
+
     def __init__(self, parent, geo, value, maximum, minimum, step):
-        QtWidgets.QSpinBox.__init__(self, parent)
+        QSpinBox.__init__(self, parent)
         self.setGeometry(*geo)
+        self.setSingleStep(step)
         self.setMinimum(minimum)
         self.setMaximum(maximum)
         self.setValue(value)
-        self.setSingleStep(step)
 
 
 class Style(object):
+
     PRESS_EVENT = 'background-color: rgb(110, 110, 110); border-radius: 3px;'
     RELEASE_EVENT = 'background-color: rgb(80, 80, 80); border-radius: 3px;'
     ENTER_EVENT = 'background-color: rgb(80, 80, 80); border-radius: 3px;'
@@ -101,56 +114,57 @@ class Style(object):
             self.__setattr__(key, kwargs[key])
 
 
-class WidgetBase(QtWidgets.QWidget):
+class WidgetBase(QWidget):
+
     PREFIX = ''
     NODE = MMtoKey.Node
     IS_PANELS = False
 
     def __init__(self, data, mmtokey):
-        QtWidgets.QWidget.__init__(self)
+        QWidget.__init__(self)
         self.DATA = data
         self.ENGINE = mmtokey
         self.setFixedSize(380, 265)
         y = 50 * (not self.IS_PANELS)
         # left side
-        self.ui_ls_node = QtWidgets.QListWidget(self)
+        self.ui_ls_node = QListWidget(self)
         self.ui_ls_node.setGeometry(5, 5, 180, 180 + y)
         self.ui_btn_add = TextButtonFlat(self, (5, 190 + y, 60, 20), Style, self._addNode, 'add')
         self.ui_btn_remove = TextButtonFlat(self, (65, 190 + y, 60, 20), Style, self._removeNode, 'remove')
         self.ui_btn_break = TextButtonFlat(self, (125, 190 + y, 60, 20), Style, self._breakNode, 'break')
         if self.IS_PANELS:
-            self.ui_cmb_keys = QtWidgets.QComboBox(self)
+            self.ui_cmb_keys = QComboBox(self)
             self.ui_cmb_keys.setGeometry(5, 215, 120, 20)
             self.ui_cmb_keys.addItems(['none', 'dag', 'non-dag', 'non-dag, dag', 'name', 'name, dag', 'name, non-dag',
                                        'name, non-dag, dag'])
             self.connect(self.ui_cmb_keys, QtCore.SIGNAL('currentIndexChanged(int)'), self._changeSearchNode)
-            self.ui_cmb_names = QtWidgets.QComboBox(self)
+            self.ui_cmb_names = QComboBox(self)
             self.ui_cmb_names.setGeometry(5, 240, 120, 20)
             self.ui_cmb_names.addItems(['names none', 'names prefix', 'names suffix', 'names any', 'names absolute'])
             self.connect(self.ui_cmb_names, QtCore.SIGNAL('currentIndexChanged(int)'), self._changeSearchNames)
             self.ui_btn_all1 = TextButtonFlat(self, (130, 215, 55, 20), Style, self._changeSearchNodeAll, 'to all')
             self.ui_btn_all2 = TextButtonFlat(self, (130, 240, 55, 20), Style, self._changeSearchNamesAll, 'to all')
         # right side. bodies
-        ui_wdg_bottom_0 = QtWidgets.QWidget()
+        ui_wdg_bottom_0 = QWidget()
         ui_wdg_bottom_0.setMinimumHeight(1)
-        ui_wdg_bottom_1 = QtWidgets.QWidget()
+        ui_wdg_bottom_1 = QWidget()
         ui_wdg_bottom_1.setFixedSize(185, 24)
         ui_wdg_bottom_1.setMinimumHeight(24)
-        ui_vbox_column = QtWidgets.QVBoxLayout(ui_wdg_bottom_0)
+        ui_vbox_column = QVBoxLayout(ui_wdg_bottom_0)
         ui_vbox_column.setContentsMargins(0, 0, 0, 0)
         ui_vbox_column.setSpacing(0)
         # right top
-        self.ui_ls_menu = QtWidgets.QListWidget(ui_wdg_bottom_0)
+        self.ui_ls_menu = QListWidget(ui_wdg_bottom_0)
         self.ui_ls_menu.setMinimumHeight(1)
         # right bottom
-        self.ui_txt_command = QtWidgets.QTextEdit()
+        self.ui_txt_command = QTextEdit()
         self.ui_btn_language = TextLeverFlat(ui_wdg_bottom_1, (2, 2, 60, 20), Style, self._changeLanguage,
                                              ('mel', 'python'), (0, 1))
         self.ui_btn_save = TextButtonFlat(ui_wdg_bottom_1, (64, 2, 60, 20), Style, self._changeCommand, 'save')
         ui_vbox_column.addWidget(self.ui_txt_command)
         ui_vbox_column.addWidget(ui_wdg_bottom_1)
         # divider
-        self.ui_divide = QtWidgets.QSplitter(self)
+        self.ui_divide = QSplitter(self)
         self.ui_divide.setOrientation(QtCore.Qt.Vertical)
         self.ui_divide.setGeometry(190, 5, 185, 255)
         self.ui_divide.addWidget(self.ui_ls_menu)
@@ -300,16 +314,17 @@ class WidgetBase(QtWidgets.QWidget):
 
 
 class WidgetPanel(WidgetBase):
+
     PREFIX = 'panel'
     NODE = MMtoKey.PanelNode
     IS_PANELS = True
 
     def _addNode(self):
-        cmds.warning('panel under pointer is "%s"' % cmds.getPanel(up=True))
         self._addNodeName(raw_input().replace(' ', ''))
 
 
 class WidgetName(WidgetBase):
+
     PREFIX = 'name'
 
     def _addNode(self):
@@ -317,6 +332,7 @@ class WidgetName(WidgetBase):
 
 
 class WidgetNonDag(WidgetBase):
+
     PREFIX = 'nondag'
 
     def _addNode(self):
@@ -325,6 +341,7 @@ class WidgetNonDag(WidgetBase):
 
 
 class WidgetDag(WidgetBase):
+
     PREFIX = 'dag'
 
     def _addNode(self):
@@ -333,6 +350,7 @@ class WidgetDag(WidgetBase):
 
 
 class WidgetTool(WidgetBase):
+
     PREFIX = 'tool'
 
     def __init__(self, *args):
@@ -355,15 +373,17 @@ class WidgetTool(WidgetBase):
 
 
 class WidgetPreset(WidgetBase):
+
     PREFIX = 'preset'
 
     def _addNode(self):
         self._addNodeName(raw_input())
 
 
-class MainWindow(QtWidgets.QMainWindow):
+class MainWindow(QMainWindow):
+
     def __init__(self, mmtokey):
-        QtWidgets.QMainWindow.__init__(self, MAYA_WINDOW)
+        QMainWindow.__init__(self, MAYA_WINDOW)
         self.ENGINE = mmtokey
         self.setFixedSize(380, 305)
         if cmds.window('MMtoKeyUI', ex=True):
@@ -375,7 +395,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.setObjectName('MMtoKeyUI')
         self.setWindowTitle('MMtoKey %s' % VERSION)
 
-        self.ui_tab_widgets = QtWidgets.QTabWidget(self)
+        self.ui_tab_widgets = QTabWidget(self)
         self.ui_tab_widgets.setGeometry(0, 20, 380, 285)
         self.ui_tab_widgets.setDocumentMode(True)
         self.ui_tab_widgets.addTab(WidgetPanel(mmtokey.DATA_PANEL, mmtokey), 'panel')
@@ -385,12 +405,12 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui_tab_widgets.addTab(WidgetTool(mmtokey.DATA_TOOL, mmtokey), 'tool')
         self.ui_tab_widgets.addTab(WidgetPreset(mmtokey.DATA_PRESET, mmtokey), 'preset')
 
-        menu_file = QtWidgets.QMenu('file')
+        menu_file = QMenu('file')
         menu_file.addAction('save', self.ENGINE.saveNodes)
         menu_file.addAction('update', self._updateInterface)
         menu_file.addAction('preferences', self._preferences)
         self.menuBar().addMenu(menu_file)
-        menu_tools = QtWidgets.QMenu('tools')
+        menu_tools = QMenu('tools')
         menu_tools.addAction('marking menu editor', self._markingMenuEditor)
         menu_tools.addAction('marking menu language', ChangeLanguage)
         menu_tools.addAction('hotkey maker', HotkeyMaker)
@@ -410,9 +430,10 @@ class MainWindow(QtWidgets.QMainWindow):
         mel.eval('menuEditorWnd;')
 
 
-class Preferences(QtWidgets.QMainWindow):
+class Preferences(QMainWindow):
+
     def __init__(self, mmtokey):
-        QtWidgets.QMainWindow.__init__(self, MAYA_WINDOW)
+        QMainWindow.__init__(self, MAYA_WINDOW)
         if cmds.window('MMtoKeyPreferences', ex=True):
             cmds.deleteUI('MMtoKeyPreferences')
         self.setObjectName('MMtoKeyPreferences')
@@ -425,29 +446,29 @@ class Preferences(QtWidgets.QMainWindow):
         Text(self, (0, 100, 210, 20), Style, 'MMB (tools) special marking menu')
         Text(self, (80, 270, 120, 20), Style, 'HUD section')
         Text(self, (80, 295, 120, 20), Style, 'HUD block')
-        self.ui_cmb_files = QtWidgets.QComboBox(self)
+        self.ui_cmb_files = QComboBox(self)
         self.ui_cmb_files.setGeometry(10, 30, 190, 20)
         self.ui_cmb_files.addItems(['long only', 'more one line in script', 'always'])
         self.ui_cmb_files.setCurrentIndex(mmtokey.pref_save_file)
-        self.ui_txt_special_0 = QtWidgets.QLineEdit(self)
+        self.ui_txt_special_0 = QLineEdit(self)
         self.ui_txt_special_0.setGeometry(10, 75, 190, 20)
         self.ui_txt_special_0.setText(mmtokey.pref_special_0)
-        self.ui_txt_special_1 = QtWidgets.QLineEdit(self)
+        self.ui_txt_special_1 = QLineEdit(self)
         self.ui_txt_special_1.setGeometry(10, 120, 190, 20)
         self.ui_txt_special_1.setText(mmtokey.pref_special_1)
-        self.ui_chb_sameDag = QtWidgets.QCheckBox('two same dag nodes', self)
+        self.ui_chb_sameDag = QCheckBox('two same dag nodes', self)
         self.ui_chb_sameDag.setGeometry(10, 145, 190, 20)
         self.ui_chb_sameDag.setChecked(mmtokey.pref_same_dag)
-        self.ui_chb_sameNonDag = QtWidgets.QCheckBox('two same non-dag nodes', self)
+        self.ui_chb_sameNonDag = QCheckBox('two same non-dag nodes', self)
         self.ui_chb_sameNonDag.setGeometry(10, 170, 190, 20)
         self.ui_chb_sameNonDag.setChecked(mmtokey.pref_same_nondag)
-        self.ui_chb_errors = QtWidgets.QCheckBox('remove obsolete .script files', self)
+        self.ui_chb_errors = QCheckBox('remove obsolete .script files', self)
         self.ui_chb_errors.setGeometry(10, 195, 190, 20)
         self.ui_chb_errors.setChecked(mmtokey.pref_check_errors)
-        self.ui_chb_radial = QtWidgets.QCheckBox('radial menu in presets select', self)
+        self.ui_chb_radial = QCheckBox('radial menu in presets select', self)
         self.ui_chb_radial.setGeometry(10, 220, 190, 20)
         self.ui_chb_radial.setChecked(mmtokey.pref_preset_radial)
-        self.ui_chb_hud = QtWidgets.QCheckBox('heads-up for selected preset', self)
+        self.ui_chb_hud = QCheckBox('heads-up for selected preset', self)
         self.ui_chb_hud.setGeometry(10, 245, 190, 20)
         self.ui_chb_hud.setChecked(mmtokey.pref_hud)
         self.ui_spn_section = SpinBox(self, (10, 270, 60, 20), mmtokey.pref_hud_x, 9, 0, 1)
@@ -468,29 +489,31 @@ class Preferences(QtWidgets.QMainWindow):
         self.ENGINE.pref_preset_radial = self.ui_chb_radial.isChecked()
 
 
-class About(QtWidgets.QMainWindow):
+class About(QMainWindow):
+
     def __init__(self, *args):
-        QtWidgets.QMainWindow.__init__(self, MAYA_WINDOW)
+        QMainWindow.__init__(self, MAYA_WINDOW)
         self.setFixedSize(160, 130)
         self.setWindowTitle('About')
         self.setWindowFlags(QtCore.Qt.Tool)
         if cmds.window('MMtoKeyAbout', ex=True):
             cmds.deleteUI('MMtoKeyAbout')
         self.setObjectName('MMtoKeyAbout')
-        ui_text = QtWidgets.QLabel('MMtoKey\nv%s\n\n\nMenshikov Andrey\nDavide Alidosi, 2016' % VERSION, self)
+        ui_text = QLabel('MMtoKey\nv%s\n\n\nMenshikov Andrey\nDavide Alidosi, 2016' % VERSION, self)
         ui_text.setGeometry(10, 10, 140, 80)
-        ui_btn = QtWidgets.QPushButton('OK', self)
+        ui_btn = QPushButton('OK', self)
         ui_btn.setGeometry(40, 100, 75, 20)
-        self.connect(ui_btn, QtCore.SIGNAL('clicked()'), self.close)
+        self.connect(ui_btn, QtCore.SIGNAL('clicked()'), self._close)
         self.show()
 
-    def close(self):
+    def _close(self):
         cmds.deleteUI('MMtoKeyAbout')
 
 
-class HotkeyMaker(QtWidgets.QMainWindow):
+class HotkeyMaker(QMainWindow):
+
     def __init__(self):
-        QtWidgets.QMainWindow.__init__(self, MAYA_WINDOW)
+        QMainWindow.__init__(self, MAYA_WINDOW)
         if cmds.window('MMtoKeyHotkey', exists=True):
             cmds.deleteUI('MMtoKeyHotkey')
         dialog = cmds.confirmDialog(m='what hotkey to create?', b=['select based', 'preset based'])
@@ -506,26 +529,26 @@ class HotkeyMaker(QtWidgets.QMainWindow):
             Text(self, (10, 50, 180, 20), Style, 'certain menu (optional)')
             Text(self, (10, 90, 180, 20), Style, 'certain command (optional)')
             Text(self, (10, 140, 120, 20), Style, 'command language')
-        self.ui_txt_name = QtWidgets.QLineEdit(self)
+        self.ui_txt_name = QLineEdit(self)
         self.ui_txt_name.setGeometry(10, 30, 180, 20)
-        self.ui_txt_menu = QtWidgets.QLineEdit(self)
+        self.ui_txt_menu = QLineEdit(self)
         self.ui_txt_menu.setGeometry(10, 70, 180, 20)
-        self.ui_txt_command = QtWidgets.QLineEdit(self)
+        self.ui_txt_command = QLineEdit(self)
         self.ui_txt_command.setGeometry(10, 110, 180, 20)
-        self.ui_txt_hotkey = QtWidgets.QLineEdit(self)
+        self.ui_txt_hotkey = QLineEdit(self)
         self.ui_txt_hotkey.setGeometry(130, 80 + y, 60, 20)
         self.ui_txt_hotkey.setMaxLength(1)
-        self.ui_cmb_language = QtWidgets.QComboBox(self)
+        self.ui_cmb_language = QComboBox(self)
         self.ui_cmb_language.setGeometry(130, 140, 60, 20)
         self.ui_cmb_language.addItems(['mel', 'python'])
         self.ui_txt_menu.setVisible(self.SELECT)
         self.ui_txt_command.setVisible(self.SELECT)
         self.ui_cmb_language.setVisible(self.SELECT)
-        self.ui_chb_ctrl = QtWidgets.QCheckBox('ctrl', self)
+        self.ui_chb_ctrl = QCheckBox('ctrl', self)
         self.ui_chb_ctrl.setGeometry(10, 55 + y, 60, 20)
-        self.ui_chb_alt = QtWidgets.QCheckBox('alt', self)
+        self.ui_chb_alt = QCheckBox('alt', self)
         self.ui_chb_alt.setGeometry(70, 55 + y, 60, 20)
-        self.ui_chb_shift = QtWidgets.QCheckBox('shift', self)
+        self.ui_chb_shift = QCheckBox('shift', self)
         self.ui_chb_shift.setGeometry(130, 55 + y, 60, 20)
         TextButtonFlat(self, (130, 110 + y, 60, 20), Style, self._createHotkey, 'create')
         self.show()
@@ -546,8 +569,12 @@ class HotkeyMaker(QtWidgets.QMainWindow):
         ctrl = self.ui_chb_ctrl.isChecked()
         alt = self.ui_chb_alt.isChecked()
         shift = self.ui_chb_shift.isChecked()
-        press = "MMtoKey.press_%i(%s, %s, %s, '%s')" % (self.SELECT, ctrl,  alt, shift, menu)
-        release = "MMtoKey.release_%i('%s', %i)" % (self.SELECT, command, self.ui_cmb_language.currentIndex())
+        if self.SELECT == 1:    # select based
+            press = "MMtoKey.press_selected(menu='%s', ctl=%s, alt=%s, sh=%s)" % (menu, ctrl, alt, shift)
+            release = "MMtoKey.release_selected('%s', %i)" % (command, self.ui_cmb_language.currentIndex())
+        else:   # preset based
+            press = "MMtoKey.press_preset(ctl=%s, alt=%s, sh=%s)" % (ctrl, alt, shift)
+            release = "MMtoKey.release_preset()"
         cmds.runTimeCommand('%s_press' % name, c=press, category='MMtoKey', cl='python')
         cmds.runTimeCommand('%s_release' % name, c=release, category='MMtoKey', cl='python')
         cmds.nameCommand('%s_PressNameCommand' % name, annotation='%s_press' % name, command='%s_press' % name)
@@ -561,11 +588,12 @@ class HotkeyMaker(QtWidgets.QMainWindow):
         cmds.warning('hotkey created')
 
 
-class MenuItem(QtWidgets.QListWidgetItem):
+class MenuItem(QListWidgetItem):
+
     NOT_INCLUDE = False
 
     def __init__(self, lines):
-        QtWidgets.QListWidgetItem.__init__(self)
+        QListWidgetItem.__init__(self)
         self.TEXT = lines
         self.LANGUAGE = [-1, 'mel']
         self.COMMAND = [-1, '']
@@ -607,9 +635,10 @@ class MenuItem(QtWidgets.QListWidgetItem):
         self.LANGUAGE[1] = language
 
 
-class ChangeLanguage(QtWidgets.QMainWindow):
+class ChangeLanguage(QMainWindow):
+
     def __init__(self):
-        QtWidgets.QMainWindow.__init__(self, MAYA_WINDOW)
+        QMainWindow.__init__(self, MAYA_WINDOW)
         if cmds.window('MMtoKeyPyUI', ex=True):
             cmds.deleteUI('MMtoKeyPyUI')
         if cmds.control('MMtoKeyPyIconWidget', ex=True):
@@ -618,19 +647,19 @@ class ChangeLanguage(QtWidgets.QMainWindow):
         self.setWindowTitle('Marking Menu change language')
         self.setWindowFlags(QtCore.Qt.Tool)
         self.setObjectName('MMtoKeyPyUI')
-        self.ui_combobox = QtWidgets.QComboBox(self)
+        self.ui_combobox = QComboBox(self)
         self.ui_combobox.setGeometry(180, 30, 80, 20)
         self.ui_combobox.addItems(['mel', 'python'])
-        self.ui_listwidget = QtWidgets.QListWidget(self)
+        self.ui_listwidget = QListWidget(self)
         self.ui_listwidget.setGeometry(10, 30, 160, 180)
-        self.ui_listwidget.setSelectionMode(QtWidgets.QListWidget.ExtendedSelection)
-        self.ui_textedit = QtWidgets.QTextEdit(self)
+        self.ui_listwidget.setSelectionMode(QListWidget.ExtendedSelection)
+        self.ui_textedit = QTextEdit(self)
         self.ui_textedit.setGeometry(180, 100, 160, 110)
         self.ui_textedit.setEnabled(False)
-        self.ui_textedit.setLineWrapMode(QtWidgets.QTextEdit.NoWrap)
-        self.widget = QtWidgets.QWidget(self)
+        self.ui_textedit.setLineWrapMode(QTextEdit.NoWrap)
+        self.widget = QWidget(self)
         self.widget.setGeometry(180, 60, 32, 32)
-        self.ui_vbox = QtWidgets.QVBoxLayout(self.widget)
+        self.ui_vbox = QVBoxLayout(self.widget)
         self.ui_vbox.setContentsMargins(0, 0, 0, 0)
         self.ui_vbox.setSpacing(0)
         self.ui_vbox.setObjectName('MMtoKeyPyIcon')
