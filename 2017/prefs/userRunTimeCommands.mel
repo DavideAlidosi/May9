@@ -572,7 +572,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Enable Follicle Braid"
-	-category "Custom Scripts.May9_Pro.Object"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".braid\") 1;\n}")
@@ -580,7 +580,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable Follicle Braid"
-	-category "Custom Scripts.May9_Pro.Object"
+	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".braid\") 0;\n}")
@@ -1273,4 +1273,68 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded instanceAlongCurve` == 0){\n\tcatchQuiet(`loadPlugin \"instanceAlongCurve\"`);\n}\ninstanceAlongCurve")
 	runInstanceAlongCurve;
+
+runTimeCommand
+	-annotation "Set nHair Point Lock to Base"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n}")
+	nHairLockBase;
+
+runTimeCommand
+	-annotation "Set nHair Point Lock to Both Ends"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n}")
+	nHairLockBothEnds;
+
+runTimeCommand
+	-annotation "Set nHair Point Lock to No Attach"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n}")
+	nHairNoLock;
+
+runTimeCommand
+	-annotation "Set nHair Simulation Method to Dynamic"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n}")
+	nHairDynamic;
+
+runTimeCommand
+	-annotation "Set nHair Simulation Method to Passive"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n}")
+	nHairPassive;
+
+runTimeCommand
+	-annotation "Set nHair Simulation Method to Static"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n}")
+	nHairStatic;
+
+runTimeCommand
+	-annotation "Enable Locator(s) Shape(s) Visibility"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($i=0; $i<size($mySel); $i++)\n\tsetAttr ($mySel[$i] + \".visibility\") 1;\n\ninViewMessage -pos topCenter -msg \"Locator Shape Visibility On\" -fade;")
+	LocatorVisibility;
+
+runTimeCommand
+	-annotation "Disable Locator(s) Shape(s) Visibility"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($i=0; $i<size($mySel); $i++)\n\tsetAttr ($mySel[$i] + \".visibility\") 0;\n\ninViewMessage -pos topCenter -msg \"Locator Shape Visibility Off\" -fade;")
+	LocatorNoVisibility;
 

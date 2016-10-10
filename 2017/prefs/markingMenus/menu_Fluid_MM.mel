@@ -76,56 +76,6 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Set Initial State" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetInitialState" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidInitialStateSet.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-    menuItem
-        -label "menuEditorMenuItem5" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetInitialStateOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
         -label "Emit from Object" 
         -divider 0
         -subMenu 0
@@ -252,6 +202,106 @@
         menuEditorMenuItem10;
 
     menuItem
+        -label "Assign Field to Selected" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "AffectSelectedObject" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "connectField.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem13;
+
+    menuItem
+        -label "Dynamic Relationships" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "DynamicRelationshipEditor" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "menuIconWindow.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+    menuItem
+        -label "Set Initial State" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetInitialState" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "fluidInitialStateSet.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "menuEditorMenuItem5" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SetInitialStateOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
+    menuItem
         -label "Add Fields" 
         -divider 0
         -subMenu 1
@@ -266,8 +316,9 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+        -image "posRadial.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
@@ -286,14 +337,13 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -image "posAir.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -318,7 +368,7 @@
             -image "posDrag.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -343,7 +393,7 @@
             -image "posGravity.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -368,7 +418,7 @@
             -image "posNewton.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
@@ -393,7 +443,7 @@
             -image "posRadial.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem5;
@@ -418,7 +468,7 @@
             -image "posTurbulence.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
@@ -443,7 +493,7 @@
             -image "posUniform.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem7;
@@ -468,7 +518,7 @@
             -image "posVortex.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem8;
@@ -491,7 +541,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem9;
@@ -516,7 +566,7 @@
             -image "posVolumeAxis.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;

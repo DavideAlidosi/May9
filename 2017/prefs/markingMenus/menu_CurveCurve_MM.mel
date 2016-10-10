@@ -546,7 +546,7 @@
         -image "instanceAlongCurve.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem32;
@@ -602,29 +602,6 @@
         menuEditorMenuItem11;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem14;
-
-    menuItem
         -label "Planar" 
         -divider 0
         -subMenu 0
@@ -671,7 +648,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem20;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Flat Surface" 
@@ -745,7 +722,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem22;
+        menuEditorMenuItem5;
 
     menuItem
         -label "separator" 
@@ -1346,13 +1323,204 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "hairAssignPFXbrush.png" 
+            -image "hairPaint.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
+
+        menuItem
+            -label "Simulation Method" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem17;
+
+            menuItem
+                -label "Static" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "nHairStatic" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Passive" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "nHairPassive" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Dynamic" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "nHairDynamic" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+        setParent -m ..;
+
+        menuItem
+            -label "Point Lock" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem18;
+
+            menuItem
+                -label "No Attach" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "nHairNoLock" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "N" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Base" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "nHairLockBase" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Both Ends" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "nHairLockBothEnds" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+        setParent -m ..;
 
         menuItem
             -label "Follicle Braid" 
@@ -1720,29 +1888,6 @@
             menuEditorMenuItem12;
 
     setParent -m ..;
-
-    menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem29;
 
     menuItem
         -label "Renderable" 
