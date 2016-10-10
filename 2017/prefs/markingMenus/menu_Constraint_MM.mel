@@ -215,19 +215,20 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "S" 
+        -radialPosition "SE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -image "poleVectorConstraint.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
+        -label "menuEditorMenuItem8" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -245,10 +246,36 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
+
+    menuItem
+        -label "IK Spline Handle by custom Curve" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKSplineHandleToolOptions;\nresetTool ikSplineHandleContext;\nikSplineHandlePropCallback \"ToolSettings|MainToolSettingsLayout|tabLayout1|ikSplineHandle|ikSplineHandleFrame|ikSplineHandleOptions\" \"createCurveOff\"; " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "kinSplineHandle.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
 
 setParent -m ..;
 
