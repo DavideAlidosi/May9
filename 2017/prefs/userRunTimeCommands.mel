@@ -1338,3 +1338,35 @@ runTimeCommand
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($i=0; $i<size($mySel); $i++)\n\tsetAttr ($mySel[$i] + \".visibility\") 0;\n\ninViewMessage -pos topCenter -msg \"Locator Shape Visibility Off\" -fade;")
 	LocatorNoVisibility;
 
+runTimeCommand
+	-annotation "Apply Tension Blend Shape to Selected Mesh"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("maya.mel.eval(\"LoadSOUP\")\n\nsoup().create('tensionBlendShape')")
+	CreateTensionBlendShape;
+
+runTimeCommand
+	-annotation "Apply Stretch Mesh to Tension Blend Shape"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\n\nstring $myTBS[] = `ls -sl -ni -typ \"tensionBlendShape\"`;\nselect $myTBS;\n\nconnectAttr -f ($objectShape[2] + \".outMesh\") ($myTBS[0] + \".inStretchMesh\");")
+	TensionBSConnectStretch;
+
+runTimeCommand
+	-annotation "Apply Compression Mesh to Tension Blend Shape"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\n\nstring $myTBS[] = `ls -sl -ni -typ \"tensionBlendShape\"`;\nselect $myTBS;\n\nconnectAttr -f ($objectShape[2] + \".worldMesh\") ($myTBS[0] + \".inCompressionMesh\");")
+	TensionBSConnectCompression;
+
+runTimeCommand
+	-annotation "Relase MMtoKey when Maya is not Work"
+	-category "Custom Scripts.May9_Pro.MMtoKey"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("scriptJob -runOnce true -idleEvent \"MMtoKey_release\"")
+	MMtoKey_DelayRelease;
+

@@ -39,7 +39,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
+        -radialPosition "W" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -141,7 +141,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -396,7 +396,30 @@
     setParent -m ..;
 
     menuItem
-        -label "Convert to" 
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
+
+    menuItem
+        -label "Convert Style to" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -410,6 +433,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+        -image "out_particle.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
@@ -433,6 +457,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartPoints.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -457,6 +482,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartBalls.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -481,6 +507,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartCloud.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -505,6 +532,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartThickCloud.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -529,6 +557,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartWater.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -539,30 +568,7 @@
     setParent -m ..;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
-
-    menuItem
-        -label "Fields" 
+        -label "Add Fields" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -576,6 +582,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+        -image "posRadial.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 

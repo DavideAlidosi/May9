@@ -1717,6 +1717,31 @@
             menuEditorMenuItem11;
 
         menuItem
+            -label "Tension BlendShape" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateTensionBlendShape" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_tensionBlendShape.xpm" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem23;
+
+        menuItem
             -label "Nonlinear" 
             -divider 0
             -subMenu 1
@@ -2081,7 +2106,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem23;
+            menuEditorMenuItem25;
 
         menuItem
             -label "Delta Mush" 
@@ -2129,7 +2154,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem25;
+            menuEditorMenuItem26;
 
         menuItem
             -label "Membrane" 
@@ -2202,7 +2227,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem26;
+            menuEditorMenuItem27;
 
         menuItem
             -label "Contour" 
@@ -2299,7 +2324,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem27;
+            menuEditorMenuItem28;
 
         menuItem
             -label "Paint Texture" 
@@ -2348,7 +2373,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem28;
+            menuEditorMenuItem29;
 
         menuItem
             -label "separator" 
@@ -3615,7 +3640,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem25;
 
         menuItem
             -label "Create Passive Collider" 
@@ -3664,7 +3689,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem26;
 
         menuItem
             -label "Emit Particle" 
@@ -3713,7 +3738,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem31;
 
         menuItem
             -label "Fill Object With Particle" 
@@ -3762,56 +3787,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Particle Instancer" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ParticleInstancer" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "instancer.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "menuEditorMenuItem18" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ParticleInstancerOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
+            menuEditorMenuItem33;
 
         menuItem
             -label "Particle Style" 
@@ -4009,7 +3985,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem11;
+            menuEditorMenuItem36;
 
         menuItem
             -label "Set Initial State" 
@@ -4106,7 +4082,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem13;
+            menuEditorMenuItem37;
 
         menuItem
             -label "Create Passive Rigid Body" 
@@ -4155,7 +4131,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem17;
+            menuEditorMenuItem38;
 
         menuItem
             -label "Add Fields" 
@@ -4649,7 +4625,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem21;
+            menuEditorMenuItem39;
 
         menuItem
             -label "Make Fluid Collide" 
@@ -4698,7 +4674,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem24;
+            menuEditorMenuItem40;
 
         menuItem
             -label "separator" 
