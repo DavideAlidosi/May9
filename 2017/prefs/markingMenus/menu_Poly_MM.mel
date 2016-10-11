@@ -2106,7 +2106,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem25;
+            menuEditorMenuItem26;
 
         menuItem
             -label "Delta Mush" 
@@ -2154,7 +2154,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem26;
+            menuEditorMenuItem27;
 
         menuItem
             -label "Membrane" 
@@ -2227,7 +2227,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem27;
+            menuEditorMenuItem28;
 
         menuItem
             -label "Contour" 
@@ -2324,7 +2324,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem28;
+            menuEditorMenuItem29;
 
         menuItem
             -label "Paint Texture" 
@@ -2373,7 +2373,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem29;
+            menuEditorMenuItem30;
 
         menuItem
             -label "separator" 
@@ -2397,6 +2397,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem7;
+
+        menuItem
+            -label "Apply Muscle System Deformer" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "cMuscle_makeMuscleSystem(1)" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cMuscle_skin_apply.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem25;
 
         menuItem
             -label "Apply Default Muscle Weights" 
@@ -2449,6 +2474,29 @@
             menuEditorMenuItem24;
 
         menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem14;
+
+        menuItem
             -label "Smooth Skin to Muscle System" 
             -divider 0
             -subMenu 0
@@ -2472,29 +2520,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem22;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem14;
 
         menuItem
             -label "Unbind Skin" 
@@ -2543,7 +2568,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem30;
+            menuEditorMenuItem31;
 
     setParent -m ..;
 

@@ -1370,3 +1370,35 @@ runTimeCommand
 	-command ("scriptJob -runOnce true -idleEvent \"MMtoKey_release\"")
 	MMtoKey_DelayRelease;
 
+runTimeCommand
+	-annotation "Set IK Preferred Angle"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myIK[] = `ls -sl`;\nfor ($i=0; $i<size($myIK); $i++) {\n\tjoint -e -spa -ch $myIK[$i];\n}\n")
+	SetIKPerfAngle;
+
+runTimeCommand
+	-annotation "Assume IK Preferred Angle"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myIK[] = `ls -sl`;\nfor ($i=0; $i<size($myIK); $i++) {\n\tjoint -e -apa -ch $myIK[$i];\n}")
+	AssumeIKPrefAngle;
+
+runTimeCommand
+	-annotation "Set Muscle Bone as Fat"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".draw\") 1;\n}\ninViewMessage -pos topCenter -msg \"Display Muscle Bone as Fat\" -fade;")
+	BoneAsFat;
+
+runTimeCommand
+	-annotation "Set Muscle Bone as Off"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".draw\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Muscle Bone as Off\" -fade;")
+	BoneAsOff;
+
