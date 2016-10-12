@@ -1466,3 +1466,11 @@ runTimeCommand
 	-command ("delete -ch;")
 	alternativeDeleteHistory;
 
+runTimeCommand
+	-annotation "Alternative Shortcut for Freeze Transform"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("performFreezeTransformations(0)")
+	alternativeFreezeTransform;
+

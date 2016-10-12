@@ -42,12 +42,16 @@ Press and release Z = Enable the contextual Hotkey based on selection, combinati
 
 May9 Pro hotkeys:
 
+CTRL + Enter = Delete History and Freeze Transform
+CTRL + Home = Freeze Transformation
+Home = Reset Transformations
+End = Delete History
+
 CTRL + SHIFT + ALT + M = Toggle Shelf
 CTRL + SHIFT + ALT + S = Delete Static Channels
 CTRL + SHIFT + ALT + Z = MMtoKey Manager
 CTRL + SHIFT + ALT + Q = MMtoKey Resetter
 CTRL + SHIFT + ALT + C = Crease Tool
-CTRL + Enter = Delete History and Freeze Transform
 CTRL + ALT + Z = Reverse to save
 CTRL + ` = Show the last operation in AE
 CTRL + F = Ignore the child and frame only the selected object
@@ -84,8 +88,6 @@ SHIFT + LEFT = Persp View
 ~ = Orient Manipulators Toggle
 8 = Start IPR
 ? = Find Maya Menu
-Home = Reset Transformations
-End = Delete History
 K + Drag = Smooth playback mode
 CMD + Space = Toggle Full Screen (OSX only)
 
