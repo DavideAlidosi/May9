@@ -1402,3 +1402,59 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".draw\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Muscle Bone as Off\" -fade;")
 	BoneAsOff;
 
+runTimeCommand
+	-annotation "Select Right Angle Edges"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -a on -ab 80 100;// to get edges with angle between\nstring $rightAngleSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\nselect $rightAngleSel;")
+	EdgeRightAngle;
+
+runTimeCommand
+	-annotation "Select Straight Angle Edges"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -a on -ab 0 80;// to get edges with angle between\nstring $straightAngleSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\nselect $straightAngleSel;")
+	EdgeStraightAngle;
+
+runTimeCommand
+	-annotation "Select Acute Angle Edges"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -a on -ab 100 180;// to get edges with angle between\nstring $acuteAngleSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\nselect $acuteAngleSel;")
+	EdgeAcuteAngle;
+
+runTimeCommand
+	-annotation "Select Border Edges"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -w 1;\nstring $borderSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -w 0;\nselect $borderSel;")
+	EdgeBorder;
+
+runTimeCommand
+	-annotation "Select Inside Edge"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -w 2;\nstring $insideSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -w 0;\nselect $insideSel;")
+	EdgeInside;
+
+runTimeCommand
+	-annotation "Select Hard Edges"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -sm 1;\nstring $hardEdge[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -sm 0;\nselect $hardEdge;")
+	EdgeHard;
+
+runTimeCommand
+	-annotation "Select Soft Edge"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -sm 2;\nstring $softEdge[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -sm 0;\nselect $softEdge;")
+	EdgeSoft;
+
