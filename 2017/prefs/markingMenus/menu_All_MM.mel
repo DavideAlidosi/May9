@@ -3052,12 +3052,13 @@
             -image "bakeAnimation.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem19;
 
         menuItem
+            -label "menuEditorMenuItem20" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -3075,7 +3076,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem20;
@@ -3350,7 +3351,7 @@
                 -optionBox 0
                 -enable 1
                 -data 0
-                -radialPosition "S" 
+                -radialPosition "NW" 
                 -allowOptionBoxes 1
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
@@ -3387,6 +3388,33 @@
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem7;
+
+            menuItem
+                -label "Reset Transform" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "ResetTransformations" 
+                -keyEquivalent "Home" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "S" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "teKeyRefresh.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
 
         setParent -m ..;
 
@@ -3905,6 +3933,32 @@
                 menuEditorMenuItem3;
 
         setParent -m ..;
+
+        menuItem
+            -label "Align Tool" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "setToolTo alignToolCtx" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "S" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "alignTool.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
 
         menuItem
             -label "Cache" 
@@ -4586,32 +4640,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
-
-        menuItem
-            -label "Align Tool" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setToolTo alignToolCtx" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "alignTool.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
 
     setParent -m ..;
 

@@ -1458,3 +1458,11 @@ runTimeCommand
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -sm 2;\nstring $softEdge[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -sm 0;\nselect $softEdge;")
 	EdgeSoft;
 
+runTimeCommand
+	-annotation "Alternative Shortcut for Delete History"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("delete -ch;")
+	alternativeDeleteHistory;
+

@@ -85,6 +85,7 @@ SHIFT + LEFT = Persp View
 8 = Start IPR
 ? = Find Maya Menu
 Home = Reset Transformations
+End = Delete History
 K + Drag = Smooth playback mode
 CMD + Space = Toggle Full Screen (OSX only)
 
