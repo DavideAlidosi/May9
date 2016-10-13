@@ -78,7 +78,7 @@ ALT + G = Toggle grid
 ALT + K = Toggle Color Management
 ALT + Enter = Toggle perspective to orthographic camera
 
-SHIFT + ALT + P = Center Pivot
+SHIFT + ALT + C = Center Pivot
 SHIFT + ALT + F = Freeze Transformation
 SHIFT + UP = Side View
 SHIFT + RIGHT = Front View
