@@ -1,4 +1,4 @@
-May9 pro 1.1.1 for Autodesk Maya 2017
+May9 pro 1.1.2 for Autodesk Maya 2017
 
 Installation Instruction:
 
@@ -40,12 +40,12 @@ Press and release Z = Enable the contextual Hotkey based on selection, combinati
 (For access to undo command is possible to use CTRL + Z)
 
 
-May9 Pro hotkeys:
+May9 Pro new hotkeys:
 
 CTRL + Enter = Delete History and Freeze Transform
-CTRL + Home = Freeze Transformation
-Home = Reset Transformations
-End = Delete History
+SHIFT + ALT + F = Freeze Transformation
+SHIFT + ALT + R = Reset Transformations
+SHIFT + ALT + C = Center Pivot
 
 CTRL + SHIFT + ALT + M = Toggle Shelf
 CTRL + SHIFT + ALT + S = Delete Static Channels
@@ -78,8 +78,6 @@ ALT + G = Toggle grid
 ALT + K = Toggle Color Management
 ALT + Enter = Toggle perspective to orthographic camera
 
-SHIFT + ALT + C = Center Pivot
-SHIFT + ALT + F = Freeze Transformation
 SHIFT + UP = Side View
 SHIFT + RIGHT = Front View
 SHIFT + DOWN = Top View
