@@ -54,8 +54,14 @@ global proc da_metaBallsFill(){
 
 	string $objectShape[] = `listRelatives -s`;
 	select $objectShape;
+	displaySmoothness -divisionsU 3 -divisionsV 3 -pointsWire 16 -pointsShaded 4 -polygonObject 3;
 
 	string $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;
 	select $myShapeConnection;
-	setAttr ($myShapeConnection[0] +".threshold") 0;
+	setAttr ($myShapeConnection[0] +".threshold") 0.1;
+	setAttr ($myShapeConnection[0] +".blobbyRadiusScale") 5;
+	setAttr ($myShapeConnection[0] +".meshTriangleSize") 0.3;
+	setAttr ($myShapeConnection[0] +".maxTriangleResolution") 100;
+	setAttr ($myShapeConnection[0] +".meshSmoothingIterations") 10;
+	setAttr ($myShapeConnection[0] +".meshMethod") 2;
 }
