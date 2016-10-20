@@ -33,12 +33,6 @@ if ($osTest == 1) {
 	scriptJob -e "NewSceneOpened" $HWantiAlias;
 };
 
-// Clean UI when change scene
-string $CloseHypershade = "CloseHypershade";
-scriptJob -e "NewSceneOpened" $CloseHypershade;
-scriptJob -e "SceneOpened" $CloseHypershade;
-scriptJob -e "flushingScene" $CloseHypershade;
-
 // Set Manipulators Pick Range to 8
 selectPref -mcb 8;
 

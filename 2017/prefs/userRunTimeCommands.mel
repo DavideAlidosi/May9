@@ -459,14 +459,6 @@ runTimeCommand
 	ModifierNoOccupyVolume;
 
 runTimeCommand
-	-annotation "Closed Hypershade Panel"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if ( `panel -ex hyperShadePanel1` ) {\n    deleteUI -pnl hyperShadePanel1;\n}")
-	CloseHypershade;
-
-runTimeCommand
 	-annotation "Parent and Position"
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
