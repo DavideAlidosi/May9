@@ -11,8 +11,6 @@
                     {
                         "tabWidget": {
                             "selectedIndex": 0,
-                            "controlWidth": 1916,
-                            "controlHeight": 23,
                             "collapsed": false,
                             "controls": [
                                 {
@@ -31,8 +29,6 @@
                     {
                         "tabWidget": {
                             "selectedIndex": 0,
-                            "controlWidth": 1916,
-                            "controlHeight": 46,
                             "controls": [
                                 {
                                     "objectName": "Shelf",
@@ -54,8 +50,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 40,
-                                        "controlHeight": 930,
                                         "collapsed": false,
                                         "controls": [
                                             {
@@ -74,8 +68,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 460,
-                                        "controlHeight": 842,
                                         "controls": [
                                             {
                                                 "objectName": "ToolSettings",
@@ -93,8 +85,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 260,
-                                        "controlHeight": 842,
                                         "controls": [
                                             {
                                                 "objectName": "Outliner",
@@ -116,8 +106,6 @@
                                             {
                                                 "tabWidget": {
                                                     "selectedIndex": 0,
-                                                    "controlWidth": 1589,
-                                                    "controlHeight": 911,
                                                     "collapsed": false,
                                                     "controls": [
                                                         {
@@ -137,8 +125,6 @@
                                             {
                                                 "tabWidget": {
                                                     "selectedIndex": 0,
-                                                    "controlWidth": 640,
-                                                    "controlHeight": 480,
                                                     "collapsed": true,
                                                     "controls": [
                                                         {
@@ -212,6 +198,16 @@
                                                             "closed": false
                                                         },
                                                         {
+                                                            "objectName": "dynRelEdPanel1Window",
+                                                            "title": "Dynamic Relationships",
+                                                            "uiScript": "if(!`panel -q -exists dynRelEdPanel1`) {\n\tint $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tstring $panelName = \"dynRelEdPanel1\";\n\tscriptedPanel -unParent  -type \"dynRelEdPanel\" -l (localizedPanelLabel(\"Dynamic Relationships\")) -mbv $menusOkayInPanels  dynRelEdPanel1;\n} else {\n\tscriptedPanel -e -unParent dynRelEdPanel1;\n}\nscriptedPanel -e -parent dynRelEdPanel1Window dynRelEdPanel1;\n",
+                                                            "retain": false,
+                                                            "loadImmediately": false,
+                                                            "checkPlugins": false,
+                                                            "tabDirection": 0,
+                                                            "closed": false
+                                                        },
+                                                        {
                                                             "objectName": "referenceEditorPanel1Window",
                                                             "title": "Reference Editor",
                                                             "uiScript": "if(!`panel -q -exists referenceEditorPanel1`) {\n\tint $menusOkayInPanels = `optionVar -q allowMenusInPanels`;\n\tstring $panelName = \"referenceEditorPanel1\";\n\tscriptedPanel -unParent  -type \"referenceEditorPanel\" -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  referenceEditorPanel1;\n} else {\n\tscriptedPanel -e -unParent referenceEditorPanel1;\n}\nscriptedPanel -e -parent referenceEditorPanel1Window referenceEditorPanel1;\n",
@@ -240,8 +236,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 260,
-                                        "controlHeight": 930,
                                         "collapsed": false,
                                         "controls": [
                                             {
@@ -290,8 +284,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 1078,
-                                        "controlHeight": 32,
                                         "collapsed": false,
                                         "controls": [
                                             {
@@ -310,8 +302,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 832,
-                                        "controlHeight": 32,
                                         "collapsed": false,
                                         "controls": [
                                             {
@@ -337,8 +327,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 804,
-                                        "controlHeight": 28,
                                         "collapsed": false,
                                         "controls": [
                                             {
@@ -357,8 +345,6 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 1106,
-                                        "controlHeight": 28,
                                         "collapsed": false,
                                         "controls": [
                                             {
