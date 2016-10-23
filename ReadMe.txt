@@ -114,6 +114,7 @@ Main preferences change:
 - Script Editor have enable the Command Completition
 - Disable Mouse Wheel Zoom
 - HDR and EXR file is set to Raw colorspace for prevent Arnold double expose
+- Fix PaintFX Preset Blending bug
 
 
 For more information:

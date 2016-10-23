@@ -10,6 +10,9 @@ catchQuiet(dagMenuProc("", ""));
 // Inizialize Break Connections
 channelBoxCommand -break;
 
+// Fix Brush Blending
+source creatorGlobalVars;
+
 //Two Sided Lighting On, XRay Components
 string $presetForView1 = "modelEditor -e -acx 1 -tsl 1 modelPanel1;";
 scriptJob -e "NewSceneOpened" $presetForView1;
