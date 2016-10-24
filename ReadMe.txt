@@ -46,6 +46,7 @@ CTRL + Enter = Delete History and Freeze Transform
 SHIFT + ALT + F = Freeze Transformation
 SHIFT + ALT + R = Reset Transformations
 SHIFT + ALT + C = Center Pivot
+SHIFT + ALT + Z = Zero Transformations (move objects to world center)
 
 CTRL + SHIFT + ALT + M = Toggle Shelf
 CTRL + SHIFT + ALT + S = Delete Static Channels
