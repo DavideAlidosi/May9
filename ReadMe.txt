@@ -1,4 +1,4 @@
-May9 pro 1.1.2 for Autodesk Maya 2017
+May9 pro 1.1.3 for Autodesk Maya 2017
 
 Installation Instruction:
 
@@ -58,18 +58,6 @@ CTRL + ` = Show the last operation in AE
 CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
 CTRL + ALT + 8 = Paint Effects Panel
-
-ALT + 1 = Hypershade and Persp Layout
-ALT + 2 = Persp and Node Editor Layout
-ALT + 3 = Persp and UV Editor Layout
-ALT + 4 = Persp and Graph Editor Layout
-ALT + 5 = Persp and Blend Shape Editor Layout
-ALT + 6 = Persp and Pose Editor Layout
-ALT + 7 = Persp and Component Editor Layout
-ALT + 8 = Persp and Relationship Editor Layout
-ALT + 9 = Persp Reference Layout
-ALT + 0 = Single Perspective Layout
-ALT + - = Persp and Script Editor Layout
 
 ALT + T = Toggle Tools Preference Settings
 ALT + I = Raise Modeling Toolkit
