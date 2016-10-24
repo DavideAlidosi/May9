@@ -1370,3 +1370,11 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tmove -rpr 0 0 0 $each;\n}")
 	ZeroTransfomations;
 
+runTimeCommand
+	-annotation "Reset All Transformations"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tmove -a 0 0 0 $each;\n\trotate -a 0 0 0 $each;\n\tscale -a 1 1 1 $each;\n}")
+	ResetAllTransformations;
+
