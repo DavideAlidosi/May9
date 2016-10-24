@@ -116,6 +116,7 @@ Main preferences change:
 - Disable Mouse Wheel Zoom
 - HDR and EXR file is set to Raw colorspace for prevent Arnold double expose
 - Fix PaintFX Preset Blending bug
+- Two Bone IK and Spring IK are preload
 
 
 For more information:

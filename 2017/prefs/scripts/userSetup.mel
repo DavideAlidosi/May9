@@ -36,13 +36,10 @@ if ($osTest == 1) {
 	scriptJob -e "NewSceneOpened" $HWantiAlias;
 };
 
-// Set Manipulators Pick Range to 8
-selectPref -mcb 8;
-
 // Run Interactive Play
 da_intPlay;
 
-// Preload 2 Bone IK and Spring IK
+// Preload Two Bone IK and Spring IK
 ik2Bsolver;
 ikSpringSolver;
 
