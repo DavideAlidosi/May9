@@ -812,7 +812,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem11;
 
         menuItem
             -label "Soft Cluster" 
@@ -886,7 +886,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem11;
+            menuEditorMenuItem12;
 
         menuItem
             -label "separator" 
@@ -910,6 +910,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
+
+        menuItem
+            -label "Muscle Self Collision Groups" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "cMuscleSelfCollisionUI(); " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cMuscle_multi_apply.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
 
         menuItem
             -label "Smooth Skin Flood" 
@@ -958,7 +983,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem12;
+            menuEditorMenuItem13;
 
     setParent -m ..;
 
