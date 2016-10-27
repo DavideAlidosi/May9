@@ -801,7 +801,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem10;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Voxelize" 
@@ -1907,7 +1907,7 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
-            -image "out_tensionBlendShape.xpm" 
+            -image "da_tensionBS.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -2329,7 +2329,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem20;
+            menuEditorMenuItem1;
 
         menuItem
             -label "Delta Mush" 
@@ -2348,6 +2348,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "da_deltaMush.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -2377,7 +2378,32 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem32;
+            menuEditorMenuItem2;
+
+        menuItem
+            -label "Smooth" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LaplacianSmooth" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_smooth.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem43;
 
         menuItem
             -label "Membrane" 
@@ -2396,6 +2422,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "da_membrane.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -2450,7 +2477,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem33;
+            menuEditorMenuItem4;
 
         menuItem
             -label "Contour" 
@@ -2524,7 +2551,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem34;
+            menuEditorMenuItem6;
 
         menuItem
             -label "ShrinkWrap" 
@@ -2573,7 +2600,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem35;
+            menuEditorMenuItem7;
 
         menuItem
             -label "UV Based" 
@@ -2599,31 +2626,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem16;
-
-        menuItem
-            -label "Smooth" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LaplacianSmooth" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_smooth.xpm" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem43;
 
         menuItem
             -label "separator" 
@@ -2695,7 +2697,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem36;
+            menuEditorMenuItem9;
 
         menuItem
             -label "Paint Texture" 
@@ -2744,7 +2746,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem37;
+            menuEditorMenuItem13;
 
         menuItem
             -label "separator" 
@@ -2841,7 +2843,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem38;
+            menuEditorMenuItem20;
 
         menuItem
             -label "Remove Influence to Skin" 
@@ -2915,7 +2917,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem39;
+            menuEditorMenuItem24;
 
         menuItem
             -label "Unbind Skin" 
@@ -2964,7 +2966,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem40;
+            menuEditorMenuItem25;
 
     setParent -m ..;
 
@@ -4060,12 +4062,13 @@
             -image "soft.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem23;
 
         menuItem
+            -label "menuEditorMenuItem24" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -4083,7 +4086,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem24;

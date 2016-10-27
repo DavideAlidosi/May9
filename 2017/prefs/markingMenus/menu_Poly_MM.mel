@@ -1914,7 +1914,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "out_tensionBlendShape.xpm" 
+            -image "da_tensionBS.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -2306,6 +2306,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "da_deltaMush.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -2338,6 +2339,31 @@
             menuEditorMenuItem27;
 
         menuItem
+            -label "Smooth" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LaplacianSmooth" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_smooth.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem32;
+
+        menuItem
             -label "Membrane" 
             -divider 0
             -subMenu 0
@@ -2354,6 +2380,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "da_membrane.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -2434,31 +2461,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem20;
-
-        menuItem
-            -label "Smooth" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LaplacianSmooth" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_smooth.xpm" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem19;
 
         menuItem
             -label "separator" 
@@ -3968,12 +3970,13 @@
             -image "soft.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem26;
 
         menuItem
+            -label "menuEditorMenuItem31" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -3991,7 +3994,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem31;
