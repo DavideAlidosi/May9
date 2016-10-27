@@ -857,7 +857,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem13;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Mirror" 
@@ -906,7 +906,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem24;
+        menuEditorMenuItem6;
 
     menuItem
         -label "Shatter" 
@@ -2436,6 +2436,31 @@
             menuEditorMenuItem20;
 
         menuItem
+            -label "Smooth" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "LaplacianSmooth" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_smooth.xpm" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem19;
+
+        menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator" 
@@ -3290,6 +3315,55 @@
             menuEditorMenuItem7;
 
         menuItem
+            -label "Average" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "polyAverageNormal -prenormalize 1 -allowZeroNormal 0 -postnormalize 0 -distance 0.1 -replaceNormalXYZ 1 0 0 " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "polyNormalAverage.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+        menuItem
+            -label "menuEditorMenuItem5" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "AveragePolygonNormalsOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+        menuItem
             -label "Set Soften Edge" 
             -divider 0
             -subMenu 0
@@ -3336,7 +3410,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem1;
 
         menuItem
             -label "Set Harden Edge" 
@@ -3823,7 +3897,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem26;
+            menuEditorMenuItem3;
 
         menuItem
             -label "Create Passive Collider" 
@@ -3870,6 +3944,54 @@
             -echoCommand 0
             -italicized 0
             -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+        menuItem
+            -label "Create Soft Body" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "nSoft -c " 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "soft.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem26;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateNSoftBodyOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem31;
@@ -3921,7 +4043,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem33;
+            menuEditorMenuItem7;
 
         menuItem
             -label "Fill Object With Particle" 
@@ -3970,7 +4092,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem35;
+            menuEditorMenuItem8;
 
         menuItem
             -label "Particle Style" 
@@ -4168,7 +4290,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem36;
+            menuEditorMenuItem9;
 
         menuItem
             -label "Set Initial State" 
@@ -4219,55 +4341,6 @@
             menuEditorMenuItem20;
 
         menuItem
-            -label "Create Soft Body" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "soft -c " 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "soft.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem21;
-
-        menuItem
-            -label "menuEditorMenuItem24" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateSoftBodyOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem37;
-
-        menuItem
             -label "Create Active Rigid Body" 
             -divider 0
             -subMenu 0
@@ -4314,7 +4387,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem38;
+            menuEditorMenuItem13;
 
         menuItem
             -label "Create Passive Rigid Body" 
@@ -4363,7 +4436,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem39;
+            menuEditorMenuItem16;
 
         menuItem
             -label "Constrain" 
@@ -4585,7 +4658,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem40;
+            menuEditorMenuItem17;
 
         menuItem
             -label "Make Fluid Collide" 
@@ -4634,7 +4707,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem41;
+            menuEditorMenuItem24;
 
         menuItem
             -label "separator" 

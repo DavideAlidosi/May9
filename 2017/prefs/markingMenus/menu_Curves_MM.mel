@@ -1054,7 +1054,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem12;
 
         menuItem
             -label "Assign Hair to Curve" 
@@ -1413,7 +1413,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem15;
+            menuEditorMenuItem16;
 
         menuItem
             -label "Particle Style" 
@@ -1592,7 +1592,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "soft -c " 
+            -command "nSoft -c " 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -1607,16 +1607,17 @@
             -image "soft.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem19;
+            menuEditorMenuItem15;
 
         menuItem
+            -label "menuEditorMenuItem19" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "CreateSoftBodyOptions" 
+            -command "CreateNSoftBodyOptions" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -1630,7 +1631,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem20;
@@ -1653,7 +1654,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem21;

@@ -1378,3 +1378,11 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tmove -a 0 0 0 $each;\n\trotate -a 0 0 0 $each;\n\tscale -a 1 1 1 $each;\n}")
 	ResetAllTransformations;
 
+runTimeCommand
+	-annotation "Apply Laplacian Smooth on Mesh"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("maya.mel.eval(\"LoadSOUP\")\n\nsoup().create('smooth')")
+	LaplacianSmooth;
+
