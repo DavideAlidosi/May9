@@ -1386,3 +1386,11 @@ runTimeCommand
 	-command ("maya.mel.eval(\"LoadSOUP\")\n\nsoup().create('smooth')")
 	LaplacianSmooth;
 
+runTimeCommand
+	-annotation "Connect Shapes"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n}")
+	ConnectShapes;
+
