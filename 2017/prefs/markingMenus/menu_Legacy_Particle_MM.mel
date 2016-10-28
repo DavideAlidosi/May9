@@ -1,31 +1,5 @@
 
     menuItem
-        -label "Sprite Wizard" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "spriteWizardMenu" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "menuIconParticles.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
         -label "Use as Fluid Emitter" 
         -divider 0
         -subMenu 0
@@ -265,7 +239,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "S" 
+        -radialPosition "SE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -302,11 +276,11 @@
         menuEditorMenuItem16;
 
     menuItem
-        -label "Dynamic Relationships" 
+        -label "Sprite Wizard" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DynamicRelationshipEditor" 
+        -command "spriteWizardMenu" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -318,10 +292,35 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "menuIconWindow.png" 
+        -image "menuIconParticles.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Instancer" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ParticleInstancerOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "instancer.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
@@ -344,7 +343,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;

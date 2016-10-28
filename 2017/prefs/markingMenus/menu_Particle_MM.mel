@@ -52,32 +52,6 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Sprite Wizard" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "spriteWizardMenu" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "menuIconParticles.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
         -label "Use as Fluid Emitter" 
         -divider 0
         -subMenu 0
@@ -254,11 +228,61 @@
         menuEditorMenuItem16;
 
     menuItem
-        -label "Dynamic Relationships" 
+        -label "Create Springs" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DynamicRelationshipEditor" 
+        -command "spring -noDuplicate false -minMax true -mnd 0 -mxd 0 -useRestLengthPS true -s 1 -d 0.2 -sfw 1 -efw 1 " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "spring.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem17;
+
+    menuItem
+        -label "menuEditorMenuItem18" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "CreateSpringOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem18;
+
+    menuItem
+        -label "Sprite Wizard" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "spriteWizardMenu" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -270,13 +294,61 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "menuIconWindow.png" 
+        -image "menuIconParticles.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem14;
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Instancer" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ParticleInstancerOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "instancer.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem19;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
 
     menuItem
         -label "Gravity" 
@@ -438,10 +510,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem11;
+        menuEditorMenuItem14;
 
     menuItem
         -label "Convert Style to" 
@@ -863,55 +935,6 @@
             menuEditorMenuItem10;
 
     setParent -m ..;
-
-    menuItem
-        -label "Create Springs" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "spring -noDuplicate false -minMax true -mnd 0 -mxd 0 -useRestLengthPS true -s 1 -d 0.2 -sfw 1 -efw 1 " 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "spring.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem17;
-
-    menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateSpringOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem18;
 
 setParent -m ..;
 
