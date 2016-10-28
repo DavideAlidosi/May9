@@ -416,7 +416,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "W" 
+            -radialPosition "NE" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -454,32 +454,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
-
-        menuItem
-            -label "Rendering Flags" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RenderFlagsWindow" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "menuIconRenderSettings.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
 
         menuItem
             -label "Shade Attributes" 
@@ -558,6 +532,56 @@
             menuEditorMenuItem11;
 
         menuItem
+            -label "Camera, Aim and Up" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateCameraAimUp" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "W" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "cameraAimUp.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
+
+        menuItem
+            -label "menuEditorMenuItem16" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateCameraAimUpOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem16;
+
+        menuItem
             -label "Hypershade" 
             -divider 0
             -subMenu 0
@@ -574,7 +598,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "hypershadeIcon.png" 
+            -image "da_hypershadeEditor.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -629,6 +653,31 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem12;
+
+        menuItem
+            -label "Rendering Flags" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "RenderFlagsWindow" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "menuIconRenderSettings.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem8;
 
         menuItem
             -label "File Path Editor" 
@@ -1959,56 +2008,6 @@
             menuEditorMenuItem5;
 
         menuItem
-            -label "Camera" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateCameraOnly;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "view.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "menuEditorMenuItem7" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateCameraOnlyOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
             -label "Fluid Container" 
             -divider 0
             -subMenu 0
@@ -2199,7 +2198,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "S" 
+            -radialPosition "SW" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2236,79 +2235,6 @@
             menuEditorMenuItem11;
 
         menuItem
-            -label "Component Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ComponentEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "selectByComponent.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem20;
-
-        menuItem
-            -label "Input Order" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ListInputOperations" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "nodeGrapherNext.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
             -label "nParticles Emitter" 
             -divider 0
             -subMenu 0
@@ -2322,6 +2248,7 @@
             -optionBox 0
             -enable 1
             -data 0
+            -radialPosition "S" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -2355,7 +2282,55 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem21;
+            menuEditorMenuItem19;
+
+        menuItem
+            -label "Component Editor" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ComponentEditor" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "da_componentEditor.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem20;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
 
         menuItem
             -label "Particle Style" 
@@ -2778,6 +2753,54 @@
 
         setParent -m ..;
 
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem21;
+
+        menuItem
+            -label "Input Order" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ListInputOperations" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "nodeGrapherNext.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem16;
+
     setParent -m ..;
 
     menuItem
@@ -3197,7 +3220,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "out_nucleus.png" 
+            -image "da_dynamicEditor.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -4174,7 +4197,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "duplicateReference.png" 
+            -image "da_referenceEditor.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -4199,7 +4222,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "passSetRelationEditor.png" 
+            -image "da_relationshipEditor.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -4930,7 +4953,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "out_dagNode.png" 
+        -image "da_nodeEditor.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
