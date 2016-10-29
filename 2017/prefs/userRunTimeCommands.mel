@@ -1394,3 +1394,11 @@ runTimeCommand
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n}")
 	ConnectShapes;
 
+runTimeCommand
+	-annotation "Auto Connect a Collider from Viewport"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\n\nstring $myMembrane[] = `ls -sl -ni -typ \"membrane\"`;\nselect $myMembrane;\n\nconnectAttr -f ($objectShape[1] + \".worldMesh\") ($myMembrane[0] + \".collideMesh\");")
+	autoMembraneCollider;
+
