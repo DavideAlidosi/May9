@@ -471,7 +471,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("BackToObjectMode;\nstring $mySel[] = `listRelatives -s`;\nSelectMulti;\n\n$indices = `getAttr -mi ($mySel[0]+\".pnts\")`;\nfor ($i in $indices){\n\tsetAttr($mySel[0] + \".pnts[\" + $i + \"]\", 0,0,0);\n}")
+	-command ("BackToObjectMode;\nstring $mySel[] = `listRelatives -s`;\ndR_DoCmd(\"modeVert\");\n\n$indices = `getAttr -mi ($mySel[0]+\".pnts\")`;\nfor ($i in $indices){\n\tsetAttr($mySel[0] + \".pnts[\" + $i + \"]\", 0,0,0);\n}")
 	ResetTweakPoint;
 
 runTimeCommand
@@ -1359,7 +1359,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nSelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectShape[0] +\".overrideEnabled\") 1;\nsetAttr ($objectShape[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_metaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_mebaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
+	-command ("string $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nSelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectTransform[0] +\".overrideEnabled\") 1;\nsetAttr ($objectTransform[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_metaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_mebaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
 	convertToMetaballs;
 
 runTimeCommand
@@ -1401,4 +1401,20 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\n\nstring $myMembrane[] = `ls -sl -ni -typ \"membrane\"`;\nselect $myMembrane;\n\nconnectAttr -f ($objectShape[1] + \".worldMesh\") ($myMembrane[0] + \".collideMesh\");")
 	autoMembraneCollider;
+
+runTimeCommand
+	-annotation "Enable Template Mode for Object Transform"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 2;\n}")
+	EnableTemplate;
+
+runTimeCommand
+	-annotation "Disable Template Mode for Object Transform"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 0;\n}")
+	DisableTemplate;
 
