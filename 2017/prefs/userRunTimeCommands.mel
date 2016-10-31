@@ -1403,26 +1403,26 @@ runTimeCommand
 	autoMembraneCollider;
 
 runTimeCommand
-	-annotation "Enable Template Mode for Object Transform"
-	-category "Custom Scripts.May9_Pro.Object"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 2;\n}")
-	EnableTemplate;
-
-runTimeCommand
-	-annotation "Disable Template Mode for Object Transform"
-	-category "Custom Scripts.May9_Pro.Object"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 0;\n}")
-	DisableTemplate;
-
-runTimeCommand
 	-annotation "Select Assigned Shader from Selection"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("hyperShade -smn;\nAttributeEditor")
 	SelectAssignedShader;
+
+runTimeCommand
+	-annotation "Enable Reference Mode for Object Transform"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 2;\n}")
+	EnableReference;
+
+runTimeCommand
+	-annotation "Disable Reference Mode for Object Transform"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 0;\n}")
+	DisableReference;
 
