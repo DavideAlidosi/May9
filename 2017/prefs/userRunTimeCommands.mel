@@ -471,7 +471,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("BackToObjectMode;\nstring $mySel[] = `listRelatives -s`;\ndR_DoCmd(\"modeVert\");\n\n$indices = `getAttr -mi ($mySel[0]+\".pnts\")`;\nfor ($i in $indices){\n\tsetAttr($mySel[0] + \".pnts[\" + $i + \"]\", 0,0,0);\n}")
+	-command ("BackToObjectMode;\nstring $mySel[] = `listRelatives -s`;\ndR_DoCmd(\"modeVert\");\nfor ($each in $mySel){\n    $indices = `getAttr -mi ($each + \".pnts\")`;\n    for ($i in $indices){\n    \tsetAttr($each + \".pnts[\" + $i + \"]\", 0,0,0);\n    }\n}")
 	ResetTweakPoint;
 
 runTimeCommand
