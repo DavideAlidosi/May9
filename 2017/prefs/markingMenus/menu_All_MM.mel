@@ -460,7 +460,7 @@
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "AttributeEditor;\nscriptJob -runOnce true -idleEvent \"ShadingGroupAttributeEditor\"" 
+            -command "SelectAssignedShader" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -469,7 +469,7 @@
             -optionBox 0
             -enable 1
             -data 0
-            -radialPosition "SW" 
+            -radialPosition "W" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -530,56 +530,6 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
-
-        menuItem
-            -label "Camera, Aim and Up" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateCameraAimUp" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "cameraAimUp.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
-            -label "menuEditorMenuItem16" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateCameraAimUpOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
 
         menuItem
             -label "Hypershade" 
@@ -728,6 +678,55 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
+
+        menuItem
+            -label "Camera" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateCameraOnly" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -radialPosition "SW" 
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "view.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem14;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "CreateCameraOnlyOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem15;
 
     setParent -m ..;
 

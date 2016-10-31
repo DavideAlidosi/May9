@@ -1418,3 +1418,11 @@ runTimeCommand
 	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 0;\n}")
 	DisableTemplate;
 
+runTimeCommand
+	-annotation "Select Assigned Shader from Selection"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("hyperShade -smn;\nAttributeEditor")
+	SelectAssignedShader;
+
