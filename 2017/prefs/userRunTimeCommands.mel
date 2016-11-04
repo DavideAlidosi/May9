@@ -1426,3 +1426,27 @@ runTimeCommand
 	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 0;\n}")
 	DisableReference;
 
+runTimeCommand
+	-annotation "Toggle Wireframe when Scupt"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $currentTool = `currentCtx`;\nint $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentTool`;\n\nif ($wireframeCheck == 1){\n    sculptMeshCacheCtx -e -displayWireframe 0 $currentTool;\n} else {\n    sculptMeshCacheCtx -e -displayWireframe 1 $currentTool;\n}")
+	ToggleSculptWireframe;
+
+runTimeCommand
+	-annotation "Enable Portal Light Filter on Selected Area Lights"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal true\";\n}\n    \ninViewMessage -pos topCenter -msg \"Portal Light On\" -fade;")
+	aiPortalLight;
+
+runTimeCommand
+	-annotation "Disable Portal Light Filter on Selected Area Lights"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal false\";\n}\n    \ninViewMessage -pos topCenter -msg \"Portal Light Off\" -fade;")
+	aiNoPortalLight;
+
