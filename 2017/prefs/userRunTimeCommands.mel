@@ -655,7 +655,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n}\nelse{ \n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}")
+	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\taiRenderView;\n}\nelse{ \n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}")
 	ProgressiveIPR;
 
 runTimeCommand
@@ -1449,4 +1449,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal false\";\n}\n    \ninViewMessage -pos topCenter -msg \"Portal Light Off\" -fade;")
 	aiNoPortalLight;
+
+runTimeCommand
+	-annotation "Open Arnold Render View"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()")
+	aiRenderView;
 
