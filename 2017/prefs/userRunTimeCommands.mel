@@ -1458,3 +1458,11 @@ runTimeCommand
 	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()")
 	aiRenderView;
 
+runTimeCommand
+	-annotation "Connect Selected Mesh as nCloth Input Mesh"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myMesh[] = `ls -sl -ni -typ \"mesh\"`;\nstring $mynCloth[] = `ls -sl -ni -typ \"nCloth\"`;\n\nconnectAttr -f ($myMesh[0] + \".worldMesh\") ($mynCloth[0] + \".inputMesh\");\nconnectAttr -f ($myMesh[0] + \".worldMesh\") ($mynCloth[0] + \".restShapeMesh\");")
+	nClothInputMesh;
+
