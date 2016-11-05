@@ -47,6 +47,7 @@ SHIFT + ALT + F = Freeze Transformation
 SHIFT + ALT + R = Reset Transformations
 SHIFT + ALT + C = Center Pivot
 SHIFT + ALT + Z = Zero Transformations (move objects to world center)
+SHIFT + ALT + M = Match Transform
 
 CTRL + SHIFT + ALT + M = Toggle Shelf
 CTRL + SHIFT + ALT + S = Delete Static Channels
@@ -73,7 +74,7 @@ SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
 
 ~ = Orient Manipulators Toggle
-8 = Start IPR
+8 = Start IPR or Arnold Render View
 ? = Find Maya Menu
 K + Drag = Smooth playback mode
 CMD + Space = Toggle Full Screen (OSX only)
