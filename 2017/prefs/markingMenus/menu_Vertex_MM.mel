@@ -301,7 +301,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem16;
+        menuEditorMenuItem26;
 
     menuItem
         -label "Detach" 
@@ -375,7 +375,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem26;
+        menuEditorMenuItem29;
 
     menuItem
         -label "Transfer Vertex Order" 
@@ -837,7 +837,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem11;
 
         menuItem
             -label "Soft Cluster" 
@@ -911,56 +911,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Paint Attributes" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ArtPaintAttrTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "artAttr.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem17;
-
-        menuItem
-            -label "menuEditorMenuItem19" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ArtPaintAttrToolOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem12;
 
         menuItem
             -label "separator" 
@@ -1041,55 +992,6 @@
             -subMenu 0
             -tearOff 0
             -command "SmoothSkinWeightFloodOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Paint Skin Weights" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ArtPaintSkinWeightsTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "paintSkinWeights.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "menuEditorMenuItem12" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ArtPaintSkinWeightsToolOptions" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -1602,6 +1504,79 @@
 
         setParent -m ..;
 
+    setParent -m ..;
+
+    menuItem
+        -label "Brushes" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "out_brush.png" 
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem16;
+
+        menuItem
+            -label "Paint Skin Weights" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ArtPaintSkinWeightsTool" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "paintSkinWeights.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+        menuItem
+            -label "menuEditorMenuItem4" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "ArtPaintSkinWeightsToolOptions" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem6;
+
         menuItem
             -label "Paint Attributes" 
             -divider 0
@@ -1622,12 +1597,13 @@
             -image "artAttr.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem1;
 
         menuItem
+            -label "menuEditorMenuItem2" 
             -divider 0
             -subMenu 0
             -tearOff 0
@@ -1645,10 +1621,10 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem4;
+            menuEditorMenuItem7;
 
     setParent -m ..;
 
@@ -1721,7 +1697,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem14;
 
         menuItem
             -label "Self Component" 
@@ -1770,7 +1746,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem3;
+            menuEditorMenuItem16;
 
         menuItem
             -label "Component to Component" 
@@ -1819,7 +1795,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem10;
+            menuEditorMenuItem18;
 
         menuItem
             -label "Tearable Surface" 
@@ -1868,7 +1844,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem11;
+            menuEditorMenuItem19;
 
         menuItem
             -label "Force Field" 
@@ -1917,7 +1893,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem13;
+            menuEditorMenuItem20;
 
         menuItem
             -label "separator" 
