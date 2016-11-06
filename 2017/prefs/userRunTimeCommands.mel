@@ -1466,3 +1466,11 @@ runTimeCommand
 	-command ("string $myMesh[] = `ls -sl -ni -typ \"mesh\"`;\nstring $mynCloth[] = `ls -sl -ni -typ \"nCloth\"`;\n\nconnectAttr -f ($myMesh[0] + \".worldMesh\") ($mynCloth[0] + \".inputMesh\");\nconnectAttr -f ($myMesh[0] + \".worldMesh\") ($mynCloth[0] + \".restShapeMesh\");")
 	nClothInputMesh;
 
+runTimeCommand
+	-annotation "Create nCloth as Deformer by Using an Attract Mesh"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $attractMesh[] = `ls -sl -ni -typ \"transform\"`;\nduplicate;\nstring $nClothMesh[] = `ls -sl`;\ndoCreateNCloth 0;\nstring $nClothShape[] = `ls -sl`;\nsetAttr ($nClothShape[0] +\".inputMeshAttract\") 1;\nconnectAttr -f ($attractMesh[0] + \".worldMesh\") ($nClothShape[0] + \".inputMesh\");\nconnectAttr -f ($attractMesh[0] + \".worldMesh\") ($nClothShape[0] + \".restShapeMesh\");\nselect $attractMesh[0];\nrename ( $attractMesh[0] + \"_attract1\" );\nselect $nClothMesh[0];\nrename ( $nClothMesh[0] + \"_nCloth1\" );")
+	nClothAsDeformer;
+
