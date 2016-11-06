@@ -857,7 +857,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem26;
 
     menuItem
         -label "Mirror" 
@@ -906,7 +906,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem27;
 
     menuItem
         -label "Shatter" 
@@ -2335,7 +2335,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem26;
+            menuEditorMenuItem2;
 
         menuItem
             -label "Delta Mush" 
@@ -2384,7 +2384,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem27;
+            menuEditorMenuItem3;
 
         menuItem
             -label "Smooth" 
@@ -2483,7 +2483,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem28;
+            menuEditorMenuItem6;
 
         menuItem
             -label "Contour" 
@@ -2511,34 +2511,10 @@
             menuEditorMenuItem20;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
             -label "Texture" 
             -divider 0
-            -subMenu 0
+            -subMenu 1
             -tearOff 0
-            -command "CreateTextureDeformer;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2548,46 +2524,118 @@
             -enable 1
             -data 0
             -allowOptionBoxes 1
-            -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "textureDeformer.png" 
-            -echoCommand 0
+			-image "Textured.png"
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem10;
+            menuEditorMenuItem26;
+
+            menuItem
+                -label "Create Texture Deformer" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "CreateTextureDeformer;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -radialPosition "N" 
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "textureDeformer.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "CreateTextureDeformerOptions;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Paint Texture" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "artAttrToolScript 4 \"textureDeformer\"" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "paintTextureDeformer.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem4;
+
+            menuItem
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "artAttrToolScript 3 \"textureDeformer\"" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+        setParent -m ..;
 
         menuItem
-            -label "menuEditorMenuItem11" 
+            -label "nCloth as Deformer" 
             -divider 0
-            -subMenu 0
+            -subMenu 1
             -tearOff 0
-            -command "CreateTextureDeformerOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem29;
-
-        menuItem
-            -label "Paint Texture" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "artAttrToolScript 4 \"textureDeformer\"" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2597,39 +2645,65 @@
             -enable 1
             -data 0
             -allowOptionBoxes 1
-            -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "paintTextureDeformer.png" 
-            -echoCommand 0
+			-image "nCloth.svg" 
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem17;
+            menuEditorMenuItem19;
 
-        menuItem
-            -label "menuEditorMenuItem29" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "artAttrToolScript 3 \"textureDeformer\"" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem30;
+            menuItem
+                -label "Create Cloth as Deformer" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "nClothAsDeformer" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "nClothCreate.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Paint Input Attract" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 4 inputAttract" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "nClothPaintPerVertex.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+        setParent -m ..;
 
         menuItem
             -label "separator" 
@@ -2801,7 +2875,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem31;
+            menuEditorMenuItem14;
 
     setParent -m ..;
 
@@ -3997,7 +4071,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem31;
+            menuEditorMenuItem7;
 
         menuItem
             -label "Emit Particle" 
@@ -4046,7 +4120,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem8;
 
         menuItem
             -label "Fill Object With Particle" 
@@ -4095,7 +4169,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem8;
+            menuEditorMenuItem9;
 
         menuItem
             -label "Particle Style" 
@@ -4293,7 +4367,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem9;
+            menuEditorMenuItem11;
 
         menuItem
             -label "Set Initial State" 
@@ -4439,7 +4513,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem16;
+            menuEditorMenuItem14;
 
         menuItem
             -label "Constrain" 
@@ -4661,7 +4735,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem17;
+            menuEditorMenuItem16;
 
         menuItem
             -label "Make Fluid Collide" 
@@ -4710,7 +4784,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem24;
+            menuEditorMenuItem17;
 
         menuItem
             -label "separator" 

@@ -801,7 +801,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem10;
 
     menuItem
         -label "Voxelize" 
@@ -2404,7 +2404,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem1;
+            menuEditorMenuItem31;
 
         menuItem
             -label "Delta Mush" 
@@ -2453,7 +2453,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem2;
+            menuEditorMenuItem32;
 
         menuItem
             -label "Smooth" 
@@ -2552,7 +2552,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem4;
+            menuEditorMenuItem33;
 
         menuItem
             -label "Contour" 
@@ -2626,7 +2626,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem6;
+            menuEditorMenuItem34;
 
         menuItem
             -label "ShrinkWrap" 
@@ -2675,7 +2675,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem7;
+            menuEditorMenuItem35;
 
         menuItem
             -label "UV Based" 
@@ -2703,34 +2703,10 @@
             menuEditorMenuItem16;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem27;
-
-        menuItem
             -label "Texture" 
             -divider 0
-            -subMenu 0
+            -subMenu 1
             -tearOff 0
-            -command "CreateTextureDeformer;" 
             -altModifier 0
             -optionModifier 0
             -commandModifier 0
@@ -2740,88 +2716,111 @@
             -enable 1
             -data 0
             -allowOptionBoxes 1
-            -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "textureDeformer.png" 
-            -echoCommand 0
+			-image "Textured.png" 
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem28;
+            menuEditorMenuItem44;
 
-        menuItem
-            -label "menuEditorMenuItem32" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateTextureDeformerOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
+            menuItem
+                -label "Create Texture Deformer" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "CreateTextureDeformer;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "textureDeformer.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
 
-        menuItem
-            -label "Paint Texture" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "artAttrToolScript 4 \"textureDeformer\"" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "paintTextureDeformer.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem30;
+            menuItem
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "CreateTextureDeformerOptions;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem5;
 
-        menuItem
-            -label "menuEditorMenuItem33" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "artAttrToolScript 3 \"textureDeformer\"" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
+            menuItem
+                -label "Paint Texture" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "artAttrToolScript 4 \"textureDeformer\"" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -image "paintTextureDeformer.png" 
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem3;
+
+            menuItem
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "artAttrToolScript 3 \"textureDeformer\"" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem6;
+
+        setParent -m ..;
 
         menuItem
             -label "separator" 
@@ -2918,7 +2917,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem20;
+            menuEditorMenuItem38;
 
         menuItem
             -label "Remove Influence to Skin" 
@@ -2992,7 +2991,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem24;
+            menuEditorMenuItem39;
 
         menuItem
             -label "Unbind Skin" 
@@ -3041,7 +3040,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem25;
+            menuEditorMenuItem40;
 
     setParent -m ..;
 
