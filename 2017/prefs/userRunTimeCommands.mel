@@ -103,23 +103,15 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tartAttrCtx -e -useColorRamp false artAttrSkinContext ; artisanUpdateRampColorEnable;\n}\nelse\n{\n\tartAttrCtx -e -useColorRamp true artAttrSkinContext ; artisanUpdateRampColorEnable;\n}")
+	-command ("string $currentTool = `currentCtx`;\nint $rampTypeCheck = `artAttrCtx -q -useColorRamp $currentTool`;\n\nif ($rampTypeCheck == 1){\n\tartAttrCtx -e -useColorRamp 0 $currentTool;\n}else{\n\tartAttrCtx -e -useColorRamp 1 $currentTool;\n}")
 	ToggleRampSkin;
-
-runTimeCommand
-	-annotation "Toggle Selection and Paint in Paint Skin Tool"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tartAttrSkinPaintModePaintSelect 0 artAttrSkinPaintCtx;\n}\nelse\n{\n\tartAttrSkinPaintModePaintSelect 1 artAttrSkinPaintCtx;\n}")
-	ToggleSelPaintSkin;
 
 runTimeCommand
 	-annotation "Toggle Xray Joints in Paint Skin Tool"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tartAttrSkinPaintCtx -e -xrayJoints false `currentCtx`;\n}\nelse\n{\n\tartAttrSkinPaintCtx -e -xrayJoints true `currentCtx`;\n}")
+	-command ("string $currentTool = `currentCtx`;\nint $xrayCheck = `artAttrSkinPaintCtx -q -xrayJoints $currentTool`;\n\nif ($xrayCheck == 1){\n\tartAttrSkinPaintCtx -e -xrayJoints 0 $currentTool;\n}else{\n\tartAttrSkinPaintCtx -e -xrayJoints 1 $currentTool;\n}")
 	ToggleXRayJointsSkin;
 
 runTimeCommand
@@ -603,14 +595,6 @@ runTimeCommand
 	ToggleCompObj;
 
 runTimeCommand
-	-annotation "Toggle Manipulator Snap"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("int $ToggleTag = (($ToggleTag + 1) % 2);\n\nif ($ToggleTag)\n{\n\tdR_setTransformStepSnapMode 1;\n\tinViewMessage -pos topCenter -msg \"Manipulator Snap ON\" -fade;\n}\nelse\n{\n\tdR_setTransformStepSnapMode 0;\n\tinViewMessage -pos topCenter -msg \"Manipulator Snap OFF\" -fade;\n}")
-	ToggleManipulatorSnap;
-
-runTimeCommand
 	-annotation "Bevel Curve(s) for Text"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
@@ -831,7 +815,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl -o`;subdGivenIntoPolyMode $mySel[0] 1 0 0 0;inViewMessage -pos topCenter -msg \"Poly Mode\" -fade;")
+	-command ("string $mySel[] = `ls -sl -o`;\nsubdGivenIntoPolyMode $mySel[0] 1 0 0 0;\ninViewMessage -pos topCenter -msg \"Poly Mode\" -fade;")
 	LegacySubdivPolyMode;
 
 runTimeCommand
@@ -839,7 +823,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl -o`;subdGivenIntoHierMode $mySel[0];inViewMessage -pos topCenter -msg \"Subd Mode\" -fade;")
+	-command ("string $mySel[] = `ls -sl -o`;\nsubdGivenIntoHierMode $mySel[0];\ninViewMessage -pos topCenter -msg \"Subd Mode\" -fade;")
 	LegacySubdivStandardMode;
 
 runTimeCommand
@@ -1489,4 +1473,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("select $May9_Clipboard;\ninViewMessage -pos topCenter -msg \"Selection Pasted\" -fade;")
 	PasteSelection;
+
+runTimeCommand
+	-annotation "Toggle Wireframe when Paint Skin"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $currentTool = `currentCtx`;\nint $wireframeCheck = `artAttrSkinPaintCtx -q -showactive $currentTool`;\n\nif ($wireframeCheck == 1){\n\tartAttrSkinPaintCtx -e -showactive 0 $currentTool;\n}else{\n\tartAttrSkinPaintCtx -e -showactive 1 $currentTool;\n}")
+	ToggleSkinWireframe;
 
