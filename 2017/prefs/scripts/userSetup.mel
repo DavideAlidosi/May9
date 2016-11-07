@@ -26,13 +26,14 @@ scriptJob -e "NewSceneOpened" $presetForView3;
 string $presetForView4 = "modelEditor -e -acx 1 -tsl 1 modelPanel4;";
 scriptJob -e "NewSceneOpened" $presetForView4;
 
-// Enable Anti-alias and Floating Point Render Target
-string $HWantiAlias = "setAttr \"hardwareRenderingGlobals.lineAAEnable\" 1; setAttr \"hardwareRenderingGlobals.multiSampleEnable\" 1; setAttr \"hardwareRenderingGlobals.floatingPointRTEnable\" 1";
+// Enable Anti-alias based on OS
 string $osVer = `about -os`;
 $osTest = `gmatch $osVer "*mac*"`;
 if ($osTest == 1) {
-	//scriptJob -e "NewSceneOpened" $HWantiAlias;
+	string $HWantiAlias = "setAttr \"hardwareRenderingGlobals.multiSampleEnable\" 1";
+	scriptJob -e "NewSceneOpened" $HWantiAlias;
 } else {
+	string $HWantiAlias = "setAttr \"hardwareRenderingGlobals.lineAAEnable\" 1; setAttr \"hardwareRenderingGlobals.multiSampleEnable\" 1";
 	scriptJob -e "NewSceneOpened" $HWantiAlias;
 };
 

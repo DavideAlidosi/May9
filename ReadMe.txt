@@ -94,7 +94,7 @@ Main preferences change:
 - Two side lighting is enable (as in Maya 2014)
 - Animate Camera Transition is enable (as in Maya 2014)
 - Interactive Creation is enable (as in Maya 2015)
-- Anti-aliasing and the Floating Point Render are enable by default in VP 2.0 on Windows and Linux machine
+- Anti-aliasing and the Floating Point Render are enable by default in VP 2.0
 - Playback Speed is set to Play Every Frame, Max Real-time
 - X-Ray Active Component is enable
 - Hidden attribute in connections exposed
