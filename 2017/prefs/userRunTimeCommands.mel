@@ -1471,6 +1471,22 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $attractMesh[] = `ls -sl -ni -typ \"transform\"`;\nduplicate;\nstring $nClothMesh[] = `ls -sl`;\ndoCreateNCloth 0;\nstring $nClothShape[] = `ls -sl`;\nsetAttr ($nClothShape[0] +\".inputMeshAttract\") 1;\nconnectAttr -f ($attractMesh[0] + \".worldMesh\") ($nClothShape[0] + \".inputMesh\");\nconnectAttr -f ($attractMesh[0] + \".worldMesh\") ($nClothShape[0] + \".restShapeMesh\");\nselect $attractMesh[0];\nrename ( $attractMesh[0] + \"_attract1\" );\nselect $nClothMesh[0];\nrename ( $nClothMesh[0] + \"_nCloth1\" );")
+	-command ("string $attractMesh[] = `ls -sl -ni -typ \"transform\"`;\nduplicate;\nstring $restMesh[] = `ls -sl`;\nduplicate;\nstring $nClothMesh[] = `ls -sl`;\ndoCreateNCloth 0;\nstring $nClothShape[] = `ls -sl`;\n\nsetAttr ($nClothShape[0] +\".inputMeshAttract\") 1;\nconnectAttr -f ($attractMesh[0] + \".worldMesh\") ($nClothShape[0] + \".inputMesh\");\nconnectAttr -f ($restMesh[0] + \".worldMesh\") ($nClothShape[0] + \".restShapeMesh\");\nconnectAttr -f ($attractMesh[0] + \".outMesh\") ($restMesh[0] + \".inMesh\");\n\nselect $attractMesh[0];\nhide $attractMesh[0];\nselect $attractMesh[0];\nrename ( $attractMesh[0] + \"_attract1\" );\n\nselect $restMesh[0];\nhide $restMesh[0];\nselect $restMesh[0];\nrename ( $restMesh[0] + \"_rest1\" );\n\nselect $nClothMesh[0];\nrename ( $nClothMesh[0] + \"_nCloth1\" );")
 	nClothAsDeformer;
+
+runTimeCommand
+	-annotation "Copy Selection in Temp Variable"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $May9_Clipboard[] = `ls -sl`;\ninViewMessage -pos topCenter -msg \"Selection Copied\" -fade;")
+	CopySelection;
+
+runTimeCommand
+	-annotation "Paste Selection from Temp Variable"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("select $May9_Clipboard;\ninViewMessage -pos topCenter -msg \"Selection Pasted\" -fade;")
+	PasteSelection;
 

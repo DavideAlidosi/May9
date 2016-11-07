@@ -857,7 +857,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem26;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Mirror" 
@@ -906,7 +906,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem27;
+        menuEditorMenuItem6;
 
     menuItem
         -label "Shatter" 
@@ -2525,9 +2525,9 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
-			-image "Textured.png"
+            -image "Textured.png" 
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem26;
@@ -2553,12 +2553,13 @@
                 -image "textureDeformer.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
 
             menuItem
+                -label "menuEditorMenuItem2" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -2576,7 +2577,7 @@
                 -enableCommandRepeat 0
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem2;
@@ -2601,12 +2602,13 @@
                 -image "paintTextureDeformer.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem4;
 
             menuItem
+                -label "menuEditorMenuItem3" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -2624,7 +2626,7 @@
                 -enableCommandRepeat 0
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem3;
@@ -2646,15 +2648,15 @@
             -data 0
             -allowOptionBoxes 1
             -enableCommandRepeat 1
-			-image "nCloth.svg" 
+            -image "nCloth.svg" 
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem19;
 
             menuItem
-                -label "Create Cloth as Deformer" 
+                -label "Create nCloth as Deformer" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -2673,13 +2675,13 @@
                 -image "nClothCreate.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
 
             menuItem
-                -label "Paint Input Attract" 
+                -label "Paint nCloth Input Attract" 
                 -divider 0
                 -subMenu 0
                 -tearOff 0
@@ -2698,10 +2700,34 @@
                 -image "nClothPaintPerVertex.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem2;
+
+            menuItem
+                -label "menuEditorMenuItem3" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 3 inputAttract;" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 1
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 0
+                -echoCommand 0
+                -italicized 0
+                -boldFont 1
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem4;
 
         setParent -m ..;
 
@@ -2875,7 +2901,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem14;
+            menuEditorMenuItem8;
 
     setParent -m ..;
 
@@ -6208,7 +6234,7 @@
         menuEditorMenuItem13;
 
     menuItem
-        -label "Select All Vertices" 
+        -label "Convert to Vertices" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -6224,13 +6250,13 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "polyConvertToVertices.png" 
+        -image "vertex_NEX.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem24;
+        menuEditorMenuItem26;
 
 setParent -m ..;
 
