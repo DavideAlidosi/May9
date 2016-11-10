@@ -5,371 +5,252 @@
     menuItem
         -label "Bridge"
         -command "BridgeEdge;"
-        -enable 1
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -radialPosition "NE"
         -image "polyBridge.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem5;
 
     menuItem
         -label "menuEditorMenuItem6"
         -command "BridgeEdgeOptions;"
         -optionBox 1
-        -enable 1
-        -allowOptionBoxes 1
         -enableCommandRepeat 0
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem6;
 
     menuItem
         -label "Poke"
         -command "PokePolygon;"
-        -enable 1
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -radialPosition "SE"
         -image "polyPoke.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem9;
 
     menuItem
         -label "menuEditorMenuItem10"
         -command "PokePolygonOptions;"
         -optionBox 1
-        -enable 1
-        -allowOptionBoxes 1
         -enableCommandRepeat 0
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem10;
 
     menuItem
         -label "Multi Cut Tool"
         -command "dR_multiCutTool;"
-        -enable 1
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -radialPosition "W"
         -image "multiCut_NEX32.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem11;
 
     menuItem
         -label "Connect"
         -command "dR_connectTool;"
-        -enable 1
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -radialPosition "SW"
         -image "connect_NEX32.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem7;
 
     menuItem
         -label "Bevel"
         -command "BevelPolygon;"
-        -enable 1
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -radialPosition "NW"
         -image "polyBevel.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem15;
 
     menuItem
         -label "menuEditorMenuItem16"
         -command "BevelPolygonOptions;"
         -optionBox 1
-        -enable 1
-        -allowOptionBoxes 1
         -enableCommandRepeat 0
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem16;
 
     menuItem
         -label "Extrude"
         -command "PolyExtrude"
-        -enable 1
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -radialPosition "E"
         -image "polyExtrudeFacet.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem4;
 
     menuItem
         -label "menuEditorMenuItem12"
         -command "PolyExtrudeOptions"
         -optionBox 1
-        -enable 1
-        -allowOptionBoxes 1
         -enableCommandRepeat 0
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem12;
 
     menuItem
         -label "Transform"
         -command "performPolyMove \"\" 0"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "polyMoveVertex.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem23;
 
     menuItem
         -label "menuEditorMenuItem27"
         -command "MovePolygonComponentOptions"
         -optionBox 1
-        -enable 1
-        -allowOptionBoxes 1
         -enableCommandRepeat 0
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem14;
 
     menuItem
         -label "Extract"
         -command "ExtractFace"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "polyChipOff.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem28;
 
     menuItem
         -label "menuEditorMenuItem29"
         -command "ExtractFaceOptions"
         -optionBox 1
-        -enable 1
-        -allowOptionBoxes 1
         -enableCommandRepeat 0
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem20;
 
     menuItem
         -label "Duplicate"
         -command "performPolyChipOff 0 1"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "polyDuplicateFacet.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem19;
 
     menuItem
         -label "menuEditorMenuItem22"
         -command "DuplicateFaceOptions"
         -optionBox 1
-        -enable 1
-        -allowOptionBoxes 1
         -enableCommandRepeat 0
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem29;
 
     menuItem
         -label "Flip"
         -command "dR_performSymmetryFlip;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "polyFlip.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem27;
 
     menuItem
         -label "Symmetrize"
         -command "dR_performSymmetrize;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "symmetrize.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem34;
 
     menuItem
         -label "separator" 
         -divider 1
         -dividerLabel "separator"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem24;
 
     menuItem
         -label "Deformers"
         -subMenu 1
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "menuIconDeformations.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem31;
 
         menuItem
             -label "Nonlinear"
             -subMenu 1
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "bendNLD.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem1;
 
             menuItem
                 -label "Bend"
                 -command "Bend;"
-                -enable 1
-                -radialPosition "N" 
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
+                -radialPosition "N"
                 -image "bendNLD.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem1;
 
             menuItem
                 -label "menuEditorMenuItem3"
                 -command "BendOptions;"
                 -optionBox 1
-                -enable 1
-                -allowOptionBoxes 1
                 -enableCommandRepeat 0
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem2;
 
             menuItem
                 -label "Flare"
                 -command "Flare;"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "flareNLD.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem4;
 
             menuItem
                 -label "menuEditorMenuItem5"
                 -command "FlareOptions;"
                 -optionBox 1
-                -enable 1
-                -allowOptionBoxes 1
                 -enableCommandRepeat 0
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem3;
 
             menuItem
                 -label "Sine"
                 -command "Sine"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "sineNLD.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem6;
 
             menuItem
                 -label "menuEditorMenuItem7"
                 -command "SineOptions;"
                 -optionBox 1
-                -enable 1
-                -allowOptionBoxes 1
                 -enableCommandRepeat 0
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem5;
 
             menuItem
                 -label "Squash"
                 -command "Squash"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "squashNLD.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem8;
 
             menuItem
                 -label "menuEditorMenuItem9"
                 -command "SquashOptions;"
                 -optionBox 1
-                -enable 1
-                -allowOptionBoxes 1
                 -enableCommandRepeat 0
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem7;
 
             menuItem
                 -label "Twist"
                 -command "Twist"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "twistNLD.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem10;
 
             menuItem
                 -label "menuEditorMenuItem11"
                 -command "TwistOptions"
                 -optionBox 1
-                -enable 1
-                -allowOptionBoxes 1
                 -enableCommandRepeat 0
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem9;
 
             menuItem
                 -label "Wave"
                 -command "Wave"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "waveNLD.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem12;
 
             menuItem
                 -label "menuEditorMenuItem13"
                 -command "WaveOptions;"
                 -optionBox 1
-                -enable 1
-                -allowOptionBoxes 1
                 -enableCommandRepeat 0
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem11;
 
         setParent -m ..;
@@ -377,89 +258,60 @@
         menuItem
             -label "Cluster"
             -command "CreateCluster"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "cluster.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem9;
 
         menuItem
             -label "menuEditorMenuItem10"
             -command "CreateClusterOptions"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem10;
 
         menuItem
             -label "Soft Cluster"
             -command "SoftClusterUI"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "softClusterEXBanner.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem6;
 
         menuItem
             -label "Lattice"
             -command "CreateLattice"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "lattice.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem3;
 
         menuItem
             -label "menuEditorMenuItem9"
             -command "CreateLatticeOptions;"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem11;
 
         menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem7;
 
         menuItem
             -label "Smooth Skin Flood"
             -command "SmoothSkinWeightFlood"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "smoothSkinWeights.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem8;
 
         menuItem
             -label "menuEditorMenuItem10"
             -command "SmoothSkinWeightFloodOptions"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem12;
 
     setParent -m ..;
@@ -467,45 +319,30 @@
     menuItem
         -label "UV Mapping"
         -subMenu 1
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "polyUnfoldUVs.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem32;
 
         menuItem
             -label "Automatic Mapping"
             -command "performPolyAutoProj 0;"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "polyAutoProj.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
             -label "menuEditorMenuItem4"
             -command "performPolyAutoProj 1;"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem2;
 
         menuItem
             -label "Face Mapping"
             -command "MapFace"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "polyPlanProj.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem3;
 
     setParent -m ..;
@@ -513,78 +350,51 @@
     menuItem
         -label "Normals"
         -subMenu 1
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "polyNormalsPropagate.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem33;
 
         menuItem
             -label "Unlock Normals"
             -command "polyNormalPerVertex -ufn true;"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "polyNormalUnlock.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
             -label "Reverse Normals"
             -command "ReversePolygonNormals;"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "polyNormal.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem2;
 
         menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem6;
 
         menuItem
             -label "Set Soften Edge"
             -command "SoftPolyEdgeElements 1"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "polySoftEdge.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem3;
 
         menuItem
             -label "menuEditorMenuItem6"
             -command "polySoftEdgeWin"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem7;
 
         menuItem
             -label "Set Harden Edge"
             -command "SoftPolyEdgeElements 0"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "polyHardEdge.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem5;
 
     setParent -m ..;
@@ -592,89 +402,57 @@
     menuItem
         -label "Shading"
         -subMenu 1
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "render_adskMaterial.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem22;
 
         menuItem
             -label "Assign New Material"
             -command "createAssignNewMaterialTreeLister \"\";"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "render_adskMaterial.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem2;
 
         menuItem
             -label "Shaded Brightness Two Tone"
             -command "assignToonShader \"shadedBrightness\""
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "toonBrightness2.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem3;
 
         menuItem
             -label "Shaded Brightness Three Tone"
             -command "assignToonShader \"threeToneBrightness\""
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "toonBrightness3.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem4;
 
         menuItem
             -label "Circle Highlight"
             -command "assignToonShader \"circleHighlight\""
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "toonCircleHigh.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem5;
 
         menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem6;
 
         menuItem
             -label "Select By Shader"
             -command "do_Sel_by_mat()"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "selectByObject.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem7;
 
     setParent -m ..;
@@ -682,101 +460,66 @@
     menuItem
         -label "Dynamics"
         -subMenu 1
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "out_nucleus.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem8;
 
         menuItem
             -label "Emit Particle"
             -command "NEmitFromObject;"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "emitter.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem3;
 
         menuItem
             -label "menuEditorMenuItem4"
             -command "NEmitFromObjectOptions;"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem6;
 
         menuItem
             -label "Particle Style"
             -subMenu 1
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "out_particle.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem5;
 
             menuItem
                 -label "Points"
                 -command "optionVar -stringValue NParticleStyle \"Points\";"
-                -enable 1
-                -radialPosition "N" 
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
+                -radialPosition "N"
                 -image "nPartPoints.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem1;
 
             menuItem
                 -label "Balls"
                 -command "optionVar -stringValue NParticleStyle \"Balls\";"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "nPartBalls.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem2;
 
             menuItem
                 -label "Cloud"
                 -command "optionVar -stringValue NParticleStyle \"Cloud\";"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "nPartCloud.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem3;
 
             menuItem
                 -label "ThickCloud"
                 -command "optionVar -stringValue NParticleStyle \"ThickCloud\";"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "nPartThickCloud.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem4;
 
             menuItem
                 -label "Water"
                 -command "optionVar -stringValue NParticleStyle \"Water\";"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "nPartWater.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem5;
 
         setParent -m ..;
@@ -784,122 +527,78 @@
         menuItem
             -label "Add Fields"
             -subMenu 1
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "posRadial.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem11;
 
             menuItem
                 -label "Air"
                 -command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posAir.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem1;
 
             menuItem
                 -label "Drag"
                 -command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posDrag.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem2;
 
             menuItem
                 -label "Gravity"
                 -command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posGravity.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem3;
 
             menuItem
                 -label "Newton"
                 -command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posNewton.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem4;
 
             menuItem
                 -label "Radial"
                 -command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posRadial.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem5;
 
             menuItem
                 -label "Turbulence"
                 -command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posTurbulence.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem6;
 
             menuItem
                 -label "Uniform"
                 -command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posUniform.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem7;
 
             menuItem
                 -label "Vortex"
                 -command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posVortex.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem8;
 
             menuItem
                 -label "separator" 
                 -divider 1
                 -dividerLabel "separator"
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem9;
 
             menuItem
                 -label "Volume Axis"
                 -command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -enable 1
-                -allowOptionBoxes 1
-                -enableCommandRepeat 1
                 -image "posVolumeAxis.png"
-                -sourceType "mel" 
-                -longDivider 1
+                -sourceType "mel"
                 menuEditorMenuItem10;
 
         setParent -m ..;
@@ -909,155 +608,104 @@
     menuItem
         -label "nConstraint"
         -subMenu 1
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "menuIconConstraints.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem35;
 
         menuItem
             -label "Transform Constraint"
             -command "doCreateNConstraint transform 0"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "nConstraintTransform.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
             -label "menuEditorMenuItem3"
             -command "performCreateDynamicConstraint 1 \"transform\";"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem12;
 
         menuItem
             -label "Component to Component"
             -command "performCreateDynamicConstraint 0 \"pointToPoint\";"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "nConstraintComponent.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem6;
 
         menuItem
             -label "menuEditorMenuItem7"
             -command "performCreateDynamicConstraint 1 \"pointToPoint\";"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem5;
 
         menuItem
             -label "Self Component"
             -command "performCreateComponentNConstraint 0;"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "nConstraintComponent.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem4;
 
         menuItem
             -label "menuEditorMenuItem5"
             -command "performCreateComponentNConstraint 1;"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem16;
 
         menuItem
             -label "Tearable Surface"
             -command "performCreateDynamicConstraint 0 \"tearableSurface\";"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "nConstraintTearable.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem8;
 
         menuItem
             -label "menuEditorMenuItem9"
             -command "performCreateDynamicConstraint 1 \"tearableSurface\";"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem7;
 
         menuItem
             -label "Force Field"
             -command "doCreateNConstraint force 0"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "nConstraintForceField.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem9;
 
         menuItem
             -label "menuEditorMenuItem11"
             -command "performCreateDynamicConstraint 1 \"force\";"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem11;
 
         menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem13;
 
         menuItem
             -label "Add Members"
             -command "ConvertSelectionToVertices;\ndynamicConstraintMembership \"add\";"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "nConstraintAddMembers.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem14;
 
         menuItem
             -label "Remove Members"
             -command "ConvertSelectionToVertices;\ndynamicConstraintMembership \"remove\";"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "nConstraintRemoveMembers.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem15;
 
     setParent -m ..;
@@ -1065,78 +713,51 @@
     menuItem
         -label "XGen"
         -subMenu 1
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "xgDEditor.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem13;
 
         menuItem
             -label "Create Interactive Groom"
             -command "XgmCreateInteractiveGroomSplines"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "xgIG_creation.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem4;
 
         menuItem
             -label "menuEditorMenuItem7"
             -command "XgmCreateInteractiveGroomSplinesOption"
             -optionBox 1
-            -enable 1
-            -allowOptionBoxes 1
             -enableCommandRepeat 0
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem7;
 
         menuItem
             -label "Create Description"
             -command "XgCreateDescription"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "xgCreateDescription.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem8;
 
         menuItem
             -label "Guides Tool"
             -command "XgGuideTool"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "xgGuideContext.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem3;
 
         menuItem
             -label "Bind Patches Menu"
             -command "python(\"from PySide import QtGui\\nm = QtGui.QMenu()\\nm.addAction(u\\\"Add Selected Faces\\\",  lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Append\\\") )\\nm.addAction(u\\\"Replace with Selected Faces\\\", lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Replace\\\") )\\nm.addAction(u\\\"Remove Selected Faces\\\",  lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Remove\\\") )\\nm.addAction(u\\\"Bind Faces Based on Map...\\\",     lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Map\\\") )\\nm.addSeparator()\\nm.addAction(u\\\"Select Bound Faces\\\",  lambda: xgui.createDescriptionEditor(False).selectBinding() )\\nm.popup(QtGui.QCursor.pos())\\n\")"
-            -enable 1
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
             -image "xgBindFaces.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -sourceType "mel"
             menuEditorMenuItem2;
 
     setParent -m ..;
@@ -1145,22 +766,14 @@
         -label "separator" 
         -divider 1
         -dividerLabel "separator"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem17;
 
     menuItem
         -label "Convert to Vertices"
         -command "ConvertSelectionToVertices"
-        -enable 1
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "vertex_NEX.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -sourceType "mel"
         menuEditorMenuItem26;
 
 setParent -m ..;
