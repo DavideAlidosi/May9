@@ -1,4 +1,4 @@
-May9 pro 1.1.6 for Autodesk Maya 2017
+May9 pro 1.1.7 - A new user experience for Autodesk Maya 2017
 
 Installation Instruction:
 
@@ -80,7 +80,7 @@ SHIFT + LEFT = Persp View
 8 = Start IPR or Arnold Render View
 ? = Find Maya Menu
 K + Drag = Smooth playback mode
-CMD + Space = Toggle Full Screen (OSX only)
+CMD + Space = Toggle Full Screen (Mac OS only)
 
 
 Changed hotkeys:

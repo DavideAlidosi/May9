@@ -1,1902 +1,1902 @@
 
-    menuItem
-        -label "Multi Cut Tool"
-        -command "dR_multiCutTool;"
-        -radialPosition "W"
-        -image "multiCut_NEX32.png"
-        -sourceType "mel"
-        menuEditorMenuItem12;
-
-    menuItem
-        -label "Brushes"
-        -subMenu 1
-        -radialPosition "N"
-        -image "out_brush.png"
-        -sourceType "mel"
-        menuEditorMenuItem22;
-
-        menuItem
-            -label "Paint Attributes"
-            -command "ArtPaintAttrTool"
-            -radialPosition "SE"
-            -image "artAttr.png"
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "menuEditorMenuItem13"
-            -command "ArtPaintAttrToolOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "Paint Hair Follicle"
-            -command "paintHairTool 0;"
-            -radialPosition "E"
-            -image "hairPaint.png"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "menuEditorMenuItem8"
-            -command "paintHairTool 1;"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Paint Skin Weights"
-            -command "ArtPaintSkinWeightsTool"
-            -radialPosition "NW"
-            -image "paintSkinWeights.png"
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "menuEditorMenuItem1"
-            -command "ArtPaintSkinWeightsToolOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Smooth Skin Weight"
-            -command "SmoothSkinWeightPaint"
-            -radialPosition "W"
-            -image "artPaintSelect.png"
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "menuEditorMenuItem14"
-            -command "SmoothSkinWeightPaint;\nToolProperty"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "Paint Effects"
-            -command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
-            -radialPosition "SW"
-            -image "paintEffectsTool.png"
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem6"
-            -command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Sculpt Geometry"
-            -command "SetMeshSculptTool" 
-            -keyEquivalent "1"
-            -ctrlModifier 1
-            -radialPosition "N"
-            -image "Sculpt.png"
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "menuEditorMenuItem11"
-            -command "ShowMeshSculptToolOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "3D Paint Tool"
-            -command "Art3dPaintToolOptions;\nDisplayShadedAndTextured"
-            -radialPosition "NE"
-            -image "art3dPaint.png"
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Smooth"
-        -command "SmoothPolygon"
-        -radialPosition "S"
-        -image "polySmooth.png"
-        -sourceType "mel"
-        menuEditorMenuItem29;
-
-    menuItem
-        -label "menuEditorMenuItem30"
-        -command "SmoothPolygonOptions;"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem30;
-
-    menuItem
-        -label "Separate"
-        -command "SeparatePolygon;"
-        -radialPosition "NE"
-        -image "polySeparate.png"
-        -sourceType "mel"
-        menuEditorMenuItem8;
-
-    menuItem
-        -label "Add Divisions"
-        -command "performPolySubdivide \"\" 0"
-        -radialPosition "SW"
-        -image "polySubdFacet.png"
-        -sourceType "mel"
-        menuEditorMenuItem34;
-
-    menuItem
-        -label "menuEditorMenuItem35"
-        -command "SubdividePolygonOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem35;
-
-    menuItem
-        -label "Extrude"
-        -command "PolyExtrude"
-        -radialPosition "E"
-        -image "polyExtrudeFacet.png"
-        -sourceType "mel"
-        menuEditorMenuItem15;
-
-    menuItem
-        -label "menuEditorMenuItem16"
-        -command "PolyExtrudeOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem16;
-
-    menuItem
-        -label "Bevel"
-        -command "BevelPolygon;"
-        -radialPosition "NW"
-        -image "polyBevel.png"
-        -sourceType "mel"
-        menuEditorMenuItem10;
-
-    menuItem
-        -label "menuEditorMenuItem11"
-        -command "BevelPolygonOptions;"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem3;
-
-    menuItem
-        -label "Select Edges"
-        -subMenu 1
-        -radialPosition "SE"
-        -image "edges_NEX.png"
-        -sourceType "mel"
-        menuEditorMenuItem17;
-
-        menuItem
-            -label "By Right Angle\n"
-            -command "EdgeRightAngle"
-            -radialPosition "SE"
-            -image "da_rightAngle.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "By Straight Angle"
-            -command "EdgeStraightAngle"
-            -radialPosition "E"
-            -image "da_sraightAngle.png"
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "By Acute Angle"
-            -command "EdgeAcuteAngle"
-            -radialPosition "S"
-            -image "da_acuteAngle.png"
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Inside"
-            -command "EdgeInside"
-            -radialPosition "NE"
-            -image "insideEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "On Border"
-            -command "EdgeBorder"
-            -radialPosition "N"
-            -image "borderEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Hard"
-            -command "EdgeHard"
-            -radialPosition "SW"
-            -image "da_hardEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Soft"
-            -command "EdgeSoft"
-            -radialPosition "W"
-            -image "da_softEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Split nGons"
-        -command "PolyDivision"
-        -image "polyCleanup.png"
-        -sourceType "mel"
-        menuEditorMenuItem18;
-
-    menuItem
-        -label "menuEditorMenuItem17"
-        -command "PolyDivision;\nReducePolygon"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem24;
-
-    menuItem
-        -label "Mirror"
-        -command "MirrorPolygonGeometry;"
-        -image "polyMirrorGeometry.png"
-        -sourceType "mel"
-        menuEditorMenuItem7;
-
-    menuItem
-        -label "menuEditorMenuItem8"
-        -command "MirrorPolygonGeometryOptions;"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem27;
-
-    menuItem
-        -label "Shatter"
-        -command "ShatterMesh"
-        -image "da_shatter.png"
-        -sourceType "mel"
-        menuEditorMenuItem21;
-
-    menuItem
-        -label "Bake Vertex to Joints"
-        -command "BakeArbitraryDeformation"
-        -image "out_joint.png"
-        -sourceType "mel"
-        menuEditorMenuItem11;
-
-    menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator"
-        -sourceType "mel"
-        menuEditorMenuItem4;
-
-    menuItem
-        -label "Component Display"
-        -subMenu 1
-        -image "RS_visible.png"
-        -sourceType "mel"
-        menuEditorMenuItem9;
-
-        menuItem
-            -label "Vertex Normals"
-            -command "ToggleVertexNormalDisplay"
-            -image "da_edgeNormals.png"
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Vertex IDs"
-            -command "ToggleVertIDs"
-            -image "reorderIDs.png"
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Face Normals"
-            -command "ToggleFaceNormalDisplay"
-            -image "polyNormalsConform.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Face Triangles"
-            -command "TogglePolygonFaceTriangles       polyOptions -r -dt 1"
-            -image "polyTriangulate.png"
-            -sourceType "mel"
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "Face Centers"
-            -command "TogglePolygonFaceCenters"
-            -image "polyConvertToContainedFaces.png"
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Standard Edges"
-            -command "TogglePolyDisplayEdges"
-            -image "da_standardEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Soft/Hard Edges"
-            -command "TogglePolyDisplaySoftEdges"
-            -image "polyDuplicateEdgeLoop.png"
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Border Edges"
-            -command "ToggleBorderEdges;"
-            -image "borderEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Normals Size"
-            -command "ChangeNormalSize"
-            -image "resizeWindow.png"
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Convert Surface"
-        -subMenu 1
-        -image "da_PolygonsToNurbs.png"
-        -sourceType "mel"
-        menuEditorMenuItem14;
-
-        menuItem
-            -label "Poly to NURBS"
-            -command "PolyToNurbs"
-            -image "da_PolygonsToNurbs.png"
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Poly to Legacy Subdiv"
-            -command "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )"
-            -image "polyToSubdivs.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem6"
-            -command "CreateSubdivSurfaceOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -boldFont 0
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Subdiv Preview to Poly"
-            -command "CreatePolyFromPreview"
-            -image "subdivCreate.png"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Instance to Object"
-            -command "ConvertInstanceToObject"
-            -image "instanceToObject.png"
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Subdivision"
-        -subMenu 1
-        -image "subdivPolyMode.png"
-        -sourceType "mel"
-        menuEditorMenuItem5;
-
-        menuItem
-            -label "Adaptive OpenSubdiv"
-            -subMenu 1
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-            menuItem
-                -label "On"
-                -command "OpenSubdAdapt"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Off"
-                -command "OpenSubdNoAdapt"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Viewport Displace"
-            -subMenu 1
-            -sourceType "mel"
-            menuEditorMenuItem11;
-
-            menuItem
-                -label "On"
-                -command "OpenSubdDisplace"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Off"
-                -command "OpenSubdNoDisplace"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Display Subdivision"
-            -subMenu 1
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-            menuItem
-                -label "On"
-                -command "OpenSubdSudivision"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Off"
-                -command "OpenSubdNoSubdivision"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-        setParent -m ..;
-
-        menuItem
-            -label "OpenCL"
-            -subMenu 1
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-            menuItem
-                -label "On"
-                -command "OpenSubdCL"
-                -radialPosition "N"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Off"
-                -command "OpenSubdNoCL"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-        setParent -m ..;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Deformers"
-        -subMenu 1
-        -image "menuIconDeformations.png"
-        -sourceType "mel"
-        menuEditorMenuItem25;
-
-        menuItem
-            -label "Edit Relationship"
-            -subMenu 1
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-            menuItem
-                -label "Deformer Set Editor"
-                -command "DeformerSetEditor"
-                -image "menuIconWindow.png"
-                -sourceType "mel"
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Set Membership"
-                -command "PaintSetMembershipToolOptions"
-                -image "paintSetMembership.png"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Edit Membership Tool"
-                -command "EditMembershipTool"
-                -image "setEdit.png"
-                -sourceType "mel"
-                menuEditorMenuItem3;
-
-        setParent -m ..;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "Tension BlendShape"
-            -command "CreateTensionBlendShape"
-            -image "da_tensionBS.png"
-            -sourceType "mel"
-            menuEditorMenuItem23;
-
-        menuItem
-            -label "Nonlinear"
-            -subMenu 1
-            -image "bendNLD.png"
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-            menuItem
-                -label "Bend"
-                -command "Bend;"
-                -image "bendNLD.png"
-                -sourceType "mel"
-                menuEditorMenuItem13;
-
-            menuItem
-                -label "menuEditorMenuItem1"
-                -command "BendOptions;"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem7;
-
-            menuItem
-                -label "Flare"
-                -command "Flare;"
-                -image "flareNLD.png"
-                -sourceType "mel"
-                menuEditorMenuItem15;
-
-            menuItem
-                -label "menuEditorMenuItem2"
-                -command "FlareOptions;"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem8;
-
-            menuItem
-                -label "Sine"
-                -command "Sine"
-                -image "sineNLD.png"
-                -sourceType "mel"
-                menuEditorMenuItem17;
-
-            menuItem
-                -label "menuEditorMenuItem3"
-                -command "SineOptions;"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem9;
-
-            menuItem
-                -label "Squash"
-                -command "Squash"
-                -image "squashNLD.png"
-                -sourceType "mel"
-                menuEditorMenuItem19;
-
-            menuItem
-                -label "menuEditorMenuItem4"
-                -command "SquashOptions;"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem10;
-
-            menuItem
-                -label "Twist"
-                -command "Twist"
-                -image "twistNLD.png"
-                -sourceType "mel"
-                menuEditorMenuItem21;
-
-            menuItem
-                -label "menuEditorMenuItem5"
-                -command "TwistOptions"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem11;
-
-            menuItem
-                -label "Wave"
-                -command "Wave"
-                -image "waveNLD.png"
-                -sourceType "mel"
-                menuEditorMenuItem23;
-
-            menuItem
-                -label "menuEditorMenuItem6"
-                -command "WaveOptions;"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem12;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Cluster"
-            -command "CreateCluster"
-            -image "cluster.png"
-            -sourceType "mel"
-            menuEditorMenuItem18;
-
-        menuItem
-            -label "menuEditorMenuItem19"
-            -command "CreateClusterOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Delta Mush"
-            -command "DeltaMush"
-            -image "da_deltaMush.png"
-            -sourceType "mel"
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "menuEditorMenuItem18"
-            -command "DeltaMushOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Smooth"
-            -command "LaplacianSmooth"
-            -image "da_smooth.png"
-            -sourceType "mel"
-            menuEditorMenuItem32;
-
-        menuItem
-            -label "Membrane"
-            -command "createMembrane"
-            -image "da_membrane.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Lattice"
-            -command "CreateLattice"
-            -image "lattice.png"
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem6"
-            -command "CreateLatticeOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Contour"
-            -command "ContourDeformer"
-            -image "GreasePencil.png"
-            -sourceType "mel"
-            menuEditorMenuItem20;
-
-        menuItem
-            -label "Texture"
-            -subMenu 1
-            -image "Textured.png"
-            -sourceType "mel"
-            menuEditorMenuItem26;
-
-            menuItem
-                -label "Create Texture Deformer"
-                -command "CreateTextureDeformer;"
-                -radialPosition "N"
-                -image "textureDeformer.png"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "menuEditorMenuItem2"
-                -command "CreateTextureDeformerOptions;"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Paint Texture"
-                -command "artAttrToolScript 4 \"textureDeformer\""
-                -image "paintTextureDeformer.png"
-                -sourceType "mel"
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "menuEditorMenuItem3"
-                -command "artAttrToolScript 3 \"textureDeformer\""
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem3;
-
-        setParent -m ..;
-
-        menuItem
-            -label "nCloth as Deformer"
-            -subMenu 1
-            -image "nCloth.svg"
-            -sourceType "mel"
-            menuEditorMenuItem19;
-
-            menuItem
-                -label "Create nCloth as Deformer"
-                -command "nClothAsDeformer"
-                -image "nClothCreate.png"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Paint nCloth Input Attract"
-                -command "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 4 inputAttract"
-                -image "nClothPaintPerVertex.png"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "menuEditorMenuItem3"
-                -command "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 3 inputAttract;"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem4;
-
-        setParent -m ..;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Muscle System Skin"
-            -command "cMuscle_makeMuscleSystem(1)"
-            -image "cMuscle_skin_apply.png"
-            -sourceType "mel"
-            menuEditorMenuItem25;
-
-        menuItem
-            -label "Default Muscle Weights"
-            -command "cMuscleWeightDefaultUI(); "
-            -image "cMuscle_skin_applyDefault.png"
-            -sourceType "mel"
-            menuEditorMenuItem21;
-
-        menuItem
-            -label "Paint Muscle Weights"
-            -command "cMusclePaint(); "
-            -image "cMuscle_skin_paint.png"
-            -sourceType "mel"
-            menuEditorMenuItem24;
-
-        menuItem
-            -label "Smooth Skin to Muscle System"
-            -command "cMuscleConvertSkin(); "
-            -image "cMuscle_skin_convert.png"
-            -sourceType "mel"
-            menuEditorMenuItem22;
-
-        menuItem
-            -label "Unbind Skin"
-            -command "DetachSkin"
-            -image "detachSkin.png"
-            -sourceType "mel"
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "menuEditorMenuItem15"
-            -command "DetachSkinOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem8;
-
-    setParent -m ..;
-
-    menuItem
-        -label "UV Mapping"
-        -subMenu 1
-        -image "polyUnfoldUVs.png"
-        -sourceType "mel"
-        menuEditorMenuItem20;
-
-        menuItem
-            -label "Select UVs"
-            -command "SelectUV"
-            -image "polyGridUV.png"
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "3D UV Grab"
-            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;"
-            -image "UV_3D_Grab_Brush.png"
-            -sourceType "mel"
-            menuEditorMenuItem21;
-
-        menuItem
-            -label "menuEditorMenuItem13"
-            -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "Automatic"
-            -command "performPolyAutoProj 0;"
-            -image "polyAutoProj.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem2"
-            -command "performPolyAutoProj 1;"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "Planar"
-            -command "performPolyProjectionArgList \"1\" {\"0\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
-            -image "polyPlanProj.png"
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "menuEditorMenuItem4"
-            -command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem19;
-
-        menuItem
-            -label "Cylindrical"
-            -command "performPolyProjectionArgList \"1\" {\"0\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
-            -image "polyCylProj.png"
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem6"
-            -command "performPolyProjectionArgList \"1\" {\"1\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem20;
-
-        menuItem
-            -label "Spherical"
-            -command "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";"
-            -image "polySphereProj.png"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "menuEditorMenuItem8"
-            -command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem22;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Auto Seams"
-            -command "performPolyAutoSeamUV 0"
-            -image "polyAutoSeams.png"
-            -sourceType "mel"
-            menuEditorMenuItem18;
-
-        menuItem
-            -label "menuEditorMenuItem20"
-            -command "performPolyAutoSeamUV 1"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem23;
-
-        menuItem
-            -label "UV Borders"
-            -command "int $borders[] = `polyOptions -q -displayMapBorder`;float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];"
-            -image "textureBorder.png"
-            -sourceType "mel"
-            menuEditorMenuItem15;
-
-        menuItem
-            -label "UV to Viewport"
-            -command "ViewportUV"
-            -image "polySetCurrentUVSet.png"
-            -sourceType "mel"
-            menuEditorMenuItem17;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Normals"
-        -subMenu 1
-        -image "polyNormalsPropagate.png"
-        -sourceType "mel"
-        menuEditorMenuItem19;
-
-        menuItem
-            -label "Conform"
-            -command "ConformPolygonNormals;"
-            -image "polyNormalsConform.png"
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Reverse"
-            -command "ReversePolygonNormals"
-            -image "polyNormal.png"
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Unlock"
-            -command "polyNormalPerVertex -ufn true;"
-            -image "polyNormalUnlock.png"
-            -sourceType "mel"
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Average"
-            -command "polyAverageNormal -prenormalize 1 -allowZeroNormal 0 -postnormalize 0 -distance 0.1 -replaceNormalXYZ 1 0 0 "
-            -image "polyNormalAverage.png"
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "menuEditorMenuItem5"
-            -command "AveragePolygonNormalsOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Set Soften Edge"
-            -command "SoftPolyEdgeElements 1"
-            -image "polySoftEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "menuEditorMenuItem12"
-            -command "polySoftEdgeWin"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Set Harden Edge"
-            -command "SoftPolyEdgeElements 0;"
-            -image "polyHardEdge.png"
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Double Side On"
-            -command "DoubleSideOn"
-            -image "polyToggleProxy.png"
-            -sourceType "mel"
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Double Side Off"
-            -command "DoubleSideOff"
-            -image "da_polyToggleProxy.png"
-            -sourceType "mel"
-            menuEditorMenuItem13;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Shading"
-        -subMenu 1
-        -image "render_adskMaterial.png"
-        -sourceType "mel"
-        menuEditorMenuItem2;
-
-        menuItem
-            -label "Assign New Material"
-            -command "createAssignNewMaterialTreeLister \"\";"
-            -image "render_adskMaterial.png"
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Shaded Brightness Two Tone"
-            -command "assignToonShader \"shadedBrightness\""
-            -image "toonBrightness2.png"
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Shaded Brightness Three Tone"
-            -command "assignToonShader \"threeToneBrightness\""
-            -image "toonBrightness3.png"
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Circle Highlight"
-            -command "assignToonShader \"circleHighlight\""
-            -image "toonCircleHigh.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Add Toon Outline"
-            -command "assignNewPfxToon"
-            -image "toonAddOutline.png"
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Remove Toon Outlines"
-            -command "removePfxToonOutlines"
-            -image "toonRemoveOutline.png"
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Mesh Light"
-            -command "aiMeshLight"
-            -image "light.png"
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Dynamics"
-        -subMenu 1
-        -image "out_nucleus.png"
-        -sourceType "mel"
-        menuEditorMenuItem23;
-
-        menuItem
-            -label "Create nCloth"
-            -command "nClothCreate"
-            -image "nClothCreate.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem11"
-            -command "nClothCreateOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Create Passive Collider"
-            -command "nClothMakeCollide"
-            -image "nClothCreatePassive.png"
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "menuEditorMenuItem12"
-            -command "nClothMakeCollideOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Create Soft Body"
-            -command "nSoft -c "
-            -image "soft.png"
-            -sourceType "mel"
-            menuEditorMenuItem26;
-
-        menuItem
-            -label "menuEditorMenuItem31"
-            -command "CreateNSoftBodyOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Emit Particle"
-            -command "NEmitFromObject"
-            -image "emitter.png"
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "menuEditorMenuItem8"
-            -command "NEmitFromObjectOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Fill Object With Particle"
-            -command "ParticleFill"
-            -image "nPartfillObject.png"
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "menuEditorMenuItem9"
-            -command "ParticleFillOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "Particle Style"
-            -subMenu 1
-            -image "out_particle.png"
-            -sourceType "mel"
-            menuEditorMenuItem15;
-
-            menuItem
-                -label "Points"
-                -command "optionVar -stringValue NParticleStyle \"Points\";"
-                -image "nPartPoints.png"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Balls"
-                -command "optionVar -stringValue NParticleStyle \"Balls\";"
-                -image "nPartBalls.png"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Cloud"
-                -command "optionVar -stringValue NParticleStyle \"Cloud\";"
-                -image "nPartCloud.png"
-                -sourceType "mel"
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "ThickCloud"
-                -command "optionVar -stringValue NParticleStyle \"ThickCloud\";"
-                -image "nPartThickCloud.png"
-                -sourceType "mel"
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Water"
-                -command "optionVar -stringValue NParticleStyle \"Water\";"
-                -image "nPartWater.png"
-                -sourceType "mel"
-                menuEditorMenuItem5;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Create Hair"
-            -command "CreateHair"
-            -image "hairCreate.png"
-            -sourceType "mel"
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "menuEditorMenuItem13"
-            -command "CreateHairOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "Set Initial State"
-            -command "setNClothStartState;"
-            -image "fluidInitialStateSet.png"
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem20;
-
-        menuItem
-            -label "Create Active Rigid Body"
-            -command "CreateActiveRigidBody"
-            -image "rigid.png"
-            -sourceType "mel"
-            menuEditorMenuItem22;
-
-        menuItem
-            -label "menuEditorMenuItem25"
-            -command "CreateActiveRigidBodyOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "Create Passive Rigid Body"
-            -command "CreatePassiveRigidBody"
-            -image "rigidPassive.png"
-            -sourceType "mel"
-            menuEditorMenuItem23;
-
-        menuItem
-            -label "menuEditorMenuItem24"
-            -command "CreatePassiveRigidBodyOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem14;
-
-        menuItem
-            -label "Constrain"
-            -subMenu 1
-            -image "constraint.png"
-            -sourceType "mel"
-            menuEditorMenuItem27;
-
-            menuItem
-                -label "Nail"
-                -command "constrain -nail "
-                -radialPosition "N"
-                -image "constraint.png"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Hinge"
-                -command "constrain -hinge -o 0 0 0 "
-                -image "constraint.png"
-                -sourceType "mel"
-                menuEditorMenuItem5;
-
-            menuItem
-                -label "Spring"
-                -command "constrain -spring -st 5 -d 0.1 "
-                -image "constraint.png"
-                -sourceType "mel"
-                menuEditorMenuItem6;
-
-            menuItem
-                -label "Barrier"
-                -command "constrain -barrier -o 0 0 0 "
-                -image "constraint.png"
-                -sourceType "mel"
-                menuEditorMenuItem7;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Set Initial State"
-            -command "setDynStartState;"
-            -image "fluidInitialStateSet.png"
-            -sourceType "mel"
-            menuEditorMenuItem45;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem29;
-
-        menuItem
-            -label "Emit Fluid From Object"
-            -command "EmitFluidFromObject"
-            -image "fluidObjectEmit.png"
-            -sourceType "mel"
-            menuEditorMenuItem30;
-
-        menuItem
-            -label "menuEditorMenuItem43"
-            -command "EmitFluidFromObjectOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "Make Fluid Collide"
-            -command "MakeFluidCollide"
-            -image "fluidCollide.png"
-            -sourceType "mel"
-            menuEditorMenuItem32;
-
-        menuItem
-            -label "menuEditorMenuItem44"
-            -command "MakeFluidCollideOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem17;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem18;
-
-        menuItem
-            -label "Add Fields"
-            -subMenu 1
-            -image "posRadial.png"
-            -sourceType "mel"
-            menuEditorMenuItem46;
-
-            menuItem
-                -label "Air"
-                -command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posAir.png"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Drag"
-                -command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posDrag.png"
-                -sourceType "mel"
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Gravity"
-                -command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posGravity.png"
-                -sourceType "mel"
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "Newton"
-                -command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posNewton.png"
-                -sourceType "mel"
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Radial"
-                -command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posRadial.png"
-                -sourceType "mel"
-                menuEditorMenuItem5;
-
-            menuItem
-                -label "Turbulence"
-                -command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posTurbulence.png"
-                -sourceType "mel"
-                menuEditorMenuItem6;
-
-            menuItem
-                -label "Uniform"
-                -command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posUniform.png"
-                -sourceType "mel"
-                menuEditorMenuItem7;
-
-            menuItem
-                -label "Vortex"
-                -command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posVortex.png"
-                -sourceType "mel"
-                menuEditorMenuItem8;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator"
-                -sourceType "mel"
-                menuEditorMenuItem9;
-
-            menuItem
-                -label "Volume Axis"
-                -command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
-                -image "posVolumeAxis.png"
-                -sourceType "mel"
-                menuEditorMenuItem10;
-
-        setParent -m ..;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem25;
-
-        menuItem
-            -label "Create Bifrost Liquid"
-            -command "CreateBifrostLiquid;"
-            -image "out_bifrostShape.png"
-            -sourceType "mel"
-            menuEditorMenuItem19;
-
-        menuItem
-            -label "Create Bifrost Aero"
-            -command "CreateBifrostAero"
-            -image "out_bifrostShape.png"
-            -sourceType "mel"
-            menuEditorMenuItem28;
-
-        menuItem
-            -label "Bifrost Ocean"
-            -command "OpenBossEditor"
-            -image "fluidCreate2D.png"
-            -sourceType "mel"
-            menuEditorMenuItem43;
-
-    setParent -m ..;
-
-    menuItem
-        -label "XGen"
-        -subMenu 1
-        -image "xgDEditor.png"
-        -sourceType "mel"
-        menuEditorMenuItem32;
-
-        menuItem
-            -label "Create Interactive Groom"
-            -command "XgmCreateInteractiveGroomSplines"
-            -image "xgIG_creation.png"
-            -sourceType "mel"
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "menuEditorMenuItem11"
-            -command "XgmCreateInteractiveGroomSplinesOption"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Interactive Brush"
-            -subMenu 1
-            -image "xgIG_density_24.png"
-            -sourceType "mel"
-            menuEditorMenuItem13;
-
-            menuItem
-                -label "Density"
-                -command "XgmSetDensityBrushTool"
-                -image "xgIG_density.png"
-                -sourceType "mel"
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "menuEditorMenuItem3"
-                -command "XgmSetDensityBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem5;
-
-            menuItem
-                -label "Place"
-                -command "XgmSetPlaceBrushTool"
-                -image "xgIG_place.png"
-                -sourceType "mel"
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "menuEditorMenuItem5"
-                -command "XgmSetPlaceBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem7;
-
-            menuItem
-                -label "Length"
-                -command "XgmSetLengthBrushTool"
-                -image "xgIG_length.png"
-                -sourceType "mel"
-                menuEditorMenuItem6;
-
-            menuItem
-                -label "menuEditorMenuItem7"
-                -command "XgmSetLengthBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem9;
-
-            menuItem
-                -label "Cut"
-                -command "XgmSetCutBrushTool"
-                -image "xgIG_cut.png"
-                -sourceType "mel"
-                menuEditorMenuItem8;
-
-            menuItem
-                -label "menuEditorMenuItem9"
-                -command "XgmSetCutBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem11;
-
-            menuItem
-                -label "Width"
-                -command "XgmSetWidthBrushTool"
-                -image "xgIG_width.png"
-                -sourceType "mel"
-                menuEditorMenuItem10;
-
-            menuItem
-                -label "menuEditorMenuItem11"
-                -command "XgmSetWidthBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem13;
-
-            menuItem
-                -label "Comb"
-                -command "XgmSetCombBrushTool"
-                -image "xgIG_comb.png"
-                -sourceType "mel"
-                menuEditorMenuItem12;
-
-            menuItem
-                -label "menuEditorMenuItem13"
-                -command "XgmSetCombBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem15;
-
-            menuItem
-                -label "Grab"
-                -command "XgmSetGrabBrushTool"
-                -image "xgIG_grab.png"
-                -sourceType "mel"
-                menuEditorMenuItem14;
-
-            menuItem
-                -label "menuEditorMenuItem15"
-                -command "XgmSetGrabBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem17;
-
-            menuItem
-                -label "Smooth"
-                -command "XgmSetSmoothBrushTool"
-                -image "xgIG_smooth.png"
-                -sourceType "mel"
-                menuEditorMenuItem16;
-
-            menuItem
-                -label "menuEditorMenuItem17"
-                -command "XgmSetSmoothBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem19;
-
-            menuItem
-                -label "Noise"
-                -command "XgmSetNoiseBrushTool"
-                -image "xgIG_noise.png"
-                -sourceType "mel"
-                menuEditorMenuItem18;
-
-            menuItem
-                -label "menuEditorMenuItem19"
-                -command "XgmSetNoiseBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem21;
-
-            menuItem
-                -label "Clump"
-                -command "XgmSetClumpBrushTool"
-                -image "xgIG_clump.png"
-                -sourceType "mel"
-                menuEditorMenuItem20;
-
-            menuItem
-                -label "menuEditorMenuItem21"
-                -command "XgmSetClumpBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem23;
-
-            menuItem
-                -label "Part"
-                -command "XgmSetPartBrushTool"
-                -image "xgIG_part.png"
-                -sourceType "mel"
-                menuEditorMenuItem22;
-
-            menuItem
-                -label "menuEditorMenuItem23"
-                -command "XgmSetPartBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem26;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator"
-                -sourceType "mel"
-                menuEditorMenuItem24;
-
-            menuItem
-                -label "Freeze"
-                -command "XgmSetFreezeBrushTool"
-                -image "xgIG_freeze.png"
-                -sourceType "mel"
-                menuEditorMenuItem25;
-
-            menuItem
-                -label "menuEditorMenuItem26"
-                -command "XgmSetFreezeBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem28;
-
-            menuItem
-                -label "Select"
-                -command "XgmSetSelectBrushTool"
-                -image "xgIG_select.png"
-                -sourceType "mel"
-                menuEditorMenuItem27;
-
-            menuItem
-                -label "menuEditorMenuItem28"
-                -command "XgmSetSelectBrushToolOption"
-                -optionBox 1
-                -enableCommandRepeat 0
-                -sourceType "mel"
-                menuEditorMenuItem29;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Interactive Groom Editor"
-            -command "XgCreateIgSplineEditor"
-            -image "xgIG_editor.png"
-            -sourceType "mel"
-            menuEditorMenuItem19;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator"
-            -sourceType "mel"
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Create Description"
-            -command "XgCreateDescription"
-            -image "xgCreateDescription.png"
-            -sourceType "mel"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Guides Tool"
-            -command "XgGuideTool"
-            -image "xgGuideContext.png"
-            -sourceType "mel"
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Sculpt Guides"
-            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");"
-            -image "xgGuideSculptTool.png"
-            -sourceType "mel"
-            menuEditorMenuItem15;
-
-        menuItem
-            -label "menuEditorMenuItem16"
-            -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Primitives to Poly"
-            -command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")"
-            -image "xgPolyConvert.png"
-            -sourceType "mel"
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem9"
-            -command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "XGen Editor"
-            -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor"
-            -image "xgDEditor.png"
-            -sourceType "mel"
-            menuEditorMenuItem17;
-
-        menuItem
-            -label "XGen Library"
-            -command "XGenLibraryWindow"
-            -image "xgLibrary.png"
-            -sourceType "mel"
-            menuEditorMenuItem10;
-
-    setParent -m ..;
-
-    menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator"
-        -sourceType "mel"
-        menuEditorMenuItem13;
-
-    menuItem
-        -label "Convert to Vertices"
-        -command "ConvertSelectionToVertices"
-        -image "vertex_NEX.png"
-        -sourceType "mel"
-        menuEditorMenuItem26;
+menuItem
+-label "Multi Cut Tool"
+-command "dR_multiCutTool;"
+-radialPosition "W"
+-image "multiCut_NEX32.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Brushes"
+-subMenu 1
+-radialPosition "N"
+-image "out_brush.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "Paint Attributes"
+-command "ArtPaintAttrTool"
+-radialPosition "SE"
+-image "artAttr.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "ArtPaintAttrToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Paint Hair Follicle"
+-command "paintHairTool 0;"
+-radialPosition "E"
+-image "hairPaint.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "paintHairTool 1;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Paint Skin Weights"
+-command "ArtPaintSkinWeightsTool"
+-radialPosition "NW"
+-image "paintSkinWeights.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem1"
+-command "ArtPaintSkinWeightsToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Smooth Skin Weight"
+-command "SmoothSkinWeightPaint"
+-radialPosition "W"
+-image "artPaintSelect.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem14"
+-command "SmoothSkinWeightPaint;\nToolProperty"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Paint Effects"
+-command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-radialPosition "SW"
+-image "paintEffectsTool.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Sculpt Geometry"
+-command "SetMeshSculptTool" 
+-keyEquivalent "1"
+-ctrlModifier 1
+-radialPosition "N"
+-image "Sculpt.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "ShowMeshSculptToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "3D Paint Tool"
+-command "Art3dPaintToolOptions;\nDisplayShadedAndTextured"
+-radialPosition "NE"
+-image "art3dPaint.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+setParent -m ..;
+
+menuItem
+-label "Smooth"
+-command "SmoothPolygon"
+-radialPosition "S"
+-image "polySmooth.png"
+-sourceType "mel"
+menuEditorMenuItem29;
+
+menuItem
+-label "menuEditorMenuItem30"
+-command "SmoothPolygonOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem30;
+
+menuItem
+-label "Separate"
+-command "SeparatePolygon;"
+-radialPosition "NE"
+-image "polySeparate.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Add Divisions"
+-command "performPolySubdivide \"\" 0"
+-radialPosition "SW"
+-image "polySubdFacet.png"
+-sourceType "mel"
+menuEditorMenuItem34;
+
+menuItem
+-label "menuEditorMenuItem35"
+-command "SubdividePolygonOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem35;
+
+menuItem
+-label "Extrude"
+-command "PolyExtrude"
+-radialPosition "E"
+-image "polyExtrudeFacet.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "menuEditorMenuItem16"
+-command "PolyExtrudeOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "Bevel"
+-command "BevelPolygon;"
+-radialPosition "NW"
+-image "polyBevel.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "BevelPolygonOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Select Edges"
+-subMenu 1
+-radialPosition "SE"
+-image "edges_NEX.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "By Right Angle\n"
+-command "EdgeRightAngle"
+-radialPosition "SE"
+-image "da_rightAngle.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "By Straight Angle"
+-command "EdgeStraightAngle"
+-radialPosition "E"
+-image "da_sraightAngle.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "By Acute Angle"
+-command "EdgeAcuteAngle"
+-radialPosition "S"
+-image "da_acuteAngle.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Inside"
+-command "EdgeInside"
+-radialPosition "NE"
+-image "insideEdge.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "On Border"
+-command "EdgeBorder"
+-radialPosition "N"
+-image "borderEdge.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Hard"
+-command "EdgeHard"
+-radialPosition "SW"
+-image "da_hardEdge.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Soft"
+-command "EdgeSoft"
+-radialPosition "W"
+-image "da_softEdge.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+setParent -m ..;
+
+menuItem
+-label "Split nGons"
+-command "PolyDivision"
+-image "polyCleanup.png"
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "menuEditorMenuItem17"
+-command "PolyDivision;\nReducePolygon"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem24;
+
+menuItem
+-label "Mirror"
+-command "MirrorPolygonGeometry;"
+-image "polyMirrorGeometry.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "MirrorPolygonGeometryOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem27;
+
+menuItem
+-label "Shatter"
+-command "ShatterMesh"
+-image "da_shatter.png"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "Bake Vertex to Joints"
+-command "BakeArbitraryDeformation"
+-image "out_joint.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Component Display"
+-subMenu 1
+-image "RS_visible.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Vertex Normals"
+-command "ToggleVertexNormalDisplay"
+-image "da_edgeNormals.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Vertex IDs"
+-command "ToggleVertIDs"
+-image "reorderIDs.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Face Normals"
+-command "ToggleFaceNormalDisplay"
+-image "polyNormalsConform.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Face Triangles"
+-command "TogglePolygonFaceTriangles       polyOptions -r -dt 1"
+-image "polyTriangulate.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Face Centers"
+-command "TogglePolygonFaceCenters"
+-image "polyConvertToContainedFaces.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Standard Edges"
+-command "TogglePolyDisplayEdges"
+-image "da_standardEdge.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Soft/Hard Edges"
+-command "TogglePolyDisplaySoftEdges"
+-image "polyDuplicateEdgeLoop.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Border Edges"
+-command "ToggleBorderEdges;"
+-image "borderEdge.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Normals Size"
+-command "ChangeNormalSize"
+-image "resizeWindow.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+setParent -m ..;
+
+menuItem
+-label "Convert Surface"
+-subMenu 1
+-image "da_PolygonsToNurbs.png"
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Poly to NURBS"
+-command "PolyToNurbs"
+-image "da_PolygonsToNurbs.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Poly to Legacy Subdiv"
+-command "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )"
+-image "polyToSubdivs.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreateSubdivSurfaceOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-boldFont 0
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Subdiv Preview to Poly"
+-command "CreatePolyFromPreview"
+-image "subdivCreate.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Instance to Object"
+-command "ConvertInstanceToObject"
+-image "instanceToObject.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+setParent -m ..;
+
+menuItem
+-label "Subdivision"
+-subMenu 1
+-image "subdivPolyMode.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Adaptive OpenSubdiv"
+-subMenu 1
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "On"
+-command "OpenSubdAdapt"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Off"
+-command "OpenSubdNoAdapt"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+menuItem
+-label "Viewport Displace"
+-subMenu 1
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "On"
+-command "OpenSubdDisplace"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Off"
+-command "OpenSubdNoDisplace"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+menuItem
+-label "Display Subdivision"
+-subMenu 1
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "On"
+-command "OpenSubdSudivision"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Off"
+-command "OpenSubdNoSubdivision"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+menuItem
+-label "OpenCL"
+-subMenu 1
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "On"
+-command "OpenSubdCL"
+-radialPosition "N"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Off"
+-command "OpenSubdNoCL"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-label "Deformers"
+-subMenu 1
+-image "menuIconDeformations.png"
+-sourceType "mel"
+menuEditorMenuItem25;
+
+menuItem
+-label "Edit Relationship"
+-subMenu 1
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Deformer Set Editor"
+-command "DeformerSetEditor"
+-image "menuIconWindow.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Set Membership"
+-command "PaintSetMembershipToolOptions"
+-image "paintSetMembership.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Edit Membership Tool"
+-command "EditMembershipTool"
+-image "setEdit.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Tension BlendShape"
+-command "CreateTensionBlendShape"
+-image "da_tensionBS.png"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "Nonlinear"
+-subMenu 1
+-image "bendNLD.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Bend"
+-command "Bend;"
+-image "bendNLD.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "menuEditorMenuItem1"
+-command "BendOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Flare"
+-command "Flare;"
+-image "flareNLD.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "FlareOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Sine"
+-command "Sine"
+-image "sineNLD.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "SineOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Squash"
+-command "Squash"
+-image "squashNLD.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "SquashOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Twist"
+-command "Twist"
+-image "twistNLD.png"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "menuEditorMenuItem5"
+-command "TwistOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Wave"
+-command "Wave"
+-image "waveNLD.png"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "WaveOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem12;
+
+setParent -m ..;
+
+menuItem
+-label "Cluster"
+-command "CreateCluster"
+-image "cluster.png"
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "menuEditorMenuItem19"
+-command "CreateClusterOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Delta Mush"
+-command "DeltaMush"
+-image "da_deltaMush.png"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "menuEditorMenuItem18"
+-command "DeltaMushOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Smooth"
+-command "LaplacianSmooth"
+-image "da_smooth.png"
+-sourceType "mel"
+menuEditorMenuItem32;
+
+menuItem
+-label "Membrane"
+-command "createMembrane"
+-image "da_membrane.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Lattice"
+-command "CreateLattice"
+-image "lattice.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreateLatticeOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Contour"
+-command "ContourDeformer"
+-image "GreasePencil.png"
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "Texture"
+-subMenu 1
+-image "Textured.png"
+-sourceType "mel"
+menuEditorMenuItem26;
+
+menuItem
+-label "Create Texture Deformer"
+-command "CreateTextureDeformer;"
+-radialPosition "N"
+-image "textureDeformer.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CreateTextureDeformerOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Paint Texture"
+-command "artAttrToolScript 4 \"textureDeformer\""
+-image "paintTextureDeformer.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "artAttrToolScript 3 \"textureDeformer\""
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "nCloth as Deformer"
+-subMenu 1
+-image "nCloth.svg"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "Create nCloth as Deformer"
+-command "nClothAsDeformer"
+-image "nClothCreate.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Paint nCloth Input Attract"
+-command "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 4 inputAttract"
+-image "nClothPaintPerVertex.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 3 inputAttract;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem4;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Muscle System Skin"
+-command "cMuscle_makeMuscleSystem(1)"
+-image "cMuscle_skin_apply.png"
+-sourceType "mel"
+menuEditorMenuItem25;
+
+menuItem
+-label "Default Muscle Weights"
+-command "cMuscleWeightDefaultUI(); "
+-image "cMuscle_skin_applyDefault.png"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "Paint Muscle Weights"
+-command "cMusclePaint(); "
+-image "cMuscle_skin_paint.png"
+-sourceType "mel"
+menuEditorMenuItem24;
+
+menuItem
+-label "Smooth Skin to Muscle System"
+-command "cMuscleConvertSkin(); "
+-image "cMuscle_skin_convert.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "Unbind Skin"
+-command "DetachSkin"
+-image "detachSkin.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "menuEditorMenuItem15"
+-command "DetachSkinOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+setParent -m ..;
+
+menuItem
+-label "UV Mapping"
+-subMenu 1
+-image "polyUnfoldUVs.png"
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "Select UVs"
+-command "SelectUV"
+-image "polyGridUV.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "3D UV Grab"
+-command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;"
+-image "UV_3D_Grab_Brush.png"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "layoutPerspUV;\nShowMeshGrabUVToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "Automatic"
+-command "performPolyAutoProj 0;"
+-image "polyAutoProj.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "performPolyAutoProj 1;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Planar"
+-command "performPolyProjectionArgList \"1\" {\"0\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
+-image "polyPlanProj.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "Cylindrical"
+-command "performPolyProjectionArgList \"1\" {\"0\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
+-image "polyCylProj.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "performPolyProjectionArgList \"1\" {\"1\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "Spherical"
+-command "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";"
+-image "polySphereProj.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Auto Seams"
+-command "performPolyAutoSeamUV 0"
+-image "polyAutoSeams.png"
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "menuEditorMenuItem20"
+-command "performPolyAutoSeamUV 1"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "UV Borders"
+-command "int $borders[] = `polyOptions -q -displayMapBorder`;float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];"
+-image "textureBorder.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "UV to Viewport"
+-command "ViewportUV"
+-image "polySetCurrentUVSet.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+setParent -m ..;
+
+menuItem
+-label "Normals"
+-subMenu 1
+-image "polyNormalsPropagate.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "Conform"
+-command "ConformPolygonNormals;"
+-image "polyNormalsConform.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Reverse"
+-command "ReversePolygonNormals"
+-image "polyNormal.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Unlock"
+-command "polyNormalPerVertex -ufn true;"
+-image "polyNormalUnlock.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Average"
+-command "polyAverageNormal -prenormalize 1 -allowZeroNormal 0 -postnormalize 0 -distance 0.1 -replaceNormalXYZ 1 0 0 "
+-image "polyNormalAverage.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem5"
+-command "AveragePolygonNormalsOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Set Soften Edge"
+-command "SoftPolyEdgeElements 1"
+-image "polySoftEdge.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "menuEditorMenuItem12"
+-command "polySoftEdgeWin"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Set Harden Edge"
+-command "SoftPolyEdgeElements 0;"
+-image "polyHardEdge.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Double Side On"
+-command "DoubleSideOn"
+-image "polyToggleProxy.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Double Side Off"
+-command "DoubleSideOff"
+-image "da_polyToggleProxy.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+setParent -m ..;
+
+menuItem
+-label "Shading"
+-subMenu 1
+-image "render_adskMaterial.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Assign New Material"
+-command "createAssignNewMaterialTreeLister \"\";"
+-image "render_adskMaterial.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Shaded Brightness Two Tone"
+-command "assignToonShader \"shadedBrightness\""
+-image "toonBrightness2.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Shaded Brightness Three Tone"
+-command "assignToonShader \"threeToneBrightness\""
+-image "toonBrightness3.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Circle Highlight"
+-command "assignToonShader \"circleHighlight\""
+-image "toonCircleHigh.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Add Toon Outline"
+-command "assignNewPfxToon"
+-image "toonAddOutline.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Remove Toon Outlines"
+-command "removePfxToonOutlines"
+-image "toonRemoveOutline.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Mesh Light"
+-command "aiMeshLight"
+-image "light.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+setParent -m ..;
+
+menuItem
+-label "Dynamics"
+-subMenu 1
+-image "out_nucleus.png"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "Create nCloth"
+-command "nClothCreate"
+-image "nClothCreate.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "nClothCreateOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Create Passive Collider"
+-command "nClothMakeCollide"
+-image "nClothCreatePassive.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem12"
+-command "nClothMakeCollideOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Create Soft Body"
+-command "nSoft -c "
+-image "soft.png"
+-sourceType "mel"
+menuEditorMenuItem26;
+
+menuItem
+-label "menuEditorMenuItem31"
+-command "CreateNSoftBodyOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Emit Particle"
+-command "NEmitFromObject"
+-image "emitter.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "NEmitFromObjectOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Fill Object With Particle"
+-command "ParticleFill"
+-image "nPartfillObject.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "menuEditorMenuItem9"
+-command "ParticleFillOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Particle Style"
+-subMenu 1
+-image "out_particle.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Points"
+-command "optionVar -stringValue NParticleStyle \"Points\";"
+-image "nPartPoints.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Balls"
+-command "optionVar -stringValue NParticleStyle \"Balls\";"
+-image "nPartBalls.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Cloud"
+-command "optionVar -stringValue NParticleStyle \"Cloud\";"
+-image "nPartCloud.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "ThickCloud"
+-command "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-image "nPartThickCloud.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Water"
+-command "optionVar -stringValue NParticleStyle \"Water\";"
+-image "nPartWater.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+setParent -m ..;
+
+menuItem
+-label "Create Hair"
+-command "CreateHair"
+-image "hairCreate.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "CreateHairOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Set Initial State"
+-command "setNClothStartState;"
+-image "fluidInitialStateSet.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "Create Active Rigid Body"
+-command "CreateActiveRigidBody"
+-image "rigid.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "menuEditorMenuItem25"
+-command "CreateActiveRigidBodyOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Create Passive Rigid Body"
+-command "CreatePassiveRigidBody"
+-image "rigidPassive.png"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "menuEditorMenuItem24"
+-command "CreatePassiveRigidBodyOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Constrain"
+-subMenu 1
+-image "constraint.png"
+-sourceType "mel"
+menuEditorMenuItem27;
+
+menuItem
+-label "Nail"
+-command "constrain -nail "
+-radialPosition "N"
+-image "constraint.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Hinge"
+-command "constrain -hinge -o 0 0 0 "
+-image "constraint.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Spring"
+-command "constrain -spring -st 5 -d 0.1 "
+-image "constraint.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Barrier"
+-command "constrain -barrier -o 0 0 0 "
+-image "constraint.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+setParent -m ..;
+
+menuItem
+-label "Set Initial State"
+-command "setDynStartState;"
+-image "fluidInitialStateSet.png"
+-sourceType "mel"
+menuEditorMenuItem45;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem29;
+
+menuItem
+-label "Emit Fluid From Object"
+-command "EmitFluidFromObject"
+-image "fluidObjectEmit.png"
+-sourceType "mel"
+menuEditorMenuItem30;
+
+menuItem
+-label "menuEditorMenuItem43"
+-command "EmitFluidFromObjectOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "Make Fluid Collide"
+-command "MakeFluidCollide"
+-image "fluidCollide.png"
+-sourceType "mel"
+menuEditorMenuItem32;
+
+menuItem
+-label "menuEditorMenuItem44"
+-command "MakeFluidCollideOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "Add Fields"
+-subMenu 1
+-image "posRadial.png"
+-sourceType "mel"
+menuEditorMenuItem46;
+
+menuItem
+-label "Air"
+-command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posAir.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Drag"
+-command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posDrag.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Gravity"
+-command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posGravity.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Newton"
+-command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posNewton.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Radial"
+-command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posRadial.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Turbulence"
+-command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posTurbulence.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Uniform"
+-command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posUniform.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Vortex"
+-command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posVortex.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Volume Axis"
+-command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posVolumeAxis.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem25;
+
+menuItem
+-label "Create Bifrost Liquid"
+-command "CreateBifrostLiquid;"
+-image "out_bifrostShape.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "Create Bifrost Aero"
+-command "CreateBifrostAero"
+-image "out_bifrostShape.png"
+-sourceType "mel"
+menuEditorMenuItem28;
+
+menuItem
+-label "Bifrost Ocean"
+-command "OpenBossEditor"
+-image "fluidCreate2D.png"
+-sourceType "mel"
+menuEditorMenuItem43;
+
+setParent -m ..;
+
+menuItem
+-label "XGen"
+-subMenu 1
+-image "xgDEditor.png"
+-sourceType "mel"
+menuEditorMenuItem32;
+
+menuItem
+-label "Create Interactive Groom"
+-command "XgmCreateInteractiveGroomSplines"
+-image "xgIG_creation.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "XgmCreateInteractiveGroomSplinesOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Interactive Brush"
+-subMenu 1
+-image "xgIG_density_24.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Density"
+-command "XgmSetDensityBrushTool"
+-image "xgIG_density.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "XgmSetDensityBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Place"
+-command "XgmSetPlaceBrushTool"
+-image "xgIG_place.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "menuEditorMenuItem5"
+-command "XgmSetPlaceBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Length"
+-command "XgmSetLengthBrushTool"
+-image "xgIG_length.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "XgmSetLengthBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Cut"
+-command "XgmSetCutBrushTool"
+-image "xgIG_cut.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "menuEditorMenuItem9"
+-command "XgmSetCutBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Width"
+-command "XgmSetWidthBrushTool"
+-image "xgIG_width.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "XgmSetWidthBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Comb"
+-command "XgmSetCombBrushTool"
+-image "xgIG_comb.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "XgmSetCombBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Grab"
+-command "XgmSetGrabBrushTool"
+-image "xgIG_grab.png"
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "menuEditorMenuItem15"
+-command "XgmSetGrabBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "Smooth"
+-command "XgmSetSmoothBrushTool"
+-image "xgIG_smooth.png"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "menuEditorMenuItem17"
+-command "XgmSetSmoothBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "Noise"
+-command "XgmSetNoiseBrushTool"
+-image "xgIG_noise.png"
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "menuEditorMenuItem19"
+-command "XgmSetNoiseBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "Clump"
+-command "XgmSetClumpBrushTool"
+-image "xgIG_clump.png"
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "menuEditorMenuItem21"
+-command "XgmSetClumpBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "Part"
+-command "XgmSetPartBrushTool"
+-image "xgIG_part.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "menuEditorMenuItem23"
+-command "XgmSetPartBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem26;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem24;
+
+menuItem
+-label "Freeze"
+-command "XgmSetFreezeBrushTool"
+-image "xgIG_freeze.png"
+-sourceType "mel"
+menuEditorMenuItem25;
+
+menuItem
+-label "menuEditorMenuItem26"
+-command "XgmSetFreezeBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem28;
+
+menuItem
+-label "Select"
+-command "XgmSetSelectBrushTool"
+-image "xgIG_select.png"
+-sourceType "mel"
+menuEditorMenuItem27;
+
+menuItem
+-label "menuEditorMenuItem28"
+-command "XgmSetSelectBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem29;
+
+setParent -m ..;
+
+menuItem
+-label "Interactive Groom Editor"
+-command "XgCreateIgSplineEditor"
+-image "xgIG_editor.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Create Description"
+-command "XgCreateDescription"
+-image "xgCreateDescription.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Guides Tool"
+-command "XgGuideTool"
+-image "xgGuideContext.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Sculpt Guides"
+-command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");"
+-image "xgGuideSculptTool.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "menuEditorMenuItem16"
+-command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Primitives to Poly"
+-command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")"
+-image "xgPolyConvert.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem9"
+-command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "XGen Editor"
+-command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor"
+-image "xgDEditor.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "XGen Library"
+-command "XGenLibraryWindow"
+-image "xgLibrary.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Convert to Vertices"
+-command "ConvertSelectionToVertices"
+-image "vertex_NEX.png"
+-sourceType "mel"
+menuEditorMenuItem26;
 
 setParent -m ..;
 
