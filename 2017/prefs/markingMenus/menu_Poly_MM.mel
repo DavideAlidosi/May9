@@ -459,15 +459,16 @@ menuEditorMenuItem6;
 setParent -m ..;
 
 menuItem
--label "Subdivision"
+-label "OpenSubdiv"
 -subMenu 1
--image "subdivPolyMode.png"
+-image "da_openSubdiv.png"
 -sourceType "mel"
 menuEditorMenuItem5;
 
 menuItem
--label "Adaptive OpenSubdiv"
+-label "Adaptive"
 -subMenu 1
+-image "polyToggleProxySubdiv.png" 
 -sourceType "mel"
 menuEditorMenuItem9;
 
@@ -486,8 +487,9 @@ menuEditorMenuItem2;
 setParent -m ..;
 
 menuItem
--label "Viewport Displace"
+-label "Displacement"
 -subMenu 1
+-image "displaceToPolygons.png" 
 -sourceType "mel"
 menuEditorMenuItem11;
 
@@ -508,6 +510,7 @@ setParent -m ..;
 menuItem
 -label "Display Subdivision"
 -subMenu 1
+-image "polySubdFacet.png" 
 -sourceType "mel"
 menuEditorMenuItem3;
 
@@ -528,13 +531,13 @@ setParent -m ..;
 menuItem
 -label "OpenCL"
 -subMenu 1
+-image "channelBoxUnknownSpeed.png" 
 -sourceType "mel"
 menuEditorMenuItem10;
 
 menuItem
 -label "On"
 -command "OpenSubdCL"
--radialPosition "N"
 -sourceType "mel"
 menuEditorMenuItem1;
 
