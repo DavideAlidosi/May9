@@ -1,4 +1,4 @@
-May9 pro 1.1.7 - A new user experience for Autodesk Maya 2017
+May9 pro 1.1.8 - A new user experience for Autodesk Maya 2017
 
 Installation Instruction:
 
