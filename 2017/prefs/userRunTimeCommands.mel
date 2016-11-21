@@ -839,7 +839,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nfor($i=0;$i<size($mySel);$i++){\n    applyPresetToNode $mySel[$i] \"\" \"\" \"PhysicallyBased\" 1;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Enable\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".spaceScale\") 0.010;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Enable\" -fade;")
 	NucleusPhysicallyBasedOn;
 
 runTimeCommand
@@ -847,7 +847,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nfor($i=0;$i<size($mySel);$i++){\n    applyPresetToNode $mySel[$i] \"\" \"\" \"Default\" 1;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Disable\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".spaceScale\") 1;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Enable\" -fade;")
 	NucleusPhysicallyBasedOff;
 
 runTimeCommand
@@ -1481,4 +1481,52 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $currentTool = `currentCtx`;\nint $wireframeCheck = `artAttrSkinPaintCtx -q -showactive $currentTool`;\n\nif ($wireframeCheck == 1){\n\tartAttrSkinPaintCtx -e -showactive 0 $currentTool;\n}else{\n\tartAttrSkinPaintCtx -e -showactive 1 $currentTool;\n}")
 	ToggleSkinWireframe;
+
+runTimeCommand
+	-annotation "Enable Plane"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".usePlane\") 1;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Plane Enable\" -fade;")
+	NucleusPlaneOn;
+
+runTimeCommand
+	-annotation "Disable Plane"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".usePlane\") 0;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Plane Disable\" -fade;")
+	NucleusPlaneOff;
+
+runTimeCommand
+	-annotation "Enable High Precision"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\nsetAttr ($each +\".subSteps\") 18;\nsetAttr ($each +\".maxCollisionIterations\") 24;\n}\ninViewMessage -pos topCenter -msg \"Nucleus High Precision Enable\" -fade;")
+	NucleusHqOn;
+
+runTimeCommand
+	-annotation "Disable High Precision"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\nsetAttr ($each +\".subSteps\") 3;\nsetAttr ($each +\".maxCollisionIterations\") 4;\n}\ninViewMessage -pos topCenter -msg \"Nucleus High Precision Disable\" -fade;")
+	NucleusHqOff;
+
+runTimeCommand
+	-annotation "Enable Gravity"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".gravityDirectionY\") -1;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Gravity Enable\" -fade;")
+	NucleusGravityOn;
+
+runTimeCommand
+	-annotation "Disable Gravity"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".gravityDirectionY\") 0;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Gravity Disable\" -fade;")
+	NucleusGravityOff;
 
