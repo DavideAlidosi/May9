@@ -1530,3 +1530,11 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".gravityDirectionY\") 0;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Gravity Disable\" -fade;")
 	NucleusGravityOff;
 
+runTimeCommand
+	-annotation "Quick Fix for Maya Sculpt menu"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("SetMeshCloneTargetTool")
+	SetMeshCloneTool;
+
