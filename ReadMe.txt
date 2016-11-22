@@ -109,6 +109,7 @@ Main preferences change:
 - HDR and EXR file is set to Raw colorspace for prevent Arnold double expose
 - Fix PaintFX Preset Blending bug
 - Two Bone IK and Spring IK are preload
+- PreSelect Highlight is on by default in Graph Editor
 
 
 For more information:
