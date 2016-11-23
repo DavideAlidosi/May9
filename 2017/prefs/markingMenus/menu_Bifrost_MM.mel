@@ -151,6 +151,31 @@
         menuEditorMenuItem16;
 
     menuItem
+        -label "Add Killplane" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "AddBifrostKillplane" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
         -label "Mesh" 
         -divider 0
         -subMenu 1
@@ -433,7 +458,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem3;
 
     menuItem
         -label "Delete Cache" 
@@ -460,34 +485,11 @@
         menuEditorMenuItem4;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "Toggle HUD Info" 
+        -label "Add Kill Field" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ToggleBifrostHUD" 
+        -command "AddBifrostKillField" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -496,6 +498,7 @@
         -optionBox 0
         -enable 1
         -data 0
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -504,7 +507,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem10;
+        menuEditorMenuItem17;
 
 setParent -m ..;
 

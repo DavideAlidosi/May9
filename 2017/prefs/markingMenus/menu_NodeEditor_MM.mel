@@ -225,7 +225,7 @@
         -image "out_geoConnectable.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
@@ -250,7 +250,7 @@
         -image "out_list.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
@@ -298,7 +298,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
@@ -318,6 +318,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+		-image "createNode.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
@@ -341,7 +342,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
-            -image "out_vectorProduct.png" 
+            -image "render_vectorProduct.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -400,6 +401,131 @@
             menuEditorMenuItem3;
 
         menuItem
+            -label "plusMinusAverage" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "createNode plusMinusAverage" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_plusMinusAverage.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem6;
+
+        menuItem
+            -label "reverse" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "createNode reverse" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_reverse.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem7;
+
+        menuItem
+            -label "chooser" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "createNode chooser" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "render_chooser.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem9;
+
+        menuItem
+            -label "blendTwoAttr" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "createNode blendTwoAttr" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "render_blendTwoAttr.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem10;
+
+        menuItem
+            -label "choice" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "createNode choice" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "render_choice.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem12;
+
+        menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator" 
@@ -420,7 +546,7 @@
             -boldFont 1
             -sourceType "mel" 
             -longDivider 1
-            menuEditorMenuItem5;
+            menuEditorMenuItem13;
 
         menuItem
             -label "instancer" 

@@ -4,7 +4,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++) connectAttr($createConnect[0] + \".output\", $createConnect[$i] + \".inMesh\");" 
+        -command "ConnectCereation" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0

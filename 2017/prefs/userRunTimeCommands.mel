@@ -287,7 +287,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[7] + \".bifrostContinuousEmission\") 1;\n\ninViewMessage -pos topCenter -msg \"Continuous emission enable on selected emitter(s)\" -fade;")
+	-command ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nsetAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 1;\n\ninViewMessage -pos topCenter -msg \"Continuous emission enable on selected emitter(s)\" -fade;")
 	BifrostContinuousEmission;
 
 runTimeCommand
@@ -295,7 +295,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[7] + \".bifrostContinuousEmission\") 0;\n\ninViewMessage -pos topCenter -msg \"Continuous emission disabled on selected emitter(s)\" -fade;")
+	-command ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nsetAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 0;\n\ninViewMessage -pos topCenter -msg \"Continuous emission disabled on selected emitter(s)\" -fade;")
 	BifrostNoContinuousEmission;
 
 runTimeCommand
@@ -1343,7 +1343,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nSelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectTransform[0] +\".overrideEnabled\") 1;\nsetAttr ($objectTransform[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_metaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_mebaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
+	-command ("nParticleNoGravity;\nstring $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nSelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectTransform[0] +\".overrideEnabled\") 1;\nsetAttr ($objectTransform[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_metaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_mebaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
 	convertToMetaballs;
 
 runTimeCommand
@@ -1537,4 +1537,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("SetMeshCloneTargetTool")
 	SetMeshCloneTool;
+
+runTimeCommand
+	-annotation "Connect Poly Create Node to Mesh"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".output\") ($createConnect[$i] + \".inMesh\");\n}")
+	ConnectCereation;
 
