@@ -1,4 +1,6 @@
-May9 pro 1.1.8 - A new user experience for Autodesk Maya 2017 Update 2 or above
+May9 pro 1.1.9 - A new user experience for Autodesk Maya 2017
+Tested and develop on Maya 2017 Update 2 and MtoA 1.4.1
+
 
 Installation Instruction:
 
@@ -130,3 +132,4 @@ Peter Shipkov for SOuP
 Ingo Clements for Smooth Skin Cluster Weight
 Webber Huang for Soft Cluster EX
 Mariano Merchante for Instance Along Curve
+Anders Langlands for alShaders
