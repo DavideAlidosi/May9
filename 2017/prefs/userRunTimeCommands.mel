@@ -919,7 +919,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.doCreateMeshLight()")
+	-command ("import mtoa.utils as mutils; mutils.createMeshLight()")
 	aiMeshLight;
 
 runTimeCommand
@@ -1545,4 +1545,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".output\") ($createConnect[$i] + \".inMesh\");\n}")
 	ConnectCereation;
+
+runTimeCommand
+	-annotation "Create Ai LightPortal"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.utils as mutils;mutils.createLocator(\"aiLightPortal\", asLight=True)")
+	aiLightPortal;
 
