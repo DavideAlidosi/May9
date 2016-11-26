@@ -1,5 +1,5 @@
 May9 pro 1.1.9 - A new user experience for Autodesk Maya 2017
-Tested and develop on Maya 2017 Update 2 and MtoA 1.4.1
+Tested and develop on Maya 2017 Update 2 and MtoA 1.4.1.0
 
 
 Installation Instruction:
