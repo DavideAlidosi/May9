@@ -123,6 +123,7 @@ Main preferences change:
 - Fix PaintFX Preset Blending bug
 - Two Bone IK and Spring IK are preload
 - PreSelect Highlight is on by default in Graph Editor
+- Wireframe visibility on Sculpting Tool is on by default
 
 
 For more information:
