@@ -1554,3 +1554,11 @@ runTimeCommand
 	-command ("import mtoa.utils as mutils;mutils.createLocator(\"aiLightPortal\", asLight=True)")
 	aiLightPortal;
 
+runTimeCommand
+	-annotation "Open MtoA Render View"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldOpenMtoARenderView()")
+	MtoaRenderView;
+
