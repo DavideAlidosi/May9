@@ -1,5 +1,5 @@
-May9 pro 1.1.9 - A new user experience for Autodesk Maya 2017
-Tested and develop on Maya 2017 Update 2 and MtoA 1.4.1.0
+May9 pro 1.2.0 - A new user experience for Autodesk Maya 2017
+Tested and develop on Maya 2017 Update 2 and MtoA 1.4.1.1
 
 
 Installation Instruction:
@@ -50,6 +50,7 @@ SHIFT + ALT + R = Reset Transformations
 SHIFT + ALT + C = Center Pivot
 SHIFT + ALT + Z = Zero Transformations (move objects to world center)
 SHIFT + ALT + M = Match Transform
+SHIFT + ALT + Space = Playback toggle
 
 CTRL + SHIFT + ALT + C = Copy selection to clipboard
 CTRL + SHIFT + ALT + V = Paste selection to clipboard

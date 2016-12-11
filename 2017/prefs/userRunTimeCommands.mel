@@ -1562,3 +1562,11 @@ runTimeCommand
 	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldOpenMtoARenderView()")
 	MtoaRenderView;
 
+runTimeCommand
+	-annotation "Toggle Playback Animation"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("play -state (!`play -q -state`);")
+	TogglePlayback;
+
