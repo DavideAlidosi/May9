@@ -103,11 +103,18 @@
         menuEditorMenuItem23;
 
     menuItem
-        -label "Curve to Polygons"
+        -label "Convert to Polygons"
         -command "da_curveToPoly"
         -image "CurveToPoly.png"
         -sourceType "mel"
         menuEditorMenuItem1;
+
+	menuItem
+		-label "separator" 
+		-divider 1
+		-dividerLabel "separator"
+		-sourceType "mel"
+		menuEditorMenuItem99;
 
     menuItem
         -label "Planar"

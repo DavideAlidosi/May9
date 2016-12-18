@@ -9,3 +9,6 @@ import MMtoKey
 
 #Preload Soft Cluster EX
 import SoftClusterEX
+
+#Preload amCombineCurves
+import amCombineCurves as amcc

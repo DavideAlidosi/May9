@@ -175,6 +175,13 @@
         -image "instanceAlongCurve.png"
         -sourceType "mel"
         menuEditorMenuItem32;
+		
+	menuItem
+        -label "Combine" 
+        -command "CombineCurves" 
+        -image "da_combineCurves.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem99;
 
     menuItem
         -label "Paint FX to Curves"
@@ -184,11 +191,18 @@
         menuEditorMenuItem17;
 
     menuItem
-        -label "Curves to Polygons"
+        -label "Convert to Polygons"
         -command "da_curveToPoly"
         -image "CurveToPoly.png"
         -sourceType "mel"
         menuEditorMenuItem11;
+
+	menuItem
+		-label "separator" 
+		-divider 1
+		-dividerLabel "separator"
+		-sourceType "mel"
+		menuEditorMenuItem98;
 
     menuItem
         -label "Planar"
