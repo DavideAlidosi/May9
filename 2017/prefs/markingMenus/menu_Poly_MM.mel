@@ -911,6 +911,21 @@ menuItem
 menuEditorMenuItem10;
 
 menuItem
+-label "Cut and Sew UV Tool"
+-command "SetCutSewUVTool"
+-image "CutSewUVTool.png"
+-sourceType "mel"
+menuEditorMenuItem50;
+
+menuItem
+-label "menuEditorMenuItem51"
+-command "SetCutSewUVTool;toolPropertyWindow;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem51;
+
+menuItem
 -label "3D UV Grab"
 -command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;"
 -image "UV_3D_Grab_Brush.png"
