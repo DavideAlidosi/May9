@@ -250,6 +250,56 @@
         menuEditorMenuItem16;
 
     menuItem
+        -label "Grab" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetGrabBrushTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_grab.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
+    menuItem
+        -label "menuEditorMenuItem17" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetGrabBrushToolOption" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem17;
+
+    menuItem
         -label "Mesh Collide" 
         -divider 0
         -subMenu 1
@@ -363,7 +413,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
@@ -418,55 +468,6 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Grab" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetGrabBrushTool" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgIG_grab.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
-
-    menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetGrabBrushToolOption" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem17;
-
-    menuItem
         -label "Place" 
         -divider 0
         -subMenu 0
@@ -486,12 +487,13 @@
         -image "xgIG_place.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem18;
 
     menuItem
+        -label "menuEditorMenuItem19" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -509,7 +511,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem19;
@@ -534,12 +536,13 @@
         -image "xgIG_cut.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem20;
 
     menuItem
+        -label "menuEditorMenuItem21" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -557,7 +560,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem21;
@@ -582,12 +585,13 @@
         -image "xgIG_width.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem22;
 
     menuItem
+        -label "menuEditorMenuItem23" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -605,10 +609,59 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem23;
+
+    menuItem
+        -label "Twist" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetDirectionBrushTool" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_twist.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem44;
+
+    menuItem
+        -label "menuEditorMenuItem46" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetDirectionBrushToolOption" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem25;
 
     menuItem
         -label "Smooth" 
@@ -630,12 +683,13 @@
         -image "xgIG_smooth.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem24;
 
     menuItem
+        -label "menuEditorMenuItem25" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -653,10 +707,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem25;
+        menuEditorMenuItem27;
 
     menuItem
         -label "Noise" 
@@ -678,12 +732,13 @@
         -image "xgIG_noise.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem26;
 
     menuItem
+        -label "menuEditorMenuItem27" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -701,10 +756,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem27;
+        menuEditorMenuItem29;
 
     menuItem
         -label "Clump" 
@@ -726,12 +781,13 @@
         -image "xgIG_clump.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem28;
 
     menuItem
+        -label "menuEditorMenuItem29" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -749,10 +805,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem29;
+        menuEditorMenuItem31;
 
     menuItem
         -label "Part" 
@@ -774,12 +830,13 @@
         -image "xgIG_part.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem30;
 
     menuItem
+        -label "menuEditorMenuItem31" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -797,10 +854,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem31;
+        menuEditorMenuItem34;
 
     menuItem
         -label "separator" 
@@ -820,7 +877,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem32;
@@ -845,12 +902,13 @@
         -image "xgIG_select.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem33;
 
     menuItem
+        -label "menuEditorMenuItem34" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -868,10 +926,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem34;
+        menuEditorMenuItem35;
 
 setParent -m ..;
 

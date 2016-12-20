@@ -1586,3 +1586,11 @@ runTimeCommand
 	-command ("amcc.amCombineCurves()")
 	CombineCurves;
 
+runTimeCommand
+	-annotation "Open the new UV texture editor"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("texturePanelShow;\nworkspaceControl -e -collapse false UVToolkitDockControl")
+	NewUvTextureEditor;
+
