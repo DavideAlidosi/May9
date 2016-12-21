@@ -1587,10 +1587,10 @@ runTimeCommand
 	CombineCurves;
 
 runTimeCommand
-	-annotation "Open the new UV texture editor"
+	-annotation "Open the new UV Toolkit"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("texturePanelShow;\nworkspaceControl -e -collapse false UVToolkitDockControl")
-	NewUvTextureEditor;
+	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    toggleUVToolkit")
+	OpenUVToolkit;
 

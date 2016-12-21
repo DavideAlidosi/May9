@@ -62,6 +62,7 @@ CTRL + SHIFT + ALT + Z = MMtoKey Manager
 CTRL + SHIFT + ALT + Q = MMtoKey Resetter
 CTRL + ALT + X = Reverse to save
 CTRL + ` = Show the last operation in AE
+CTRL + U = Toggle Wireframe on Shaded
 CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
 CTRL + ALT + 8 = Paint Effects Panel
@@ -78,6 +79,7 @@ ALT + 9 = Reference Editor
 ALT + 0 = Graph Editor
 
 ALT + T = Toggle Tools Preference Settings
+ALT + U = Raise UV Toolkit
 ALT + I = Raise Modeling Toolkit
 ALT + O = Outliner
 ALT + L = Color Picker
