@@ -330,44 +330,21 @@
                         }
                     },
                     {
-                        "splitter": {
-                            "orientation": "horizontal",
-                            "children": [
+                        "tabWidget": {
+                            "selectedIndex": 0,
+                            "controlWidth": 1916,
+                            "controlHeight": 28,
+                            "collapsed": false,
+                            "controls": [
                                 {
-                                    "tabWidget": {
-                                        "selectedIndex": 0,
-                                        "collapsed": false,
-                                        "controls": [
-                                            {
-                                                "objectName": "HelpLine",
-                                                "title": "Help Line",
-                                                "uiScript": "global string $gHelpLineForm; formLayout $gHelpLineForm;",
-                                                "retain": true,
-                                                "loadImmediately": true,
-                                                "checkPlugins": false,
-                                                "tabDirection": 0,
-                                                "closed": false
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "tabWidget": {
-                                        "selectedIndex": 0,
-                                        "collapsed": false,
-                                        "controls": [
-                                            {
-                                                "objectName": "CommandLine",
-                                                "title": "Command Line",
-                                                "uiScript": "global string $gCommandLineForm; formLayout $gCommandLineForm;",
-                                                "retain": true,
-                                                "loadImmediately": true,
-                                                "checkPlugins": false,
-                                                "tabDirection": 0,
-                                                "closed": false
-                                            }
-                                        ]
-                                    }
+                                    "objectName": "CommandLine",
+                                    "title": "Command Line",
+                                    "uiScript": "global string $gCommandLineForm; formLayout $gCommandLineForm;",
+                                    "retain": true,
+                                    "loadImmediately": true,
+                                    "checkPlugins": false,
+                                    "tabDirection": 0,
+                                    "closed": false
                                 }
                             ]
                         }
