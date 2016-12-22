@@ -1,0 +1,955 @@
+// ----------------------------------------------------------------------------------------------
+//
+// weightDriverEditRBF.mel
+//
+// editor for the weightDriver in RBF mode
+//
+// Ingo Clemens
+// www.braverabbit.com
+//
+// copyright brave rabbit, Ingo Clemens 2016
+//
+// weightDriver version: 2.5
+//
+// ----------------------------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------------------------
+//
+// THE SOFTWARE PRODUCT IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR
+// IMPLIED, INCLUDING, BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+// PURPOSE AND NON-INFRINGEMENT OF THIRD-PARTY RIGHTS. THE ENTIRE RISK AS TO THE QUALITY AND
+// PERFORMANCE OF THE SOFTWARE PRODUCT IS WITH YOU.
+// NEITHER BRAVE RABBIT NOR ITS SUPPLIERS WARRANT THAT THE FUNCTIONS CONTAINED IN THE SOFTWARE
+// PRODUCT WILL MEET YOUR REQUIREMENTS OR THAT THE OPERATION OF THE SOFTWARE PRODUCT WILL BE
+// UNINTERRUPTED OR ERROR-FREE. BRAVE RABBIT IS NOT OBLIGATED TO PROVIDE ANY UPDATES TO THE
+// SOFTWARE.
+// IN NO EVENT SHALL THE AUTHOR OF THIS SOFTWARE PRODUCT BE LIABLE FOR ANY SPECIAL, CONSEQUENTIAL,
+// INCIDENTAL, DIRECT OR INDIRECT DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR
+// LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, FOR PERSONAL INJURY, LOSS OF BUSINESS
+// INFORMATION, OR ANY OTHER PECUNIARY LOSS) ARISING OUT OF THE USE OF OR INABILITY TO USE THIS
+// PRODUCT, EVEN IF THE AUTHOR OF THIS SOFTWARE PRODUCT IS AWARE OF THE POSSIBILITY OF SUCH
+// DAMAGES AND KNOWN DEFECTS, ANY CLAIM BY A THIRD PARTY AND EVEN IF THE REMEDY FAILS OF ITS
+// ESSENTIAL PURPOSE.
+//
+// ----------------------------------------------------------------------------------------------
+
+// ----------------------------------------------------------------------------------------------
+//
+// run by executing the following command:
+//
+// weightDriverEditRBF;
+//
+// ----------------------------------------------------------------------------------------------
+
+
+global proc weightDriverEditRBFUI()
+{
+	//
+	// build the window
+	//
+	if (`window -ex weightDriverEditRBFWin`)
+		deleteUI weightDriverEditRBFWin;
+	
+	window -t "Edit RBF WeightDriver" -wh 700 500 weightDriverEditRBFWin;
+	
+	int $state = `optionVar -q weightDriverAutoFillValues`;
+	menuBarLayout;
+		menu -l "Settings";
+			menuItem -l "Auto Fill Blend Shape Values" -cb $state -c "optionVar -iv weightDriverAutoFillValues #1";
+	setParent ..;
+	
+	string $mainForm = `formLayout`;
+		
+		//-------------------
+		// weight driver node
+		//-------------------
+		
+		string $nodeOptionForm = `formLayout`;
+			string $nodeLabel = `text -l "RBF Node" -al "left" -w 64`;
+			optionMenu -cc weightDriverGetData wdUI_weightDriverNodeOption;
+				menuItem -l "None";
+			popupMenu;
+				menuItem -l "Select Solver" -c "if (weightDriverGetSelectedNodeOption() != \"\") select -r (weightDriverGetSelectedNodeOption());";
+				menuItem -d 1;
+				menuItem -l "Delete Solver" -c "if (weightDriverGetSelectedNodeOption() != \"\") { select -r (weightDriverGetSelectedNodeOption()); delete; weightDriverRefreshUI; }";
+			string $refreshButton = `button -l "Refresh" -w 60 -c weightDriverRefreshUI`;
+			
+			formLayout	-e 
+						
+						-af $nodeLabel "top" 7 
+						-af $nodeLabel "left" 5 
+						-af wdUI_weightDriverNodeOption "top" 5 
+						-af $refreshButton "top" 3 
+						-af $refreshButton "right" 5 
+						
+						-ac wdUI_weightDriverNodeOption "left" 3 $nodeLabel 
+						-ac wdUI_weightDriverNodeOption "right" 15 $refreshButton 
+						
+						$nodeOptionForm;
+		setParent ..;
+		
+		string $sep1 = `separator -st "in" -h 15`;
+		
+		//-------------------
+		// rbf driver & driven
+		//-------------------
+		
+		string $attrForm = `formLayout -h 182`;
+			string $driverLabel = `text -l "Driver" -w 60 -al "left"`;
+			textField -w 100 wdUI_driverField;
+			string $driverButton = `button -l "Select" -c "weightDriverGetNode driver"`;
+			string $driverAttrLabel = `text -l "Attributes" -w 60 -al "left"`;
+			string $driverAttrList = `iconTextScrollList -ams 1 -h 150 wdUI_driverAttrList`;
+			$state = `optionVar -q weightDriverAttributeDisplayDriver`;
+			popupMenu;
+				menuItem -l "Show Keyable Only" -cb $state -c "optionVar -iv weightDriverAttributeDisplayDriver #1; weightDriverListAttributes driver";
+			
+			string $drivenLabel = `text -l "Driven" -w 60 -al "left"`;
+			textField -w 100 wdUI_drivenField;
+			string $drivenButton = `button -l "Select" -c "weightDriverGetNode driven"`;
+			string $drivenAttrLabel = `text -l "Attributes" -w 60 -al "left"`;
+			string $drivenAttrList = `iconTextScrollList -ams 1 -h 150 wdUI_drivenAttrList`;
+			$state = `optionVar -q weightDriverAttributeDisplayDriven`;
+			popupMenu;
+				menuItem -l "Show Keyable Only" -cb $state -c "optionVar -iv weightDriverAttributeDisplayDriven #1; weightDriverListAttributes driven";
+			
+			string $div = `separator -style "in" -hr 0`;
+			
+			formLayout	-e 
+					
+						-af $driverLabel "top" 5 
+						-af $driverLabel "left" 5 
+						-af wdUI_driverField "top" 2 
+						-af $driverButton "top" 0 
+						-af $driverAttrLabel "left" 5 
+						
+						-af $div "top" 5 
+						-af $div "bottom" 5 
+						
+						-af $drivenLabel "top" 5 
+						-af wdUI_drivenField "top" 2 
+						-af $drivenButton "top" 0 
+						-af $drivenButton "right" 5 
+						-af $drivenAttrList "right" 5 
+						
+						-ac wdUI_driverField "left" 5 $driverLabel 
+						-ac wdUI_driverField "right" 5 $driverButton 
+						-ac $driverAttrLabel "top" 17 $driverLabel 
+						-ac $driverAttrList "top" 10 wdUI_driverField 
+						-ac $driverAttrList "left" 5 $driverAttrLabel 
+						
+						-ac wdUI_drivenField "left" 5 $drivenLabel 
+						-ac wdUI_drivenField "right" 5 $drivenButton 
+						-ac $drivenAttrLabel "top" 17 $drivenLabel 
+						-ac $drivenAttrList "top" 10 wdUI_drivenField 
+						-ac $drivenAttrList "left" 5 $drivenAttrLabel 
+						
+						-ap $driverButton "right" 15 50 
+						-ap $driverAttrList "right" 15 50 
+						
+						-ap $drivenLabel "left" 15 50 
+						-ap $drivenAttrLabel "left" 15 50 
+						
+						-ap $div "left" 0 50 
+					
+						$attrForm;
+		setParent ..;
+		
+		string $sep2 = `separator -st "in" -h 15`;
+		
+		//-------------------
+		// pose data
+		//-------------------
+		
+		scrollLayout -cr 1 wdUI_poseDataLayout;
+			 ;
+		setParent ..;
+		
+		string $sep3 = `separator -st "in" -h 15`;
+		
+		string $buttonAdd = `button -l "Add Pose" -h 25 -c weightDriverAddPose`;
+		string $buttonApply = `button -l "Apply" -h 25 -c "weightDriverApply 0"`;
+		string $buttonConnect = `button -l "Connect" -h 25 -c "weightDriverApply 1"`;
+		string $buttonCancel = `button -l "Close" -h 25 -c weightDriverCloseRBFUI`;
+		
+		formLayout	-e 
+						
+					-af $nodeOptionForm "top" 5 
+					-af $nodeOptionForm "left" 5 
+					-af $nodeOptionForm "right" 5 
+					-af $sep1 "left" 10 
+					-af $sep1 "right" 10 
+					-af $attrForm "left" 5 
+					-af $attrForm "right" 5 
+					-af $sep2 "left" 10 
+					-af $sep2 "right" 10 
+					-af wdUI_poseDataLayout "left" 10 
+					-af wdUI_poseDataLayout "right" 10 
+					-af $sep3 "left" 10 
+					-af $sep3 "right" 10 
+					-af $buttonAdd "left" 5 
+					-af $buttonAdd "bottom" 5 
+					-af $buttonApply "bottom" 5 
+					-af $buttonConnect "bottom" 5 
+					-af $buttonCancel "right" 5 
+					-af $buttonCancel "bottom" 5 
+						
+					-ac $sep1 "top" 0 $nodeOptionForm 
+					-ac $attrForm "top" 0 $sep1 
+					-ac $sep2 "top" 0 $attrForm 
+					-ac wdUI_poseDataLayout "top" 0 $sep2 
+					-ac wdUI_poseDataLayout "bottom" 10 $sep3 
+					-ac $sep3 "bottom" 0 $buttonApply 
+					
+					-ap $buttonAdd "right" 5 25 
+					-ap $buttonApply "left" 5 25 
+					-ap $buttonApply "right" 5 50 
+					-ap $buttonConnect "left" 5 50 
+					-ap $buttonConnect "right" 5 75 
+					-ap $buttonCancel "left" 5 75 
+					
+					$mainForm;
+	
+	setParent ..;
+	
+	showWindow weightDriverEditRBFWin;
+	
+	weightDriverBuildDriverMenu;
+}
+
+// --------------------------------------------------------------------------------------------------
+// cleanup
+// --------------------------------------------------------------------------------------------------
+
+global proc weightDriverCloseRBFUI()
+{
+	//
+	// close the window
+	//
+	if (`window -ex weightDriverEditRBFWin`)
+		deleteUI weightDriverEditRBFWin;
+}
+
+global proc weightDriverClearAll()
+{
+	//
+	// clears all fields
+	//
+	global int $gWeightDriverDriverAttrCount;
+	global int $gWeightDriverDrivenAttrCount;
+	
+	$gWeightDriverDriverAttrCount = 0;
+	$gWeightDriverDrivenAttrCount = 0;
+	
+	textField -e -tx "" wdUI_driverField;
+	textField -e -tx "" wdUI_drivenField;
+	
+	iconTextScrollList -e -ra wdUI_driverAttrList;
+	iconTextScrollList -e -ra wdUI_drivenAttrList;
+	
+	weightDriverClearPoseItems;
+}
+
+global proc weightDriverClearPoseItems()
+{
+	//
+	// removes all pose items
+	//
+	string $items[] = `scrollLayout -q -ca wdUI_poseDataLayout`;
+	for ($i in $items)
+		deleteUI $i;
+}
+
+global proc weightDriverRefreshUI()
+{
+	//
+	// updates the ui
+	//
+	weightDriverBuildDriverMenu;
+	weightDriverClearAll;
+}
+
+// --------------------------------------------------------------------------------------------------
+// button actions
+// --------------------------------------------------------------------------------------------------
+
+global proc weightDriverGetNode( string $type )
+{
+	//
+	// loads the sected node from the scene
+	// and lists the attributes
+	//
+	string $sel[] = `ls -sl`;
+	
+	if (!size($sel))
+		return;
+	
+	if ($type == "driver")
+		textField -e -tx $sel[0] wdUI_driverField;
+	else
+		textField -e -tx $sel[0] wdUI_drivenField;
+	
+	weightDriverListAttributes $type;
+}
+
+// --------------------------------------------------------------------------------------------------
+// solver option menu
+// --------------------------------------------------------------------------------------------------
+
+global proc weightDriverBuildDriverMenu()
+{	
+	//
+	// build the option menu for the solver
+	// and collect all weight driver nodes in the scene
+	//
+	if (`optionMenu -ex wdUI_weightDriverNodeOption`)
+	{
+		string $items[] = `optionMenu -q -ill wdUI_weightDriverNodeOption`;
+		for ($c in $items)
+			deleteUI $c;
+	}
+	
+	menuItem -l "New" -p wdUI_weightDriverNodeOption;
+	
+	string $nodes[] = `ls -type weightDriver`;
+	for ($n in $nodes)
+	{
+		if (`getAttr ($n + ".type")`)
+		menuItem -l (weightDriverGetTransform($n)) -p wdUI_weightDriverNodeOption;
+	}
+	
+	if (!size($nodes))
+		weightDriverClearAll;
+}
+
+global proc string weightDriverGetSelectedNodeOption()
+{
+	//
+	// returns the name of the selected node option
+	//
+	string $node = `optionMenu -q -v wdUI_weightDriverNodeOption`;
+	if ($node == "New")
+		$node = "";
+	return $node;
+}
+
+// --------------------------------------------------------------------------------------------------
+// get the data from an existing setup
+// --------------------------------------------------------------------------------------------------
+
+global proc weightDriverGetData()
+{
+	//
+	// gets the driver and driven names for the current solver
+	// and gathers the attributes and pose values to
+	// populate the ui
+	//
+	global int $gWeightDriverDriverAttrCount;
+	global int $gWeightDriverDrivenAttrCount;
+	
+	weightDriverClearAll;
+	
+	string $node = weightDriverGetSelectedNodeOption();
+	if ($node == "")
+		return;
+	
+	$node = weightDriverGetShape($node);
+	
+	// driver
+	string $input[] = `listConnections -s 1 -d 0 -p 1 -c 1 -scn 1 ($node + ".input")`;
+	string $driver;
+	string $driverAttrs[];
+	for ($i = 0; $i < size($input); $i += 2)
+	{
+		string $items[] = stringToStringArray($input[$i + 1], ".");
+		if ($driver == "")
+			$driver = $items[0];
+		$driverAttrs[size($driverAttrs)] = $items[1]; 
+	}
+	$gWeightDriverDriverAttrCount = size($driverAttrs);
+	
+	textField -e -tx $driver wdUI_driverField;
+	
+	string $listItems[] = weightDriverListAttributes("driver");
+	for ($a in $driverAttrs)
+	{
+		if (stringArrayContains($a, $listItems))
+			iconTextScrollList -e -si $a wdUI_driverAttrList;
+	}
+	
+	// driven
+	string $output[] = `listConnections -s 0 -d 1 -p 1 -c 1 -scn 1 ($node + ".output")`;
+	string $driven;
+	string $drivenAttrs[];
+	for ($i = 0; $i < size($output); $i += 2)
+	{
+		string $items[] = stringToStringArray($output[$i + 1], ".");
+		if ($driven == "")
+			$driven = $items[0];
+		$drivenAttrs[size($drivenAttrs)] = $items[1]; 
+	}
+	$gWeightDriverDrivenAttrCount = size($drivenAttrs);
+	
+	textField -e -tx $driven wdUI_drivenField;
+	
+	$listItems = weightDriverListAttributes("driven");
+	for ($a in $drivenAttrs)
+	{
+		if (stringArrayContains($a, $listItems))
+			iconTextScrollList -e -si $a wdUI_drivenAttrList;
+	}
+	
+	// poses
+	int $poseIds[] = `getAttr -mi ($node + ".poses")`;
+	for ($id in $poseIds)
+		weightDriverReadPoseData $node $id;
+}
+
+global proc weightDriverReadPoseData( string $node, int $id )
+{
+	//
+	// populates all fields based on the current solver selection
+	//
+	setParent wdUI_poseDataLayout;
+	
+	int $attrSize = `getAttr -s ($node + ".input")`;
+	int $valSize =  `getAttr -s ($node + ".output")`;
+	
+	if ($attrSize == 0 || $valSize == 0)
+		return;
+	
+	rowLayout -nc ($attrSize + $valSize + 7) ("wdUI_poseData_" + $id + "_row");
+		text -l ("Pose " + $id) -w 60 -al "left";
+		for ($i = 0; $i < $attrSize; $i ++)
+		{
+			float $v = `getAttr ($node + ".poses[" + $id + "].poseInput[" + $i + "]")`;
+			floatField -pre 3 -v $v ("wdUI_poseData_" + $id + "_a" + $i);
+		}
+		separator -style "in" -hr 0 -w 25 -h 20;
+		for ($i = 0; $i < $valSize; $i ++)
+		{
+			float $v = `getAttr ($node + ".poses[" + $id + "].poseValue[" + $i + "]")`;
+			floatField -pre 3 -v $v ("wdUI_poseData_" + $id + "_v" + $i);
+		}
+		separator -style "none" -w 10;
+		button -l "Recall" -w 50 -c ("weightDriverRecallPose " + $id);
+		separator -style "none" -w 10;
+		//button -l "Update" -w 50 -c ("weightDriverUpdatePose " + $id);
+		separator -style "none" -w 77;
+		button -l "Delete" -c ("deleteUI wdUI_poseData_" + $id + "_row");
+	
+	setParent ..;
+}
+
+// --------------------------------------------------------------------------------------------------
+// attribute lists
+// --------------------------------------------------------------------------------------------------
+
+global proc string[] weightDriverListAttributes( string $type )
+{
+	//
+	// lists the driver/driven attributes
+	// depending on the keyable/non-keyable preference setting
+	//
+	string $list;
+	string $node;
+	string $flag;
+	
+	if ($type == "driver")
+	{
+		$list = "wdUI_driverAttrList";
+		$node = `textField -q -tx wdUI_driverField`;
+		if (`optionVar -q weightDriverAttributeDisplayDriver`)
+			$flag = "-k ";
+	}
+	else
+	{
+		$list = "wdUI_drivenAttrList";
+		$node = `textField -q -tx wdUI_drivenField`;
+		if (`optionVar -q weightDriverAttributeDisplayDriven`)
+			$flag = "-k ";
+	}
+	
+	iconTextScrollList -e -ra $list;
+	
+	string $cmd = "listAttr -m " + $flag + $node;
+	string $attributes[] = eval($cmd);
+	for ($a in $attributes)
+		iconTextScrollList -e -a $a $list;
+	
+	return $attributes;
+}
+
+global proc string[] weightDriverGetSelectedNodeAttributes( string $type )
+{
+	//
+	// returns the selected node attributes from the list
+	//
+	string $list;
+	
+	if ($type == "driver")
+		$list = "wdUI_driverAttrList";
+	else
+		$list = "wdUI_drivenAttrList";
+	
+	string $attributes[] = `iconTextScrollList -q -si $list`;
+	
+	return $attributes;
+}
+
+global proc int weightDriverGetAttributes( string $driverAttrs[], string $drivenAttrs[] )
+{
+	//
+	// returns the driver and driven attributes in the given string arrays;
+	// also performs a check if the attribute count matches the count of
+	// existing pose attributes
+	//
+	global int $gWeightDriverDriverAttrCount;
+	global int $gWeightDriverDrivenAttrCount;
+	
+	string $driver = `textField -q -tx wdUI_driverField`;
+	string $driven = `textField -q -tx wdUI_drivenField`;
+	
+	if ($driver == "" || $driven == "")
+		return 0;
+	
+	string $driverAttrs[] = weightDriverGetSelectedNodeAttributes("driver");
+	if (!size($driverAttrs))
+	{
+		error "No driver attributes selected";
+		return 0;
+	}
+	else
+	{
+		if ($gWeightDriverDriverAttrCount != 0 && $gWeightDriverDriverAttrCount != size($driverAttrs))
+		{
+			error "The driver attribute count is different from the already existing poses";
+			return 0;
+		}
+		else
+			$gWeightDriverDriverAttrCount = size($driverAttrs);
+	}
+	
+	string $drivenAttrs[] = weightDriverGetSelectedNodeAttributes("driven");
+	if (!size($drivenAttrs))
+	{
+		error "No driven attributes selected";
+		return 0;
+	}
+	else
+	{
+		if ($gWeightDriverDrivenAttrCount != 0 && $gWeightDriverDrivenAttrCount != size($drivenAttrs))
+		{
+			error "The driven attribute count is different from the already existing poses";
+			return 0;
+		}
+		else
+			$gWeightDriverDrivenAttrCount = size($drivenAttrs);
+	}
+	
+	return 1;
+}
+
+// --------------------------------------------------------------------------------------------------
+// poses
+// --------------------------------------------------------------------------------------------------
+
+global proc weightDriverAddPose()
+{
+	//
+	// creates a new pose based on the scene state
+	//
+	string $driverAttrs[];
+	string $drivenAttrs[];
+	int $result = weightDriverGetAttributes($driverAttrs, $drivenAttrs);
+	if ($result == 0)
+		return;
+	
+	weightDriverAddPoseData(weightDriverGetNewPoseIndex(), $driverAttrs, $drivenAttrs);
+}
+
+global proc weightDriverAddPoseData( int $id, string $driverAttrs[], string $drivenAttrs[] )
+{
+	//
+	// creates a new row of pose data in the pose section of the ui
+	//
+	setParent wdUI_poseDataLayout;
+	
+	int $attrSize = size($driverAttrs);
+	int $valSize = size($drivenAttrs);
+	
+	string $driver = `textField -q -tx wdUI_driverField`;
+	string $driven = `textField -q -tx wdUI_drivenField`;
+	
+	if ($driver == "" || $driven == "")
+		return;
+	
+	int $isBlendShape = 0;
+	int $asRest = 0;
+	int $hasRest = 0;
+	if (`nodeType $driven` == "blendShape" && `optionVar -q weightDriverAutoFillValues`)
+	{
+		$isBlendShape = 1;
+		$hasRest = weightDriverHasRestPose();
+		if (weightDriverGetNewPoseIndex() == 0)
+		{
+			string $confirm = `confirmDialog -t "WeightDriver" -m "Add the first pose as the rest pose?" -b "OK" -b "Cancel" -db "OK" -cb "Cancel" -ds "Cancel"`;
+			if ($confirm == "OK")
+				$asRest = 1;
+		}
+	}
+	
+	rowLayout -nc ($attrSize + $valSize + 8) ("wdUI_poseData_" + $id + "_row");
+		text -l ("Pose " + $id) -w 60 -al "left";
+		for ($i = 0; $i < $attrSize; $i ++)
+		{
+			float $v = `getAttr ($driver + "." + $driverAttrs[$i])`;
+			floatField -pre 3 -v $v ("wdUI_poseData_" + $id + "_a" + $i);
+		}
+		separator -style "in" -hr 0 -w 25 -h 20;
+		for ($i = 0; $i < $valSize; $i ++)
+		{
+			float $v = 0;
+			if (!$asRest)
+			{
+				if (!$isBlendShape)
+					$v = `getAttr ($driven + "." + $drivenAttrs[$i])`;
+				else
+				{
+					int $position = $id - $hasRest;
+					if ($i == $position)
+						$v = 1;
+				}
+			}
+			floatField -pre 3 -v $v ("wdUI_poseData_" + $id + "_v" + $i);
+		}
+		separator -style "none" -w 10;
+		button -l "Recall" -w 50 -c ("weightDriverRecallPose " + $id);
+		separator -style "none" -w 10;
+		button -l "Update" -w 50 -c ("weightDriverUpdatePose " + $id);
+		separator -style "none" -w 25;
+		button -l "Delete" -c ("deleteUI wdUI_poseData_" + $id + "_row");
+	
+	setParent ..;
+}
+
+global proc int weightDriverHasRestPose()
+{
+	//
+	// returns true if the first row is filled with zeros
+	//
+	int $result = 0;
+	
+	if (`rowLayout -q -ex "wdUI_poseData_0_row"`)
+	{
+		float $sum = 0;
+		string $items[] = `rowLayout -q -ca "wdUI_poseData_0_row"`;
+		for ($i in $items)
+		{
+			if (`gmatch $i "*_v*"`)
+				$sum += `floatField -q -v $i`;
+		}
+		
+		if ($sum == 0)
+			$result = 1;
+	}
+	
+	return $result;
+}
+
+global proc weightDriverUpdatePose( int $id )
+{
+	//
+	// updates the pose values based on the current scene state
+	//
+	string $driverAttrs[];
+	string $drivenAttrs[];
+	int $result = weightDriverGetAttributes($driverAttrs, $drivenAttrs);
+	if ($result == 0)
+		return;
+	
+	string $driver = `textField -q -tx wdUI_driverField`;
+	string $driven = `textField -q -tx wdUI_drivenField`;
+	
+	if ($driver == "" || $driven == "")
+		return;
+	
+	for ($i = 0; $i < size($driverAttrs); $i ++)
+	{
+		float $v = `getAttr ($driver + "." + $driverAttrs[$i])`;
+		floatField -e -v $v ("wdUI_poseData_" + $id + "_a" + $i);
+	}
+	for ($i = 0; $i < size($drivenAttrs); $i ++)
+	{
+		float $v = `getAttr ($driven + "." + $drivenAttrs[$i])`;
+		floatField -e -v $v ("wdUI_poseData_" + $id + "_v" + $i);
+	}
+}
+
+global proc weightDriverRecallPose( int $id )
+{
+	//
+	// lets the driver and driven node assume all
+	// values from the current pose
+	//
+	string $driverAttrs[];
+	string $drivenAttrs[];
+	int $result = weightDriverGetAttributes($driverAttrs, $drivenAttrs);
+	if ($result == 0)
+		return;
+	
+	string $driver = `textField -q -tx wdUI_driverField`;
+	string $driven = `textField -q -tx wdUI_drivenField`;
+	
+	if ($driver == "" || $driven == "")
+		return;
+	
+	string $cmd;
+	for ($i = 0; $i < size($driverAttrs); $i ++)
+	{
+		string $conn[] = `listConnections -s 1 -d 0 -p 1 -c 1 -scn 1 ($driver + "." + $driverAttrs[$i])`;
+		if (size($conn))
+			$cmd += "disconnectAttr " + $conn[1] + " " + $conn[0] + ";\n";
+		float $v = `floatField -q -v ("wdUI_poseData_" + $id + "_a" + $i)`;
+		$cmd += "setAttr " + $driver + "." + $driverAttrs[$i] + " " + $v + ";\n";
+		if (size($conn))
+			$cmd += "connectAttr " + $conn[1] + " " + $conn[0] + ";\n";
+	}
+	for ($i = 0; $i < size($drivenAttrs); $i ++)
+	{
+		string $conn[] = `listConnections -s 1 -d 0 -p 1 -c 1 -scn 1 ($driven + "." + $drivenAttrs[$i])`;
+		if (size($conn))
+			$cmd += "disconnectAttr " + $conn[1] + " " + $conn[0] + ";\n";
+		float $v = `floatField -q -v ("wdUI_poseData_" + $id + "_v" + $i)`;
+		$cmd += "setAttr " + $driven + "." + $drivenAttrs[$i] + " " + $v + ";\n";
+		if (size($conn))
+			$cmd += "connectAttr " + $conn[1] + " " + $conn[0] + ";\n";
+	}
+	eval$cmd;
+}
+
+// --------------------------------------------------------------------------------------------------
+// creating/editing the solver node
+// --------------------------------------------------------------------------------------------------
+
+global proc weightDriverApply( int $connect )
+{
+	//
+	// creates a new solver or updates an existing solver
+	//
+	string $sel[] = `ls -sl`;
+	
+	string $node = `optionMenu -q -v wdUI_weightDriverNodeOption`;
+	
+	if ($node == "New")
+		$node = weightDriverCreateDriver();
+	else
+		$node = weightDriverDeleteData($node);
+	
+	if ($node != "")
+		weightDriverCreatePoses $node $connect;
+	
+	// select the new or current solver in the option menu
+	weightDriverBuildDriverMenu;
+	string $items[] = `optionMenu -q -ill wdUI_weightDriverNodeOption`;
+	for ($i = 0; $i < size($items); $i ++)
+	{
+		string $label = `menuItem -q -l $items[$i]`;
+		if ($label == $node)
+		{
+			optionMenu -e -sl ($i + 1) wdUI_weightDriverNodeOption;
+			break;
+		}
+	}
+	
+	weightDriverGetData;
+	
+	catchQuiet(`select -r $sel`);
+}
+
+global proc string weightDriverCreateDriver()
+{	
+	//
+	// create a new weight driver RBF node
+	//
+	string $driver = `textField -q -tx wdUI_driverField`;
+	string $driven = `textField -q -tx wdUI_drivenField`;
+	
+	if ($driver == "" || $driven == "")
+		return "";
+	
+	string $sel[] = `ls -sl`;
+	
+	string $node = `createNode weightDriver`;
+	setAttr ($node + ".type") 1;
+	
+	if (size($sel))
+		select -r $sel;
+	
+	return weightDriverGetTransform($node);
+}
+
+global proc string weightDriverDeleteData( string $node )
+{
+	//
+	// remove all array inputs as a preparation
+	// for adding new poses
+	//
+	$node = weightDriverGetShape($node);
+	
+	int $ids[] = `getAttr -mi ($node + ".input")`;
+	for ($id in $ids)
+		removeMultiInstance -b 1 ($node + ".input[" + $id + "]");
+	
+	$ids = `getAttr -mi ($node + ".poses")`;
+	for ($id in $ids)
+		removeMultiInstance -b 1 ($node + ".poses[" + $id + "]");
+	
+	$ids = `getAttr -mi ($node + ".output")`;
+	for ($id in $ids)
+		removeMultiInstance -b 1 ($node + ".output[" + $id + "]");
+	
+	return weightDriverGetTransform($node);
+}
+
+global proc weightDriverCreatePoses( string $node, int $connect )
+{
+	//
+	// create a new pose on the solver
+	//
+	string $driverAttrs[];
+	string $drivenAttrs[];
+	int $result = weightDriverGetAttributes($driverAttrs, $drivenAttrs);
+	if ($result == 0)
+		return;
+	
+	string $driver = `textField -q -tx wdUI_driverField`;
+	string $driven = `textField -q -tx wdUI_drivenField`;
+	
+	string $sel[];
+	if ($connect)
+	{
+		$sel = `ls -sl`;
+		if (!size($sel))
+			return;
+	}
+	
+	if ($driver == "" || $driven == "")
+		return;
+	
+	for ($i = 0; $i < size($driverAttrs); $i ++)
+		connectAttr -f ($driver + "." + $driverAttrs[$i]) ($node + ".input[" + $i + "]");
+	
+	int $ids[] = weightDriverGetPoseIndices();
+	int $poseCount;
+	if ($connect)
+		$poseCount = size($sel);
+	else
+		$poseCount = size($ids);
+	
+	for ($p = 0; $p < $poseCount; $p ++)
+	{
+		if ($connect)
+		{
+			for ($i = 0; $i < size($driverAttrs); $i ++)
+				connectAttr -f ($sel[$p] + "." + $driverAttrs[$i]) ($node + ".poses[" + $p + "].poseInput[" + $i + "]");
+			for ($i = 0; $i < size($drivenAttrs); $i ++)
+				connectAttr -f ($sel[$p] + "." + $drivenAttrs[$i]) ($node + ".poses[" + $p + "].poseValue[" + $i + "]");
+		}
+		else
+		{
+			int $id = $ids[$p];
+			for ($i = 0; $i < size($driverAttrs); $i ++)
+			{
+				float $v = `floatField -q -v ("wdUI_poseData_" + $id + "_a" + $i)`;
+				setAttr ($node + ".poses[" + $p + "].poseInput[" + $i + "]") $v;
+			}
+			
+			for ($i = 0; $i < size($drivenAttrs); $i ++)
+			{
+				float $v = `floatField -q -v ("wdUI_poseData_" + $id + "_v" + $i)`;
+				setAttr ($node + ".poses[" + $p + "].poseValue[" + $i + "]") $v;
+			}
+		}
+	}
+	
+	for ($i = 0; $i < size($drivenAttrs); $i ++)
+		connectAttr -f ($node + ".output[" + $i + "]") ($driven + "." + $drivenAttrs[$i]);
+}
+
+// --------------------------------------------------------------------------------------------------
+// helper
+// --------------------------------------------------------------------------------------------------
+
+global proc int[] weightDriverGetPoseIndices()
+{
+	//
+	// return a list of all pose indices
+	//
+	int $ids[];
+	string $items[] = `scrollLayout -q -ca wdUI_poseDataLayout`;
+	for ($i in $items)
+	{
+		string $temp[] = stringToStringArray($i, "_");
+		$ids[size($ids)] = $temp[size($temp) - 2];
+	}
+	return $ids;
+}
+
+global proc int weightDriverGetNewPoseIndex()
+{
+	//
+	// return a new pose index
+	//
+	int $ids[] = weightDriverGetPoseIndices();
+	if (size($ids))
+		return ($ids[size($ids) - 1] + 1);
+	return 0;
+}
+
+global proc string weightDriverGetShape( string $node )
+{
+	//
+	// return the shape node of the weight driver
+	//
+	if (`nodeType $node` == "transform")
+	{
+		string $rel[] = `listRelatives -s $node`;
+		return $rel[0];
+	}
+	return $node;
+}
+
+global proc string weightDriverGetTransform( string $node )
+{
+	//
+	// return the shape node of the weight driver
+	//
+	if (`nodeType $node` == "weightDriver")
+	{
+		string $rel[] = `listRelatives -p $node`;
+		return $rel[0];
+	}
+	return $node;
+}
+
+// --------------------------------------------------------------------------------------------------
+// entry
+// --------------------------------------------------------------------------------------------------
+
+global proc weightDriverEditRBF()
+{
+	//
+	// initialization
+	//
+	global int $gWeightDriverDriverAttrCount;
+	global int $gWeightDriverDrivenAttrCount;
+	
+	$gWeightDriverDriverAttrCount = 0;
+	$gWeightDriverDrivenAttrCount = 0;
+	
+	if (!`pluginInfo -q -l weightDriver`)
+		loadPlugin weightDriver;
+	
+	weightDriverEditRBFUI;
+}

@@ -144,7 +144,7 @@ Jefri Haryono for Rain Curves From Edges
 David Johnson for djRivet
 Carlos Rico Adega for Offset Keyframes
 Peter Shipkov for SOuP
-Ingo Clements for Smooth Skin Cluster Weight
+Ingo Clements for Smooth Skin Cluster Weight and Weight Driver 
 Webber Huang for Soft Cluster EX
 Mariano Merchante for Instance Along Curve
 Anders Langlands for alShaders
