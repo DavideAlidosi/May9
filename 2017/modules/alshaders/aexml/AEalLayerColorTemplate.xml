@@ -3,6 +3,10 @@
 	<template name="AEalLayerColor">
 		<label>alLayerColor</label>
 		<description>Layer up to eight color channels together with a variety of Photoshop-styl blending modes.</description>
+		<attribute name="clamp_result" type="maya.bool">
+			<label>Clamp</label>
+			<description>Clamp the result of the blend operations</description>
+		</attribute>
 		<attribute name="layer1name" type="maya.string">
 			<label>Name</label>
 			<description>A descriptive name for this layer</description>
@@ -165,6 +169,7 @@
 		</attribute>
 	</template>
 		<view name="Lookdev" template="AEalLayerColor">
+			<property name="clamp_result"/>
 			<group name="Background">
 				<label>Background</label>
 				<property name="layer1name"/>

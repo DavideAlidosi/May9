@@ -15,10 +15,6 @@
 			<label>Diffuse ramp</label>
 			<description>Plug a MayaRamp node here to control the cel shading colors.</description>
 		</attribute>
-		<attribute name="diffuseColorRamp" type="maya.float3">
-			<label>Diffuse color ramp</label>
-			<description>Plug a MayaRamp node here to tint the diffuse shading.</description>
-		</attribute>
 		<attribute name="diffuseIndirectStrength" type="maya.float">
 			<label>Indirect diffuse strength</label>
 			<description>Multipler on the strength of the indirect diffuse illumination.</description>
@@ -50,7 +46,6 @@
 				<property name="surfaceShader"/>
 				<property name="diffuseDirectStrength"/>
 				<property name="diffuseRamp"/>
-				<property name="diffuseColorRamp"/>
 				<property name="diffuseIndirectStrength"/>
 				<property name="diffuseIndirectSaturation"/>
 				<property name="diffuseIndirectTint"/>

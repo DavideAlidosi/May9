@@ -8,9 +8,9 @@
 	houdini.icon STRING "SOP_paint"
 	houdini.category STRING "alShaders"
 	houdini.help_url STRING "http://www.anderslanglands.com/alshaders/alCel.html"
-	houdini.parm.folder.ROOT STRING "Shading;7;AOVs;3;"
+	houdini.parm.folder.ROOT STRING "Shading;6;AOVs;3;"
 	houdini.order STRING " ROOT"
-	houdini.order2 STRING " surfaceShader diffuseDirectStrength diffuseRamp diffuseColorRamp diffuseIndirectStrength diffuseIndirectSaturation diffuseIndirectTint"
+	houdini.order2 STRING " surfaceShader diffuseDirectStrength diffuseRamp diffuseIndirectStrength diffuseIndirectSaturation diffuseIndirectTint"
 	houdini.order3 STRING " aov_direct_diffuse_cel aov_direct_diffuse_raw_cel aov_indirect_diffuse_cel"
 
 	[attr surfaceShader]
@@ -24,10 +24,6 @@
 	[attr diffuseRamp]
 		houdini.label STRING "Diffuse ramp"
 		desc STRING "Plug a MayaRamp node here to control the cel shading colors."
-		linkable BOOL TRUE
-	[attr diffuseColorRamp]
-		houdini.label STRING "Diffuse color ramp"
-		desc STRING "Plug a MayaRamp node here to tint the diffuse shading."
 		linkable BOOL TRUE
 	[attr diffuseIndirectStrength]
 		houdini.label STRING "Indirect diffuse strength"

@@ -9,7 +9,7 @@
 	houdini.icon STRING "SHELF_hair"
 	houdini.category STRING "alShaders"
 	houdini.help_url STRING "http://www.anderslanglands.com/alshaders/alHair.html"
-	houdini.parm.folder.ROOT STRING "Fibre properties;13;Diffuse;5;Specular 1;4;Specular 2;5;Transmission;4;IDs;8;AOVs;37;Advanced;7;"
+	houdini.parm.folder.ROOT STRING "Fibre properties;13;Diffuse;5;Specular 1;4;Specular 2;5;Transmission;4;IDs;8;AOVs;31;Advanced;7;"
 	houdini.parm.heading.h0 STRING "Randomize"
 	houdini.parm.heading.h1 STRING "Advanced"
 	houdini.order STRING " ROOT"
@@ -19,7 +19,7 @@
 	houdini.order5 STRING " specular2Strength specular2Color specular2WidthScale specular2Shift glintStrength"
 	houdini.order6 STRING " transmissionStrength transmissionColor transmissionWidthScale transmissionShift"
 	houdini.order7 STRING " id1 id2 id3 id4 id5 id6 id7 id8"
-	houdini.order8 STRING " crypto_asset_override crypto_object_override crypto_material_override aov_diffuse_color aov_direct_diffuse aov_indirect_diffuse aov_direct_local aov_indirect_local aov_direct_global aov_indirect_global aov_direct_specular aov_indirect_specular aov_direct_specular_2 aov_indirect_specular_2 aov_direct_glint aov_indirect_glint aov_direct_transmission aov_indirect_transmission aov_light_group_1 aov_light_group_2 aov_light_group_3 aov_light_group_4 aov_light_group_5 aov_light_group_6 aov_light_group_7 aov_light_group_8 aov_id_1 aov_id_2 aov_id_3 aov_id_4 aov_id_5 aov_id_6 aov_id_7 aov_id_8 aov_crypto_asset aov_crypto_object aov_crypto_material"
+	houdini.order8 STRING " crypto_asset_override crypto_object_override crypto_material_override aov_diffuse_color aov_direct_diffuse aov_indirect_diffuse aov_direct_local aov_indirect_local aov_direct_global aov_indirect_global aov_direct_specular aov_indirect_specular aov_light_group_1 aov_light_group_2 aov_light_group_3 aov_light_group_4 aov_light_group_5 aov_light_group_6 aov_light_group_7 aov_light_group_8 aov_id_1 aov_id_2 aov_id_3 aov_id_4 aov_id_5 aov_id_6 aov_id_7 aov_id_8 aov_crypto_asset aov_crypto_object aov_crypto_material"
 	houdini.order9 STRING " dualDepth diffuseIndirectStrength extraSamplesDiffuse glossyIndirectStrength extraSamplesGlossy uparam vparam"
 
 	[attr melanin]
@@ -269,36 +269,6 @@
 		aov.type INT 0x05
 		aov.enable_composition BOOL TRUE
 		default STRING "indirect_specular"
-	[attr aov_direct_specular_2]
-		houdini.label STRING "Direct specular 2"
-		aov.type INT 0x05
-		aov.enable_composition BOOL TRUE
-		default STRING "direct_specular_2"
-	[attr aov_indirect_specular_2]
-		houdini.label STRING "Indirect specular 2"
-		aov.type INT 0x05
-		aov.enable_composition BOOL TRUE
-		default STRING "indirect_specular_2"
-	[attr aov_direct_glint]
-		houdini.label STRING "Direct glint"
-		aov.type INT 0x05
-		aov.enable_composition BOOL TRUE
-		default STRING "direct_glint"
-	[attr aov_indirect_glint]
-		houdini.label STRING "Indirect glint"
-		aov.type INT 0x05
-		aov.enable_composition BOOL TRUE
-		default STRING "indirect_glint"
-	[attr aov_direct_transmission]
-		houdini.label STRING "Direct transmission"
-		aov.type INT 0x05
-		aov.enable_composition BOOL TRUE
-		default STRING "direct_transmission"
-	[attr aov_indirect_transmission]
-		houdini.label STRING "Indirect transmission"
-		aov.type INT 0x05
-		aov.enable_composition BOOL TRUE
-		default STRING "indirect_transmission"
 	[attr aov_light_group_1]
 		houdini.label STRING "Light group [1]"
 		aov.type INT 0x05

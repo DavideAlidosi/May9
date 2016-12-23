@@ -6,6 +6,7 @@ class AEalLayerColorTemplate(alShadersTemplate):
 	params = {}
 	def setup(self):
 		self.params.clear()
+		self.params["clamp_result"] = Param("clamp_result", "Clamp", "Clamp the result of the blend operations", "bool", presets=None)
 		self.params["layer1name"] = Param("layer1name", "Name", "A descriptive name for this layer", "string", presets=None)
 		self.params["layer1enabled"] = Param("layer1enabled", "Enabled", "Toggle this layer on or off", "bool", presets=None)
 		self.params["layer1"] = Param("layer1", "Input", "The background layer (will be blended over black if its alpha is not 1.", "rgb", presets=None)
@@ -50,6 +51,7 @@ class AEalLayerColorTemplate(alShadersTemplate):
 		self.addSwatch()
 		self.beginScrollLayout()
 
+		self.addControl("clamp_result", label="Clamp", annotation="Clamp the result of the blend operations")
 		self.beginLayout("Background", collapse=False)
 		self.addControl("layer1name", label="Name", annotation="A descriptive name for this layer")
 		self.addControl("layer1enabled", label="Enabled", annotation="Toggle this layer on or off")

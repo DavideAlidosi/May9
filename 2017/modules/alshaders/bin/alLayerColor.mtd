@@ -9,7 +9,7 @@
 	houdini.category STRING "alShaders"
 	houdini.help_url STRING "http://www.anderslanglands.com/alshaders/alLayerColor.html"
 	houdini.parm.folder.ROOT STRING "Background;5;Layer 2;5;Layer 3;5;Layer 4;5;Layer 5;5;Layer 6;5;Layer 7;5;Layer 8;5;"
-	houdini.order STRING " ROOT"
+	houdini.order STRING "clamp_result  ROOT"
 	houdini.order2 STRING " layer1name layer1enabled layer1 layer1a layer1blend"
 	houdini.order3 STRING " layer2name layer2enabled layer2 layer2a layer2blend"
 	houdini.order4 STRING " layer3name layer3enabled layer3 layer3a layer3blend"
@@ -19,6 +19,10 @@
 	houdini.order8 STRING " layer7name layer7enabled layer7 layer7a layer7blend"
 	houdini.order9 STRING " layer8name layer8enabled layer8 layer8a layer8blend"
 
+	[attr clamp_result]
+		houdini.label STRING "Clamp"
+		desc STRING "Clamp the result of the blend operations"
+		linkable BOOL FALSE
 	[attr layer1name]
 		houdini.label STRING "Name"
 		desc STRING "A descriptive name for this layer"
