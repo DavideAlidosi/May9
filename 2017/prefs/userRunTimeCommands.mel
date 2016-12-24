@@ -1594,3 +1594,19 @@ runTimeCommand
 	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    toggleUVToolkit")
 	OpenUVToolkit;
 
+runTimeCommand
+	-annotation "Setup weightDriver node to PSD workflow"
+	-category "Custom Scripts.May9_Pro.Plug-ins.WeightDriver"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("maya.mel.eval(\"LoadWeightDriver\")\n\nimport maya.cmds as cmds\nweightDriverNode = cmds.createNode('weightDriver')\ncmds.select(weightDriverNode)\ncmds.setAttr(weightDriverNode+'.translateMax',5)\ncmds.pickWalk(direction='up')\nweightReader = cmds.ls(sl=1)\nlocatorGroup = cmds.createNode('locator')\ncmds.connectAttr(locatorGroup+'.worldMatrix', weightDriverNode+'.readerMatrix')\nlocatorDriver = cmds.createNode('locator')\ncmds.connectAttr(locatorDriver+'.worldMatrix', weightDriverNode+'.driverMatrix')\ndistanceDim = cmds.createNode('distanceDimShape')\ncmds.connectAttr(locatorGroup+'.worldPosition[0]', distanceDim+'.startPoint')\ncmds.connectAttr(locatorDriver+'.worldPosition[0]', distanceDim+'.endPoint')\ncmds.parent(weightReader,locatorGroup)\ncmds.parent(locatorDriver,locatorGroup)\ncmds.parent(distanceDim,locatorGroup)\ncmds.select(locatorGroup)\ncmds.pickWalk(direction='up')\nlocatorGroupRig = cmds.ls(sl=1)\ncmds.rename(locatorGroupRig,'BaseWeight1')\nlocatorGroupRig = cmds.ls(sl=1)\ncmds.select(locatorDriver)\ncmds.move(5,x=1)\ncmds.pickWalk(direction='up')\nlocatorDriverRig = cmds.ls(sl=1)\ncmds.addAttr(ln='Weight',at='double')\ncmds.addAttr(ln='Distance',at='double')\ncmds.setAttr(locatorDriverRig[0]+'.Weight',k=1)\ncmds.setAttr(locatorDriverRig[0]+'.Distance',k=1)\ncmds.connectAttr(weightDriverNode+'.outWeight', locatorDriverRig[0]+'.Weight')\ncmds.connectAttr(distanceDim+'.distance', locatorDriverRig[0]+'.Distance')\ncmds.rename(locatorDriverRig,'DriverWeight')\ncmds.select(locatorGroupRig)")
+	WeightDriverRig;
+
+runTimeCommand
+	-annotation "Load Weight Driver"
+	-category "Custom Scripts.May9_Pro.Plug-ins.WeightDriver"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`pluginInfo -q -loaded weightDriver` == 0){\n\tcatchQuiet(`loadPlugin \"weightDriver\"`);\n}")
+	LoadWeightDriver;
+

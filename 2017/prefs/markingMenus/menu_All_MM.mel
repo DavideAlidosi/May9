@@ -411,6 +411,27 @@ menuItem
 menuEditorMenuItem23;
 
 menuItem
+-label "Weight Driver"
+-subMenu 1
+-image "weightDriver.png"
+-sourceType "mel"
+menuEditorMenuItem99;
+
+menuItem
+-label "RBF"
+-command "weightDriverEditRBF"
+-sourceType "mel"
+menuEditorMenuItem98;
+
+menuItem
+-label "Vector Angle"
+-command "WeightDriverRig"
+-sourceType "mel"
+menuEditorMenuItem97;
+
+setParent -m ..;
+
+menuItem
 -label "Quick Rig"
 -command "QuickRigEditor"
 -image "QR_QuickRigTool.png"
