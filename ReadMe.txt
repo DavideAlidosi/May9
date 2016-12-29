@@ -67,16 +67,16 @@ CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
 CTRL + ALT + 8 = Paint Effects Panel
 
-ALT + 1 = Hypershade
-ALT + 2 = Node Editor
-ALT + 3 = UV Editor
-ALT + 4 = Shape Editor
-ALT + 5 = Pose Editor
-ALT + 6 = Component Editor
-ALT + 7 = Relationship Editor
-ALT + 8 = Dynamic Relationship Editor
-ALT + 9 = Reference Editor
-ALT + 0 = Graph Editor
+ALT + 1 = Hypershade toggle visibility
+ALT + 2 = Node Editor toggle visibility
+ALT + 3 = UV Editor toggle visibility
+ALT + 4 = Shape Editor toggle visibility
+ALT + 5 = Pose Editor toggle visibility
+ALT + 6 = Component Editor toggle visibility
+ALT + 7 = Relationship Editor toggle visibility
+ALT + 8 = Dynamic Relationship Editor toggle visibility
+ALT + 9 = Reference Editor toggle visibility
+ALT + 0 = Graph Editor toggle visibility
 
 ALT + T = Toggle Tools Preference Settings
 ALT + U = Raise UV Toolkit and toggle to Channel Box

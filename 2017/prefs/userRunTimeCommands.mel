@@ -1626,3 +1626,83 @@ runTimeCommand
 	-command ("if(`workspaceControl -q -r NEXDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        ModelingToolkit;\n    }")
 	ToggleModelingTool;
 
+runTimeCommand
+	-annotation "Toggle Hypershade"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -ex hyperShadePanel1Window` == 1){\n    if(`workspaceControl -q -r hyperShadePanel1Window` == 0)\n        workspaceControl -e -clp 0 hyperShadePanel1Window;\n    else\n        if(`workspaceControl -q -clp hyperShadePanel1Window` == 0)\n            workspaceControl -e -clp 1 hyperShadePanel1Window;\n        else\n            workspaceControl -e -clp 0 hyperShadePanel1Window;   \n}else{\n    HypershadeWindow;\n}")
+	ToggleHypershade;
+
+runTimeCommand
+	-annotation "Toggle Node Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -ex nodeEditorPanel1Window` == 1){\n    if(`workspaceControl -q -r nodeEditorPanel1Window` == 0)\n        workspaceControl -e -clp 0 nodeEditorPanel1Window;\n    else\n        if(`workspaceControl -q -clp nodeEditorPanel1Window` == 0)\n            workspaceControl -e -clp 1 nodeEditorPanel1Window;\n        else\n            workspaceControl -e -clp 0 nodeEditorPanel1Window;   \n}else{\n    NodeEditorWindow;\n}")
+	ToggleNodeEditor;
+
+runTimeCommand
+	-annotation "Toggle UV TextureEditor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r polyTexturePlacementPanel1Window` == 0)\n    workspaceControl -e -clp 0 polyTexturePlacementPanel1Window;\nelse\n    if(`workspaceControl -q -clp polyTexturePlacementPanel1Window` == 0)\n        workspaceControl -e -clp 1 polyTexturePlacementPanel1Window;\n    else\n        workspaceControl -e -clp 0 polyTexturePlacementPanel1Window;")
+	ToggleUvTextureEditor;
+
+runTimeCommand
+	-annotation "Toggle Shape Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r shapePanel1Window` == 0)\n    workspaceControl -e -clp 0 shapePanel1Window;\nelse\n    if(`workspaceControl -q -clp shapePanel1Window` == 0)\n        workspaceControl -e -clp 1 shapePanel1Window;\n    else\n        workspaceControl -e -clp 0 shapePanel1Window;")
+	ToggleShapeEditor;
+
+runTimeCommand
+	-annotation "Toggle Pose Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r posePanel1Window` == 0)\n    workspaceControl -e -clp 0 posePanel1Window;\nelse\n    if(`workspaceControl -q -clp posePanel1Window` == 0)\n        workspaceControl -e -clp 1 posePanel1Window;\n    else\n        workspaceControl -e -clp 0 posePanel1Window;")
+	TogglePoseEditor;
+
+runTimeCommand
+	-annotation "Toggle Component Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r componentEditorPanel1Window` == 0)\n    workspaceControl -e -clp 0 componentEditorPanel1Window;\nelse\n    if(`workspaceControl -q -clp componentEditorPanel1Window` == 0)\n        workspaceControl -e -clp 1 componentEditorPanel1Window;\n    else\n        workspaceControl -e -clp 0 componentEditorPanel1Window;")
+	ToggleComponentEditor;
+
+runTimeCommand
+	-annotation "Toggle Relationship Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r relationshipPanel1Window` == 0)\n    workspaceControl -e -clp 0 relationshipPanel1Window;\nelse\n    if(`workspaceControl -q -clp relationshipPanel1Window` == 0)\n        workspaceControl -e -clp 1 relationshipPanel1Window;\n    else\n        workspaceControl -e -clp 0 relationshipPanel1Window;")
+	ToggleRelationshipEditor;
+
+runTimeCommand
+	-annotation "Toggle Dynamic Relationship Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r dynRelEdPanel1Window` == 0)\n    workspaceControl -e -clp 0 dynRelEdPanel1Window;\nelse\n    if(`workspaceControl -q -clp dynRelEdPanel1Window` == 0)\n        workspaceControl -e -clp 1 dynRelEdPanel1Window;\n    else\n        workspaceControl -e -clp 0 dynRelEdPanel1Window;")
+	ToggleDynamicRelationshipEditor;
+
+runTimeCommand
+	-annotation "Reference Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r referenceEditorPanel1Window` == 0)\n    workspaceControl -e -clp 0 referenceEditorPanel1Window;\nelse\n    if(`workspaceControl -q -clp referenceEditorPanel1Window` == 0)\n        workspaceControl -e -clp 1 referenceEditorPanel1Window;\n    else\n        workspaceControl -e -clp 0 referenceEditorPanel1Window;")
+	ToggleReferenceEditor;
+
+runTimeCommand
+	-annotation "Toggle Graph Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r graphEditor1Window` == 0)\n    workspaceControl -e -clp 0 graphEditor1Window;\nelse\n    if(`workspaceControl -q -clp graphEditor1Window` == 0)\n        workspaceControl -e -clp 1 graphEditor1Window;\n    else\n        workspaceControl -e -clp 0 graphEditor1Window;")
+	ToggleGraphEditor;
+
