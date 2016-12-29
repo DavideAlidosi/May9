@@ -1610,3 +1610,19 @@ runTimeCommand
 	-command ("if (`pluginInfo -q -loaded weightDriver` == 0){\n\tcatchQuiet(`loadPlugin \"weightDriver\"`);\n}")
 	LoadWeightDriver;
 
+runTimeCommand
+	-annotation "Toggle UV Toolkit"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r UVToolkitDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        OpenUVToolkit;\n    }")
+	ToggleUVToolkit;
+
+runTimeCommand
+	-annotation "Toggle Modeling Toolkit"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r NEXDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        ModelingToolkit;\n    }")
+	ToggleModelingTool;
+

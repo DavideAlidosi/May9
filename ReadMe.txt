@@ -79,8 +79,8 @@ ALT + 9 = Reference Editor
 ALT + 0 = Graph Editor
 
 ALT + T = Toggle Tools Preference Settings
-ALT + U = Raise UV Toolkit
-ALT + I = Raise Modeling Toolkit
+ALT + U = Raise UV Toolkit and toggle to Channel Box
+ALT + I = Raise Modeling Toolkit and toggle to Channel Box
 ALT + O = Outliner
 ALT + L = Color Picker
 ALT + G = Toggle grid
