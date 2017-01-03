@@ -1706,3 +1706,27 @@ runTimeCommand
 	-command ("import contextConnector\nreload(contextConnector)")
 	ContextConnector;
 
+runTimeCommand
+	-annotation "Mirror Cut on X Plane"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 1 1 0.001;\nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
+	MirrorCutX;
+
+runTimeCommand
+	-annotation "Mirror Cut on Y Plane"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 2 1 0.001;\nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
+	MirrorCutY;
+
+runTimeCommand
+	-annotation "Mirror Cut on X Plane"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 0 1 0.001;\nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
+	MirrorCutZ;
+

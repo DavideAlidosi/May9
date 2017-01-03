@@ -278,18 +278,45 @@ menuEditorMenuItem24;
 
 menuItem
 -label "Mirror"
--command "MirrorPolygonGeometry;"
+-command "MirrorPolygonGeometry"
 -image "polyMirrorGeometry.png"
 -sourceType "mel"
 menuEditorMenuItem7;
 
 menuItem
 -label "menuEditorMenuItem8"
--command "MirrorPolygonGeometryOptions;"
+-command "MirrorPolygonGeometryOptions"
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem27;
+
+menuItem
+-label "Mirror Cut"
+-subMenu 1
+-image "polyMirrorCut.png"
+-sourceType "mel"
+menuEditorMenuItem80;
+
+menuItem
+-label "X Plane"
+-command "MirrorCutX"
+-sourceType "mel"
+menuEditorMenuItem81;
+
+menuItem
+-label "Y Plane"
+-command "MirrorCutY"
+-sourceType "mel"
+menuEditorMenuItem82;
+
+menuItem
+-label "Z Plane"
+-command "MirrorCutZ"
+-sourceType "mel"
+menuEditorMenuItem83;
+
+setParent -m ..;
 
 menuItem
 -label "Shatter"

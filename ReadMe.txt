@@ -65,6 +65,7 @@ CTRL + ` = Show the last operation in AE
 CTRL + U = Toggle Wireframe on Shaded
 CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
+CTRL + J = Context Connector
 CTRL + ALT + 8 = Paint Effects Panel
 
 ALT + 1 = Hypershade toggle visibility
@@ -116,6 +117,7 @@ Main preferences change:
 - Hidden attribute in connections exposed
 - Membrane Deformer exposed
 - Legacy Subdivision Surface exposed
+- Legacy Mirror Cut tool exposed
 - Hotbox have no transparency
 - Incremental save is enable and limited to 5 increments
 - Brush optimization
@@ -149,3 +151,4 @@ Webber Huang for Soft Cluster EX
 Mariano Merchante for Instance Along Curve
 Anders Langlands for alShaders
 Morten Dalgaard Andersen for amCombineCurves
+Klaudio Ladavac for Mirror Tool
