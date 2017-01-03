@@ -299,22 +299,47 @@ menuItem
 menuEditorMenuItem80;
 
 menuItem
--label "X Plane"
+-label "YZ Plane"
 -command "MirrorCutX"
 -sourceType "mel"
 menuEditorMenuItem81;
 
 menuItem
--label "Y Plane"
+-label "XZ Plane"
 -command "MirrorCutY"
 -sourceType "mel"
 menuEditorMenuItem82;
 
 menuItem
--label "Z Plane"
+-label "XY Plane"
 -command "MirrorCutZ"
 -sourceType "mel"
 menuEditorMenuItem83;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem87;
+
+menuItem
+-label "-YZ Plane"
+-command "MirrorCutXNeg"
+-sourceType "mel"
+menuEditorMenuItem84;
+
+menuItem
+-label "-XZ Plane"
+-command "MirrorCutYNeg"
+-sourceType "mel"
+menuEditorMenuItem85;
+
+menuItem
+-label "-XY Plane"
+-command "MirrorCutZNeg"
+-sourceType "mel"
+menuEditorMenuItem86;
 
 setParent -m ..;
 
