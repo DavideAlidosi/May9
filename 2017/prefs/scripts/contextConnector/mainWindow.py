@@ -7,7 +7,7 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-from Qt import QtWidgets, QtGui, QtCore
+from PySide2 import QtWidgets, QtGui, QtCore
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):

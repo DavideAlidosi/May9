@@ -963,14 +963,6 @@ runTimeCommand
 	openColorEditor;
 
 runTimeCommand
-	-annotation "Open Simple Connector UI"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("import pk_simpleConnector\nreload(pk_simpleConnector)")
-	openSimpleConnector;
-
-runTimeCommand
 	-annotation "Convert Multiple Edges to Curves"
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
@@ -1705,4 +1697,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -r graphEditor1Window` == 0)\n    workspaceControl -e -clp 0 graphEditor1Window;\nelse\n    if(`workspaceControl -q -clp graphEditor1Window` == 0)\n        workspaceControl -e -clp 1 graphEditor1Window;\n    else\n        workspaceControl -e -clp 0 graphEditor1Window;")
 	ToggleGraphEditor;
+
+runTimeCommand
+	-annotation "Open Context Connector UI"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import contextConnector\nreload(contextConnector)")
+	ContextConnector;
 

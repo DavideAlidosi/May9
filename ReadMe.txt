@@ -139,7 +139,7 @@ github.com/DavideAlidosi/May9
 A special tanks to:
 
 Andrey Menshikov for the hard work on our amazing MMtoKey
-Pavel Korolyov for Simple Connector
+Pavel Korolyov for Context Connector
 Jefri Haryono for Rain Curves From Edges
 David Johnson for djRivet
 Carlos Rico Adega for Offset Keyframes

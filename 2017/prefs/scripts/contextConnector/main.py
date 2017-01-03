@@ -6,12 +6,8 @@ import maya.OpenMayaUI as omui
 import maya.api.OpenMaya as om
 from functools import partial
 
-from Qt import QtWidgets, QtGui, QtCore
-
-try:
-	from shiboken import wrapInstance
-except:
-	from shiboken2 import wrapInstance
+from PySide2 import QtWidgets, QtGui, QtCore
+from shiboken2 import wrapInstance
 
 import os, imp, types, webbrowser, logging, inspect, json
 import utils
@@ -416,7 +412,7 @@ class MainWindow(QtWidgets.QMainWindow, mainWindow.Ui_MainWindow):
 	def newMacross(self, data):
 		logger.debug("Start " + inspect.stack()[0][3])	
 		
-		text, ok = QtGui.QInputDialog.getText(self, "Create Macross", "Please enter new macross name")
+		text, ok = QtWidgets.QInputDialog.getText(self, "Create Macross", "Please enter new macross name")
 		
 		if ok:
 			pair = data.split('|')[0] + "|" + data.split('|')[2]
@@ -501,7 +497,7 @@ class MainWindow(QtWidgets.QMainWindow, mainWindow.Ui_MainWindow):
 	def renameMacross(self, macrossName):
 		logger.debug("Start " + inspect.stack()[0][3])
 		
-		text, ok = QtGui.QInputDialog.getText(self, "Rename Macross", "Please enter new macross name")
+		text, ok = QtWidgets.QInputDialog.getText(self, "Rename Macross", "Please enter new macross name")
 		
 		if ok:
 			m = self.getMacross(macrossName)
