@@ -10,7 +10,7 @@ menuEditorMenuItem2;
 menuItem
 -label "Union"
 -command "da_interactiveUnion"
--radialPosition "NW"
+-radialPosition "SW"
 -image "polyBooleansUnion.png"
 -sourceType "mel"
 menuEditorMenuItem1;
@@ -26,10 +26,18 @@ menuEditorMenuItem3;
 menuItem
 -label "Intersection"
 -command "da_interactiveIntersection"
--radialPosition "SW"
+-radialPosition "NW"
 -image "polyBooleansIntersection.png"
 -sourceType "mel"
 menuEditorMenuItem5;
+
+menuItem
+-label "Original and Intersect"
+-command "BooleanFullIntersect"
+-radialPosition "N"
+-image "da_booleanFullIntersect.png"
+-sourceType "mel"
+menuEditorMenuItem6;
 
 setParent -m ..;
 

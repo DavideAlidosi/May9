@@ -1754,3 +1754,11 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 0 1 0.001;\nstring $mirrorCutMirrors[] = `ls -sl`; \nsetAttr ($mirrorCutMirrors[0] + \".rotateY\") -180; \nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
 	MirrorCutZNeg;
 
+runTimeCommand
+	-annotation "Boolean Full Intersect"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myBackup[] = `ls -sl`;\nduplicate;\nstring $mySel[] = `ls -sl`;\nduplicate;\nstring $myDuplicateSel[] = `ls -sl`;\nselect $mySel;\npolyCBoolOp -op 2 -ch 1 -preserveColor 0 -classification 1;\ndelete -ch;\nCenterPivot;\nstring $firstBool[] = `ls -sl`;\nselect $myDuplicateSel;\npolyCBoolOp -op 3 -ch 1 -preserveColor 0 -classification 1;\nCenterPivot;\nstring $secondBool[] = `ls -sl`;\nselect -clear;\nselect $secondBool;\nperformPolyShellSeparate;\ndelete -ch;\nstring $secondBool[] = `ls -sl`;\nCenterPivot;\npickWalk -d up;\nstring $tempGRP[] = `ls -sl`;\nselect $secondBool;\nUnparent;\nselect $tempGRP;\ndelete;\nselect $myBackup;\nGroup;\nrename \"intersectBackup1\";\nhide;\nselect $firstBool;\nselect -add $secondBool;\nstring $boolPiece[] = `ls -sl`;\nfor($x=0;$x<size($boolPiece);$x++)\n    rename $boolPiece[$x] (\"boolPiece1\");")
+	BooleanFullIntersect;
+
