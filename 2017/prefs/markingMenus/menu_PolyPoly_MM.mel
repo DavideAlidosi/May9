@@ -39,14 +39,6 @@ menuItem
 -sourceType "mel"
 menuEditorMenuItem6;
 
-menuItem
--label "Cut by Plane"
--command "PlaneCutter"
--radialPosition "NE"
--image "polyBooleansDifference.png"
--sourceType "mel"
-menuEditorMenuItem7;
-
 setParent -m ..;
 
 menuItem
@@ -275,6 +267,13 @@ menuItem
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem29;
+
+menuItem
+-label "Cut by Plane"
+-command "PlaneCutter"
+-image "polyBooleansDifference.png"
+-sourceType "mel"
+menuEditorMenuItem70;
 
 menuItem
 -label "Voxelize"
