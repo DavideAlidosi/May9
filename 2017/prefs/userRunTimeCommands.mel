@@ -1778,3 +1778,11 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nfor ($each in $mySel)\n    nurbsToPoly -mnd 1  -ch 1 -f 3 -pt 1 -pc 200 -chr 0.9 -ft 0.01 -mel 0.001 -d 0.1 -ut 1 -un 3 -vt 1 -vn 3 -uch 0 -ucr 0 -cht 0.2 -es 0 -ntr 0 -mrt 0 -uss 1 $each;\nselect $mySelShape;\nstring $myTassellate[] = `listConnections -type \"nurbsTessellate\"`;\nselect $myTassellate;\nstring $myPolyShape[] = `listConnections -type \"mesh\"`;\nselect $myPolyShape;\nsetDisplaySmoothness 3;\nselect $mySel;\nhide;")
 	nurbsToMesh;
 
+runTimeCommand
+	-annotation "Add Custom Fluid Kill Field"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("FluidEmitter;\nstring $mySel[] = `ls -sl`;\napplyPresetToNode $mySel[0] \"\" \"\" \"KillVolume\" 1;")
+	FluidKillField;
+
