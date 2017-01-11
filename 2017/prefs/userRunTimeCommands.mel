@@ -1786,3 +1786,19 @@ runTimeCommand
 	-command ("FluidEmitter;\nstring $mySel[] = `ls -sl`;\napplyPresetToNode $mySel[0] \"\" \"\" \"KillVolume\" 1;")
 	FluidKillField;
 
+runTimeCommand
+	-annotation "Enable Fluid Auto Resize"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".autoResize\") 1;\n}\ninViewMessage -pos topCenter -msg \"Fluid Auto Resize Enable\" -fade;")
+	FluidAutoResizeOn;
+
+runTimeCommand
+	-annotation "Disable Fluid Auto Resize"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".autoResize\") 0;\n}\ninViewMessage -pos topCenter -msg \"Fluid Auto Resize Disable\" -fade;")
+	FluidAutoResizeOff;
+
