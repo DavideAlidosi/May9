@@ -168,6 +168,20 @@
         -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem20;
+		
+    menuItem
+        -label "Connect Shapes" 
+        -command "ConnectNurbsShapes" 
+        -image "da_OneToMany.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem80;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -sourceType "mel" 
+        menuEditorMenuItem81;
 
     menuItem
         -label "Convert Surface"

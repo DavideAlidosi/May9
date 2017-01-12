@@ -1802,3 +1802,27 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".autoResize\") 0;\n}\ninViewMessage -pos topCenter -msg \"Fluid Auto Resize Disable\" -fade;")
 	FluidAutoResizeOff;
 
+runTimeCommand
+	-annotation "Connect Nurbs Create Node to Shape"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".outputSurface\") ($createConnect[$i] + \".create\");\n}")
+	NurbsConnectCreation;
+
+runTimeCommand
+	-annotation "Connect Curve Create Node to Shape"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".outputCurve\") ($createConnect[$i] + \".create\");\n}")
+	CurveConnectCreation;
+
+runTimeCommand
+	-annotation "Connect Nurbs Shapes"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".worldSpace\") ($createConnect[$i] + \".create\");\n}")
+	ConnectNurbsShapes;
+
