@@ -1826,3 +1826,51 @@ runTimeCommand
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".worldSpace\") ($createConnect[$i] + \".create\");\n}")
 	ConnectNurbsShapes;
 
+runTimeCommand
+	-annotation "Toggle Channel Box"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r ChannelBoxLayerEditor` == 0)\nworkspaceControl -e -clp 0 ChannelBoxLayerEditor;\nelse\n    if(`workspaceControl -q -clp ChannelBoxLayerEditor` == 0)\n        workspaceControl -e -clp 1 ChannelBoxLayerEditor;\n    else\n        workspaceControl -e -clp 0 ChannelBoxLayerEditor;")
+	ToggleChannelLayer;
+
+runTimeCommand
+	-annotation "Toggle Modeling Tool Kit"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r NEXDockControl` == 0)\nworkspaceControl -e -clp 0 NEXDockControl;\nelse\n    if(`workspaceControl -q -clp NEXDockControl` == 0)\n        workspaceControl -e -clp 1 NEXDockControl;\n    else\n        workspaceControl -e -clp 0 NEXDockControl;")
+	ToggleMTK;
+
+runTimeCommand
+	-annotation "UV Toolkit"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r UVToolkitDockControl` == 0)\nworkspaceControl -e -clp 0 UVToolkitDockControl;\nelse\n    if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n        workspaceControl -e -clp 1 UVToolkitDockControl;\n    else\n        workspaceControl -e -clp 0 UVToolkitDockControl;")
+	UvToolkit;
+
+runTimeCommand
+	-annotation "Toggle Attribute Editor"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r AttributeEditor` == 0)\nworkspaceControl -e -clp 0 AttributeEditor;\nelse\n    if(`workspaceControl -q -clp AttributeEditor` == 0)\n        workspaceControl -e -clp 1 AttributeEditor;\n    else\n        workspaceControl -e -clp 0 AttributeEditor;")
+	ToggleAttribute;
+
+runTimeCommand
+	-annotation "Toggle Outline"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r Outliner` == 0)\nworkspaceControl -e -clp 0 Outliner;\nelse\n    if(`workspaceControl -q -clp Outliner` == 0)\n        workspaceControl -e -clp 1 Outliner;\n    else\n        workspaceControl -e -clp 0 Outliner;")
+	ToggleOutline;
+
+runTimeCommand
+	-annotation "Toggle Tool Settings"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r ToolSettings` == 0)\nworkspaceControl -e -clp 0 ToolSettings;\nelse\n    if(`workspaceControl -q -clp ToolSettings` == 0)\n        workspaceControl -e -clp 1 ToolSettings;\n    else\n        workspaceControl -e -clp 0 ToolSettings;")
+	ToggleToolSetting;
+

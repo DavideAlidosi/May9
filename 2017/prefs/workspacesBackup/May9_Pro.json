@@ -50,46 +50,11 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "collapsed": false,
                                         "controls": [
                                             {
                                                 "objectName": "ToolBox",
                                                 "title": "Tool Box",
                                                 "uiScript": "global string $gToolboxForm; formLayout $gToolboxForm;",
-                                                "retain": true,
-                                                "loadImmediately": true,
-                                                "checkPlugins": false,
-                                                "tabDirection": 0,
-                                                "closed": false
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "tabWidget": {
-                                        "selectedIndex": 0,
-                                        "controls": [
-                                            {
-                                                "objectName": "ToolSettings",
-                                                "title": "Tool Settings",
-                                                "uiScript": "global string $gToolSettingsForm; formLayout $gToolSettingsForm;",
-                                                "retain": true,
-                                                "loadImmediately": true,
-                                                "checkPlugins": false,
-                                                "tabDirection": 0,
-                                                "closed": true
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "tabWidget": {
-                                        "selectedIndex": 0,
-                                        "controls": [
-                                            {
-                                                "objectName": "Outliner",
-                                                "title": "Outliner",
-                                                "uiScript": "outlinerPanel -menuBarVisible true -label panelLabel Outliner",
                                                 "retain": true,
                                                 "loadImmediately": true,
                                                 "checkPlugins": false,
@@ -104,19 +69,56 @@
                                         "orientation": "vertical",
                                         "children": [
                                             {
-                                                "tabWidget": {
-                                                    "selectedIndex": 0,
-                                                    "collapsed": false,
-                                                    "controls": [
+                                                "splitter": {
+                                                    "orientation": "horizontal",
+                                                    "children": [
                                                         {
-                                                            "objectName": "MainPane",
-                                                            "title": "viewPanes",
-                                                            "uiScript": "global string $gMainPane; paneLayout -nbg 0 $gMainPane;",
-                                                            "retain": true,
-                                                            "loadImmediately": true,
-                                                            "checkPlugins": false,
-                                                            "tabDirection": 0,
-                                                            "closed": false
+                                                            "tabWidget": {
+                                                                "selectedIndex": 0,
+                                                                "collapsed": false,
+                                                                "controls": [
+                                                                    {
+                                                                        "objectName": "Outliner",
+                                                                        "title": "Outliner",
+                                                                        "uiScript": "outlinerPanel -menuBarVisible true -label panelLabel Outliner",
+                                                                        "retain": true,
+                                                                        "loadImmediately": true,
+                                                                        "checkPlugins": false,
+                                                                        "tabDirection": 2,
+                                                                        "closed": false,
+                                                                        "initCallback": "outlinerStateCallback",
+                                                                        "stateString": "outlinerEditor -e -showShapes 0 -showAssignedMaterials 0 -showTimeEditor 1 -showReferenceNodes 0 -showReferenceMembers 0 -showAttributes 0 -showConnected 0 -showAnimCurvesOnly 0 -showMuteInfo 0 -organizeByLayer 1 -showAnimLayerWeight 1 -autoExpandLayers 1 -autoExpand 0 -showDagOnly 1 -showAssets 1 -showContainedOnly 1 -showPublishedAsConnected 0 -showContainerContents 1 -ignoreDagHierarchy 0 -expandConnections 0 -showUpstreamCurves 1 -showUnitlessCurves 1 -showCompounds 1 -showLeafs 1 -showNumericAttrsOnly 0 -highlightActive 1 -autoSelectNewObjects 0 -doNotSelectNewObjects 0 -dropIsParent 1 -transmitFilters 0 -setFilter \"0\" -showSetMembers 1 -allowMultiSelection 1 -alwaysToggleSelect 0 -directSelect 0 -isSet 0 -isSetMember 0 -displayMode \"DAG\" -expandObjects 0 -setsIgnoreFilters 1 -containersIgnoreFilters 0 -editAttrName 0 -showAttrValues 0 -highlightSecondary 0 -showUVAttrsOnly 0 -showTextureNodesOnly 0 -attrAlphaOrder \"default\" -animLayerFilterOptions \"allAffecting\" -sortOrder \"none\" -longNames 0 -niceNames 1 -showNamespace 1 -showPinIcons 0 -mapMotionTrails 0 -ignoreHiddenAttribute 0 -ignoreOutlinerColor 0 -renderFilterVisible 0 -renderFilterIndex 0 -selectionOrder \"chronological\" -expandAttribute 0 $editorName"
+                                                                    },
+                                                                    {
+                                                                        "objectName": "ToolSettings",
+                                                                        "title": "Tool Settings",
+                                                                        "uiScript": "global string $gToolSettingsForm; formLayout $gToolSettingsForm;",
+                                                                        "retain": true,
+                                                                        "loadImmediately": true,
+                                                                        "checkPlugins": false,
+                                                                        "tabDirection": 2,
+                                                                        "closed": false
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+                                                        {
+                                                            "tabWidget": {
+                                                                "selectedIndex": 0,
+                                                                "collapsed": false,
+                                                                "controls": [
+                                                                    {
+                                                                        "objectName": "MainPane",
+                                                                        "title": "viewPanes",
+                                                                        "uiScript": "global string $gMainPane; paneLayout -nbg 0 $gMainPane;",
+                                                                        "retain": true,
+                                                                        "loadImmediately": true,
+                                                                        "checkPlugins": false,
+                                                                        "tabDirection": 0,
+                                                                        "closed": false
+                                                                    }
+                                                                ]
+                                                            }
                                                         }
                                                     ]
                                                 }
