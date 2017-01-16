@@ -1874,3 +1874,19 @@ runTimeCommand
 	-command ("if(`workspaceControl -q -vis ToolSettings` == 1){\n    if(`workspaceControl -q -r ToolSettings` == 0)\n    workspaceControl -e -clp 0 ToolSettings;\n    else\n        if(`workspaceControl -q -clp ToolSettings` == 0)\n            workspaceControl -e -clp 1 ToolSettings;\n        else\n            workspaceControl -e -clp 0 ToolSettings;   \n}else{\n    ToolSettingsWindow;\n}")
 	ToggleToolSetting;
 
+runTimeCommand
+	-annotation "Open Massive Attribute Editor UI"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mass_attr\nmass_attr.Display_Massive_Toggle()")
+	MassAttr;
+
+runTimeCommand
+	-annotation "Add Collide Deformer Node"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("maya.mel.eval(\"LoadSOUP\")\n\nsoup().create('collide')")
+	CollideDeformer;
+
