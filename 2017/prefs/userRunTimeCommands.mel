@@ -1639,7 +1639,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r polyTexturePlacementPanel1Window` == 0)\n    workspaceControl -e -clp 0 polyTexturePlacementPanel1Window;\nelse\n    if(`workspaceControl -q -clp polyTexturePlacementPanel1Window` == 0)\n        workspaceControl -e -clp 1 polyTexturePlacementPanel1Window;\n    else\n        workspaceControl -e -clp 0 polyTexturePlacementPanel1Window;")
+	-command ("if(`workspaceControl -q -ex polyTexturePlacementPanel1Window` == 1){\n    if(`workspaceControl -q -r polyTexturePlacementPanel1Window` == 0)\n        workspaceControl -e -clp 0 polyTexturePlacementPanel1Window;\n    else\n        if(`workspaceControl -q -clp polyTexturePlacementPanel1Window` == 0)\n            workspaceControl -e -clp 1 polyTexturePlacementPanel1Window;\n        else\n            workspaceControl -e -clp 0 polyTexturePlacementPanel1Window;  \n}else{\n    TextureViewWindow;\n}")
 	ToggleUvTextureEditor;
 
 runTimeCommand
@@ -1647,7 +1647,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r shapePanel1Window` == 0)\n    workspaceControl -e -clp 0 shapePanel1Window;\nelse\n    if(`workspaceControl -q -clp shapePanel1Window` == 0)\n        workspaceControl -e -clp 1 shapePanel1Window;\n    else\n        workspaceControl -e -clp 0 shapePanel1Window;")
+	-command ("if(`workspaceControl -q -ex shapePanel1Window` == 1){\n    if(`workspaceControl -q -r shapePanel1Window` == 0)\n        workspaceControl -e -clp 0 shapePanel1Window;\n    else\n        if(`workspaceControl -q -clp shapePanel1Window` == 0)\n            workspaceControl -e -clp 1 shapePanel1Window;\n        else\n            workspaceControl -e -clp 0 shapePanel1Window; \n}else{\n    ShapeEditor;\n}")
 	ToggleShapeEditor;
 
 runTimeCommand
@@ -1655,7 +1655,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r posePanel1Window` == 0)\n    workspaceControl -e -clp 0 posePanel1Window;\nelse\n    if(`workspaceControl -q -clp posePanel1Window` == 0)\n        workspaceControl -e -clp 1 posePanel1Window;\n    else\n        workspaceControl -e -clp 0 posePanel1Window;")
+	-command ("if(`workspaceControl -q -ex posePanel1Window` == 1){\n    if(`workspaceControl -q -r posePanel1Window` == 0)\n        workspaceControl -e -clp 0 posePanel1Window;\n    else\n        if(`workspaceControl -q -clp posePanel1Window` == 0)\n            workspaceControl -e -clp 1 posePanel1Window;\n        else\n            workspaceControl -e -clp 0 posePanel1Window;\n}else{\n    PoseEditor;\n}")
 	TogglePoseEditor;
 
 runTimeCommand
@@ -1663,7 +1663,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r componentEditorPanel1Window` == 0)\n    workspaceControl -e -clp 0 componentEditorPanel1Window;\nelse\n    if(`workspaceControl -q -clp componentEditorPanel1Window` == 0)\n        workspaceControl -e -clp 1 componentEditorPanel1Window;\n    else\n        workspaceControl -e -clp 0 componentEditorPanel1Window;")
+	-command ("if(`workspaceControl -q -ex componentEditorPanel1Window` == 1){\n    if(`workspaceControl -q -r componentEditorPanel1Window` == 0)\n        workspaceControl -e -clp 0 componentEditorPanel1Window;\n    else\n        if(`workspaceControl -q -clp componentEditorPanel1Window` == 0)\n            workspaceControl -e -clp 1 componentEditorPanel1Window;\n        else\n            workspaceControl -e -clp 0 componentEditorPanel1Window;\n}else{\n    ComponentEditor;\n}")
 	ToggleComponentEditor;
 
 runTimeCommand
@@ -1671,7 +1671,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r relationshipPanel1Window` == 0)\n    workspaceControl -e -clp 0 relationshipPanel1Window;\nelse\n    if(`workspaceControl -q -clp relationshipPanel1Window` == 0)\n        workspaceControl -e -clp 1 relationshipPanel1Window;\n    else\n        workspaceControl -e -clp 0 relationshipPanel1Window;")
+	-command ("if(`workspaceControl -q -ex relationshipPanel1Window` == 1){\n    if(`workspaceControl -q -r relationshipPanel1Window` == 0)\n        workspaceControl -e -clp 0 relationshipPanel1Window;\n    else\n        if(`workspaceControl -q -clp relationshipPanel1Window` == 0)\n            workspaceControl -e -clp 1 relationshipPanel1Window;\n        else\n            workspaceControl -e -clp 0 relationshipPanel1Window;\n}else{\n    LightCentricLightLinkingEditor;\n}")
 	ToggleRelationshipEditor;
 
 runTimeCommand
@@ -1679,7 +1679,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r dynRelEdPanel1Window` == 0)\n    workspaceControl -e -clp 0 dynRelEdPanel1Window;\nelse\n    if(`workspaceControl -q -clp dynRelEdPanel1Window` == 0)\n        workspaceControl -e -clp 1 dynRelEdPanel1Window;\n    else\n        workspaceControl -e -clp 0 dynRelEdPanel1Window;")
+	-command ("if(`workspaceControl -q -ex dynRelEdPanel1Window` == 1){\n    if(`workspaceControl -q -r dynRelEdPanel1Window` == 0)\n        workspaceControl -e -clp 0 dynRelEdPanel1Window;\n    else\n        if(`workspaceControl -q -clp dynRelEdPanel1Window` == 0)\n            workspaceControl -e -clp 1 dynRelEdPanel1Window;\n        else\n            workspaceControl -e -clp 0 dynRelEdPanel1Window;\n}else{\n    DynamicRelationshipEditor;\n}")
 	ToggleDynamicRelationshipEditor;
 
 runTimeCommand
@@ -1687,7 +1687,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r referenceEditorPanel1Window` == 0)\n    workspaceControl -e -clp 0 referenceEditorPanel1Window;\nelse\n    if(`workspaceControl -q -clp referenceEditorPanel1Window` == 0)\n        workspaceControl -e -clp 1 referenceEditorPanel1Window;\n    else\n        workspaceControl -e -clp 0 referenceEditorPanel1Window;")
+	-command ("if(`workspaceControl -q -ex referenceEditorPanel1Window` == 1){\n    if(`workspaceControl -q -r referenceEditorPanel1Window` == 0)\n        workspaceControl -e -clp 0 referenceEditorPanel1Window;\n    else\n        if(`workspaceControl -q -clp referenceEditorPanel1Window` == 0)\n            workspaceControl -e -clp 1 referenceEditorPanel1Window;\n        else\n            workspaceControl -e -clp 0 referenceEditorPanel1Window;\n}else{\n    ReferenceEditor;\n}")
 	ToggleReferenceEditor;
 
 runTimeCommand
@@ -1695,7 +1695,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r graphEditor1Window` == 0)\n    workspaceControl -e -clp 0 graphEditor1Window;\nelse\n    if(`workspaceControl -q -clp graphEditor1Window` == 0)\n        workspaceControl -e -clp 1 graphEditor1Window;\n    else\n        workspaceControl -e -clp 0 graphEditor1Window;")
+	-command ("if(`workspaceControl -q -ex graphEditor1Window` == 1){\n    if(`workspaceControl -q -r graphEditor1Window` == 0)\n        workspaceControl -e -clp 0 graphEditor1Window;\n    else\n        if(`workspaceControl -q -clp graphEditor1Window` == 0)\n            workspaceControl -e -clp 1 graphEditor1Window;\n        else\n            workspaceControl -e -clp 0 graphEditor1Window;\n}else{\n    GraphEditor;\n}")
 	ToggleGraphEditor;
 
 runTimeCommand
@@ -1831,7 +1831,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r ChannelBoxLayerEditor` == 0)\nworkspaceControl -e -clp 0 ChannelBoxLayerEditor;\nelse\n    if(`workspaceControl -q -clp ChannelBoxLayerEditor` == 0)\n        workspaceControl -e -clp 1 ChannelBoxLayerEditor;\n    else\n        workspaceControl -e -clp 0 ChannelBoxLayerEditor;")
+	-command ("if(`workspaceControl -q -vis ChannelBoxLayerEditor` == 1){\n    if(`workspaceControl -q -r ChannelBoxLayerEditor` == 0)\n    workspaceControl -e -clp 0 ChannelBoxLayerEditor;\n    else\n        if(`workspaceControl -q -clp ChannelBoxLayerEditor` == 0)\n            workspaceControl -e -clp 1 ChannelBoxLayerEditor;\n        else\n            workspaceControl -e -clp 0 ChannelBoxLayerEditor;\n}else{\n    setChannelsLayersVisible(true); raiseChannelsLayers;\n}")
 	ToggleChannelLayer;
 
 runTimeCommand
@@ -1839,7 +1839,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r NEXDockControl` == 0)\nworkspaceControl -e -clp 0 NEXDockControl;\nelse\n    if(`workspaceControl -q -clp NEXDockControl` == 0)\n        workspaceControl -e -clp 1 NEXDockControl;\n    else\n        workspaceControl -e -clp 0 NEXDockControl;")
+	-command ("if(`workspaceControl -q -vis NEXDockControl` == 1){\n    if(`workspaceControl -q -r NEXDockControl` == 0)\n    workspaceControl -e -clp 0 NEXDockControl;\n    else\n        if(`workspaceControl -q -clp NEXDockControl` == 0)\n            workspaceControl -e -clp 1 NEXDockControl;\n        else\n            workspaceControl -e -clp 0 NEXDockControl;\n}else{\n    showModelingToolkit;\n}")
 	ToggleMTK;
 
 runTimeCommand
@@ -1847,7 +1847,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r UVToolkitDockControl` == 0)\nworkspaceControl -e -clp 0 UVToolkitDockControl;\nelse\n    if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n        workspaceControl -e -clp 1 UVToolkitDockControl;\n    else\n        workspaceControl -e -clp 0 UVToolkitDockControl;")
+	-command ("if(`workspaceControl -q -vis UVToolkitDockControl` == 1){\n    if(`workspaceControl -q -r UVToolkitDockControl` == 0)\n    workspaceControl -e -clp 0 UVToolkitDockControl;\n    else\n        if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n            workspaceControl -e -clp 1 UVToolkitDockControl;\n        else\n            workspaceControl -e -clp 0 UVToolkitDockControl;\n}else{\n    OpenUVToolkit;\n}")
 	UvToolkit;
 
 runTimeCommand
@@ -1855,7 +1855,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r AttributeEditor` == 0)\nworkspaceControl -e -clp 0 AttributeEditor;\nelse\n    if(`workspaceControl -q -clp AttributeEditor` == 0)\n        workspaceControl -e -clp 1 AttributeEditor;\n    else\n        workspaceControl -e -clp 0 AttributeEditor;")
+	-command ("if(`workspaceControl -q -vis AttributeEditor` == 1){\n    if(`workspaceControl -q -r AttributeEditor` == 0)\n    workspaceControl -e -clp 0 AttributeEditor;\n    else\n        if(`workspaceControl -q -clp AttributeEditor` == 0)\n            workspaceControl -e -clp 1 AttributeEditor;\n        else\n            workspaceControl -e -clp 0 AttributeEditor;\n}else{\n    AttributeEditor;\n}")
 	ToggleAttribute;
 
 runTimeCommand
@@ -1863,7 +1863,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r Outliner` == 0)\nworkspaceControl -e -clp 0 Outliner;\nelse\n    if(`workspaceControl -q -clp Outliner` == 0)\n        workspaceControl -e -clp 1 Outliner;\n    else\n        workspaceControl -e -clp 0 Outliner;")
+	-command ("if(`workspaceControl -q -vis Outliner` == 1){\n    if(`workspaceControl -q -r Outliner` == 0)\n    workspaceControl -e -clp 0 Outliner;\n    else\n        if(`workspaceControl -q -clp Outliner` == 0)\n            workspaceControl -e -clp 1 Outliner;\n        else\n            workspaceControl -e -clp 0 Outliner;   \n}else{\n    OutlinerWindow;\n}")
 	ToggleOutline;
 
 runTimeCommand
@@ -1871,6 +1871,6 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r ToolSettings` == 0)\nworkspaceControl -e -clp 0 ToolSettings;\nelse\n    if(`workspaceControl -q -clp ToolSettings` == 0)\n        workspaceControl -e -clp 1 ToolSettings;\n    else\n        workspaceControl -e -clp 0 ToolSettings;")
+	-command ("if(`workspaceControl -q -vis ToolSettings` == 1){\n    if(`workspaceControl -q -r ToolSettings` == 0)\n    workspaceControl -e -clp 0 ToolSettings;\n    else\n        if(`workspaceControl -q -clp ToolSettings` == 0)\n            workspaceControl -e -clp 1 ToolSettings;\n        else\n            workspaceControl -e -clp 0 ToolSettings;   \n}else{\n    ToolSettingsWindow;\n}")
 	ToggleToolSetting;
 

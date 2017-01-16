@@ -68,21 +68,24 @@ CTRL + P = Parent and position
 CTRL + J = Context Connector
 CTRL + ALT + 8 = Paint Effects Panel
 
-ALT + 1 = Hypershade toggle visibility
-ALT + 2 = Node Editor toggle visibility
-ALT + 3 = UV Editor toggle visibility
-ALT + 4 = Shape Editor toggle visibility
-ALT + 5 = Pose Editor toggle visibility
-ALT + 6 = Component Editor toggle visibility
-ALT + 7 = Relationship Editor toggle visibility
-ALT + 8 = Dynamic Relationship Editor toggle visibility
-ALT + 9 = Reference Editor toggle visibility
-ALT + 0 = Graph Editor toggle visibility
+ALT + 1 = Open Hypershade or toggle it if docked
+ALT + 2 = Open Node Editor or toggle it if docked
+ALT + 3 = Open UV Editor or toggle it if docked
+ALT + 4 = Open Shape Editor or toggle it if docked
+ALT + 5 = Open Pose Editor or toggle it if docked
+ALT + 6 = Open Component Editor or toggle it if docked
+ALT + 7 = Open Relationship Editor or toggle it if docked
+ALT + 8 = Open Dynamic Relationship Editor or toggle it if docked
+ALT + 9 = Open Reference Editor or toggle it if docked
+ALT + 0 = Open Graph Editor or toggle it if docked
 
-ALT + T = Toggle Tools Preference Settings
-ALT + U = Raise UV Toolkit and toggle to Channel Box
-ALT + I = Raise Modeling Toolkit and toggle to Channel Box
-ALT + O = Outliner
+ALT + C = Open Channel Box or toggle it if docked
+ALT + A = Open Attribute Editor or toggle it if docked
+ALT + U = Open UV Toolkit or toggle it if docked
+ALT + M = Open Modeling Toolkit or toggle it if docked
+ALT + O = Open Outliner or toggle it if docked
+ALT + T = Open Tools Preference Settings or toggle it if docked
+
 ALT + L = Color Picker
 ALT + G = Toggle grid
 ALT + K = Toggle Color Management
@@ -104,6 +107,9 @@ Changed hotkeys:
 
 CTRL + ALT + ~ = SmoothingDisplayShowBoth
 CTRL + ALT + ` = SmoothingDisplayToggle
+ALT + - = ToggleColorFeedback
+ALT + I = Toggle Wireframe in Artisan
+SHIFT + N = Full Hotbox Display
 
 
 Main preferences change:
