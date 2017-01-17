@@ -1895,7 +1895,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    CollideDeformer;\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    add_colobj_COLLIDE($myCollide[0]);\n    setAttr ($myCollide[0] + \".direction\") 5;\n}else{\n    string $result = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    CollideDeformer;\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    select -add $myCollide[0];\n    python( \"collide_SOuP().addColObj()\" );\n    setAttr ($myCollide[0] + \".direction\") 5;\n}else{\n    string $result = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
 	CollideObjCentroid;
 
 runTimeCommand
@@ -1903,6 +1903,14 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    CollideDeformer;\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    add_colobj_COLLIDE($myCollide[0]);\n    setAttr ($myCollide[0] + \".direction\") 1;\n}else{\n    string $result = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    CollideDeformer;\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    select -add $myCollide[0];\n    python( \"collide_SOuP().addColObj()\" );\n    setAttr ($myCollide[0] + \".direction\") 1;\n}else{\n    string $result = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
 	CollideObj;
+
+runTimeCommand
+	-annotation "Dynamic Poly Tetrahedralize"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("LoadSOUP;\n\npython( \"soup().create('tetrahedralize')\" );\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape[0];\n\nstring $mytetrahedralize[] = `listConnections -s 1 -d 0 -t \"tetrahedralize\"`;\nsetAttr ($mytetrahedralize[0] + \".mode\") 4;\nselect $mytetrahedralize[0];")
+	tetrahedralizePoly;
 

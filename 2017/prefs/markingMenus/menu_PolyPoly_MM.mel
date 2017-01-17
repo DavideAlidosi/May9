@@ -857,18 +857,18 @@ menuItem
 menuEditorMenuItem2;
 
 menuItem
--label "Two Objects"
--command "CollideObj"
--image "collisionEvents.png"
--sourceType "mel"
-menuEditorMenuItem3;
-
-menuItem
--label "Two Objects Centroid"
+-label "Outward"
 -command "CollideObjCentroid"
--image "collisionEvents.png"
+-image "polyBooleansDifference.png"
 -sourceType "mel"
 menuEditorMenuItem4;
+
+menuItem
+-label "Inward"
+-command "CollideObj"
+-image "polyBooleansUnion.png"
+-sourceType "mel"
+menuEditorMenuItem3;
 
 setParent -m ..;
 
