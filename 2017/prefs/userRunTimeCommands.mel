@@ -1914,3 +1914,19 @@ runTimeCommand
 	-command ("LoadSOUP;\n\npython( \"soup().create('tetrahedralize')\" );\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape[0];\n\nstring $mytetrahedralize[] = `listConnections -s 1 -d 0 -t \"tetrahedralize\"`;\nsetAttr ($mytetrahedralize[0] + \".mode\") 4;\nselect $mytetrahedralize[0];")
 	tetrahedralizePoly;
 
+runTimeCommand
+	-annotation "Add Objects Collider"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("collide_SOuP().addColObj()")
+	AddCollider;
+
+runTimeCommand
+	-annotation "Add Objects Deformer"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import maya.cmds as cmds\nobjectSet = mc.listConnections(cmds.ls(sl=1, type = 'collide')[0], t=\"objectSet\")[0]\nmc.sets(mc.ls(sl=True), fe=objectSet)")
+	AddDeformer;
+
