@@ -66,6 +66,7 @@ CTRL + U = Toggle Wireframe on Shaded
 CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
 CTRL + J = Context Connector
+CTRL + K = Massive Attribute Editor
 CTRL + ALT + 8 = Paint Effects Panel
 
 ALT + 1 = Open Hypershade or toggle it if docked
