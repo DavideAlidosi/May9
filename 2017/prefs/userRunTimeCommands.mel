@@ -1890,3 +1890,19 @@ runTimeCommand
 	-command ("maya.mel.eval(\"LoadSOUP\")\n\nsoup().create('collide')")
 	CollideDeformer;
 
+runTimeCommand
+	-annotation "Collide Two Object Centroid"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    CollideDeformer;\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    add_colobj_COLLIDE($myCollide[0]);\n    setAttr ($myCollide[0] + \".direction\") 5;\n}else{\n    string $result = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	CollideObjCentroid;
+
+runTimeCommand
+	-annotation "Collide Two Object"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    CollideDeformer;\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    add_colobj_COLLIDE($myCollide[0]);\n    setAttr ($myCollide[0] + \".direction\") 1;\n}else{\n    string $result = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	CollideObj;
+

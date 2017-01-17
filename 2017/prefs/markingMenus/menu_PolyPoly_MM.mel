@@ -837,10 +837,40 @@ menuEditorMenuItem35;
 
 menuItem
 -label "Collision"
--command "CollideDeformer"
+-subMenu 1
 -image "collisionEvents.png"
 -sourceType "mel"
 menuEditorMenuItem90;
+
+menuItem
+-label "Collision"
+-command "CollideDeformer"
+-image "collisionEvents.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Two Objects"
+-command "CollideObj"
+-image "collisionEvents.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Two Objects Centroid"
+-command "CollideObjCentroid"
+-image "collisionEvents.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+setParent -m ..;
 
 menuItem
 -label "UV Based"
