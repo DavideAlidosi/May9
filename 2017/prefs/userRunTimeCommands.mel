@@ -1938,3 +1938,19 @@ runTimeCommand
 	-command ("LoadSOUP;\ncreateNode collide;")
 	CollideNode;
 
+runTimeCommand
+	-annotation "Disable Slide on Selected Constraint"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".connectionUpdate\") 0;\nsetAttr ($each +\".strength\") 20;\nsetAttr ($each +\".tangentStrength\") 10;\nsetAttr ($each +\".friction\") 0;\nsetAttr ($each +\".localCollide\") 0;\n}\ninViewMessage -pos topCenter -msg \"Disable Slide on Selected Constraint\" -fade;")
+	SlideConstraintOff;
+
+runTimeCommand
+	-annotation "Enable Slide on Selected Constraint"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".connectionUpdate\") 1;\nsetAttr ($each +\".strength\") 0.02;\nsetAttr ($each +\".tangentStrength\") 0.2;\nsetAttr ($each +\".friction\") 0.1;\nsetAttr ($each +\".localCollide\") 1;\n}\ninViewMessage -pos topCenter -msg \"Enable Slide on Selected Constraint\" -fade;")
+	SlideConstraintOn;
+
