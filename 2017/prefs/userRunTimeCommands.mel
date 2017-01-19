@@ -1930,3 +1930,11 @@ runTimeCommand
 	-command ("import maya.cmds as cmds\nobjectSet = mc.listConnections(cmds.ls(sl=1, type = 'collide')[0], t=\"objectSet\")[0]\nmc.sets(mc.ls(sl=True), fe=objectSet)")
 	AddDeformer;
 
+runTimeCommand
+	-annotation "Create Collide Node"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("LoadSOUP;\ncreateNode collide;")
+	CollideNode;
+
