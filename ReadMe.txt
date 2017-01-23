@@ -145,6 +145,10 @@ youtube.com/c/May9
 github.com/DavideAlidosi/May9
 
 
+Release note:
+- UV Tookit is supported on Maya 2017 Update 3 or above
+
+
 A special tanks to:
 
 Andrey Menshikov for the hard work on our amazing MMtoKey
