@@ -1,0 +1,139 @@
+//===get the id of component
+global proc int getComponentId(string $component)
+{
+    //get the pattern [***]
+    string $suffix=match("\\[(.)+", $component);
+    //rip out the "[" and "]"
+    int $id=match("[0-9]+", $suffix);
+
+    return $id;
+}
+
+
+//===main proc
+global proc string[] rainCurvesFromEdges()
+{
+    string $resultCurveGrp[];
+    
+    string $edges[]=`filterExpand -ex 1 -sm 32`;
+    
+    if(size($edges)<1)
+        return $resultCurveGrp;
+    
+    string $obj[]=`ls -sl -o`;
+    
+    //get total edge number
+    int $edgeNum[]=`polyEvaluate -edge $obj[0]`;
+    
+    
+    //===to trace which edges are selected
+    int $isSelect[];
+    
+    //===to trace which edges have been processed in the loop later.
+    int $isProcessed[];
+    
+    //===set all to 0 (not processed, and not selected)
+    for($i=0;$i<$edgeNum[0];$i++)
+    {
+        $isSelect[size($isSelect)] = 0;
+        $isProcessed[size($isProcessed)] = 0;
+    }
+    
+    //===set the selected edges to 1
+    for($edge in $edges)
+    {    
+        $currId = getComponentId($edge);
+        $isSelect[$currId] = 1;
+    }
+    
+    //===this is the final groups of connected edges
+    string $edgeGroups[];
+    
+    //===start grouping edges
+    for($iter=0;$iter<size($edges);$iter++)
+    {
+        int $edgeId = getComponentId($edges[$iter]);
+        
+        if($isProcessed[$edgeId])
+            continue;
+       
+        $isProcessed[$edgeId] = 1;
+        
+        string $currEdge = $edges[$iter];
+        
+        //===create a stack of connected edges
+        string $edgeStack[] = {$currEdge};
+        int $stackSize = 1;
+        
+        
+        /*===
+        this is the group string. since it's not convenient to create 2 dimension array in mel, instead
+        we concatenate each of the edge, and divide them by ";" (to be tokenized later)
+        ===*/
+        string $currEdgeList = "";
+      
+        
+        //===start popping stack===//
+        while($stackSize>0)
+        {
+            //===get the last item
+            $currEdge = $edgeStack[$stackSize-1];
+            $edgeStack[$stackSize-1] = "";
+            $stackSize -= 1 ;
+            
+            //=== concatenate the edgeList string
+            $currEdgeList = $currEdgeList + $currEdge + ";";
+            
+            //=== get neighbor edges
+            select -r $currEdge;
+            PolySelectTraverse 1;
+            select -d $currEdge;
+            string $nEdges[] =`filterExpand -ex 1 -sm 32`;
+        
+            /*===
+            the neighbor edges must fulfill two criteria before being put into the stack.
+            1. it is originally selected by user
+            2. it has not been traversed before.
+            ===*/
+            for($nEdge in $nEdges)
+            {
+                int $nId = getComponentId($nEdge);
+                if($isProcessed[$nId])
+                    continue; 
+                    
+                if (!$isSelect[$nId])
+                    continue;
+                    
+                $isProcessed[$nId] = 1;
+                $edgeStack[$stackSize] = $nEdge;
+                $stackSize+=1;
+            }
+        }
+        
+        //===out the edge list into final group
+        $edgeGroups[size($edgeGroups)] = $currEdgeList;
+       
+    }
+    
+    
+    
+    //===create a curve from each group
+    for($edgeGroup in $edgeGroups)
+    {
+        string $tokens[];
+        int $numTokens = tokenize($edgeGroup,";",$tokens);
+        select -r $tokens;
+        string $newCurve[] = `polyToCurve -form 2 -degree 3`;
+        $resultCurveGrp[size($resultCurveGrp)] = $newCurve[0];
+
+    }
+    
+    //===and select them
+    if(size($resultCurveGrp)>0)
+    {
+        select -r $resultCurveGrp;
+    }
+    
+    //===and return them.
+    return $resultCurveGrp;
+}

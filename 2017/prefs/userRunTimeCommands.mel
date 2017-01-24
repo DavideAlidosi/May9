@@ -1579,14 +1579,6 @@ runTimeCommand
 	CombineCurves;
 
 runTimeCommand
-	-annotation "Open the new UV Toolkit"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    toggleUVToolkit")
-	OpenUVToolkit;
-
-runTimeCommand
 	-annotation "Setup weightDriver node to PSD workflow"
 	-category "Custom Scripts.May9_Pro.Plug-ins.WeightDriver"
 	-hotkeyCtx ""
@@ -1601,14 +1593,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded weightDriver` == 0){\n\tcatchQuiet(`loadPlugin \"weightDriver\"`);\n}")
 	LoadWeightDriver;
-
-runTimeCommand
-	-annotation "Toggle UV Toolkit"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r UVToolkitDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        OpenUVToolkit;\n    }")
-	ToggleUVToolkit;
 
 runTimeCommand
 	-annotation "Toggle Modeling Toolkit"
@@ -1841,14 +1825,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis NEXDockControl` == 1){\n    if(`workspaceControl -q -r NEXDockControl` == 0)\n    workspaceControl -e -clp 0 NEXDockControl;\n    else\n        if(`workspaceControl -q -clp NEXDockControl` == 0)\n            workspaceControl -e -clp 1 NEXDockControl;\n        else\n            workspaceControl -e -clp 0 NEXDockControl;\n}else{\n    showModelingToolkit;\n}")
 	ToggleMTK;
-
-runTimeCommand
-	-annotation "UV Toolkit"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -vis UVToolkitDockControl` == 1){\n    if(`workspaceControl -q -r UVToolkitDockControl` == 0)\n    workspaceControl -e -clp 0 UVToolkitDockControl;\n    else\n        if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n            workspaceControl -e -clp 1 UVToolkitDockControl;\n        else\n            workspaceControl -e -clp 0 UVToolkitDockControl;\n}else{\n    OpenUVToolkit;\n}")
-	UvToolkit;
 
 runTimeCommand
 	-annotation "Toggle Attribute Editor"

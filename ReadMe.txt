@@ -1,5 +1,5 @@
 May9 pro 1.2.0 - A new user experience for Autodesk Maya 2017
-Tested and develop on Maya 2017 Update 3 and MtoA 1.4.1
+Tested and develop on Maya 2017 Update 2 and MtoA 1.4.1
 
 
 Installation Instruction:
@@ -82,7 +82,6 @@ ALT + 0 = Open Graph Editor or toggle it if docked
 
 ALT + C = Open Channel Box or toggle it if docked
 ALT + A = Open Attribute Editor or toggle it if docked
-ALT + U = Open UV Toolkit or toggle it if docked
 ALT + M = Open Modeling Toolkit or toggle it if docked
 ALT + O = Open Outliner or toggle it if docked
 ALT + T = Open Tools Preference Settings or toggle it if docked
@@ -143,10 +142,6 @@ For more information:
 fb.com/May9Prefs
 youtube.com/c/May9
 github.com/DavideAlidosi/May9
-
-
-Release note:
-- UV Tookit is supported on Maya 2017 Update 3 or above
 
 
 A special tanks to:
