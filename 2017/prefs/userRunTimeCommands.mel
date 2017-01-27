@@ -471,7 +471,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".braid\") 1;\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 1;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 1;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 1;\n    }\n    select $mySel;\n}")
 	FollicleBraid;
 
 runTimeCommand
@@ -479,7 +479,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".braid\") 0;\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 0;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 0;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 0;\n    }\n    select $mySel;\n}")
 	FollicleNoBraid;
 
 runTimeCommand
@@ -1159,7 +1159,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n    select $mySel;\n}")
 	nHairLockBase;
 
 runTimeCommand
@@ -1167,7 +1167,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n    select $mySel;\n}")
 	nHairLockBothEnds;
 
 runTimeCommand
@@ -1175,7 +1175,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n    select $mySel;\n}")
 	nHairNoLock;
 
 runTimeCommand
@@ -1183,7 +1183,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n    select $mySel;\n}")
 	nHairDynamic;
 
 runTimeCommand
@@ -1191,7 +1191,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n    select $mySel;\n}")
 	nHairPassive;
 
 runTimeCommand
@@ -1199,7 +1199,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    select $objectShape;\n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n\tpickWalk -d up;\n}\n//if is selected the curve\nelse{\n    select $objectShape;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n}")
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n    select $mySel;\n}")
 	nHairStatic;
 
 runTimeCommand
@@ -1579,6 +1579,14 @@ runTimeCommand
 	CombineCurves;
 
 runTimeCommand
+	-annotation "Open the new UV Toolkit"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    toggleUVToolkit")
+	OpenUVToolkit;
+
+runTimeCommand
 	-annotation "Setup weightDriver node to PSD workflow"
 	-category "Custom Scripts.May9_Pro.Plug-ins.WeightDriver"
 	-hotkeyCtx ""
@@ -1593,6 +1601,14 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded weightDriver` == 0){\n\tcatchQuiet(`loadPlugin \"weightDriver\"`);\n}")
 	LoadWeightDriver;
+
+runTimeCommand
+	-annotation "Toggle UV Toolkit"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -r UVToolkitDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        OpenUVToolkit;\n    }")
+	ToggleUVToolkit;
 
 runTimeCommand
 	-annotation "Toggle Modeling Toolkit"
@@ -1825,6 +1841,14 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis NEXDockControl` == 1){\n    if(`workspaceControl -q -r NEXDockControl` == 0)\n    workspaceControl -e -clp 0 NEXDockControl;\n    else\n        if(`workspaceControl -q -clp NEXDockControl` == 0)\n            workspaceControl -e -clp 1 NEXDockControl;\n        else\n            workspaceControl -e -clp 0 NEXDockControl;\n}else{\n    showModelingToolkit;\n}")
 	ToggleMTK;
+
+runTimeCommand
+	-annotation "UV Toolkit"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -vis UVToolkitDockControl` == 1){\n    if(`workspaceControl -q -r UVToolkitDockControl` == 0)\n    workspaceControl -e -clp 0 UVToolkitDockControl;\n    else\n        if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n            workspaceControl -e -clp 1 UVToolkitDockControl;\n        else\n            workspaceControl -e -clp 0 UVToolkitDockControl;\n}else{\n    OpenUVToolkit;\n}")
+	UvToolkit;
 
 runTimeCommand
 	-annotation "Toggle Attribute Editor"
