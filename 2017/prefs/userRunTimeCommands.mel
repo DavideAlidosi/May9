@@ -1954,3 +1954,35 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".connectionUpdate\") 1;\nsetAttr ($each +\".strength\") 0.02;\nsetAttr ($each +\".tangentStrength\") 0.2;\nsetAttr ($each +\".friction\") 0.1;\nsetAttr ($each +\".localCollide\") 1;\n}\ninViewMessage -pos topCenter -msg \"Enable Slide on Selected Constraint\" -fade;")
 	SlideConstraintOn;
 
+runTimeCommand
+	-annotation "Enable Hair Self Collision"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 1;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".selfCollide\") 1;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 1;\n    select $mySel;\n}")
+	nHairSelfCollideOn;
+
+runTimeCommand
+	-annotation "Disable nHair Self Collision"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 0;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".selfCollide\") 0;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 0;\n    select $mySel;\n}")
+	nHairSelfCollideOff;
+
+runTimeCommand
+	-annotation "Disable nHair Collision"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 0;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".collide\") 0;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 0;\n    select $mySel;\n}")
+	nHairColllideOff;
+
+runTimeCommand
+	-annotation "Enable nHair Collision"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 1;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".collide\") 1;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 1;\n    select $mySel;\n}")
+	nHairCollideOn;
+
