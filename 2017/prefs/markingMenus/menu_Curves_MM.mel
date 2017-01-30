@@ -328,6 +328,85 @@
             menuEditorMenuItem9;
 
         menuItem
+            -label "Simulation Method"
+            -subMenu 1
+            -sourceType "mel"
+            menuEditorMenuItem18;
+
+            menuItem
+                -label "Static"
+                -command "nHairStatic"
+                -sourceType "mel"
+                menuEditorMenuItem3;
+
+            menuItem
+                -label "Passive"
+                -command "nHairPassive"
+                -sourceType "mel"
+                menuEditorMenuItem2;
+
+            menuItem
+                -label "Dynamic"
+                -command "nHairDynamic"
+                -sourceType "mel"
+                menuEditorMenuItem1;
+
+        setParent -m ..;
+
+        menuItem
+            -label "Point Lock"
+            -subMenu 1
+            -sourceType "mel"
+            menuEditorMenuItem17;
+
+            menuItem
+                -label "No Attach"
+                -command "nHairNoLock"
+                -sourceType "mel"
+                menuEditorMenuItem3;
+
+            menuItem
+                -label "Base"
+                -command "nHairLockBase"
+                -sourceType "mel"
+                menuEditorMenuItem2;
+
+			menuItem
+                -label "Tip"
+                -command "nHairLockTip"
+                -sourceType "mel"
+                menuEditorMenuItem4;
+
+            menuItem
+                -label "Both Ends"
+                -command "nHairLockBothEnds"
+                -sourceType "mel"
+                menuEditorMenuItem1;
+
+        setParent -m ..;
+
+        menuItem
+            -label "Follicle Braid"
+            -subMenu 1
+            -sourceType "mel"
+            menuEditorMenuItem13;
+
+            menuItem
+                -label "Enable"
+                -command "FollicleBraid"
+                -radialPosition "N"
+                -sourceType "mel"
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Disable"
+                -command "FollicleNoBraid"
+                -sourceType "mel"
+                menuEditorMenuItem2;
+
+        setParent -m ..;
+
+        menuItem
             -label "separator" 
             -divider 1
             -dividerLabel "separator"
