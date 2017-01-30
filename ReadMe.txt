@@ -83,6 +83,7 @@ ALT + 0 = Open Graph Editor or toggle it if docked
 ALT + C = Open Channel Box or toggle it if docked
 ALT + A = Open Attribute Editor or toggle it if docked
 ALT + M = Open Modeling Toolkit or toggle it if docked
+ALT + U = Open UV Toolkit or toggle it if docked
 ALT + O = Open Outliner or toggle it if docked
 ALT + T = Open Tools Preference Settings or toggle it if docked
 
