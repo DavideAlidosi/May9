@@ -2002,3 +2002,11 @@ runTimeCommand
 	-command ("string $myNucleus[] = `ls -sl`;\nCreateCompass;\npickWalk -d down;\npickWalk -d right;\npickWalk -d right;\npickWalk -d right;\nstring $myDirection[] = `ls -sl`;\n\nconnectAttr -f ($myDirection[0] + \".direction\") ($myNucleus[0] + \".windDirection\");\n\nselect $myNucleus;")
 	AddCompassToNucleusWind;
 
+runTimeCommand
+	-annotation "Add Compass to AirField Direction"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myAirField[] = `ls -sl`;\nCreateCompass;\npickWalk -d down;\npickWalk -d right;\npickWalk -d right;\npickWalk -d right;\nstring $myDirection[] = `ls -sl`;\n\nconnectAttr -f ($myDirection[0] + \".direction\") ($myAirField[0] + \".direction\");\n\nselect $myAirField;")
+	AddCompassToAirField;
+
