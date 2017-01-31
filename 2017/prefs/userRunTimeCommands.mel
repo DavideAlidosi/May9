@@ -1931,14 +1931,6 @@ runTimeCommand
 	AddDeformer;
 
 runTimeCommand
-	-annotation "Create Collide Node"
-	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("LoadSOUP;\ncreateNode collide;")
-	CollideNode;
-
-runTimeCommand
 	-annotation "Disable Slide on Selected Constraint"
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
@@ -1993,4 +1985,20 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}")
 	nHairLockTip;
+
+runTimeCommand
+	-annotation "Create Compass"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("maya.mel.eval(\"LoadSOUP\")\n\ncompass_SOuP().create(bSkipSel=False)")
+	CreateCompass;
+
+runTimeCommand
+	-annotation "Add Compass to Nucleus Wind Direction"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myNucleus[] = `ls -sl`;\nCreateCompass;\npickWalk -d down;\npickWalk -d right;\npickWalk -d right;\npickWalk -d right;\nstring $myDirection[] = `ls -sl`;\n\nconnectAttr -f ($myDirection[0] + \".direction\") ($myNucleus[0] + \".windDirection\");\n\nselect $myNucleus;")
+	AddCompassToNucleusWind;
 
