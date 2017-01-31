@@ -67,6 +67,7 @@ CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
 CTRL + J = Context Connector
 CTRL + K = Massive Attribute Editor
+CTRL + L = List of Input Operation is mapped
 CTRL + ALT + 8 = Paint Effects Panel
 
 ALT + 1 = Open Hypershade or toggle it if docked
