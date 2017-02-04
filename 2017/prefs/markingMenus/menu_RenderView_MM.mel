@@ -154,7 +154,33 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Set Resolution" 
+        -label "Keep Image" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "renderWindowMenuCommand keepImageInRenderView renderView;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "rvKeepIt.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Test Resolution" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -168,6 +194,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+		-image "ResolutionGate.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
@@ -272,11 +299,11 @@
     setParent -m ..;
 
     menuItem
-        -label "Keep Image" 
+        -label "Select Camera" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "renderWindowMenuCommand keepImageInRenderView renderView;" 
+        -command "SelectCamera" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -285,17 +312,40 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "SE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "rvKeepIt.png" 
+        -image "Camera.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem7;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SelectCamera;\nAttributeEditor\n" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
 
 setParent -m ..;
 
