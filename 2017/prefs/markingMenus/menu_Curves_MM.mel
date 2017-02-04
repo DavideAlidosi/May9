@@ -1,3 +1,9 @@
+string $mySel[] = `ls -sl`;
+string $objectShape[] = `listRelatives -s`;
+select $objectShape;
+string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle"`;
+select $mySel;
+
 
     menuItem
         -label "Rebuild"
@@ -327,7 +333,8 @@
             -sourceType "mel"
             menuEditorMenuItem9;
 
-        menuItem
+        if ($myFollcie[0] != ""){
+		menuItem
             -label "Simulation Method"
             -subMenu 1
             -sourceType "mel"
@@ -405,6 +412,7 @@
                 menuEditorMenuItem2;
 
         setParent -m ..;
+		}
 
         menuItem
             -label "separator" 

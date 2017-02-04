@@ -1,3 +1,8 @@
+string $mySel[] = `ls -sl`;
+string $objectShape[] = `listRelatives -s`;
+select $objectShape;
+string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle"`;
+select $mySel;
 
     menuItem
         -label "Surface from Curves"
@@ -422,6 +427,7 @@
             -sourceType "mel"
             menuEditorMenuItem4;
 
+		if ($myFollcie[0] != ""){
         menuItem
             -label "Simulation Method"
             -subMenu 1
@@ -499,6 +505,7 @@
                 menuEditorMenuItem2;
 
         setParent -m ..;
+		}
 
         menuItem
             -label "separator" 
