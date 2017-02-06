@@ -2010,3 +2010,11 @@ runTimeCommand
 	-command ("string $myAirField[] = `ls -sl`;\nCreateCompass;\npickWalk -d down;\npickWalk -d right;\npickWalk -d right;\npickWalk -d right;\nstring $myDirection[] = `ls -sl`;\n\nconnectAttr -f ($myDirection[0] + \".direction\") ($myAirField[0] + \".direction\");\n\nselect $myAirField;")
 	AddCompassToAirField;
 
+runTimeCommand
+	-annotation "Toggle Attribuite Editor Channel Box"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`workspaceControl -q -vis AttributeEditor` == 1){\n    if(`workspaceControl -q -r AttributeEditor` == 0)\n    workspaceControl -e -clp 0 AttributeEditor;\n    else\n        if(`workspaceControl -q -clp AttributeEditor` == 0)\n            ShowAttributeEditorOrChannelBox;\n        else\n            workspaceControl -e -clp 0 AttributeEditor;\n}else{\n    AttributeEditor;\n}")
+	ToggleAttribuiteChannel;
+
