@@ -2018,3 +2018,11 @@ runTimeCommand
 	-command ("if(`workspaceControl -q -vis AttributeEditor` == 1){\n    if(`workspaceControl -q -r AttributeEditor` == 0)\n    workspaceControl -e -clp 0 AttributeEditor;\n    else\n        if(`workspaceControl -q -clp AttributeEditor` == 0)\n            ShowAttributeEditorOrChannelBox;\n        else\n            workspaceControl -e -clp 0 AttributeEditor;\n}else{\n    AttributeEditor;\n}")
 	ToggleAttribuiteChannel;
 
+runTimeCommand
+	-annotation "Add Arnold Volume"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.createVolume()")
+	aiVolume;
+

@@ -1,8 +1,5 @@
-string $mySel[] = `ls -sl`;
 string $objectShape[] = `listRelatives -s`;
-select $objectShape;
-string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle"`;
-select $mySel;
+string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShape`;
 
     menuItem
         -label "Surface from Curves"

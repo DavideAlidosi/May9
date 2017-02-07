@@ -156,10 +156,10 @@ menuItem
 menuEditorMenuItem9;
 
 menuItem
--label "Render View"
--command "MtoaRenderView"
+-label "Add Arnold Volume"
+-command "aiVolume"
 -radialPosition "SE"
--image "RenderViewShelf.png"
+-image "VolumeShelf.png"
 -sourceType "mel"
 menuEditorMenuItem98;
 
@@ -178,6 +178,13 @@ menuItem
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem11;
+
+menuItem
+-label "Render View"
+-command "MtoaRenderView"
+-image "RenderViewShelf.png"
+-sourceType "mel"
+menuEditorMenuItem70;
 
 menuItem
 -label "Hypershade"
@@ -229,7 +236,7 @@ menuItem
 menuEditorMenuItem4;
 
 menuItem
--label "Create Camera"
+-label "Add Camera"
 -command "CreateCameraOnly"
 -radialPosition "SW"
 -image "view.png"
