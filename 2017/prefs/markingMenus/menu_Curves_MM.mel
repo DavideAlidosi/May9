@@ -162,6 +162,29 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
         -sourceType "mel"
         menuEditorMenuItem16;
 
+	menuItem
+        -label "Component Display" 
+        -subMenu 1
+		-image "RS_visible.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem90;
+
+		menuItem
+            -label "CVs" 
+            -command "ToggleCVs" 
+            -image "selectCVs.png" 
+            -sourceType "mel" 
+            menuEditorMenuItem1;
+
+		menuItem
+            -label "Hull" 
+            -command "ToggleHulls" 
+            -image "pickHullComp.png" 
+            -sourceType "mel" 
+            menuEditorMenuItem2;
+
+	setParent -m ..;
+
     menuItem
         -label "Deformers"
         -subMenu 1

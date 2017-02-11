@@ -262,11 +262,25 @@ menuEditorMenuItem7;
 setParent -m ..;
 
 menuItem
+-label "Shell Proxy"
+-command "da_shell"
+-image "da_ShellProxy.png"
+-sourceType "mel"
+menuEditorMenuItem40;
+
+menuItem
 -label "Split nGons"
 -command "PolyDivision"
 -image "polyCleanup.png"
 -sourceType "mel"
 menuEditorMenuItem18;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem41;
 
 menuItem
 -label "menuEditorMenuItem17"
