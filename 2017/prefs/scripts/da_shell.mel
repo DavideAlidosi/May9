@@ -38,7 +38,6 @@ global proc da_shell(){
 	setAttr ($myShell[0] +".overrideEnabled") 1;
 	setAttr ($myShell[0] +".overrideDisplayType") 2;
 
-	setAttr ($myShape[0] + ".intermediateObject") 0;
 	setAttr ($myShape[0] + ".primaryVisibility") 0;
 	setAttr ($myShape[0] + ".overrideEnabled") 1;
 	setAttr ($myShape[0] + ".overrideShading") 0;
@@ -80,12 +79,12 @@ global proc da_shell(){
 global proc da_shellDetach(){
 	BackToObjectMode;
 
+    string $myTransform[] = `ls -sl -typ "transform"`;
 	string $myShape[] = `listRelatives -s`;
 
-	setAttr ($myShape[0] + ".intermediateObject") 0;
 	setAttr ($myShape[0] + ".primaryVisibility") 1;
 	setAttr ($myShape[0] + ".overrideEnabled") 0;
-	setAttr ($myShape[0] + ".overrideShading") 0;
+	setAttr ($myShape[0] + ".overrideShading") 1;
 	setAttr ($myShape[0] + ".visibility") 1;
 	setAttr ($myShape[0] + ".castsShadows") 1;
 	setAttr ($myShape[0] + ".receiveShadows") 1;
@@ -102,6 +101,12 @@ global proc da_shellDetach(){
 
 	setAttr ($myShell[0] +".overrideEnabled") 1;
 	setAttr ($myShell[0] +".overrideDisplayType") 0;
+	
+	deleteAttr ($myTransform[0] + ".Thickness");
+	deleteAttr ($myTransform[0] + ".Bevel");
+	deleteAttr ($myTransform[0] + ".Chamfer");
+	deleteAttr ($myTransform[0] + ".Offset");
+	deleteAttr ($myTransform[0] + ".Segments");
 
 	select $myShape;
 	pickWalk -d up;
