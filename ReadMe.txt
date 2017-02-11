@@ -159,5 +159,4 @@ Webber Huang for Soft Cluster EX
 Mariano Merchante for Instance Along Curve
 Anders Langlands for alShaders
 Morten Dalgaard Andersen for amCombineCurves
-Klaudio Ladavac for Mirror Tool
 Add Mehdi Louala for Massive Attribute Editor

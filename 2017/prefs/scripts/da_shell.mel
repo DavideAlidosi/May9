@@ -112,3 +112,27 @@ global proc da_shellDetach(){
 	rename da_extractShell1;
 	ClearFreeze;
 }
+
+global proc da_shellSubdiv(){
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+	
+	select $myShell;
+    HighQualityDisplay;
+    
+    select $myTransform;
+}
+
+global proc da_shellNoSubdiv(){
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+	
+	select $myShell;
+    LowQualityDisplay;
+    
+    select $myTransform;
+}
