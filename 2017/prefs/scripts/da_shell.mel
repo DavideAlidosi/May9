@@ -28,6 +28,12 @@ global proc da_shell(){
 	duplicate;
 	string $myShell[] = `listRelatives -s`;
 	connectAttr -f ($myShape[0] + ".outMesh") ($myShell[0] + ".inMesh");
+	
+	string $myShellTransform[] = `listRelatives -p $myShell`;
+	select $myShellTransform;
+	ResetTweakPoint;
+	dR_modeObject;
+	
 	polyNormal -normalMode 0 -userNormalMode 0 -ch 1 $myShell;
 	polyExtrudeFacet -tk 1;
 	select $myShell;
@@ -67,13 +73,6 @@ global proc da_shell(){
 	connectAttr -f ($myTransform[0] + ".Segments") ($myPolyBevel[0] + ".segments");
 	connectAttr -f ($myTransform[0] + ".Chamfer") ($myPolyBevel[0] + ".chamfer");
 	connectAttr -f ($myTransform[0] + ".Bevel") ($myPolyBevel[0] + ".nodeState");
-
-	select $myShape;
-	string $polyTweakCheck[] = `listConnections -s 0 -d 1 -t "polyTweak"`;
-	if ($polyTweakCheck[0] != ""){
-	    select $polyTweakCheck;
-	    delete;
-	}
 	
 	select $myShell;
 	pickWalk -d up;
