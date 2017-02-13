@@ -68,6 +68,13 @@ global proc da_shell(){
 	connectAttr -f ($myTransform[0] + ".Chamfer") ($myPolyBevel[0] + ".chamfer");
 	connectAttr -f ($myTransform[0] + ".Bevel") ($myPolyBevel[0] + ".nodeState");
 
+	select $myShape;
+	string $polyTweakCheck[] = `listConnections -s 0 -d 1 -t "polyTweak"`;
+	if ($polyTweakCheck[0] != ""){
+	    select $polyTweakCheck;
+	    delete;
+	}
+	
 	select $myShell;
 	pickWalk -d up;
 	rename da_shell1;

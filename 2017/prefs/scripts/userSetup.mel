@@ -48,6 +48,13 @@ ikSpringSolver;
 string $outlinerOptions = "outlinerEditor -e -showAssignedMaterials true outlinerPanel1;outlinerEditor -e -renderFilterVisible true outlinerPanel1;";
 scriptJob -e "NewSceneOpened" $outlinerOptions;
 
+///////// Global procedures //////////
+
+global proc masterPosition(string $a, string $b){
+    float $Pp[] = `xform -q -rp $a` ;
+    xform -cp $a $b;
+    move -a -rpr -ws $Pp[0] $Pp[1] $Pp[2] $a $b;
+}
 
 /////////// Scripts setup ///////////
 
