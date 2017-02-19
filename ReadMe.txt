@@ -84,7 +84,7 @@ ALT + 0 = Open Graph Editor or toggle it if docked
 ALT + C = Open Channel Box or toggle it if docked
 ALT + A = Open Attribute Editor or toggle it if docked
 ALT + M = Open Modeling Toolkit or toggle it if docked
-ALT + U = Open UV Toolkit or toggle it if docked
+ALT + U = Open UV Toolkit or toggle it if docked (CMD + U on OS X)
 ALT + O = Open Outliner or toggle it if docked
 ALT + T = Open Tools Preference Settings or toggle it if docked
 
@@ -159,4 +159,6 @@ Webber Huang for Soft Cluster EX
 Mariano Merchante for Instance Along Curve
 Anders Langlands for alShaders
 Morten Dalgaard Andersen for amCombineCurves
-Add Mehdi Louala for Massive Attribute Editor
+Mehdi Louala for Massive Attribute Editor
+Dennis Porter for SmartMesh Tools 1.1
+Basenji Games for Poly Separate

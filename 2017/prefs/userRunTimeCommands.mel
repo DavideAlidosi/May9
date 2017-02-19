@@ -2026,3 +2026,11 @@ runTimeCommand
 	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.createVolume()")
 	aiVolume;
 
+runTimeCommand
+	-annotation "Separate By Material"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $selection[] = `ls -sl`;\nsepMat($selection[0]);\ndR_modeObject;")
+	SeparateMaterial;
+

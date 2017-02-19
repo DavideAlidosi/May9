@@ -140,14 +140,6 @@ menuItem
 menuEditorMenuItem30;
 
 menuItem
--label "Separate"
--command "SeparatePolygon;"
--radialPosition "NE"
--image "polySeparate.png"
--sourceType "mel"
-menuEditorMenuItem8;
-
-menuItem
 -label "Add Divisions"
 -command "performPolySubdivide \"\" 0"
 -radialPosition "SW"
@@ -2033,6 +2025,32 @@ menuItem
 -image "vertex_NEX.png"
 -sourceType "mel"
 menuEditorMenuItem26;
+
+menuItem
+-label "Separate" 
+-subMenu 1
+-radialPosition "NE" 
+-image "polySeparate.png" 
+-sourceType "mel" 
+menuEditorMenuItem50;
+
+menuItem
+-label "by Material" 
+-command "SeparateMaterial" 
+-radialPosition "N" 
+-image "hsGraphMaterial.png" 
+-sourceType "mel" 
+menuEditorMenuItem1;
+
+menuItem
+-label "by Poly Shell" 
+-command "SeparatePolygon" 
+-radialPosition "NE" 
+-image "polySeparate.png" 
+-sourceType "mel" 
+menuEditorMenuItem2;
+
+setParent -m ..;
 
 setParent -m ..;
 

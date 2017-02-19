@@ -98,34 +98,18 @@
         menuEditorMenuItem14;
 
     menuItem
-        -label "Extract"
-        -command "ExtractFace"
+        -label "Smart Extract"
+        -command "dpSmartExtractDuplicate(1)"
         -image "polyChipOff.png"
         -sourceType "mel"
         menuEditorMenuItem28;
 
     menuItem
-        -label "menuEditorMenuItem29"
-        -command "ExtractFaceOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem20;
-
-    menuItem
-        -label "Duplicate"
-        -command "performPolyChipOff 0 1"
+        -label "Smart Duplicate"
+        -command "dpSmartExtractDuplicate(0)"
         -image "polyDuplicateFacet.png"
         -sourceType "mel"
         menuEditorMenuItem19;
-
-    menuItem
-        -label "menuEditorMenuItem22"
-        -command "DuplicateFaceOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
-        -sourceType "mel"
-        menuEditorMenuItem29;
 
     menuItem
         -label "Flip"
