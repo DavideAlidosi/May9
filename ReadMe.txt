@@ -160,5 +160,5 @@ Mariano Merchante for Instance Along Curve
 Anders Langlands for alShaders
 Morten Dalgaard Andersen for amCombineCurves
 Mehdi Louala for Massive Attribute Editor
-Dennis Porter for SmartMesh Tools 1.1
+Dennis Porter for SmartMesh Tools
 Basenji Games for Poly Separate
