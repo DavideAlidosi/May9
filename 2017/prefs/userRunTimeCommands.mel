@@ -2034,3 +2034,35 @@ runTimeCommand
 	-command ("string $selection[] = `ls -sl`;\nsepMat($selection[0]);\ndR_modeObject;")
 	SeparateMaterial;
 
+runTimeCommand
+	-annotation "Batch Skin Transfert by UV"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation closestPoint -uvSpace map1 map1 -influenceAssociation closestJoint;\n}")
+	BatchSkinTransfertUV;
+
+runTimeCommand
+	-annotation "Batch Skin Transfert by Closest Point"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation closestPoint -influenceAssociation closestJoint;\n}")
+	BatchSkinTransfertCP;
+
+runTimeCommand
+	-annotation "Batch Skin Transfert by Ray Cast"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation rayCast -influenceAssociation closestJoint;\n}")
+	BatchSkinTransfertRC;
+
+runTimeCommand
+	-annotation "Batch Skin Transfert by Closest Component"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation closestComponent -influenceAssociation closestJoint;\n}")
+	BatchSkinTransfertCC;
+

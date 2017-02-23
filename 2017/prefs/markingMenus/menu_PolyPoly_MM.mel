@@ -957,10 +957,17 @@ menuEditorMenuItem15;
 
 menuItem
 -label "Copy Skin Weights"
--command "CopySkinWeights"
+-subMenu 1
 -image "copySkinWeight.png"
 -sourceType "mel"
 menuEditorMenuItem21;
+
+menuItem
+-label "Copy Skin Weights"
+-command "CopySkinWeights"
+-image "copySkinWeight.png"
+-sourceType "mel"
+menuEditorMenuItem1;
 
 menuItem
 -label "menuEditorMenuItem24"
@@ -968,7 +975,40 @@ menuItem
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
-menuEditorMenuItem39;
+menuEditorMenuItem2;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Batch by Closest Point"
+-command "BatchSkinTransfertCP"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Batch by Ray Cast"
+-command "BatchSkinTransfertRC"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Batch by Closest Component"
+-command "BatchSkinTransfertCC"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Batch by UVs"
+-command "BatchSkinTransfertUV"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+setParent -m ..;
 
 menuItem
 -label "Unbind Skin"
