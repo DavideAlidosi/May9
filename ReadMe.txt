@@ -107,6 +107,7 @@ CMD + Space = Toggle Full Screen (Mac OS only)
 
 Changed hotkeys:
 
+9 = Toggle Displacement
 CTRL + ALT + ~ = SmoothingDisplayShowBoth
 CTRL + ALT + ` = SmoothingDisplayToggle
 ALT + - = ToggleColorFeedback
@@ -137,6 +138,7 @@ Main preferences change:
 - Two Bone IK and Spring IK are preload
 - PreSelect Highlight is on by default in Graph Editor
 - Wireframe visibility on Sculpting Tool is on by default
+- Bake Deformer Tool exposed
 
 
 For more information:
