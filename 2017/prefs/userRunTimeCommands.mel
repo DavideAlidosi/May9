@@ -2066,3 +2066,27 @@ runTimeCommand
 	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation closestComponent -influenceAssociation closestJoint;\n}")
 	BatchSkinTransfertCC;
 
+runTimeCommand
+	-annotation "Create Group Node"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("maya.mel.eval(\"LoadSOUP\")\n\nsoup().create('group');")
+	CreateGroup;
+
+runTimeCommand
+	-annotation "Enable Poly Shade"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 1;\n    setAttr ($each + \".overrideEnabled\") 0;\n    setAttr ($each + \".overrideShading\") 1;\n    setAttr ($each + \".castsShadows\") 1;\n    setAttr ($each + \".receiveShadows\") 1;\n    setAttr ($each + \".motionBlur\") 1;\n    setAttr ($each + \".smoothShading\") 1;\n    setAttr ($each + \".visibleInReflections\") 1;\n    setAttr ($each + \".visibleInRefractions\") 1;\n    setAttr ($each + \".aiVisibleInDiffuse\") 1;\n    setAttr ($each + \".aiVisibleInGlossy\") 1;\n}")
+	PolyShade;
+
+runTimeCommand
+	-annotation "Disable Poly Shade"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 0;\n    setAttr ($each + \".overrideEnabled\") 1;\n    setAttr ($each + \".overrideShading\") 0;\n    setAttr ($each + \".castsShadows\") 0;\n    setAttr ($each + \".receiveShadows\") 0;\n    setAttr ($each + \".motionBlur\") 0;\n    setAttr ($each + \".smoothShading\") 0;\n    setAttr ($each + \".visibleInReflections\") 0;\n    setAttr ($each + \".visibleInRefractions\") 0;\n    setAttr ($each + \".aiVisibleInDiffuse\") 0;\n    setAttr ($each + \".aiVisibleInGlossy\") 0;\n}")
+	PolyNoShade;
+
