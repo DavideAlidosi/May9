@@ -73,3 +73,8 @@ source rainCurves.mel;
 
 // Preload Poly Separate
 source SepScript.mel;
+
+/////////// Workspace hack ///////////
+
+// Hide bottom editor
+scriptJob -runOnce true -idleEvent "workspaceControl -e -clp 1 hyperShadePanel1Window";
