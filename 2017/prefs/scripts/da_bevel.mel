@@ -64,6 +64,5 @@ global proc da_bevel(){
 	select $mySource[0];
 	hide;
 
-	select $myGroupNode[0];
-	AttributeEditor;
+	python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
 }
