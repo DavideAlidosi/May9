@@ -425,6 +425,31 @@
         menuEditorMenuItem11;
 
     menuItem
+        -label "Interactive Groom to Polygons" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "python(\"import xgenm.xmaya.xgmSplineToGeometryConvert as convert;convert.convertPrimToPolygon(True)\")" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgConvertToPoly.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem30;
+
+    menuItem
         -label "separator" 
         -divider 1
         -dividerLabel "separator" 
@@ -494,7 +519,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem28;
+        menuEditorMenuItem2;
 
     menuItem
         -label "Twist" 
@@ -543,7 +568,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem31;
+        menuEditorMenuItem4;
 
     menuItem
         -label "Place" 
@@ -592,7 +617,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem33;
+        menuEditorMenuItem8;
 
     menuItem
         -label "Width" 
@@ -641,7 +666,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem35;
+        menuEditorMenuItem18;
 
     menuItem
         -label "Part" 
@@ -690,7 +715,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem36;
+        menuEditorMenuItem23;
 
     menuItem
         -label "separator" 
@@ -762,7 +787,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem37;
+        menuEditorMenuItem28;
 
 setParent -m ..;
 

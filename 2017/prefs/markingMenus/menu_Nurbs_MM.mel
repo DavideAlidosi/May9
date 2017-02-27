@@ -20,7 +20,7 @@
         -image "putty.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
@@ -44,7 +44,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
@@ -70,7 +70,7 @@
         -image "trim.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
@@ -94,7 +94,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
@@ -120,7 +120,7 @@
         -image "untrim.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
@@ -144,7 +144,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
@@ -170,7 +170,7 @@
         -image "openCloseSurface.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
@@ -194,7 +194,7 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem17;
@@ -214,12 +214,107 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
-		-image "RS_visible.png" 
+        -image "RS_visible.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
+
+        menuItem
+            -label "Shading" 
+            -divider 0
+            -subMenu 1
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -enableCommandRepeat 1
+			-image "bevel.png" 
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+            menuItem
+                -label "On" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "PolyShade" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem1;
+
+            menuItem
+                -label "Off" 
+                -divider 0
+                -subMenu 0
+                -tearOff 0
+                -command "PolyNoShade" 
+                -altModifier 0
+                -optionModifier 0
+                -commandModifier 0
+                -ctrlModifier 0
+                -shiftModifier 0
+                -optionBox 0
+                -enable 1
+                -data 0
+                -allowOptionBoxes 1
+                -postMenuCommandOnce 0
+                -enableCommandRepeat 1
+                -echoCommand 0
+                -italicized 0
+                -boldFont 0
+                -sourceType "mel" 
+                -longDivider 1
+                menuEditorMenuItem2;
+
+        setParent -m ..;
+
+        menuItem
+            -label "separator" 
+            -divider 1
+            -dividerLabel "separator" 
+            -subMenu 0
+            -tearOff 0
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
 
         menuItem
             -label "CVs" 
@@ -241,7 +336,7 @@
             -image "selectCVboundary.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -266,7 +361,7 @@
             -image "polyNormalsPropagate.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -291,7 +386,7 @@
             -image "channelBoxUseManips.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -315,7 +410,7 @@
         -enableCommandRepeat 1
         -image "da_PolygonsToNurbs.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem27;
@@ -341,7 +436,7 @@
             -image "nurbsToPolygons.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -365,7 +460,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -390,7 +485,7 @@
             -image "nurbsToSubdivs.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
@@ -414,7 +509,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -438,7 +533,7 @@
         -enableCommandRepeat 1
         -image "menuIconDeformations.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem25;
@@ -463,7 +558,7 @@
             -image "cluster.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -487,7 +582,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem9;
@@ -512,7 +607,7 @@
             -image "lattice.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -536,7 +631,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
@@ -560,7 +655,7 @@
         -enableCommandRepeat 1
         -image "render_adskMaterial.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem28;
@@ -585,7 +680,7 @@
             -image "render_adskMaterial.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -608,7 +703,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -633,7 +728,7 @@
             -image "toonBrightness2.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -658,7 +753,7 @@
             -image "toonBrightness3.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
@@ -683,7 +778,7 @@
             -image "toonCircleHigh.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem5;
@@ -706,7 +801,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
@@ -731,7 +826,7 @@
             -image "toonAddOutline.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem7;
@@ -756,7 +851,7 @@
             -image "toonRemoveOutline.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem8;
@@ -780,7 +875,7 @@
         -enableCommandRepeat 1
         -image "out_nucleus.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem26;
@@ -805,7 +900,7 @@
             -image "emitter.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -829,7 +924,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
@@ -851,7 +946,7 @@
             -enableCommandRepeat 1
             -image "out_particle.png" 
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
@@ -876,7 +971,7 @@
                 -image "nPartPoints.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
@@ -901,7 +996,7 @@
                 -image "nPartBalls.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem2;
@@ -926,7 +1021,7 @@
                 -image "nPartCloud.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem3;
@@ -951,7 +1046,7 @@
                 -image "nPartThickCloud.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem4;
@@ -976,7 +1071,7 @@
                 -image "nPartWater.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem5;
@@ -1001,7 +1096,7 @@
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -1075,7 +1170,7 @@
             -image "rigid.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
@@ -1099,7 +1194,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem15;
@@ -1124,7 +1219,7 @@
             -image "rigidPassive.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
@@ -1148,7 +1243,7 @@
             -enableCommandRepeat 0
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem16;
@@ -1170,7 +1265,7 @@
             -enableCommandRepeat 1
             -image "constraint.png" 
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem13;
@@ -1195,7 +1290,7 @@
                 -image "constraint.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
@@ -1220,7 +1315,7 @@
                 -image "constraint.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem2;
@@ -1245,7 +1340,7 @@
                 -image "constraint.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem3;
@@ -1270,7 +1365,7 @@
                 -image "constraint.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem5;
@@ -1297,7 +1392,7 @@
             -image "fluidInitialStateSet.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem14;
@@ -1342,7 +1437,7 @@
             -enableCommandRepeat 1
             -image "posRadial.png" 
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem12;
@@ -1367,7 +1462,7 @@
                 -image "posAir.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem1;
@@ -1392,7 +1487,7 @@
                 -image "posDrag.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem2;
@@ -1417,7 +1512,7 @@
                 -image "posGravity.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem3;
@@ -1442,7 +1537,7 @@
                 -image "posNewton.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem4;
@@ -1467,7 +1562,7 @@
                 -image "posRadial.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem5;
@@ -1492,7 +1587,7 @@
                 -image "posTurbulence.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem6;
@@ -1517,7 +1612,7 @@
                 -image "posUniform.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem7;
@@ -1542,7 +1637,7 @@
                 -image "posVortex.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem8;
@@ -1565,7 +1660,7 @@
                 -postMenuCommandOnce 0
                 -enableCommandRepeat 1
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem9;
@@ -1590,7 +1685,7 @@
                 -image "posVolumeAxis.png" 
                 -echoCommand 0
                 -italicized 0
-                -boldFont 0
+                -boldFont 1
                 -sourceType "mel" 
                 -longDivider 1
                 menuEditorMenuItem10;

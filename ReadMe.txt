@@ -1,5 +1,9 @@
-May9 pro 1.2.1 - A new user experience for Autodesk Maya 2017
-Tested and develop on Maya 2017 Update 3 and MtoA 1.4.2
+May9 pro 1.2.2 - A new user experience for Autodesk Maya 2017
+
+Release Note:
+- Tested and develop on Maya 2017 Update 3 and MtoA 1.4.2
+- The Hypershade is preload on startup, this made Maya loading a bit slower but increase the productivity
+- May9 Workspaces do non autosave, this fix some minor bug on Maya 2017 UI but need manually save the workspace changes
 
 
 Installation Instruction:

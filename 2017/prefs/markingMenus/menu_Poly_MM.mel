@@ -378,6 +378,34 @@ menuItem
 menuEditorMenuItem9;
 
 menuItem
+-label "Shading"
+-subMenu 1
+-image "polyBevel24.png"
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "On"
+-command "PolyShade"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Off"
+-command "PolyNoShade"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
 -label "Vertex Normals"
 -command "ToggleVertexNormalDisplay"
 -image "da_edgeNormals.png"
@@ -453,20 +481,6 @@ menuItem
 -dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem13;
-
-menuItem
--label "Shade On"
--command "PolyShade"
--image "out_polyCube.png"
--sourceType "mel"
-menuEditorMenuItem14;
-
-menuItem
--label "Shade Off"
--command "PolyNoShade"
--image "UVTBWireFrame.png"
--sourceType "mel"
-menuEditorMenuItem15;
 
 menuItem
 -label "separator" 
@@ -1012,7 +1026,7 @@ menuItem
 menuEditorMenuItem10;
 
 menuItem
--label "Cut and Sew UV Tool"
+-label "3D Cut and Sew"
 -command "SetCutSewUVTool"
 -image "CutSewUVTool.png"
 -sourceType "mel"
@@ -1027,15 +1041,15 @@ menuItem
 menuEditorMenuItem51;
 
 menuItem
--label "3D UV Grab"
--command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;"
+-label "3D Grab UV"
+-command "SetMeshGrabUVTool"
 -image "UV_3D_Grab_Brush.png"
 -sourceType "mel"
 menuEditorMenuItem21;
 
 menuItem
 -label "menuEditorMenuItem13"
--command "layoutPerspUV;\nShowMeshGrabUVToolOptions;"
+-command "ShowMeshGrabUVToolOptions;toolPropertyWindow;"
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
