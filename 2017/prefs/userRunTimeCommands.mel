@@ -2095,6 +2095,22 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $texWinName[] = `getPanel -sty polyTexturePlacementPanel`;\nif (`getPanel -underPointer` == $texWinName[0]){\n    UVEditorToggleTextureBorderDisplay;\n}\nelse{\n    int $borders[] = `polyOptions -q -displayMapBorder`;\n    float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;\n    polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];\n}")
+	-command ("int $borders[] = `polyOptions -q -displayMapBorder`;\nfloat $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;\npolyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];")
 	ToggleUvBorders;
+
+runTimeCommand
+	-annotation "Toggle resolution gate"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx "Custom Scripts.May9_Pro.Scene"
+	-commandLanguage "mel"
+	-command ("string $currPanel = `getPanel -underPointer`;\nstring $currCam = `modelEditor -q -camera $currPanel`;\nstring $FilmGateState = `camera -q -displayFilmGate $currCam`;\nstring $ResolutionGateState = `camera -q - displayResolution $currCam`;\n\nif ($ResolutionGateState == 0) {\n    camera -e -displayFilmGate off - displayResolution on -overscan 1.3 $currCam;\n}\nelse {\n    camera -e -displayFilmGate off - displayResolution off -overscan 1.0 $currCam;\n}\n")
+	ToggleResolutionGate;
+
+runTimeCommand
+	-annotation "Camera Bookmark"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $panel = `getPanel -wf`;\n$camera = `modelEditor -q -camera $panel`;\ncameraBookmarkEditor $camera;")
+	CameraBookmark;
 

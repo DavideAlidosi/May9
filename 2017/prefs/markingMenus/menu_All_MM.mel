@@ -1,5 +1,6 @@
 int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
 int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
+string $cmCheck = `colorManagementPrefs -q -cme`;
 
 menuItem
 -label "Polygons"
@@ -139,11 +140,11 @@ menuItem
 menuEditorMenuItem6;
 
 menuItem
--label "Toggle Color Manage"
+-label "Color Management"
 -command "ToggleColorManagement" 
 -keyEquivalent "K"
 -radialPosition "S"
--image "render_colorProfile.png"
+-checkBox (1 == $cmCheck) 
 -sourceType "mel"
 menuEditorMenuItem3;
 
@@ -156,10 +157,10 @@ menuItem
 menuEditorMenuItem9;
 
 menuItem
--label "Add Arnold Volume"
--command "aiVolume"
+-label "Toggle Resolution Gate"
+-command "ToggleResolutionGate"
 -radialPosition "SE"
--image "VolumeShelf.png"
+-image "ResolutionGate.png"
 -sourceType "mel"
 menuEditorMenuItem98;
 
@@ -178,6 +179,13 @@ menuItem
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem11;
+
+menuItem
+-label "Camera Bookmark"
+-command "CameraBookmark"
+-image "Bookmark.png"
+-sourceType "mel"
+menuEditorMenuItem96;
 
 menuItem
 -label "Render View"
