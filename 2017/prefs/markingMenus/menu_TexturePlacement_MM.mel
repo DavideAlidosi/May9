@@ -261,7 +261,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "int $borders[] = `polyOptions -q -displayMapBorder`;float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];" 
+        -command "ToggleUvBorders" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -273,7 +273,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "textureBorder.png" 
+        -image "UVEditorTextureBorder.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -419,7 +419,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "vertex_UV_NEX.png" 
+        -image "UVEditorVertex.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1

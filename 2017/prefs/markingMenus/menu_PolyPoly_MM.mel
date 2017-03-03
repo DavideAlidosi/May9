@@ -769,6 +769,21 @@ menuItem
 menuEditorMenuItem31;
 
 menuItem
+-label "Lattice"
+-command "CreateLattice"
+-image "lattice.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "CreateLatticeOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem33;
+
+menuItem
 -label "Delta Mush"
 -command "DeltaMush"
 -image "da_deltaMush.png"
@@ -799,6 +814,13 @@ menuItem
 menuEditorMenuItem51;
 
 menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem999;
+
+menuItem
 -label "Smooth"
 -command "LaplacianSmooth"
 -image "da_smooth.png"
@@ -811,21 +833,6 @@ menuItem
 -image "da_membrane.png"
 -sourceType "mel"
 menuEditorMenuItem5;
-
-menuItem
--label "Lattice"
--command "CreateLattice"
--image "lattice.png"
--sourceType "mel"
-menuEditorMenuItem3;
-
-menuItem
--label "menuEditorMenuItem8"
--command "CreateLatticeOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
-menuEditorMenuItem33;
 
 menuItem
 -label "Contour"
@@ -1146,8 +1153,8 @@ menuEditorMenuItem11;
 
 menuItem
 -label "UV Borders"
--command "int $borders[] = `polyOptions -q -displayMapBorder`;float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];"
--image "textureBorder.png"
+-command "ToggleUvBorders"
+-image "UVEditorTextureBorder.png"
 -sourceType "mel"
 menuEditorMenuItem12;
 

@@ -2090,3 +2090,11 @@ runTimeCommand
 	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 0;\n    setAttr ($each + \".overrideEnabled\") 1;\n    setAttr ($each + \".overrideShading\") 0;\n    setAttr ($each + \".castsShadows\") 0;\n    setAttr ($each + \".receiveShadows\") 0;\n    setAttr ($each + \".motionBlur\") 0;\n    setAttr ($each + \".smoothShading\") 0;\n    setAttr ($each + \".visibleInReflections\") 0;\n    setAttr ($each + \".visibleInRefractions\") 0;\n    setAttr ($each + \".aiVisibleInDiffuse\") 0;\n    setAttr ($each + \".aiVisibleInGlossy\") 0;\n}")
 	PolyNoShade;
 
+runTimeCommand
+	-annotation "Toggle UV Borders Based on Panel"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $texWinName[] = `getPanel -sty polyTexturePlacementPanel`;\nif (`getPanel -underPointer` == $texWinName[0]){\n    UVEditorToggleTextureBorderDisplay;\n}\nelse{\n    int $borders[] = `polyOptions -q -displayMapBorder`;\n    float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;\n    polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];\n}")
+	ToggleUvBorders;
+

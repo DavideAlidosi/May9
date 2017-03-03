@@ -388,8 +388,8 @@
 
         menuItem
             -label "UV Borders"
-            -command "int $borders[] = `polyOptions -q -displayMapBorder`;float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];"
-            -image "textureBorder.png"
+            -command "ToggleUvBorders"
+            -image "UVEditorTextureBorder.png"
             -sourceType "mel"
             menuEditorMenuItem3;
 
