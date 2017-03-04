@@ -981,7 +981,7 @@ menuEditorMenuItem4;
 
 menuItem
 -label "menuEditorMenuItem10"
--command "MASHOutliner"
+-command "MASHcreateOptions"
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
@@ -1099,6 +1099,13 @@ menuItem
 -image "out_expression.png"
 -sourceType "mel"
 menuEditorMenuItem11;
+
+menuItem
+-label "MASH Editor"
+-command "MASHOutliner"
+-image "MASH_Editor.png"
+-sourceType "mel"
+menuEditorMenuItem50;
 
 setParent -m ..;
 
