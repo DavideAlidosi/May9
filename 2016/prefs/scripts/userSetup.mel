@@ -43,6 +43,10 @@ scriptJob -e "NewSceneOpened" $CloseHypershade;
 scriptJob -e "SceneOpened" $CloseHypershade;
 scriptJob -e "flushingScene" $CloseHypershade;
 
+// Disable Color Management on new Scene
+string $DisableCM = "colorManagementPrefs -edit -cmEnabled 0";
+scriptJob -e "NewSceneOpened" $DisableCM;
+
 // Set Manipulators Pick Range to 8
 selectPref -mcb 8;
 
