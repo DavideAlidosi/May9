@@ -1,4717 +1,1586 @@
-	int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
-	int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
-	
-    menuItem
-        -label "Polygons" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "polyCube.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
-
-        menuItem
-            -label "Quad Draw" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dR_quadDrawTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "quadDraw_NEX32.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "Cube" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonCube;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polyCube.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem2" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonCubeOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Plane" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonPlane" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polyMesh.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "menuEditorMenuItem4" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonPlaneOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Sphere" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonSphere;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polySphere.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem6" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonSphereOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Create" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polyCreateFacet.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "menuEditorMenuItem8" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Type" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonType" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polyType.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "SVG" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePolygonSVG" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "polySVG.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Interactive Creation" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "toggleCreatePolyPrimitiveAsTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-			-checkBox (1 == $PolyIntCheck)
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Rendering" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "render.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem33;
-
-        menuItem
-            -label "Batch Render" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "BatchRender" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "batchRender.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "menuEditorMenuItem5" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "BatchRenderOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Render Sequence" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RenderSequence" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "menuIconRender.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Toggle Color Manage" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ToggleColorManagement" 
-            -keyEquivalent "K" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "render_colorProfile.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Rendering Flags" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RenderFlagsWindow" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "menuIconRenderSettings.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Shade Attributes" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AttributeEditor;\nscriptJob -runOnce true -idleEvent \"ShadingGroupAttributeEditor\"" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_shadingEngine.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "File Path Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "FilePathEditor;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "da_filePath.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "TX Manager" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "TxManager" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "TXManagerShelf.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Transfer Maps" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "performSurfaceSampling 1" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "displacementMap_64.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Playblast" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PlayblastWindow" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "playblast.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "menuEditorMenuItem11" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PlayblastOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Rigging" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "humanIK_CharCtrl.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem34;
-
-        menuItem
-            -label "Create Joint" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "JointTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "kinJoint.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "menuEditorMenuItem8" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "JointToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Parent Constraint" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ParentConstraint;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "parentConstraint.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem2" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ParentConstraintOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Aim Constraint" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AimConstraint;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "aimConstraint.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "menuEditorMenuItem7" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AimConstraintOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Scale Constraint" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "scaleConstraint;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "scaleConstraint.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "menuEditorMenuItem10" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ScaleConstraintOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Rivet Constraint" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "djRivet" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "Rivet.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "IK Handle" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKHandleTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "kinHandle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem17;
-
-        menuItem
-            -label "menuEditorMenuItem18" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKHandleToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem18;
-
-        menuItem
-            -label "IK Spline Handle" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKSplineHandleTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "kinSplineHandle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem19;
-
-        menuItem
-            -label "menuEditorMenuItem20" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "IKSplineHandleToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem20;
-
-        menuItem
-            -label "Simple Connector" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "openSimpleConnector" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_geoConnectable.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Connection Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ConnectionEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_list.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "Attributes" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "attributes.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem22;
-
-            menuItem
-                -label "Add" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "AddAttribute;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "publishAttributes.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Edit" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "RenameAttribute" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "setEdEditMode.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Delete" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "DeleteAttribute" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "unpublishAttributes.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-        setParent -m ..;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem23;
-
-        menuItem
-            -label "Quick Rig" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "QuickRigEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "QR_QuickRigTool.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem21;
-
-    setParent -m ..;
-
-    menuItem
-        -label "NURBS" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "sphere.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-        menuItem
-            -label "CV Curve" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CVCurveTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "curveCV.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem2" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CVCurveToolOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Circle" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateNURBSCircle;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "circle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "menuEditorMenuItem4" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateNURBSCircleOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Text" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateTextOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "text.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Import .ai" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateIllustratorCurves;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "ai.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Sphere" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateNURBSSphere;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "sphere.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "menuEditorMenuItem8" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateNURBSSphereOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Plane" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateNURBSPlane" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "plane.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "menuEditorMenuItem10" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateNURBSPlaneOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Pencil" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PencilCurveTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "pencil.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "menuEditorMenuItem12" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PencilCurveToolOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Interactive Creation" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "toggleCreateNurbsPrimitiveAsTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-			-checkBox (1 == $NurbsIntCheck)
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Lights" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "spotlight.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
-
-        menuItem
-            -label "Directional" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateDirectionalLight;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "directionallight.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "menuEditorMenuItem4" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateDirectionalLightOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Spot" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateSpotLight;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "spotlight.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem6" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateSpotLightOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "Point" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePointLight;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "pointlight.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "menuEditorMenuItem8" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreatePointLightOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Area" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateAreaLight" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "arealight.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "menuEditorMenuItem9" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateAreaLightOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "SkyDome" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "aiSkyDome" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_envSky.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Photometric" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "aiPhotometric" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "Light.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Light Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LightList" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "lightEditor.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "Light Linking" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LightCentricLightLinkingEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_defaultLightList.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Objects" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "posEmitter.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-        menuItem
-            -label "Locator" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateLocator;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "locator" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Camera" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateCameraOnly;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "view.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-        menuItem
-            -label "menuEditorMenuItem7" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateCameraOnlyOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "nParticles Emitter" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "NCreateEmitter;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posEmitter.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "menuEditorMenuItem11" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "NCreateEmitterOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "Fluid Container" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "Create3DContainer" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "fluidCreate3D.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "menuEditorMenuItem2" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "Create3DContainerOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Duplicate" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "DuplicateWithTransform" 
-            -keyEquivalent "D" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 1
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "da_duplicate.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "menuEditorMenuItem13" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "DuplicateSpecialOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "Paint Effects" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "paintEffectsTool.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem17;
-
-        menuItem
-            -label "menuEditorMenuItem18" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem18;
-
-        menuItem
-            -label "Instance Along Curve" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "runInstanceAlongCurve" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "instanceAlongCurve.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Particle Style" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "out_particle.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-            menuItem
-                -label "Points" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "optionVar -stringValue NParticleStyle \"Points\";" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nPartPoints.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Balls" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "optionVar -stringValue NParticleStyle \"Balls\";" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nPartBalls.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Cloud" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nPartCloud.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "ThickCloud" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nPartThickCloud.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Water" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "optionVar -stringValue NParticleStyle \"Water\";" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nPartWater.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem5;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Add Fields" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "posRadial.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem14;
-
-            menuItem
-                -label "Air" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posAir.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Drag" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posDrag.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Gravity" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posGravity.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "Newton" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posNewton.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Radial" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posRadial.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem5;
-
-            menuItem
-                -label "Turbulence" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posTurbulence.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem6;
-
-            menuItem
-                -label "Uniform" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posUniform.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem7;
-
-            menuItem
-                -label "Vortex" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posVortex.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem8;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator" 
-                -subMenu 0
-                -tearOff 0
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem9;
-
-            menuItem
-                -label "Volume Axis" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "posVolumeAxis.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem10;
-
-        setParent -m ..;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
-            -label "Input Order" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ListInputOperations" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "nodeGrapherNext.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Animation" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "out_animCurveTA.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-        menuItem
-            -label "Add Motion Trail" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateMotionTrail;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "motionTrail.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "menuEditorMenuItem3" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "CreateMotionTrailOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Create MASH" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "MASHnewNetwork(\"MASH#\")" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "MASH_CreateNetwork.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "menuEditorMenuItem10" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "MASHOutliner" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Flow Path Object" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "FlowPathObject;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "flowPathObj.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "menuEditorMenuItem7" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "FlowPathObjectOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Motion Path Key" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "SetKeyPath" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "motionPathKey.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Grease Pencil" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "GreasePencilTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "GreasePencil.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Attach To Motion Path" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AttachToPath;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "motionPath.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-        menuItem
-            -label "menuEditorMenuItem12" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AttachToPathOptions;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Set Driven Key" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "SetDrivenKeyOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "setDrivenKeyframe.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
-
-        menuItem
-            -label "Expression Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ExpressionEditor" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_expression.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem16;
-
-        menuItem
-            -label "Evaluation Toolkit" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "EvaluationToolkit" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "reverseOrder.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem15;
-
-        menuItem
-            -label "Bake Animation" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "doBakeSimulationArgList 8 { \"1\",\"0\",\"10\",\"1\",\"0\",\"0\",\"1\",\"1\",\"0\",\"1\",\"animationList\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"1\" };" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "bakeAnimation.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem19;
-
-        menuItem
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "BakeSimulationOptions" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 1
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 0
-            -echoCommand 0
-            -italicized 0
-            -boldFont 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem20;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Scene" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "CameraAE.png" 
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem17;
-
-        menuItem
-            -label "Show" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "showBatchRender.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
-
-            menuItem
-                -label "Local Axes" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ToggleLocalRotationAxes;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "E" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "polyNormalSetToFace.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "XRay Mode" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "dR_objectXrayTGL" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "S" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "XRay.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "HUD Info" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "SE" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "info.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Edit" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "editRenderPass.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-            menuItem
-                -label "Freeze Transform" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "FreezeTransformations" 
-                -keyEquivalent "F" 
-                -altModifier 1
-                -optionModifier 1
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 1
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "NE" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "UV_Freeze_Tool.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "menuEditorMenuItem3" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "FreezeTransformationsOptions" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "Delete History" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "DeleteHistory" 
-                -keyEquivalent "D" 
-                -altModifier 1
-                -optionModifier 1
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 1
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "E" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "clearHistory.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Center Pivot" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "CenterPivot" 
-                -keyEquivalent "P" 
-                -altModifier 1
-                -optionModifier 1
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 1
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "SE" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "menuIconModify.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem5;
-
-            menuItem
-                -label "Delete Locked" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "DeleteLockedNode" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "S" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "deleteActive.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem6;
-
-            menuItem
-                -label "Delete Unknown Nodes" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "DeleteUnknownNode" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "N" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "deleteGeneric.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem7;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Select" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "highlightSelect.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-            menuItem
-                -label "None" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "SelectNone" 
-                -keyEquivalent "D" 
-                -altModifier 1
-                -optionModifier 1
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "SE" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "hotkeyFieldClear.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Hierarchy" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "SelectHierarchy" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "NE" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "selectByHierarchy.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "All" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "SelectAll" 
-                -keyEquivalent "A" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 1
-                -shiftModifier 1
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "E" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "aselect.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Similar" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "SelectSimilar" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "NW" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "selectSimilar.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem6;
-
-            menuItem
-                -label "menuEditorMenuItem7" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "SelectSimilarOptions" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem7;
-
-            menuItem
-                -label "Camera" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "SelectCamera" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "N" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "Camera.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem8;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Reset" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "hyperShadeResetCameraView.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem13;
-
-            menuItem
-                -label "Main Camera" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ClearPersp;\nviewSet -h" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "NW" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "hyperShadeResetCameraView.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Render Settings" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ResetUI;\nunifiedRenderGlobalsWindow" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "W" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "rvRenderGlobals.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Match" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "polyAlignUVs.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-            menuItem
-                -label "Scaling" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "MatchScaling" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "NW" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "scale_M.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Rotation" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "MatchRotation" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "W" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "rotate_M.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Translation" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "MatchTranslation" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "SW" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "move_M.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "All Transforms" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "MatchTransform" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "S" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nodeGrapherModeAllLarge.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Pivots" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "MatchPivots" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "SE" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "pickPivotComp.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem5;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Measure" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "out_distanceDimShape.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-            menuItem
-                -label "Distance Tool" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "DistanceTool" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "W" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "distanceDim.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "Arc Length Tool" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ArcLengthTool" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "NW" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "arcLengthDim.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem2;
-
-            menuItem
-                -label "Parameter Tool" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "ParameterTool" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -radialPosition "SW" 
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "paramDim.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Cache" 
-            -divider 0
-            -subMenu 1
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -enableCommandRepeat 1
-            -image "nClothCacheCreate.png" 
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-            menuItem
-                -label "Create nCache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "nClothCache" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nClothCacheCreate.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem1;
-
-            menuItem
-                -label "menuEditorMenuItem2" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "nClothCacheOpt" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem27;
-
-            menuItem
-                -label "Delete nCache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "deleteNclothCache" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "nClothCacheDelete.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem3;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator" 
-                -subMenu 0
-                -tearOff 0
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem4;
-
-            menuItem
-                -label "Create Fluid Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "CreateFluidCache" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "fluidCacheCreate.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem5;
-
-            menuItem
-                -label "menuEditorMenuItem6" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "CreateFluidCacheOptions;" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem28;
-
-            menuItem
-                -label "Delete Fluid Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "fluidDeleteCache" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "fluidCacheDelete.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem7;
-
-            menuItem
-                -label "menuEditorMenuItem8" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "fluidDeleteCacheOpt" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem29;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator" 
-                -subMenu 0
-                -tearOff 0
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem9;
-
-            menuItem
-                -label "Create Geometry Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "geometryCache" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "createCache.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem10;
-
-            menuItem
-                -label "menuEditorMenuItem11" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "geometryCacheOpt" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem30;
-
-            menuItem
-                -label "Delete Geometry Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "deleteGeometryCache" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "deleteCache.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem12;
-
-            menuItem
-                -label "menuEditorMenuItem13" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "geometryDeleteCacheOpt" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem31;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator" 
-                -subMenu 0
-                -tearOff 0
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem14;
-
-            menuItem
-                -label "Create Muscle Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "cMuscle_makeCacheUI(); " 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "cMuscle_skin_cacheCreate.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem15;
-
-            menuItem
-                -label "Delete Muscle Node Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "cMuscle_deleteNodeCacheUI(); " 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "cMuscle_skin_cacheDelete.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem16;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator" 
-                -subMenu 0
-                -tearOff 0
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem17;
-
-            menuItem
-                -label "Export Selection to GPU Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilExport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem19;
-
-            menuItem
-                -label "menuEditorMenuItem20" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "GpuCacheExportSelectionOptions" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem32;
-
-            menuItem
-                -label "Import GPU Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doGpuCacheImportArgList 1 {\"0\",\"0\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilImport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem18;
-
-            menuItem
-                -label "Refresh GPU Cache" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "GpuCacheRefreshAll" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "QR_refresh.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem21;
-
-            menuItem
-                -label "separator" 
-                -divider 1
-                -dividerLabel "separator" 
-                -subMenu 0
-                -tearOff 0
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem22;
-
-            menuItem
-                -label "Export Selection to Alembic" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doAlembicExportArgList 7 {\"0\",\"2\",\"1\",\"24\",\"1\",\"0\",\"-0.2\",\"0.2\",\"0\",\"0\",\"\",\"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"\",\"\",\"\",\"\",\"0\",\"0\",\"0\",\"2\",\"1\",\"0\",\"0\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilExport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem25;
-
-            menuItem
-                -label "menuEditorMenuItem26" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "AlembicExportSelectionOptions" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem34;
-
-            menuItem
-                -label "Import Alembic" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 0
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 1
-                -image "greasePencilImport.png" 
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem23;
-
-            menuItem
-                -label "menuEditorMenuItem24" 
-                -divider 0
-                -subMenu 0
-                -tearOff 0
-                -command "AlembicImportOptions" 
-                -altModifier 0
-                -optionModifier 0
-                -commandModifier 0
-                -ctrlModifier 0
-                -shiftModifier 0
-                -optionBox 1
-                -enable 1
-                -data 0
-                -allowOptionBoxes 1
-                -postMenuCommandOnce 0
-                -enableCommandRepeat 0
-                -echoCommand 0
-                -italicized 0
-                -boldFont 1
-                -sourceType "mel" 
-                -longDivider 1
-                menuEditorMenuItem35;
-
-        setParent -m ..;
-
-        menuItem
-            -label "Profiler" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "ProfilerTool" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_timeEditorTrack.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Align Tool" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setToolTo alignToolCtx" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "alignTool.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Set Project" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetProject" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "folder-closed.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
-
-    menuItem
-        -label "Project Window" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ProjectWindow" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "folder-new.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
-
-    menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
-
-    menuItem
-        -label "Content Browser" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "folder-open.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
+int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
+int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
+string $cmCheck = `colorManagementPrefs -q -cme`;
+
+menuItem
+-label "Polygons"
+-subMenu 1
+-radialPosition "N"
+-image "polyCube.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Quad Draw"
+-command "dR_quadDrawTool;"
+-radialPosition "N"
+-image "quadDraw_NEX32.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Cube"
+-command "CreatePolygonCube;"
+-radialPosition "E"
+-image "polyCube.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CreatePolygonCubeOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Plane"
+-command "CreatePolygonPlane"
+-radialPosition "NE"
+-image "polyMesh.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "CreatePolygonPlaneOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Sphere"
+-command "CreatePolygonSphere;"
+-radialPosition "W"
+-image "polySphere.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreatePolygonSphereOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Create"
+-command "CreatePolygonTool;"
+-radialPosition "NW"
+-image "polyCreateFacet.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "CreatePolygonToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Type"
+-command "CreatePolygonType"
+-radialPosition "SW"
+-image "polyType.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "SVG"
+-command "CreatePolygonSVG"
+-radialPosition "SE"
+-image "polySVG.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Interactive Creation"
+-command "toggleCreatePolyPrimitiveAsTool"
+-checkBox (1 == $PolyIntCheck)
+-sourceType "mel"
+menuEditorMenuItem12;
+
+setParent -m ..;
+
+menuItem
+-label "Rendering"
+-subMenu 1
+-radialPosition "W"
+-image "render.png"
+-sourceType "mel"
+menuEditorMenuItem33;
+
+menuItem
+-label "Batch Render"
+-command "BatchRender"
+-radialPosition "NW"
+-image "batchRender.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem5"
+-command "BatchRenderOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Render Sequence"
+-command "RenderSequence"
+-radialPosition "NE"
+-image "menuIconRender.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Color Management"
+-command "ToggleColorManagement" 
+-keyEquivalent "K"
+-radialPosition "S"
+-checkBox (1 == $cmCheck) 
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Shade Attributes"
+-command "SelectAssignedShader"
+-radialPosition "W"
+-image "out_shadingEngine.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Toggle Resolution Gate"
+-command "ToggleResolutionGate"
+-radialPosition "SE"
+-image "ResolutionGate.png"
+-sourceType "mel"
+menuEditorMenuItem98;
+
+menuItem
+-label "Playblast"
+-command "PlayblastWindow"
+-radialPosition "N"
+-image "playblast.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "PlayblastOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Camera Bookmark"
+-command "CameraBookmark"
+-image "Bookmark.png"
+-sourceType "mel"
+menuEditorMenuItem96;
+
+menuItem
+-label "Render View"
+-command "MtoaRenderView"
+-image "RenderViewShelf.png"
+-sourceType "mel"
+menuEditorMenuItem70;
+
+menuItem
+-label "Hypershade"
+-command "HypershadeWindow"
+-image "da_hypershadeEditor.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "UV Editor"
+-command "TextureViewWindow"
+-image "textureEditor.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Rendering Flags"
+-command "RenderFlagsWindow"
+-image "menuIconRenderSettings.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "File Path Editor"
+-command "FilePathEditor;"
+-image "da_filePath.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Transfer Maps"
+-command "performSurfaceSampling 1"
+-image "displacementMap_64.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Add Camera"
+-command "CreateCameraOnly"
+-radialPosition "SW"
+-image "view.png"
+-boldFont 0
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-command "CreateCameraOnlyOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-boldFont 0
+-sourceType "mel"
+menuEditorMenuItem15;
+
+setParent -m ..;
+
+menuItem
+-label "Rigging"
+-subMenu 1
+-radialPosition "SW"
+-image "humanIK_CharCtrl.png"
+-sourceType "mel"
+menuEditorMenuItem34;
+
+menuItem
+-label "Create Joint"
+-command "JointTool;"
+-radialPosition "SW"
+-image "kinJoint.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "JointToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Parent Constraint"
+-command "ParentConstraint;"
+-radialPosition "S"
+-image "parentConstraint.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "ParentConstraintOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Aim Constraint"
+-command "AimConstraint;"
+-radialPosition "E"
+-image "aimConstraint.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "AimConstraintOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Scale Constraint"
+-command "scaleConstraint;"
+-radialPosition "SE"
+-image "scaleConstraint.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem10"
+-command "ScaleConstraintOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Rivet Constraint"
+-command "djRivet"
+-radialPosition "N"
+-image "Rivet.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "IK Handle"
+-command "IKHandleTool;"
+-radialPosition "NW"
+-image "kinHandle.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "menuEditorMenuItem18"
+-command "IKHandleToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "IK Spline Handle"
+-command "IKSplineHandleTool;"
+-radialPosition "W"
+-image "kinSplineHandle.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "menuEditorMenuItem20"
+-command "IKSplineHandleToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "Context Connector"
+-command "ContextConnector"
+-image "out_geoConnectable.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Connection Editor"
+-command "ConnectionEditor"
+-image "out_list.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Massive Attribute Editor"
+-command "MassAttr"
+-image "layerEditor.png"
+-sourceType "mel"
+menuEditorMenuItem80;
+
+menuItem
+-label "Attributes"
+-subMenu 1
+-image "attributes.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "Add"
+-command "AddAttribute;"
+-image "publishAttributes.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Edit"
+-command "RenameAttribute"
+-image "setEdEditMode.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Delete"
+-command "DeleteAttribute"
+-image "unpublishAttributes.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "Weight Driver"
+-subMenu 1
+-image "weightDriver.png"
+-sourceType "mel"
+menuEditorMenuItem99;
+
+menuItem
+-label "RBF"
+-command "weightDriverEditRBF"
+-sourceType "mel"
+menuEditorMenuItem98;
+
+menuItem
+-label "Vector Angle"
+-command "WeightDriverRig"
+-sourceType "mel"
+menuEditorMenuItem97;
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-label "NURBS"
+-subMenu 1
+-radialPosition "NE"
+-image "sphere.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "CV Curve"
+-command "CVCurveTool;"
+-radialPosition "N"
+-image "curveCV.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CVCurveToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Circle"
+-command "CreateNURBSCircle;"
+-radialPosition "NE"
+-image "circle.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "CreateNURBSCircleOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Text"
+-command "CreateTextOptions;"
+-radialPosition "NW"
+-image "text.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Import .ai"
+-command "CreateIllustratorCurves;"
+-radialPosition "W"
+-image "ai.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Sphere"
+-command "CreateNURBSSphere;"
+-radialPosition "SE"
+-image "sphere.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "CreateNURBSSphereOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Plane"
+-command "CreateNURBSPlane"
+-radialPosition "S"
+-image "plane.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem10"
+-command "CreateNURBSPlaneOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Pencil"
+-command "PencilCurveTool"
+-radialPosition "E"
+-image "pencil.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "menuEditorMenuItem12"
+-command "PencilCurveToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Interactive Creation"
+-command "toggleCreateNurbsPrimitiveAsTool;"
+-checkBox (1 == $NurbsIntCheck)
+-boldFont 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+setParent -m ..;
+
+menuItem
+-label "Lights"
+-subMenu 1
+-radialPosition "E"
+-image "spotlight.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Directional"
+-command "CreateDirectionalLight;"
+-radialPosition "E"
+-image "directionallight.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "CreateDirectionalLightOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Spot"
+-command "CreateSpotLight;"
+-radialPosition "SE"
+-image "spotlight.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreateSpotLightOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Point"
+-command "CreatePointLight;"
+-radialPosition "SW"
+-image "pointlight.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "CreatePointLightOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Area"
+-command "CreateAreaLight"
+-radialPosition "NE"
+-image "AreaLightShelf.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem9"
+-command "CreateAreaLightOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "SkyDome"
+-command "aiSkyDome"
+-radialPosition "NW"
+-image "SkydomeLightShelf.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Photometric"
+-command "aiPhotometric"
+-radialPosition "S"
+-image "PhotometricLightShelf.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Portal"
+-command "aiLightPortal"
+-radialPosition "N"
+-image "LightPortalShelf.png"
+-sourceType "mel"
+menuEditorMenuItem99;
+
+menuItem
+-label "Light Linking"
+-command "LightCentricLightLinkingEditor"
+-image "out_defaultLightList.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+setParent -m ..;
+
+menuItem
+-label "Objects"
+-subMenu 1
+-radialPosition "SE"
+-image "posEmitter.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Locator"
+-command "CreateLocator;"
+-radialPosition "NE"
+-image "locator"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Fluid Container"
+-command "Create3DContainer"
+-radialPosition "N"
+-image "fluidCreate3D.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "Create3DContainerOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Duplicate"
+-command "DuplicateWithTransform" 
+-keyEquivalent "D"
+-shiftModifier 1
+-radialPosition "SE"
+-image "da_duplicate.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "DuplicateSpecialOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Paint Effects"
+-command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-radialPosition "W"
+-image "paintEffectsTool.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "menuEditorMenuItem18"
+-command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "Instance Along Curve"
+-command "runInstanceAlongCurve"
+-radialPosition "E"
+-image "instanceAlongCurve.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "nParticle"
+-command "NParticleTool"
+-radialPosition "SW"
+-image "particle.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "NParticleToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "nParticles Emitter"
+-command "NCreateEmitter;"
+-radialPosition "S"
+-image "posEmitter.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "NCreateEmitterOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "Component Editor"
+-command "ComponentEditor"
+-image "da_componentEditor.png"
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Particle Style"
+-subMenu 1
+-image "out_particle.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Points"
+-command "optionVar -stringValue NParticleStyle \"Points\";"
+-image "nPartPoints.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Balls"
+-command "optionVar -stringValue NParticleStyle \"Balls\";"
+-image "nPartBalls.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Cloud"
+-command "optionVar -stringValue NParticleStyle \"Cloud\";"
+-image "nPartCloud.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "ThickCloud"
+-command "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-image "nPartThickCloud.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Water"
+-command "optionVar -stringValue NParticleStyle \"Water\";"
+-image "nPartWater.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+setParent -m ..;
+
+menuItem
+-label "Fields"
+-subMenu 1
+-image "posRadial.png"
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Air"
+-command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posAir.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Drag"
+-command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posDrag.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Gravity"
+-command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posGravity.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Newton"
+-command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posNewton.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Radial"
+-command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posRadial.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Turbulence"
+-command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posTurbulence.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Uniform"
+-command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posUniform.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Vortex"
+-command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posVortex.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Volume Axis"
+-command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posVolumeAxis.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "Input Order"
+-command "ListInputOperations"
+-image "nodeGrapherNext.png"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+setParent -m ..;
+
+menuItem
+-label "Animation"
+-subMenu 1
+-radialPosition "NW"
+-image "out_animCurveTA.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Add Motion Trail"
+-command "CreateMotionTrail;"
+-radialPosition "SW"
+-image "motionTrail.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "CreateMotionTrailOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Create MASH"
+-command "MASHnewNetwork(\"MASH#\")"
+-radialPosition "N"
+-image "MASH_CreateNetwork.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "menuEditorMenuItem10"
+-command "MASHcreateOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Flow Path Object"
+-command "FlowPathObject;"
+-radialPosition "W"
+-image "flowPathObj.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "FlowPathObjectOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Grease Pencil"
+-command "GreasePencilTool"
+-radialPosition "NE"
+-image "GreasePencil.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Attach To Motion Path"
+-command "AttachToPath;"
+-radialPosition "NW"
+-image "motionPath.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem12"
+-command "AttachToPathOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Bake Animation"
+-command "doBakeSimulationArgList 8 { \"1\",\"0\",\"10\",\"1\",\"0\",\"0\",\"1\",\"1\",\"0\",\"1\",\"animationList\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"1\" };"
+-radialPosition "E"
+-image "bakeAnimation.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "menuEditorMenuItem20"
+-command "BakeSimulationOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "Shape Editor"
+-command "ShapeEditor"
+-image "blendShapeEditor.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Graph Editor"
+-command "GraphEditor"
+-image "getGraphEditor.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Dynamic Relationships"
+-command "DynamicRelationshipEditor"
+-image "da_dynamicEditor.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "Set Driven Key"
+-command "SetDrivenKeyOptions"
+-image "setDrivenKeyframe.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Expression Editor"
+-command "ExpressionEditor"
+-image "out_expression.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+setParent -m ..;
+
+menuItem
+-label "Scene"
+-subMenu 1
+-radialPosition "S"
+-image "CameraAE.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "Show"
+-subMenu 1
+-radialPosition "SE"
+-image "showBatchRender.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Local Axes"
+-command "ToggleLocalRotationAxes;"
+-radialPosition "E"
+-image "polyNormalSetToFace.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "XRay Mode"
+-command "dR_objectXrayTGL"
+-radialPosition "S"
+-image "XRay.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "HUD Info"
+-command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD"
+-radialPosition "SE"
+-image "info.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "Edit"
+-subMenu 1
+-radialPosition "E"
+-image "editRenderPass.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Freeze Transform"
+-command "FreezeTransformations" 
+-keyEquivalent "F"
+-shiftModifier 1
+-radialPosition "NE"
+-image "UV_Freeze_Tool.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "FreezeTransformationsOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Delete History"
+-command "DeleteHistory" 
+-keyEquivalent "D"
+-shiftModifier 1
+-radialPosition "E"
+-image "clearHistory.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Center Pivot"
+-command "CenterPivot" 
+-keyEquivalent "P"
+-shiftModifier 1
+-radialPosition "SE"
+-image "menuIconModify.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Delete Locked"
+-command "DeleteLockedNode"
+-radialPosition "NW"
+-image "deleteActive.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Delete Unknown Nodes"
+-command "DeleteUnknownNode"
+-radialPosition "N"
+-image "deleteGeneric.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Reset Transform"
+-command "ResetTransformations" 
+-keyEquivalent "H"
+-radialPosition "S"
+-image "teKeyRefresh.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+setParent -m ..;
+
+menuItem
+-label "Select"
+-subMenu 1
+-radialPosition "NE"
+-image "highlightSelect.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "None"
+-command "SelectNone" 
+-keyEquivalent "D"
+-radialPosition "SE"
+-image "hotkeyFieldClear.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Hierarchy"
+-command "SelectHierarchy"
+-radialPosition "NE"
+-image "selectByHierarchy.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "All"
+-command "SelectAll" 
+-keyEquivalent "A"
+-ctrlModifier 1
+-shiftModifier 1
+-radialPosition "E"
+-image "aselect.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Similar"
+-command "SelectSimilar"
+-radialPosition "NW"
+-image "selectSimilar.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "SelectSimilarOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Camera"
+-command "SelectCamera"
+-radialPosition "N"
+-image "Camera.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+setParent -m ..;
+
+menuItem
+-label "Reset"
+-subMenu 1
+-radialPosition "NW"
+-image "hyperShadeResetCameraView.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Main Camera"
+-command "ClearPersp;\nviewSet -h"
+-radialPosition "NW"
+-image "hyperShadeResetCameraView.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Render Settings"
+-command "ResetUI;\nunifiedRenderGlobalsWindow"
+-radialPosition "W"
+-image "rvRenderGlobals.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+menuItem
+-label "Measure"
+-subMenu 1
+-radialPosition "W"
+-image "out_distanceDimShape.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Distance Tool"
+-command "DistanceTool"
+-radialPosition "W"
+-image "distanceDim.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Arc Length Tool"
+-command "ArcLengthTool"
+-radialPosition "NW"
+-image "arcLengthDim.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Parameter Tool"
+-command "ParameterTool"
+-radialPosition "SW"
+-image "paramDim.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "Align Tool"
+-command "setToolTo alignToolCtx"
+-radialPosition "S"
+-image "alignTool.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Reference Editor"
+-command "ReferenceEditor"
+-image "da_referenceEditor.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Relationship Editor"
+-command "SetEditor"
+-image "da_relationshipEditor.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Evaluation Toolkit"
+-command "EvaluationToolkit"
+-image "polyColorSetEditor.png"
+-sourceType "mel"
+menuEditorMenuItem99;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Cache"
+-subMenu 1
+-image "nClothCacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Create nCache"
+-command "nClothCache"
+-image "nClothCacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "nClothCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem27;
+
+menuItem
+-label "Delete nCache"
+-command "deleteNclothCache"
+-image "nClothCacheDelete.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Create Fluid Cache"
+-command "CreateFluidCache"
+-image "fluidCacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreateFluidCacheOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem28;
+
+menuItem
+-label "Delete Fluid Cache"
+-command "fluidDeleteCache"
+-image "fluidCacheDelete.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "fluidDeleteCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem29;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Create Geometry Cache"
+-command "geometryCache"
+-image "createCache.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "geometryCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem30;
+
+menuItem
+-label "Delete Geometry Cache"
+-command "deleteGeometryCache"
+-image "deleteCache.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "geometryDeleteCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem31;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Create Muscle Cache"
+-command "cMuscle_makeCacheUI(); "
+-image "cMuscle_skin_cacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Delete Muscle Node Cache"
+-command "cMuscle_deleteNodeCacheUI(); "
+-image "cMuscle_skin_cacheDelete.png"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "Export Selection to GPU Cache"
+-command "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};"
+-image "greasePencilExport.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "menuEditorMenuItem20"
+-command "GpuCacheExportSelectionOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem32;
+
+menuItem
+-label "Import GPU Cache"
+-command "doGpuCacheImportArgList 1 {\"0\",\"0\"};"
+-image "greasePencilImport.png"
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "Refresh GPU Cache"
+-command "GpuCacheRefreshAll"
+-image "QR_refresh.png"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "Export Selection to Alembic"
+-command "doAlembicExportArgList 7 {\"0\",\"2\",\"1\",\"24\",\"1\",\"0\",\"-0.2\",\"0.2\",\"0\",\"0\",\"\",\"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"\",\"\",\"\",\"\",\"0\",\"0\",\"0\",\"2\",\"1\",\"0\",\"0\"};"
+-image "greasePencilExport.png"
+-sourceType "mel"
+menuEditorMenuItem25;
+
+menuItem
+-label "menuEditorMenuItem26"
+-command "AlembicExportSelectionOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem34;
+
+menuItem
+-label "Import Alembic"
+-command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};"
+-image "greasePencilImport.png"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "menuEditorMenuItem24"
+-command "AlembicImportOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem35;
+
+setParent -m ..;
+
+menuItem
+-label "Profiler"
+-command "ProfilerTool"
+-image "out_timeEditorTrack.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+setParent -m ..;
+
+menuItem
+-label "Node Editor"
+-command "NodeEditorWindow"
+-image "da_nodeEditor.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Set Project"
+-command "SetProject"
+-image "folder-closed.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Project Window"
+-command "ProjectWindow"
+-image "folder-new.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Visor" 
+-command "VisorWindow"
+-image "folder-open.png"
+-sourceType "mel"
+menuEditorMenuItem7;
 
 setParent -m ..;
 

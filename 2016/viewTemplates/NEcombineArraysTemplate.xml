@@ -2,15 +2,23 @@
 <templates>
 	<using package='maya'/>
 	<template name='NEcombineArrays'>
+		<attribute name='envelope' type='maya.bool'>
+			<label>Envelope</label>
+		</attribute>
 		<attribute name='outArray' type='maya.Int32Array'>
 			<label>Out Array</label>
+		</attribute>
+		<attribute name='outCount' type='maya.long'>
+			<label>Out Count</label>
 		</attribute>
 		<attribute name='inArrays' type='maya.Int32Array'>
 			<label>In Arrays</label>
 		</attribute>
 	</template>
 	<view name='NEDefault' template='NEcombineArrays'>
+		<property name='envelope'/>
 		<property name='outArray'/>
+		<property name='outCount'/>
 		<property name='inArrays'/>
 	</view>
 </templates>

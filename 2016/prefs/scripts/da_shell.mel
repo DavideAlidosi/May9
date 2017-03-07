@@ -1,0 +1,149 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2017 Davide Alidosi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+global proc da_shell(){
+	string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myShape[] = `listRelatives -s`;
+	duplicate;
+	string $myShell[] = `listRelatives -s`;
+	connectAttr -f ($myShape[0] + ".outMesh") ($myShell[0] + ".inMesh");
+	
+	string $myShellTransform[] = `listRelatives -p $myShell`;
+	select $myShellTransform;
+	ResetTweakPoint;
+	dR_modeObject;
+	
+	polyNormal -normalMode 0 -userNormalMode 0 -ch 1 $myShell;
+	polyExtrudeFacet -tk 1;
+	select $myShell;
+	string $myPolyExtrudeFace[] = `listConnections -s 1 -d 0 -t "polyExtrudeFace"`;
+	polyBevel3 -c 1 -sg 1 -sn 1 -sa 30 -oaf 0 -o 0.1;
+	string $myPolyBevel[] = `listConnections -s 1 -d 0 -t "polyBevel3"`;
+
+	setAttr ($myShell[0] +".overrideEnabled") 1;
+	setAttr ($myShell[0] +".overrideDisplayType") 2;
+
+	setAttr ($myShape[0] + ".primaryVisibility") 0;
+	setAttr ($myShape[0] + ".overrideEnabled") 1;
+	setAttr ($myShape[0] + ".overrideShading") 0;
+	setAttr ($myShape[0] + ".visibility") 1;
+	setAttr ($myShape[0] + ".castsShadows") 0;
+	setAttr ($myShape[0] + ".receiveShadows") 0;
+	setAttr ($myShape[0] + ".motionBlur") 0;
+	setAttr ($myShape[0] + ".smoothShading") 0;
+	setAttr ($myShape[0] + ".visibleInReflections") 0;
+	setAttr ($myShape[0] + ".visibleInRefractions") 0;
+	setAttr ($myShape[0] + ".aiVisibleInDiffuse") 0;
+	setAttr ($myShape[0] + ".aiVisibleInGlossy") 0;
+
+	addAttr -ln "Thickness"  -at double  -min 0.001 -dv 1 $myTransform;
+	addAttr -ln "Bevel"  -at "enum" -en "On:Off:" $myTransform;
+	addAttr -ln "Chamfer"  -at bool $myTransform;
+	addAttr -ln "Offset"  -at double  -min 0.001 -dv 0.1 $myTransform;
+	addAttr -ln "Segments"  -at long  -min 1 -dv 1 $myTransform;
+	setAttr -e-keyable true ($myTransform[0] + ".Thickness");
+	setAttr -e-keyable true ($myTransform[0] + ".Bevel");
+	setAttr -e-keyable true ($myTransform[0] + ".Chamfer") 1;
+	setAttr -e-keyable true ($myTransform[0] + ".Offset");
+	setAttr -e-keyable true ($myTransform[0] + ".Segments");
+
+	connectAttr -f ($myTransform[0] + ".Thickness") ($myPolyExtrudeFace[0] + ".thickness");
+	connectAttr -f ($myTransform[0] + ".Offset") ($myPolyBevel[0] + ".offset");
+	connectAttr -f ($myTransform[0] + ".Segments") ($myPolyBevel[0] + ".segments");
+	connectAttr -f ($myTransform[0] + ".Chamfer") ($myPolyBevel[0] + ".chamfer");
+	connectAttr -f ($myTransform[0] + ".Bevel") ($myPolyBevel[0] + ".nodeState");
+	
+	select $myShell;
+	pickWalk -d up;
+	rename da_shell1;
+
+	select $myTransform;
+	rename da_shellBase1;
+}
+
+global proc da_shellDetach(){
+	BackToObjectMode;
+
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myShape[] = `listRelatives -s`;
+
+	setAttr ($myShape[0] + ".primaryVisibility") 1;
+	setAttr ($myShape[0] + ".overrideEnabled") 0;
+	setAttr ($myShape[0] + ".overrideShading") 1;
+	setAttr ($myShape[0] + ".visibility") 1;
+	setAttr ($myShape[0] + ".castsShadows") 1;
+	setAttr ($myShape[0] + ".receiveShadows") 1;
+	setAttr ($myShape[0] + ".motionBlur") 1;
+	setAttr ($myShape[0] + ".smoothShading") 1;
+	setAttr ($myShape[0] + ".visibleInReflections") 1;
+	setAttr ($myShape[0] + ".visibleInRefractions") 1;
+	setAttr ($myShape[0] + ".aiVisibleInDiffuse") 1;
+	setAttr ($myShape[0] + ".aiVisibleInGlossy") 1;
+
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+
+	setAttr ($myShell[0] +".overrideEnabled") 1;
+	setAttr ($myShell[0] +".overrideDisplayType") 0;
+	
+	deleteAttr ($myTransform[0] + ".Thickness");
+	deleteAttr ($myTransform[0] + ".Bevel");
+	deleteAttr ($myTransform[0] + ".Chamfer");
+	deleteAttr ($myTransform[0] + ".Offset");
+	deleteAttr ($myTransform[0] + ".Segments");
+
+	select $myShape;
+	pickWalk -d up;
+	rename da_exShellBase1;
+
+	select $myShell;
+	pickWalk -d up;
+	rename da_extractShell1;
+	ClearFreeze;
+}
+
+global proc da_shellSubdiv(){
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+	
+	select $myShell;
+    HighQualityDisplay;
+    
+    select $myTransform;
+}
+
+global proc da_shellNoSubdiv(){
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+	
+	select $myShell;
+    LowQualityDisplay;
+    
+    select $myTransform;
+}

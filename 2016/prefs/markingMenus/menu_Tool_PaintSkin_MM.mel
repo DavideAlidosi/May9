@@ -1,30 +1,5 @@
 
     menuItem
-        -label "Toggle Selection\\Paint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleSelPaintSkin" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
         -label "Add" 
         -divider 0
         -subMenu 0
@@ -117,6 +92,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "XRayJoints.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -125,7 +101,7 @@
         menuEditorMenuItem8;
 
     menuItem
-        -label "Toggle Ramp Visibility" 
+        -label "Toggle Ramp Type" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -138,10 +114,11 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "SW" 
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "da_rampType.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -173,6 +150,32 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
+
+    menuItem
+        -label "Toogle Wireframe" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ToggleSkinWireframe" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "WireFrameOnShaded.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
 
 setParent -m ..;
 
