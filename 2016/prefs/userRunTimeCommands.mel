@@ -2058,3 +2058,27 @@ runTimeCommand
 	-command ("string $panel = `getPanel -wf`;\n$camera = `modelEditor -q -camera $panel`;\ncameraBookmarkEditor $camera;")
 	CameraBookmark;
 
+runTimeCommand
+	-annotation "Open ngSkinTools UI"
+	-category "Custom Scripts.May9_Pro.Plug-ins"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("from ngSkinTools.ui.mainwindow import MainWindow\nMainWindow.open()")
+	ngSkinToolsUI;
+
+runTimeCommand
+	-annotation "Load MASH"
+	-category "Custom Scripts.May9_Pro.Plug-ins"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`pluginInfo -q -loaded MASH` == 0){\n\tcatchQuiet(`loadPlugin \"MASH\"`);\n}")
+	LoadMASH;
+
+runTimeCommand
+	-annotation "Load MtoA"
+	-category "Custom Scripts.May9_Pro.Plug-ins"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`pluginInfo -q -loaded mtoa` == 0){\n\tcatchQuiet(`loadPlugin \"mtoa\"`);\n}")
+	LoadMtoa;
+
