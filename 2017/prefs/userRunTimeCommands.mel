@@ -2114,3 +2114,11 @@ runTimeCommand
 	-command ("string $panel = `getPanel -wf`;\n$camera = `modelEditor -q -camera $panel`;\ncameraBookmarkEditor $camera;")
 	CameraBookmark;
 
+runTimeCommand
+	-annotation "Create Rivet by MASH"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nstring $polySel[] = `filterExpand -sm 12`;\nif ($mySel[1] == $polySel[0]){\n    select $mySel[0];\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -s`;\n    \n    select $mySel[0];\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $mySel[1];\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n}else{\n    inViewMessage -pos topCenter -msg \"First select Components then Mesh\" -fade;\n}")
+	RivetMash;
+

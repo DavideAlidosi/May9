@@ -120,12 +120,13 @@
         -image "nConstraintSlideonSurface.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
+        -label "menuEditorMenuItem6" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -143,10 +144,36 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
+
+    menuItem
+        -label "MASH Rivet" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "RivetMash" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "MASH_CreateMeshFromPoints.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
 
 setParent -m ..;
 
