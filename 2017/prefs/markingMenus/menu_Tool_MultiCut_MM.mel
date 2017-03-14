@@ -2,6 +2,14 @@ int $deleteFaceOn = `nexOpt -q useDeleteFaces`;
 int $extractFacesOn = `nexOpt -q useExtractFaces`;
 int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
 
+	menuItem
+	-label "Quad Draw"
+	-command "dR_quadDrawTool;"
+	-radialPosition "NW"
+	-image "quadDraw_NEX32.png"
+	-sourceType "mel"
+	menuEditorMenuItem11;
+	
     menuItem
         -label "Cut Mode" 
         -divider 0

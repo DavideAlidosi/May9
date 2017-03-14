@@ -1,3 +1,5 @@
+string $objectShape[] = `listRelatives -s`;
+string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShape`;
 
     menuItem
         -label "Rebuild"
@@ -103,11 +105,18 @@
         menuEditorMenuItem23;
 
     menuItem
-        -label "Curve to Polygons"
+        -label "Convert to Polygons"
         -command "da_curveToPoly"
         -image "CurveToPoly.png"
         -sourceType "mel"
         menuEditorMenuItem1;
+
+	menuItem
+		-label "separator" 
+		-divider 1
+		-dividerLabel "separator"
+		-sourceType "mel"
+		menuEditorMenuItem99;
 
     menuItem
         -label "Planar"
@@ -152,6 +161,29 @@
         -dividerLabel "separator"
         -sourceType "mel"
         menuEditorMenuItem16;
+
+	menuItem
+        -label "Component Display" 
+        -subMenu 1
+		-image "RS_visible.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem90;
+
+		menuItem
+            -label "CVs" 
+            -command "ToggleCVs" 
+            -image "selectCVs.png" 
+            -sourceType "mel" 
+            menuEditorMenuItem1;
+
+		menuItem
+            -label "Hull" 
+            -command "ToggleHulls" 
+            -image "pickHullComp.png" 
+            -sourceType "mel" 
+            menuEditorMenuItem2;
+
+	setParent -m ..;
 
     menuItem
         -label "Deformers"
@@ -320,7 +352,8 @@
             -sourceType "mel"
             menuEditorMenuItem9;
 
-        menuItem
+        if ($myFollcie[0] != ""){
+		menuItem
             -label "Simulation Method"
             -subMenu 1
             -sourceType "mel"
@@ -364,6 +397,12 @@
                 -sourceType "mel"
                 menuEditorMenuItem2;
 
+			menuItem
+                -label "Tip"
+                -command "nHairLockTip"
+                -sourceType "mel"
+                menuEditorMenuItem4;
+
             menuItem
                 -label "Both Ends"
                 -command "nHairLockBothEnds"
@@ -392,6 +431,7 @@
                 menuEditorMenuItem2;
 
         setParent -m ..;
+		}
 
         menuItem
             -label "separator" 

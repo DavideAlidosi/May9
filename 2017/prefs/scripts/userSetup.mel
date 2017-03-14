@@ -1,5 +1,5 @@
 // Store May9 Version
-$may9Version = "May9 Pro 1.1.9";
+$may9Version = "May9 Pro 1.2.4";
 
 
 //////////// Basic setup ////////////
@@ -45,7 +45,8 @@ ik2Bsolver;
 ikSpringSolver;
 
 // Show Assigned Materials and Render Filter in Outliner
-scriptJob -runOnce true -idleEvent "outlinerEditor -e -showAssignedMaterials true outlinerPanel1;outlinerEditor -edit -renderFilterVisible true outlinerPanel1";
+string $outlinerOptions = "outlinerEditor -e -showAssignedMaterials true outlinerPanel1;outlinerEditor -e -renderFilterVisible true outlinerPanel1;";
+scriptJob -e "NewSceneOpened" $outlinerOptions;
 
 /////////// Scripts setup ///////////
 
@@ -58,8 +59,19 @@ source da_interactiveBooleans.mel;
 // Preload XGen Brush Mangemen
 source da_XGenBrushMangement.mel;
 
+// Preload Shell Proxy
+source da_shell.mel;
+
 // Preload alShaders Utilities
 source alsUtil.mel;
 
 // Preload Rain Curves from Edges
 source rainCurves.mel;
+
+// Preload Poly Separate
+source SepScript.mel;
+
+/////////// Workspace hack ///////////
+
+// Hide bottom editor
+scriptJob -runOnce true -idleEvent "workspaceControl -e -clp 1 componentEditorPanel1Window";

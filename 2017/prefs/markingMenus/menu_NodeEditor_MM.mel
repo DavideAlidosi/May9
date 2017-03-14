@@ -206,11 +206,11 @@
         menuEditorMenuItem1;
 
     menuItem
-        -label "Simple Connector" 
+        -label "Context Connector" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "openSimpleConnector" 
+        -command "ContextConnector" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -254,6 +254,31 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
+
+    menuItem
+        -label "Massive Attribute Editor" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "MassAttr" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "layerEditor.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem80;
 
     menuItem
         -label "Expression Editor" 
@@ -318,7 +343,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
-		-image "createNode.png" 
+        -image "createNode.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 

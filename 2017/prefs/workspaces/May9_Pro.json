@@ -1,6 +1,7 @@
 {
     "linkedMenu": "modelingMenuSet",
     "linkedHotkey": "May9_Pro",
+    "autoSave": false,
     "selectedShelf": "Polygons",
     "panels": [
         {
@@ -121,11 +122,10 @@
                                                     ]
                                                 }
                                             },
-                                            {},
                                             {
                                                 "tabWidget": {
-                                                    "selectedIndex": 0,
-                                                    "collapsed": true,
+                                                    "selectedIndex": 5,
+                                                    "collapsed": false,
                                                     "controls": [
                                                         {
                                                             "objectName": "hyperShadePanel1Window",
@@ -260,6 +260,16 @@
                                                 "requiredPlugins": [
                                                     "modelingToolkit"
                                                 ]
+                                            },
+                                            {
+                                                "objectName": "UVToolkitDockControl",
+                                                "title": "UV Toolkit",
+                                                "uiScript": "createUVToolkitDockControl();",
+                                                "retain": true,
+                                                "loadImmediately": true,
+                                                "checkPlugins": false,
+                                                "tabDirection": 3,
+                                                "closed": false
                                             },
                                             {
                                                 "objectName": "AttributeEditor",

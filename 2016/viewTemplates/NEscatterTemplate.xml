@@ -3,6 +3,9 @@
 	<using package='maya'/>
 	<using package='std'/>
 	<template name='NEscatter'>
+		<attribute name='outCount' type='maya.long'>
+			<label>Out Count</label>
+		</attribute>
 		<attribute name='outGeometry' type='maya.mesh'>
 			<label>Out Geometry</label>
 		</attribute>
@@ -20,6 +23,7 @@
 		</attribute>
 	</template>
 	<view name='NEDefault' template='NEscatter'>
+		<property name='outCount'/>
 		<property name='outGeometry'/>
 		<property name='outPositionPP'/>
 		<property name='inGeometry'/>

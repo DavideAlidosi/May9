@@ -102,7 +102,85 @@
         menuEditorMenuItem4;
 
     menuItem
-        -label "Set Resolution" 
+        -label "Render Sequence" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "RenderSequence" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "menuIconRender.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Real Size" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "renderWindowEditor -edit -realSize renderView;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "rvRealSize.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Keep Image" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "renderWindowMenuCommand keepImageInRenderView renderView;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "rvKeepIt.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Test Resolution" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -116,6 +194,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+		-image "ResolutionGate.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
@@ -220,11 +299,11 @@
     setParent -m ..;
 
     menuItem
-        -label "Render Sequence" 
+        -label "Select Camera" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "RenderSequence" 
+        -command "SelectCamera" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -233,17 +312,40 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "SE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "menuIconRender.png" 
+        -image "Camera.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem2;
+        menuEditorMenuItem7;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SelectCamera;\nAttributeEditor\n" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
 
 setParent -m ..;
 

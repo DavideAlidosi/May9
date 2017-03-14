@@ -104,6 +104,32 @@
         menuEditorMenuItem3;
 
     menuItem
+        -label "Light Editor" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "LightList" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "lightEditor.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
         -label "Normalize" 
         -divider 0
         -subMenu 1
@@ -176,11 +202,10 @@
     setParent -m ..;
 
     menuItem
-        -label "Light Editor" 
+        -label "Area to Portal Light" 
         -divider 0
-        -subMenu 0
+        -subMenu 1
         -tearOff 0
-        -command "LightList" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -189,17 +214,64 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
         -allowOptionBoxes 1
-        -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "lightEditor.png" 
-        -echoCommand 0
+        -image "MtoA_Logo.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem5;
+        menuEditorMenuItem4;
+
+        menuItem
+            -label "On" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "aiPortalLight" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Off" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "aiNoPortalLight" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 1
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+    setParent -m ..;
 
 setParent -m ..;
 

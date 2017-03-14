@@ -105,10 +105,11 @@
         menuEditorMenuItem2;
 
     menuItem
-        -label "Layouts" 
+        -label "Select Camera" 
         -divider 0
-        -subMenu 1
+        -subMenu 0
         -tearOff 0
+        -command "SelectCamera" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -118,298 +119,39 @@
         -enable 1
         -data 0
         -allowOptionBoxes 1
+        -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "perspHypergraphLayout.png" 
+        -image "Camera.png" 
+        -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem99;
 
-        menuItem
-            -label "Single Persp/Four View" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutSinglePersp" 
-            -keyEquivalent "0" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "singlePerspLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem11;
-
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
-
-        menuItem
-            -label "Persp/Hypershade" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutHypershadePersp" 
-            -keyEquivalent "1" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspMultiRenderLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Persp/Node Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutPerspNode" 
-            -keyEquivalent "2" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspHypergraphLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-        menuItem
-            -label "Persp/UV Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutPerspUV" 
-            -keyEquivalent "3" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspMultiOutlinerLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-        menuItem
-            -label "Persp/Graph Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutPerspGraph" 
-            -keyEquivalent "4" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspGraphLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
-
-        menuItem
-            -label "Persp/BlendShape Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutPerspBlendShapeEditor" 
-            -keyEquivalent "5" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspMultiOutlinerLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
-
-        menuItem
-            -label "Persp/Component Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "layoutPerspComponent" 
-            -keyEquivalent "6" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspRelationshipEditorLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
-
-        menuItem
-            -label "Persp/Relationship" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LayoutPerspRelation" 
-            -keyEquivalent "7" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspMultiOutlinerLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
-
-        menuItem
-            -label "Persp/Reference" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LayoutPerspReference" 
-            -keyEquivalent "8" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspMultiOutlinerLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem12;
-
-        menuItem
-            -label "Persp/Script Editor" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "LayoutPerspScript" 
-            -keyEquivalent "9" 
-            -altModifier 1
-            -optionModifier 1
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "perspOutlinerLayout.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
-
-    setParent -m ..;
+    menuItem
+        -label "menuEditorMenuItem7" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SelectCamera;\nAttributeEditor\n" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
 
 setParent -m ..;
 

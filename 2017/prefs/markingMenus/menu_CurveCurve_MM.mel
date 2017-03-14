@@ -1,3 +1,5 @@
+string $objectShape[] = `listRelatives -s`;
+string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShape`;
 
     menuItem
         -label "Surface from Curves"
@@ -175,6 +177,13 @@
         -image "instanceAlongCurve.png"
         -sourceType "mel"
         menuEditorMenuItem32;
+		
+	menuItem
+        -label "Combine" 
+        -command "CombineCurves" 
+        -image "da_combineCurves.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem99;
 
     menuItem
         -label "Paint FX to Curves"
@@ -184,11 +193,25 @@
         menuEditorMenuItem17;
 
     menuItem
-        -label "Curves to Polygons"
+        -label "Convert to Polygons"
         -command "da_curveToPoly"
         -image "CurveToPoly.png"
         -sourceType "mel"
         menuEditorMenuItem11;
+
+    menuItem
+        -label "Connect Shapes" 
+        -command "ConnectNurbsShapes" 
+        -image "da_OneToMany.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem80;
+
+	menuItem
+		-label "separator" 
+		-divider 1
+		-dividerLabel "separator"
+		-sourceType "mel"
+		menuEditorMenuItem98;
 
     menuItem
         -label "Planar"
@@ -233,6 +256,29 @@
         -dividerLabel "separator"
         -sourceType "mel"
         menuEditorMenuItem3;
+
+	menuItem
+        -label "Component Display" 
+        -subMenu 1
+		-image "RS_visible.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem90;
+
+		menuItem
+            -label "CVs" 
+            -command "ToggleCVs" 
+            -image "selectCVs.png" 
+            -sourceType "mel" 
+            menuEditorMenuItem1;
+
+		menuItem
+            -label "Hull" 
+            -command "ToggleHulls" 
+            -image "pickHullComp.png" 
+            -sourceType "mel" 
+            menuEditorMenuItem2;
+
+	setParent -m ..;
 
     menuItem
         -label "Deformers"
@@ -401,6 +447,7 @@
             -sourceType "mel"
             menuEditorMenuItem4;
 
+		if ($myFollcie[0] != ""){
         menuItem
             -label "Simulation Method"
             -subMenu 1
@@ -436,7 +483,6 @@
             menuItem
                 -label "No Attach"
                 -command "nHairNoLock"
-                -radialPosition "N"
                 -sourceType "mel"
                 menuEditorMenuItem1;
 
@@ -445,6 +491,12 @@
                 -command "nHairLockBase"
                 -sourceType "mel"
                 menuEditorMenuItem2;
+				
+			menuItem
+                -label "Tip"
+                -command "nHairLockTip"
+                -sourceType "mel"
+                menuEditorMenuItem4;
 
             menuItem
                 -label "Both Ends"
@@ -473,6 +525,7 @@
                 menuEditorMenuItem2;
 
         setParent -m ..;
+		}
 
         menuItem
             -label "separator" 

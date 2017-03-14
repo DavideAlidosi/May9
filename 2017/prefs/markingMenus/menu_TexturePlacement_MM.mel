@@ -55,81 +55,6 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Unfold" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performUnfold 0" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "textureEditorUnfoldUVs.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem15;
-
-    menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performUnfold 1" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem20;
-
-    menuItem
-        -label "Smooth" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSmoothSuperContext;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "texSmooth.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
-
-    menuItem
         -label "Select Shell" 
         -divider 0
         -subMenu 0
@@ -143,7 +68,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
+        -radialPosition "SE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -169,7 +94,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "SW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -180,6 +105,228 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
+
+    menuItem
+        -label "UV Toolkit" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "OpenUVToolkit" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "UVTk.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem19;
+
+    menuItem
+        -label "Symmetrize" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "symmetrizeUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem26;
+
+    menuItem
+        -label "menuEditorMenuItem31" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem24;
+
+    menuItem
+        -label "Optimize" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "optimizeUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem29;
+
+    menuItem
+        -label "menuEditorMenuItem30" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Cut/Sew" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "CutSewUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem18;
+
+    menuItem
+        -label "menuEditorMenuItem28" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
+    menuItem
+        -label "Spherical Mapping" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyProjection Spherical 0" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polySphereProjLarge.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem28;
 
     menuItem
         -label "Auto Seams" 
@@ -228,14 +375,14 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem19;
+        menuEditorMenuItem30;
 
     menuItem
-        -label "UV Borders" 
+        -label "Unfold" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "int $borders[] = `polyOptions -q -displayMapBorder`;float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];" 
+        -command "performUnfold 0" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -247,38 +394,37 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "textureBorder.png" 
+        -image "textureEditorUnfoldUVs.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem11;
+        menuEditorMenuItem15;
 
     menuItem
-        -label "Take Snapshot" 
+        -label "menuEditorMenuItem20" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performUVSnapshot" 
+        -command "performUnfold 1" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
-        -optionBox 0
+        -optionBox 1
         -enable 1
         -data 0
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyUVSnapshot.png" 
+        -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem27;
 
     menuItem
         -label "separator" 
@@ -354,6 +500,31 @@
         menuEditorMenuItem16;
 
     menuItem
+        -label "Take Snapshot" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performUVSnapshot" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyUVSnapshot.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
         -label "separator" 
         -divider 1
         -dividerLabel "separator" 
@@ -377,81 +548,6 @@
         menuEditorMenuItem9;
 
     menuItem
-        -label "Convert to Faces" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolySelectConvert 1" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "faces_NEX.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
-        -label "Convert to Edges" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ConvertSelectionToContainedEdges" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "edges_NEX.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
-
-    menuItem
-        -label "Convert to Vertices" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolySelectConvert 3" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "vertex_NEX.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
-
-    menuItem
         -label "Convert to UVs" 
         -divider 0
         -subMenu 0
@@ -468,7 +564,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "vertex_UV_NEX.png" 
+        -image "UVEditorVertex.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1

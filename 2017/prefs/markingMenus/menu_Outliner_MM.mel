@@ -105,6 +105,29 @@
         menuEditorMenuItem5;
 
     menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "CreateSetOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem13;
+
+    menuItem
         -label "Show Local Axes" 
         -divider 0
         -subMenu 0
@@ -227,6 +250,78 @@
             menuEditorMenuItem2;
 
     setParent -m ..;
+
+	menuItem
+		-label "Shading" 
+		-divider 0
+		-subMenu 1
+		-tearOff 0
+		-altModifier 0
+		-optionModifier 0
+		-commandModifier 0
+		-ctrlModifier 0
+		-shiftModifier 0
+		-optionBox 0
+		-enable 1
+		-data 0
+		-allowOptionBoxes 1
+		-enableCommandRepeat 1
+		-image "bevel.png" 
+		-italicized 0
+		-boldFont 0
+		-sourceType "mel" 
+		-longDivider 1
+		menuEditorMenuItem12;
+
+	menuItem
+			-label "On" 
+			-divider 0
+			-subMenu 0
+			-tearOff 0
+			-command "PolyShade" 
+			-altModifier 0
+			-optionModifier 0
+			-commandModifier 0
+			-ctrlModifier 0
+			-shiftModifier 0
+			-optionBox 0
+			-enable 1
+			-data 0
+			-allowOptionBoxes 1
+			-postMenuCommandOnce 0
+			-enableCommandRepeat 1
+			-echoCommand 0
+			-italicized 0
+			-boldFont 0
+			-sourceType "mel" 
+			-longDivider 1
+			menuEditorMenuItem1;
+
+		menuItem
+			-label "Off" 
+			-divider 0
+			-subMenu 0
+			-tearOff 0
+			-command "PolyNoShade" 
+			-altModifier 0
+			-optionModifier 0
+			-commandModifier 0
+			-ctrlModifier 0
+			-shiftModifier 0
+			-optionBox 0
+			-enable 1
+			-data 0
+			-allowOptionBoxes 1
+			-postMenuCommandOnce 0
+			-enableCommandRepeat 1
+			-echoCommand 0
+			-italicized 0
+			-boldFont 0
+			-sourceType "mel" 
+			-longDivider 1
+			menuEditorMenuItem2;
+
+	setParent -m ..;
 
     menuItem
         -label "separator" 

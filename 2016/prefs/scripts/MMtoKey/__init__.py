@@ -4,29 +4,30 @@ import MMtoKey
 mmtokey = MMtoKey.MMtoKey()
 
 
-def press_1(ctrl, alt,  shift, menu, *args, **kwargs):
+def press_selected(menu, **kwargs):
     try:
-        mmtokey.press_1(menu, ctl=ctrl, alt=alt, sh=shift)
-    except RuntimeError:
-        pass
-
-def release_1(command, language, *args, **kwargs):
-    try:
-        mmtokey.release_1(command, language)
+        mmtokey.press_selected(menu, **kwargs)
     except RuntimeError:
         pass
 
 
-def press_0(ctrl, alt, shift, *args, **kwargs):
+def release_selected(*args):
     try:
-        mmtokey.press_0(ctl=ctrl, alt=alt, sh=shift)
+        mmtokey.release_selected(*args)
     except RuntimeError:
         pass
 
 
-def release_0(*args, **kwargs):
+def press_preset(**kwargs):
     try:
-        mmtokey.release_0()
+        mmtokey.press_preset(**kwargs)
+    except RuntimeError:
+        pass
+
+
+def release_preset():
+    try:
+        mmtokey.release_preset()
     except RuntimeError:
         pass
 

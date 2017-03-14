@@ -140,14 +140,6 @@ menuItem
 menuEditorMenuItem30;
 
 menuItem
--label "Separate"
--command "SeparatePolygon;"
--radialPosition "NE"
--image "polySeparate.png"
--sourceType "mel"
-menuEditorMenuItem8;
-
-menuItem
 -label "Add Divisions"
 -command "performPolySubdivide \"\" 0"
 -radialPosition "SW"
@@ -262,11 +254,25 @@ menuEditorMenuItem7;
 setParent -m ..;
 
 menuItem
+-label "Shell Proxy"
+-command "da_shell"
+-image "da_ShellProxy.png"
+-sourceType "mel"
+menuEditorMenuItem40;
+
+menuItem
 -label "Split nGons"
 -command "PolyDivision"
 -image "polyCleanup.png"
 -sourceType "mel"
 menuEditorMenuItem18;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem41;
 
 menuItem
 -label "menuEditorMenuItem17"
@@ -278,18 +284,70 @@ menuEditorMenuItem24;
 
 menuItem
 -label "Mirror"
--command "MirrorPolygonGeometry;"
+-command "MirrorPolygonGeometry"
 -image "polyMirrorGeometry.png"
 -sourceType "mel"
 menuEditorMenuItem7;
 
 menuItem
 -label "menuEditorMenuItem8"
--command "MirrorPolygonGeometryOptions;"
+-command "MirrorPolygonGeometryOptions"
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem27;
+
+menuItem
+-label "Mirror Cut"
+-subMenu 1
+-image "polyMirrorCut.png"
+-sourceType "mel"
+menuEditorMenuItem80;
+
+menuItem
+-label "YZ Plane"
+-command "MirrorCutX"
+-sourceType "mel"
+menuEditorMenuItem81;
+
+menuItem
+-label "XZ Plane"
+-command "MirrorCutY"
+-sourceType "mel"
+menuEditorMenuItem82;
+
+menuItem
+-label "XY Plane"
+-command "MirrorCutZ"
+-sourceType "mel"
+menuEditorMenuItem83;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem87;
+
+menuItem
+-label "-YZ Plane"
+-command "MirrorCutXNeg"
+-sourceType "mel"
+menuEditorMenuItem84;
+
+menuItem
+-label "-XZ Plane"
+-command "MirrorCutYNeg"
+-sourceType "mel"
+menuEditorMenuItem85;
+
+menuItem
+-label "-XY Plane"
+-command "MirrorCutZNeg"
+-sourceType "mel"
+menuEditorMenuItem86;
+
+setParent -m ..;
 
 menuItem
 -label "Shatter"
@@ -318,6 +376,13 @@ menuItem
 -image "RS_visible.png"
 -sourceType "mel"
 menuEditorMenuItem9;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem15;
 
 menuItem
 -label "Vertex Normals"
@@ -394,6 +459,13 @@ menuItem
 -divider 1
 -dividerLabel "separator"
 -sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
 menuEditorMenuItem12;
 
 menuItem
@@ -461,7 +533,7 @@ setParent -m ..;
 menuItem
 -label "OpenSubdiv"
 -subMenu 1
--image "da_openSubdiv.png"
+-image "out_subdiv.png"
 -sourceType "mel"
 menuEditorMenuItem5;
 
@@ -716,6 +788,21 @@ menuItem
 menuEditorMenuItem2;
 
 menuItem
+-label "Lattice"
+-command "CreateLattice"
+-image "lattice.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreateLatticeOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
 -label "Delta Mush"
 -command "DeltaMush"
 -image "da_deltaMush.png"
@@ -729,6 +816,28 @@ menuItem
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem3;
+
+menuItem
+-label "Tension"
+-command "Tension"
+-image "da_tensionDef.png"
+-sourceType "mel"
+menuEditorMenuItem50;
+
+menuItem
+-label "menuEditorMenuItem50"
+-command "TensionOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem51;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem999;
 
 menuItem
 -label "Smooth"
@@ -745,19 +854,11 @@ menuItem
 menuEditorMenuItem1;
 
 menuItem
--label "Lattice"
--command "CreateLattice"
--image "lattice.png"
+-label "Soft Modification Rig"
+-command "SoftSelectionRig"
+-image "softMod.png"
 -sourceType "mel"
-menuEditorMenuItem5;
-
-menuItem
--label "menuEditorMenuItem6"
--command "CreateLatticeOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
-menuEditorMenuItem6;
+menuEditorMenuItem99;
 
 menuItem
 -label "Contour"
@@ -765,6 +866,13 @@ menuItem
 -image "GreasePencil.png"
 -sourceType "mel"
 menuEditorMenuItem20;
+
+menuItem
+-label "Collision"
+-command "CollideDeformer"
+-image "collisionEvents.png"
+-sourceType "mel"
+menuEditorMenuItem90;
 
 menuItem
 -label "Texture"
@@ -904,15 +1012,30 @@ menuItem
 menuEditorMenuItem10;
 
 menuItem
--label "3D UV Grab"
--command "layoutPerspUV;\nShowMeshGrabUVToolOptions;\nToolSettings;"
+-label "3D Cut and Sew"
+-command "SetCutSewUVTool"
+-image "CutSewUVTool.png"
+-sourceType "mel"
+menuEditorMenuItem50;
+
+menuItem
+-label "menuEditorMenuItem51"
+-command "SetCutSewUVTool;toolPropertyWindow;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem51;
+
+menuItem
+-label "3D Grab UV"
+-command "SetMeshGrabUVTool"
 -image "UV_3D_Grab_Brush.png"
 -sourceType "mel"
 menuEditorMenuItem21;
 
 menuItem
 -label "menuEditorMenuItem13"
--command "layoutPerspUV;\nShowMeshGrabUVToolOptions;"
+-command "ShowMeshGrabUVToolOptions;toolPropertyWindow;"
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
@@ -1009,8 +1132,8 @@ menuEditorMenuItem23;
 
 menuItem
 -label "UV Borders"
--command "int $borders[] = `polyOptions -q -displayMapBorder`;float $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;polyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];"
--image "textureBorder.png"
+-command "ToggleUvBorders"
+-image "UVEditorTextureBorder.png"
 -sourceType "mel"
 menuEditorMenuItem15;
 
@@ -1043,6 +1166,14 @@ menuItem
 -image "polyNormal.png"
 -sourceType "mel"
 menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem15"
+-command "ReversePolygonNormalsOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem15;
 
 menuItem
 -label "Unlock"
@@ -1191,7 +1322,7 @@ menuEditorMenuItem9;
 menuItem
 -label "Mesh Light"
 -command "aiMeshLight"
--image "MtoA_Logo.png"
+-image "MeshLightShelf.png"
 -sourceType "mel"
 menuEditorMenuItem10;
 
@@ -1685,6 +1816,21 @@ menuItem
 menuEditorMenuItem13;
 
 menuItem
+-label "Twist"
+-command "XgmSetWidthBrushTool"
+-image "xgIG_width.png"
+-sourceType "mel"
+menuEditorMenuItem70;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "XgmSetWidthBrushToolOption"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem71;
+
+menuItem
 -label "Comb"
 -command "XgmSetCombBrushTool"
 -image "xgIG_comb.png"
@@ -1900,6 +2046,32 @@ menuItem
 -image "vertex_NEX.png"
 -sourceType "mel"
 menuEditorMenuItem26;
+
+menuItem
+-label "Separate" 
+-subMenu 1
+-radialPosition "NE" 
+-image "polySeparate.png" 
+-sourceType "mel" 
+menuEditorMenuItem50;
+
+menuItem
+-label "by Material" 
+-command "SeparateMaterial" 
+-radialPosition "N" 
+-image "hsGraphMaterial.png" 
+-sourceType "mel" 
+menuEditorMenuItem1;
+
+menuItem
+-label "by Poly Shell" 
+-command "SeparatePolygon" 
+-radialPosition "NE" 
+-image "polySeparate.png" 
+-sourceType "mel" 
+menuEditorMenuItem2;
+
+setParent -m ..;
 
 setParent -m ..;
 

@@ -1,7 +1,3 @@
-	int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;
-	int $ShapesCheck = `outlinerEditor -q -shp outlinerPanel1`;
-	int $MaterialCheck = `outlinerEditor -q -sam outlinerPanel1`;
-
     menuItem
         -label "Duplicate" 
         -divider 0
@@ -157,79 +153,148 @@
         menuEditorMenuItem8;
 
     menuItem
-        -label "DAG Only" 
+        -label "Reference" 
         -divider 0
-        -subMenu 0
+        -subMenu 1
         -tearOff 0
-		-command "ToggleDagNode" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
-		-checkBox (1 == $DAGCheck)
         -enable 1
         -data 0
         -allowOptionBoxes 1
-        -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -echoCommand 0
+		-image "selectByObject.png" 
         -italicized 0
         -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
-		
+        menuEditorMenuItem11;
+
+        menuItem
+            -label "On" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "EnableReference" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Off" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "DisableReference" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+    setParent -m ..;
+
 	menuItem
-        -label "Shapes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-		-command "ToggleShapes" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-		-checkBox (1 == $ShapesCheck)
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-		
+		-label "Shading" 
+		-divider 0
+		-subMenu 1
+		-tearOff 0
+		-altModifier 0
+		-optionModifier 0
+		-commandModifier 0
+		-ctrlModifier 0
+		-shiftModifier 0
+		-optionBox 0
+		-enable 1
+		-data 0
+		-allowOptionBoxes 1
+		-enableCommandRepeat 1
+		-image "bevel.png" 
+		-italicized 0
+		-boldFont 0
+		-sourceType "mel" 
+		-longDivider 1
+		menuEditorMenuItem12;
+
 	menuItem
-        -label "Materials" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-		-command "ToggleMaterial" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-		-checkBox (1 == $MaterialCheck)
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
+			-label "On" 
+			-divider 0
+			-subMenu 0
+			-tearOff 0
+			-command "PolyShade" 
+			-altModifier 0
+			-optionModifier 0
+			-commandModifier 0
+			-ctrlModifier 0
+			-shiftModifier 0
+			-optionBox 0
+			-enable 1
+			-data 0
+			-allowOptionBoxes 1
+			-postMenuCommandOnce 0
+			-enableCommandRepeat 1
+			-echoCommand 0
+			-italicized 0
+			-boldFont 0
+			-sourceType "mel" 
+			-longDivider 1
+			menuEditorMenuItem1;
+
+		menuItem
+			-label "Off" 
+			-divider 0
+			-subMenu 0
+			-tearOff 0
+			-command "PolyNoShade" 
+			-altModifier 0
+			-optionModifier 0
+			-commandModifier 0
+			-ctrlModifier 0
+			-shiftModifier 0
+			-optionBox 0
+			-enable 1
+			-data 0
+			-allowOptionBoxes 1
+			-postMenuCommandOnce 0
+			-enableCommandRepeat 1
+			-echoCommand 0
+			-italicized 0
+			-boldFont 0
+			-sourceType "mel" 
+			-longDivider 1
+			menuEditorMenuItem2;
+
+	setParent -m ..;
 
 setParent -m ..;
 

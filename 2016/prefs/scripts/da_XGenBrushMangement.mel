@@ -43,6 +43,9 @@ global proc da_XGenBrushMangement_MirrorOff(){
 	else if ($CheckTool == "xgmWidthBrushTool")
 		xgmWidthBrushContext -e -bst 0 `currentCtx`;
 		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 0 `currentCtx`;
+		
 	else if ($CheckTool == "xgmCombBrushTool")
 		xgmCombBrushContext -e -bst 0 `currentCtx`;
 		
@@ -89,6 +92,9 @@ global proc da_XGenBrushMangement_MirrorX(){
 		
 	else if ($CheckTool == "xgmWidthBrushTool")
 		xgmWidthBrushContext -e -bst 1 `currentCtx`;
+
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 1 `currentCtx`;
 		
 	else if ($CheckTool == "xgmCombBrushTool")
 		xgmCombBrushContext -e -bst 1 `currentCtx`;
@@ -137,6 +143,9 @@ global proc da_XGenBrushMangement_MirrorY(){
 	else if ($CheckTool == "xgmWidthBrushTool")
 		xgmWidthBrushContext -e -bst 2 `currentCtx`;
 		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 2 `currentCtx`;
+		
 	else if ($CheckTool == "xgmCombBrushTool")
 		xgmCombBrushContext -e -bst 2 `currentCtx`;
 		
@@ -183,6 +192,9 @@ global proc da_XGenBrushMangement_MirrorZ(){
 		
 	else if ($CheckTool == "xgmWidthBrushTool")
 		xgmWidthBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 3 `currentCtx`;
 		
 	else if ($CheckTool == "xgmCombBrushTool")
 		xgmCombBrushContext -e -bst 3 `currentCtx`;
@@ -231,6 +243,9 @@ global proc da_XGenBrushMangement_CollisionOn(){
 	else if ($CheckTool == "xgmWidthBrushTool")
 		xgmWidthBrushContext -e -ec 1 `currentCtx`;
 		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -ec 1 `currentCtx`;
+		
 	else if ($CheckTool == "xgmCombBrushTool")
 		xgmCombBrushContext -e -ec 1 `currentCtx`;
 		
@@ -277,6 +292,9 @@ global proc da_XGenBrushMangement_CollisionOff(){
 		
 	else if ($CheckTool == "xgmWidthBrushTool")
 		xgmWidthBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -ec 0 `currentCtx`;
 		
 	else if ($CheckTool == "xgmCombBrushTool")
 		xgmCombBrushContext -e -ec 0 `currentCtx`;

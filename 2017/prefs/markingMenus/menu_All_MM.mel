@@ -1,5 +1,6 @@
 int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
 int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
+string $cmCheck = `colorManagementPrefs -q -cme`;
 
 menuItem
 -label "Polygons"
@@ -139,11 +140,11 @@ menuItem
 menuEditorMenuItem6;
 
 menuItem
--label "Toggle Color Manage"
+-label "Color Management"
 -command "ToggleColorManagement" 
 -keyEquivalent "K"
 -radialPosition "S"
--image "render_colorProfile.png"
+-checkBox (1 == $cmCheck) 
 -sourceType "mel"
 menuEditorMenuItem3;
 
@@ -156,10 +157,10 @@ menuItem
 menuEditorMenuItem9;
 
 menuItem
--label "Render View"
--command "MtoaRenderView"
+-label "Toggle Resolution Gate"
+-command "ToggleResolutionGate"
 -radialPosition "SE"
--image "MtoA_Logo.png"
+-image "ResolutionGate.png"
 -sourceType "mel"
 menuEditorMenuItem98;
 
@@ -178,6 +179,20 @@ menuItem
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem11;
+
+menuItem
+-label "Camera Bookmark"
+-command "CameraBookmark"
+-image "Bookmark.png"
+-sourceType "mel"
+menuEditorMenuItem96;
+
+menuItem
+-label "Render View"
+-command "MtoaRenderView"
+-image "RenderViewShelf.png"
+-sourceType "mel"
+menuEditorMenuItem70;
 
 menuItem
 -label "Hypershade"
@@ -229,7 +244,7 @@ menuItem
 menuEditorMenuItem4;
 
 menuItem
--label "Create Camera"
+-label "Add Camera"
 -command "CreateCameraOnly"
 -radialPosition "SW"
 -image "view.png"
@@ -360,8 +375,8 @@ menuItem
 menuEditorMenuItem20;
 
 menuItem
--label "Simple Connector"
--command "openSimpleConnector"
+-label "Context Connector"
+-command "ContextConnector"
 -image "out_geoConnectable.png"
 -sourceType "mel"
 menuEditorMenuItem12;
@@ -372,6 +387,13 @@ menuItem
 -image "out_list.png"
 -sourceType "mel"
 menuEditorMenuItem13;
+
+menuItem
+-label "Massive Attribute Editor"
+-command "MassAttr"
+-image "layerEditor.png"
+-sourceType "mel"
+menuEditorMenuItem80;
 
 menuItem
 -label "Attributes"
@@ -409,6 +431,27 @@ menuItem
 -dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem23;
+
+menuItem
+-label "Weight Driver"
+-subMenu 1
+-image "weightDriver.png"
+-sourceType "mel"
+menuEditorMenuItem99;
+
+menuItem
+-label "RBF"
+-command "weightDriverEditRBF"
+-sourceType "mel"
+menuEditorMenuItem98;
+
+menuItem
+-label "Vector Angle"
+-command "WeightDriverRig"
+-sourceType "mel"
+menuEditorMenuItem97;
+
+setParent -m ..;
 
 menuItem
 -label "Quick Rig"
@@ -593,7 +636,7 @@ menuItem
 -label "Area"
 -command "CreateAreaLight"
 -radialPosition "NE"
--image "arealight.png"
+-image "AreaLightShelf.png"
 -sourceType "mel"
 menuEditorMenuItem10;
 
@@ -609,7 +652,7 @@ menuItem
 -label "SkyDome"
 -command "aiSkyDome"
 -radialPosition "NW"
--image "out_envSky.png"
+-image "SkydomeLightShelf.png"
 -sourceType "mel"
 menuEditorMenuItem1;
 
@@ -617,7 +660,7 @@ menuItem
 -label "Photometric"
 -command "aiPhotometric"
 -radialPosition "S"
--image "Light.png"
+-image "PhotometricLightShelf.png"
 -sourceType "mel"
 menuEditorMenuItem2;
 
@@ -625,7 +668,7 @@ menuItem
 -label "Portal"
 -command "aiLightPortal"
 -radialPosition "N"
--image "out_linearLight.png"
+-image "LightPortalShelf.png"
 -sourceType "mel"
 menuEditorMenuItem99;
 
@@ -915,7 +958,7 @@ menuEditorMenuItem4;
 menuItem
 -label "Add Motion Trail"
 -command "CreateMotionTrail;"
--radialPosition "S"
+-radialPosition "SW"
 -image "motionTrail.png"
 -sourceType "mel"
 menuEditorMenuItem2;
@@ -938,7 +981,7 @@ menuEditorMenuItem4;
 
 menuItem
 -label "menuEditorMenuItem10"
--command "MASHOutliner"
+-command "MASHcreateOptions"
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
@@ -961,17 +1004,17 @@ menuItem
 menuEditorMenuItem7;
 
 menuItem
--label "Motion Path Key"
--command "SetKeyPath"
--radialPosition "SW"
--image "motionPathKey.png"
+-label "Bake Deformer"
+-command "BakeDeformerTool"
+-radialPosition "NE"
+-image "out_baked.png"
 -sourceType "mel"
 menuEditorMenuItem8;
 
 menuItem
 -label "Grease Pencil"
 -command "GreasePencilTool"
--radialPosition "NE"
+-radialPosition "S"
 -image "GreasePencil.png"
 -sourceType "mel"
 menuEditorMenuItem1;
@@ -1056,6 +1099,13 @@ menuItem
 -image "out_expression.png"
 -sourceType "mel"
 menuEditorMenuItem11;
+
+menuItem
+-label "MASH Editor"
+-command "MASHOutliner"
+-image "MASH_Editor.png"
+-sourceType "mel"
+menuEditorMenuItem50;
 
 setParent -m ..;
 

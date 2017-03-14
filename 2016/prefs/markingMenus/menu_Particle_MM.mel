@@ -39,7 +39,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
+        -radialPosition "W" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -50,32 +50,6 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
-
-    menuItem
-        -label "Sprite Wizard" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "spriteWizardMenu" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "menuIconParticles.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
 
     menuItem
         -label "Use as Fluid Emitter" 
@@ -141,7 +115,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -228,11 +202,11 @@
         menuEditorMenuItem13;
 
     menuItem
-        -label "Dynamic Relationships" 
+        -label "Convert to Metaballs" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "DynamicRelationshipEditor" 
+        -command "convertToMetaballs" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -241,17 +215,140 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "S" 
+        -radialPosition "SW" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "menuIconWindow.png" 
+        -image "da_metaBalls.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem14;
+        menuEditorMenuItem16;
+
+    menuItem
+        -label "Create Springs" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "spring -noDuplicate false -minMax true -mnd 0 -mxd 0 -useRestLengthPS true -s 1 -d 0.2 -sfw 1 -efw 1 " 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "spring.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem17;
+
+    menuItem
+        -label "menuEditorMenuItem18" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "CreateSpringOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem18;
+
+    menuItem
+        -label "Sprite Wizard" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "spriteWizardMenu" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "menuIconParticles.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Instancer" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ParticleInstancerOptions" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "instancer.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem19;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
 
     menuItem
         -label "Gravity" 
@@ -396,7 +493,30 @@
     setParent -m ..;
 
     menuItem
-        -label "Convert to" 
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+    menuItem
+        -label "Convert Style to" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -410,6 +530,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+        -image "out_particle.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
@@ -433,6 +554,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartPoints.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -457,6 +579,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartBalls.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -481,6 +604,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartCloud.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -505,6 +629,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartThickCloud.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -529,6 +654,7 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "nPartWater.png" 
             -echoCommand 0
             -italicized 0
             -boldFont 1
@@ -539,30 +665,7 @@
     setParent -m ..;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
-
-    menuItem
-        -label "Fields" 
+        -label "Add Fields" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -576,6 +679,7 @@
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
+        -image "posRadial.png" 
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
@@ -829,6 +933,174 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
+
+    setParent -m ..;
+
+    menuItem
+        -label "nConstraint" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+		-image "menuIconConstraints.png" 
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem20;
+
+        menuItem
+            -label "Component to Component" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "doCreateNConstraint pointToPoint 0" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "nConstraintComponent.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "performCreateComponentNConstraint 1" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem4;
+
+        menuItem
+            -label "Force Field" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "doCreateNConstraint force 0" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "nConstraintForceField.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "performCreateDynamicConstraint 1 \"pointToPoint\"" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem5;
+
+        menuItem
+            -label "Transform Constraint" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "doCreateNConstraint transform 0" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "nConstraintTransform.png" 
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+        menuItem
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "performCreateDynamicConstraint 1 \"force\"" 
+            -altModifier 0
+            -optionModifier 0
+            -commandModifier 0
+            -ctrlModifier 0
+            -shiftModifier 0
+            -optionBox 1
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 0
+            -echoCommand 0
+            -italicized 0
+            -boldFont 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem6;
 
     setParent -m ..;
 
