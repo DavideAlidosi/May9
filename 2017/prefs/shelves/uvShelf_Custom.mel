@@ -135,7 +135,7 @@ global proc uvShelf_Custom () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "polyProjection -ch 1 -type Cylindrical -ibd on -sf on ; " 
+        -command "performPolyProjectionArgList \"1\" {\"0\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\"" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
@@ -166,7 +166,7 @@ global proc uvShelf_Custom () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "polyProjection -ch 1 -type Planar -ibd on -md x ; " 
+        -command "performPolyProjectionArgList \"1\" {\"0\", \"Planar\", \"ls -selection\", \"0\"} \"\"" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
@@ -197,7 +197,7 @@ global proc uvShelf_Custom () {
         -style "iconOnly" 
         -marginWidth 1
         -marginHeight 1
-        -command "polyProjection -ch 1 -type Spherical -ibd on -sf on ; " 
+        -command "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\"" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
@@ -377,6 +377,37 @@ global proc uvShelf_Custom () {
         -marginWidth 1
         -marginHeight 1
         -command "UnfoldUVOptions" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+        -flat 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 22
+        -height 22
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "Layout options" 
+        -enableBackground 0
+        -highlightColor 0.321569 0.521569 0.65098 
+        -align "center" 
+        -label "MpolyTexturePlacementPanel1LayoutUVOptionItem" 
+        -labelOffset 0
+        -rotation 0
+        -flipX 0
+        -flipY 0
+        -useAlpha 1
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.5 
+        -image "polyLayoutUV.png" 
+        -image1 "polyLayoutUV.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "LayoutUVOptions" 
         -sourceType "mel" 
         -commandRepeatable 1
         -flat 1
