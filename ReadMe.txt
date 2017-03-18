@@ -1,4 +1,4 @@
-May9 pro 1.2.4 - A new user experience for Autodesk Maya 2017
+May9 pro 1.2.5 - A new user experience for Autodesk Maya 2017
 
 Release Note:
 - Tested and develop on Maya 2017 Update 3 and MtoA 1.4.2
@@ -53,6 +53,7 @@ SHIFT + ALT + R = Reset Transformations
 SHIFT + ALT + C = Center Pivot
 SHIFT + ALT + Z = Zero Transformations (move objects to world center)
 SHIFT + ALT + M = Match Transform
+SHIFT + ALT + W = Toggle Wireframe on Shaded
 SHIFT + ALT + Space = Playback toggle
 
 CTRL + SHIFT + ALT + C = Copy selection to clipboard
@@ -65,7 +66,6 @@ CTRL + SHIFT + ALT + Z = MMtoKey Manager
 CTRL + SHIFT + ALT + Q = MMtoKey Resetter
 CTRL + ALT + X = Reverse to save
 CTRL + ` = Show the last operation in AE
-CTRL + U = Toggle Wireframe on Shaded
 CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
 CTRL + J = Context Connector
