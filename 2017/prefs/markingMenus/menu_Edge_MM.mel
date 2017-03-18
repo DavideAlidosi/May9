@@ -148,6 +148,21 @@
         menuEditorMenuItem8;
 
     menuItem
+        -label "Edit Edge Flow"
+        -command "PolyEditEdgeFlow"
+        -image "polyEditEdgeFlow.png"
+        -sourceType "mel"
+        menuEditorMenuItem998;
+
+    menuItem
+        -label "menuEditorMenuItem997"
+        -command "PolyEditEdgeFlowOptions"
+        -optionBox 1
+        -enableCommandRepeat 0
+        -sourceType "mel"
+        menuEditorMenuItem997;
+
+    menuItem
         -label "Detach"
         -command "DetachEdgeComponent"
         -image "polySplitVertex.png"
@@ -168,6 +183,13 @@
         -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem10;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator"
+        -sourceType "mel"
+        menuEditorMenuItem999;
 
     menuItem
         -label "Flip"

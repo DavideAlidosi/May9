@@ -128,6 +128,13 @@
         menuEditorMenuItem29;
 
     menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator"
+        -sourceType "mel"
+        menuEditorMenuItem999;
+
+    menuItem
         -label "Flip"
         -command "dR_performSymmetryFlip;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
         -image "polyFlip.png"
