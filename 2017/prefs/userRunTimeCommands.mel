@@ -2138,3 +2138,11 @@ runTimeCommand
 	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nstring $myCameraShape[] = `listRelatives -s`;\nimportMovieImagePlane { $myCameraShape[0] };")
 	VideoPlane;
 
+runTimeCommand
+	-annotation "Load SoUP Menu"
+	-category "Custom Scripts.May9_Pro.Plug-ins.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("soup_menu()")
+	SoupMenu;
+

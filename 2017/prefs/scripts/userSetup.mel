@@ -73,5 +73,5 @@ source SepScript.mel;
 
 /////////// Workspace hack ///////////
 
-// Hide bottom editor
-scriptJob -runOnce true -idleEvent "workspaceControl -e -clp 1 componentEditorPanel1Window";
+// Hide bottom editor and load SOuP menu
+scriptJob -runOnce true -idleEvent "workspaceControl -e -clp 1 componentEditorPanel1Window;SoupMenu";
