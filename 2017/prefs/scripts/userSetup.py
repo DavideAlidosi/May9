@@ -16,17 +16,11 @@ import amCombineCurves as amcc
 #Preload SOuP Menu
 import maya.cmds as cmds
 
-def soup_menu():
-    maya.mel.eval("LoadSOUP")
-
-    if cmds.menu("soup_menu", ex=True):
-        cmds.deleteUI("soup_menu")
-
-    cmds.setParent("MayaWindow")
-    cmds.menu("soup_menu", l="SOuP")
+#Preload SOuP Menu
+def soup_menu(*args):
 
     # first
-    cmds.menuItem(l="tools", sm=True, to=True)
+    cmds.menuItem(l="tools", sm=True, to=True, p="soup_menu")
     cmds.menuItem(l="overburn", c='mm.eval("overburn_SOuP()")')
     cmds.menuItem(l="nParticle cache manager", c=npcm_SOuP().main)
     cmds.menuItem(l="particles to curves", c=particlesToCurves_SOuP().main)
@@ -134,4 +128,12 @@ def soup_menu():
     cmds.menuItem(l="create from scattered points", c=cocoon_SOuP().createFromScatteredPoints)
     cmds.setParent("..", menu=True)
     cmds.setParent("..", menu=True)
+
+def soup_loader(*args):
+    
+    """load after maya ui is generated"""
+    
+    cmds.menu("soup_menu", l="SOuP", pmc=soup_menu, pmo=True, p="MayaWindow")
+
+cmds.scriptJob(cc=("MayaInitialized", soup_loader), ro=True)
 

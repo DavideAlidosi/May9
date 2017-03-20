@@ -71,7 +71,10 @@ source rainCurves.mel;
 // Preload Poly Separate
 source SepScript.mel;
 
+// Preload SOuP
+LoadSOUP;
+
 /////////// Workspace hack ///////////
 
-// Hide bottom editor and load SOuP menu
-scriptJob -runOnce true -idleEvent "workspaceControl -e -clp 1 componentEditorPanel1Window;SoupMenu";
+// Hide Preloaded Bottom Editor
+scriptJob -runOnce true -idleEvent "workspaceControl -e -clp 1 componentEditorPanel1Window";
