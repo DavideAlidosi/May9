@@ -1,4 +1,4 @@
-May9 pro 1.2.5 - A new user experience for Autodesk Maya 2017
+May9 pro 1.2.6 - A new user experience for Autodesk Maya 2017
 
 Release Note:
 - Tested and develop on Maya 2017 Update 3 and MtoA 1.4.2
@@ -59,6 +59,7 @@ SHIFT + ALT + Space = Playback toggle
 CTRL + SHIFT + ALT + C = Copy selection to clipboard
 CTRL + SHIFT + ALT + V = Paste selection to clipboard
 CTRL + SHIFT + ALT + S = Save selection in to a Set
+CTRL + SHIFT + ALT + R = Start IPR or Arnold Render View
 
 CTRL + SHIFT + ALT + D = Delete Static Channels
 CTRL + SHIFT + ALT + M = Toggle Shelf
@@ -102,7 +103,6 @@ SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
 
 ~ = Orient Manipulators Toggle
-8 = Start IPR or Arnold Render View
 ? = Find Maya Menu
 K + Drag = Smooth playback mode
 CMD + Space = Toggle Full Screen (Mac OS only)
