@@ -254,6 +254,27 @@ menuItem
 menuEditorMenuItem12;
 
 menuItem
+-label "Cut by Plane"
+-command "PlaneCutter"
+-image "polyBooleansDifference.png"
+-sourceType "mel"
+menuEditorMenuItem70;
+
+menuItem
+-label "Fill Hole"
+-command "FillHole"
+-image "polyCloseBorder.png"
+-sourceType "mel"
+menuEditorMenuItem222;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem223;
+
+menuItem
 -label "Mirror"
 -command "MirrorPolygonGeometry;"
 -image "polyMirrorGeometry.png"
@@ -267,13 +288,6 @@ menuItem
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem29;
-
-menuItem
--label "Cut by Plane"
--command "PlaneCutter"
--image "polyBooleansDifference.png"
--sourceType "mel"
-menuEditorMenuItem70;
 
 menuItem
 -label "Voxelize"

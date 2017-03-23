@@ -28,10 +28,12 @@ Linux
 
 Quick start:
 
+Press and release Z = Enable the contextual Hotkey based on selection, combination of selection or panels (For access to undo command is possible to use CTRL + Z)
 Press and hold Z + Left mouse button = Enable the contextual Marking Menus based on selection, combination of selection or panels
 Press and hold Z + Middle mouse button = Enable the Universal Marking MenuEnable or one of this tool contextual Marking Menu:
 	- 3D Paint tool
 	- Shooth Skin tool
+	- Paint Attribute
 	- Legacy Artisan Sulpt tool
 	- Create Particle tool
 	- Paint FX tool
@@ -41,8 +43,9 @@ Press and hold Z + Middle mouse button = Enable the Universal Marking MenuEnable
 	- Poly Crease tool
 	- Scultp tools
 	- XGen Groom Paint tools
-Press and release Z = Enable the contextual Hotkey based on selection, combination of selection or panels
-(For access to undo command is possible to use CTRL + Z)
+	- Crease tool
+	- Create Particle tool
+	- UV Brushes
 
 
 May9 Pro new hotkeys:
@@ -102,6 +105,7 @@ SHIFT + RIGHT = Front View
 SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
 
+A + LMB = SOuP Smart Connector
 ~ = Orient Manipulators Toggle
 ? = Find Maya Menu
 K + Drag = Smooth playback mode

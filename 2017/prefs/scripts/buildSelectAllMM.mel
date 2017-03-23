@@ -50,7 +50,10 @@ global proc buildSelectAllMM()
 	menuItem -radialPosition "NE" -label (uiRes("m_buildSelectAllMM.kDeleteNonDeformerHistory"))  
 		-c "$MMcmd = \"deleteNDHistory\"" -version "2015";
 
-	python("smartConnect_SOuP().main()");
+
+	if (`pluginInfo -q -loaded SOuP` == 1){
+		python("smartConnect_SOuP().main()");
+	}
 
 	setParent -m ..;
 }
