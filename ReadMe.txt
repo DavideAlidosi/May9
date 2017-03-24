@@ -167,6 +167,7 @@ Ingo Clements for Smooth Skin Cluster Weight and Weight Driver
 Webber Huang for Soft Cluster EX
 Mariano Merchante for Instance Along Curve
 Anders Langlands for alShaders
+Add Jonah Friedman for jf-nested-dielectric
 Morten Dalgaard Andersen for amCombineCurves
 Mehdi Louala for Massive Attribute Editor
 Basenji Games for Poly Separate
