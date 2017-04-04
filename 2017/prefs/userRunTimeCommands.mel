@@ -2138,3 +2138,27 @@ runTimeCommand
 	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nstring $myCameraShape[] = `listRelatives -s`;\nimportMovieImagePlane { $myCameraShape[0] };")
 	VideoPlane;
 
+runTimeCommand
+	-annotation "smartConnect_SOuP (Press)"
+	-category "Other items.User Marking Menus"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; } popupMenu -button 1 -ctl false -alt false -allowOptionBoxes true -parent `findPanelPopupParent` -mm 1 tempMM; source \"C:/Users/dixit/Documents/maya/2017/prefs//markingMenus/menu_smartConnect_SOuP.mel\"")
+	smartConnect_SOuP_Press;
+
+runTimeCommand
+	-annotation "smartConnect_SOuP (Release)"
+	-category "Other items.User Marking Menus"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; }")
+	smartConnect_SOuP_Release;
+
+runTimeCommand
+	-annotation "Distribuite Mesh on Curves by Using MASH"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $curveSel[] = `filterExpand -sm 9`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nselect $polySel[0];\n$myMash = `MASHnewNetwork(\"MASH#\")`;\nstring $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\nsetAttr ($myMashDistribute[0] + \".amplitudeX\") 0;\n\n$myMashCurve = `createNode MASH_Curve`;\nconnectAttr -f ($myMashCurve + \".outputPoints\") ($myMash[0] + \".inputPoints\");\n\nselect $curveSel[0];\nstring $curveSelShape[] = `listRelatives -s`;\n\nconnectAttr -f ($curveSelShape[0] + \".worldSpace[0]\") ($myMashCurve + \".inCurves[0]\");\nconnectAttr -f ($myMashDistribute[0] + \".outputPoints\") ($myMashCurve + \".inputPoints\");\n\nsetAttr ($myMashCurve + \".timeSlide\") 0;\nsetAttr ($myMashCurve + \".parametricLength\") 1;\n\nselect $myMashDistribute[0];\nAttributeEditor;")
+	DistOnCurve;
+
