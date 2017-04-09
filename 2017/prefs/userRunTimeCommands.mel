@@ -2155,10 +2155,10 @@ runTimeCommand
 	smartConnect_SOuP_Release;
 
 runTimeCommand
-	-annotation "Reset Position and Orientation of Pivot"
-	-category "Custom Scripts.May9_Pro.Object"
+	-annotation "Distribuite Mesh on Curves by Using MASH"
+	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $objs[] = `ls -sl -type transform -type geometryShape`;\nif (size($objs) > 0) {\n\txform -cp;\n}\nmanipPivot -rp -ro; ")
-	ResetPivot;
+	-command ("string $curveSel[] = `filterExpand -sm 9`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nselect $polySel[0];\n$myMash = `MASHnewNetwork(\"MASH#\")`;\nstring $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\nsetAttr ($myMashDistribute[0] + \".amplitudeX\") 0;\n\n$myMashCurve = `createNode MASH_Curve`;\nconnectAttr -f ($myMashCurve + \".outputPoints\") ($myMash[0] + \".inputPoints\");\n\nselect $curveSel[0];\nstring $curveSelShape[] = `listRelatives -s`;\n\nconnectAttr -f ($curveSelShape[0] + \".worldSpace[0]\") ($myMashCurve + \".inCurves[0]\");\nconnectAttr -f ($myMashDistribute[0] + \".outputPoints\") ($myMashCurve + \".inputPoints\");\n\nsetAttr ($myMashCurve + \".timeSlide\") 0;\nsetAttr ($myMashCurve + \".parametricLength\") 1;\n\nselect $myMashDistribute[0];\nAttributeEditor;")
+	DistOnCurve;
 
