@@ -2162,3 +2162,27 @@ runTimeCommand
 	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; }")
 	smartConnect_SOuP_Release;
 
+runTimeCommand
+	-annotation "Enable Medium Precision for Nucleus"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\nsetAttr ($each +\".subSteps\") 18;\nsetAttr ($each +\".maxCollisionIterations\") 4;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Medium Precision Enable\" -fade;")
+	NucleusMedium;
+
+runTimeCommand
+	-annotation "Force Nucleus in Parallel Mode"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("evaluator -en off -name dynamics -c \"disablingNodes=unsupported\";\nevaluator -en off -name dynamics -c \"handledNodes=dynamics\";\nevaluator -en off -name dynamics -c \"action=evaluate\";\ninViewMessage -pos topCenter -msg \"Nucleus Override ON, this Disable Maya Fluids\" -fade;\n")
+	NucleusParallelOn;
+
+runTimeCommand
+	-annotation "Disable Nucleus in Parallel Mode"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("evaluator -en on -name dynamics -c \"disablingNodes=legacy2016\";\nevaluator -en on -name dynamics -c \"handledNodes=none\";\nevaluator -en on -name dynamics -c \"action=none\";\ninViewMessage -pos topCenter -msg \"Nucleus Override OFF\" -fade;")
+	NucleusParallelOff;
+
