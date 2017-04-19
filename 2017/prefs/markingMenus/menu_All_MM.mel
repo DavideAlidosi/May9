@@ -157,12 +157,12 @@ menuItem
 menuEditorMenuItem9;
 
 menuItem
--label "Toggle Resolution Gate"
--command "ToggleResolutionGate"
--radialPosition "SE"
--image "ResolutionGate.png"
+-label "Render View"
+-command "aiRenderView"
+-radialPosition "SW"
+-image "RenderShelf.png"
 -sourceType "mel"
-menuEditorMenuItem98;
+menuEditorMenuItem70;
 
 menuItem
 -label "Playblast"
@@ -186,13 +186,6 @@ menuItem
 -image "Bookmark.png"
 -sourceType "mel"
 menuEditorMenuItem96;
-
-menuItem
--label "Render View"
--command "MtoaRenderView"
--image "RenderViewShelf.png"
--sourceType "mel"
-menuEditorMenuItem70;
 
 menuItem
 -label "Hypershade"
@@ -246,7 +239,7 @@ menuEditorMenuItem4;
 menuItem
 -label "Add Camera"
 -command "CreateCameraOnly"
--radialPosition "SW"
+-radialPosition "SE"
 -image "view.png"
 -boldFont 0
 -sourceType "mel"
