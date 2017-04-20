@@ -8,9 +8,9 @@
 	houdini.icon STRING "SHOP_surface"
 	houdini.category STRING "alShaders"
 	houdini.help_url STRING "http://www.anderslanglands.com/alshaders/alLayer.html"
-	houdini.parm.folder.ROOT STRING "AOVs;45;"
+	houdini.parm.folder.ROOT STRING "AOVs;53;"
 	houdini.order STRING "layer1 layer2 mix debug  ROOT"
-	houdini.order2 STRING " standardCompatibleAOVs aov_diffuse_color aov_direct_diffuse aov_direct_diffuse_raw aov_indirect_diffuse aov_indirect_diffuse_raw aov_direct_backlight aov_indirect_backlight aov_direct_specular aov_indirect_specular aov_direct_specular_2 aov_indirect_specular_2 aov_single_scatter aov_sss aov_refraction aov_emission aov_uv aov_depth aov_light_group_1 aov_light_group_2 aov_light_group_3 aov_light_group_4 aov_light_group_5 aov_light_group_6 aov_light_group_7 aov_light_group_8 aov_id_1 aov_id_2 aov_id_3 aov_id_4 aov_id_5 aov_id_6 aov_id_7 aov_id_8 aov_crypto_asset aov_crypto_object aov_crypto_material aov_shadow_group_1 aov_shadow_group_2 aov_shadow_group_3 aov_shadow_group_4 aov_shadow_group_5 aov_shadow_group_6 aov_shadow_group_7 aov_shadow_group_8"
+	houdini.order2 STRING " standardCompatibleAOVs aov_diffuse_color aov_direct_diffuse aov_direct_diffuse_raw aov_indirect_diffuse aov_indirect_diffuse_raw aov_direct_backlight aov_indirect_backlight aov_direct_specular aov_indirect_specular aov_direct_specular_2 aov_indirect_specular_2 aov_single_scatter aov_sss aov_refraction aov_emission aov_uv aov_depth aov_light_group_1 aov_light_group_2 aov_light_group_3 aov_light_group_4 aov_light_group_5 aov_light_group_6 aov_light_group_7 aov_light_group_8 aov_light_group_9 aov_light_group_10 aov_light_group_11 aov_light_group_12 aov_light_group_13 aov_light_group_14 aov_light_group_15 aov_light_group_16 aov_id_1 aov_id_2 aov_id_3 aov_id_4 aov_id_5 aov_id_6 aov_id_7 aov_id_8 aov_crypto_asset aov_crypto_object aov_crypto_material aov_shadow_group_1 aov_shadow_group_2 aov_shadow_group_3 aov_shadow_group_4 aov_shadow_group_5 aov_shadow_group_6 aov_shadow_group_7 aov_shadow_group_8"
 
 	[attr layer1]
 		houdini.label STRING "Layer 1"
@@ -156,6 +156,46 @@
 		aov.type INT 0x05
 		aov.enable_composition BOOL TRUE
 		default STRING "light_group_8"
+	[attr aov_light_group_9]
+		houdini.label STRING "Light group [9]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_9"
+	[attr aov_light_group_10]
+		houdini.label STRING "Light group [10]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_10"
+	[attr aov_light_group_11]
+		houdini.label STRING "Light group [11]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_11"
+	[attr aov_light_group_12]
+		houdini.label STRING "Light group [12]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_12"
+	[attr aov_light_group_13]
+		houdini.label STRING "Light group [13]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_13"
+	[attr aov_light_group_14]
+		houdini.label STRING "Light group [14]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_14"
+	[attr aov_light_group_15]
+		houdini.label STRING "Light group [15]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_15"
+	[attr aov_light_group_16]
+		houdini.label STRING "Light group [16]"
+		aov.type INT 0x05
+		aov.enable_composition BOOL TRUE
+		default STRING "light_group_16"
 	[attr aov_id_1]
 		houdini.label STRING "ID [1]"
 		aov.type INT 0x05

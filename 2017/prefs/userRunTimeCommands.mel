@@ -871,7 +871,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\nif ( `objExists CurveShader` ) {\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n} else {\n    createNode aiStandard -n CurveShader;\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n}\n\ninViewMessage -pos topCenter -msg \"Arnold enable on selected curve(s)\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\nif ( `objExists CurveShader` ) {\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n} else {\n    createNode aiStandardSurface -n CurveShader;\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n}\n\ninViewMessage -pos topCenter -msg \"Arnold enable on selected curve(s)\" -fade;")
 	aiRenderCurve;
 
 runTimeCommand
@@ -2147,22 +2147,6 @@ runTimeCommand
 	ResetPivot;
 
 runTimeCommand
-	-annotation "smartConnect_SOuP (Press)"
-	-category "Other items.User Marking Menus"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; } popupMenu -button 1 -ctl false -alt false -allowOptionBoxes true -parent `findPanelPopupParent` -mm 1 tempMM; source \"C:/Users/dixit/Documents/maya/2017/prefs//markingMenus/menu_smartConnect_SOuP.mel\"")
-	smartConnect_SOuP_Press;
-
-runTimeCommand
-	-annotation "smartConnect_SOuP (Release)"
-	-category "Other items.User Marking Menus"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; }")
-	smartConnect_SOuP_Release;
-
-runTimeCommand
 	-annotation "Enable Medium Precision for Nucleus"
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
@@ -2185,4 +2169,20 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("evaluator -en on -name dynamics -c \"disablingNodes=legacy2016\";\nevaluator -en on -name dynamics -c \"handledNodes=none\";\nevaluator -en on -name dynamics -c \"action=none\";\ninViewMessage -pos topCenter -msg \"Nucleus Override OFF\" -fade;")
 	NucleusParallelOff;
+
+runTimeCommand
+	-annotation "smartConnect_SOuP (Press)"
+	-category "Other items.User Marking Menus"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; } popupMenu -button 1 -ctl false -alt false -allowOptionBoxes true -parent `findPanelPopupParent` -mm 1 tempMM; source \"C:/Users/dixit/Documents/maya/2017/prefs//markingMenus/menu_smartConnect_SOuP.mel\"")
+	smartConnect_SOuP_Press;
+
+runTimeCommand
+	-annotation "smartConnect_SOuP (Release)"
+	-category "Other items.User Marking Menus"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; }")
+	smartConnect_SOuP_Release;
 

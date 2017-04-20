@@ -1,9 +1,8 @@
-May9 Pro 1.2.6 - A new user experience for Autodesk Maya 2017
+May9 Pro 1.2.7 - A new user experience for Autodesk Maya 2017
 
 Release Note:
 - Tested and develop on Maya 2017 Update 3 and MtoA 2.0.0
 - May9 Workspaces do non autosave, this fix some minor bug on Maya 2017 UI but need manually save the workspace changes
-- AlShaders and jf-nested-dielectric do not work on MtoA 2.0.0 due binary compatibility
 
 
 Installation Instruction:
@@ -168,7 +167,6 @@ Ingo Clements for Smooth Skin Cluster Weight and Weight Driver
 Webber Huang for Soft Cluster EX
 Mariano Merchante for Instance Along Curve
 Anders Langlands for alShaders
-Add Jonah Friedman for jf-nested-dielectric
 Morten Dalgaard Andersen for amCombineCurves
 Mehdi Louala for Massive Attribute Editor
 Basenji Games for Poly Separate
