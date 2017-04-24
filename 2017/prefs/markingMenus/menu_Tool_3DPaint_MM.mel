@@ -1,10 +1,13 @@
+string $currentCtx = `currentCtx`;
+int $reflectionCheck = `art3dPaintCtx -q -rn $currentCtx`;
+string $reflectionDirection = `art3dPaintCtx -q -ra $currentCtx`;
 
     menuItem
-        -label "Mirror Off" 
+        -label "Symmetry" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "art3dPaintCtx -e -reflection  false `currentCtx`;" 
+        -command "if ($reflectionCheck == 1) art3dPaintCtx -e -reflection  false `currentCtx`; else art3dPaintCtx -e -reflection  true `currentCtx`;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
@@ -12,6 +15,7 @@
         -shiftModifier 0
         -optionBox 0
         -enable 1
+        -checkBox $reflectionCheck 
         -data 0
         -radialPosition "E" 
         -allowOptionBoxes 1
@@ -25,7 +29,7 @@
         menuEditorMenuItem1;
 
     menuItem
-        -label "Mirror Z" 
+        -label "Z Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -36,6 +40,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "z") 
         -enable 1
         -data 0
         -radialPosition "SE" 
@@ -50,7 +55,7 @@
         menuEditorMenuItem2;
 
     menuItem
-        -label "Mirror Y" 
+        -label "Y Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -61,6 +66,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "y") 
         -enable 1
         -data 0
         -radialPosition "S" 
@@ -75,7 +81,7 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Mirror X" 
+        -label "X Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -86,6 +92,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "x") 
         -enable 1
         -data 0
         -radialPosition "SW" 
@@ -111,6 +118,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -image "colorPresetSpectrum.png" 
         -enable 1
         -data 0
         -radialPosition "N" 
@@ -136,6 +144,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -image "colorPresetBlackRedYellow.png"
         -enable 1
         -data 0
         -radialPosition "NE" 
@@ -161,6 +170,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -image "colorPresetGrayscale.png" 
         -enable 1
         -data 0
         -radialPosition "NW" 
@@ -186,6 +196,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -image "imageDisplay.png"
         -enable 1
         -data 0
         -radialPosition "W" 

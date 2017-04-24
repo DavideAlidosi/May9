@@ -1,6 +1,9 @@
+string $currentCtx = `currentCtx`;
+int $reflectionCheck = `artAttrCtx -q -rn $currentCtx`;
+string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
 
     menuItem
-        -label "Mirror X" 
+        -label "X Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -11,6 +14,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "x") 
         -enable 1
         -data 0
         -radialPosition "SW" 
@@ -25,7 +29,7 @@
         menuEditorMenuItem1;
 
     menuItem
-        -label "Mirror Y" 
+        -label "Y Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -36,6 +40,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "y") 
         -enable 1
         -data 0
         -radialPosition "S" 
@@ -50,7 +55,7 @@
         menuEditorMenuItem2;
 
     menuItem
-        -label "Mirror Z" 
+        -label "Z Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -60,6 +65,7 @@
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
+        -checkBox ($reflectionDirection == "z") 
         -optionBox 0
         -enable 1
         -data 0
@@ -75,17 +81,18 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Mirror Off" 
+        -label "Symmetry" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "artAttrCtx -e -reflection  false `currentCtx`;" 
+        -command "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox $reflectionCheck 
         -enable 1
         -data 0
         -radialPosition "E" 

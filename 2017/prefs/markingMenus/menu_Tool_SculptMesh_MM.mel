@@ -1,8 +1,9 @@
-	string $currentTool = `currentCtx`;
-	int $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentTool`;
+string $currentCtx = `currentCtx`;
+int $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentCtx`;
+int $axisDirection = `sculptMeshCacheCtx -q -mirror $currentCtx`;
 
     menuItem
-        -label "Mirror X" 
+        -label "X Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -13,6 +14,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($axisDirection == 4) 
         -enable 1
         -data 0
         -radialPosition "SW" 
@@ -27,7 +29,7 @@
         menuEditorMenuItem13;
 
     menuItem
-        -label "Mirror Y" 
+        -label "Y Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -38,6 +40,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($axisDirection == 5) 
         -enable 1
         -data 0
         -radialPosition "S" 
@@ -52,7 +55,7 @@
         menuEditorMenuItem14;
 
     menuItem
-        -label "Mirror Z" 
+        -label "Z Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -63,6 +66,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($axisDirection == 6) 
         -enable 1
         -data 0
         -radialPosition "SE" 
@@ -77,7 +81,7 @@
         menuEditorMenuItem15;
 
     menuItem
-        -label "Mirror Off" 
+        -label "Symmetry Off" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -87,6 +91,7 @@
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
+        -checkBox ($axisDirection == 0) 
         -optionBox 0
         -enable 1
         -data 0

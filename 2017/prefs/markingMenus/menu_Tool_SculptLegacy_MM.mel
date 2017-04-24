@@ -1,6 +1,10 @@
+string $currentCtx = `currentCtx`;
+int $reflectionCheck = `artPuttyCtx -q -rn $currentCtx`;
+int $wfCheck = `artPuttyCtx -q -showactive $currentCtx`;
+string $reflectionDirection = `artPuttyCtx -q -ra $currentCtx`;
 
     menuItem
-        -label "Mirror X" 
+        -label "X Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -11,6 +15,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "x") 
         -enable 1
         -data 0
         -radialPosition "SW" 
@@ -25,7 +30,7 @@
         menuEditorMenuItem1;
 
     menuItem
-        -label "Mirror Y" 
+        -label "Y Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -36,6 +41,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "y") 
         -enable 1
         -data 0
         -radialPosition "S" 
@@ -50,7 +56,7 @@
         menuEditorMenuItem2;
 
     menuItem
-        -label "Mirror Z" 
+        -label "Z Axis" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -61,6 +67,7 @@
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox ($reflectionDirection == "z") 
         -enable 1
         -data 0
         -radialPosition "SE" 
@@ -75,17 +82,18 @@
         menuEditorMenuItem3;
 
     menuItem
-        -label "Mirror Off" 
+        -label "Symmetry" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "artPuttyCtx -e -reflection  false `currentCtx`;" 
+        -command "if ($reflectionCheck == 1) artPuttyCtx -e -reflection  false `currentCtx`; else artPuttyCtx -e -reflection  true `currentCtx`;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox $reflectionCheck 
         -enable 1
         -data 0
         -radialPosition "E" 
@@ -102,73 +110,28 @@
     menuItem
         -label "Wireframe" 
         -divider 0
-        -subMenu 1
+        -subMenu 0
         -tearOff 0
+        -command "if ($wfCheck == 1) artPuttyCtx -e -showactive false `currentCtx`; else artPuttyCtx -e -showactive true `currentCtx`;" 
         -altModifier 0
         -optionModifier 0
         -commandModifier 0
         -ctrlModifier 0
         -shiftModifier 0
         -optionBox 0
+        -checkBox $wfCheck 
         -enable 1
         -data 0
+        -radialPosition "W" 
         -allowOptionBoxes 1
+        -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -echoCommand 0
         -italicized 0
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
-
-        menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "artPuttyCtx -e -showactive true `currentCtx`;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "artPuttyCtx -e -showactive false `currentCtx`;" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
-
-    setParent -m ..;
 
 setParent -m ..;
 
