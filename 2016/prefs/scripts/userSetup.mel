@@ -38,7 +38,7 @@ if ($osTest == 1) {
 };
 
 // Clean UI when change scene
-string $CloseHypershade = "CloseHypershade";
+string $CloseHypershade = "if ( `panel -ex hyperShadePanel1` ) deleteUI -pnl hyperShadePanel1;";
 scriptJob -e "NewSceneOpened" $CloseHypershade;
 scriptJob -e "SceneOpened" $CloseHypershade;
 scriptJob -e "flushingScene" $CloseHypershade;
