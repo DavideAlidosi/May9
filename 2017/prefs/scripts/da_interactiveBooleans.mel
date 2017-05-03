@@ -50,8 +50,6 @@ global proc da_wireframeTemplate(){
 		setAttr ($myBool[$i] + ".smoothShading") 0;
 		setAttr ($myBool[$i] + ".visibleInReflections") 0;
 		setAttr ($myBool[$i] + ".visibleInRefractions") 0;
-		setAttr ($myBool[$i] + ".aiVisibleInDiffuse") 0;
-		setAttr ($myBool[$i] + ".aiVisibleInGlossy") 0;
 	}
 
 	showHidden -a;
@@ -74,8 +72,6 @@ global proc da_wireframeTemplateA(){
 		setAttr ($myBool[1] + ".smoothShading") 0;
 		setAttr ($myBool[1] + ".visibleInReflections") 0;
 		setAttr ($myBool[1] + ".visibleInRefractions") 0;
-		setAttr ($myBool[1] + ".aiVisibleInDiffuse") 0;
-		setAttr ($myBool[1] + ".aiVisibleInGlossy") 0;
 	}
 
 	showHidden -a;
@@ -98,8 +94,6 @@ global proc da_wireframeTemplateB(){
 		setAttr ($myBool[0] + ".smoothShading") 0;
 		setAttr ($myBool[0] + ".visibleInReflections") 0;
 		setAttr ($myBool[0] + ".visibleInRefractions") 0;
-		setAttr ($myBool[0] + ".aiVisibleInDiffuse") 0;
-		setAttr ($myBool[0] + ".aiVisibleInGlossy") 0;
 	}
 
 	showHidden -a;

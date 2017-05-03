@@ -54,8 +54,6 @@ global proc da_shell(){
 	setAttr ($myShape[0] + ".smoothShading") 0;
 	setAttr ($myShape[0] + ".visibleInReflections") 0;
 	setAttr ($myShape[0] + ".visibleInRefractions") 0;
-	setAttr ($myShape[0] + ".aiVisibleInDiffuse") 0;
-	setAttr ($myShape[0] + ".aiVisibleInGlossy") 0;
 
 	addAttr -ln "Thickness"  -at double  -min 0.001 -dv 1 $myTransform;
 	addAttr -ln "Bevel"  -at "enum" -en "On:Off:" $myTransform;
@@ -98,8 +96,6 @@ global proc da_shellDetach(){
 	setAttr ($myShape[0] + ".smoothShading") 1;
 	setAttr ($myShape[0] + ".visibleInReflections") 1;
 	setAttr ($myShape[0] + ".visibleInRefractions") 1;
-	setAttr ($myShape[0] + ".aiVisibleInDiffuse") 1;
-	setAttr ($myShape[0] + ".aiVisibleInGlossy") 1;
 
 	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
 	select $myPolyBevel[0];

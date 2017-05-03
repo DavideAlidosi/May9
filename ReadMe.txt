@@ -120,6 +120,7 @@ CTRL + ALT + ` = SmoothingDisplayToggle
 ALT + - = ToggleColorFeedback
 ALT + I = Toggle Wireframe in Artisan
 SHIFT + N = Full Hotbox Display
+ALT + P = Color Picker
 
 
 Main preferences change:
