@@ -1,7 +1,8 @@
-May9 Pro 1.2.8 - A new user experience for Autodesk Maya 2017
+May9 Pro 1.3.0 - A new user experience for Autodesk Maya 2017
 
 Release Note:
-- Tested and develop on Maya 2017 Update 3 and MtoA 2.0.0
+- 1.3.0 will be the last Maya 2017 release of May9 Pro
+- Tested and develop on Maya 2017 Update 4 and MtoA 2.0.0
 - May9 Workspaces do non autosave, this fix some minor bug on Maya 2017 UI but need manually save the workspace changes
 
 
@@ -119,8 +120,8 @@ CTRL + ALT + ~ = SmoothingDisplayShowBoth
 CTRL + ALT + ` = SmoothingDisplayToggle
 ALT + - = ToggleColorFeedback
 ALT + I = Toggle Wireframe in Artisan
-SHIFT + N = Full Hotbox Display
 ALT + P = Color Picker
+SHIFT + N = Full Hotbox Display
 
 
 Main preferences change:
