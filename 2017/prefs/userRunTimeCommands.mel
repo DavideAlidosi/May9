@@ -2186,3 +2186,11 @@ runTimeCommand
 	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; }")
 	smartConnect_SOuP_Release;
 
+runTimeCommand
+	-annotation "Close All Opened Panel"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("workspaceControl -e -clp 1 ChannelBoxLayerEditor;\nworkspaceControl -e -clp 1 NEXDockControl;\nworkspaceControl -e -clp 1 UVToolkitDockControl;\nworkspaceControl -e -clp 1 AttributeEditor;\n\nworkspaceControl -e -clp 1 hyperShadePanel1Window;\nworkspaceControl -e -clp 1 nodeEditorPanel1Window;\nworkspaceControl -e -clp 1 polyTexturePlacementPanel1Window;\nworkspaceControl -e -clp 1 shapePanel1Window;\nworkspaceControl -e -clp 1 posePanel1Window;\nworkspaceControl -e -clp 1 componentEditorPanel1Window;\nworkspaceControl -e -clp 1 relationshipPanel1Window;\nworkspaceControl -e -clp 1 dynRelEdPanel1Window;\nworkspaceControl -e -clp 1 referenceEditorPanel1Window;\nworkspaceControl -e -clp 1 graphEditor1Window;\n\nif(`workspaceControl -q -r Outliner` == 1){\n    if(`workspaceControl -q -vis Outliner` == 1)\n        ToggleOutliner;\n    if(`workspaceControl -q -vis ToolSettings` == 1)\n        ToggleToolSettings;\n}\nif(`workspaceControl -q -r ToolSettings` == 1){\n    if(`workspaceControl -q -vis ToolSettings` == 1)\n        ToggleToolSettings;\n    if(`workspaceControl -q -vis Outliner` == 1)\n        ToggleOutliner;\n}")
+	CloseAllPanel;
+

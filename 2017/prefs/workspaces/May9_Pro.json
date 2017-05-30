@@ -84,6 +84,18 @@
 										"controlHeight": 908,
                                         "controls": [
                                             {
+                                                "objectName": "Outliner",
+                                                "title": "Outliner",
+                                                "uiScript": "outlinerPanel -menuBarVisible true -label panelLabel Outliner",
+                                                "retain": true,
+                                                "loadImmediately": true,
+                                                "checkPlugins": false,
+                                                "tabDirection": 0,
+                                                "closed": true,
+                                                "widthProperty": "preferred",
+                                                "heightProperty": "free"
+                                            },
+                                            {
                                                 "objectName": "ToolSettings",
                                                 "title": "Tool Settings",
                                                 "uiScript": "global string $gToolSettingsForm; formLayout $gToolSettingsForm;",
@@ -94,28 +106,6 @@
                                                 "closed": true,
                                                 "widthProperty": "preferred",
                                                 "heightProperty": "free"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "tabWidget": {
-                                        "selectedIndex": 0,
-                                        "controlWidth": 0,
-                                        "controlHeight": 0,
-                                        "controls": [
-                                            {
-                                                "objectName": "Outliner",
-                                                "title": "Outliner",
-                                                "uiScript": "outlinerPanel -menuBarVisible true -label panelLabel Outliner",
-                                                "retain": true,
-                                                "loadImmediately": true,
-                                                "checkPlugins": false,
-                                                "tabDirection": 0,
-                                                "closed": true,
-                                                "widthProperty": "preferred",
-                                                "heightProperty": "free",
-                                                "initCallback": "outlinerStateCallback"
                                             }
                                         ]
                                     }
