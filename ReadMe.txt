@@ -87,6 +87,7 @@ ALT + 7 = Open Relationship Editor or toggle it if docked
 ALT + 8 = Open Dynamic Relationship Editor or toggle it if docked
 ALT + 9 = Open Reference Editor or toggle it if docked
 ALT + 0 = Open Graph Editor or toggle it if docked
+ALT + \ = Reset Workspace
 
 ALT + C = Open Channel Box or toggle it if docked
 ALT + A = Open Attribute Editor or toggle it if docked
