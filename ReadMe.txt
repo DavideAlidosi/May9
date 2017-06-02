@@ -148,6 +148,7 @@ Main preferences change:
 - PreSelect Highlight is on by default in Graph Editor
 - Wireframe visibility on Sculpting Tool is on by default
 - Bake Deformer Tool exposed
+- File dialog style is set to OS native
 
 
 For more information:
