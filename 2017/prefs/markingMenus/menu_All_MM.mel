@@ -426,6 +426,13 @@ menuItem
 menuEditorMenuItem23;
 
 menuItem
+-label "Bake Deformer"
+-command "BakeDeformerTool"
+-image "out_baked.png"
+-sourceType "mel"
+menuEditorMenuItem81;
+
+menuItem
 -label "Weight Driver"
 -subMenu 1
 -image "weightDriver.png"
@@ -951,7 +958,7 @@ menuEditorMenuItem4;
 menuItem
 -label "Add Motion Trail"
 -command "CreateMotionTrail;"
--radialPosition "SW"
+-radialPosition "S"
 -image "motionTrail.png"
 -sourceType "mel"
 menuEditorMenuItem2;
@@ -983,7 +990,7 @@ menuEditorMenuItem10;
 menuItem
 -label "Flow Path Object"
 -command "FlowPathObject;"
--radialPosition "W"
+-radialPosition "SW"
 -image "flowPathObj.png"
 -sourceType "mel"
 menuEditorMenuItem5;
@@ -997,25 +1004,25 @@ menuItem
 menuEditorMenuItem7;
 
 menuItem
--label "Bake Deformer"
--command "BakeDeformerTool"
--radialPosition "NE"
--image "out_baked.png"
--sourceType "mel"
-menuEditorMenuItem8;
-
-menuItem
 -label "Grease Pencil"
 -command "GreasePencilTool"
--radialPosition "S"
+-radialPosition "NE"
 -image "GreasePencil.png"
 -sourceType "mel"
 menuEditorMenuItem1;
 
 menuItem
+-label "Set Motion Path Key"
+-command "SetKeyPath"
+-radialPosition "NW"
+-image "motionPathKey.png"
+-sourceType "mel"
+menuEditorMenuItem82;
+
+menuItem
 -label "Attach To Motion Path"
 -command "AttachToPath;"
--radialPosition "NW"
+-radialPosition "W"
 -image "motionPath.png"
 -sourceType "mel"
 menuEditorMenuItem9;
