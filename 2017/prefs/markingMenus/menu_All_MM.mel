@@ -375,13 +375,6 @@ menuItem
 menuEditorMenuItem12;
 
 menuItem
--label "Connection Editor"
--command "ConnectionEditor"
--image "out_list.png"
--sourceType "mel"
-menuEditorMenuItem13;
-
-menuItem
 -label "Massive Attribute Editor"
 -command "MassAttr"
 -image "layerEditor.png"
@@ -415,6 +408,50 @@ menuItem
 -image "unpublishAttributes.png"
 -sourceType "mel"
 menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "Controllers"
+-subMenu 1
+-image "teLockUnchecked.png"
+-sourceType "mel"
+menuEditorMenuItem51;
+
+menuItem
+-label "Tag As Controller"
+-command "TagAsController"
+-image "checkboxOn.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Parent Controller"
+-command "TagAsControllerParent"
+-image "parent.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Show Controllers"
+-command "ShowControllers"
+-image "QR_show.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Hide Controllers"
+-command "HideControllers"
+-image "QR_hide.png"
+-sourceType "mel"
+menuEditorMenuItem5;
 
 setParent -m ..;
 
