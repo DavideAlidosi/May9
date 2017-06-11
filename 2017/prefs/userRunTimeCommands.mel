@@ -2194,3 +2194,10 @@ runTimeCommand
 	-command ("if (`popupMenu -exists tempMM`) { deleteUI tempMM; }")
 	smartConnect_SOuP_Release;
 
+runTimeCommand
+	-annotation "Select Current Component Shader"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("hyperShade -smn;\nSelectObjectMaterial")
+	SelectComponentShader;
