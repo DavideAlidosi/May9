@@ -1666,6 +1666,27 @@ menuItem
 -sourceType "mel"
 menuEditorMenuItem35;
 
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem36;
+
+menuItem
+-label "Export Selection To BIF"
+-command "BifMeshExport"
+-image "greasePencilExport.png"
+-sourceType "mel"
+menuEditorMenuItem37;
+
+menuItem
+-label "Import BIF"
+-command "BifMeshImport"
+-image "greasePencilImport.png"
+-sourceType "mel"
+menuEditorMenuItem38;
+
 setParent -m ..;
 
 menuItem
