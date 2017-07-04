@@ -23,7 +23,7 @@ string $modelPanelPreset = "modelEditor -e -acx 1 -tsl 1 modelPanel1;modelEditor
 scriptJob -e "NewSceneOpened" $modelPanelPreset;
 
 // Outliner Options
-string $outlinerOptions = "outlinerEditor -e -showAssignedMaterials true outlinerPanel1;outlinerEditor -e -renderFilterVisible true outlinerPanel1";
+string $outlinerOptions = "outlinerEditor  -e -sam 1 -rfv 1 -atr 1 outlinerPanel1";
 scriptJob -e "NewSceneOpened" $outlinerOptions;
 
 // Fix Vertical Shelf size
