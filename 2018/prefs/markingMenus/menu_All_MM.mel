@@ -1,0 +1,1599 @@
+string $cmCheck = `colorManagementPrefs -q -cme`;
+
+menuItem
+-label "Poly/Curves"
+-subMenu 1
+-radialPosition "N"
+-image "polyCreateFacet.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Cube"
+-command "CreatePolygonCube;"
+-radialPosition "W"
+-image "polyCube.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CreatePolygonCubeOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Plane"
+-command "CreatePolygonPlane"
+-radialPosition "SW"
+-image "polyMesh.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CreatePolygonPlaneOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "CV Curve"
+-command "CVCurveTool"
+-radialPosition "NE"
+-image "curveCV.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CVCurveToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Circle"
+-command "CreateNURBSCircle;"
+-radialPosition "E"
+-image "circle.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "CreateNURBSCircleOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Quad Draw"
+-command "dR_quadDrawTool;"
+-radialPosition "N"
+-image "quadDraw_NEX32.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreatePolygonSphereOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Create"
+-command "CreatePolygonTool;"
+-radialPosition "NW"
+-image "polyCreateFacet.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "CreatePolygonToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Type"
+-command "CreatePolygonType"
+-radialPosition "SE"
+-image "polyType.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Import .ai"
+-command "CreateIllustratorCurves;"
+-image "ai.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+setParent -m ..;
+
+menuItem
+-label "Rendering"
+-subMenu 1
+-radialPosition "W"
+-image "render.png"
+-sourceType "mel"
+menuEditorMenuItem33;
+
+menuItem
+-label "Batch Render"
+-command "BatchRender"
+-radialPosition "NW"
+-image "batchRender.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem5"
+-command "BatchRenderOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Render Sequence"
+-command "RenderSequence"
+-radialPosition "NE"
+-image "menuIconRender.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Color Management"
+-command "ToggleColorManagement" 
+-radialPosition "S"
+-checkBox (1 == $cmCheck) 
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Edit Shaders"
+-command "EditAndFrameShaders"
+-radialPosition "W"
+-image "out_shadingEngine.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Render View"
+-command "aiRenderView"
+-radialPosition "SW"
+-image "RenderShelf.png"
+-sourceType "mel"
+menuEditorMenuItem70;
+
+menuItem
+-label "Playblast"
+-command "PlayblastWindow"
+-radialPosition "N"
+-image "playblast.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "PlayblastOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Camera Bookmark"
+-command "CameraBookmark"
+-image "Bookmark.png"
+-sourceType "mel"
+menuEditorMenuItem96;
+
+menuItem
+-label "Rendering Flags"
+-command "RenderFlagsWindow"
+-image "editRenderPass.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "File Path Editor"
+-command "FilePathEditor;"
+-image "folder-open.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Transfer Maps"
+-command "performSurfaceSampling 1"
+-image "displacementMap_64.png"
+-radialPosition "SE"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+setParent -m ..;
+
+menuItem
+-label "Rigging"
+-subMenu 1
+-radialPosition "SW"
+-image "humanIK_CharCtrl.png"
+-sourceType "mel"
+menuEditorMenuItem34;
+
+menuItem
+-label "Create Joint"
+-command "JointTool;"
+-radialPosition "SW"
+-image "kinJoint.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "JointToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Parent Constraint"
+-command "ParentConstraint;"
+-radialPosition "S"
+-image "parentConstraint.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "ParentConstraintOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Aim Constraint"
+-command "AimConstraint;"
+-radialPosition "E"
+-image "aimConstraint.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "AimConstraintOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Scale Constraint"
+-command "scaleConstraint;"
+-radialPosition "SE"
+-image "scaleConstraint.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem10"
+-command "ScaleConstraintOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "MASH Rivet" 
+-command "RivetMash" 
+-radialPosition "N" 
+-image "MASH_CreateMeshFromPoints.png" 
+-sourceType "mel" 
+menuEditorMenuItem11;
+
+menuItem
+-label "IK Handle"
+-command "IKHandleTool;"
+-radialPosition "NW"
+-image "kinHandle.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "menuEditorMenuItem18"
+-command "IKHandleToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "IK Spline Handle"
+-command "IKSplineHandleTool;"
+-radialPosition "W"
+-image "kinSplineHandle.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "menuEditorMenuItem20"
+-command "IKSplineHandleToolOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "Connection Editor"
+-command "ConnectionEditor"
+-image "out_list.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Attributes"
+-subMenu 1
+-image "attributes.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "Add"
+-command "AddAttribute;"
+-image "publishAttributes.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Edit"
+-command "RenameAttribute"
+-image "setEdEditMode.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Delete"
+-command "DeleteAttribute"
+-image "unpublishAttributes.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "Controllers"
+-subMenu 1
+-image "teLockUnchecked.png"
+-sourceType "mel"
+menuEditorMenuItem51;
+
+menuItem
+-label "Tag As Controller"
+-command "TagAsController"
+-image "checkboxOn.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Parent Controller"
+-command "TagAsControllerParent"
+-image "parent.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Prossimity On"
+-command "ControllerProssimity"
+-image "rvViewingPipelineOn.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Prossimity Off"
+-command "ControllerNoProssimity"
+-image "rvViewingPipelineOff.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "Bake Deformer"
+-command "BakeDeformerTool"
+-image "out_baked.png"
+-sourceType "mel"
+menuEditorMenuItem81;
+
+menuItem
+-label "Quick Rig"
+-command "QuickRigEditor"
+-image "QR_QuickRigTool.png"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+setParent -m ..;
+
+menuItem
+-label "Layouts"
+-subMenu 1
+-radialPosition "NE"
+-image "perspHypergraphLayout.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Node Editor"
+-command "LayoutNodeEditor"
+-radialPosition "NE"
+-image "perspHypergraphLayout.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "UV Texture Editor"
+-command "LayoutUvTextureEditor"
+-radialPosition "E"
+-image "da_UV_Layout.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Graph Editor"
+-command "LayoutGraphEditor"
+-radialPosition "SE"
+-image "perspGraphLayout.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Shape Editor"
+-command "LayoutShapeEditor"
+-radialPosition "N"
+-image "da_ShapeEditor_Layout.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Pose Editor"
+-command "LayoutPoseEditor"
+-radialPosition "NW"
+-image "da_PoseEditor_Layout.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Component Editor"
+-command "LayoutComponentEditor"
+-image "da_ComponentEditor_Layout.png"
+-radialPosition "W"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Perspective/Four View layout"
+-command "LayoutPersp"
+-image "fourViewLayout.png"
+-radialPosition "S"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Relationship Editor"
+-command "LayoutRelationshipEditor"
+-image "perspRelationshipEditorLayout.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Dynamic Relationship"
+-command "LayoutDynamicRelationshipEditor"
+-image "da_DynamicRelationship_Layout.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Reference Editor"
+-command "LayoutReferenceEditor"
+-image "da_ReferenceEditor_Layout.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+setParent -m ..;
+
+menuItem
+-label "Lights"
+-subMenu 1
+-radialPosition "E"
+-image "spotlight.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Directional"
+-command "CreateDirectionalLight;"
+-radialPosition "E"
+-image "directionallight.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "CreateDirectionalLightOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Spot"
+-command "CreateSpotLight;"
+-radialPosition "SE"
+-image "spotlight.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreateSpotLightOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Point"
+-command "CreatePointLight;"
+-radialPosition "SW"
+-image "pointlight.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "CreatePointLightOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "Area"
+-command "CreateAreaLight"
+-radialPosition "NE"
+-image "AreaLightShelf.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem9"
+-command "CreateAreaLightOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "SkyDome"
+-command "aiSkyDome"
+-radialPosition "NW"
+-image "SkydomeLightShelf.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Photometric"
+-command "aiPhotometric"
+-radialPosition "S"
+-image "PhotometricLightShelf.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Portal"
+-command "aiLightPortal"
+-radialPosition "N"
+-image "LightPortalShelf.png"
+-sourceType "mel"
+menuEditorMenuItem99;
+
+menuItem
+-label "Light Editor"
+-command "LightList"
+-image "light_manager.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "Light Linking"
+-command "LightCentricLightLinkingEditor"
+-image "out_defaultLightList.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+setParent -m ..;
+
+menuItem
+-label "Objects"
+-subMenu 1
+-radialPosition "SE"
+-image "posEmitter.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Camera"
+-command "CreateCameraOnly"
+-radialPosition "N"
+-image "view.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-command "CreateCameraOnlyOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "Locator"
+-command "CreateLocator;"
+-radialPosition "NE"
+-image "locator"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Fluid Container"
+-command "Create3DContainer"
+-radialPosition "E"
+-image "fluidCreate3D.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "Create3DContainerOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Duplicate"
+-command "DuplicateWithTransform" 
+-radialPosition "SE"
+-image "da_duplicate.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "DuplicateSpecialOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Paint Effects"
+-command "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-radialPosition "W"
+-image "paintEffectsTool.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "menuEditorMenuItem18"
+-command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
+-optionBox 1
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "nParticle"
+-command "NParticleTool"
+-radialPosition "SW"
+-image "particle.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "NParticleToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "nParticles Emitter"
+-command "NCreateEmitter;"
+-radialPosition "S"
+-image "posEmitter.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "NCreateEmitterOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Particle Style"
+-subMenu 1
+-image "out_particle.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Points"
+-command "optionVar -stringValue NParticleStyle \"Points\";"
+-image "nPartPoints.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Balls"
+-command "optionVar -stringValue NParticleStyle \"Balls\";"
+-image "nPartBalls.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Cloud"
+-command "optionVar -stringValue NParticleStyle \"Cloud\";"
+-image "nPartCloud.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "ThickCloud"
+-command "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-image "nPartThickCloud.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Water"
+-command "optionVar -stringValue NParticleStyle \"Water\";"
+-image "nPartWater.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+setParent -m ..;
+
+menuItem
+-label "Fields"
+-subMenu 1
+-image "posRadial.png"
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Air"
+-command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posAir.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Drag"
+-command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posDrag.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Gravity"
+-command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posGravity.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Newton"
+-command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posNewton.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Radial"
+-command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posRadial.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Turbulence"
+-command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posTurbulence.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Uniform"
+-command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posUniform.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Vortex"
+-command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posVortex.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Volume Axis"
+-command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-image "posVolumeAxis.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+setParent -m ..;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "Input Order"
+-command "ListInputOperations"
+-image "nodeGrapherNext.png"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+setParent -m ..;
+
+menuItem
+-label "Animation"
+-subMenu 1
+-radialPosition "NW"
+-image "out_animCurveTA.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Add Motion Trail"
+-command "CreateMotionTrail;"
+-radialPosition "S"
+-image "motionTrail.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "CreateMotionTrailOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Create MASH"
+-command "MASHnewNetwork(\"MASH#\")"
+-radialPosition "N"
+-image "MASH_CreateNetwork.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "menuEditorMenuItem10"
+-command "MASHcreateOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "Flow Path Object"
+-command "FlowPathObject;"
+-radialPosition "SW"
+-image "flowPathObj.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "FlowPathObjectOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Grease Pencil"
+-command "GreasePencilTool"
+-radialPosition "NE"
+-image "GreasePencil.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Set Motion Path Key"
+-command "SetKeyPath"
+-radialPosition "NW"
+-image "motionPathKey.png"
+-sourceType "mel"
+menuEditorMenuItem82;
+
+menuItem
+-label "Attach To Motion Path"
+-command "AttachToPath;"
+-radialPosition "W"
+-image "motionPath.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem12"
+-command "AttachToPathOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "Bake Animation"
+-command "doBakeSimulationArgList 8 { \"1\",\"0\",\"10\",\"1\",\"0\",\"0\",\"1\",\"1\",\"0\",\"1\",\"animationList\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"1\" };"
+-radialPosition "E"
+-image "bakeAnimation.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "menuEditorMenuItem20"
+-command "BakeSimulationOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem20;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "Set Driven Key"
+-command "SetDrivenKeyOptions"
+-image "setDrivenKeyframe.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Expression Editor"
+-command "ExpressionEditor"
+-image "out_expression.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "MASH Editor"
+-command "MASHOutliner"
+-image "MASH_Editor.png"
+-sourceType "mel"
+menuEditorMenuItem50;
+
+setParent -m ..;
+
+menuItem
+-label "Scene/Node"
+-subMenu 1
+-radialPosition "S"
+-image "CameraAE.png"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "HUD Info"
+-command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD"
+-radialPosition "SE"
+-image "info.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "Edit"
+-subMenu 1
+-radialPosition "E"
+-image "editRenderPass.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Freeze Transform"
+-command "FreezeTransformations" 
+-radialPosition "NE"
+-image "FreezeTransform.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "FreezeTransformationsOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Delete History"
+-command "DeleteHistory" 
+-radialPosition "E"
+-image "DeleteHistory.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Center Pivot"
+-command "CenterPivot" 
+-radialPosition "SE"
+-image "CenterPivot.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Optimize Scene Sizes"
+-command "OptimizeScene"
+-radialPosition "N"
+-image "deleteGeneric.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "menuEditorMenuItem3"
+-command "OptimizeSceneOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Reset Transform"
+-command "ResetAllTransformations" 
+-radialPosition "NW"
+-image "teKeyRefresh.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Lock Selected Nodes" 
+-subMenu 1
+-image "lockGeneric.png" 
+-sourceType "mel" 
+menuEditorMenuItem8;
+
+menuItem
+-label "On" 
+-command "LockNode" 
+-image "rvViewingPipelineOn.png"
+-sourceType "mel" 
+menuEditorMenuItem1;
+
+menuItem
+-label "Off" 
+-command "UnlockNode" 
+-image "rvViewingPipelineOff.png"
+-sourceType "mel" 
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-label "Select"
+-subMenu 1
+-radialPosition "NE"
+-image "highlightSelect.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "None"
+-command "SelectNone" 
+-radialPosition "SE"
+-image "hotkeyFieldClear.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Hierarchy"
+-command "SelectHierarchy"
+-radialPosition "NE"
+-image "selectByHierarchy.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "All"
+-command "SelectAll" 
+-radialPosition "E"
+-image "aselect.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Similar"
+-command "SelectSimilar"
+-radialPosition "NW"
+-image "selectSimilar.png"
+-sourceType "mel"
+menuEditorMenuItem6;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "SelectSimilarOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "Camera"
+-command "SelectCamera"
+-radialPosition "N"
+-image "Camera.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+setParent -m ..;
+
+menuItem
+-label "Reset"
+-subMenu 1
+-radialPosition "NW"
+-image "hyperShadeResetCameraView.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Main Camera"
+-command "ClearPersp;\nviewSet -h"
+-radialPosition "NW"
+-image "hyperShadeResetCameraView.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Render Settings"
+-command "ResetUI;\nunifiedRenderGlobalsWindow"
+-radialPosition "W"
+-image "rvRenderGlobals.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+setParent -m ..;
+
+menuItem
+-label "Match"
+-subMenu 1
+-radialPosition "SW"
+-image "polyAlignUVs.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Scaling"
+-command "MatchScaling"
+-radialPosition "NW"
+-image "scale_M.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Rotation"
+-command "MatchRotation"
+-radialPosition "W"
+-image "rotate_M.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Translation"
+-command "MatchTranslation"
+-radialPosition "SW"
+-image "move_M.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "All Transforms"
+-command "MatchTransform"
+-radialPosition "S"
+-image "nodeGrapherModeAllLarge.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Pivots"
+-command "MatchPivots"
+-radialPosition "SE"
+-image "pickPivotComp.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+setParent -m ..;
+
+menuItem
+-label "Measure"
+-subMenu 1
+-radialPosition "W"
+-image "out_distanceDimShape.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Distance Tool"
+-command "DistanceTool"
+-radialPosition "W"
+-image "distanceDim.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Arc Length Tool"
+-command "ArcLengthTool"
+-radialPosition "NW"
+-image "arcLengthDim.png"
+-sourceType "mel"
+menuEditorMenuItem2;
+
+menuItem
+-label "Parameter Tool"
+-command "ParameterTool"
+-radialPosition "SW"
+-image "paramDim.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+setParent -m ..;
+
+menuItem
+-label "Align Tool"
+-command "setToolTo alignToolCtx"
+-radialPosition "S"
+-image "alignTool.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Evaluation Toolkit"
+-command "EvaluationToolkit"
+-image "polyColorSetEditor.png"
+-sourceType "mel"
+menuEditorMenuItem99;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Cache"
+-subMenu 1
+-image "nClothCacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "Create nCache"
+-command "nClothCache"
+-image "nClothCacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "nClothCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem27;
+
+menuItem
+-label "Delete nCache"
+-command "deleteNclothCache"
+-image "nClothCacheDelete.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+menuItem
+-label "Create Fluid Cache"
+-command "CreateFluidCache"
+-image "fluidCacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "CreateFluidCacheOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem28;
+
+menuItem
+-label "Delete Fluid Cache"
+-command "fluidDeleteCache"
+-image "fluidCacheDelete.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "fluidDeleteCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem29;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "Create Geometry Cache"
+-command "geometryCache"
+-image "createCache.png"
+-sourceType "mel"
+menuEditorMenuItem10;
+
+menuItem
+-label "menuEditorMenuItem11"
+-command "geometryCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem30;
+
+menuItem
+-label "Delete Geometry Cache"
+-command "deleteGeometryCache"
+-image "deleteCache.png"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "menuEditorMenuItem13"
+-command "geometryDeleteCacheOpt"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem31;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Create Muscle Cache"
+-command "cMuscle_makeCacheUI(); "
+-image "cMuscle_skin_cacheCreate.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Delete Muscle Node Cache"
+-command "cMuscle_deleteNodeCacheUI(); "
+-image "cMuscle_skin_cacheDelete.png"
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "Export Selection to GPU Cache"
+-command "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};"
+-image "greasePencilExport.png"
+-sourceType "mel"
+menuEditorMenuItem19;
+
+menuItem
+-label "menuEditorMenuItem20"
+-command "GpuCacheExportSelectionOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem32;
+
+menuItem
+-label "Import GPU Cache"
+-command "doGpuCacheImportArgList 1 {\"0\",\"0\"};"
+-image "greasePencilImport.png"
+-sourceType "mel"
+menuEditorMenuItem18;
+
+menuItem
+-label "Refresh GPU Cache"
+-command "GpuCacheRefreshAll"
+-image "QR_refresh.png"
+-sourceType "mel"
+menuEditorMenuItem21;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-label "Export Selection to Alembic"
+-command "doAlembicExportArgList 7 {\"0\",\"2\",\"1\",\"24\",\"1\",\"0\",\"-0.2\",\"0.2\",\"0\",\"0\",\"\",\"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"\",\"\",\"\",\"\",\"0\",\"0\",\"0\",\"2\",\"1\",\"0\",\"0\"};"
+-image "greasePencilExport.png"
+-sourceType "mel"
+menuEditorMenuItem25;
+
+menuItem
+-label "menuEditorMenuItem26"
+-command "AlembicExportSelectionOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem34;
+
+menuItem
+-label "Import Alembic"
+-command "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};"
+-image "greasePencilImport.png"
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
+-label "menuEditorMenuItem24"
+-command "AlembicImportOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem35;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem36;
+
+menuItem
+-label "Export Selection To BIF"
+-command "BifMeshExport"
+-image "greasePencilExport.png"
+-sourceType "mel"
+menuEditorMenuItem37;
+
+menuItem
+-label "Import BIF"
+-command "BifMeshImport"
+-image "greasePencilImport.png"
+-sourceType "mel"
+menuEditorMenuItem38;
+
+setParent -m ..;
+
+menuItem
+-label "Profiler"
+-command "ProfilerTool"
+-image "out_timeEditorTrack.png"
+-sourceType "mel"
+menuEditorMenuItem4;
+
+setParent -m ..;
+
+menuItem
+-label "Set Project"
+-command "SetProject"
+-image "folder-closed.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "Project Window"
+-command "ProjectWindow"
+-image "folder-new.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Content Browser"
+-command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");"
+-image "folder-open.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "About May9 Pro..."
+-command "AboutMay9"
+-image "menuIconHelp.png"
+-sourceType "mel"
+menuEditorMenuItem8;
+
+setParent -m ..;
+

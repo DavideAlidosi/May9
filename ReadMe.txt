@@ -1,8 +1,10 @@
-May9 Pro 1.2.9 - A new user experience for Autodesk Maya 2017
+May9 Pro 2.0.0 - A new user experience for Autodesk Maya 2017 and 2018
 
 Release Note:
-- Tested and develop on Maya 2017 Update 4 and MtoA 2.0.0
-- May9 Workspaces do non autosave, this fix some minor bug on Maya 2017 UI but need manually save the workspace changes
+- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.0
+- May9 Workspaces do not autosave, so needed manually save the workspace changes
+
+A very special tanks to Andrey Menshikov for the hard work on amazing MMtoKey
 
 
 Installation Instruction:
@@ -59,35 +61,37 @@ SHIFT + ALT + M = Match Transform
 SHIFT + ALT + W = Toggle Wireframe on Shaded
 SHIFT + ALT + Space = Playback toggle
 
+CTRL + ALT + R = Start IPR or Arnold Render View
+CTRL + ALT + 2 = Edit and Graph Shader Based on Selection
+CTRL + ALT + 8 = Paint Effects Panel
+CTRL + ALT + X = Reverse to save
+
 CTRL + SHIFT + ALT + C = Copy selection to clipboard
 CTRL + SHIFT + ALT + V = Paste selection to clipboard
 CTRL + SHIFT + ALT + S = Save selection in to a Set
-CTRL + SHIFT + ALT + R = Start IPR or Arnold Render View
-
 CTRL + SHIFT + ALT + D = Delete Static Channels
 CTRL + SHIFT + ALT + M = Toggle Shelf
+
 CTRL + SHIFT + ALT + Z = MMtoKey Manager
 CTRL + SHIFT + ALT + Q = MMtoKey Resetter
-CTRL + ALT + X = Reverse to save
+
 CTRL + ` = Show the last operation in AE
 CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
 CTRL + J = Context Connector
 CTRL + K = Massive Attribute Editor
 CTRL + L = List of Input Operation is mapped
-CTRL + ALT + 8 = Paint Effects Panel
 
-ALT + 1 = Open Hypershade or toggle it if docked
-ALT + 2 = Open Node Editor or toggle it if docked
-ALT + 3 = Open UV Editor or toggle it if docked
-ALT + 4 = Open Shape Editor or toggle it if docked
-ALT + 5 = Open Pose Editor or toggle it if docked
-ALT + 6 = Open Component Editor or toggle it if docked
-ALT + 7 = Open Relationship Editor or toggle it if docked
-ALT + 8 = Open Dynamic Relationship Editor or toggle it if docked
-ALT + 9 = Open Reference Editor or toggle it if docked
-ALT + 0 = Open Graph Editor or toggle it if docked
-ALT + \ = Reset Workspace
+ALT + 1 = Set Layout Single Perspective/Four View
+ALT + 2 = Set Layout Node Editor
+ALT + 3 = Set Layout UV Texture Editor
+ALT + 4 = Set Layout Graph Editor
+ALT + 5 = Set Layout Shape Editor
+ALT + 6 = Set Layout Pose Editor
+ALT + 7 = Set Layout Component Editor
+ALT + 8 = Set Layout Relationship Editor
+ALT + 9 = Set Layout Dynamic Relationship Editor
+ALT + 0 = Set Layout Reference Editor
 
 ALT + C = Open Channel Box or toggle it if docked
 ALT + A = Open Attribute Editor or toggle it if docked
@@ -95,6 +99,7 @@ ALT + M = Open Modeling Toolkit or toggle it if docked
 ALT + U = Open UV Toolkit or toggle it if docked (CMD + U on OS X)
 ALT + O = Open Outliner or toggle it if docked
 ALT + T = Open Tools Preference Settings or toggle it if docked
+ALT + \ = Reset Workspace
 
 ALT + L = Color Picker
 ALT + G = Toggle grid
@@ -105,6 +110,7 @@ SHIFT + UP = Side View
 SHIFT + RIGHT = Front View
 SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
+SHIFT + T = Assing shader if an object is selected or open create node window if not
 
 A + LMB = SOuP Smart Connector
 ~ = Orient Manipulators Toggle
@@ -147,29 +153,9 @@ Main preferences change:
 - Two Bone IK and Spring IK are preload
 - PreSelect Highlight is on by default in Graph Editor
 - Wireframe visibility on Sculpting Tool is on by default
-- Bake Deformer Tool exposed
-- File dialog style is set to OS native
 
 
 For more information:
 
 fb.com/May9Prefs
 youtube.com/c/May9
-github.com/DavideAlidosi/May9
-
-
-A special tanks to:
-
-Andrey Menshikov for the hard work on our amazing MMtoKey
-Pavel Korolyov for Context Connector
-Jefri Haryono for Rain Curves From Edges
-David Johnson for djRivet
-Carlos Rico Adega for Offset Keyframes
-Peter Shipkov for SOuP
-Ingo Clements for Smooth Skin Cluster Weight and Weight Driver 
-Webber Huang for Soft Cluster EX
-Mariano Merchante for Instance Along Curve
-Anders Langlands for alShaders
-Morten Dalgaard Andersen for amCombineCurves
-Mehdi Louala for Massive Attribute Editor
-Basenji Games for Poly Separate

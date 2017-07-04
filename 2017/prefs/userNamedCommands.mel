@@ -375,70 +375,58 @@ nameCommand
 	ToggleModelingToolNameCommand;
 
 nameCommand
-	-annotation "ToggleHypershadeNameCommand"
-	-sourceType "mel"
-	-command ("ToggleHypershade")
-	ToggleHypershadeNameCommand;
-
-nameCommand
 	-annotation "ToggleNodeEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleNodeEditor")
+	-command ("LayoutNodeEditor")
 	ToggleNodeEditorNameCommand;
 
 nameCommand
 	-annotation "ToggleUvTextureEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleUvTextureEditor")
+	-command ("LayoutUvTextureEditor")
 	ToggleUvTextureEditorNameCommand;
 
 nameCommand
 	-annotation "ToggleShapeEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleShapeEditor")
+	-command ("LayoutShapeEditor")
 	ToggleShapeEditorNameCommand;
 
 nameCommand
 	-annotation "TogglePoseEditorNameCommand"
 	-sourceType "mel"
-	-command ("TogglePoseEditor")
+	-command ("LayoutPoseEditor")
 	TogglePoseEditorNameCommand;
 
 nameCommand
 	-annotation "ToggleComponentEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleComponentEditor")
+	-command ("LayoutComponentEditor")
 	ToggleComponentEditorNameCommand;
 
 nameCommand
 	-annotation "ToggleRelationshipEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleRelationshipEditor")
+	-command ("LayoutRelationshipEditor")
 	ToggleRelationshipEditorNameCommand;
 
 nameCommand
 	-annotation "ToggleDynamicRelationshipEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleDynamicRelationshipEditor")
+	-command ("LayoutDynamicRelationshipEditor")
 	ToggleDynamicRelationshipEditorNameCommand;
 
 nameCommand
 	-annotation "ToggleReferenceEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleReferenceEditor")
+	-command ("LayoutReferenceEditor")
 	ToggleReferenceEditorNameCommand;
 
 nameCommand
 	-annotation "ToggleGraphEditorNameCommand"
 	-sourceType "mel"
-	-command ("ToggleGraphEditor")
+	-command ("LayoutGraphEditor")
 	ToggleGraphEditorNameCommand;
-
-nameCommand
-	-annotation "ContextConnectorNameCommand"
-	-sourceType "mel"
-	-command ("ContextConnector")
-	ContextConnectorNameCommand;
 
 nameCommand
 	-annotation "ToggleToolSettingNameCommand"
@@ -495,12 +483,6 @@ nameCommand
 	FullHotboxDisplayNameCommand;
 
 nameCommand
-	-annotation "MassAttrNameCommand"
-	-sourceType "mel"
-	-command ("MassAttr")
-	MassAttrNameCommand;
-
-nameCommand
 	-annotation "ListInputOperationsNameCommand"
 	-sourceType "mel"
 	-command ("ListInputOperations")
@@ -519,26 +501,38 @@ nameCommand
 	ToggleDisplacementNameCommand;
 
 nameCommand
-	-annotation "smartConnect_SOuP_PressNameCommand"
-	-sourceType "mel"
-	-command ("smartConnect_SOuP_Press")
-	smartConnect_SOuP_PressNameCommand;
-
-nameCommand
-	-annotation "smartConnect_SOuP_ReleaseNameCommand"
-	-sourceType "mel"
-	-command ("smartConnect_SOuP_Release")
-	smartConnect_SOuP_ReleaseNameCommand;
-
-nameCommand
 	-annotation "ResetPivotNameCommand"
 	-sourceType "mel"
 	-command ("ResetPivot")
 	ResetPivotNameCommand;
 
 nameCommand
+	-annotation "TogglePerspNameCommand"
+	-sourceType "mel"
+	-command ("LayoutPersp")
+	TogglePerspNameCommand;
+
+nameCommand
 	-annotation "CloseAllPanelNameCommand"
 	-sourceType "mel"
 	-command ("CloseAllPanel")
 	CloseAllPanelNameCommand;
+
+nameCommand
+	-annotation "ConnectionEditorNameCommand"
+	-sourceType "mel"
+	-command ("ConnectionEditor")
+	ConnectionEditorNameCommand;
+
+nameCommand
+	-annotation "EditAndFrameShadersNameCommand"
+	-sourceType "mel"
+	-command ("EditAndFrameShaders")
+	EditAndFrameShadersNameCommand;
+
+nameCommand
+	-annotation "CreateAssigNodeNameCommand"
+	-sourceType "mel"
+	-command ("CreateAssigNode")
+	CreateAssigNodeNameCommand;
 

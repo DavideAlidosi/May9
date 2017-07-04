@@ -1,27 +1,17 @@
-int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
-int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
 string $cmCheck = `colorManagementPrefs -q -cme`;
 
 menuItem
--label "Polygons"
+-label "Poly/Curves"
 -subMenu 1
 -radialPosition "N"
--image "polyCube.png"
--sourceType "mel"
-menuEditorMenuItem11;
-
-menuItem
--label "Quad Draw"
--command "dR_quadDrawTool;"
--radialPosition "N"
--image "quadDraw_NEX32.png"
+-image "polyCreateFacet.png"
 -sourceType "mel"
 menuEditorMenuItem11;
 
 menuItem
 -label "Cube"
 -command "CreatePolygonCube;"
--radialPosition "E"
+-radialPosition "W"
 -image "polyCube.png"
 -sourceType "mel"
 menuEditorMenuItem1;
@@ -37,26 +27,58 @@ menuEditorMenuItem2;
 menuItem
 -label "Plane"
 -command "CreatePolygonPlane"
--radialPosition "NE"
+-radialPosition "SW"
 -image "polyMesh.png"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CreatePolygonPlaneOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "CV Curve"
+-command "CVCurveTool"
+-radialPosition "NE"
+-image "curveCV.png"
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "CVCurveToolOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Circle"
+-command "CreateNURBSCircle;"
+-radialPosition "E"
+-image "circle.png"
 -sourceType "mel"
 menuEditorMenuItem3;
 
 menuItem
 -label "menuEditorMenuItem4"
--command "CreatePolygonPlaneOptions;"
+-command "CreateNURBSCircleOptions;"
 -optionBox 1
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem4;
 
 menuItem
--label "Sphere"
--command "CreatePolygonSphere;"
--radialPosition "W"
--image "polySphere.png"
+-label "Quad Draw"
+-command "dR_quadDrawTool;"
+-radialPosition "N"
+-image "quadDraw_NEX32.png"
 -sourceType "mel"
-menuEditorMenuItem5;
+menuEditorMenuItem11;
 
 menuItem
 -label "menuEditorMenuItem6"
@@ -85,25 +107,17 @@ menuEditorMenuItem8;
 menuItem
 -label "Type"
 -command "CreatePolygonType"
--radialPosition "SW"
+-radialPosition "SE"
 -image "polyType.png"
 -sourceType "mel"
 menuEditorMenuItem9;
 
 menuItem
--label "SVG"
--command "CreatePolygonSVG"
--radialPosition "SE"
--image "polySVG.png"
+-label "Import .ai"
+-command "CreateIllustratorCurves;"
+-image "ai.png"
 -sourceType "mel"
 menuEditorMenuItem10;
-
-menuItem
--label "Interactive Creation"
--command "toggleCreatePolyPrimitiveAsTool"
--checkBox (1 == $PolyIntCheck)
--sourceType "mel"
-menuEditorMenuItem12;
 
 setParent -m ..;
 
@@ -142,15 +156,14 @@ menuEditorMenuItem6;
 menuItem
 -label "Color Management"
 -command "ToggleColorManagement" 
--keyEquivalent "K"
 -radialPosition "S"
 -checkBox (1 == $cmCheck) 
 -sourceType "mel"
 menuEditorMenuItem3;
 
 menuItem
--label "Shade Attributes"
--command "SelectAssignedShader"
+-label "Edit Shaders"
+-command "EditAndFrameShaders"
 -radialPosition "W"
 -image "out_shadingEngine.png"
 -sourceType "mel"
@@ -188,44 +201,16 @@ menuItem
 menuEditorMenuItem96;
 
 menuItem
--label "Hypershade"
--command "HypershadeWindow"
--image "da_hypershadeEditor.png"
--sourceType "mel"
-menuEditorMenuItem13;
-
-menuItem
--label "UV Editor"
--command "TextureViewWindow"
--image "textureEditor.png"
--sourceType "mel"
-menuEditorMenuItem1;
-
-menuItem
--label "Render Setup"
--command "RenderSetupWindow"
--image "render_setup.png"
--sourceType "mel"
-menuEditorMenuItem99;
-
-menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem12;
-
-menuItem
 -label "Rendering Flags"
 -command "RenderFlagsWindow"
--image "menuIconRenderSettings.png"
+-image "editRenderPass.png"
 -sourceType "mel"
 menuEditorMenuItem8;
 
 menuItem
 -label "File Path Editor"
 -command "FilePathEditor;"
--image "da_filePath.png"
+-image "folder-open.png"
 -sourceType "mel"
 menuEditorMenuItem10;
 
@@ -233,25 +218,9 @@ menuItem
 -label "Transfer Maps"
 -command "performSurfaceSampling 1"
 -image "displacementMap_64.png"
+-radialPosition "SE"
 -sourceType "mel"
 menuEditorMenuItem4;
-
-menuItem
--label "Add Camera"
--command "CreateCameraOnly"
--radialPosition "SE"
--image "view.png"
--boldFont 0
--sourceType "mel"
-menuEditorMenuItem14;
-
-menuItem
--command "CreateCameraOnlyOptions"
--optionBox 1
--enableCommandRepeat 0
--boldFont 0
--sourceType "mel"
-menuEditorMenuItem15;
 
 setParent -m ..;
 
@@ -328,11 +297,11 @@ menuItem
 menuEditorMenuItem10;
 
 menuItem
--label "Rivet Constraint"
--command "djRivet"
--radialPosition "N"
--image "Rivet.png"
--sourceType "mel"
+-label "MASH Rivet" 
+-command "RivetMash" 
+-radialPosition "N" 
+-image "MASH_CreateMeshFromPoints.png" 
+-sourceType "mel" 
 menuEditorMenuItem11;
 
 menuItem
@@ -368,18 +337,11 @@ menuItem
 menuEditorMenuItem20;
 
 menuItem
--label "Context Connector"
--command "ContextConnector"
--image "out_geoConnectable.png"
+-label "Connection Editor"
+-command "ConnectionEditor"
+-image "out_list.png"
 -sourceType "mel"
-menuEditorMenuItem12;
-
-menuItem
--label "Massive Attribute Editor"
--command "MassAttr"
--image "layerEditor.png"
--sourceType "mel"
-menuEditorMenuItem80;
+menuEditorMenuItem13;
 
 menuItem
 -label "Attributes"
@@ -470,27 +432,6 @@ menuItem
 menuEditorMenuItem81;
 
 menuItem
--label "Weight Driver"
--subMenu 1
--image "weightDriver.png"
--sourceType "mel"
-menuEditorMenuItem99;
-
-menuItem
--label "RBF"
--command "weightDriverEditRBF"
--sourceType "mel"
-menuEditorMenuItem98;
-
-menuItem
--label "Vector Angle"
--command "WeightDriverRig"
--sourceType "mel"
-menuEditorMenuItem97;
-
-setParent -m ..;
-
-menuItem
 -label "Quick Rig"
 -command "QuickRigEditor"
 -image "QR_QuickRigTool.png"
@@ -500,116 +441,96 @@ menuEditorMenuItem21;
 setParent -m ..;
 
 menuItem
--label "NURBS"
+-label "Layouts"
 -subMenu 1
 -radialPosition "NE"
--image "sphere.png"
+-image "perspHypergraphLayout.png"
 -sourceType "mel"
 menuEditorMenuItem2;
 
 menuItem
--label "CV Curve"
--command "CVCurveTool;"
--radialPosition "N"
--image "curveCV.png"
+-label "Node Editor"
+-command "LayoutNodeEditor"
+-radialPosition "NE"
+-image "perspHypergraphLayout.png"
 -sourceType "mel"
 menuEditorMenuItem1;
 
 menuItem
--label "menuEditorMenuItem2"
--command "CVCurveToolOptions;"
--optionBox 1
--enableCommandRepeat 0
+-label "UV Texture Editor"
+-command "LayoutUvTextureEditor"
+-radialPosition "E"
+-image "da_UV_Layout.png"
 -sourceType "mel"
 menuEditorMenuItem2;
 
 menuItem
--label "Circle"
--command "CreateNURBSCircle;"
--radialPosition "NE"
--image "circle.png"
+-label "Graph Editor"
+-command "LayoutGraphEditor"
+-radialPosition "SE"
+-image "perspGraphLayout.png"
 -sourceType "mel"
 menuEditorMenuItem3;
 
 menuItem
--label "menuEditorMenuItem4"
--command "CreateNURBSCircleOptions;"
--optionBox 1
--enableCommandRepeat 0
+-label "Shape Editor"
+-command "LayoutShapeEditor"
+-radialPosition "N"
+-image "da_ShapeEditor_Layout.png"
 -sourceType "mel"
 menuEditorMenuItem4;
 
 menuItem
--label "Text"
--command "CreateTextOptions;"
+-label "Pose Editor"
+-command "LayoutPoseEditor"
 -radialPosition "NW"
--image "text.png"
+-image "da_PoseEditor_Layout.png"
 -sourceType "mel"
 menuEditorMenuItem5;
 
 menuItem
--label "Import .ai"
--command "CreateIllustratorCurves;"
+-label "Component Editor"
+-command "LayoutComponentEditor"
+-image "da_ComponentEditor_Layout.png"
 -radialPosition "W"
--image "ai.png"
 -sourceType "mel"
 menuEditorMenuItem6;
 
 menuItem
--label "Sphere"
--command "CreateNURBSSphere;"
--radialPosition "SE"
--image "sphere.png"
+-label "Perspective/Four View layout"
+-command "LayoutPersp"
+-image "fourViewLayout.png"
+-radialPosition "S"
 -sourceType "mel"
 menuEditorMenuItem7;
 
 menuItem
--label "menuEditorMenuItem8"
--command "CreateNURBSSphereOptions;"
--optionBox 1
--enableCommandRepeat 0
+-label "Relationship Editor"
+-command "LayoutRelationshipEditor"
+-image "perspRelationshipEditorLayout.png"
 -sourceType "mel"
 menuEditorMenuItem8;
 
 menuItem
--label "Plane"
--command "CreateNURBSPlane"
--radialPosition "S"
--image "plane.png"
+-label "Dynamic Relationship"
+-command "LayoutDynamicRelationshipEditor"
+-image "da_DynamicRelationship_Layout.png"
 -sourceType "mel"
 menuEditorMenuItem9;
 
 menuItem
--label "menuEditorMenuItem10"
--command "CreateNURBSPlaneOptions"
--optionBox 1
--enableCommandRepeat 0
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem10;
 
 menuItem
--label "Pencil"
--command "PencilCurveTool"
--radialPosition "E"
--image "pencil.png"
+-label "Reference Editor"
+-command "LayoutReferenceEditor"
+-image "da_ReferenceEditor_Layout.png"
 -sourceType "mel"
 menuEditorMenuItem11;
-
-menuItem
--label "menuEditorMenuItem12"
--command "PencilCurveToolOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
-menuEditorMenuItem12;
-
-menuItem
--label "Interactive Creation"
--command "toggleCreateNurbsPrimitiveAsTool;"
--checkBox (1 == $NurbsIntCheck)
--boldFont 0
--sourceType "mel"
-menuEditorMenuItem13;
 
 setParent -m ..;
 
@@ -734,6 +655,21 @@ menuItem
 menuEditorMenuItem6;
 
 menuItem
+-label "Camera"
+-command "CreateCameraOnly"
+-radialPosition "N"
+-image "view.png"
+-sourceType "mel"
+menuEditorMenuItem22;
+
+menuItem
+-command "CreateCameraOnlyOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem23;
+
+menuItem
 -label "Locator"
 -command "CreateLocator;"
 -radialPosition "NE"
@@ -744,7 +680,7 @@ menuEditorMenuItem5;
 menuItem
 -label "Fluid Container"
 -command "Create3DContainer"
--radialPosition "N"
+-radialPosition "E"
 -image "fluidCreate3D.png"
 -sourceType "mel"
 menuEditorMenuItem1;
@@ -760,8 +696,6 @@ menuEditorMenuItem2;
 menuItem
 -label "Duplicate"
 -command "DuplicateWithTransform" 
--keyEquivalent "D"
--shiftModifier 1
 -radialPosition "SE"
 -image "da_duplicate.png"
 -sourceType "mel"
@@ -787,17 +721,8 @@ menuItem
 -label "menuEditorMenuItem18"
 -command "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem18;
-
-menuItem
--label "Instance Along Curve"
--command "runInstanceAlongCurve"
--radialPosition "E"
--image "instanceAlongCurve.png"
--sourceType "mel"
-menuEditorMenuItem3;
 
 menuItem
 -label "nParticle"
@@ -830,13 +755,6 @@ menuItem
 -enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem19;
-
-menuItem
--label "Component Editor"
--command "ComponentEditor"
--image "da_componentEditor.png"
--sourceType "mel"
-menuEditorMenuItem20;
 
 menuItem
 -label "separator" 
@@ -1089,34 +1007,6 @@ menuItem
 menuEditorMenuItem20;
 
 menuItem
--label "Shape Editor"
--command "ShapeEditor"
--image "blendShapeEditor.png"
--sourceType "mel"
-menuEditorMenuItem6;
-
-menuItem
--label "Pose Editor"
--command "PoseEditor"
--image "poseEditor.png"
--sourceType "mel"
-menuEditorMenuItem14;
-
-menuItem
--label "Graph Editor"
--command "GraphEditor"
--image "getGraphEditor.png"
--sourceType "mel"
-menuEditorMenuItem15;
-
-menuItem
--label "Dynamic Relationships"
--command "DynamicRelationshipEditor"
--image "da_dynamicEditor.png"
--sourceType "mel"
-menuEditorMenuItem17;
-
-menuItem
 -label "separator" 
 -divider 1
 -dividerLabel "separator"
@@ -1147,7 +1037,7 @@ menuEditorMenuItem50;
 setParent -m ..;
 
 menuItem
--label "Scene"
+-label "Scene/Node"
 -subMenu 1
 -radialPosition "S"
 -image "CameraAE.png"
@@ -1155,38 +1045,12 @@ menuItem
 menuEditorMenuItem17;
 
 menuItem
--label "Show"
--subMenu 1
--radialPosition "SE"
--image "showBatchRender.png"
--sourceType "mel"
-menuEditorMenuItem6;
-
-menuItem
--label "Local Axes"
--command "ToggleLocalRotationAxes;"
--radialPosition "E"
--image "polyNormalSetToFace.png"
--sourceType "mel"
-menuEditorMenuItem1;
-
-menuItem
--label "XRay Mode"
--command "dR_objectXrayTGL"
--radialPosition "S"
--image "XRay.png"
--sourceType "mel"
-menuEditorMenuItem2;
-
-menuItem
 -label "HUD Info"
 -command "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD"
 -radialPosition "SE"
 -image "info.png"
 -sourceType "mel"
-menuEditorMenuItem3;
-
-setParent -m ..;
+menuEditorMenuItem6;
 
 menuItem
 -label "Edit"
@@ -1199,8 +1063,6 @@ menuEditorMenuItem7;
 menuItem
 -label "Freeze Transform"
 -command "FreezeTransformations" 
--keyEquivalent "F"
--shiftModifier 1
 -radialPosition "NE"
 -image "UV_Freeze_Tool.png"
 -sourceType "mel"
@@ -1217,8 +1079,6 @@ menuEditorMenuItem3;
 menuItem
 -label "Delete History"
 -command "DeleteHistory" 
--keyEquivalent "D"
--shiftModifier 1
 -radialPosition "E"
 -image "clearHistory.png"
 -sourceType "mel"
@@ -1227,37 +1087,57 @@ menuEditorMenuItem4;
 menuItem
 -label "Center Pivot"
 -command "CenterPivot" 
--keyEquivalent "P"
--shiftModifier 1
 -radialPosition "SE"
 -image "menuIconModify.png"
 -sourceType "mel"
 menuEditorMenuItem5;
 
 menuItem
--label "Delete Locked"
--command "DeleteLockedNode"
--radialPosition "NW"
--image "deleteActive.png"
+-label "Optimize Scene Sizes"
+-command "OptimizeScene"
+-radialPosition "N"
+-image "deleteGeneric.png"
 -sourceType "mel"
 menuEditorMenuItem6;
 
 menuItem
--label "Delete Unknown Nodes"
--command "DeleteUnknownNode"
--radialPosition "N"
--image "deleteGeneric.png"
+-label "menuEditorMenuItem3"
+-command "OptimizeSceneOptions"
+-optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem7;
 
 menuItem
 -label "Reset Transform"
--command "ResetTransformations" 
--keyEquivalent "H"
--radialPosition "S"
+-command "ResetAllTransformations" 
+-radialPosition "NW"
 -image "teKeyRefresh.png"
 -sourceType "mel"
 menuEditorMenuItem1;
+
+menuItem
+-label "Lock Selected Nodes" 
+-subMenu 1
+-image "lockGeneric.png" 
+-sourceType "mel" 
+menuEditorMenuItem8;
+
+menuItem
+-label "On" 
+-command "LockNode" 
+-image "rvViewingPipelineOn.png"
+-sourceType "mel" 
+menuEditorMenuItem1;
+
+menuItem
+-label "Off" 
+-command "UnlockNode" 
+-image "rvViewingPipelineOff.png"
+-sourceType "mel" 
+menuEditorMenuItem2;
+
+setParent -m ..;
 
 setParent -m ..;
 
@@ -1272,7 +1152,6 @@ menuEditorMenuItem8;
 menuItem
 -label "None"
 -command "SelectNone" 
--keyEquivalent "D"
 -radialPosition "SE"
 -image "hotkeyFieldClear.png"
 -sourceType "mel"
@@ -1289,9 +1168,6 @@ menuEditorMenuItem3;
 menuItem
 -label "All"
 -command "SelectAll" 
--keyEquivalent "A"
--ctrlModifier 1
--shiftModifier 1
 -radialPosition "E"
 -image "aselect.png"
 -sourceType "mel"
@@ -1440,20 +1316,6 @@ menuItem
 -image "alignTool.png"
 -sourceType "mel"
 menuEditorMenuItem5;
-
-menuItem
--label "Reference Editor"
--command "ReferenceEditor"
--image "da_referenceEditor.png"
--sourceType "mel"
-menuEditorMenuItem10;
-
-menuItem
--label "Relationship Editor"
--command "SetEditor"
--image "da_relationshipEditor.png"
--sourceType "mel"
-menuEditorMenuItem12;
 
 menuItem
 -label "Evaluation Toolkit"
@@ -1699,20 +1561,6 @@ menuEditorMenuItem4;
 setParent -m ..;
 
 menuItem
--label "Node Editor"
--command "NodeEditorWindow"
--image "da_nodeEditor.png"
--sourceType "mel"
-menuEditorMenuItem9;
-
-menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem8;
-
-menuItem
 -label "Set Project"
 -command "SetProject"
 -image "folder-closed.png"
@@ -1732,6 +1580,20 @@ menuItem
 -image "folder-open.png"
 -sourceType "mel"
 menuEditorMenuItem7;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem12;
+
+menuItem
+-label "About May9 Pro..."
+-command "AboutMay9"
+-image "menuIconHelp.png"
+-sourceType "mel"
+menuEditorMenuItem8;
 
 setParent -m ..;
 
