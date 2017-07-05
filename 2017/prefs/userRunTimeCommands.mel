@@ -2066,3 +2066,11 @@ runTimeCommand
 	-command ("polyNormalPerVertex -ufn true;\npolySoftEdge -angle 47")
 	UnlockAndFixNormals;
 
+runTimeCommand
+	-annotation "Assign aiStandardHair to pfxHair"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`;\nselect $mySel[0];\nstring $myHairSystem[] = `listConnections -s 1 -d 0 -t \"hairSystem\"`;\n\n//string $myHairSystem[] = `ls -sl`;\ncreateRenderNodeCB -asShader \"surfaceShader\" aiStandardHair \"\";\nstring $myStandardHair[] = `ls -sl`;\n\nconnectAttr ($myStandardHair[0] + \".outColor\", $myHairSystem[0] + \".aiHairShader\");\n\nsetAttr ($myHairSystem[0] + \".aiOverrideHair\") 1;\n\nopenAEWindow")
+	aiStandardHairToPfxHair;
+
