@@ -8,7 +8,7 @@ from maya import mel, cmds
 
 
 __location__ = os.path.dirname(__file__)
-__version__ = "1.2 preview"
+__version__ = "1.2"
 __protocol__ = 1
 
 
