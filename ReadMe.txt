@@ -154,6 +154,7 @@ Main preferences change:
 - Two Bone IK and Spring IK are preload
 - PreSelect Highlight is on by default in Graph Editor
 - Wireframe visibility on Sculpting Tool is on by default
+- Panel tool bar is hidden
 
 
 For more information:

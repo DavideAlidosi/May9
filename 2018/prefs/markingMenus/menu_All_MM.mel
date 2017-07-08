@@ -1,4 +1,7 @@
-string $cmCheck = `colorManagementPrefs -q -cme`;
+string $currPanel = `getPanel -underPointer`;
+string $currCam = `modelEditor -q -camera $currPanel`;
+int $cmCheck = `colorManagementPrefs -q -cme`;
+int $rgCheck = `camera -q -displayResolution $currCam`;
 
 menuItem
 -label "Poly/Curves"
@@ -172,10 +175,18 @@ menuEditorMenuItem9;
 menuItem
 -label "Render View"
 -command "aiRenderView"
--radialPosition "SW"
+-radialPosition "SE"
 -image "RenderShelf.png"
 -sourceType "mel"
 menuEditorMenuItem70;
+
+menuItem
+-label "Resolution Gate"
+-command "ToggleResolutionGate"
+-radialPosition "SW"
+-checkBox (1 == $rgCheck) 
+-sourceType "mel"
+menuEditorMenuItem12;
 
 menuItem
 -label "Playblast"
@@ -218,7 +229,6 @@ menuItem
 -label "Transfer Maps"
 -command "performSurfaceSampling 1"
 -image "displacementMap_64.png"
--radialPosition "SE"
 -sourceType "mel"
 menuEditorMenuItem4;
 
