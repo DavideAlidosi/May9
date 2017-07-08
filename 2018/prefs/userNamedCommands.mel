@@ -9,12 +9,6 @@ nameCommand
 	MMtoKeymanagerNameCommand;
 
 nameCommand
-	-annotation "Ctrl + Alt + Space"
-	-sourceType "mel"
-	-command ("python( \"import rjCMDSearch; rjCMDSearch.focus()\" )")
-	rjCMDSearchHK;
-
-nameCommand
 	-annotation "ClearFreezeNameCommand"
 	-sourceType "mel"
 	-command ("ClearFreeze")
@@ -535,4 +529,10 @@ nameCommand
 	-sourceType "mel"
 	-command ("CreateAssigNode")
 	CreateAssigNodeNameCommand;
+
+nameCommand
+	-annotation "ToggleResolutionGateNameCommand"
+	-sourceType "mel"
+	-command ("ToggleResolutionGate")
+	ToggleResolutionGateNameCommand;
 

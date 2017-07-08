@@ -3,90 +3,11 @@
 	commonTexSelectOptionsPopup();
 
     menuItem
-        -label "UV Toolkit" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "OpenUVToolkit" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "UVTk.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem19;
-
-    menuItem
-        -label "Symmetrize" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "symmetrizeUVTool.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem26;
-
-    menuItem
-        -label "menuEditorMenuItem31" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem24;
-
-    menuItem
         -label "Optimize" 
         -divider 0
         -subMenu 0
         -tearOff 0
         -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -108,11 +29,6 @@
         -subMenu 0
         -tearOff 0
         -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -132,11 +48,6 @@
         -subMenu 0
         -tearOff 0
         -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -158,11 +69,6 @@
         -subMenu 0
         -tearOff 0
         -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -177,16 +83,150 @@
         menuEditorMenuItem7;
 
     menuItem
+        -label "Automatic Map" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyAutoProj 0;" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyAutoProj.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
+
+    menuItem
+        -label "menuEditorMenuItem12" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyAutoProj 1;" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem12;
+
+    menuItem
+        -label "Spherical Map" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polySphereProj.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem13;
+
+    menuItem
+        -label "menuEditorMenuItem20" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem20;
+
+    menuItem
+        -label "UV Toolkit" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "OpenUVToolkit" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "UVTk.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem19;
+
+    menuItem
+        -label "Symmetrize" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "symmetrizeUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem26;
+
+    menuItem
+        -label "menuEditorMenuItem31" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
         -label "separator" 
         -divider 1
         -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -205,11 +245,6 @@
         -subMenu 0
         -tearOff 0
         -command "performPolyAutoSeamUV 0" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -230,11 +265,6 @@
         -subMenu 0
         -tearOff 0
         -command "performPolyAutoSeamUV 1" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -246,7 +276,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem30;
+        menuEditorMenuItem2;
 
     menuItem
         -label "Unfold" 
@@ -254,11 +284,6 @@
         -subMenu 0
         -tearOff 0
         -command "performUnfold 0" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -279,11 +304,6 @@
         -subMenu 0
         -tearOff 0
         -command "performUnfold 1" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -295,19 +315,14 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem27;
+        menuEditorMenuItem3;
 
-     menuItem
+    menuItem
         -label "Layout" 
         -divider 0
         -subMenu 0
         -tearOff 0
         -command "LayoutUV" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -328,11 +343,6 @@
         -subMenu 0
         -tearOff 0
         -command "LayoutUVOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -344,7 +354,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem51;
+        menuEditorMenuItem4;
 
     menuItem
         -label "separator" 
@@ -352,11 +362,6 @@
         -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -375,11 +380,6 @@
         -subMenu 0
         -tearOff 0
         -command "UVSetEditor" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -400,11 +400,6 @@
         -subMenu 0
         -tearOff 0
         -command "UVCentricUVLinkingEditor" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -425,11 +420,6 @@
         -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -448,11 +438,6 @@
         -subMenu 0
         -tearOff 0
         -command "ConvertSelectionToUVs" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0

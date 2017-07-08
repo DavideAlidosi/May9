@@ -8,11 +8,6 @@
         -subMenu 0
         -tearOff 0
         -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -28,18 +23,12 @@
         -longDivider 1
         menuEditorMenuItem29;
 
-
     menuItem
         -label "Select Shell" 
         -divider 0
         -subMenu 0
         -tearOff 0
         -command "SelectUVShell" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -61,11 +50,6 @@
         -subMenu 0
         -tearOff 0
         -command "SelectUVBorder" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -87,11 +71,6 @@
         -subMenu 0
         -tearOff 0
         -command "SetCutSewUVTool;toolPropertyWindow;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -106,23 +85,118 @@
         menuEditorMenuItem11;
 
     menuItem
-        -label "Take Snapshot" 
+        -label "Automatic Map" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "performUVSnapshot" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
+        -command "performPolyAutoProj 0;" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyAutoProj.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "menuEditorMenuItem8" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyAutoProj 1;" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
+    menuItem
+        -label "Spherical Map" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polySphereProj.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem13;
+
+    menuItem
+        -label "menuEditorMenuItem14" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+    menuItem
+        -label "UV Toolkit" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "OpenUVToolkit" 
         -optionBox 0
         -enable 1
         -data 0
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "polyUVSnapshot.png" 
+        -image "UVTk.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Take Snapshot" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performUVSnapshot" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_snapshot.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -136,11 +210,6 @@
         -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -159,11 +228,6 @@
         -subMenu 0
         -tearOff 0
         -command "ConvertSelectionToContainedEdges" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -184,11 +248,6 @@
         -subMenu 0
         -tearOff 0
         -command "PolySelectConvert 3" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -204,15 +263,11 @@
         menuEditorMenuItem9;
 
     menuItem
+        -label "menuEditorMenuItem14" 
         -divider 0
         -subMenu 0
         -tearOff 0
         -command "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -221,10 +276,10 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem14;
+        menuEditorMenuItem3;
 
 setParent -m ..;
 

@@ -71,6 +71,7 @@ CTRL + SHIFT + ALT + V = Paste selection to clipboard
 CTRL + SHIFT + ALT + S = Save selection in to a Set
 CTRL + SHIFT + ALT + D = Delete Static Channels
 CTRL + SHIFT + ALT + M = Toggle Shelf
+CTRL + SHIFT + ALT + R = Toggle Resolution Gate
 
 CTRL + SHIFT + ALT + Z = MMtoKey Manager
 CTRL + SHIFT + ALT + Q = MMtoKey Resetter
