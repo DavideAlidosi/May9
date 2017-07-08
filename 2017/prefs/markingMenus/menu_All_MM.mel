@@ -1,7 +1,4 @@
-string $currPanel = `getPanel -underPointer`;
-string $currCam = `modelEditor -q -camera $currPanel`;
 int $cmCheck = `colorManagementPrefs -q -cme`;
-int $rgCheck = `camera -q -displayResolution $currCam`;
 
 menuItem
 -label "Poly/Curves"
@@ -184,7 +181,7 @@ menuItem
 -label "Resolution Gate"
 -command "ToggleResolutionGate"
 -radialPosition "SW"
--checkBox (1 == $rgCheck) 
+-image "ResolutionGate.png"
 -sourceType "mel"
 menuEditorMenuItem12;
 
