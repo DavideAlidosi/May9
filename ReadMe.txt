@@ -155,6 +155,7 @@ Main preferences change:
 - PreSelect Highlight is on by default in Graph Editor
 - Wireframe visibility on Sculpting Tool is on by default
 - Panel tool bar is hidden
+- Status line is fully expanded
 
 
 For more information:
