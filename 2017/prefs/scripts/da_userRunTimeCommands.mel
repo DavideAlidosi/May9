@@ -1883,7 +1883,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daUvEditor\";\ninViewMessage -pos topCenter -msg \"UV Texture layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
+	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daUvEditor\";\n//Hide Texture\nstring $visiblePanels[] = `getPanel -visiblePanels`;\nif(stringArrayContains(\"polyTexturePlacementPanel1\", $visiblePanels)){\n  string $texWinName[] = `getPanel -sty polyTexturePlacementPanel`;\n  textureWindowToggleTextureImageOff( $texWinName[0], \"textureWindow\" );\n  txtWndUpdateEditor( $texWinName[0], \"textureWindow\", \"null\", 101 );\n}\n\ninViewMessage -pos topCenter -msg \"UV Texture layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
 	LayoutUvTextureEditor;
 
 runTimeCommand
