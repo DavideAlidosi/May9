@@ -402,7 +402,7 @@ I00
 sg21
 I0
 sg22
-S'editLight'
+S'ToggleLightManipulators'
 p102
 sg24
 S'Light_MM'
@@ -1222,7 +1222,7 @@ I00
 sg21
 I0
 sg22
-S'editLight'
+S'ToggleLightManipulators'
 p262
 sg24
 S'Light_MM'
@@ -1335,7 +1335,7 @@ I00
 sg21
 I0
 sg22
-S'editLight'
+S'ToggleLightManipulators'
 p285
 sg24
 S'Light_MM'
@@ -1373,7 +1373,7 @@ I00
 sg21
 I0
 sg22
-S'editLight'
+S'ToggleLightManipulators'
 p293
 sg24
 S'Light_MM'
@@ -1411,7 +1411,7 @@ I00
 sg21
 I0
 sg22
-S'editCamera'
+S'ToggleCameraManipulators'
 p301
 sg24
 S'Camera_MM'

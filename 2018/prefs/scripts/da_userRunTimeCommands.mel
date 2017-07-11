@@ -2094,3 +2094,18 @@ runTimeCommand
 	-command ("string $mySel[] = `listRelatives -s`;\nselect $mySel[0];\nstring $myHairSystem[] = `listConnections -s 1 -d 0 -t \"hairSystem\"`;\n\n//string $myHairSystem[] = `ls -sl`;\ncreateRenderNodeCB -asShader \"surfaceShader\" aiStandardHair \"\";\nstring $myStandardHair[] = `ls -sl`;\n\nconnectAttr ($myStandardHair[0] + \".outColor\", $myHairSystem[0] + \".aiHairShader\");\n\nsetAttr ($myHairSystem[0] + \".aiOverrideHair\") 1;\n\nopenAEWindow")
 	aiStandardHairToPfxHair;
 
+runTimeCommand
+	-annotation "Toggle Light Manipulators"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`renderManip -q -st` == 0)\n    ShowLightManipulators;\nelse\n    HideLightManipulators;")
+	ToggleLightManipulators;
+
+runTimeCommand
+	-annotation "Toggle Camera Manipulators"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`renderManip -q -st` == 0)\n    ShowCameraManipulators;\nelse\n    HideCameraManipulators;")
+	ToggleCameraManipulators;

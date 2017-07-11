@@ -1,3 +1,4 @@
+int $lightCheck = `renderManip -q -st`;
 
     menuItem
         -label "Light Linking" 
@@ -5,11 +6,6 @@
         -subMenu 0
         -tearOff 0
         -command "LightCentricLightLinkingEditor;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -26,16 +22,11 @@
         menuEditorMenuItem16;
 
     menuItem
-        -label "Edit Light" 
+        -label "Light Manipulators" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ShowManipulators;AttributeEditor" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
+        -command "ToggleLightManipulators" 
         -optionBox 0
         -enable 1
         -data 0
@@ -43,7 +34,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "fileTextureEdit.png" 
+        -checkBox (1 == $lightCheck) 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -57,11 +48,6 @@
         -subMenu 0
         -tearOff 0
         -command "LookThruSelected" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -83,11 +69,6 @@
         -subMenu 0
         -tearOff 0
         -command "dR_DoCmd(\"viewPersp\");" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -109,11 +90,6 @@
         -subMenu 0
         -tearOff 0
         -command "LightList" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -121,7 +97,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "lightEditor.png" 
+        -image "light_manager.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -134,11 +110,6 @@
         -divider 0
         -subMenu 1
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -157,19 +128,14 @@
             -subMenu 0
             -tearOff 0
             -command "aiLightNormalize" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOn.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -182,19 +148,14 @@
             -subMenu 0
             -tearOff 0
             -command "aiNoLightNormalize" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOff.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -208,11 +169,6 @@
         -divider 0
         -subMenu 1
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -231,19 +187,14 @@
             -subMenu 0
             -tearOff 0
             -command "aiPortalLight" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOn.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -256,19 +207,14 @@
             -subMenu 0
             -tearOff 0
             -command "aiNoPortalLight" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOff.png" 
             -italicized 0
             -boldFont 1
             -sourceType "mel" 

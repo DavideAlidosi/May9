@@ -1,3 +1,4 @@
+int $cameraCheck = `renderManip -q -st`;
 
     menuItem
         -label "Look Through" 
@@ -5,11 +6,6 @@
         -subMenu 0
         -tearOff 0
         -command "LookThruSelected" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -26,16 +22,11 @@
         menuEditorMenuItem1;
 
     menuItem
-        -label "Edit Camera" 
+        -label "Camera Manipulators" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "ShowManipulators;AttributeEditor" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
+        -command "ToggleCameraManipulators" 
         -optionBox 0
         -enable 1
         -data 0
@@ -43,7 +34,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "fileTextureEdit.png" 
+        -checkBox (1 == $cameraCheck) 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -57,11 +48,6 @@
         -subMenu 0
         -tearOff 0
         -command "dR_DoCmd(\"viewPersp\");" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
