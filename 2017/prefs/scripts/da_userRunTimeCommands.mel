@@ -1911,22 +1911,6 @@ runTimeCommand
 	AddMashTransform;
 
 runTimeCommand
-	-annotation "Enable Prossimity on Controllers"
-	-category "Custom Scripts.May9_Pro.Rigging"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $myControlTag[] = `listConnections -s 0 -d 1 -t \"controller\"`;\nint $numObj = size($myControlTag); \nfor($i=0; $i<$numObj; $i++){\n    setAttr ($myControlTag[$i] + \".visibilityMode\") 2;\n}")
-	ControllerProssimity;
-
-runTimeCommand
-	-annotation "Disable Prossimity on Controllers"
-	-category "Custom Scripts.May9_Pro.Rigging"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $myControlTag[] = `listConnections -s 0 -d 1 -t \"controller\"`;\nint $numObj = size($myControlTag); \nfor($i=0; $i<$numObj; $i++){\n    setAttr ($myControlTag[$i] + \".visibilityMode\") 0;\n}")
-	ControllerNoProssimity;
-
-runTimeCommand
 	-annotation "Convert Edge to Curve in UV Editor"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
