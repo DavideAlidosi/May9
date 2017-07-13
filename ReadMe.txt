@@ -34,18 +34,17 @@ Press and release Z = Enable the contextual Hotkey based on selection, combinati
 Press and hold Z + Left mouse button = Enable the contextual Marking Menus based on selection, combination of selection or panels
 Press and hold Z + Middle mouse button = Enable the Universal Marking MenuEnable or one of this tool contextual Marking Menu:
 	- 3D Paint tool
-	- Shooth Skin tool
+	- Paint Skin tool
 	- Paint Attribute
 	- Legacy Artisan Sulpt tool
 	- Create Particle tool
 	- Paint FX tool
-	- Grase Pencil tool
+	- Grease Pencil tool
 	- Multi Cut tool
 	- Quad Draw tool
 	- Poly Crease tool
 	- Scultp tools
 	- XGen Groom Paint tools
-	- Crease tool
 	- Create Particle tool
 	- UV Brushes
 
@@ -72,9 +71,7 @@ CTRL + SHIFT + ALT + S = Save selection in to a Set
 CTRL + SHIFT + ALT + D = Delete Static Channels
 CTRL + SHIFT + ALT + M = Toggle Shelf
 CTRL + SHIFT + ALT + R = Toggle Resolution Gate
-
 CTRL + SHIFT + ALT + Z = MMtoKey Manager
-CTRL + SHIFT + ALT + Q = MMtoKey Resetter
 
 CTRL + ` = Show the last operation in AE
 CTRL + F = Ignore the child and frame only the selected object
@@ -156,7 +153,7 @@ Main preferences change:
 - Wireframe visibility on Sculpting Tool is on by default
 - Panel tool bar is hidden
 - Status line is fully expanded
-
+- Enable Highlight connection on selected (Only Maya 2018)
 
 For more information:
 

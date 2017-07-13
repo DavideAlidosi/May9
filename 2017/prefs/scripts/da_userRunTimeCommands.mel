@@ -47,14 +47,6 @@ runTimeCommand
 	colorManagementOff;
 
 runTimeCommand
-	-annotation "Show Up and Down Stream in HyperShade"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");")
-	hsUpAndDownstream;
-
-runTimeCommand
 	-annotation "Enable Outliner in layout"
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
@@ -173,14 +165,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\")")
 	ExpandShade;
-
-runTimeCommand
-	-annotation "Switch Color Managment Based on Render Engine"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"mentalRay\")\n{\n\tcolorManagementOn;\n\tinViewMessage -pos topCenter -msg \"Linear workflow is set for Mental Ray\" -fade;\n\tsetAttr \"defaultRenderGlobals.enableDefaultLight\" 0;\n\tsetAttr \"miDefaultFramebuffer.datatype\" 5;\n}\nelse if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\")\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Arnold render is setted and color management is off\" -fade;\n}\nelse if (`getAttr defaultRenderGlobals.currentRenderer` == \"mayaSoftware\")\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Maya Software render is setted and color management is off\" -fade;\n}\nelse\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Unknown render setted and color management is off\" -fade;\n}")
-	SwitchColorManagment;
 
 runTimeCommand
 	-annotation "Create a Flatten Surface From Curves"
@@ -503,22 +487,6 @@ runTimeCommand
 	FollicleNoBraid;
 
 runTimeCommand
-	-annotation "Delete Unknown Node"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $gffu[] = `ls -type unknown`;\nfor ($rfo in $gffu) \n{\n\tlockNode -lock off $rfo;\n\tdelete $rfo; \n}")
-	DeleteUnknownNode;
-
-runTimeCommand
-	-annotation "Apply Sculpt Deformer on Custom Shape"
-	-category "Custom Scripts.May9_Pro.Modeling"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $sculptGeo[] = `ls -sl`;\nsculpt -sculptTool $sculptGeo[1] -mode flip -insideMode even -maxDisplacement 0.1 -dropoffType linear -dropoffDistance 2.3 -groupWithLocator 0 -objectCentered 1 $sculptGeo[0];")
-	SculptMeshDeformer;
-
-runTimeCommand
 	-annotation "Switch Manipulator Modes for Componets"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
@@ -597,14 +565,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("$hilite = `ls -hilite`; \n$obj = `ls -dag -sl`; \nsetSelectMode(\"objects\", \"Objects\"); \nselect -r $obj $hilite; ")
 	BackToObjectMode;
-
-runTimeCommand
-	-annotation "Toggle Component Object Mode"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("$hilite = `ls -hilite`; \n$obj = `ls -dag -sl`; \nif (size( $hilite)) { \nsetSelectMode(\"objects\", \"Objects\"); \nselect -r $obj $hilite; \n} else { \nsetSelectMode(\"components\", \"Components\"); \n}")
-	ToggleCompObj;
 
 runTimeCommand
 	-annotation "Bevel Curve(s) for Text"
@@ -799,28 +759,12 @@ runTimeCommand
 	nconstraintTransform;
 
 runTimeCommand
-	-annotation "Edit Current light"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("ShowManipulators;AttributeEditor")
-	editLight;
-
-runTimeCommand
 	-annotation "Edit Current Deformer"
 	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("ShowManipulators;LastOpInStack")
 	editDeformer;
-
-runTimeCommand
-	-annotation "Edit Current Camera"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("LookThruSelected;AttributeEditor;")
-	editCamera;
 
 runTimeCommand
 	-annotation "Enable Legacy Subdiv in Poly Mode"
@@ -973,14 +917,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("colorEditor")
 	openColorEditor;
-
-runTimeCommand
-	-annotation "Convert Multiple Edges to Curves"
-	-category "Custom Scripts.May9_Pro.Object"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("rainCurvesFromEdges")
-	CurvesFromEdges;
 
 runTimeCommand
 	-annotation "Display Joints As Bone"
@@ -1709,22 +1645,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis AttributeEditor` == 1){\n    if(`workspaceControl -q -r AttributeEditor` == 0)\n    workspaceControl -e -clp 0 AttributeEditor;\n    else\n        if(`workspaceControl -q -clp AttributeEditor` == 0)\n            ShowAttributeEditorOrChannelBox;\n        else\n            workspaceControl -e -clp 0 AttributeEditor;\n}else{\n    AttributeEditor;\n}")
 	ToggleAttribuiteChannel;
-
-runTimeCommand
-	-annotation "Add Arnold Volume"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.createVolume()")
-	aiVolume;
-
-runTimeCommand
-	-annotation "Separate By Material"
-	-category "Custom Scripts.May9_Pro.Modeling"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $selection[] = `ls -sl`;\nsepMat($selection[0]);\ndR_modeObject;")
-	SeparateMaterial;
 
 runTimeCommand
 	-annotation "Batch Skin Transfert by UV"
