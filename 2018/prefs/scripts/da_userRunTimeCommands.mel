@@ -459,7 +459,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("Parent;\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".translate\") -type \"double3\" 0 0 0;\nsetAttr ($each +\".rotate\") -type \"double3\" 0 0 0;\n}")
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` > 1 ){\n    Parent;\n    string $myChild[] = `ls -sl`;\n    for ($each in $myChild){\n        setAttr ($each +\".translate\") -type \"double3\" 0 0 0;\n        setAttr ($each +\".rotate\") -type \"double3\" 0 0 0;\n    }\n}else{\n    confirmDialog -title \"Select at least two transform\" -message \"Please check if you have select at least two transform nodes.\"\n\t-button \"OK\" -defaultButton \"OK\";\n}")
 	da_ParentAndPosition;
 
 runTimeCommand
@@ -611,7 +611,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\taiRenderView;\n}\nelse{ \n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}\n\ninViewMessage -pos topCenter -msg \"Starting Render\" -fade;")
+	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\tda_AiRenderView;\n}\nelse{ \n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}\n\ninViewMessage -pos topCenter -msg \"Starting Render\" -fade;")
 	da_ProgressiveIPR;
 
 runTimeCommand
@@ -811,7 +811,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if (`pluginInfo -q -loaded mtoa` == 0)\n{\n\tcatch(`loadPlugin \"mtoa\"`);\n\tpython( \"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldTxManager()\" );\n}\nelse\n{\n\tpython( \"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldTxManager()\" );\n}")
+	-command ("if (`pluginInfo -q -loaded mtoa` == 0)\n\tprint \"Load Arnold before continue\";\nelse\n\tpython( \"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldTxManager()\" );")
 	da_TxManager;
 
 runTimeCommand
@@ -819,7 +819,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\nif ( `objExists CurveShader` ) {\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n} else {\n    createNode aiStandard -n CurveShader;\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n}\n\ninViewMessage -pos topCenter -msg \"Arnold enable on selected curve(s)\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    if ( `objExists CurveShader` ) {\n        setAttr ($each +\".aiRenderCurve\") 1;\n    \tsetAttr ($each +\".aiMode\") 1;\n    \tsetAttr ($each +\".aiCurveWidth\") 1;\n        connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n    } else {\n        createNode aiStandard -n CurveShader;\n        setAttr ($each +\".aiRenderCurve\") 1;\n    \tsetAttr ($each +\".aiMode\") 1;\n    \tsetAttr ($each +\".aiCurveWidth\") 1;\n        connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n    }\n}\n\ninViewMessage -pos topCenter -msg \"Arnold enable on selected curve(s)\" -fade;")
 	da_AiRenderCurve;
 
 runTimeCommand
@@ -827,7 +827,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".aiRenderCurve\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Arnold render disable on selected curve(s)\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiRenderCurve\") 0;\n\ninViewMessage -pos topCenter -msg \"Arnold render disable on selected curve(s)\" -fade;")
 	da_AiNoRenderCurve;
 
 runTimeCommand
@@ -1219,7 +1219,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal true\";\n}\n    \ninViewMessage -pos topCenter -msg \"Portal Light On\" -fade;")
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel)\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal true\";\n    \ninViewMessage -pos topCenter -msg \"Portal Light On\" -fade;")
 	da_AiPortalLight;
 
 runTimeCommand
@@ -1227,7 +1227,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal false\";\n}\n    \ninViewMessage -pos topCenter -msg \"Portal Light Off\" -fade;")
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel)\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal false\";\n\ninViewMessage -pos topCenter -msg \"Portal Light Off\" -fade;")
 	da_AiNoPortalLight;
 
 runTimeCommand
@@ -1341,14 +1341,6 @@ runTimeCommand
 	-commandLanguage "python"
 	-command ("import mtoa.utils as mutils;mutils.createLocator(\"aiLightPortal\", asLight=True)")
 	da_AiLightPortal;
-
-runTimeCommand
-	-annotation "Open MtoA Render View"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldOpenMtoARenderView()")
-	da_MtoaRenderView;
 
 runTimeCommand
 	-annotation "Toggle Playback Animation"
@@ -1843,7 +1835,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiOpaque\") 1;\n}\n    \ninViewMessage -pos topCenter -msg \"Opaque On\" -fade;")
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel)\n    setAttr ($each +\".aiOpaque\") 1;\n    \ninViewMessage -pos topCenter -msg \"Opaque On\" -fade;")
 	da_AiOpaque;
 
 runTimeCommand
@@ -1851,7 +1843,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiOpaque\") 0;\n}\n    \ninViewMessage -pos topCenter -msg \"Opaque Off\" -fade;")
+	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel)\n    setAttr ($each +\".aiOpaque\") 0;\n    \ninViewMessage -pos topCenter -msg \"Opaque Off\" -fade;")
 	da_AiNoOpaque;
 
 runTimeCommand
@@ -2005,3 +1997,4 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("setKeyframe -insert")
 	da_InsertKeyFrame;
+

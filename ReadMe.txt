@@ -76,8 +76,7 @@ CTRL + SHIFT + ALT + Z = MMtoKey Manager
 CTRL + ` = Show the last operation in AE
 CTRL + F = Ignore the child and frame only the selected object
 CTRL + P = Parent and position
-CTRL + J = Context Connector
-CTRL + K = Massive Attribute Editor
+CTRL + J = Connection Editor
 CTRL + L = List of Input Operation is mapped
 
 ALT + 1 = Set Layout Single Perspective/Four View
@@ -110,10 +109,9 @@ SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
 SHIFT + T = Assing shader if an object is selected or open create node window if not
 
-A + LMB = SOuP Smart Connector
 ~ = Orient Manipulators Toggle
 ? = Find Maya Menu
-K + Drag = Smooth playback mode
+K + Drag LMB = Smooth playback mode
 CMD + Space = Toggle Full Screen (Mac OS only)
 
 
