@@ -53,7 +53,7 @@ p21
 I0
 sS'command'
 p22
-S'LegacySubdivToggle'
+S'da_LegacySubdivToggle'
 p23
 sS'menu'
 p24
@@ -74,7 +74,7 @@ I00
 sg21
 I0
 sg22
-S'editDeformer'
+S'da_EditDeformer'
 p29
 sg24
 S'Deformers_MM'
@@ -112,7 +112,7 @@ I00
 sg21
 I0
 sg22
-S'SelectMulti'
+S'da_SelectMulti'
 p37
 sg24
 S'PolyPoly_MM'
@@ -131,7 +131,7 @@ I00
 sg21
 I0
 sg22
-S'GoToComponentMode'
+S'da_GoToComponentMode'
 p41
 sg24
 S'CurvesOnSurface_MM'
@@ -168,7 +168,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p48
 sg24
 S'CurvePoint_MM'
@@ -187,7 +187,7 @@ I00
 sg21
 I0
 sg22
-S'GoToComponentMode'
+S'da_GoToComponentMode'
 p52
 sg24
 S'Curves_MM'
@@ -225,7 +225,7 @@ I00
 sg21
 I0
 sg22
-S'RivetMash'
+S'da_RivetMash'
 p60
 sg24
 S'PolyFace'
@@ -282,7 +282,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p72
 sg24
 S'Legacy_SubdivComponents_MM'
@@ -326,7 +326,7 @@ I00
 sg21
 I0
 sg22
-S'SelectParticle'
+S'da_SelectParticle'
 p86
 sg24
 S'Particle_MM'
@@ -345,7 +345,7 @@ I00
 sg21
 I0
 sg22
-S'GoToComponentMode'
+S'da_GoToComponentMode'
 p90
 sg24
 S'Nurbs_MM'
@@ -364,7 +364,7 @@ I00
 sg21
 I0
 sg22
-S'editDeformer'
+S'da_EditDeformer'
 p94
 sg24
 S'Deformers_MM'
@@ -383,7 +383,7 @@ I00
 sg21
 I0
 sg22
-S'SelectMulti;GoToComponentMode'
+S'da_SelectMulti;da_GoToComponentMode'
 p98
 sg24
 S'PolyMuscle_MM'
@@ -402,7 +402,7 @@ I00
 sg21
 I0
 sg22
-S'ToggleLightManipulators'
+S'da_ToggleLightManipulators'
 p102
 sg24
 S'Light_MM'
@@ -421,7 +421,7 @@ I00
 sg21
 I0
 sg22
-S'nconstraintTransform'
+S'da_NconstraintTransform'
 p106
 sg24
 S'CurveVertex_MM'
@@ -440,7 +440,7 @@ I00
 sg21
 I0
 sg22
-VBackToObjectMode
+Vda_BackToObjectMode
 p110
 sg24
 VWindow_UV_Edge_MM
@@ -477,7 +477,7 @@ I00
 sg21
 I0
 sg22
-S'GoToComponentMode'
+S'da_GoToComponentMode'
 p117
 sg24
 S'NurbsCurve_MM'
@@ -496,7 +496,7 @@ I00
 sg21
 I0
 sg22
-S'GoToComponentMode'
+S'da_GoToComponentMode'
 p121
 sg24
 S'NurbsNurbs_MM'
@@ -534,7 +534,7 @@ I00
 sg21
 I0
 sg22
-S'SelectCV'
+S'da_SelectCV'
 p129
 sg24
 S'Constraint_MM'
@@ -628,7 +628,7 @@ I00
 sg21
 I0
 sg22
-S'GoToComponentMode'
+S'da_GoToComponentMode'
 p148
 sg24
 S'CurveCurve_MM'
@@ -666,7 +666,7 @@ I00
 sg21
 I0
 sg22
-S'editDeformer'
+S'da_EditDeformer'
 p156
 sg24
 S'Deformers_MM'
@@ -685,7 +685,7 @@ I00
 sg21
 I0
 sg22
-S'LastOpInStack'
+S'da_LastOpInStack'
 p160
 sg24
 S'DynamicConstraint_MM'
@@ -833,7 +833,7 @@ I00
 sg21
 I0
 sg22
-S'SelectParticle'
+S'da_SelectParticle'
 p188
 sg24
 S'Legacy_Particle_MM'
@@ -852,7 +852,7 @@ I00
 sg21
 I0
 sg22
-S'SelectMulti'
+S'da_SelectMulti'
 p192
 sg24
 S'Poly_MM'
@@ -871,7 +871,7 @@ I00
 sg21
 I0
 sg22
-S'nconstraintTransform'
+S'da_NconstraintTransform'
 p196
 sg24
 S'LocatorVertex_MM'
@@ -890,7 +890,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p200
 sg24
 S'Legacy_SubdivComponents_MM'
@@ -909,7 +909,7 @@ I00
 sg21
 I0
 sg22
-VToggleUV
+Vda_ToggleUV
 p204
 sg24
 VWindow_UV_Mesh_MM
@@ -928,7 +928,7 @@ I00
 sg21
 I0
 sg22
-VBackToObjectMode
+Vda_BackToObjectMode
 p208
 sg24
 VNurbsFace_MM
@@ -1038,7 +1038,7 @@ I00
 sg21
 I0
 sg22
-S'LastOpInStack'
+S'da_LastOpInStack'
 p228
 sg24
 S'PaintFX_MM'
@@ -1093,7 +1093,7 @@ I00
 sg21
 I0
 sg22
-S'editDeformer'
+S'da_EditDeformer'
 p238
 sg24
 S'Deformers_MM'
@@ -1148,7 +1148,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p248
 sg24
 S'Edge_MM'
@@ -1167,7 +1167,7 @@ I00
 sg21
 I0
 sg22
-S'editDeformer'
+S'da_EditDeformer'
 p252
 sg24
 S'Deformers_MM'
@@ -1204,7 +1204,7 @@ I00
 sg21
 I0
 sg22
-VToggleUV
+Vda_ToggleUV
 p259
 sg24
 VWindow_UV_UV_MM
@@ -1241,7 +1241,7 @@ I00
 sg21
 I0
 sg22
-S'ToggleLightManipulators'
+S'da_ToggleLightManipulators'
 p266
 sg24
 S'Light_MM'
@@ -1260,7 +1260,7 @@ I00
 sg21
 I0
 sg22
-S'nconstraintTransform'
+S'da_NconstraintTransform'
 p270
 sg24
 S'PolyVertex_MM'
@@ -1279,7 +1279,7 @@ I00
 sg21
 I0
 sg22
-S'editDeformer'
+S'da_EditDeformer'
 p274
 sg24
 S'Deformers_MM'
@@ -1298,7 +1298,7 @@ I00
 sg21
 I0
 sg22
-S'LastOpInStack'
+S'da_LastOpInStack'
 p278
 sg24
 S'Hair_MM'
@@ -1317,7 +1317,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p282
 sg24
 S'CurveCV_MM'
@@ -1354,7 +1354,7 @@ I00
 sg21
 I0
 sg22
-S'ToggleLightManipulators'
+S'da_ToggleLightManipulators'
 p289
 sg24
 S'Light_MM'
@@ -1373,7 +1373,7 @@ I00
 sg21
 I0
 sg22
-S'SelectLattice'
+S'da_SelectLattice'
 p293
 sg24
 S'Lattice_MM'
@@ -1392,7 +1392,7 @@ I00
 sg21
 I0
 sg22
-S'ToggleLightManipulators'
+S'da_ToggleLightManipulators'
 p297
 sg24
 S'Light_MM'
@@ -1411,7 +1411,7 @@ I00
 sg21
 I0
 sg22
-S'GoToComponentMode'
+S'da_GoToComponentMode'
 p301
 sg24
 S'PolyCurve_MM'
@@ -1430,7 +1430,7 @@ I00
 sg21
 I0
 sg22
-S'ToggleCameraManipulators'
+S'da_ToggleCameraManipulators'
 p305
 sg24
 S'Camera_MM'
@@ -1449,7 +1449,7 @@ I00
 sg21
 I0
 sg22
-VBackToObjectMode
+Vda_BackToObjectMode
 p309
 sg24
 VWindow_UV_Face_MM
@@ -1598,7 +1598,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p338
 sg24
 S'NurbsIsoparms_MM'
@@ -1635,7 +1635,7 @@ I00
 sg21
 I0
 sg22
-S'nconstraintTransform'
+S'da_NconstraintTransform'
 p345
 sg24
 S'LocatorVertex_MM'
@@ -1673,7 +1673,7 @@ I00
 sg21
 I0
 sg22
-S'SelectMulti'
+S'da_SelectMulti'
 p353
 sg24
 S'Constraint_MM'
@@ -1692,7 +1692,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p357
 sg24
 S'LatticePoint_MM'
@@ -1730,7 +1730,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p365
 sg24
 S'Face_MM'
@@ -1749,7 +1749,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p369
 sg24
 S'UV_MM'
@@ -1768,7 +1768,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p373
 sg24
 S'Vertex_MM'
@@ -2428,7 +2428,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p490
 sg24
 S'NurbsShapeNurbsShape_MM'
@@ -2470,7 +2470,7 @@ p500
 I0
 sS'command'
 p501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p502
 sS'menu'
 p503
@@ -2514,7 +2514,7 @@ p514
 I0
 sS'command'
 p515
-VSelectMulti
+Vda_SelectMulti
 p516
 sS'menu'
 p517
@@ -2535,7 +2535,7 @@ I00
 sg21
 I0
 sg22
-S'GoToMesh'
+S'da_GoToMesh'
 p522
 sg24
 S'PolyCreate_MM'
@@ -2554,7 +2554,7 @@ I00
 sg21
 I0
 sg22
-S'GoToMesh'
+S'da_GoToMesh'
 p526
 sg24
 S'PolyCreate_MM'
@@ -2573,7 +2573,7 @@ I00
 sg500
 I0
 sg501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p530
 sg503
 VShaders_MM
@@ -2592,7 +2592,7 @@ I00
 sg514
 I0
 sg515
-VSelectMulti
+Vda_SelectMulti
 p534
 sg517
 VPoly_MM
@@ -2648,7 +2648,7 @@ I00
 sg514
 I0
 sg515
-VSelectMulti
+Vda_SelectMulti
 p545
 sg517
 VPoly_MM
@@ -2704,7 +2704,7 @@ I00
 sg21
 I0
 sg22
-S'GoToMesh'
+S'da_GoToMesh'
 p556
 sg24
 S'PolyCreate_MM'
@@ -2723,7 +2723,7 @@ I00
 sg21
 I0
 sg22
-S'GoToMesh'
+S'da_GoToMesh'
 p560
 sg24
 S'PolyCreate_MM'
@@ -2742,7 +2742,7 @@ I00
 sg500
 I0
 sg501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p564
 sg503
 VShaders_MM
@@ -2835,7 +2835,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p582
 sg24
 S'Legacy_ParticlePoints_MM'
@@ -2854,7 +2854,7 @@ I00
 sg514
 I0
 sg515
-VSelectMulti
+Vda_SelectMulti
 p586
 sg517
 VPoly_MM
@@ -2891,7 +2891,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p593
 sg24
 S'ParticlePoints_MM'
@@ -2910,7 +2910,7 @@ I00
 sg500
 I0
 sg501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p597
 sg503
 VShaders_MM
@@ -2929,7 +2929,7 @@ I00
 sg500
 I0
 sg501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p601
 sg503
 VShaders_MM
@@ -2966,7 +2966,7 @@ I00
 sg21
 I0
 sg22
-S'GoToMesh'
+S'da_GoToMesh'
 p608
 sg24
 S'PolyCreate_MM'
@@ -3021,7 +3021,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p618
 sg24
 S'NurbsShapeNurbsShape_MM'
@@ -3058,7 +3058,7 @@ I00
 sg500
 I0
 sg501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p625
 sg503
 VShaders_MM
@@ -3077,7 +3077,7 @@ I00
 sg500
 I0
 sg501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p629
 sg503
 VShaders_MM
@@ -3096,7 +3096,7 @@ I00
 sg514
 I0
 sg515
-VSelectMulti
+Vda_SelectMulti
 p633
 sg517
 VPoly_MM
@@ -3115,7 +3115,7 @@ I00
 sg514
 I0
 sg515
-VSelectMulti
+Vda_SelectMulti
 p637
 sg517
 VPoly_MM
@@ -3134,7 +3134,7 @@ I00
 sg500
 I0
 sg501
-VEditAndFrameShaderOutliner
+Vda_EditAndFrameShaderOutliner
 p641
 sg503
 VShaders_MM
@@ -3153,7 +3153,7 @@ I00
 sg21
 I0
 sg22
-S'membraneCollider'
+S'da_MembraneCollider'
 p645
 sg24
 S'MembraneNode_MM'
@@ -3172,7 +3172,7 @@ I00
 sg21
 I0
 sg22
-S'GoToMesh'
+S'da_GoToMesh'
 p649
 sg24
 S'PolyCreate_MM'
@@ -3271,7 +3271,7 @@ I00
 sg21
 I0
 sg22
-Vda_expandShade
+Vda_ExpandShade
 p671
 sg24
 S'HyperShade_MM'
@@ -3290,7 +3290,7 @@ I00
 sg21
 I0
 sg22
-S'ToggleShapes'
+S'da_ToggleShapes'
 p675
 sg24
 S'Outliner_MM'
@@ -3309,7 +3309,7 @@ I00
 sg21
 I0
 sg22
-VInsertKeyFrame
+S'da_InsertKeyFrame'
 p679
 sg24
 S'GraphEditor_MM'
@@ -3364,7 +3364,7 @@ I00
 sg21
 I0
 sg22
-S'BackToObjectMode'
+S'da_BackToObjectMode'
 p689
 sg24
 g33
@@ -3527,7 +3527,7 @@ I00
 sg21
 I0
 sg22
-S'SaveRenderImage'
+S'da_SaveRenderImage'
 p717
 sg24
 S'RenderView_MM'
@@ -3582,7 +3582,7 @@ I00
 sg21
 I0
 sg22
-S'HgConnectionLevel'
+S'da_HgConnectionLevel'
 p727
 sg24
 S'NodeEditor_MM'
@@ -3619,7 +3619,7 @@ I00
 sg21
 I0
 sg22
-VBackToObjectMode
+Vda_BackToObjectMode
 p734
 sg24
 VUV_Editor_MM

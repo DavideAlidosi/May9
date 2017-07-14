@@ -28,7 +28,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("delete -ch;\nFreezeTransformations;")
-	ClearFreeze;
+	da_ClearFreeze;
 
 runTimeCommand
 	-annotation "Color Management On"
@@ -36,7 +36,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("colorManagementPrefs -e -cme 1;")
-	colorManagementOn;
+	da_ColorManagementOn;
 
 runTimeCommand
 	-annotation "Color Management Off"
@@ -44,7 +44,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("colorManagementPrefs -e -cme 0;")
-	colorManagementOff;
+	da_ColorManagementOff;
 
 runTimeCommand
 	-annotation "Enable Outliner in layout"
@@ -52,7 +52,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("ToggleOutliner")
-	LayoutOutliner;
+	da_LayoutOutliner;
 
 runTimeCommand
 	-annotation "Open AE to Last Operation"
@@ -60,7 +60,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $his[] = `listHistory -leaf true`; \nif( size($his)>1 ){\nshowEditorExact($his[1]);\n}\nelse{\nerror \"can't find last operator in stack.\";\n}")
-	LastOpInStack;
+	da_LastOpInStack;
 
 runTimeCommand
 	-annotation "Set Object Mode"
@@ -68,7 +68,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("SelectToggleMode;\ntoggleSelMode;")
-	SetObjectMode;
+	da_SetObjectMode;
 
 runTimeCommand
 	-annotation "Recreate the persp camera if needed"
@@ -76,7 +76,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $camera = findStartUpCamera( \"persp\" );\nstring $camera2[] = `camera -n persp -hc \"viewSet -p %camera\"`;\n\ncamera -e -sc 0 $camera; delete \"persp\";\nrename $camera2[0] \"persp\";\ncamera -e -sc 1 \"persp\";")
-	ClearPersp;
+	da_ClearPersp;
 
 runTimeCommand
 	-annotation "Reset UI in case of failure"
@@ -84,7 +84,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if(`window -exists unifiedRenderGlobalsWindow`)\n\t{deleteUI unifiedRenderGlobalsWindow;}\nelse\n\t{print \"\";};\nbuildNewSceneUI;")
-	ResetUI;
+	da_ResetUI;
 
 runTimeCommand
 	-annotation "Toggle Component Object Mode"
@@ -92,7 +92,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("toggleSelMode; \nselectType -smp 0 -sme 0 -smf 0 -smu 0 -pv 0 -pe 0 -pf 0 -puv 0 -meshComponents 1;")
-	ToggleComponentMode;
+	da_ToggleComponentMode;
 
 runTimeCommand
 	-annotation "Toggle UV and Object Mode"
@@ -100,15 +100,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$mySel=`ls -sl -fl`;\n\nif (size(`filterExpand -sm 24 $mySel`)!=0 || size(`filterExpand -sm 73 $mySel`)!=0)\n    dR_modeObject;\nelse\n    dR_modeUV;\n")
-	ToggleUV;
+	da_ToggleUV;
 
 runTimeCommand
 	-annotation "Toggle Color Management On and Off"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $cmStatus = `colorManagementPrefs -q -cme`;\n\nif ($cmStatus == 0)\n{\n\tcolorManagementOn;\n\tinViewMessage -pos topCenter -msg \"Color Management on\" -fade;\n}\nelse\n{\n\tcolorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Color Management off\" -fade;\n}")
-	ToggleColorManagement;
+	-command ("int $cmStatus = `colorManagementPrefs -q -cme`;\n\nif ($cmStatus == 0)\n{\n\tda_ColorManagementOn;\n\tinViewMessage -pos topCenter -msg \"Color Management on\" -fade;\n}\nelse\n{\n\tda_ColorManagementOff;\n\tinViewMessage -pos topCenter -msg \"Color Management off\" -fade;\n}")
+	da_ToggleColorManagement;
 
 runTimeCommand
 	-annotation "Toggle Ramp Visibility in Paint Skin Tool"
@@ -116,7 +116,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $currentTool = `currentCtx`;\nint $rampTypeCheck = `artAttrCtx -q -useColorRamp $currentTool`;\n\nif ($rampTypeCheck == 1){\n\tartAttrCtx -e -useColorRamp 0 $currentTool;\n}else{\n\tartAttrCtx -e -useColorRamp 1 $currentTool;\n}")
-	ToggleRampSkin;
+	da_ToggleRampSkin;
 
 runTimeCommand
 	-annotation "Toggle Xray Joints in Paint Skin Tool"
@@ -124,7 +124,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $currentTool = `currentCtx`;\nint $xrayCheck = `artAttrSkinPaintCtx -q -xrayJoints $currentTool`;\n\nif ($xrayCheck == 1){\n\tartAttrSkinPaintCtx -e -xrayJoints 0 $currentTool;\n}else{\n\tartAttrSkinPaintCtx -e -xrayJoints 1 $currentTool;\n}")
-	ToggleXRayJointsSkin;
+	da_ToggleXRayJointsSkin;
 
 runTimeCommand
 	-annotation "Toggle Wireframe on Saded"
@@ -132,7 +132,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $selectedPanel = `getPanel -wf`;\nint $shadedWireState = `modelEditor -q -wos $selectedPanel`;\nif(`modelEditor -ex $selectedPanel`)\n{\n    setWireframeOnShadedOption (!$shadedWireState) $selectedPanel;\n}")
-	ToggleWireOnShade;
+	da_ToggleWireOnShade;
 
 runTimeCommand
 	-annotation "Toggle DAG Node in Outliner"
@@ -140,7 +140,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -dag false outlinerPanel1;\nelse\n\toutlinerEditor -edit -dag true outlinerPanel1;")
-	ToggleDagNode;
+	da_ToggleDagNode;
 
 runTimeCommand
 	-annotation "Toggle Material Node in Outliner"
@@ -148,7 +148,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $MaterialCheck = `outlinerEditor -q -sam outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -sam false outlinerPanel1;\nelse\n\toutlinerEditor -edit -sam true outlinerPanel1;")
-	ToggleMaterial;
+	da_ToggleMaterial;
 
 runTimeCommand
 	-annotation "Toggle Shapes Node in Outliner"
@@ -156,7 +156,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $MaterialCheck = `outlinerEditor -q -shp outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -shp false outlinerPanel1;\nelse\n\toutlinerEditor -edit -shp true outlinerPanel1;")
-	ToggleShapes;
+	da_ToggleShapes;
 
 runTimeCommand
 	-annotation "Expand Shade Network"
@@ -164,7 +164,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\")")
-	ExpandShade;
+	da_ExpandShade;
 
 runTimeCommand
 	-annotation "Create a Flatten Surface From Curves"
@@ -172,7 +172,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("bevelPlus -po 1 -ns 1 -cap 2 -pom 2 -ed 0 -ch 1;\npolyMergeVertex  -d 0.0001 -am 1 -ch 1;\nSelectToggleMode;\ntoggleSelMode;")
-	FlattenSurface;
+	da_FlattenSurface;
 
 runTimeCommand
 	-annotation "Revert the current scene at last save"
@@ -180,7 +180,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $test = `file -q -sn`;\n\nif (size($test)){\n\tstring $myResult = `confirmDialog -title \"Confirm\" -message \"Revert to Saved?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n\tstring $currentScenePath = `file -q -sn`;\n\tfile -f -open $currentScenePath;\n\tinViewMessage -pos topCenter -msg \"Revert to Saved\" -fade;\n\t}\n\telse inViewMessage -pos topCenter -msg \"Revert cancelled\" -fade;\n}\n\nelse{\n\tconfirmDialog -title \"Untitled scene\" -message \"Is not possible revert untitled scene.\"\n\t-button \"OK\" -defaultButton \"OK\";\n}")
-	RevertToSave;
+	da_RevertToSave;
 
 runTimeCommand
 	-annotation "Set Adaptive OpenSubdiv as Subdivision"
@@ -188,7 +188,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 6;\nsetAttr ($each +\".showDisplacements\") 0;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"Adaptive OpenSubdiv enable on selectet object(s)\" -fade;")
-	OpenSubdAdapt;
+	da_OpenSubdAdapt;
 
 runTimeCommand
 	-annotation "Set OpenSubdiv as Subdivision"
@@ -196,7 +196,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\n}\ninViewMessage -pos topCenter -msg \"Adaptive OpenSubdiv disable on selectet object(s)\" -fade;")
-	OpenSubdNoAdapt;
+	da_OpenSubdNoAdapt;
 
 runTimeCommand
 	-annotation "Enable Open Subdiv Display Subdivision"
@@ -204,7 +204,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 1;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions enable on selectet object(s)\" -fade;")
-	OpenSubdSudivision;
+	da_OpenSubdSudivision;
 
 runTimeCommand
 	-annotation "Disable Open Subdiv Display Subdivision"
@@ -212,7 +212,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions disable on selectet object(s)\" -fade;")
-	OpenSubdNoSubdivision;
+	da_OpenSubdNoSubdivision;
 
 runTimeCommand
 	-annotation "Enable OpenCL on OpenSubd"
@@ -220,7 +220,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".enableOpenCL\") 1;\n}\ninViewMessage -pos topCenter -msg \"OpenCL enable on selectet object(s)\" -fade;")
-	OpenSubdCL;
+	da_OpenSubdCL;
 
 runTimeCommand
 	-annotation "Disable OpenCL on OpenSubd"
@@ -228,7 +228,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".enableOpenCL\") 0;\n}\ninViewMessage -pos topCenter -msg \"OpenCL disable on selectet object(s)\" -fade;")
-	OpenSubdNoCL;
+	da_OpenSubdNoCL;
 
 runTimeCommand
 	-annotation "Enable OpenSubd Displace"
@@ -236,7 +236,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 6;\nsetAttr ($each +\".showDisplacements\") 1;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace enable on selected object(s)\" -fade;")
-	OpenSubdDisplace;
+	da_OpenSubdDisplace;
 
 runTimeCommand
 	-annotation "Disable OpenSubd Displace"
@@ -244,7 +244,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\nsetAttr ($each +\".showDisplacements\") 0;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace disable on selected object(s)\" -fade;")
-	OpenSubdNoDisplace;
+	da_OpenSubdNoDisplace;
 
 runTimeCommand
 	-annotation "Set MM based on cursor position"
@@ -252,7 +252,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("MMtoKey.ui()")
-	MMtoKeyManager;
+	da_MMtoKeyManager;
 
 runTimeCommand
 	-annotation "Add Divisions to Polygonal Object"
@@ -260,7 +260,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("Triangulate;\npolyQuad  -a 47 -kgb 0 -ktb 0 -khe 0 -ws 0 -ch 1")
-	PolyDivision;
+	da_PolyDivision;
 
 runTimeCommand
 	-annotation "Select Object by Material"
@@ -268,7 +268,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nhyperShade -objects $mySel")
-	SelectObjectMaterial;
+	da_SelectObjectMaterial;
 
 runTimeCommand
 	-annotation "Select Current Camera"
@@ -276,7 +276,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nselect $camera;")
-	SelectCamera;
+	da_SelectCamera;
 
 runTimeCommand
 	-annotation "Look Through Selected"
@@ -284,7 +284,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$currentPanel = `getPanel -withFocus`; \n$panelType = `getPanel -to $currentPanel`;\n$selObj = `ls -sl -l`;\nif ($panelType == \"modelPanel\")\n{\nlookThru $currentPanel $selObj;\n}")
-	LookThruSelected;
+	da_LookThruSelected;
 
 runTimeCommand
 	-annotation "Enable Bifrost Continuous Emission"
@@ -292,7 +292,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nsetAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 1;\n\ninViewMessage -pos topCenter -msg \"Continuous emission enable on selected emitter(s)\" -fade;")
-	BifrostContinuousEmission;
+	da_BifrostContinuousEmission;
 
 runTimeCommand
 	-annotation "Disable Bifrost Continuous Emission"
@@ -300,7 +300,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nsetAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 0;\n\ninViewMessage -pos topCenter -msg \"Continuous emission disabled on selected emitter(s)\" -fade;")
-	BifrostNoContinuousEmission;
+	da_BifrostNoContinuousEmission;
 
 runTimeCommand
 	-annotation "Enable Bifrost Mesh"
@@ -308,7 +308,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nsetAttr ($mySel[0] + \".meshingEnable\") 1;\n\ninViewMessage -pos topCenter -msg \"Bifrost mesh enable on selected simulation\" -fade;")
-	BifrostMesh;
+	da_BifrostMesh;
 
 runTimeCommand
 	-annotation "Disable Bifrost Mesh"
@@ -316,7 +316,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nsetAttr ($mySel[0] + \".meshingEnable\") 0;\n\ninViewMessage -pos topCenter -msg \"Bifrost mesh disable on selected simulation\" -fade;")
-	BifrostNoMesh;
+	da_BifrostNoMesh;
 
 runTimeCommand
 	-annotation "Enable Bifrost Gravity"
@@ -324,7 +324,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[1] + \".gravityMagnitude\") 9.8;\n\ninViewMessage -pos topCenter -msg \"Bifrost gravity set at 9.8 on selected simulation\" -fade;")
-	BifrostGravity;
+	da_BifrostGravity;
 
 runTimeCommand
 	-annotation "Disable Bifrost Gravity"
@@ -332,7 +332,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkLeft;\n\nstring $mySel[] = `ls -sl`;\nstring $myEmitter[] = `listConnections $mySel`;\n\nsetAttr ($myEmitter[1] + \".gravityMagnitude\") 0;\n\ninViewMessage -pos topCenter -msg \"Bifrost gravity disable on selected simulation\" -fade;")
-	BifrostNoGravity;
+	da_BifrostNoGravity;
 
 runTimeCommand
 	-annotation "List Input Operations on Object"
@@ -340,7 +340,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \ndetachHistoryTable $mySel[0] 0 input \"\";\nselect $mySel;")
-	ListInputOperations;
+	da_ListInputOperations;
 
 runTimeCommand
 	-annotation "nParticle Ignore Nucleous Gravity Solver"
@@ -348,7 +348,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".ignoreSolverGravity\") 1;\n}\ninViewMessage -pos topCenter -msg \"nParticle ignore Nucleous gravity solver\" -fade;")
-	nParticleNoGravity;
+	da_nParticleNoGravity;
 
 runTimeCommand
 	-annotation "nParticle use Nucleous gravity solver"
@@ -356,7 +356,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".ignoreSolverGravity\") 0;\n}\ninViewMessage -pos topCenter -msg \"nParticle use Nucleous gravity solver\" -fade;")
-	nParticleGravity;
+	da_nParticleGravity;
 
 runTimeCommand
 	-annotation "nParticle not Self Collide"
@@ -364,7 +364,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".selfCollide\") 0;\n}\ninViewMessage -pos topCenter -msg \"nParticle not Self Collide\" -fade;")
-	nParticleNoSelfCollide;
+	da_nParticleNoSelfCollide;
 
 runTimeCommand
 	-annotation "nParticle Self Collide"
@@ -372,7 +372,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".selfCollide\") 1;\n}\ninViewMessage -pos topCenter -msg \"nParticle Self Collide\" -fade;")
-	nParticleSelfCollide;
+	da_nParticleSelfCollide;
 
 runTimeCommand
 	-annotation "Enable Surface Snap on Selected Brush"
@@ -380,7 +380,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceSnap\") 1;\n}\ninViewMessage -pos topCenter -msg \"Surface Snap On\" -fade;")
-	BrushSurfaceSnap;
+	da_BrushSurfaceSnap;
 
 runTimeCommand
 	-annotation "Disable Surface Snap on Selected Brush"
@@ -388,7 +388,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceSnap\") 0;\n}\ninViewMessage -pos topCenter -msg \"Surface Snap Off\" -fade;")
-	BrushNoSurfaceSnap;
+	da_BrushNoSurfaceSnap;
 
 runTimeCommand
 	-annotation "Enable Surface Collide Outside on Selected Brush"
@@ -396,7 +396,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 1;\nsetAttr ($each +\".collideMethod\") 0;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Outside On\" -fade;")
-	BrushSurfaceCollideOutside;
+	da_BrushSurfaceCollideOutside;
 
 runTimeCommand
 	-annotation "Enable Surface Collide Inside on Selected Brush"
@@ -404,7 +404,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 1;\nsetAttr ($each +\".collideMethod\") 1;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Inside On\" -fade;")
-	BrushSurfaceCollideInside;
+	da_BrushSurfaceCollideInside;
 
 runTimeCommand
 	-annotation "Enable Surface Collide Both on Selected Brush"
@@ -412,7 +412,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 1;\nsetAttr ($each +\".collideMethod\") 2;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Both On\" -fade;")
-	BrushSurfaceCollideBoth;
+	da_BrushSurfaceCollideBoth;
 
 runTimeCommand
 	-annotation "Disable Surface Collide on Selected Brush"
@@ -420,7 +420,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".surfaceCollide\") 0;\n}\ninViewMessage -pos topCenter -msg \"Surface Collide Off\" -fade;")
-	BrushNoSurfaceCollide;
+	da_BrushNoSurfaceCollide;
 
 runTimeCommand
 	-annotation "Enable Occupy Attraction on Selected Brush"
@@ -428,7 +428,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".occupyAttraction\") 2;\nsetAttr ($each +\".occupyBranchTermination\") 1;\n}\ninViewMessage -pos topCenter -msg \"Occupy Attraction On\" -fade;")
-	BrushOccupyAttraction;
+	da_BrushOccupyAttraction;
 
 runTimeCommand
 	-annotation "Disable Occupy Attraction on Selected Brush"
@@ -436,7 +436,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Select Stroke\nstring $his[] = `listHistory -leaf true`; \nselect($his[1]);\n//Apply attribute to selection\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".occupyAttraction\") 0;\nsetAttr ($each +\".occupyBranchTermination\") 0;\n}\ninViewMessage -pos topCenter -msg \"Occupy Attraction Off\" -fade;")
-	BrushNoOccupyAttraction;
+	da_BrushNoOccupyAttraction;
 
 runTimeCommand
 	-annotation "Enable Occupy Volume on Line Modifier"
@@ -444,7 +444,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".shape\") 1;\nsetAttr ($each +\".widthScale\") 1;\nsetAttr ($each +\".occupyAttraction\") 5;\nsetAttr ($each +\".occupyBranchTermination\") 1;\n}\ninViewMessage -pos topCenter -msg \"Occupy Volume On\" -fade;")
-	ModifierOccupyVolume;
+	da_ModifierOccupyVolume;
 
 runTimeCommand
 	-annotation "Enable Occupy Volume on Line Modifier"
@@ -452,7 +452,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".occupyAttraction\") 0;\nsetAttr ($each +\".occupyBranchTermination\") 0;\n}\ninViewMessage -pos topCenter -msg \"Occupy Volume Off\" -fade;")
-	ModifierNoOccupyVolume;
+	da_ModifierNoOccupyVolume;
 
 runTimeCommand
 	-annotation "Parent and Position"
@@ -460,15 +460,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("Parent;\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n{\nsetAttr ($each +\".translate\") -type \"double3\" 0 0 0;\nsetAttr ($each +\".rotate\") -type \"double3\" 0 0 0;\n}")
-	ParentAndPosition;
+	da_ParentAndPosition;
 
 runTimeCommand
 	-annotation "Reset Tweak Points to Zero"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("BackToObjectMode;\nstring $mySel[] = `listRelatives -s`;\ndR_DoCmd(\"modeVert\");\nfor ($each in $mySel){\n    $indices = `getAttr -mi ($each + \".pnts\")`;\n    for ($i in $indices){\n    \tsetAttr($each + \".pnts[\" + $i + \"]\", 0,0,0);\n    }\n}")
-	ResetTweakPoint;
+	-command ("da_BackToObjectMode;\nstring $mySel[] = `listRelatives -s`;\ndR_DoCmd(\"modeVert\");\nfor ($each in $mySel){\n    $indices = `getAttr -mi ($each + \".pnts\")`;\n    for ($i in $indices){\n    \tsetAttr($each + \".pnts[\" + $i + \"]\", 0,0,0);\n    }\n}")
+	da_ResetTweakPoint;
 
 runTimeCommand
 	-annotation "Enable Follicle Braid"
@@ -476,7 +476,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 1;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 1;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 1;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 1;\n    }\n    select $mySel;\n}")
-	FollicleBraid;
+	da_FollicleBraid;
 
 runTimeCommand
 	-annotation "Disable Follicle Braid"
@@ -484,7 +484,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 0;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 0;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 0;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".braid\") 0;\n    }\n    select $mySel;\n}")
-	FollicleNoBraid;
+	da_FollicleNoBraid;
 
 runTimeCommand
 	-annotation "Switch Manipulator Modes for Componets"
@@ -492,7 +492,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $ToolCheck = (`currentCtx`);\n\nint $MoveCheck = (`manipMoveContext -q -mode Move`);\nint $RotateCheck = (`manipRotateContext -q -mode Rotate`);\nint $ScaleCheck = (`manipScaleContext -q -mode Scale`);\n\nif ($MoveCheck != 9 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 9 Move;\n    inViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($MoveCheck != 0 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 0 Move;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($RotateCheck != 9 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 9 Rotate;\n    inViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($RotateCheck != 0 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 0 Rotate;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 9 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 9 Scale;\n\tinViewMessage -pos topCenter -msg \"Component Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 0 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 0 Scale;\n\tinViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}")
-	ManipToggleComp;
+	da_ManipToggleComp;
 
 runTimeCommand
 	-annotation "Switch Manipulator Modes for Transform"
@@ -500,15 +500,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $ToolCheck = (`currentCtx`);\n\nint $MoveCheck = (`manipMoveContext -q -mode Move`);\nint $RotateCheck = (`manipRotateContext -q -mode Rotate`);\nint $ScaleCheck = (`manipScaleContext -q -mode Scale`);\n\nif ($MoveCheck != 2 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 2 Move;\n    inViewMessage -pos topCenter -msg \"World Axis Orientation\" -fade;\n}\nif ($MoveCheck != 0 && $ToolCheck == \"moveSuperContext\"){\n    manipMoveContext -e -mode 0 Move;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($RotateCheck != 2 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 2 Rotate;\n    inViewMessage -pos topCenter -msg \"Gimbal Axis Orientation\" -fade;\n}\nif ($RotateCheck != 0 && $ToolCheck == \"RotateSuperContext\"){\n    manipRotateContext -e -mode 0 Rotate;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 2 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 2 Scale;\n    inViewMessage -pos topCenter -msg \"World Axis Orientation\" -fade;\n}\nif ($ScaleCheck != 0 && $ToolCheck == \"scaleSuperContext\"){\n    manipScaleContext -e -mode 0 Scale;\n    inViewMessage -pos topCenter -msg \"Object Axis Orientation\" -fade;\n}")
-	ManipToggleTrans;
+	da_ManipToggleTrans;
 
 runTimeCommand
 	-annotation "Switch Manipulator Modes"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $myCollection[] = `ls -sl`;\nint $n = size($myCollection);\n\nif($n > 0){\n    string $id = `nodeType $myCollection[0]`;\n     \n    if($id == \"mesh\"){ \n    \n        string $faces[] = `filterExpand -sm 34`;\n        string $vertices[] = `filterExpand -sm 31`;\n        string $edges[] = `filterExpand -sm 32`;\n        \n        if(size($faces)>0 || size($vertices)>0 || size($edges)>0){\n            ManipToggleComp;                  \n        }        \n                \n    }else if($id == \"transform\"){\n        ManipToggleTrans;\n         \n    }else if($id == \"nurbsSurface\"){\n        \n        string $isoparms[] = `filterExpand -sm 45`;\n        int $totalIsoparms = size($isoparms);\n        string $patches[] = `filterExpand -sm 72`;\n        int $totalPatches = size($patches);\n        \n        if($totalIsoparms > 0){\n            ManipToggleComp;           \n        }\n        if($totalPatches > 0){\n            ManipToggleComp;\n        }\n    }else{\n        ManipToggleTrans;\n    }   \n}\nif ($n == 0){\n    print (\"Select component(s) or object(s)\");\n}")
-	ManipToggle;
+	-command ("string $myCollection[] = `ls -sl`;\nint $n = size($myCollection);\n\nif($n > 0){\n    string $id = `nodeType $myCollection[0]`;\n     \n    if($id == \"mesh\"){ \n    \n        string $faces[] = `filterExpand -sm 34`;\n        string $vertices[] = `filterExpand -sm 31`;\n        string $edges[] = `filterExpand -sm 32`;\n        \n        if(size($faces)>0 || size($vertices)>0 || size($edges)>0){\n            da_ManipToggleComp;                  \n        }        \n                \n    }else if($id == \"transform\"){\n        da_ManipToggleTrans;\n         \n    }else if($id == \"nurbsSurface\"){\n        \n        string $isoparms[] = `filterExpand -sm 45`;\n        int $totalIsoparms = size($isoparms);\n        string $patches[] = `filterExpand -sm 72`;\n        int $totalPatches = size($patches);\n        \n        if($totalIsoparms > 0){\n            da_ManipToggleComp;           \n        }\n        if($totalPatches > 0){\n            da_ManipToggleComp;\n        }\n    }else{\n        da_ManipToggleTrans;\n    }   \n}\nif ($n == 0){\n    print (\"Select component(s) or object(s)\");\n}")
+	da_ManipToggle;
 
 runTimeCommand
 	-annotation "UV Selection on Selected Objects"
@@ -516,7 +516,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$mySel = `ls -sl -l`;\ndoMenuComponentSelection(\"$mySel\", \"puv\");")
-	SelectUV;
+	da_SelectUV;
 
 runTimeCommand
 	-annotation "Particle Selection on Selected Simulation"
@@ -524,7 +524,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$mySel = `ls -sl -l`;\ndoMenuComponentSelection(\"$mySel\", \"particle\");")
-	SelectParticle;
+	da_SelectParticle;
 
 runTimeCommand
 	-annotation "Multi Component Selection on Selected Polygons"
@@ -532,7 +532,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `filterExpand -ex true -selectionMask 12`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($mySel[$i], \"meshComponents\");")
-	SelectMulti;
+	da_SelectMulti;
 
 runTimeCommand
 	-annotation "Control Vertex Selection on Selected Curves"
@@ -540,7 +540,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `filterExpand -ex true -selectionMask 9`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($mySel[$i], \"controlVertex\");")
-	SelectCV;
+	da_SelectCV;
 
 runTimeCommand
 	-annotation "Lattice Point Selection on Selected Lattice"
@@ -548,7 +548,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `filterExpand -ex true -selectionMask 6`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($mySel[$i], \"latticePoint\");")
-	SelectLattice;
+	da_SelectLattice;
 
 runTimeCommand
 	-annotation "Go to Component Mode"
@@ -556,7 +556,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setSelectMode(\"components\", \"Components\"); ")
-	GoToComponentMode;
+	da_GoToComponentMode;
 
 runTimeCommand
 	-annotation "Revert Selection to Componento Mode"
@@ -564,7 +564,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("$hilite = `ls -hilite`; \n$obj = `ls -dag -sl`; \nsetSelectMode(\"objects\", \"Objects\"); \nselect -r $obj $hilite; ")
-	BackToObjectMode;
+	da_BackToObjectMode;
 
 runTimeCommand
 	-annotation "Bevel Curve(s) for Text"
@@ -572,7 +572,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("bevelPlus -constructionHistory true  -normalsOutwards true  -range false  -polygon 1 -tolerance 0.01 -numberOfSides 4 -js true  -width 0.01 -depth 0.01 -extrudeDepth 0.1 -capSides 4 -bevelInside 0 -outerStyle 0 -innerStyle 0 -polyOutMethod 2 -polyOutCount 200 -polyOutExtrusionType 3 -polyOutExtrusionSamples 4 -polyOutCurveType 3 -polyOutCurveSamples 15 -polyOutUseChordHeightRatio 0;")
-	BevelPlusForText;
+	da_BevelPlusForText;
 
 runTimeCommand
 	-annotation "Enable Time Dragger in Smooth Mode"
@@ -580,7 +580,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("storeLastAction( \"restoreLastContext \" + `currentCtx` );setToolTo TimeDragger;timeControl -e -snap false $gPlayBackSlider;")
-	TimeDraggerSmooth;
+	da_TimeDraggerSmooth;
 
 runTimeCommand
 	-annotation "Enable Time Dragger in Smooth Mode"
@@ -588,7 +588,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("invokeLastAction;\ntimeControl -e -snap true $gPlayBackSlider;\nint $n = `currentTime -query`;\ncurrentTime -edit $n;")
-	TimeDraggerNoSmooth;
+	da_TimeDraggerNoSmooth;
 
 runTimeCommand
 	-annotation "Frame Only Selected Object into a Hierarchy"
@@ -596,7 +596,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("PickWalkDown;\nfitPanel -selected;\nPickWalkUp")
-	FrameOnlySelected;
+	da_FrameOnlySelected;
 
 runTimeCommand
 	-annotation "Simple UV Based Deformer"
@@ -604,7 +604,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("transferAttributes -transferPositions 1 -transferNormals 0 -transferUVs 2 -transferColors 2 -sampleSpace 3 -sourceUvSpace \"map1\" -targetUvSpace \"map1\" -searchMethod 3-flipUVs 0 -colorBorders 1;\nCenterPivot\n")
-	DeformerUV;
+	da_DeformerUV;
 
 runTimeCommand
 	-annotation "Auto IPR on all render region for all render engine"
@@ -612,7 +612,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\taiRenderView;\n}\nelse{ \n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}\n\ninViewMessage -pos topCenter -msg \"Starting Render\" -fade;")
-	ProgressiveIPR;
+	da_ProgressiveIPR;
 
 runTimeCommand
 	-annotation "Toggle Nurbs Curves Visibility"
@@ -620,7 +620,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -nurbsCurves $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -nurbsCurves 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Curves visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsCurves 1 $panel;\n    inViewMessage -pos topCenter -msg \"Curves visibility ON\" -fade;\n}")
-	ToggleNurbsCurvesVis;
+	da_ToggleNurbsCurvesVis;
 
 runTimeCommand
 	-annotation "Toggle Nurbs Visibility"
@@ -628,7 +628,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -nurbsSurfaces $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -nurbsSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"NURBS visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -nurbsSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"NURBS visibility ON\" -fade;\n}")
-	ToggleNurbsVis;
+	da_ToggleNurbsVis;
 
 runTimeCommand
 	-annotation "Toggle Subdiv Visibility"
@@ -636,7 +636,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -subdivSurfaces $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -subdivSurfaces 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -subdivSurfaces 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Subdivision Surfaces visibility ON\" -fade;\n}")
-	ToggleSubVis;
+	da_ToggleSubVis;
 
 runTimeCommand
 	-annotation "Toggle Poly Visibility"
@@ -644,7 +644,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -polymeshes $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -polymeshes 0 $panel;modelEditor -e -hos 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Polygons visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -polymeshes 1 $panel;modelEditor -e -hos 1 $panel;\n    inViewMessage -pos topCenter -msg \"Polygons visibility ON\" -fade;\n}")
-	TogglePolyVis;
+	da_TogglePolyVis;
 
 runTimeCommand
 	-annotation "Toggle Light Visibility"
@@ -652,7 +652,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -lights $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -lights 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Light visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -lights 1 $panel;\n    inViewMessage -pos topCenter -msg \"Light visibility ON\" -fade;\n}")
-	ToggleLightVis;
+	da_ToggleLightVis;
 
 runTimeCommand
 	-annotation "Toggle Joint Visibility"
@@ -660,7 +660,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -joints $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -joints 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Joints visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -joints 1 $panel;\n    inViewMessage -pos topCenter -msg \"Joints visibility ON\" -fade;\n}")
-	ToggleJointVis;
+	da_ToggleJointVis;
 
 runTimeCommand
 	-annotation "Toggle IK Handles Visibility"
@@ -668,7 +668,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -ikHandles $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -ikHandles 0 $panel;\n\tinViewMessage -pos topCenter -msg \"IK Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -ikHandles 1 $panel;\n    inViewMessage -pos topCenter -msg \"IK Handles visibility ON\" -fade;\n}")
-	ToggleIkVis;
+	da_ToggleIkVis;
 
 runTimeCommand
 	-annotation "Toggle Deformers Visibility"
@@ -676,7 +676,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -deformers $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -deformers 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Deformers visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -deformers 1 $panel;\n    inViewMessage -pos topCenter -msg \"Deformers visibility ON\" -fade;\n}")
-	ToggleDefVis;
+	da_ToggleDefVis;
 
 runTimeCommand
 	-annotation "Toggle Locator Visibility"
@@ -684,7 +684,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -locators $panel`;\n\nif ($visCheck == 1)\n{\n\tmodelEditor -e -locators 0 $panel;\n\tinViewMessage -pos topCenter -msg \"Locator Handles visibility OFF\" -fade;\n}\nelse\n{\n    modelEditor -e -locators 1 $panel;\n    inViewMessage -pos topCenter -msg \"Locator Handles visibility ON\" -fade;\n}")
-	ToggleLocVis;
+	da_ToggleLocVis;
 
 runTimeCommand
 	-annotation "Enable Double Side on Selected"
@@ -692,7 +692,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s $mySel`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($myShape[$i] + \".doubleSided\") 1;\n}")
-	DoubleSideOn;
+	da_DoubleSideOn;
 
 runTimeCommand
 	-annotation "Disable Double Side on Selected"
@@ -700,7 +700,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s $mySel`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($myShape[$i] + \".doubleSided\") 0;\n}")
-	DoubleSideOff;
+	da_DoubleSideOff;
 
 runTimeCommand
 	-annotation "Open light List Panel UI"
@@ -708,7 +708,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("callPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};")
-	LightList;
+	da_LightList;
 
 runTimeCommand
 	-annotation "Enable MMtoKey"
@@ -716,7 +716,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("MMtoKey.pressSelected(ctl=False, alt=False, sh=False)")
-	MMtoKey_press;
+	da_MMtoKey_press;
 
 runTimeCommand
 	-annotation "Disable MMtoKey"
@@ -724,7 +724,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("MMtoKey.releaseSelected()")
-	MMtoKey_release;
+	da_MMtoKey_release;
 
 runTimeCommand
 	-annotation "Show HG Connection of a node(s)"
@@ -732,15 +732,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("showDGLevel hyperGraphPanel1HyperGraphEd;")
-	HgConnectionLevel;
-
-runTimeCommand
-	-annotation "Insert Keyframe On the Line Graph"
-	-category "Custom Scripts.May9_Pro.Animate"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("setKeyframe -insert")
-	InsertKeyFrame;
+	da_HgConnectionLevel;
 
 runTimeCommand
 	-annotation "Save Current Render as Image"
@@ -748,7 +740,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("renderWindowMenuCommand saveImage renderView")
-	SaveRenderImage;
+	da_SaveRenderImage;
 
 runTimeCommand
 	-annotation "Create Transform nConstraint"
@@ -756,15 +748,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("performCreateDynamicConstraint 0 \"transform\";")
-	nconstraintTransform;
+	da_NconstraintTransform;
 
 runTimeCommand
 	-annotation "Edit Current Deformer"
 	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("ShowManipulators;LastOpInStack")
-	editDeformer;
+	-command ("ShowManipulators;da_LastOpInStack")
+	da_EditDeformer;
 
 runTimeCommand
 	-annotation "Enable Legacy Subdiv in Poly Mode"
@@ -772,7 +764,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -o`;\nsubdGivenIntoPolyMode $mySel[0] 1 0 0 0;\ninViewMessage -pos topCenter -msg \"Poly Mode\" -fade;")
-	LegacySubdivPolyMode;
+	da_LegacySubdivPolyMode;
 
 runTimeCommand
 	-annotation "Enable Legacy Subdiv in Standard Mode"
@@ -780,15 +772,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -o`;\nsubdGivenIntoHierMode $mySel[0];\ninViewMessage -pos topCenter -msg \"Subd Mode\" -fade;")
-	LegacySubdivStandardMode;
+	da_LegacySubdivStandardMode;
 
 runTimeCommand
 	-annotation "Toggle Legacy Subdiv Mode"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $LegacySubdivTag = (($LegacySubdivTag + 1) % 2);\n\nif ($LegacySubdivTag)\n{\n\tLegacySubdivPolyMode;\n}\nelse\n{\n    LegacySubdivStandardMode;\n}")
-	LegacySubdivToggle;
+	-command ("int $LegacySubdivTag = (($LegacySubdivTag + 1) % 2);\n\nif ($LegacySubdivTag)\n{\n\tda_LegacySubdivPolyMode;\n}\nelse\n{\n    da_LegacySubdivStandardMode;\n}")
+	da_LegacySubdivToggle;
 
 runTimeCommand
 	-annotation "Enable Physically Based"
@@ -796,7 +788,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".spaceScale\") 0.010;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Enable\" -fade;")
-	NucleusPhysicallyBasedOn;
+	da_NucleusPhysicallyBasedOn;
 
 runTimeCommand
 	-annotation "Disable Physically Based"
@@ -804,7 +796,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".spaceScale\") 1;\n}\ninViewMessage -pos topCenter -msg \"Physically Based Enable\" -fade;")
-	NucleusPhysicallyBasedOff;
+	da_NucleusPhysicallyBasedOff;
 
 runTimeCommand
 	-annotation "Go from Create Node to Mesh Node"
@@ -812,7 +804,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s $mySel`;\nselect $myShape;\nPickWalkUp")
-	GoToMesh;
+	da_GoToMesh;
 
 runTimeCommand
 	-annotation "Open Arnold TX Manager"
@@ -820,7 +812,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`pluginInfo -q -loaded mtoa` == 0)\n{\n\tcatch(`loadPlugin \"mtoa\"`);\n\tpython( \"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldTxManager()\" );\n}\nelse\n{\n\tpython( \"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldTxManager()\" );\n}")
-	TxManager;
+	da_TxManager;
 
 runTimeCommand
 	-annotation "Enable Arnold Render Curves"
@@ -828,7 +820,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\nif ( `objExists CurveShader` ) {\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n} else {\n    createNode aiStandard -n CurveShader;\n    setAttr ($each +\".aiRenderCurve\") 1;\n\tsetAttr ($each +\".aiMode\") 1;\n\tsetAttr ($each +\".aiCurveWidth\") 1;\n    connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n}\n\ninViewMessage -pos topCenter -msg \"Arnold enable on selected curve(s)\" -fade;")
-	aiRenderCurve;
+	da_AiRenderCurve;
 
 runTimeCommand
 	-annotation "Disable Arnold Render Curves"
@@ -836,7 +828,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".aiRenderCurve\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Arnold render disable on selected curve(s)\" -fade;")
-	aiNoRenderCurve;
+	da_AiNoRenderCurve;
 
 runTimeCommand
 	-annotation "Enable Arnold Light Normalization"
@@ -844,7 +836,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiNormalize\") 1;\n\ninViewMessage -pos topCenter -msg \"Light Normalization On\" -fade;")
-	aiLightNormalize;
+	da_AiLightNormalize;
 
 runTimeCommand
 	-annotation "Disable Arnold Light Normalization"
@@ -852,7 +844,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiNormalize\") 0;\n\ninViewMessage -pos topCenter -msg \"Light Normalization Off\" -fade;")
-	aiNoLightNormalize;
+	da_AiNoLightNormalize;
 
 runTimeCommand
 	-annotation "Create AiPhotometric Light"
@@ -860,7 +852,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.utils as mutils; mutils.createLocator(\"aiPhotometricLight\", asLight=True)")
-	aiPhotometric;
+	da_AiPhotometric;
 
 runTimeCommand
 	-annotation "Create AiSkyDome Light"
@@ -868,7 +860,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.utils as mutils; mutils.createLocator(\"aiSkyDomeLight\", asLight=True)")
-	aiSkyDome;
+	da_AiSkyDome;
 
 runTimeCommand
 	-annotation "Create ai Mesh Light"
@@ -876,7 +868,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.utils as mutils; mutils.createMeshLight()")
-	aiMeshLight;
+	da_AiMeshLight;
 
 runTimeCommand
 	-annotation "Create a MASH Network for Voxelize a Mash"
@@ -884,7 +876,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("// Store selection and creation of MASH network\nstring $mySel[] = `ls -sl`;\nselect $mySel[0];\nMASHnewNetwork(\"MASH#\");\nstring $myMashNerwork[] = `listConnections -s true -d false`;\n\n// Create connection and set MASH to Voxelize\nconnectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n\nsetAttr ($myMashNerwork[0] + \".arrangement\") 4;\nsetAttr ($myMashNerwork[0] + \".meshType\") 6;\nsetAttr ($myMashNerwork[0] + \".voxelMode\") 2;\n\n// Set hidden order and open Attribute Editor wondow\nhide $mySel[1];\nshowHidden $mySel[0];\n\nselect $myMashNerwork[0];\n\nopenAEWindow;")
-	mashVoxelizer;
+	da_MashVoxelizer;
 
 runTimeCommand
 	-annotation "Toggle Tool Settings"
@@ -892,7 +884,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("ToggleToolSettings")
-	ToolSettings;
+	da_ToolSettings;
 
 runTimeCommand
 	-annotation "Open Bifrost Ocean Simulation"
@@ -900,7 +892,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("be.BossEditor()")
-	OpenBossEditor;
+	da_OpenBossEditor;
 
 runTimeCommand
 	-annotation "Raise Modeling Toolkit UI"
@@ -908,7 +900,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("showModelingToolkit")
-	ModelingToolkit;
+	da_ModelingToolkit;
 
 runTimeCommand
 	-annotation "Open Color Editor UI"
@@ -916,7 +908,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("colorEditor")
-	openColorEditor;
+	da_OpenColorEditor;
 
 runTimeCommand
 	-annotation "Display Joints As Bone"
@@ -924,7 +916,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".drawStyle\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Joints As Bone\" -fade;")
-	JointsAsBone;
+	da_JointsAsBone;
 
 runTimeCommand
 	-annotation "Display Joints As None"
@@ -932,15 +924,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".drawStyle\") 2;\n}\ninViewMessage -pos topCenter -msg \"Display Joints As None\" -fade;")
-	JointsAsNone;
-
-runTimeCommand
-	-annotation "Toggle Persp to Ortho Camera"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("da_perspToggle()")
-	PerspToggle;
+	da_JointsAsNone;
 
 runTimeCommand
 	-annotation "Go to Front Camera"
@@ -948,7 +932,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Front View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Front View\" -fade;")
-	GoToFront;
+	da_GoToFront;
 
 runTimeCommand
 	-annotation "Go to Side Camera"
@@ -956,7 +940,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Side View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Side View\" -fade;")
-	GoToSide;
+	da_GoToSide;
 
 runTimeCommand
 	-annotation "Go to Top Camera"
@@ -964,7 +948,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Top View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Top View\" -fade;")
-	GoToTop;
+	da_GoToTop;
 
 runTimeCommand
 	-annotation "Go to Persp Camera"
@@ -972,7 +956,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Persp View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Persp View\" -fade;")
-	GoToPersp;
+	da_GoToPersp;
 
 runTimeCommand
 	-annotation "Find Maya Menu"
@@ -980,7 +964,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("findMenuItem")
-	findMenu;
+	da_FindMenu;
 
 runTimeCommand
 	-annotation "Open Tool Property Window"
@@ -988,7 +972,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("toolPropertyWindow -inMainWindow true")
-	ToolProperty;
+	da_ToolProperty;
 
 runTimeCommand
 	-annotation "Convet Polygons to NURBS surface"
@@ -996,7 +980,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("doSubdivCreate( \"2\", { \"1\",\"1\",\"10000\",\"128\"} );\ndoSubdivToNurbs( {\"1\",\"1\",\"0\"} );\nhyperShade -assign initialShadingGroup;")
-	PolyToNurbs;
+	da_PolyToNurbs;
 
 runTimeCommand
 	-annotation "Connect a Mesh to Membrane Collide"
@@ -1004,7 +988,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mesh[] = `ls -sl -ni -typ \"mesh\"`;\nstring $membrane[] = `ls -sl -ni -typ \"membrane\"`;\n\nconnectAttr -f ($mesh[0] + \".worldMesh\") ($membrane[0] + \".collideMesh\");")
-	membraneCollider;
+	da_MembraneCollider;
 
 runTimeCommand
 	-annotation "Set nHair Point Lock to Base"
@@ -1012,7 +996,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 1;\n    }\n    select $mySel;\n}")
-	nHairLockBase;
+	da_HairLockBase;
 
 runTimeCommand
 	-annotation "Set nHair Point Lock to Both Ends"
@@ -1020,7 +1004,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 3;\n    }\n    select $mySel;\n}")
-	nHairLockBothEnds;
+	da_HairLockBothEnds;
 
 runTimeCommand
 	-annotation "Set nHair Point Lock to No Attach"
@@ -1028,7 +1012,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 0;\n    }\n    select $mySel;\n}")
-	nHairNoLock;
+	da_HairNoLock;
 
 runTimeCommand
 	-annotation "Set nHair Simulation Method to Dynamic"
@@ -1036,7 +1020,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 2;\n    }\n    select $mySel;\n}")
-	nHairDynamic;
+	da_HairDynamic;
 
 runTimeCommand
 	-annotation "Set nHair Simulation Method to Passive"
@@ -1044,7 +1028,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 1;\n    }\n    select $mySel;\n}")
-	nHairPassive;
+	da_HairPassive;
 
 runTimeCommand
 	-annotation "Set nHair Simulation Method to Static"
@@ -1052,7 +1036,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".simulationMethod\") 0;\n    }\n    select $mySel;\n}")
-	nHairStatic;
+	da_HairStatic;
 
 runTimeCommand
 	-annotation "Enable Locator(s) Shape(s) Visibility"
@@ -1060,7 +1044,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($i=0; $i<size($mySel); $i++)\n\tsetAttr ($mySel[$i] + \".visibility\") 1;\n\ninViewMessage -pos topCenter -msg \"Locator Shape Visibility On\" -fade;")
-	LocatorVisibility;
+	da_LocatorVisibility;
 
 runTimeCommand
 	-annotation "Disable Locator(s) Shape(s) Visibility"
@@ -1068,7 +1052,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($i=0; $i<size($mySel); $i++)\n\tsetAttr ($mySel[$i] + \".visibility\") 0;\n\ninViewMessage -pos topCenter -msg \"Locator Shape Visibility Off\" -fade;")
-	LocatorNoVisibility;
+	da_LocatorNoVisibility;
 
 runTimeCommand
 	-annotation "Set IK Preferred Angle"
@@ -1076,7 +1060,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $myIK[] = `ls -sl`;\nfor ($i=0; $i<size($myIK); $i++) {\n\tjoint -e -spa -ch $myIK[$i];\n}\n")
-	SetIKPerfAngle;
+	da_SetIKPerfAngle;
 
 runTimeCommand
 	-annotation "Assume IK Preferred Angle"
@@ -1084,7 +1068,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $myIK[] = `ls -sl`;\nfor ($i=0; $i<size($myIK); $i++) {\n\tjoint -e -apa -ch $myIK[$i];\n}")
-	AssumeIKPrefAngle;
+	da_AssumeIKPrefAngle;
 
 runTimeCommand
 	-annotation "Set Muscle Bone as Fat"
@@ -1092,7 +1076,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".draw\") 1;\n}\ninViewMessage -pos topCenter -msg \"Display Muscle Bone as Fat\" -fade;")
-	BoneAsFat;
+	da_BoneAsFat;
 
 runTimeCommand
 	-annotation "Set Muscle Bone as Off"
@@ -1100,7 +1084,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n\tsetAttr ($mySel[$i] + \".draw\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Muscle Bone as Off\" -fade;")
-	BoneAsOff;
+	da_BoneAsOff;
 
 runTimeCommand
 	-annotation "Select Right Angle Edges"
@@ -1108,7 +1092,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -a on -ab 80 100;// to get edges with angle between\nstring $rightAngleSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\nselect $rightAngleSel;")
-	EdgeRightAngle;
+	da_EdgeRightAngle;
 
 runTimeCommand
 	-annotation "Select Straight Angle Edges"
@@ -1116,7 +1100,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -a on -ab 0 80;// to get edges with angle between\nstring $straightAngleSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\nselect $straightAngleSel;")
-	EdgeStraightAngle;
+	da_EdgeStraightAngle;
 
 runTimeCommand
 	-annotation "Select Acute Angle Edges"
@@ -1124,7 +1108,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -a on -ab 100 180;// to get edges with angle between\nstring $acuteAngleSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\nselect $acuteAngleSel;")
-	EdgeAcuteAngle;
+	da_EdgeAcuteAngle;
 
 runTimeCommand
 	-annotation "Select Border Edges"
@@ -1132,7 +1116,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -w 1;\nstring $borderSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -w 0;\nselect $borderSel;")
-	EdgeBorder;
+	da_EdgeBorder;
 
 runTimeCommand
 	-annotation "Select Inside Edge"
@@ -1140,7 +1124,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -w 2;\nstring $insideSel[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -w 0;\nselect $insideSel;")
-	EdgeInside;
+	da_EdgeInside;
 
 runTimeCommand
 	-annotation "Select Hard Edges"
@@ -1148,7 +1132,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -sm 1;\nstring $hardEdge[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -sm 0;\nselect $hardEdge;")
-	EdgeHard;
+	da_EdgeHard;
 
 runTimeCommand
 	-annotation "Select Soft Edge"
@@ -1156,15 +1140,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("dR_DoCmd(\"modeObject\");\ndR_DoCmd(\"modeEdge\");\npolySelectConstraint -m 3 -t 0x8000 -sm 2;\nstring $softEdge[] = `ls -sl`;\npolySelectConstraint -a off; // turn off angle constraint\npolySelectConstraint -m 3 -t 0x8000 -sm 0;\nselect $softEdge;")
-	EdgeSoft;
+	da_EdgeSoft;
 
 runTimeCommand
 	-annotation "Create Metaballs from particle"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("nParticleNoGravity;\nstring $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nSelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectTransform[0] +\".overrideEnabled\") 1;\nsetAttr ($objectTransform[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_metaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_mebaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
-	convertToMetaballs;
+	-command ("da_nParticleNoGravity;\nstring $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nda_SelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectTransform[0] +\".overrideEnabled\") 1;\nsetAttr ($objectTransform[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_metaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_mebaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
+	da_ConvertToMetaballs;
 
 runTimeCommand
 	-annotation "Move Objects to World Center"
@@ -1172,7 +1156,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tmove -rpr 0 0 0 $each;\n}")
-	ZeroTransfomations;
+	da_ZeroTransfomations;
 
 runTimeCommand
 	-annotation "Reset All Transformations"
@@ -1180,7 +1164,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tmove -a 0 0 0 $each;\n\trotate -a 0 0 0 $each;\n\tscale -a 1 1 1 $each;\n}")
-	ResetAllTransformations;
+	da_ResetAllTransformations;
 
 runTimeCommand
 	-annotation "Connect Shapes"
@@ -1188,7 +1172,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n}")
-	ConnectShapes;
+	da_ConnectShapes;
 
 runTimeCommand
 	-annotation "Auto Connect a Collider from Viewport"
@@ -1196,7 +1180,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $objectShape[] = `listRelatives -s`;\nselect $objectShape;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\n\nstring $myMembrane[] = `ls -sl -ni -typ \"membrane\"`;\nselect $myMembrane;\n\nconnectAttr -f ($objectShape[1] + \".worldMesh\") ($myMembrane[0] + \".collideMesh\");")
-	autoMembraneCollider;
+	da_Auto_MembraneCollider;
 
 runTimeCommand
 	-annotation "Select Assigned Shader from Selection"
@@ -1204,7 +1188,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("hyperShade -smn;\nAttributeEditor")
-	SelectAssignedShader;
+	da_SelectAssignedShader;
 
 runTimeCommand
 	-annotation "Enable Reference Mode for Object Transform"
@@ -1212,7 +1196,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 2;\n}")
-	EnableReference;
+	da_EnableReference;
 
 runTimeCommand
 	-annotation "Disable Reference Mode for Object Transform"
@@ -1220,7 +1204,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideDisplayType\") 0;\n}")
-	DisableReference;
+	da_DisableReference;
 
 runTimeCommand
 	-annotation "Toggle Wireframe when Scupt"
@@ -1228,7 +1212,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $currentTool = `currentCtx`;\nint $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentTool`;\n\nif ($wireframeCheck == 1){\n    sculptMeshCacheCtx -e -displayWireframe 0 $currentTool;\n} else {\n    sculptMeshCacheCtx -e -displayWireframe 1 $currentTool;\n}")
-	ToggleSculptWireframe;
+	da_ToggleSculptWireframe;
 
 runTimeCommand
 	-annotation "Enable Portal Light Filter on Selected Area Lights"
@@ -1236,7 +1220,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal true\";\n}\n    \ninViewMessage -pos topCenter -msg \"Portal Light On\" -fade;")
-	aiPortalLight;
+	da_AiPortalLight;
 
 runTimeCommand
 	-annotation "Disable Portal Light Filter on Selected Area Lights"
@@ -1244,7 +1228,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal false\";\n}\n    \ninViewMessage -pos topCenter -msg \"Portal Light Off\" -fade;")
-	aiNoPortalLight;
+	da_AiNoPortalLight;
 
 runTimeCommand
 	-annotation "Open Arnold Render View"
@@ -1252,7 +1236,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()")
-	aiRenderView;
+	da_AiRenderView;
 
 runTimeCommand
 	-annotation "Connect Selected Mesh as nCloth Input Mesh"
@@ -1260,15 +1244,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $myMesh[] = `ls -sl -ni -typ \"mesh\"`;\nstring $mynCloth[] = `ls -sl -ni -typ \"nCloth\"`;\n\nconnectAttr -f ($myMesh[0] + \".worldMesh\") ($mynCloth[0] + \".inputMesh\");\nconnectAttr -f ($myMesh[0] + \".worldMesh\") ($mynCloth[0] + \".restShapeMesh\");")
-	nClothInputMesh;
+	da_ClothInputMesh;
 
 runTimeCommand
 	-annotation "Create nCloth as Deformer by Using an Attract Mesh"
 	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $attractMesh[] = `ls -sl -ni -typ \"transform\"`;\nduplicate;\nstring $restMesh[] = `ls -sl`;\nduplicate;\nstring $nClothMesh[] = `ls -sl`;\ndoCreateNCloth 0;\nstring $nClothShape[] = `ls -sl`;\n\nsetAttr ($nClothShape[0] +\".inputMeshAttract\") 1;\nconnectAttr -f ($attractMesh[0] + \".worldMesh\") ($nClothShape[0] + \".inputMesh\");\nconnectAttr -f ($restMesh[0] + \".worldMesh\") ($nClothShape[0] + \".restShapeMesh\");\nconnectAttr -f ($attractMesh[0] + \".outMesh\") ($restMesh[0] + \".inMesh\");\n\nselect $restMesh;\nResetTweakPoint;\ndR_modeObject;\n\nselect $attractMesh[0];\nhide $attractMesh[0];\nselect $attractMesh[0];\nrename ( $attractMesh[0] + \"_attract1\" );\n\nselect $restMesh[0];\nhide $restMesh[0];\nselect $restMesh[0];\nrename ( $restMesh[0] + \"_rest1\" );\n\nselect $nClothMesh[0];\nrename ( $nClothMesh[0] + \"_nCloth1\" );")
-	nClothAsDeformer;
+	-command ("string $attractMesh[] = `ls -sl -ni -typ \"transform\"`;\nduplicate;\nstring $restMesh[] = `ls -sl`;\nduplicate;\nstring $nClothMesh[] = `ls -sl`;\ndoCreateNCloth 0;\nstring $nClothShape[] = `ls -sl`;\n\nsetAttr ($nClothShape[0] +\".inputMeshAttract\") 1;\nconnectAttr -f ($attractMesh[0] + \".worldMesh\") ($nClothShape[0] + \".inputMesh\");\nconnectAttr -f ($restMesh[0] + \".worldMesh\") ($nClothShape[0] + \".restShapeMesh\");\nconnectAttr -f ($attractMesh[0] + \".outMesh\") ($restMesh[0] + \".inMesh\");\n\nselect $restMesh;\nda_ResetTweakPoint;\ndR_modeObject;\n\nselect $attractMesh[0];\nhide $attractMesh[0];\nselect $attractMesh[0];\nrename ( $attractMesh[0] + \"_attract1\" );\n\nselect $restMesh[0];\nhide $restMesh[0];\nselect $restMesh[0];\nrename ( $restMesh[0] + \"_rest1\" );\n\nselect $nClothMesh[0];\nrename ( $nClothMesh[0] + \"_nCloth1\" );")
+	da_ClothAsDeformer;
 
 runTimeCommand
 	-annotation "Copy Selection in Temp Variable"
@@ -1276,7 +1260,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $May9_Clipboard[] = `ls -sl`;\ninViewMessage -pos topCenter -msg \"Selection Copied\" -fade;")
-	CopySelection;
+	da_CopySelection;
 
 runTimeCommand
 	-annotation "Paste Selection from Temp Variable"
@@ -1284,7 +1268,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("select $May9_Clipboard;\ninViewMessage -pos topCenter -msg \"Selection Pasted\" -fade;")
-	PasteSelection;
+	da_PasteSelection;
 
 runTimeCommand
 	-annotation "Toggle Wireframe when Paint Skin"
@@ -1292,7 +1276,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $currentTool = `currentCtx`;\nint $wireframeCheck = `artAttrSkinPaintCtx -q -showactive $currentTool`;\n\nif ($wireframeCheck == 1){\n\tartAttrSkinPaintCtx -e -showactive 0 $currentTool;\n}else{\n\tartAttrSkinPaintCtx -e -showactive 1 $currentTool;\n}")
-	ToggleSkinWireframe;
+	da_ToggleSkinWireframe;
 
 runTimeCommand
 	-annotation "Enable Plane"
@@ -1300,7 +1284,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".usePlane\") 1;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Plane Enable\" -fade;")
-	NucleusPlaneOn;
+	da_NucleusPlaneOn;
 
 runTimeCommand
 	-annotation "Disable Plane"
@@ -1308,7 +1292,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".usePlane\") 0;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Plane Disable\" -fade;")
-	NucleusPlaneOff;
+	da_NucleusPlaneOff;
 
 runTimeCommand
 	-annotation "Enable High Precision"
@@ -1316,7 +1300,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\nsetAttr ($each +\".subSteps\") 18;\nsetAttr ($each +\".maxCollisionIterations\") 24;\n}\ninViewMessage -pos topCenter -msg \"Nucleus High Precision Enable\" -fade;")
-	NucleusHqOn;
+	da_NucleusHqOn;
 
 runTimeCommand
 	-annotation "Disable High Precision"
@@ -1324,7 +1308,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\nsetAttr ($each +\".subSteps\") 3;\nsetAttr ($each +\".maxCollisionIterations\") 4;\n}\ninViewMessage -pos topCenter -msg \"Nucleus High Precision Disable\" -fade;")
-	NucleusHqOff;
+	da_NucleusHqOff;
 
 runTimeCommand
 	-annotation "Enable Gravity"
@@ -1332,7 +1316,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".gravityDirectionY\") -1;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Gravity Enable\" -fade;")
-	NucleusGravityOn;
+	da_NucleusGravityOn;
 
 runTimeCommand
 	-annotation "Disable Gravity"
@@ -1340,15 +1324,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".gravityDirectionY\") 0;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Gravity Disable\" -fade;")
-	NucleusGravityOff;
-
-runTimeCommand
-	-annotation "Quick Fix for Maya Sculpt menu"
-	-category "Custom Scripts.May9_Pro.Modeling"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("SetMeshCloneTargetTool")
-	SetMeshCloneTool;
+	da_NucleusGravityOff;
 
 runTimeCommand
 	-annotation "Connect Poly Create Node to Mesh"
@@ -1356,7 +1332,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".output\") ($createConnect[$i] + \".inMesh\");\n}")
-	ConnectCereation;
+	da_ConnectCereation;
 
 runTimeCommand
 	-annotation "Create Ai LightPortal"
@@ -1364,7 +1340,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.utils as mutils;mutils.createLocator(\"aiLightPortal\", asLight=True)")
-	aiLightPortal;
+	da_AiLightPortal;
 
 runTimeCommand
 	-annotation "Open MtoA Render View"
@@ -1372,7 +1348,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldOpenMtoARenderView()")
-	MtoaRenderView;
+	da_MtoaRenderView;
 
 runTimeCommand
 	-annotation "Toggle Playback Animation"
@@ -1380,39 +1356,39 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("play -state (!`play -q -state`);")
-	TogglePlayback;
+	da_TogglePlayback;
 
 runTimeCommand
 	-annotation "Soft Selection Deformer Rigged"
 	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("int $softModCheck = `optionVar -q softModToolMode`;\nif ( $softModCheck == 1 ){\n    optionVar -iv softModToolMode 0;\n}\n\nstring $polySel[] = `listRelatives -s`;\n\ncircle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1.25 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\nstring $moveCtrlSel[] = `ls -sl`;\nselect $moveCtrlSel[0] $polySel[0];\nparent;\nsetAttr ($moveCtrlSel[0] +\".translate\") -type \"double3\" 0 5 0;\nsetAttr ($moveCtrlSel[0] +\".rotate\") -type \"double3\" 0 0 90;\n\ncircle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\nstring $adjustCtrlSel[] = `ls -sl`;\nstring $adjustCtrlShapeSel[] = `listRelatives -s`;\nsetAttr ($adjustCtrlShapeSel[0] +\".overrideEnabled\") 1;\nsetAttr ($adjustCtrlShapeSel[0] +\".overrideColor\") 13;\n\nsoftSelect -softSelectEnabled 0;\nselect ( $adjustCtrlSel[0] + \".cv[0]\" );\nmove -r -.25 -0 .25;\nselect ( $adjustCtrlSel[0] + \".cv[2]\" );\nmove -r .25 0 .25;\nselect ( $adjustCtrlSel[0] + \".cv[4]\" );\nmove -r .25 0 -0.25;\nselect ( $adjustCtrlSel[0] + \".cv[6]\" );\nmove -r -.25 0 -0.25;\n\naddAttr -ln \"Size\" -at double -min 0.001 -dv 5 $adjustCtrlSel;\nsetAttr -e -keyable true ($adjustCtrlSel[0] + \".Size\");\nselect $adjustCtrlSel[0] $moveCtrlSel[0];\nparent;\nsetAttr ($adjustCtrlSel[0] +\".translate\") -type \"double3\" 0 0 0;\nsetAttr ($adjustCtrlSel[0] +\".rotate\") -type \"double3\" 0 0 0;\nselect $moveCtrlSel[0];\nparent -w;\n\n\nspaceLocator -p 0 0 0;\nstring $wordSpaceLocSel[] = `ls -sl`;\nselect $wordSpaceLocSel[0] $polySel[0];\nparent;\nsetAttr ($wordSpaceLocSel[0] +\".translate\") -type \"double3\" 0 0 0;\nsetAttr ($wordSpaceLocSel[0] +\".rotate\") -type \"double3\" 0 0 0;\nselect $wordSpaceLocSel[0];\nparent -w;\nselect $moveCtrlSel[0] $adjustCtrlSel[0];\nClearFreeze;\nselect $moveCtrlSel[0] $wordSpaceLocSel[0];\ndoCreateParentConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\nselect $polySel[0];\n\nperformSoftMod 0 0 0 {0.0, 0.0, 0.0};\nstring $softSel[] = `ls -sl`;\nstring $softModSel[] = `listConnections -s 0 -d 1 -sh 1`;\nconnectAttr -f ($adjustCtrlSel[0] + \".translate\") ($softSel[0] + \".translate\");\nconnectAttr -f ($adjustCtrlSel[0] + \".rotate\") ($softSel[0] + \".rotate\");\nconnectAttr -f ($adjustCtrlSel[0] + \".scale\") ($softSel[0] + \".scale\");\nconnectAttr -f ($wordSpaceLocSel[0] + \".translate\") ($softModSel[0] + \".falloffCenter\");\nconnectAttr -f ($adjustCtrlSel[0] + \".Size\") ($softModSel[0] + \".falloffRadius\");\n\nselect $moveCtrlSel[0] $softSel[0] $wordSpaceLocSel[0];\ngroup -n \"SoftSelRig1\";\nstring $groupSel[] = `ls -sl`;\nsetAttr -l 1 ($groupSel[0] + \".t\");\nsetAttr -l 1 ($groupSel[0] + \".r\");\nsetAttr -l 1 ($groupSel[0] + \".s\");\n\nrename $moveCtrlSel[0] \"move_ctrl1\";\nrename $adjustCtrlSel[0] \"adjust_ctrl1\";\nrename $wordSpaceLocSel[0] \"world_space_locator1\";\n\nif ( $softModCheck == 1 ){\n    optionVar -iv softModToolMode 1;\n}")
-	SoftSelectionRig;
+	-command ("int $softModCheck = `optionVar -q softModToolMode`;\nif ( $softModCheck == 1 ){\n    optionVar -iv softModToolMode 0;\n}\n\nstring $polySel[] = `listRelatives -s`;\n\ncircle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1.25 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\nstring $moveCtrlSel[] = `ls -sl`;\nselect $moveCtrlSel[0] $polySel[0];\nparent;\nsetAttr ($moveCtrlSel[0] +\".translate\") -type \"double3\" 0 5 0;\nsetAttr ($moveCtrlSel[0] +\".rotate\") -type \"double3\" 0 0 90;\n\ncircle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\nstring $adjustCtrlSel[] = `ls -sl`;\nstring $adjustCtrlShapeSel[] = `listRelatives -s`;\nsetAttr ($adjustCtrlShapeSel[0] +\".overrideEnabled\") 1;\nsetAttr ($adjustCtrlShapeSel[0] +\".overrideColor\") 13;\n\nsoftSelect -softSelectEnabled 0;\nselect ( $adjustCtrlSel[0] + \".cv[0]\" );\nmove -r -.25 -0 .25;\nselect ( $adjustCtrlSel[0] + \".cv[2]\" );\nmove -r .25 0 .25;\nselect ( $adjustCtrlSel[0] + \".cv[4]\" );\nmove -r .25 0 -0.25;\nselect ( $adjustCtrlSel[0] + \".cv[6]\" );\nmove -r -.25 0 -0.25;\n\naddAttr -ln \"Size\" -at double -min 0.001 -dv 5 $adjustCtrlSel;\nsetAttr -e -keyable true ($adjustCtrlSel[0] + \".Size\");\nselect $adjustCtrlSel[0] $moveCtrlSel[0];\nparent;\nsetAttr ($adjustCtrlSel[0] +\".translate\") -type \"double3\" 0 0 0;\nsetAttr ($adjustCtrlSel[0] +\".rotate\") -type \"double3\" 0 0 0;\nselect $moveCtrlSel[0];\nparent -w;\n\n\nspaceLocator -p 0 0 0;\nstring $wordSpaceLocSel[] = `ls -sl`;\nselect $wordSpaceLocSel[0] $polySel[0];\nparent;\nsetAttr ($wordSpaceLocSel[0] +\".translate\") -type \"double3\" 0 0 0;\nsetAttr ($wordSpaceLocSel[0] +\".rotate\") -type \"double3\" 0 0 0;\nselect $wordSpaceLocSel[0];\nparent -w;\nselect $moveCtrlSel[0] $adjustCtrlSel[0];\nda_ClearFreeze;\nselect $moveCtrlSel[0] $wordSpaceLocSel[0];\ndoCreateParentConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\nselect $polySel[0];\n\nperformSoftMod 0 0 0 {0.0, 0.0, 0.0};\nstring $softSel[] = `ls -sl`;\nstring $softModSel[] = `listConnections -s 0 -d 1 -sh 1`;\nconnectAttr -f ($adjustCtrlSel[0] + \".translate\") ($softSel[0] + \".translate\");\nconnectAttr -f ($adjustCtrlSel[0] + \".rotate\") ($softSel[0] + \".rotate\");\nconnectAttr -f ($adjustCtrlSel[0] + \".scale\") ($softSel[0] + \".scale\");\nconnectAttr -f ($wordSpaceLocSel[0] + \".translate\") ($softModSel[0] + \".falloffCenter\");\nconnectAttr -f ($adjustCtrlSel[0] + \".Size\") ($softModSel[0] + \".falloffRadius\");\n\nselect $moveCtrlSel[0] $softSel[0] $wordSpaceLocSel[0];\ngroup -n \"SoftSelRig1\";\nstring $groupSel[] = `ls -sl`;\nsetAttr -l 1 ($groupSel[0] + \".t\");\nsetAttr -l 1 ($groupSel[0] + \".r\");\nsetAttr -l 1 ($groupSel[0] + \".s\");\n\nrename $moveCtrlSel[0] \"move_ctrl1\";\nrename $adjustCtrlSel[0] \"adjust_ctrl1\";\nrename $wordSpaceLocSel[0] \"world_space_locator1\";\n\nif ( $softModCheck == 1 ){\n    optionVar -iv softModToolMode 1;\n}")
+	da_SoftSelectionRig;
 
 runTimeCommand
 	-annotation "Open the new UV Toolkit"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    toggleUVToolkit")
-	OpenUVToolkit;
+	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    da_ToggleUvToolkit")
+	da_OpenUvToolkit;
 
 runTimeCommand
 	-annotation "Toggle UV Toolkit"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r UVToolkitDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        OpenUVToolkit;\n    }")
-	ToggleUVToolkit;
+	-command ("if(`workspaceControl -q -r UVToolkitDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        da_OpenUvToolkit;\n    }")
+	da_ToggleUvToolkit;
 
 runTimeCommand
 	-annotation "Toggle Modeling Toolkit"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r NEXDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        ModelingToolkit;\n    }")
-	ToggleModelingTool;
+	-command ("if(`workspaceControl -q -r NEXDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        da_ModelingToolkit;\n    }")
+	da_ToggleModelingTool;
 
 runTimeCommand
 	-annotation "Mirror Cut on X Plane"
@@ -1420,7 +1396,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 1 1 0.001;\nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
-	MirrorCutX;
+	da_MirrorCutX;
 
 runTimeCommand
 	-annotation "Mirror Cut on Y Plane"
@@ -1428,7 +1404,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 2 1 0.001;\nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
-	MirrorCutY;
+	da_MirrorCutY;
 
 runTimeCommand
 	-annotation "Mirror Cut on X Plane"
@@ -1436,7 +1412,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 0 1 0.001;\nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
-	MirrorCutZ;
+	da_MirrorCutZ;
 
 runTimeCommand
 	-annotation "Mirror Cut on Negative X Plane"
@@ -1444,7 +1420,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 0 1 0.001;\nstring $mirrorCutMirrors[] = `ls -sl`; \nsetAttr ($mirrorCutMirrors[0] + \".rotateY\") -90; \nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
-	MirrorCutXNeg;
+	da_MirrorCutXNeg;
 
 runTimeCommand
 	-annotation "Mirror Cut on Negative Y Plane"
@@ -1452,7 +1428,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 0 1 0.001;\nstring $mirrorCutMirrors[] = `ls -sl`; \nsetAttr ($mirrorCutMirrors[0] + \".rotateX\") 90; \nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
-	MirrorCutYNeg;
+	da_MirrorCutYNeg;
 
 runTimeCommand
 	-annotation "Mirror Cut on Negative Z Plane"
@@ -1460,7 +1436,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -tr`;\nhyperShade -smn \"\";\nstring $objShade[] = `ls -sl -mat`;\n\nselect -r $mySel[0];\npolyMirrorCut 0 1 0.001;\nstring $mirrorCutMirrors[] = `ls -sl`; \nsetAttr ($mirrorCutMirrors[0] + \".rotateY\") -180; \nstring $cuttingPlane[] = `ls -sl`;\n\nstring $myPlane[] = `ls -sl -dag -leaf`;\n\nfor ($each_Py in $myPlane)\n{\n\tsetAttr ($each_Py + \".overrideEnabled\") 1 ;\n\tsetAttr ($each_Py + \".overrideRGBColors\") 1 ;\n\tsetAttr ($each_Py + \".overrideColorRGB\") 0.672 0.074 0.074;\n}\n\nstring $get[] = `listConnections -d on`;\nselect -add $get;\nstring $nodes[] = `listHistory  -pdo true -f true`;\nstring $List[] = stringArrayRemoveDuplicates($nodes);\nint $i;\nfor ($i=0; $i < size($List); $i++ ) \n{ \nif ( gmatch($List[$i], \"polyMergeVert*\")) \n\tselect -r $List[$i];\n}\n\nstring $getShape[] = `listConnections -s on`;\nselect -r $getShape[0];\n\nhyperShade -a $objShade;\nselect -r $cuttingPlane;\nMoveTool; ")
-	MirrorCutZNeg;
+	da_MirrorCutZNeg;
 
 runTimeCommand
 	-annotation "Boolean Full Intersect"
@@ -1468,15 +1444,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myBackup[] = `ls -sl`;\n    duplicate;\n    string $mySel[] = `ls -sl`;\n    duplicate;\n    string $myDuplicateSel[] = `ls -sl`;\n    select $mySel;\n    polyCBoolOp -op 2 -ch 1 -preserveColor 0 -classification 1;\n    delete -ch;\n    CenterPivot;\n    string $firstBool[] = `ls -sl`;\n    select $myDuplicateSel;\n    polyCBoolOp -op 3 -ch 1 -preserveColor 0 -classification 1;\n    delete -ch;\n    CenterPivot;\n    string $secondBool[] = `ls -sl`;\n    select -clear;\n    select $myBackup;\n    Group;\n    rename \"intersectBackup1\";\n    hide;\n    select $firstBool;\n    select -add $secondBool;\n    string $boolPiece[] = `ls -sl`;\n    for($x=0;$x<size($boolPiece);$x++)\n        rename $boolPiece[$x] (\"boolPiece1\");\n}\nelse{\n    string $myResult = `confirmDialog -title \"Confirm\" -message \"Only the first selected object can have multiple intersections, continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n        string $myBackup[] = `ls -sl`;\n        duplicate;\n        string $mySel[] = `ls -sl`;\n        duplicate;\n        string $myDuplicateSel[] = `ls -sl`;\n        select $mySel;\n        polyCBoolOp -op 2 -ch 1 -preserveColor 0 -classification 1;\n        delete -ch;\n        CenterPivot;\n        string $firstBool[] = `ls -sl`;\n        select $myDuplicateSel;\n        polyCBoolOp -op 3 -ch 1 -preserveColor 0 -classification 1;\n        CenterPivot;\n        string $secondBool[] = `ls -sl`;\n        select -clear;\n        select $secondBool;\n        performPolyShellSeparate;\n        delete -ch;\n        string $secondBool[] = `ls -sl`;\n        CenterPivot;\n        pickWalk -d up;\n        string $tempGRP[] = `ls -sl`;\n        select $secondBool;\n        Unparent;\n        select $tempGRP;\n        delete;\n        select $myBackup;\n        Group;\n        rename \"intersectBackup1\";\n        hide;\n        select $firstBool;\n        select -add $secondBool;\n        string $boolPiece[] = `ls -sl`;\n        for($x=0;$x<size($boolPiece);$x++)\n            rename $boolPiece[$x] (\"boolPiece1\");\n\t}\n}")
-	BooleanFullIntersect;
+	da_BooleanFullIntersect;
 
 runTimeCommand
 	-annotation "Cut a Mesh by Using a Poly Plane"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myResult = `confirmDialog -title \"Select the Plane Cut operation\" -message \"Please check if you have select first the geometry then the cut plane. Did you want single o double cut plane?\" \n\t-button \"Single\" -button \"Double\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\n\tif ($myResult == \"Single\") {\n        string $myBakup[] = `ls -sl`;\n        duplicate;\n        string $mySel[] = `ls -sl`;\n        select $myBakup;\n        Group;\n        rename \"singlePlaneBackup1\";\n        string $myBakupGRP[] = `ls -sl`;\n        select $mySel;\n        Group;\n        rename \"singlePlaneCut1\";\n        select $mySel[0];\n        duplicate;\n        string $myDuplicateSel[] = `ls -sl`;\n        select $mySel;\n        PolygonBooleanDifference;\n        string $firstCut[] = `ls -sl`;\n        da_wireframeTemplateA;\n        select $mySel[1];\n        pickWalk -d down;\n        string $mySelShape[] = `listRelatives -s`;\n        select -add $myDuplicateSel;\n        PolygonBooleanIntersection;\n        string $secondtCut[] = `ls -sl`;\n        da_wireframeTemplateB;\n        select $myBakup[1];\n        string $myBakupShape[] = `listRelatives -s`;\n        connectAttr -f ($myBakupShape[0] + \".outMesh\") ($mySelShape[0] + \".inMesh\");\n\n\t\tstring $myCutPlane[] = `listRelatives -p $mySelShape`;\n\t\tselect $myCutPlane;\n\t\tResetTweakPoint;\n\t\tdR_modeObject;\n\n        select $myBakupGRP;\n        hide;\n        select $firstCut;\n        select -add $secondtCut;\n        string $cutPiece[] = `ls -sl`;\n        for($x=0;$x<size($cutPiece);$x++)\n            rename $cutPiece[$x] (\"cutPiece1\");\n        select -clear;\n    }\n    if ($myResult == \"Double\") {\n        string $myBakup[] = `ls -sl`;\n        duplicate;\n        string $mySel[] = `ls -sl`;\n        select $myBakup;\n        Group;\n        rename \"doublePlaneBackup1\";\n        string $myBakupGRP[] = `ls -sl`;\n        select $mySel;\n        Group;\n        rename \"doublePlaneCut1\";\n        select $mySel;\n        duplicate;\n        string $myDuplicateSel[] = `ls -sl`;\n        select $mySel;\n        PolygonBooleanDifference;\n        string $firstCut[] = `ls -sl`;\n        da_wireframeTemplateA;\n        select $myDuplicateSel;\n        PolygonBooleanIntersection;\n        string $secondtCut[] = `ls -sl`;\n        da_wireframeTemplateA;\n        select $mySel[1];\n        pickWalk -d down;\n        string $mySelShape[] = `listRelatives -s`;\n        select $myDuplicateSel[1];\n        pickWalk -d down;\n        string $myDuplicateSellShape[] = `listRelatives -s`;\n        select $myBakup[1];\n        string $myBakupShape[] = `listRelatives -s`;\n        connectAttr -f ($myBakupShape[0] + \".outMesh\") ($mySelShape[0] + \".inMesh\");\n        connectAttr -f ($myBakupShape[0] + \".outMesh\") ($myDuplicateSellShape[0] + \".inMesh\");\n\n\t\tstring $myCutPlane[] = `listRelatives -p $mySelShape`;\n\t\tstring $myDuplicateCutPlane[] = `listRelatives -p $myDuplicateSellShape`;\n\t\tselect $myCutPlane;\n\t\tselect -add $myDuplicateCutPlane;\n\t\tResetTweakPoint;\n\t\tdR_modeObject;\n\n        select $myBakupGRP;\n        hide;\n        select $firstCut;\n        select -add $secondtCut;\n        string $cutPiece[] = `ls -sl`;\n        for($x=0;$x<size($cutPiece);$x++)\n            rename $cutPiece[$x] (\"cutPiece1\");\n        select -clear;\n    }\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the geometry then the cut plane and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
-	PlaneCutter;
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myResult = `confirmDialog -title \"Select the Plane Cut operation\" -message \"Please check if you have select first the geometry then the cut plane. Did you want single o double cut plane?\" \n\t-button \"Single\" -button \"Double\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\n\tif ($myResult == \"Single\") {\n        string $myBakup[] = `ls -sl`;\n        duplicate;\n        string $mySel[] = `ls -sl`;\n        select $myBakup;\n        Group;\n        rename \"singlePlaneBackup1\";\n        string $myBakupGRP[] = `ls -sl`;\n        select $mySel;\n        Group;\n        rename \"singlePlaneCut1\";\n        select $mySel[0];\n        duplicate;\n        string $myDuplicateSel[] = `ls -sl`;\n        select $mySel;\n        PolygonBooleanDifference;\n        string $firstCut[] = `ls -sl`;\n        da_wireframeTemplateA;\n        select $mySel[1];\n        pickWalk -d down;\n        string $mySelShape[] = `listRelatives -s`;\n        select -add $myDuplicateSel;\n        PolygonBooleanIntersection;\n        string $secondtCut[] = `ls -sl`;\n        da_wireframeTemplateB;\n        select $myBakup[1];\n        string $myBakupShape[] = `listRelatives -s`;\n        connectAttr -f ($myBakupShape[0] + \".outMesh\") ($mySelShape[0] + \".inMesh\");\n\n\t\tstring $myCutPlane[] = `listRelatives -p $mySelShape`;\n\t\tselect $myCutPlane;\n\t\tda_ResetTweakPoint;\n\t\tdR_modeObject;\n\n        select $myBakupGRP;\n        hide;\n        select $firstCut;\n        select -add $secondtCut;\n        string $cutPiece[] = `ls -sl`;\n        for($x=0;$x<size($cutPiece);$x++)\n            rename $cutPiece[$x] (\"cutPiece1\");\n        select -clear;\n    }\n    if ($myResult == \"Double\") {\n        string $myBakup[] = `ls -sl`;\n        duplicate;\n        string $mySel[] = `ls -sl`;\n        select $myBakup;\n        Group;\n        rename \"doublePlaneBackup1\";\n        string $myBakupGRP[] = `ls -sl`;\n        select $mySel;\n        Group;\n        rename \"doublePlaneCut1\";\n        select $mySel;\n        duplicate;\n        string $myDuplicateSel[] = `ls -sl`;\n        select $mySel;\n        PolygonBooleanDifference;\n        string $firstCut[] = `ls -sl`;\n        da_wireframeTemplateA;\n        select $myDuplicateSel;\n        PolygonBooleanIntersection;\n        string $secondtCut[] = `ls -sl`;\n        da_wireframeTemplateA;\n        select $mySel[1];\n        pickWalk -d down;\n        string $mySelShape[] = `listRelatives -s`;\n        select $myDuplicateSel[1];\n        pickWalk -d down;\n        string $myDuplicateSellShape[] = `listRelatives -s`;\n        select $myBakup[1];\n        string $myBakupShape[] = `listRelatives -s`;\n        connectAttr -f ($myBakupShape[0] + \".outMesh\") ($mySelShape[0] + \".inMesh\");\n        connectAttr -f ($myBakupShape[0] + \".outMesh\") ($myDuplicateSellShape[0] + \".inMesh\");\n\n\t\tstring $myCutPlane[] = `listRelatives -p $mySelShape`;\n\t\tstring $myDuplicateCutPlane[] = `listRelatives -p $myDuplicateSellShape`;\n\t\tselect $myCutPlane;\n\t\tselect -add $myDuplicateCutPlane;\n\t\tda_ResetTweakPoint;\n\t\tdR_modeObject;\n\n        select $myBakupGRP;\n        hide;\n        select $firstCut;\n        select -add $secondtCut;\n        string $cutPiece[] = `ls -sl`;\n        for($x=0;$x<size($cutPiece);$x++)\n            rename $cutPiece[$x] (\"cutPiece1\");\n        select -clear;\n    }\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the geometry then the cut plane and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	da_PlaneCutter;
 
 runTimeCommand
 	-annotation "Convert NURBS to Mesh"
@@ -1484,7 +1460,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nfor ($each in $mySel)\n    nurbsToPoly -mnd 1  -ch 1 -f 3 -pt 1 -pc 200 -chr 0.9 -ft 0.01 -mel 0.001 -d 0.1 -ut 1 -un 3 -vt 1 -vn 3 -uch 0 -ucr 0 -cht 0.2 -es 0 -ntr 0 -mrt 0 -uss 1 $each;\nselect $mySelShape;\nstring $myTassellate[] = `listConnections -type \"nurbsTessellate\"`;\nselect $myTassellate;\nstring $myPolyShape[] = `listConnections -type \"mesh\"`;\nselect $myPolyShape;\nsetDisplaySmoothness 3;\nselect $mySel;\nhide;")
-	nurbsToMesh;
+	da_NurbsToMesh;
 
 runTimeCommand
 	-annotation "Add Custom Fluid Kill Field"
@@ -1492,7 +1468,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("FluidEmitter;\nstring $mySel[] = `ls -sl`;\napplyPresetToNode $mySel[0] \"\" \"\" \"KillVolume\" 1;")
-	FluidKillField;
+	da_FluidKillField;
 
 runTimeCommand
 	-annotation "Enable Fluid Auto Resize"
@@ -1500,7 +1476,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".autoResize\") 1;\n}\ninViewMessage -pos topCenter -msg \"Fluid Auto Resize Enable\" -fade;")
-	FluidAutoResizeOn;
+	da_FluidAutoResizeOn;
 
 runTimeCommand
 	-annotation "Disable Fluid Auto Resize"
@@ -1508,7 +1484,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".autoResize\") 0;\n}\ninViewMessage -pos topCenter -msg \"Fluid Auto Resize Disable\" -fade;")
-	FluidAutoResizeOff;
+	da_FluidAutoResizeOff;
 
 runTimeCommand
 	-annotation "Connect Nurbs Create Node to Shape"
@@ -1516,7 +1492,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".outputSurface\") ($createConnect[$i] + \".create\");\n}")
-	NurbsConnectCreation;
+	da_NurbsConnectCreation;
 
 runTimeCommand
 	-annotation "Connect Curve Create Node to Shape"
@@ -1524,7 +1500,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".outputCurve\") ($createConnect[$i] + \".create\");\n}")
-	CurveConnectCreation;
+	da_CurveConnectCreation;
 
 runTimeCommand
 	-annotation "Connect Nurbs Shapes"
@@ -1532,7 +1508,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".worldSpace\") ($createConnect[$i] + \".create\");\n}")
-	ConnectNurbsShapes;
+	da_ConnectNurbsShapes;
 
 runTimeCommand
 	-annotation "Toggle Channel Box"
@@ -1540,7 +1516,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis ChannelBoxLayerEditor` == 1){\n    if(`workspaceControl -q -r ChannelBoxLayerEditor` == 0)\n    workspaceControl -e -clp 0 ChannelBoxLayerEditor;\n    else\n        if(`workspaceControl -q -clp ChannelBoxLayerEditor` == 0)\n            workspaceControl -e -clp 1 ChannelBoxLayerEditor;\n        else\n            workspaceControl -e -clp 0 ChannelBoxLayerEditor;\n}else{\n    setChannelsLayersVisible(true); raiseChannelsLayers;\n}")
-	ToggleChannelLayer;
+	da_ToggleChannelLayer;
 
 runTimeCommand
 	-annotation "Toggle Modeling Tool Kit"
@@ -1548,15 +1524,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis NEXDockControl` == 1){\n    if(`workspaceControl -q -r NEXDockControl` == 0)\n    workspaceControl -e -clp 0 NEXDockControl;\n    else\n        if(`workspaceControl -q -clp NEXDockControl` == 0)\n            workspaceControl -e -clp 1 NEXDockControl;\n        else\n            workspaceControl -e -clp 0 NEXDockControl;\n}else{\n    showModelingToolkit;\n}")
-	ToggleMTK;
+	da_ToggleMTK;
 
 runTimeCommand
 	-annotation "UV Toolkit"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -vis UVToolkitDockControl` == 1){\n    if(`workspaceControl -q -r UVToolkitDockControl` == 0)\n    workspaceControl -e -clp 0 UVToolkitDockControl;\n    else\n        if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n            workspaceControl -e -clp 1 UVToolkitDockControl;\n        else\n            workspaceControl -e -clp 0 UVToolkitDockControl;\n}else{\n    OpenUVToolkit;\n}")
-	UvToolkit;
+	-command ("if(`workspaceControl -q -vis UVToolkitDockControl` == 1){\n    if(`workspaceControl -q -r UVToolkitDockControl` == 0)\n    workspaceControl -e -clp 0 UVToolkitDockControl;\n    else\n        if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n            workspaceControl -e -clp 1 UVToolkitDockControl;\n        else\n            workspaceControl -e -clp 0 UVToolkitDockControl;\n}else{\n    da_OpenUvToolkit;\n}")
+	da_UvToolkit;
 
 runTimeCommand
 	-annotation "Toggle Attribute Editor"
@@ -1564,7 +1540,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis AttributeEditor` == 1){\n    if(`workspaceControl -q -r AttributeEditor` == 0)\n    workspaceControl -e -clp 0 AttributeEditor;\n    else\n        if(`workspaceControl -q -clp AttributeEditor` == 0)\n            workspaceControl -e -clp 1 AttributeEditor;\n        else\n            workspaceControl -e -clp 0 AttributeEditor;\n}else{\n    AttributeEditor;\n}")
-	ToggleAttribute;
+	da_ToggleAttribute;
 
 runTimeCommand
 	-annotation "Toggle Outline"
@@ -1572,15 +1548,15 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis Outliner` == 1){\n    if(`workspaceControl -q -r Outliner` == 0)\n    workspaceControl -e -clp 0 Outliner;\n    else\n        if(`workspaceControl -q -clp Outliner` == 0)\n            workspaceControl -e -clp 1 Outliner;\n        else\n            workspaceControl -e -clp 0 Outliner;   \n}else{\n    OutlinerWindow;\n}")
-	ToggleOutline;
+	da_ToggleOutline;
 
 runTimeCommand
 	-annotation "Toggle Tool Settings"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -vis ToolSettings` == 1){\n    if(`workspaceControl -q -r ToolSettings` == 0)\n    workspaceControl -e -clp 0 ToolSettings;\n    else\n        if(`workspaceControl -q -clp ToolSettings` == 0)\n            workspaceControl -e -clp 1 ToolSettings;\n        else\n            workspaceControl -e -clp 0 ToolSettings;   \n}else{\n    ToolSettingsWindow;\n}")
-	ToggleToolSetting;
+	-command ("if(`workspaceControl -q -vis da_ToolSettings` == 1){\n    if(`workspaceControl -q -r da_ToolSettings` == 0)\n    workspaceControl -e -clp 0 da_ToolSettings;\n    else\n        if(`workspaceControl -q -clp da_ToolSettings` == 0)\n            workspaceControl -e -clp 1 da_ToolSettings;\n        else\n            workspaceControl -e -clp 0 da_ToolSettings;   \n}else{\n    ToolSettingsWindow;\n}")
+	da_ToggleToolSetting;
 
 runTimeCommand
 	-annotation "Disable Slide on Selected Constraint"
@@ -1588,7 +1564,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".connectionUpdate\") 0;\nsetAttr ($each +\".strength\") 20;\nsetAttr ($each +\".tangentStrength\") 10;\nsetAttr ($each +\".friction\") 0;\nsetAttr ($each +\".localCollide\") 0;\n}\ninViewMessage -pos topCenter -msg \"Disable Slide on Selected Constraint\" -fade;")
-	SlideConstraintOff;
+	da_SlideConstraintOff;
 
 runTimeCommand
 	-annotation "Enable Slide on Selected Constraint"
@@ -1596,7 +1572,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".connectionUpdate\") 1;\nsetAttr ($each +\".strength\") 0.02;\nsetAttr ($each +\".tangentStrength\") 0.2;\nsetAttr ($each +\".friction\") 0.1;\nsetAttr ($each +\".localCollide\") 1;\n}\ninViewMessage -pos topCenter -msg \"Enable Slide on Selected Constraint\" -fade;")
-	SlideConstraintOn;
+	da_SlideConstraintOn;
 
 runTimeCommand
 	-annotation "Enable Hair Self Collision"
@@ -1604,7 +1580,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 1;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".selfCollide\") 1;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 1;\n    select $mySel;\n}")
-	nHairSelfCollideOn;
+	da_nHairSelfCollideOn;
 
 runTimeCommand
 	-annotation "Disable nHair Self Collision"
@@ -1612,7 +1588,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 0;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".selfCollide\") 0;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".selfCollide\") 0;\n    select $mySel;\n}")
-	nHairSelfCollideOff;
+	da_nHairSelfCollideOff;
 
 runTimeCommand
 	-annotation "Disable nHair Collision"
@@ -1620,7 +1596,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 0;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".collide\") 0;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 0;\n    select $mySel;\n}")
-	nHairColllideOff;
+	da_nHairColllideOff;
 
 runTimeCommand
 	-annotation "Enable nHair Collision"
@@ -1628,7 +1604,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myHairSystem[] = `listConnections -s 0 -d 1 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 1;\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    setAttr ($objectShape[0] + \".collide\") 1;\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    setAttr ($myHairSystem[0] + \".collide\") 1;\n    select $mySel;\n}")
-	nHairCollideOn;
+	da_nHairCollideOn;
 
 runTimeCommand
 	-annotation "Set nHair Point Lock to Tip"
@@ -1636,7 +1612,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nstring $follicleCheck[] = `ls -sl -ni -typ \"follicle\"`;\nstring $hairSystemCheck[] = `ls -sl -ni -typ \"hairSystem\"`;\nstring $pfxHairCheck[] = `ls -sl -ni -typ \"pfxHair\"`;\nstring $curveCheck[] = `ls -sl -ni -typ \"nurbsCurve\"`;\n\n//if is selected the follicle\nif ($follicleCheck[0] != \"\"){ \n    string $myFollcie[] = `ls -sl`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}\n//if is selected the hair system\nif ($hairSystemCheck[0] != \"\"){ \n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}\n//if is selected the pfxHair\nif ($pfxHairCheck[0] != \"\"){\n    string $myHairSystem[] = `listConnections -s 1 -d 0 -sh 1 -t \"hairSystem\"`;\n    select $myHairSystem;\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}\n//if is selected the nurbsCurve\nif ($curveCheck[0] != \"\"){\n    string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t \"follicle\"`;\n    \n    for ($each in $myFollcie){\n        setAttr ($each + \".pointLock\") 2;\n    }\n    select $mySel;\n}")
-	nHairLockTip;
+	da_nHairLockTip;
 
 runTimeCommand
 	-annotation "Toggle Attribuite Editor Channel Box"
@@ -1644,7 +1620,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis AttributeEditor` == 1){\n    if(`workspaceControl -q -r AttributeEditor` == 0)\n    workspaceControl -e -clp 0 AttributeEditor;\n    else\n        if(`workspaceControl -q -clp AttributeEditor` == 0)\n            ShowAttributeEditorOrChannelBox;\n        else\n            workspaceControl -e -clp 0 AttributeEditor;\n}else{\n    AttributeEditor;\n}")
-	ToggleAttribuiteChannel;
+	da_ToggleAttribuiteChannel;
 
 runTimeCommand
 	-annotation "Batch Skin Transfert by UV"
@@ -1652,7 +1628,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation closestPoint -uvSpace map1 map1 -influenceAssociation closestJoint;\n}")
-	BatchSkinTransfertUV;
+	da_BatchSkinTransfertUV;
 
 runTimeCommand
 	-annotation "Batch Skin Transfert by Closest Point"
@@ -1660,7 +1636,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation closestPoint -influenceAssociation closestJoint;\n}")
-	BatchSkinTransfertCP;
+	da_BatchSkinTransfertCP;
 
 runTimeCommand
 	-annotation "Batch Skin Transfert by Ray Cast"
@@ -1668,7 +1644,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation rayCast -influenceAssociation closestJoint;\n}")
-	BatchSkinTransfertRC;
+	da_BatchSkinTransfertRC;
 
 runTimeCommand
 	-annotation "Batch Skin Transfert by Closest Component"
@@ -1676,7 +1652,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $select[] = `ls -sl`;\nint $numObj = size($select); \nfor($i=1; $i<$numObj; $i++){\n    select $select[0];\n    select -add $select[$i];\n\tcopySkinWeights  -noMirror -surfaceAssociation closestComponent -influenceAssociation closestJoint;\n}")
-	BatchSkinTransfertCC;
+	da_BatchSkinTransfertCC;
 
 runTimeCommand
 	-annotation "Enable Poly Shade"
@@ -1684,7 +1660,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 1;\n    setAttr ($each + \".overrideEnabled\") 0;\n    setAttr ($each + \".overrideShading\") 1;\n    setAttr ($each + \".castsShadows\") 1;\n    setAttr ($each + \".receiveShadows\") 1;\n    setAttr ($each + \".motionBlur\") 1;\n    setAttr ($each + \".smoothShading\") 1;\n    setAttr ($each + \".visibleInReflections\") 1;\n    setAttr ($each + \".visibleInRefractions\") 1;\n}")
-	PolyShade;
+	da_PolyShade;
 
 runTimeCommand
 	-annotation "Disable Poly Shade"
@@ -1692,7 +1668,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 0;\n    setAttr ($each + \".overrideEnabled\") 1;\n    setAttr ($each + \".overrideShading\") 0;\n    setAttr ($each + \".castsShadows\") 0;\n    setAttr ($each + \".receiveShadows\") 0;\n    setAttr ($each + \".motionBlur\") 0;\n    setAttr ($each + \".smoothShading\") 0;\n    setAttr ($each + \".visibleInReflections\") 0;\n    setAttr ($each + \".visibleInRefractions\") 0;\n}")
-	PolyNoShade;
+	da_PolyNoShade;
 
 runTimeCommand
 	-annotation "Toggle UV Borders Based on Panel"
@@ -1700,7 +1676,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("int $borders[] = `polyOptions -q -displayMapBorder`;\nfloat $borderWidth[] = `optionVar -q displayPolyBorderEdgeSize`;\npolyOptions -displayMapBorder (!$borders[0]) -sizeBorder $borderWidth[1];")
-	ToggleUvBorders;
+	da_ToggleUVBorders;
 
 runTimeCommand
 	-annotation "Toggle resolution gate"
@@ -1708,7 +1684,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $currPanel = `getPanel -up`;\nstring $currCam = `modelEditor -q -cam $currPanel`;\nstring $ResolutionGateState = `camera -q -dr $currCam`;\n\nif ($ResolutionGateState == 0)\n    camera -e -dr on -ovr 1.3 $currCam;\nelse\n    camera -e -dr off -ovr 1.0 $currCam;")
-	ToggleResolutionGate;
+	da_ToggleResolutionGate;
 
 runTimeCommand
 	-annotation "Camera Bookmark"
@@ -1716,7 +1692,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $panel = `getPanel -wf`;\n$camera = `modelEditor -q -camera $panel`;\ncameraBookmarkEditor $camera;")
-	CameraBookmark;
+	da_CameraBookmark;
 
 runTimeCommand
 	-annotation "Create Rivet by MASH"
@@ -1724,7 +1700,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $polySel[] = `filterExpand -sm 12`;\nif ($mySel[1] == $polySel[0]){\n    select $mySel[0];\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -s`;\n    \n    select $mySel[0];\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $mySel[1];\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n\n\tselect $myMashDistribute[0];\n\topenAEWindow;\n}else{\n    inViewMessage -pos topCenter -msg \"First select Components then Mesh\" -fade;\n}")
-	RivetMash;
+	da_RivetMash;
 
 runTimeCommand
 	-annotation "Add Image Plane on Curent Camera"
@@ -1732,7 +1708,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nstring $myCameraShape[] = `listRelatives -s`;\nimportImagePlane { $myCameraShape[0] };")
-	ImagePlane;
+	da_ImagePlane;
 
 runTimeCommand
 	-annotation "Add Video Plane on Curent Camera"
@@ -1740,7 +1716,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nstring $myCameraShape[] = `listRelatives -s`;\nimportMovieImagePlane { $myCameraShape[0] };")
-	VideoPlane;
+	da_VideoPlane;
 
 runTimeCommand
 	-annotation "Reset Position and Orientation of Pivot"
@@ -1748,7 +1724,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $objs[] = `ls -sl -type transform -type geometryShape`;\nif (size($objs) > 0) {\n\txform -cp;\n}\nmanipPivot -rp -ro; ")
-	ResetPivot;
+	da_ResetPivot;
 
 runTimeCommand
 	-annotation "Enable Medium Precision for Nucleus"
@@ -1756,7 +1732,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\nsetAttr ($each +\".subSteps\") 18;\nsetAttr ($each +\".maxCollisionIterations\") 4;\n}\ninViewMessage -pos topCenter -msg \"Nucleus Medium Precision Enable\" -fade;")
-	NucleusMedium;
+	da_NucleusMedium;
 
 runTimeCommand
 	-annotation "Force Nucleus in Parallel Mode"
@@ -1764,7 +1740,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("evaluator -en off -name dynamics -c \"disablingNodes=unsupported\";\nevaluator -en off -name dynamics -c \"handledNodes=dynamics\";\nevaluator -en off -name dynamics -c \"action=evaluate\";\ninViewMessage -pos topCenter -msg \"Nucleus Override ON, this Disable Maya Fluids\" -fade;\n")
-	NucleusParallelOn;
+	da_NucleusParallelOn;
 
 runTimeCommand
 	-annotation "Disable Nucleus in Parallel Mode"
@@ -1772,7 +1748,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("evaluator -en on -name dynamics -c \"disablingNodes=legacy2016\";\nevaluator -en on -name dynamics -c \"handledNodes=none\";\nevaluator -en on -name dynamics -c \"action=none\";\ninViewMessage -pos topCenter -msg \"Nucleus Override OFF\" -fade;")
-	NucleusParallelOff;
+	da_NucleusParallelOff;
 
 runTimeCommand
 	-annotation "Distribuite a geomentry on curve"
@@ -1780,7 +1756,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $curveSel[] = `filterExpand -sm 9`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nselect $polySel[0];\n$myMash = `MASHnewNetwork(\"MASH#\")`;\nstring $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\nsetAttr ($myMashDistribute[0] + \".amplitudeX\") 0;\n\n$myMashCurve = `createNode MASH_Curve`;\nconnectAttr -f ($myMashCurve + \".outputPoints\") ($myMash[0] + \".inputPoints\");\n\nselect $curveSel[0];\nstring $curveSelShape[] = `listRelatives -s`;\n\nconnectAttr -f ($curveSelShape[0] + \".worldSpace[0]\") ($myMashCurve + \".inCurves[0]\");\nconnectAttr -f ($myMashDistribute[0] + \".outputPoints\") ($myMashCurve + \".inputPoints\");\n\nsetAttr ($myMashCurve + \".timeSlide\") 0;\nsetAttr ($myMashCurve + \".parametricLength\") 1;\n\nselect $myMashDistribute[0];\nAttributeEditor;")
-	CurveDistributionMash;
+	da_CurveDistributionMash;
 
 runTimeCommand
 	-annotation "Layout Single Perspective/Four View"
@@ -1788,7 +1764,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"daFourView\";\nstring $perspPanel = `getPanel -wl \"Persp View\"`;\ndoSwitchPanes(1, {\"single\", $perspPanel});\ninViewMessage -pos topCenter -msg \"Perspective/Four View layout\" -fade;")
-	LayoutPersp;
+	da_LayoutPersp;
 
 runTimeCommand
 	-annotation "Layout Node Editor"
@@ -1796,7 +1772,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daNodeEditor\";\ninViewMessage -pos topCenter -msg \"Node Editor layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutNodeEditor;
+	da_LayoutNodeEditor;
 
 runTimeCommand
 	-annotation "Layout UV TextureEditor"
@@ -1804,7 +1780,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daUvEditor\";\n//Hide Texture\nstring $visiblePanels[] = `getPanel -visiblePanels`;\nif(stringArrayContains(\"polyTexturePlacementPanel1\", $visiblePanels)){\n  string $texWinName[] = `getPanel -sty polyTexturePlacementPanel`;\n  textureWindowToggleTextureImageOff( $texWinName[0], \"textureWindow\" );\n  txtWndUpdateEditor( $texWinName[0], \"textureWindow\", \"null\", 101 );\n}\n\ninViewMessage -pos topCenter -msg \"UV Texture layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutUvTextureEditor;
+	da_LayoutUvTextureEditor;
 
 runTimeCommand
 	-annotation "Layout Graph Editor"
@@ -1812,7 +1788,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daGraphEditor\";\ninViewMessage -pos topCenter -msg \"Graph Editor\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutGraphEditor;
+	da_LayoutGraphEditor;
 
 runTimeCommand
 	-annotation "Layout Shape Editor"
@@ -1820,7 +1796,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daShapeEditor\";\ninViewMessage -pos topCenter -msg \"Shape layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutShapeEditor;
+	da_LayoutShapeEditor;
 
 runTimeCommand
 	-annotation "Layout Pose Editor"
@@ -1828,7 +1804,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daPoseEditor\";\ninViewMessage -pos topCenter -msg \"Pose layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutPoseEditor;
+	da_LayoutPoseEditor;
 
 runTimeCommand
 	-annotation "Layout Component Editor"
@@ -1836,7 +1812,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daComponentEditor\";\ninViewMessage -pos topCenter -msg \"Component layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutComponentEditor;
+	da_LayoutComponentEditor;
 
 runTimeCommand
 	-annotation "Layout Relationship Editor"
@@ -1844,7 +1820,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daRelationshipEditor\";\ninViewMessage -pos topCenter -msg \"Relationship layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutRelationshipEditor;
+	da_LayoutRelationshipEditor;
 
 runTimeCommand
 	-annotation "Layout Dynamic Relationship Editor"
@@ -1852,7 +1828,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daDynamicRelationshipEditor\";\ninViewMessage -pos topCenter -msg \"Dynamic Relationship layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutDynamicRelationshipEditor;
+	da_LayoutDynamicRelationshipEditor;
 
 runTimeCommand
 	-annotation "Layout Reference Editor"
@@ -1860,7 +1836,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("//Get Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nstring $curCam = `modelPanel -q -cam $curPane`;\n//Change Layout\nsetNamedPanelLayout \"daReferenceEditor\";\ninViewMessage -pos topCenter -msg \"Reference layout\" -fade;\n//Switch back to Current Camera\nstring $curPanel = `playblast -ae`;\nstring $curPane = `match \"[^|]*$\" $curPanel`;\nlookThru $curPane $curCam;")
-	LayoutReferenceEditor;
+	da_LayoutReferenceEditor;
 
 runTimeCommand
 	-annotation "Enable Opaque for Selected Meshes"
@@ -1868,7 +1844,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiOpaque\") 1;\n}\n    \ninViewMessage -pos topCenter -msg \"Opaque On\" -fade;")
-	aiOpaque;
+	da_AiOpaque;
 
 runTimeCommand
 	-annotation "Enable Opaque for Selected Meshes"
@@ -1876,7 +1852,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel){\n    setAttr ($each +\".aiOpaque\") 0;\n}\n    \ninViewMessage -pos topCenter -msg \"Opaque Off\" -fade;")
-	aiNoOpaque;
+	da_AiNoOpaque;
 
 runTimeCommand
 	-annotation "Close All Opened Panel"
@@ -1884,7 +1860,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"May9 Pro Workspace Resetted\" -fade;")
-	CloseAllPanel;
+	da_CloseAllPanel;
 
 runTimeCommand
 	-annotation "MASH Blend Deformer"
@@ -1892,7 +1868,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nselect $mySel[0];\nMASHaddBlendDeformer;\nstring $myBlendDeformer[] = `listConnections -s 1 -d 0 -t \"MASH_BlendDeformer\"`;\nconnectAttr -f ($mySel[1] + \".worldMesh\") ($myBlendDeformer[0] + \".blendMesh\");\nselect $myBlendDeformer;")
-	MashBlendDeformer;
+	da_MashBlendDeformer;
 
 runTimeCommand
 	-annotation "About May9 Pro Window"
@@ -1900,15 +1876,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $myResult = `confirmDialog -title \"About\" -message (\"Davide Alidosi's \" +$may9Version +\"       \") \n    -button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;")
-	AboutMay9;
-
-runTimeCommand
-	-annotation "Add Transform Node to MASH"
-	-category "Custom Scripts.May9_Pro.MASH"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $myMash[] = `ls -sl`;\nMASHaddNode(\"MASH_Transform\",$myMash[0] + \".\");\nAttributeEditor")
-	AddMashTransform;
+	da_AboutMay9;
 
 runTimeCommand
 	-annotation "Convert Edge to Curve in UV Editor"
@@ -1916,7 +1884,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl -o`;\nCreateCurveFromPoly;\nselect $mySel[0];\nsetSelectMode components Components; selectType -smp 0 -sme 1 -smf 0 -smu 0 -pv 0 -pe 1 -pf 0 -puv 0")
-	ConvertUvEdgeToCurve;
+	da_ConvertUvEdgeToCurve;
 
 runTimeCommand
 	-annotation "Select Edge Ring and Loop"
@@ -1924,7 +1892,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("SelectEdgeRingSp;\nSelectEdgeLoopSp")
-	EdgeRingAndLoop;
+	da_EdgeRingAndLoop;
 
 runTimeCommand
 	-annotation "Convert Edges to Loops and to Curves"
@@ -1932,23 +1900,23 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $myResult = `confirmDialog -title \"To Loops to Curves\" -message \"Before continue make sure to have seleted only one edge for loop. Continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n        string $edgeSel[] = `ls -sl -fl`;\n        \n        for ($i=0; $i<`size$edgeSel`; $i++)\n        {\n        \tselect $edgeSel[$i];\n        \tpolySelectConstraint -pp 4 -m2a 30 -m3a 90;\n        \tpolyToCurve -form 2 -degree 3;\n        }\n}")
-	EdgeToLoopToCurve;
+	da_EdgeToLoopToCurve;
 
 runTimeCommand
 	-annotation "Select Current Component Shader"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("hyperShade -smn;\nSelectObjectMaterial")
-	SelectComponentShader;
+	-command ("hyperShade -smn;\nda_SelectObjectMaterial")
+	da_SelectComponentShader;
 
 runTimeCommand
 	-annotation "Edit and Frame Shaders Based on Current Selection"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("LayoutNodeEditor;\nSelectAssignedShader;\nNodeEditorGraphUpDownstream;\n\ninViewMessage -pos topCenter -msg \"Edit Shaders\" -fade")
-	EditAndFrameShaders;
+	-command ("da_LayoutNodeEditor;\nda_SelectAssignedShader;\nNodeEditorGraphUpDownstream;\n\ninViewMessage -pos topCenter -msg \"Edit Shaders\" -fade")
+	da_EditAndFrameShaders;
 
 runTimeCommand
 	-annotation "Create or Assig Node to a Selection"
@@ -1956,31 +1924,31 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("catchQuiet (`AssignNewMaterial`);\nif (`window -q -ex \"assignNewMaterialWindow\"` == 0 || `window -q -vis \"assignNewMaterialWindow\"` == 0)\n    createNodeWindow;")
-	CreateAssigNode;
+	da_CreateAssigNode;
 
 runTimeCommand
 	-annotation "Unlock Selected Node(s)"
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tlockNode -lock off $allMySel;\n}")
-	UnlockNode;
+	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tda_LockNode -lock off $allMySel;\n}")
+	da_UnLockNode;
 
 runTimeCommand
 	-annotation "Lock Selected Node(s)"
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tlockNode -lock on $allMySel;\n}")
-	LockNode;
+	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tda_LockNode -lock on $allMySel;\n}")
+	da_LockNode;
 
 runTimeCommand
 	-annotation "Edit And Frame Shader from Outliner"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("LayoutNodeEditor;\nAttributeEditor;\nNodeEditorGraphUpDownstream;\n\ninViewMessage -pos topCenter -msg \"Edit Shaders\" -fade")
-	EditAndFrameShaderOutliner;
+	-command ("da_LayoutNodeEditor;\nAttributeEditor;\nNodeEditorGraphUpDownstream;\n\ninViewMessage -pos topCenter -msg \"Edit Shaders\" -fade")
+	da_EditAndFrameShaderOutliner;
 
 runTimeCommand
 	-annotation "Unlock and Fix Normals"
@@ -1988,7 +1956,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("polyNormalPerVertex -ufn true;\npolySoftEdge -angle 47")
-	UnlockAndFixNormals;
+	da_UnlockAndFixNormals;
 
 runTimeCommand
 	-annotation "Assign aiStandardHair to pfxHair"
@@ -1996,7 +1964,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nselect $mySel[0];\nstring $myHairSystem[] = `listConnections -s 1 -d 0 -t \"hairSystem\"`;\n\n//string $myHairSystem[] = `ls -sl`;\ncreateRenderNodeCB -asShader \"surfaceShader\" aiStandardHair \"\";\nstring $myStandardHair[] = `ls -sl`;\n\nconnectAttr ($myStandardHair[0] + \".outColor\", $myHairSystem[0] + \".aiHairShader\");\n\nsetAttr ($myHairSystem[0] + \".aiOverrideHair\") 1;\n\nopenAEWindow")
-	aiStandardHairToPfxHair;
+	da_AiStandardHairToPfxHair;
 
 runTimeCommand
 	-annotation "Toggle Light Manipulators"
@@ -2004,7 +1972,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`renderManip -q -st` == 0)\n    ShowLightManipulators;\nelse\n    HideLightManipulators;")
-	ToggleLightManipulators;
+	da_ToggleLightManipulators;
 
 runTimeCommand
 	-annotation "Toggle Camera Manipulators"
@@ -2012,4 +1980,12 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`renderManip -q -st` == 0)\n    ShowCameraManipulators;\nelse\n    HideCameraManipulators;")
-	ToggleCameraManipulators;
+	da_ToggleCameraManipulators;
+
+runTimeCommand
+	-annotation "Insert Keyframe On the Line Graph"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("setKeyframe -insert")
+	da_InsertKeyFrame;

@@ -48,7 +48,7 @@ menuItem
 
     menuItem
         -label "Curves" 
-        -command "ToggleNurbsCurvesVis" 
+        -command "da_ToggleNurbsCurvesVis" 
 		-checkBox (1 == $nurbsCurvesCheck)
         -radialPosition "NE" 
         -sourceType "mel" 
@@ -56,7 +56,7 @@ menuItem
 
     menuItem
         -label "Polygons" 
-        -command "TogglePolyVis" 
+        -command "da_TogglePolyVis" 
 		-checkBox (1 == $polymeshesCheck)
         -radialPosition "N" 
         -sourceType "mel" 
@@ -64,7 +64,7 @@ menuItem
 
     menuItem
         -label "Light" 
-        -command "ToggleLightVis" 
+        -command "da_ToggleLightVis" 
 		-checkBox (1 == $lightsCheck)
         -radialPosition "NW" 
         -sourceType "mel" 
@@ -72,7 +72,7 @@ menuItem
 
     menuItem
         -label "Joint" 
-        -command "ToggleJointVis" 
+        -command "da_ToggleJointVis" 
 		-checkBox (1 == $jointsCheck)
         -radialPosition "SE" 
         -sourceType "mel" 
@@ -80,7 +80,7 @@ menuItem
 
     menuItem
         -label "IK Handle" 
-        -command "ToggleIkVis" 
+        -command "da_ToggleIkVis" 
 		-checkBox (1 == $ikHandlesCheck)
         -radialPosition "S" 
         -sourceType "mel" 
@@ -88,7 +88,7 @@ menuItem
 
     menuItem
         -label "Locator" 
-        -command "ToggleLocVis" 
+        -command "da_ToggleLocVis" 
 		-checkBox (1 == $locatorsCheck)
         -radialPosition "SW" 
         -sourceType "mel" 
@@ -96,7 +96,7 @@ menuItem
 
     menuItem
         -label "Deformers" 
-        -command "ToggleDefVis" 
+        -command "da_ToggleDefVis" 
 		-checkBox (1 == $deformersCheck)
         -radialPosition "W" 
         -sourceType "mel" 
@@ -104,7 +104,7 @@ menuItem
 
     menuItem
         -label "Nurbs" 
-        -command "ToggleNurbsVis" 
+        -command "da_ToggleNurbsVis" 
 		-checkBox (1 == $nurbsSurfacesCheck)
         -radialPosition "E" 
         -sourceType "mel" 
@@ -347,9 +347,9 @@ global proc da_convertToPoint(){
 }
 
 
-// da_perspToggle
+// da_PerspToggle
 
-global proc da_perspToggle(){
+global proc da_PerspToggle(){
 
 	string $curPanel;
 	string $curCam;
@@ -488,7 +488,7 @@ global proc da_shell(){
 }
 
 global proc da_shellDetach(){
-	BackToObjectMode;
+	da_BackToObjectMode;
 
     string $myTransform[] = `ls -sl -typ "transform"`;
 	string $myShape[] = `listRelatives -s`;

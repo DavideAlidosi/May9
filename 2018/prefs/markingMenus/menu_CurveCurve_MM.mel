@@ -187,7 +187,7 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
 
     menuItem
         -label "Connect Shapes" 
-        -command "ConnectNurbsShapes" 
+        -command "da_ConnectNurbsShapes" 
         -image "da_OneToMany.png" 
         -sourceType "mel" 
         menuEditorMenuItem80;
@@ -216,14 +216,14 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
 
     menuItem
         -label "Flat Surface"
-        -command "FlattenSurface"
+        -command "da_FlattenSurface"
         -image "da_flatPoly.png"
         -sourceType "mel"
         menuEditorMenuItem12;
 
     menuItem
         -label "Bevel Plus for Text"
-        -command "BevelPlusForText"
+        -command "da_BevelPlusForText"
         -image "polyBevel.png"
         -sourceType "mel"
         menuEditorMenuItem16;
@@ -442,19 +442,19 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
 
             menuItem
                 -label "Static"
-                -command "nHairStatic"
+                -command "da_HairStatic"
                 -sourceType "mel"
                 menuEditorMenuItem1;
 
             menuItem
                 -label "Passive"
-                -command "nHairPassive"
+                -command "da_HairPassive"
                 -sourceType "mel"
                 menuEditorMenuItem2;
 
             menuItem
                 -label "Dynamic"
-                -command "nHairDynamic"
+                -command "da_HairDynamic"
                 -sourceType "mel"
                 menuEditorMenuItem3;
 
@@ -468,25 +468,25 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
 
             menuItem
                 -label "No Attach"
-                -command "nHairNoLock"
+                -command "da_HairNoLock"
                 -sourceType "mel"
                 menuEditorMenuItem1;
 
             menuItem
                 -label "Base"
-                -command "nHairLockBase"
+                -command "da_HairLockBase"
                 -sourceType "mel"
                 menuEditorMenuItem2;
 				
 			menuItem
                 -label "Tip"
-                -command "nHairLockTip"
+                -command "da_nHairLockTip"
                 -sourceType "mel"
                 menuEditorMenuItem4;
 
             menuItem
                 -label "Both Ends"
-                -command "nHairLockBothEnds"
+                -command "da_HairLockBothEnds"
                 -sourceType "mel"
                 menuEditorMenuItem3;
 
@@ -500,13 +500,13 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
 
             menuItem
                 -label "Enable"
-                -command "FollicleBraid"
+                -command "da_FollicleBraid"
                 -sourceType "mel"
                 menuEditorMenuItem1;
 
             menuItem
                 -label "Disable"
-                -command "FollicleNoBraid"
+                -command "da_FollicleNoBraid"
                 -sourceType "mel"
                 menuEditorMenuItem2;
 
@@ -636,14 +636,14 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
 
         menuItem
             -label "On"
-            -command "aiRenderCurve"
+            -command "da_AiRenderCurve"
             -sourceType "mel"
 			-image "rvViewingPipelineOn.png"
             menuEditorMenuItem1;
 
         menuItem
             -label "Off"
-            -command "aiNoRenderCurve"
+            -command "da_AiNoRenderCurve"
             -sourceType "mel"
 			-image "rvViewingPipelineOff.png"
             menuEditorMenuItem2;
