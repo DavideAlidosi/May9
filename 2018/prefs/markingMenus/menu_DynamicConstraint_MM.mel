@@ -5,11 +5,6 @@
         -subMenu 0
         -tearOff 0
         -command "da_LastOpInStack" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -17,6 +12,7 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
+        -image "attributes.png" 
         -echoCommand 0
         -italicized 0
         -boldFont 1
@@ -30,11 +26,6 @@
         -subMenu 0
         -tearOff 0
         -command "dynamicConstraintRemove;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -56,11 +47,6 @@
         -subMenu 0
         -tearOff 0
         -command "dynamicConstraintMembership \"select\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -82,11 +68,6 @@
         -subMenu 0
         -tearOff 0
         -command "nConstraintMembershipTool;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -107,19 +88,14 @@
         -divider 0
         -subMenu 1
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
         -allowOptionBoxes 1
         -enableCommandRepeat 1
-		-image "nConstraintSlideonSurface.png" 
+        -image "nConstraintSlideonSurface.png" 
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem17;
@@ -130,21 +106,16 @@
             -subMenu 0
             -tearOff 0
             -command "da_SlideConstraintOn" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOn.png"
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -155,21 +126,16 @@
             -subMenu 0
             -tearOff 0
             -command "da_SlideConstraintOff" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOff.png"
             -italicized 0
-            -boldFont 0
+            -boldFont 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -182,11 +148,6 @@
         -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -194,7 +155,7 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
@@ -205,11 +166,6 @@
         -subMenu 0
         -tearOff 0
         -command "ParentConstraint;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -230,11 +186,6 @@
         -subMenu 0
         -tearOff 0
         -command "ParentConstraintOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -246,7 +197,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem16;
+        menuEditorMenuItem6;
 
     menuItem
         -label "Point Constraint" 
@@ -254,11 +205,6 @@
         -subMenu 0
         -tearOff 0
         -command "PointConstraint;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -279,11 +225,6 @@
         -subMenu 0
         -tearOff 0
         -command "PointConstraintOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -295,7 +236,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuEditorMenuItem16;
 
     menuItem
         -label "Orient Constraint" 
@@ -303,11 +244,6 @@
         -subMenu 0
         -tearOff 0
         -command "performOrientConstraint 0;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -328,11 +264,6 @@
         -subMenu 0
         -tearOff 0
         -command "OrientConstraintOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -344,7 +275,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem10;
+        menuEditorMenuItem18;
 
     menuItem
         -label "Scale Constraint" 
@@ -352,11 +283,6 @@
         -subMenu 0
         -tearOff 0
         -command "scaleConstraint;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -377,11 +303,6 @@
         -subMenu 0
         -tearOff 0
         -command "ScaleConstraintOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -393,7 +314,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem12;
+        menuEditorMenuItem19;
 
     menuItem
         -label "Aim Constraint" 
@@ -401,11 +322,6 @@
         -subMenu 0
         -tearOff 0
         -command "AimConstraint;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -426,11 +342,6 @@
         -subMenu 0
         -tearOff 0
         -command "AimConstraintOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -442,7 +353,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem13;
+        menuEditorMenuItem20;
 
 setParent -m ..;
 
