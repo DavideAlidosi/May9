@@ -1,0 +1,87 @@
+
+    menuItem
+        -label "Keep Faces Together Off" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 0;" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "rvViewingPipelineOff.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Keep Faces Together On" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 1;" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "rvViewingPipelineOn.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Show Manips" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "setToolTo ShowManips" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "showManip.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Edit Attributes" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "AttributeEditor" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "attributes.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+setParent -m ..;
+
