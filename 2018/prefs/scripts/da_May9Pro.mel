@@ -75,5 +75,8 @@ if (`optionVar -ex May9ActivationCheck` == 0){
 // Preload May9 Pro Scripts
 source da_scripts.mel;
 
+// Set Channel Box Settings
+channelBoxSettings slow 2;
+
 // Initialize Interactive Play button
 da_intPlay();

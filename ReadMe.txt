@@ -151,7 +151,9 @@ Main preferences change:
 - Wireframe visibility on Sculpting Tool is on by default
 - Panel tool bar is hidden
 - Status line is fully expanded
-- Enable Highlight connection on selected (Only Maya 2018)
+- Enable Highlight connection on selected node in Node editor (only Maya 2018)
+- Channel Box settings are set to slow (only Maya 2018)
+
 
 For more information:
 
