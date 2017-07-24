@@ -305,7 +305,7 @@ global proc da_convertToThickCloud(){
     pickWalkDown;
     string $mySel[] = `ls -sl`;
     for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "ThickCloud" 1;
+    applyPresetToNode $mySel[$i] "" "" "da_ThickCloud" 1;
 	pickWalkUp;
     }
 }
@@ -314,7 +314,7 @@ global proc da_convertToWater(){
     pickWalkDown;
     string $mySel[] = `ls -sl`;
     for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "Water" 1;
+    applyPresetToNode $mySel[$i] "" "" "da_Water" 1;
 	pickWalkUp;
     }
 }
@@ -323,7 +323,7 @@ global proc da_convertToCloud(){
     pickWalkDown;
     string $mySel[] = `ls -sl`;
     for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "Cloud" 1;
+    applyPresetToNode $mySel[$i] "" "" "da_Cloud" 1;
 	pickWalkUp;
     }
 }
@@ -332,7 +332,7 @@ global proc da_convertToBalls(){
     pickWalkDown;
     string $mySel[] = `ls -sl`;
     for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "Balls" 1;
+    applyPresetToNode $mySel[$i] "" "" "da_Balls" 1;
 	pickWalkUp;
     }
 }
@@ -341,7 +341,7 @@ global proc da_convertToPoint(){
     pickWalkDown;
     string $mySel[] = `ls -sl`;
     for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "Point" 1;
+    applyPresetToNode $mySel[$i] "" "" "da_Point" 1;
 	pickWalkUp;
     }
 }

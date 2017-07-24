@@ -515,7 +515,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("$mySel = `ls -sl -l`;\ndoMenuComponentSelection(\"$mySel\", \"puv\");")
+	-command ("$myUvSel = `ls -sl -l`;\nint $numObj = size($myUvSel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($myUvSel[$i], \"puv\");")
 	da_SelectUV;
 
 runTimeCommand
@@ -523,7 +523,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("$mySel = `ls -sl -l`;\ndoMenuComponentSelection(\"$mySel\", \"particle\");")
+	-command ("$myParticleSel = `ls -sl -l`;\nint $numObj = size($myParticleSel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($myParticleSel[$i], \"particle\");")
 	da_SelectParticle;
 
 runTimeCommand
@@ -1147,7 +1147,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("da_nParticleNoGravity;\nstring $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nda_SelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectTransform[0] +\".overrideEnabled\") 1;\nsetAttr ($objectTransform[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_metaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_mebaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
+	-command ("da_nParticleNoGravity;\nstring $particleGroupSel[] = `ls -sl`;\nselect $particleGroupSel[0];\nda_SelectParticle;\nSelectAll;\nstring $particleSel[] = `ls -sl -fl`;\nfor ($i=0; $i<`size$particleSel`; $i++)\n{\n\tselect $particleSel[$i];\n\tCreateCluster;\n}\n\nselect $particleGroupSel;\ndoParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\nsetAttr ($objectTransform[0] +\".overrideEnabled\") 1;\nsetAttr ($objectTransform[0] +\".overrideDisplayType\") 2;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\napplyPresetToNode $myShapeConnection[0] \"\" \"\" \"da_MetaBalls\" 1;\n\t\ncreateRenderNodeCB -asShader \"surfaceShader\" rampShader \"assignCreatedShader %type \\\"\\\" %node $objectShape[0]\";\n\t\nstring $myShaderGroup[] = `listConnections -type \"shadingEngine\"`;\nselect -ne $myShaderGroup[0];\nstring $myShader[] = `listConnections -type \"rampShader\"`;\napplyPresetToNode $myShader[0] \"\" \"\" \"da_MetaBalls\" 1;\n\nrename $myShader[0] \"MetaBalls1\";\nrename $objectTransform[0] \"metaBallsMesh1\";\n")
 	da_ConvertToMetaballs;
 
 runTimeCommand
@@ -1459,7 +1459,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Dynamics"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("FluidEmitter;\nstring $mySel[] = `ls -sl`;\napplyPresetToNode $mySel[0] \"\" \"\" \"KillVolume\" 1;")
+	-command ("FluidEmitter;\nstring $mySel[] = `ls -sl`;\napplyPresetToNode $mySel[0] \"\" \"\" \"da_KillVolume\" 1;")
 	da_FluidKillField;
 
 runTimeCommand
