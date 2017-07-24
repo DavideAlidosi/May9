@@ -92,11 +92,11 @@ ALT + 0 = Set Layout Reference Editor
 
 ALT + C = Open Channel Box or toggle it if docked
 ALT + A = Open Attribute Editor or toggle it if docked
-ALT + M = Open Modeling Toolkit or toggle it if docked
+ALT + M = Open Modelling Toolkit or toggle it if docked
 ALT + U = Open UV Toolkit or toggle it if docked (CMD + U on OS X)
 ALT + O = Open Outliner or toggle it if docked
 ALT + T = Open Tools Preference Settings or toggle it if docked
-ALT + \ = Reset Workspace
+ALT + \ = Reset May9 Pro Workspace
 
 ALT + L = Color Picker
 ALT + G = Toggle grid
@@ -107,7 +107,7 @@ SHIFT + UP = Side View
 SHIFT + RIGHT = Front View
 SHIFT + DOWN = Top View
 SHIFT + LEFT = Persp View
-SHIFT + T = Assing shader if an object is selected or open create node window if not
+SHIFT + T = Assign shader if an object is selected or open create node window if not
 
 ~ = Orient Manipulators Toggle
 ? = Find Maya Menu
