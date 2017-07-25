@@ -7,7 +7,7 @@ Release Note:
 A very special tanks to Andrey Menshikov for the hard work on amazing MMtoKey
 
 
-Installation Instruction:
+Easy installation instruction:
 
 Windows
 1) Close Maya
@@ -26,6 +26,18 @@ Linux
 2) Go to folder: ~<username>/maya/
 3) Rename folder 2017 in to 2017_Bak
 4) Copy folder 2017 of this archive in: ~<username>/maya/
+
+
+Custom installation over existings preferences:
+
+1) If is open close Maya
+2) Copy presets folder in Maya 2017 or 2018 directory
+3) Copy these folders: hotkeys, icons, markingMenus, workspace in your prefs directory
+4) Copy these files: da_May9Pro.mel, da_scripts.mel, da_userNamedCommands.mel, da_userPrefs.mel, da_userRunTimeCommands.mel in your scripts directory
+5) To your userSetup.mel add this line:
+   source da_May9Pro.mel
+   or if the file not exist copy it from May9 Pro scripts folder
+6) Open Maya and set May9 Pro workspace 
 
 
 Quick start:
