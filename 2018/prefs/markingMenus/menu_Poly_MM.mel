@@ -1294,6 +1294,20 @@ menuItem
 menuEditorMenuItem3;
 
 menuItem
+-l "Create nHair"
+-c "CreateHair"
+-i "hairCreate.png"
+-stp "mel"
+menuEditorMenuItem12;
+
+menuItem
+-l "menuEditorMenuItem13"
+-c "CreateHairOptions"
+-ob 1
+-stp "mel"
+menuEditorMenuItem11;
+
+menuItem
 -l "Create Passive Collider"
 -c "nClothMakeCollide"
 -i "nClothCreatePassive.png"
@@ -1348,64 +1362,6 @@ menuItem
 -ob 1
 -stp "mel"
 menuEditorMenuItem9;
-
-menuItem
--l "Particle Style"
--sm 1
--i "out_particle.png"
--stp "mel"
-menuEditorMenuItem15;
-
-menuItem
--l "Points"
--c "optionVar -stringValue NParticleStyle \"Points\";"
--i "nPartPoints.png"
--stp "mel"
-menuEditorMenuItem1;
-
-menuItem
--l "Balls"
--c "optionVar -stringValue NParticleStyle \"Balls\";"
--i "nPartBalls.png"
--stp "mel"
-menuEditorMenuItem2;
-
-menuItem
--l "Cloud"
--c "optionVar -stringValue NParticleStyle \"Cloud\";"
--i "nPartCloud.png"
--stp "mel"
-menuEditorMenuItem3;
-
-menuItem
--l "ThickCloud"
--c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
--i "nPartThickCloud.png"
--stp "mel"
-menuEditorMenuItem4;
-
-menuItem
--l "Water"
--c "optionVar -stringValue NParticleStyle \"Water\";"
--i "nPartWater.png"
--stp "mel"
-menuEditorMenuItem5;
-
-setParent -m ..;
-
-menuItem
--l "Create Hair"
--c "CreateHair"
--i "hairCreate.png"
--stp "mel"
-menuEditorMenuItem12;
-
-menuItem
--l "menuEditorMenuItem13"
--c "CreateHairOptions"
--ob 1
--stp "mel"
-menuEditorMenuItem11;
 
 menuItem
 -l "Set Initial State"
@@ -1668,215 +1624,17 @@ menuEditorMenuItem3;
 
 menuItem
 -l "Interactive Brush"
--sm 1
--i "xgIG_density_24.png"
--stp "mel"
-menuEditorMenuItem13;
-
-menuItem
--l "Density"
--c "XgmSetDensityBrushTool"
--i "xgIG_density.png"
--stp "mel"
-menuEditorMenuItem1;
-
-menuItem
--l "menuEditorMenuItem3"
--c "XgmSetDensityBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem5;
-
-menuItem
--l "Place"
--c "XgmSetPlaceBrushTool"
--i "xgIG_place.png"
--stp "mel"
-menuEditorMenuItem4;
-
-menuItem
--l "menuEditorMenuItem5"
--c "XgmSetPlaceBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem7;
-
-menuItem
--l "Length"
--c "XgmSetLengthBrushTool"
--i "xgIG_length.png"
--stp "mel"
-menuEditorMenuItem6;
-
-menuItem
--l "menuEditorMenuItem7"
--c "XgmSetLengthBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem9;
-
-menuItem
--l "Cut"
--c "XgmSetCutBrushTool"
--i "xgIG_cut.png"
--stp "mel"
-menuEditorMenuItem8;
-
-menuItem
--l "menuEditorMenuItem9"
--c "XgmSetCutBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem11;
-
-menuItem
--l "Width"
--c "XgmSetWidthBrushTool"
--i "xgIG_width.png"
--stp "mel"
-menuEditorMenuItem10;
-
-menuItem
--l "menuEditorMenuItem11"
--c "XgmSetWidthBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem13;
-
-menuItem
--l "Twist"
--c "XgmSetWidthBrushTool"
--i "xgIG_width.png"
--stp "mel"
-menuEditorMenuItem70;
-
-menuItem
--l "menuEditorMenuItem3"
--c "XgmSetWidthBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem71;
-
-menuItem
--l "Comb"
 -c "XgmSetCombBrushTool"
 -i "xgIG_comb.png"
 -stp "mel"
-menuEditorMenuItem12;
+menuEditorMenuItem13;
 
 menuItem
 -l "menuEditorMenuItem13"
 -c "XgmSetCombBrushToolOption"
 -ob 1
 -stp "mel"
-menuEditorMenuItem15;
-
-menuItem
--l "Grab"
--c "XgmSetGrabBrushTool"
--i "xgIG_grab.png"
--stp "mel"
 menuEditorMenuItem14;
-
-menuItem
--l "menuEditorMenuItem15"
--c "XgmSetGrabBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem17;
-
-menuItem
--l "Smooth"
--c "XgmSetSmoothBrushTool"
--i "xgIG_smooth.png"
--stp "mel"
-menuEditorMenuItem16;
-
-menuItem
--l "menuEditorMenuItem17"
--c "XgmSetSmoothBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem19;
-
-menuItem
--l "Noise"
--c "XgmSetNoiseBrushTool"
--i "xgIG_noise.png"
--stp "mel"
-menuEditorMenuItem18;
-
-menuItem
--l "menuEditorMenuItem19"
--c "XgmSetNoiseBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem21;
-
-menuItem
--l "Clump"
--c "XgmSetClumpBrushTool"
--i "xgIG_clump.png"
--stp "mel"
-menuEditorMenuItem20;
-
-menuItem
--l "menuEditorMenuItem21"
--c "XgmSetClumpBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem23;
-
-menuItem
--l "Part"
--c "XgmSetPartBrushTool"
--i "xgIG_part.png"
--stp "mel"
-menuEditorMenuItem22;
-
-menuItem
--l "menuEditorMenuItem23"
--c "XgmSetPartBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem26;
-
-menuItem
--l "separator" 
--d 1
--dl "separator"
--stp "mel"
-menuEditorMenuItem24;
-
-menuItem
--l "Freeze"
--c "XgmSetFreezeBrushTool"
--i "xgIG_freeze.png"
--stp "mel"
-menuEditorMenuItem25;
-
-menuItem
--l "menuEditorMenuItem26"
--c "XgmSetFreezeBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem28;
-
-menuItem
--l "Select"
--c "XgmSetSelectBrushTool"
--i "xgIG_select.png"
--stp "mel"
-menuEditorMenuItem27;
-
-menuItem
--l "menuEditorMenuItem28"
--c "XgmSetSelectBrushToolOption"
--ob 1
--stp "mel"
-menuEditorMenuItem29;
-
-setParent -m ..;
 
 menuItem
 -l "Interactive Groom Editor"
