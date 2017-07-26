@@ -2005,3 +2005,35 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nselect -cl;\n\nfor ($i=0; $i<`size$mySelShape`; $i++){\n    //Cycle mesh selection\n    select $mySelShape[$i];\n    //Select edge by angle\n    polySelectConstraint -m 3 -t 0x8000 -a on -ab 40 140;\n    string $bevelAngleSel[] = `ls -sl`;\n    polySelectConstraint -a off;\n    select $bevelAngleSel;\n    //Bevel edge selection\n\tpolyBevel3 -fraction 0.05 -offsetAsFraction 1 -autoFit 1 -depth 1 -mitering 0 -miterAlong 0 -chamfer 1 -segments 2 -worldSpace 1 -smoothingAngle 47 -subdivideNgons 1 -mergeVertices 1 -mergeVertexTolerance 0.0001 -miteringAngle 180 -angleTolerance 180 -ch 1;\n}\n\nselect $mySel;\nsetToolTo ShowManips;")
 	Da_AutoBevel;
+
+runTimeCommand
+	-annotation "Enable MASH Bullet Gravity"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel)\n    setAttr ($each +\".gravityY\") -9.8;\n\ninViewMessage -pos topCenter -msg \"MASH Bullet Gravity Enable\" -fade;")
+	da_MashBulletGravity;
+
+runTimeCommand
+	-annotation "Disable MASH Bullet Gravity"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel)\n    setAttr ($each +\".gravityY\") -0;\n\ninViewMessage -pos topCenter -msg \"MASH Bullet Gravity Disable\" -fade;")
+	da_MashBulletNoGravity;
+
+runTimeCommand
+	-annotation "Enable MASH Bullet Ground"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel)\n    setAttr ($each +\".groundPlane\") 1;\n\ninViewMessage -pos topCenter -msg \"MASH Bullet Ground Enable\" -fade;")
+	da_MashBulletGround;
+
+runTimeCommand
+	-annotation "Disable MASH Bullet Ground"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel)\n    setAttr ($each +\".groundPlane\") 0;\n\ninViewMessage -pos topCenter -msg \"MASH Bullet Ground Disable\" -fade;")
+	da_MashBulletNoGround;
