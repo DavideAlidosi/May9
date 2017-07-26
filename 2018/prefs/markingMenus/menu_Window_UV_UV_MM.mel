@@ -199,7 +199,46 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Symmetrize" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SymmetrizeUV" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polySymmetrizeUV.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem5;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SymmetrizeUVOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
 
 setParent -m ..;
 
