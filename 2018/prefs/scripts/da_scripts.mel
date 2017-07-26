@@ -438,7 +438,7 @@ global proc da_shell(){
 	
 	string $myShellTransform[] = `listRelatives -p $myShell`;
 	select $myShellTransform;
-	ResetTweakPoint;
+	da_ResetTweakPoint;
 	dR_modeObject;
 	
 	polyNormal -normalMode 0 -userNormalMode 0 -ch 1 $myShell;
