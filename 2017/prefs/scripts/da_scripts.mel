@@ -432,7 +432,7 @@ global proc da_perspToggle(){
 global proc da_shell(){
 	string $myTransform[] = `ls -sl -typ "transform"`;
 	string $myShape[] = `listRelatives -s`;
-	duplicate;
+	catchQuiet (`duplicate`);
 	string $myShell[] = `listRelatives -s`;
 	connectAttr -f ($myShape[0] + ".outMesh") ($myShell[0] + ".inMesh");
 	
