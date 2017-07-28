@@ -366,10 +366,14 @@ global proc da_perspToggle(){
 
 	if ($orthoValue == 1){
 		setAttr ($curCam +".orthographic") 0;
-		viewFit;
+		da_PasteCameraPosition;
+
+		fitPanel -selectedNoChildren;
 		inViewMessage -pos topCenter -msg "Perspective View" -fade;
 		
 	} else {
+
+		da_CopyCameraPosition;
 	
 		$camRot = `camera -q -rot $curCam`;
 

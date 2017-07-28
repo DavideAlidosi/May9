@@ -2037,3 +2037,19 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`; \nfor ($each in $mySel)\n    setAttr ($each +\".groundPlane\") 0;\n\ninViewMessage -pos topCenter -msg \"MASH Bullet Ground Disable\" -fade;")
 	da_MashBulletNoGround;
+
+runTimeCommand
+	-annotation "Copy Camera Position"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("$curPanel = `getPanel -wf`;\n$curCam = `modelPanel -q -cam $curPanel`;\n\n$curCamTX = `getAttr ($curCam +\".tx\")`;\n$curCamTY = `getAttr ($curCam +\".ty\")`;\n$curCamTZ = `getAttr ($curCam +\".ty\")`;\n$curCamRX = `getAttr ($curCam +\".rx\")`;\n$curCamRY = `getAttr ($curCam +\".ry\")`;\n$curCamRZ = `getAttr ($curCam +\".rz\")`;")
+	da_CopyCameraPosition;
+
+runTimeCommand
+	-annotation "Paste Camera Position"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("$curPanel = `getPanel -wf`;\n$curCam = `modelPanel -q -cam $curPanel`;\n\nsetAttr ($curCam +\".tx\") $curCamTX;\nsetAttr ($curCam +\".ty\") $curCamTY;\nsetAttr ($curCam +\".tz\") $curCamTZ;\nsetAttr ($curCam +\".rx\") $curCamRX;\nsetAttr ($curCam +\".ry\") $curCamRY;\nsetAttr ($curCam +\".rz\") $curCamRZ;")
+	da_PasteCameraPosition;
