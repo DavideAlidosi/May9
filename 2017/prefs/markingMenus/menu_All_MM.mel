@@ -1,3 +1,5 @@
+int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
+int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
 int $cmCheck = `colorManagementPrefs -q -cme`;
 
 menuItem
@@ -107,11 +109,32 @@ menuItem
 menuEditorMenuItem9;
 
 menuItem
--l "Import .ai"
+-l "Import Illustrator Curves"
 -c "CreateIllustratorCurves;"
 -i "ai.png"
 -stp "mel"
 menuEditorMenuItem10;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel"
+menuEditorMenuItem18;
+
+menuItem
+-l "Poly Interactive Creation"
+-c "toggleCreatePolyPrimitiveAsTool"
+-cb (1 == $PolyIntCheck)
+-stp "mel"
+menuEditorMenuItem12;
+
+menuItem
+-l "Curve Interactive Creation"
+-c "toggleCreateNurbsPrimitiveAsTool;"
+-cb (1 == $NurbsIntCheck)
+-stp "mel"
+menuEditorMenuItem17;
 
 setParent -m ..;
 

@@ -445,7 +445,7 @@ global proc da_shell(){
 	polyExtrudeFacet -tk 1;
 	select $myShell;
 	string $myPolyExtrudeFace[] = `listConnections -s 1 -d 0 -t "polyExtrudeFace"`;
-	polyBevel3 -c 1 -sg 1 -sn 1 -sa 30 -oaf 0 -o 0.1;
+	polyBevel3 -f 0.1 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 1 -ws 1 -sa 30 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;
 	string $myPolyBevel[] = `listConnections -s 1 -d 0 -t "polyBevel3"`;
 
 	setAttr ($myShell[0] +".overrideEnabled") 1;
