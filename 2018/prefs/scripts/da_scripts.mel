@@ -366,6 +366,7 @@ global proc da_perspToggle(){
 	if ($orthoValue == 1){
 		setAttr ($curCam +".orthographic") 0;
 		da_PasteCameraPosition;
+		viewFit -f 0.5;
 
 		inViewMessage -pos topCenter -msg "Perspective View" -fade;
 		
