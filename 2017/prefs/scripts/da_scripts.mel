@@ -350,7 +350,6 @@ global proc da_convertToPoint(){
 // da_perspToggle
 
 global proc da_perspToggle(){
-
 	string $curPanel;
 	string $curCam;
 	int $orthoValue;
@@ -368,7 +367,6 @@ global proc da_perspToggle(){
 		setAttr ($curCam +".orthographic") 0;
 		da_PasteCameraPosition;
 
-		fitPanel -selectedNoChildren;
 		inViewMessage -pos topCenter -msg "Perspective View" -fade;
 		
 	} else {
@@ -391,40 +389,47 @@ global proc da_perspToggle(){
 		}
 
 		if ($camRotFixed[0] >= 45 && $camRotFixed[0] < 135){
-			viewSet -fit -an 1 -bo;
+			viewSet -bo;
+			viewFit -f 0.5;
 			inViewMessage -pos topCenter -msg "Bottom position - Orthographic View" -fade;
 		}
 
 		else if ($camRotFixed[0] >= 225 && $camRotFixed[0] < 315){
-			viewSet -fit -an 1 -t;
+			viewSet -t;
+			viewFit -f 0.5;
 			inViewMessage -pos topCenter -msg "Top position - Orthographic View" -fade;
 		}
 
 		else if ($camRotFixed[1] < 45){
-			viewSet -fit -an 1 -f;
+			viewSet -f;
+			viewFit -f 0.5;
 			inViewMessage -pos topCenter -msg "Front position - Orthographic View" -fade;
 		}
 
 		else if ($camRotFixed[1] >= 315 ){
-			viewSet -fit -an 1 -f;
+			viewSet -f;
+			viewFit -f 0.5;
 			inViewMessage -pos topCenter -msg "Front position - Orthographic View" -fade;
 		}
 
 		else if ($camRotFixed[1] >= 45 && $camRotFixed[1] < 135)
 		{
-			viewSet -fit -an 1 -rs;
+			viewSet -rs;
+			viewFit -f 0.5;
 			inViewMessage -pos topCenter -msg "Right position - Orthographic View" -fade;
 		}
 
 		else if ($camRotFixed[1] >= 135 && $camRotFixed[1] < 225)
 		{
-			viewSet -fit -an 1 -b;
+			viewSet -b;
+			viewFit -f 0.5;
 			inViewMessage -pos topCenter -msg "Back position - Orthographic View" -fade;
 		}
 
 		else if ($camRotFixed[1] >= 225 && $camRotFixed[1] < 315)
 		{
-			viewSet -fit -an 1 -ls;
+			viewSet -ls;
+			viewFit -f 0.5;
 			inViewMessage -pos topCenter -msg "Left position - Orthographic View" -fade;
 		}
 	}
