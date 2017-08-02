@@ -5,11 +5,6 @@
         -subMenu 0
         -tearOff 0
         -command "performCreateDynamicConstraint 0 \"transform\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -31,11 +26,6 @@
         -subMenu 0
         -tearOff 0
         -command "performCreateDynamicConstraint 1 \"transform\";" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -55,11 +45,6 @@
         -subMenu 0
         -tearOff 0
         -command "doCreateNConstraint pointToSurface 0" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -81,11 +66,6 @@
         -subMenu 0
         -tearOff 0
         -command "performCreateDynamicConstraint 1 \"pointToSurface\"" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -105,11 +85,6 @@
         -subMenu 0
         -tearOff 0
         -command "doCreateNConstraint slideOnSurface 0" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -131,11 +106,6 @@
         -subMenu 0
         -tearOff 0
         -command "performCreateDynamicConstraint 1 \"slideOnSurface\"" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -155,11 +125,6 @@
         -subMenu 0
         -tearOff 0
         -command "da_RivetMash" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -170,10 +135,31 @@
         -image "MASH_CreateMeshFromPoints.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
+
+    menuItem
+        -label "Constraint Point On Poly" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "doCreatePointOnPolyConstraintArgList 2 {   \"0\" ,\"0\" ,\"0\" ,\"1\" ,\"\" ,\"1\" ,\"0\" ,\"0\" ,\"0\" ,\"0\" };" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "pointOnPolyConstraint.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
 
 setParent -m ..;
 
