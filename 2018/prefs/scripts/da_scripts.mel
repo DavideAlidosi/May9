@@ -194,6 +194,12 @@ global proc da_wireframeTemplate(){
 		setAttr ($myBool[$i] + ".smoothShading") 0;
 		setAttr ($myBool[$i] + ".visibleInReflections") 0;
 		setAttr ($myBool[$i] + ".visibleInRefractions") 0;
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInVolume") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiSelfShadows") 0`);
 	}
 
 	showHidden -a;
@@ -216,6 +222,12 @@ global proc da_wireframeTemplateA(){
 		setAttr ($myBool[1] + ".smoothShading") 0;
 		setAttr ($myBool[1] + ".visibleInReflections") 0;
 		setAttr ($myBool[1] + ".visibleInRefractions") 0;
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInVolume") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiSelfShadows") 0`);
 	}
 
 	showHidden -a;
@@ -238,6 +250,12 @@ global proc da_wireframeTemplateB(){
 		setAttr ($myBool[0] + ".smoothShading") 0;
 		setAttr ($myBool[0] + ".visibleInReflections") 0;
 		setAttr ($myBool[0] + ".visibleInRefractions") 0;
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInVolume") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiSelfShadows") 0`);
 	}
 
 	showHidden -a;
@@ -247,16 +265,22 @@ global proc da_wireframeTemplateB(){
 global proc da_interactiveUnion(){
 	PolygonBooleanUnion;
 	da_wireframeTemplate;
+	polyMergeVertex  -d 0.001 -am 1 -ch 1;
+    da_BackToObjectMode;
 }
 
 global proc da_interactiveDifference(){
 	PolygonBooleanDifference;
 	da_wireframeTemplate;
+	polyMergeVertex  -d 0.001 -am 1 -ch 1;
+    da_BackToObjectMode;
 }
 
 global proc da_interactiveIntersection(){
 	PolygonBooleanIntersection;
 	da_wireframeTemplate;
+	polyMergeVertex  -d 0.001 -am 1 -ch 1;
+    da_BackToObjectMode;
 }
 
 
