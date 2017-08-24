@@ -263,24 +263,18 @@ global proc da_wireframeTemplateB(){
 }
 
 global proc da_interactiveUnion(){
-	PolygonBooleanUnion;
+	polyCBoolOp -op 1 -ch 1 -pcr 0 -cls 1 -uth 1;
 	da_wireframeTemplate;
-	polyMergeVertex  -d 0.001 -am 1 -ch 1;
-    da_BackToObjectMode;
 }
 
 global proc da_interactiveDifference(){
-	PolygonBooleanDifference;
+	polyCBoolOp -op 2 -ch 1 -pcr 0 -cls 1 -uth 1;
 	da_wireframeTemplate;
-	polyMergeVertex  -d 0.001 -am 1 -ch 1;
-    da_BackToObjectMode;
 }
 
 global proc da_interactiveIntersection(){
-	PolygonBooleanIntersection;
+	polyCBoolOp -op 3 -ch 1 -pcr 0 -cls 1 -uth 1;
 	da_wireframeTemplate;
-	polyMergeVertex  -d 0.001 -am 1 -ch 1;
-    da_BackToObjectMode;
 }
 
 
