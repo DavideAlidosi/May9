@@ -263,18 +263,24 @@ global proc da_wireframeTemplateB(){
 }
 
 global proc da_interactiveUnion(){
-	polyCBoolOp -op 1 -ch 1 -pcr 0 -cls 1 -uth 1;
+	string $myBoolOp[] = `polyCBoolOp -op 1 -ch 1 -pcr 0 -cls 1 -uth 1`;
+	select $myBoolOp[1];
 	da_wireframeTemplate;
+	ShowManipulators;
 }
 
 global proc da_interactiveDifference(){
-	polyCBoolOp -op 2 -ch 1 -pcr 0 -cls 1 -uth 1;
+	string $myBoolOp[] = `polyCBoolOp -op 2 -ch 1 -pcr 0 -cls 1 -uth 1`;
+	select $myBoolOp[1];
 	da_wireframeTemplate;
+	ShowManipulators;
 }
 
 global proc da_interactiveIntersection(){
-	polyCBoolOp -op 3 -ch 1 -pcr 0 -cls 1 -uth 1;
+	string $myBoolOp[] = `polyCBoolOp -op 3 -ch 1 -pcr 0 -cls 1 -uth 1`;
+	select $myBoolOp[1];
 	da_wireframeTemplate;
+	ShowManipulators;
 }
 
 
