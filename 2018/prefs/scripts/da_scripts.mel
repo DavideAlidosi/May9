@@ -560,7 +560,7 @@ global proc da_shellDetach(){
 	select $myShell;
 	pickWalk -d up;
 	rename da_extractShell1;
-	ClearFreeze;
+	da_ClearFreeze;
 }
 
 global proc da_shellSubdiv(){
