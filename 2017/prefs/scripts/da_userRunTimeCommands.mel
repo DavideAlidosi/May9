@@ -2005,3 +2005,11 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("$curPanel = `getPanel -wf`;\n$curCam = `modelPanel -q -cam $curPanel`;\n\nsetAttr ($curCam +\".tx\") $curCamTX;\nsetAttr ($curCam +\".ty\") $curCamTY;\nsetAttr ($curCam +\".tz\") $curCamTZ;\nsetAttr ($curCam +\".rx\") $curCamRX;\nsetAttr ($curCam +\".ry\") $curCamRY;\nsetAttr ($curCam +\".rz\") $curCamRZ;")
 	da_PasteCameraPosition;
+
+runTimeCommand
+	-annotation "Select Influenced Vertex by Joint"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myJoint[] = `ls -sl`;\nstring $mySkinCluster[] = `listConnections -s 0 -d 1 -t \"skinCluster\"`;\nskinCluster -e -selectInfluenceVerts $myJoint[0] $mySkinCluster[0]")
+	da_SelectVertexJoint;

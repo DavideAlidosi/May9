@@ -124,27 +124,6 @@
         menuEditorMenuItem17;
 
     menuItem
-        -label "Select Hierarchy" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SelectHierarchy" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "selectByHierarchy.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
-
-    menuItem
         -label "IK Spline Handle" 
         -divider 0
         -subMenu 0
@@ -298,6 +277,64 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
+        -label "Select Hierarchy" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SelectHierarchy" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "selectByHierarchy.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+    menuItem
+        -label "Select Weighted Vertices" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_SelectVertexJoint" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "uvIsolateSelectReset.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem14;
 
     menuItem
@@ -341,7 +378,7 @@
         menuEditorMenuItem15;
 
     menuItem
-        -label "Connect selected Muscle Objects" 
+        -label "Connect Selected Muscle" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -373,10 +410,10 @@
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem5;
+        menuEditorMenuItem16;
 
     menuItem
         -label "Joint Size" 
