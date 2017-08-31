@@ -1,88 +1,3 @@
-int $lightCheck = `renderManip -q -st`;
-
-    menuItem
-        -label "Light Linking" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LightCentricLightLinkingEditor;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_defaultLightList.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem16;
-
-    menuItem
-        -label "Light Manipulators" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ToggleLightManipulators" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -checkBox (1 == $lightCheck) 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
-
-    menuItem
-        -label "Look Through" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_LookThruSelected" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "snapshot.svg" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
-        -label "Persp View" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dR_DoCmd(\"viewPersp\");" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "singlePerspLayout.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
 
     menuItem
         -label "Light Editor" 
@@ -103,28 +18,28 @@ int $lightCheck = `renderManip -q -st`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem5;
+        menuEditorMenuItem1;
 
     menuItem
-        -label "Edit Light" 
+        -label "Light Linking" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "AttributeEditor" 
+        -command "LightCentricLightLinkingEditor;" 
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "SW" 
+        -radialPosition "W" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "attributes.png" 
+        -image "out_defaultLightList.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuEditorMenuItem2;
 
     menuItem
         -label "Normalize" 
@@ -141,7 +56,7 @@ int $lightCheck = `renderManip -q -st`;
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem7;
+        menuEditorMenuItem3;
 
         menuItem
             -label "On" 
@@ -152,6 +67,7 @@ int $lightCheck = `renderManip -q -st`;
             -optionBox 0
             -enable 1
             -data 0
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
@@ -186,7 +102,28 @@ int $lightCheck = `renderManip -q -st`;
     setParent -m ..;
 
     menuItem
-        -label "Area to Portal Light" 
+        -label "Edit Light" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "AttributeEditor" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "attributes.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Visible" 
         -divider 0
         -subMenu 1
         -tearOff 0
@@ -197,27 +134,28 @@ int $lightCheck = `renderManip -q -st`;
         -enableCommandRepeat 1
         -image "MtoA_Logo.png" 
         -italicized 0
-        -boldFont 1
+        -boldFont 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem4;
+        menuEditorMenuItem5;
 
         menuItem
             -label "On" 
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "da_AiPortalLight" 
+            -command "da_MeshLightVisible" 
             -optionBox 0
             -enable 1
             -data 0
+            -radialPosition "N" 
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
             -image "rvViewingPipelineOn.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -227,7 +165,7 @@ int $lightCheck = `renderManip -q -st`;
             -divider 0
             -subMenu 0
             -tearOff 0
-            -command "da_AiNoPortalLight" 
+            -command "da_MeshLightNoVisible" 
             -optionBox 0
             -enable 1
             -data 0
@@ -237,7 +175,7 @@ int $lightCheck = `renderManip -q -st`;
             -image "rvViewingPipelineOff.png" 
             -echoCommand 0
             -italicized 0
-            -boldFont 1
+            -boldFont 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;

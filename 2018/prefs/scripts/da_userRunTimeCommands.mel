@@ -2061,3 +2061,19 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $myJoint[] = `ls -sl`;\nstring $mySkinCluster[] = `listConnections -s 0 -d 1 -t \"skinCluster\"`;\nskinCluster -e -selectInfluenceVerts $myJoint[0] $mySkinCluster[0]")
 	da_SelectVertexJoint;
+
+runTimeCommand
+	-annotation "Make Mesh Light Visible"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".lightVisible\") 1;\n\ninViewMessage -pos topCenter -msg \"Light Visible On\" -fade;")
+	da_MeshLightVisible;
+
+runTimeCommand
+	-annotation "Make Mesh Light Invisible"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".lightVisible\") 0;\n\ninViewMessage -pos topCenter -msg \"Light Visible Off\" -fade;")
+	da_MeshLightNoVisible;
