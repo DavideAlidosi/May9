@@ -715,7 +715,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("try:\n    MMtoKey.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n  pass")
+	-command ("try:\n    MMtoKey.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
 	da_MMtoKey_press;
 
 runTimeCommand
@@ -723,7 +723,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("cmds.evalDeferred('MMtoKey.releaseSelected()', lp = True)")
+	-command ("maya.cmds.evalDeferred('MMtoKey.releaseSelected()', lp = True)")
 	da_MMtoKey_release;
 
 runTimeCommand

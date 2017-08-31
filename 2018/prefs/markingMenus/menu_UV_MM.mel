@@ -281,5 +281,26 @@
         -longDivider 1
         menuEditorMenuItem4;
 
+    menuItem
+        -label "Match Shells Scale" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "uvTkDoSetTexelDensity" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyScaleUV.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
 setParent -m ..;
 
