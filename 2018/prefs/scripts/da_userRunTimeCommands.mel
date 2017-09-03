@@ -2077,3 +2077,59 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".lightVisible\") 0;\n\ninViewMessage -pos topCenter -msg \"Light Visible Off\" -fade;")
 	da_MeshLightNoVisible;
+
+runTimeCommand
+	-annotation "Auto Unwrap UV Shels"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("SelectMeshUVShell;\nSelectAll;\nu3dUnfold -ite 1 -p 1 -bi 1 -tf 1 -ms 2048 -rs 6;\ntexOrientShells;\nu3dLayout -res 2048 -scl 1 -trs 0 -rmn 0 -rmx 360 -rst 90 -spc 0.0029296875 -mar 0.0029296875 -box 0 1 0 1;\npolyMultiLayoutUV -lm 1 -sc 1 -rbf 1 -fr 1 -ps 0.05 -l 2 -gu 1 -gv 1 -psc 0 -su 1 -sv 1 -ou 0 -ov 0;\nSelectEdgeMask;")
+	Da_AutoUnwrap;
+
+runTimeCommand
+	-annotation "Enable Alpha Luminance"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".alphaIsLuminance\") 1")
+	Da_FileAlphaLuminance;
+
+runTimeCommand
+	-annotation "Disable Alpha Luminance"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".alphaIsLuminance\") 0")
+	Da_FileNoAlphaLuminance;
+
+runTimeCommand
+	-annotation "Set File Color Space in sRGB"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr -type \"string\" ($each + \".colorSpace\") sRGB")
+	Da_FileColorSpaceSrgb;
+
+runTimeCommand
+	-annotation "Set File Color Space in Raw"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr -type \"string\" ($each + \".colorSpace\") Raw")
+	Da_FileColorSpaceRaw;
+
+runTimeCommand
+	-annotation "Set File Filter Quadratic"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".filterType\") 3")
+	Da_FileFilterQuadratic;
+
+runTimeCommand
+	-annotation "Set File Filter Off"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".filterType\") 0")
+	Da_FileFilterOff;

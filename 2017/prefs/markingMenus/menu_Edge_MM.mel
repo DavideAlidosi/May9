@@ -387,26 +387,39 @@ menuItem
 menuEditorMenuItem29;
 
 menuItem
+-l "3D Cut and Sew"
+-c "SetCutSewUVTool"
+-i "CutSewUVTool.png"
+-stp "mel"
+menuEditorMenuItem1;
+
+menuItem
 -label "Sew UV Edges"
 -command "performPolyMapSewMove 0;"
--radialPosition "N"
 -image "sewUV.png"
 -sourceType "mel"
-menuEditorMenuItem1;
+menuEditorMenuItem2;
 
 menuItem
 -label "Cut UV Edges"
 -command "polyPerformAction polyMapCut e 0;"
 -image "cutUV.png"
 -sourceType "mel"
-menuEditorMenuItem2;
+menuEditorMenuItem3;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem5;
 
 menuItem
 -label "UV Borders"
 -command "da_ToggleUVBorders"
 -image "UVEditorTextureBorder.png"
 -sourceType "mel"
-menuEditorMenuItem3;
+menuEditorMenuItem4;
 
 setParent -m ..;
 
