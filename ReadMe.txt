@@ -13,7 +13,7 @@ Release Note
 - Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.0
 - May9 Workspaces do not autosave, so needed manually save the workspace changes
 
-Custom script
+Exclusive script
 - da_intPlay: this script add the interactive play button directly to Time Slider
 - da_curveToPoly: this script make possible the conversion of curves in polygons
 - da_interactiveBooleans: this script make the Polygonal Boolean process more interactive
