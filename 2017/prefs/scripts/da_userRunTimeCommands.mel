@@ -2085,3 +2085,11 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".filterType\") 0")
 	Da_FileFilterOff;
+
+runTimeCommand
+	-annotation "Connect MASH to nParticle"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myWaiter[] = `ls -typ \"MASH_Waiter\"`;\nstring $myParticle[] = `ls -typ \"nParticle\"`;\n\nselect -d;\n\nselect -add $myParticle[0];\nselect -ne -add $myWaiter[0];\n\nMASHnNetworkConnect")
+	da_MashParticle;
