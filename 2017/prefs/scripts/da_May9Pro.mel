@@ -66,7 +66,7 @@ python( "from maya.app.general import creaseSetEditor");
 python( "import boss.BossEditor as be" );
 
 // Preload MMtoKey
-python( "import MMtoKey" );
+loadPlugin MMtoKey;
 
 // Source User Named Commands, User Run Time Commands and User Prefs only at first May9 Pro run
 if (`optionVar -ex May9ActivationCheck` == 0){
