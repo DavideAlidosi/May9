@@ -116,10 +116,10 @@ menuEditorMenuItem4;
 setParent -m ..;
 
 menuItem
--l "Smooth"
--c "SmoothPolygon"
+-l "Subdivide"
+-c "da_Subdivision"
 -rp "S"
--i "polySmooth.png"
+-i "subdivCreate.png"
 -stp "mel"
 menuEditorMenuItem29;
 
@@ -226,6 +226,27 @@ menuItem
 menuEditorMenuItem7;
 
 setParent -m ..;
+
+menuItem
+-l "Create MASH Network"
+-c "MASHnewNetwork(\"MASH#\")"
+-i "MASH_CreateNetwork.png"
+-stp "mel"
+menuEditorMenuItem333;
+
+menuItem
+-l "menuEditorMenuItem333"
+-c "MASHcreateOptions"
+-ob 1
+-stp "mel"
+menuEditorMenuItem334;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel"
+menuEditorMenuItem335;
 
 menuItem
 -l "Fill Hole"
@@ -469,21 +490,6 @@ menuItem
 -ob 1
 -stp "mel"
 menuEditorMenuItem8;
-
-menuItem
--l "separator" 
--d 1
--dl "separator"
--boldFont 0
--stp "mel"
-menuEditorMenuItem9;
-
-menuItem
--l "Subdiv Preview to Poly"
--c "CreatePolyFromPreview"
--i "subdivCreate.png"
--stp "mel"
-menuEditorMenuItem7;
 
 menuItem
 -l "Instance to Object"

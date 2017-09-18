@@ -57,10 +57,10 @@ menuItem
 menuEditorMenuItem4;
 
 menuItem
--l "Smooth"
--c "SmoothPolygon"
+-l "Subdivide"
+-c "da_Subdivision"
 -rp "S"
--i "polySmooth.png"
+-i "subdivCreate.png"
 -stp "mel"
 menuEditorMenuItem17;
 
@@ -226,6 +226,34 @@ menuItem
 menuEditorMenuItem12;
 
 menuItem
+-l "Create MASH Network"
+-c "MASHnewNetwork(\"MASH#\")"
+-i "MASH_CreateNetwork.png"
+-stp "mel"
+menuEditorMenuItem333;
+
+menuItem
+-l "menuEditorMenuItem333"
+-c "MASHcreateOptions"
+-ob 1
+-stp "mel"
+menuEditorMenuItem334;
+
+menuItem
+-l "Voxelize"
+-c "da_MashVoxelizer"
+-i "ae_MASH_Explode.png"
+-stp "mel"
+menuEditorMenuItem9;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel"
+menuEditorMenuItem335;
+
+menuItem
 -l "Fill Hole"
 -c "FillHole"
 -i "polyCloseBorder.png"
@@ -245,13 +273,6 @@ menuItem
 -ob 1
 -stp "mel"
 menuEditorMenuItem29;
-
-menuItem
--l "Voxelize"
--c "da_MashVoxelizer"
--i "ae_MASH_Explode.png"
--stp "mel"
-menuEditorMenuItem9;
 
 menuItem
 -l "Connect Shapes"
@@ -394,20 +415,6 @@ menuItem
 -ob 1
 -stp "mel"
 menuEditorMenuItem8;
-
-menuItem
--l "separator" 
--d 1
--dl "separator"
--stp "mel"
-menuEditorMenuItem5;
-
-menuItem
--l "Subdiv Preview to Poly"
--c "CreatePolyFromPreview"
--i "subdivCreate.png"
--stp "mel"
-menuEditorMenuItem7;
 
 menuItem
 -l "Instance to Object"

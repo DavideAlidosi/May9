@@ -1687,14 +1687,6 @@ runTimeCommand
 	da_CameraBookmark;
 
 runTimeCommand
-	-annotation "Create Rivet by MASH"
-	-category "Custom Scripts.May9_Pro.MASH"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $faceSel[] = `filterExpand -sm 34`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nif (size($polySel) == 1){\n    select $faceSel;\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -s`;\n    \n    select $faceSel;\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $polySel;\n\tda_ZeroTransfomations;\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n    \n    select $myMashDistribute[0];\n    openAEWindow;\n}else{\n    inViewMessage -pos topCenter -msg \"Only one mesh is allowed\" -fade;\n}")
-	da_RivetMash;
-
-runTimeCommand
 	-annotation "Add Image Plane on Curent Camera"
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
@@ -2091,5 +2083,46 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.MASH"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $myWaiter[] = `ls -typ \"MASH_Waiter\"`;\nstring $myParticle[] = `ls -typ \"nParticle\"`;\n\nselect -d;\n\nselect -add $myParticle[0];\nselect -ne -add $myWaiter[0];\n\nMASHnNetworkConnect")
+	-command ("string $myWaiter[] = `ls -sl -typ \"MASH_Waiter\"`;\nstring $myParticle[] = `listRelatives -s -typ \"nParticle\"`;\n\nselect -d;\n\nselect -add $myParticle[0];\nselect -ne -add $myWaiter[0];\n\nMASHnNetworkConnect")
 	da_MashParticle;
+
+runTimeCommand
+	-annotation "Connect Tweak Node to Mesh Node, useful for create bidirectional blend shape"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myTweak[] = `ls -sl -typ \"tweak\"`;\nstring $myMesh[] = `ls -sl -typ \"mesh\"`;\n\nint $numObj = size($myMesh); \nfor($i=0; $i<$numObj; $i++){\n    connectAttr -f ($myTweak[0] + \".outputGeometry[0]\") ($myMesh[$i] + \".inMesh\");\n}")
+	da_TweakToMesh;
+
+runTimeCommand
+	-annotation "Subdivide by Using Subdivs Preview"
+	-category "Custom Scripts.May9_Pro.Subdivision"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("HighQualityDisplay;\nCreatePolyFromPreview;\ndR_modeObject;\ndR_modeObject;\nShowManipulators")
+	da_Subdivision;
+
+runTimeCommand
+	-annotation "Create Rivet by MASH by Using Faces"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $faceSel[] = `filterExpand -sm 34`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nif (size($polySel) == 1){\n    select $faceSel;\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -s`;\n    \n    select $faceSel;\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $polySel;\n\tda_ZeroTransfomations;\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n    \n    select $myMashDistribute[0];\n    openAEWindow;\n}else{\n    inViewMessage -pos topCenter -msg \"Only one mesh is allowed\" -fade;\n}")
+	da_RivetMashFace;
+
+runTimeCommand
+	-annotation "Create Rivet by MASH by Using Vertex"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $vertexSel[] = `filterExpand -sm 31`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nif (size($polySel) == 1){\n    select $vertexSel;\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -s`;\n    \n    select $vertexSel;\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $polySel;\n\tda_ZeroTransfomations;\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n    \n    select $myMashDistribute[0];\n    openAEWindow;\n}else{\n    inViewMessage -pos topCenter -msg \"Only one mesh is allowed\" -fade;\n}")
+	da_RivetMashVertex;
+
+runTimeCommand
+	-annotation "Create Rivet by MASH by Using Edges"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $edgeSel[] = `filterExpand -sm 32`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nif (size($polySel) == 1){\n    select $edgeSel;\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -s`;\n    \n    select $edgeSel;\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $polySel;\n\tda_ZeroTransfomations;\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n    \n    select $myMashDistribute[0];\n    openAEWindow;\n}else{\n    inViewMessage -pos topCenter -msg \"Only one mesh is allowed\" -fade;\n}")
+	da_RivetMashEdge;
+
