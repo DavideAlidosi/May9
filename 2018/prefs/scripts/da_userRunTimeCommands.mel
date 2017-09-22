@@ -2174,3 +2174,19 @@ runTimeCommand
 	-command ("string $edgeSel[] = `filterExpand -sm 32`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nif (size($polySel) == 1){\n    select $edgeSel;\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -s`;\n    \n    select $edgeSel;\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $polySel;\n\tda_ZeroTransfomations;\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n    \n    select $myMashDistribute[0];\n    openAEWindow;\n}else{\n    inViewMessage -pos topCenter -msg \"Only one mesh is allowed\" -fade;\n}")
 	da_RivetMashEdge;
 
+runTimeCommand
+	-annotation "Create StandIn File"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.doCreateStandInFile()")
+	da_CreateStandInFile;
+
+runTimeCommand
+	-annotation "Export StandIn"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.doExportStandIn()")
+	da_doExportStandIn;
+

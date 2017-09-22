@@ -1332,20 +1332,6 @@ menuItem
 menuEditorMenuItem5;
 
 menuItem
--l "Evaluation Toolkit"
--c "EvaluationToolkit"
--i "polyColorSetEditor.png"
--stp "mel"
-menuEditorMenuItem99;
-
-menuItem
--l "separator" 
--d 1
--dl "separator"
--stp "mel"
-menuEditorMenuItem9;
-
-menuItem
 -l "Cache"
 -sm 1
 -i "nClothCacheCreate.png"
@@ -1556,6 +1542,34 @@ menuItem
 menuEditorMenuItem38;
 
 setParent -m ..;
+
+menuItem
+-l "Import StandIn"
+-c "da_CreateStandInFile"
+-i "StandinShelf.png"
+-stp "mel"
+menuEditorMenuItem1000;
+
+menuItem
+-l "Export StandIn"
+-c "da_doExportStandIn"
+-i "ExportStandinShelf.png"
+-stp "mel"
+menuEditorMenuItem999;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel"
+menuEditorMenuItem9;
+
+menuItem
+-l "Evaluation Toolkit"
+-c "EvaluationToolkit"
+-i "polyColorSetEditor.png"
+-stp "mel"
+menuEditorMenuItem99;
 
 menuItem
 -l "Profiler"
