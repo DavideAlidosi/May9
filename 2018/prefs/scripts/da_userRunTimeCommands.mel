@@ -2190,3 +2190,35 @@ runTimeCommand
 	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.doExportStandIn()")
 	da_doExportStandIn;
 
+runTimeCommand
+	-annotation "Create MASH from an Instance"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("MASHcreateOptions;\nMASHoptionsCallback OptionBoxWindow|formLayout185|tabLayout9|formLayout187|tabLayout10|columnLayout18 1;\nhideOptionBox")
+	da_MashInstances;
+
+runTimeCommand
+	-annotation ""
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".mode\") 0;\n")
+	da_aiStandInBoundryBox;
+
+runTimeCommand
+	-annotation ""
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".mode\") 2;")
+	da_aiStandinPolyWire;
+
+runTimeCommand
+	-annotation ""
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".mode\") 4;")
+	da_aiStandinPointCloud;
+
