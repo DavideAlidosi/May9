@@ -875,7 +875,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.MASH"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myResult = `confirmDialog -title \"Confirm\" -message \"Make sure you have selected before filler mesh, do you continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\tif ($myResult == \"Yes\") {\n        select $mySel[0];\n        MASHnewNetwork(\"MASH#\");\n        string $myMashNerwork[] = `listConnections -s true -d false`;\n        \n        // Create connection and set MASH to Voxelize\n        connectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n        \n        setAttr ($myMashNerwork[0] + \".arrangement\") 4;\n        setAttr ($myMashNerwork[0] + \".meshType\") 6;\n        setAttr ($myMashNerwork[0] + \".voxelMode\") 2;\n        \n        // Set hidden order and open Attribute Editor wondow\n        hide $mySel[1];\n        showHidden $mySel[0];\n        \n        select $myMashNerwork[0];\n        \n        openAEWindow;\n    }\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the filler than the volume.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myResult = `confirmDialog -title \"Confirm\" -message \"Make sure you have selected before the filler mesh, do you continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\tif ($myResult == \"Yes\") {\n        select $mySel[0];\n        MASHnewNetwork(\"MASH#\");\n        string $myMashNerwork[] = `listConnections -s true -d false`;\n        \n        // Create connection and set MASH to Voxelize\n        connectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n        \n        setAttr ($myMashNerwork[0] + \".arrangement\") 4;\n        setAttr ($myMashNerwork[0] + \".meshType\") 6;\n        setAttr ($myMashNerwork[0] + \".voxelMode\") 2;\n        \n        // Set hidden order and open Attribute Editor wondow\n        hide $mySel[1];\n        showHidden $mySel[0];\n        \n        select $myMashNerwork[0];\n        \n        openAEWindow;\n    }\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the filler than the volume.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
 	da_MashVoxelizer;
 
 runTimeCommand
@@ -1735,7 +1735,7 @@ runTimeCommand
 	da_NucleusParallelOff;
 
 runTimeCommand
-	-annotation "Distribuite a geomentry on curve"
+	-annotation "Distribuite a Geomentry on Curve"
 	-category "Custom Scripts.May9_Pro.MASH"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
@@ -2191,14 +2191,6 @@ runTimeCommand
 	da_doExportStandIn;
 
 runTimeCommand
-	-annotation "Create MASH from an Instance"
-	-category "Custom Scripts.May9_Pro.MASH"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("MASHcreateOptions;\nMASHoptionsCallback OptionBoxWindow|formLayout185|tabLayout9|formLayout187|tabLayout10|columnLayout18 1;\nhideOptionBox")
-	da_MashInstances;
-
-runTimeCommand
 	-annotation ""
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
@@ -2221,4 +2213,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".mode\") 4;")
 	da_aiStandinPointCloud;
+
+runTimeCommand
+	-annotation "Scatter a Mesh on a Surface"
+	-category "Custom Scripts.May9_Pro.MASH"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myResult = `confirmDialog -title \"Confirm\" -message \"Make sure you have selected before the object mesh, do you continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\tif ($myResult == \"Yes\") {\n        select $mySel[0];\n        MASHnewNetwork(\"MASH#\");\n        string $myMashNerwork[] = `listConnections -s true -d false`;\n        \n        // Create connection and set MASH to Voxelize\n        connectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n        \n        setAttr ($myMashNerwork[0] + \".arrangement\") 4;\n        setAttr ($myMashNerwork[0] + \".meshType\") 1;\n        setAttr ($myMashNerwork[0] + \".useUpVector\") 1;\n        setAttr ($myMashNerwork[0] + \".areaBasedScatter\") 1;\n        \n        select $myMashNerwork[0];\n        \n        openAEWindow;\n    }\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the object than the surface.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	da_SurfaceScatterMash;
 

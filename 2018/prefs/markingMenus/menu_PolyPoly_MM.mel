@@ -227,17 +227,10 @@ menuEditorMenuItem12;
 
 menuItem
 -l "Create MASH Network"
--c "MASHnewNetwork(\"MASH#\")"
+-c "MASHcreateOptions"
 -i "MASH_CreateNetwork.png"
 -stp "mel"
 menuEditorMenuItem333;
-
-menuItem
--l "menuEditorMenuItem333"
--c "MASHcreateOptions"
--ob 1
--stp "mel"
-menuEditorMenuItem334;
 
 menuItem
 -l "Voxelize"
@@ -245,6 +238,13 @@ menuItem
 -i "ae_MASH_Explode.png"
 -stp "mel"
 menuEditorMenuItem9;
+
+menuItem
+-l "Scatter"
+-c "da_SurfaceScatterMash"
+-i "out_MASH_Points.png"
+-stp "mel"
+menuEditorMenuItem334;
 
 menuItem
 -l "separator" 
