@@ -34,6 +34,14 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
         menuEditorMenuItem22;
 
     menuItem
+        -label "Curve Length"
+        -command "da_CurveLength"
+        -radialPosition "SE"
+        -image "out_curveInfo.png"
+        -sourceType "mel"
+        menuEditorMenuItem100;
+
+    menuItem
         -label "Revolve"
         -command "Revolve;"
         -radialPosition "W"

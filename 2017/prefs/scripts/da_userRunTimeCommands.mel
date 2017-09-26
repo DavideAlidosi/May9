@@ -2174,3 +2174,11 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myResult = `confirmDialog -title \"Confirm\" -message \"Make sure you have selected before the object mesh, do you continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\tif ($myResult == \"Yes\") {\n        select $mySel[0];\n        MASHnewNetwork(\"MASH#\");\n        string $myMashNerwork[] = `listConnections -s true -d false`;\n        \n        // Create connection and set MASH to Voxelize\n        connectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n        \n        setAttr ($myMashNerwork[0] + \".arrangement\") 4;\n        setAttr ($myMashNerwork[0] + \".meshType\") 1;\n        setAttr ($myMashNerwork[0] + \".useUpVector\") 1;\n        setAttr ($myMashNerwork[0] + \".areaBasedScatter\") 1;\n        \n        select $myMashNerwork[0];\n        \n        openAEWindow;\n    }\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the object than the surface.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
 	da_SurfaceScatterMash;
 
+runTimeCommand
+	-annotation "Return the Length of Selected Curve"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfloat $myLength = `arclen $mySel[0]`;\n\ninViewMessage -pos topCenter -msg (\"Curve length \"+$myLength) -fade;\nprint $myLength;")
+	da_CurveLength;
+
