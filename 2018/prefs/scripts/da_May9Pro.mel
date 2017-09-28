@@ -70,8 +70,6 @@ loadPlugin MMtoKey;
 
 // Source User Named Commands, User Run Time Commands and User Prefs only at first May9 Pro run
 if (`optionVar -ex May9ActivationCheck` == 0){
-    source da_userNamedCommands.mel;
-    source da_userRunTimeCommands.mel;
     source da_userPrefs.mel;
     optionVar -iv May9ActivationCheck 1;
 }

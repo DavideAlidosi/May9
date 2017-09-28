@@ -1055,7 +1055,7 @@ menuEditorMenuItem17;
 
 menuItem
 -l "HUD Info"
--c "ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD"
+-c "da_ToggleHUD"
 -rp "SE"
 -i "info.png"
 -stp "mel"
@@ -1565,18 +1565,18 @@ menuItem
 menuEditorMenuItem9;
 
 menuItem
--l "Evaluation Toolkit"
--c "EvaluationToolkit"
--i "polyColorSetEditor.png"
--stp "mel"
-menuEditorMenuItem99;
-
-menuItem
 -l "Profiler"
 -c "ProfilerTool"
 -i "out_timeEditorTrack.png"
 -stp "mel"
 menuEditorMenuItem4;
+
+menuItem
+-l "Evaluation Toolkit"
+-c "EvaluationToolkit"
+-i "polyColorSetEditor.png"
+-stp "mel"
+menuEditorMenuItem99;
 
 setParent -m ..;
 
