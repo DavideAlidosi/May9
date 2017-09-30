@@ -1,3 +1,4 @@
+int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
     menuItem
         -label "Lattice" 
@@ -538,6 +539,40 @@
             menuEditorMenuItem6;
 
     setParent -m ..;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem22;
+
+    menuItem
+        -label "HUD Info" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ToggleParticleCount" 
+        -checkBox (1 == $particleCountCheck)
+        -enable 1
+        -data 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem23;
 
 setParent -m ..;
 

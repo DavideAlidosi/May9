@@ -1,3 +1,4 @@
+int $XGenHUDCheck = `optionVar -q xgenHUDVisibility`;
 
 menuItem
 -l "Booleans"
@@ -1668,6 +1669,20 @@ menuItem
 -i "xgLibrary.png"
 -stp "mel"
 menuEditorMenuItem12;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel"
+menuEditorMenuItem26;
+
+menuItem
+-l "HUD Info"
+-c "ToggleXGenDisplayHUD"
+-cb (1 == $XGenHUDCheck)
+-stp "mel"
+menuEditorMenuItem27;
 
 setParent -m ..;
 

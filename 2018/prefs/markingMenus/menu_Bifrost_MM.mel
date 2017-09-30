@@ -1,3 +1,4 @@
+int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
 
     menuItem
         -label "Stop Processing" 
@@ -5,11 +6,6 @@
         -subMenu 0
         -tearOff 0
         -command "bifrost -edit -stopProcessing;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -31,11 +27,6 @@
         -subMenu 0
         -tearOff 0
         -command "performBifrostOptionsChange" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -56,11 +47,6 @@
         -subMenu 0
         -tearOff 0
         -command "AddBifrostFoam" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -81,11 +67,6 @@
         -subMenu 0
         -tearOff 0
         -command "RemoveBifrostFoam" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -106,11 +87,6 @@
         -subMenu 0
         -tearOff 0
         -command "AddBifrostMotionField" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -131,11 +107,6 @@
         -subMenu 0
         -tearOff 0
         -command "RemoveBifrostField" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -156,11 +127,6 @@
         -subMenu 0
         -tearOff 0
         -command "AddBifrostKillplane" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -181,11 +147,6 @@
         -subMenu 0
         -tearOff 0
         -command "AddBifrostKillField" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -205,11 +166,6 @@
         -divider 0
         -subMenu 1
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -227,19 +183,14 @@
             -subMenu 0
             -tearOff 0
             -command "da_BifrostMesh" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOn.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -252,19 +203,14 @@
             -subMenu 0
             -tearOff 0
             -command "da_BifrostNoMesh" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOff.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -278,11 +224,6 @@
         -divider 0
         -subMenu 1
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -300,19 +241,14 @@
             -subMenu 0
             -tearOff 0
             -command "da_BifrostGravity" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOn.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -325,19 +261,14 @@
             -subMenu 0
             -tearOff 0
             -command "da_BifrostNoGravity" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOff.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -351,11 +282,6 @@
         -divider 0
         -subMenu 1
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -373,11 +299,6 @@
             -subMenu 0
             -tearOff 0
             -command "da_BifrostContinuousEmission" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
@@ -385,8 +306,8 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOn.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -399,19 +320,14 @@
             -subMenu 0
             -tearOff 0
             -command "da_BifrostNoContinuousEmission" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
             -optionBox 0
             -enable 1
             -data 0
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOff.png"
             -italicized 0
             -boldFont 1
             -sourceType "mel" 
@@ -426,11 +342,6 @@
         -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -449,11 +360,6 @@
         -subMenu 0
         -tearOff 0
         -command "performCreateBifrostCache 0 0;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -473,11 +379,6 @@
         -subMenu 0
         -tearOff 0
         -command "performCreateBifrostCache 1 0;\n" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -489,7 +390,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuEditorMenuItem19;
 
     menuItem
         -label "Delete Cache" 
@@ -497,11 +398,6 @@
         -subMenu 0
         -tearOff 0
         -command "bifrost -edit -flushScratchCache;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -521,11 +417,6 @@
         -dividerLabel "separator" 
         -subMenu 0
         -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -544,11 +435,6 @@
         -subMenu 0
         -tearOff 0
         -command "doSetBifrostInitialState 1 { \"\", \"0\" };" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -568,11 +454,6 @@
         -subMenu 0
         -tearOff 0
         -command "performSetBifrostInitialState 1 0" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -584,7 +465,7 @@
         -boldFont 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem5;
+        menuEditorMenuItem21;
 
     menuItem
         -label "Clear Liquid Initial State" 
@@ -592,11 +473,6 @@
         -subMenu 0
         -tearOff 0
         -command "ClearBifrostInitialState" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -609,6 +485,40 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem20;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem22;
+
+    menuItem
+        -label "HUD Info" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ToggleBifrostHUD" 
+        -checkBox (1 == $bifrostHUDCheck)
+        -enable 1
+        -data 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem23;
 
 setParent -m ..;
 

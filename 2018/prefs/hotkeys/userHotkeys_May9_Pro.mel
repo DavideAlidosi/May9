@@ -2334,7 +2334,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"May9 Pro Workspace Resetted\" -fade;")
+	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"May9 Pro Workspace Resetted\" -fade;\nda_CleanHUD")
 	da_CloseAllPanel;
 
 runTimeCommand
@@ -2722,9 +2722,26 @@ runTimeCommand
 	da_CurveLength;
 
 runTimeCommand
-	-annotation "Toggle HUD Display"
+	-annotation "Clean HUD"
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("ToggleEvaluationManagerVisibility;\nToggleFrameRate;\nToggleCurrentFrame;\nToggleAnimationDetails;\nToggleObjectDetails;\nToggleSceneTimecode;\nTogglePolyCount;\nToggleViewportRenderer;\nToggleParticleCount;\nToggleBifrostHUD;\nToggleXGenDisplayHUD;\nToggleFocalLength")
+	-command ("setFrameRateVisibility 0;\nsetCurrentFrameVisibility 0;\nsetObjectDetailsVisibility 0;\nsetSceneTimecodeVisibility 0;\nsetPolyCountVisibility 0;\nsetFocalLengthVisibility 0;\nsetParticleCountVisibility 0;\nsetXGenHUDVisibility 0;\n\nif(`optionVar -q evaluationVisibility` == 1)\n    ToggleEvaluationManagerVisibility;\n\nif(`optionVar -q bifrostHUDVisibility` == 1)\n    ToggleBifrostHUD;")
+	da_CleanHUD;
+
+runTimeCommand
+	-annotation "Enable HUD"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("setFrameRateVisibility 1;\nsetCurrentFrameVisibility 1;\nsetObjectDetailsVisibility 1;\nsetSceneTimecodeVisibility 1;\nsetPolyCountVisibility 1;\nsetFocalLengthVisibility 1;\n\nif(`optionVar -q evaluationVisibility` == 0)\n    ToggleEvaluationManagerVisibility;")
+	da_EnableHUD;
+
+runTimeCommand
+	-annotation "Toggle HUD"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("$HUDCheck = (!$HUDCheck);\n\nif ($HUDCheck == false)\n    da_EnableHUD;\n    \nif ($HUDCheck == true)\n    da_CleanHUD;")
 	da_ToggleHUD;
+
