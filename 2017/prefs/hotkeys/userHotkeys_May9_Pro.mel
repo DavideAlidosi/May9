@@ -2334,7 +2334,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"May9 Pro Workspace Resetted\" -fade;\nda_CleanHUD")
+	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"May9 Pro Workspace Resetted\" -fade")
 	da_CloseAllPanel;
 
 runTimeCommand
@@ -2678,7 +2678,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("setFrameRateVisibility 0;\nsetCurrentFrameVisibility 0;\nsetObjectDetailsVisibility 0;\nsetSceneTimecodeVisibility 0;\nsetPolyCountVisibility 0;\nsetFocalLengthVisibility 0;\nsetParticleCountVisibility 0;\nsetXGenHUDVisibility 0;\n\nif(`optionVar -q evaluationVisibility` == 1)\n    ToggleEvaluationManagerVisibility;\n\nif(`optionVar -q bifrostHUDVisibility` == 1)\n    ToggleBifrostHUD;")
+	-command ("setFrameRateVisibility 0;\nsetCurrentFrameVisibility 0;\nsetObjectDetailsVisibility 0;\nsetSceneTimecodeVisibility 0;\nsetPolyCountVisibility 0;\nsetFocalLengthVisibility 0;\nSetEvaluationManagerHUDVisibility 0")
 	da_CleanHUD;
 
 runTimeCommand
@@ -2686,7 +2686,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("setFrameRateVisibility 1;\nsetCurrentFrameVisibility 1;\nsetObjectDetailsVisibility 1;\nsetSceneTimecodeVisibility 1;\nsetPolyCountVisibility 1;\nsetFocalLengthVisibility 1;\n\nif(`optionVar -q evaluationVisibility` == 0)\n    ToggleEvaluationManagerVisibility;")
+	-command ("setFrameRateVisibility 1;\nsetCurrentFrameVisibility 1;\nsetObjectDetailsVisibility 1;\nsetSceneTimecodeVisibility 1;\nsetPolyCountVisibility 1;\nsetFocalLengthVisibility 1;\nSetEvaluationManagerHUDVisibility 1")
 	da_EnableHUD;
 
 runTimeCommand
@@ -2694,6 +2694,6 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("$HUDCheck = (!$HUDCheck);\n\nif ($HUDCheck == false)\n    da_EnableHUD;\n    \nif ($HUDCheck == true)\n    da_CleanHUD;")
+	-command ("if ($HUDCheck == false)\n    da_EnableHUD;\n    \nif ($HUDCheck == true)\n    da_CleanHUD;")
 	da_ToggleHUD;
 
