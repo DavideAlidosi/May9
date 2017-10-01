@@ -40,6 +40,15 @@ menuItem
 -stp "mel"
 menuEditorMenuItem6;
 
+if (`pluginInfo -q -loaded bool` == 1){
+menuItem
+-l "Bool Tool"
+-c "import booltoolUtils; booltoolUtils.createBoolTool()"
+-i "Bool_Logo_Shelf.png"
+-stp "python"
+menuEditorMenuItem7;
+}
+
 setParent -m ..;
 
 menuItem
