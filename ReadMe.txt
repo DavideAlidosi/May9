@@ -30,6 +30,8 @@ Exclusive script
 - da_RivetMash: this script constraint the pivot of a polygon to a component of another polygon
 - da_CurveDistributionMash: this script scatter and constrain a polygonal object along a curve
 - da_EdgeToLoopToCurve: this script convert edge selection to loop and then make a batch conversion to curves, this is useful for converting polygonal hair to curve hair
+- da_SurfaceScatterMash: this script scatter and constrain a polygonal object on a mesh
+- da_CurveLength: this script returns the length of a curve in Maya unit
 
 Version 2.0 highlight
 - Modular structure, work over existing configuration
