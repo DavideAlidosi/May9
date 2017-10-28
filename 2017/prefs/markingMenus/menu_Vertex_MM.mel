@@ -312,6 +312,13 @@ menuItem
 menuEditorMenuItem8;
 
 menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
 -label "Paint Skin Weights"
 -command "ArtPaintSkinWeightsTool"
 -image "paintSkinWeights.png"
@@ -326,6 +333,22 @@ menuItem
 -boldFont 0
 -sourceType "mel"
 menuEditorMenuItem12;
+
+menuItem
+-label "Copy Skin Weights"
+-command "artAttrSkinWeightCopy"
+-image "polyCopyUV.png"
+-boldFont 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Paste Skin Weights"
+-command "artAttrSkinWeightPaste"
+-image "polyPasteUV.png"
+-boldFont 0
+-sourceType "mel"
+menuEditorMenuItem14;
 
 setParent -m ..;
 
