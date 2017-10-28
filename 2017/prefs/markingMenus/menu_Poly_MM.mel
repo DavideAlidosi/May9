@@ -235,6 +235,15 @@ menuItem
 -stp "mel"
 menuEditorMenuItem333;
 
+if (`pluginInfo -q -loaded ngSkinTools` == 1){
+menuItem
+-l "ngSkin Tools"
+-c "from ngSkinTools.ui.mainwindow import MainWindow\nMainWindow.open()"
+-i "ngSkinTools.ico"
+-stp "python"
+menuEditorMenuItem9999;
+}
+
 menuItem
 -l "separator" 
 -d 1
