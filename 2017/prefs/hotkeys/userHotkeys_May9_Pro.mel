@@ -2697,3 +2697,10 @@ runTimeCommand
 	-command ("if ($HUDCheck == false)\n    da_EnableHUD;\n    \nif ($HUDCheck == true)\n    da_CleanHUD;")
 	da_ToggleHUD;
 
+runTimeCommand
+	-annotation "Convert Particle to Mesh"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("doParticleToPoly;\n\nstring $objectTransform[] = `ls -sl`;\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\n\naddAttr -ln \"Threshold\"  -at double  -min 0 -dv 1 $objectTransform;\naddAttr -ln \"Radius\"  -at double  -min 0 -dv 4 $objectTransform;\nsetAttr -e -k true ($objectTransform[0] + \".Threshold\");\nsetAttr -e -k true ($objectTransform[0] + \".Radius\");\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\n\nconnectAttr($objectTransform[0] + \".Threshold\", $myShapeConnection[0] + \".threshold\");\nconnectAttr($objectTransform[0] + \".Radius\", $myShapeConnection[0] + \".blobbyRadiusScale\");    \n\nsetAttr ($myShapeConnection[0] + \".meshTriangleSize\") 0.4;\nsetAttr ($myShapeConnection[0] + \".maxTriangleResolution\") 50;\nsetAttr ($myShapeConnection[0] + \".meshMethod\") 3;\nsetAttr ($myShapeConnection[0] + \".meshSmoothingIterations\") 2")
+	da_ParticleToMesh;
