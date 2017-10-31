@@ -274,6 +274,44 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
         menuEditorMenuItem10;
 
         menuItem
+            -l "Blend Shape"
+            -sm 1
+            -i "blendShape.png"
+            -stp "mel"
+            menuEditorMenuItem26;
+
+            menuItem
+            -l "Create Blend Shape"
+            -c "CreateBlendShape;"
+            -rp "N"
+            -i "blendShape.png"
+            -stp "mel"
+            menuEditorMenuItem1;
+
+            menuItem
+            -l "menuEditorMenuItem3"
+            -c "CreateBlendShapeOptions;"
+            -ob 1
+            -stp "mel"
+            menuEditorMenuItem4;
+
+            menuItem
+            -l "Add Shape"
+            -c "AddBlendShape;"
+            -i "ts-add.png"
+            -stp "mel"
+            menuEditorMenuItem5;
+
+            menuItem
+            -l "menuEditorMenuItem6"
+            -c "AddBlendShapeOptions;"
+            -ob 1
+            -stp "mel"
+            menuEditorMenuItem6;
+
+            setParent -m ..;
+
+        menuItem
             -label "Nonlinear"
             -subMenu 1
             -image "bendNLD.png"

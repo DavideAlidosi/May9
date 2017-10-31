@@ -708,6 +708,143 @@ menuItem
 menuEditorMenuItem23;
 
 menuItem
+-l "Blend Shape"
+-sm 1
+-i "blendShape.png"
+-stp "mel"
+menuEditorMenuItem26;
+
+menuItem
+-l "Create Blend Shape"
+-c "CreateBlendShape;"
+-rp "N"
+-i "blendShape.png"
+-stp "mel"
+menuEditorMenuItem1;
+
+menuItem
+-l "menuEditorMenuItem3"
+-c "CreateBlendShapeOptions;"
+-ob 1
+-stp "mel"
+menuEditorMenuItem4;
+
+menuItem
+-l "Add Shape"
+-c "AddBlendShape;"
+-i "ts-add.png"
+-stp "mel"
+menuEditorMenuItem5;
+
+menuItem
+-l "menuEditorMenuItem6"
+-c "AddBlendShapeOptions;"
+-ob 1
+-stp "mel"
+menuEditorMenuItem6;
+
+setParent -m ..;
+
+menuItem
+-label "Nonlinear"
+-subMenu 1
+-image "bendNLD.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "Bend"
+-command "Bend;"
+-image "bendNLD.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+menuItem
+-label "menuEditorMenuItem2"
+-command "BendOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem13;
+
+menuItem
+-label "Flare"
+-command "Flare;"
+-image "flareNLD.png"
+-sourceType "mel"
+menuEditorMenuItem3;
+
+menuItem
+-label "menuEditorMenuItem4"
+-command "FlareOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem14;
+
+menuItem
+-label "Sine"
+-command "Sine"
+-image "sineNLD.png"
+-sourceType "mel"
+menuEditorMenuItem5;
+
+menuItem
+-label "menuEditorMenuItem6"
+-command "SineOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem15;
+
+menuItem
+-label "Squash"
+-command "Squash"
+-image "squashNLD.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem8"
+-command "SquashOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem16;
+
+menuItem
+-label "Twist"
+-command "Twist"
+-image "twistNLD.png"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
+-label "menuEditorMenuItem10"
+-command "TwistOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem17;
+
+menuItem
+-label "Wave"
+-command "Wave"
+-image "waveNLD.png"
+-sourceType "mel"
+menuEditorMenuItem11;
+
+menuItem
+-label "menuEditorMenuItem12"
+-command "WaveOptions;"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem18;
+
+setParent -m ..;
+
+menuItem
 -label "Cluster" 
 -divider 0
 -subMenu 0
