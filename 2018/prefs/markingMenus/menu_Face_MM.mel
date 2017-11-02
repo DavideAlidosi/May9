@@ -83,6 +83,20 @@ menuItem
 menuEditorMenuItem12;
 
 menuItem
+-label "Selection Constraints"
+-command "PolygonSelectionConstraints"
+-image "polySelectUsingConstraints.png"
+-sourceType "mel"
+menuEditorMenuItem1000;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem1001;
+
+menuItem
 -label "Transform"
 -command "performPolyMove \"\" 0"
 -image "polyMoveVertex.png"

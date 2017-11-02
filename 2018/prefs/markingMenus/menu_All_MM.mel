@@ -942,19 +942,12 @@ menuItem
 menuEditorMenuItem3;
 
 menuItem
--l "Create Turntable"
--c "AnimationTurntable"
+-l "Mouse Tracker"
+-c "da_MouseTrack"
 -rp "N"
--i "animTurntable.png"
+-i "leftArrow.png"
 -stp "mel"
 menuEditorMenuItem4;
-
-menuItem
--l "menuEditorMenuItem10"
--c "AnimationTurntableOptions"
--ob 1
--stp "mel"
-menuEditorMenuItem10;
 
 menuItem
 -l "Flow Path Object"
@@ -1023,6 +1016,13 @@ menuItem
 -dl "separator"
 -stp "mel"
 menuEditorMenuItem16;
+
+menuItem
+-l "Create Turntable"
+-c "AnimationTurntableOptions"
+-i "animTurntable.png"
+-stp "mel"
+menuEditorMenuItem30;
 
 menuItem
 -l "Set Driven Key"
@@ -1149,8 +1149,8 @@ menuEditorMenuItem2;
 setParent -m ..;
 
 menuItem
--l "Delete Unused Nodes" 
--c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\")"
+-l "Optimize Scene Size" 
+-c "OptimizeSceneOptions"
 -i "deleteActive.png" 
 -rp "S"
 -stp "mel" 

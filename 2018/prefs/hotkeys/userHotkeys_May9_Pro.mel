@@ -2760,3 +2760,11 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("performFluids 1 FluidToPoly 0;\n\nstring $objectShape[] = `listRelatives -s`;\nselect $objectShape;\n\nstring $myShapeConnection[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myShapeConnection;\n\nsetAttr ($myShapeConnection[0] + \".meshMethod\") 1;\nsetAttr ($myShapeConnection[0] + \".meshResolution\") 2;\nsetAttr ($myShapeConnection[0] + \".meshSmoothingIterations\") 1;")
 	da_FluidToMesh;
+
+runTimeCommand
+	-annotation "Track Mouse Movment and Record Animation"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("currentUnit -a rad;\nrecordAttr -at \"tx\" -at \"ty\" -at \"tz\" -at \"rx\" -at \"ry\" -at \"rx\" -at \"sx\" -at \"sy\" -at \"sz\";\nplay -record;\n\ncurrentUnit -a deg;")
+	da_MouseTrack;

@@ -14,7 +14,7 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "W" 
+        -radialPosition "NE" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -99,6 +99,99 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
+
+    menuItem
+    -l "Add Deformer"
+    -sm 1
+    -i "bendNLD.png"
+    -stp "mel"
+    menuEditorMenuItem24;
+
+        menuItem
+        -l "Bend"
+        -c "Bend;"
+        -i "bendNLD.png"
+        -stp "mel"
+        menuEditorMenuItem13;
+
+        menuItem
+        -l "menuEditorMenuItem1"
+        -c "BendOptions;"
+        -ob 1
+        -stp "mel"
+        menuEditorMenuItem7;
+
+        menuItem
+        -l "Flare"
+        -c "Flare;"
+        -i "flareNLD.png"
+        -stp "mel"
+        menuEditorMenuItem15;
+
+        menuItem
+        -l "menuEditorMenuItem2"
+        -c "FlareOptions;"
+        -ob 1
+        -stp "mel"
+        menuEditorMenuItem8;
+
+        menuItem
+        -l "Sine"
+        -c "Sine"
+        -i "sineNLD.png"
+        -stp "mel"
+        menuEditorMenuItem17;
+
+        menuItem
+        -l "menuEditorMenuItem3"
+        -c "SineOptions;"
+        -ob 1
+        -stp "mel"
+        menuEditorMenuItem9;
+
+        menuItem
+        -l "Squash"
+        -c "Squash"
+        -i "squashNLD.png"
+        -stp "mel"
+        menuEditorMenuItem19;
+
+        menuItem
+        -l "menuEditorMenuItem4"
+        -c "SquashOptions;"
+        -ob 1
+        -stp "mel"
+        menuEditorMenuItem10;
+
+        menuItem
+        -l "Twist"
+        -c "Twist"
+        -i "twistNLD.png"
+        -stp "mel"
+        menuEditorMenuItem21;
+
+        menuItem
+        -l "menuEditorMenuItem5"
+        -c "TwistOptions"
+        -ob 1
+        -stp "mel"
+        menuEditorMenuItem11;
+
+        menuItem
+        -l "Wave"
+        -c "Wave"
+        -i "waveNLD.png"
+        -stp "mel"
+        menuEditorMenuItem23;
+
+        menuItem
+        -l "menuEditorMenuItem6"
+        -c "WaveOptions;"
+        -ob 1
+        -stp "mel"
+        menuEditorMenuItem12;
+
+    setParent -m ..;
 
     menuItem
         -label "Add Fields" 
