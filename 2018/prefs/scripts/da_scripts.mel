@@ -889,3 +889,73 @@ global proc da_XGenBrushMangement_CollisionOff(){
 	else
 		print "Brush not supported";
 }
+
+
+// da_FacesFollicles
+
+global proc da_FacesFollicles()
+{
+    createHair 8 8 3 0 0 0 0 5 0 2 1 2;
+	string $startSelect[] = `ls -sl`;
+	convertHairSelection( "hairSystems" );
+	string $hsys[] = `ls -sl`;
+	if( size( $hsys ) < 1 ){
+		warning( (uiRes("m_deleteEntireHairSystem.kNoHairSystemForDelete")) );
+		select -r $startSelect;
+		return;
+	}
+
+    convertHairSelection( "follicles" );
+    string $follicles[] = `ls -sl`;
+    Unparent;
+    Group;
+    rename "FacesFollicles1";
+	convertHairSelection( "startCurves" );
+	string $startCurves[] = `ls -sl`;
+	select -r $follicles;
+	convertHairSelection( "restCurves" );
+	string $restCurves[] = `ls -sl`;
+	select -r $follicles;
+	convertHairSelection( "current" );
+	string $current[] = `ls -sl`;
+	select -r $follicles;
+	convertHairSelection( "constraints" );
+	string $constraints[] = `ls -sl`;
+	clear $follicles;
+	string $hsysGroups[];
+	int $i, $j = 0;
+	for( $i = 0; $i < size( $hsys ); $i++ ){
+		string $tforms[] = listTransforms( $hsys[$i] );
+		if( size( $tforms ) > 0 ){
+			$hsysGroups[$j] = $tforms[0];
+			$j++;
+		}
+		string $groups[] = getHairSystemGroups( $hsys[$i], false );
+		if( $groups[0] != "" ){
+			$hsysGroups[$j] = $groups[0];
+			$j++;
+		}
+		if( $groups[1] != "" ){
+			$hsysGroups[$j] = $groups[1];
+			$j++;
+		}
+	}
+	
+	if(`pluginInfo -q -l Fur`) {	
+		for( $i = 0; $i < size( $hsys ); $i++ ){
+			string $curveAttractorSet[] = `listConnections -shapes true -type "FurCurveAttractors" $hsys[$i]`;
+			if(size($curveAttractorSet) == 1)
+				HfDeleteCAS $curveAttractorSet[0];
+		}
+	}
+
+	string $all[];
+	appendStringArray( $all, $hsys, size($hsys));
+	appendStringArray( $all, $startCurves, size($startCurves));
+	appendStringArray( $all, $restCurves, size($restCurves));
+	appendStringArray( $all, $current, size($current));
+	appendStringArray( $all, $constraints, size($constraints));
+	appendStringArray( $all, $hsysGroups, size($hsysGroups));
+	delete $all;
+	select -r;
+}
