@@ -1198,7 +1198,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("callPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};")
+	-command ("callPython \"maya.app.renderSetup.lightEditor.views.editorUI\" \"createLightEditorWindow\" {}")
 	da_LightList;
 
 runTimeCommand
