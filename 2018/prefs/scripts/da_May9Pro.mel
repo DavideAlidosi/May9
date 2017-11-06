@@ -43,8 +43,8 @@ if ($osTest == 1) {
 	scriptJob -e "NewSceneOpened" $HWantiAlias;
 }
 
-// Two Sided Lighting On, XRay Components
-string $modelPanelPreset = "modelEditor -e -acx 1 -tsl 1 modelPanel1;modelEditor -e -acx 1 -tsl 1 modelPanel2;modelEditor -e -acx 1 -tsl 1 modelPanel3;modelEditor -e -acx 1 -tsl 1 modelPanel4";
+// Two Sided Lighting On, XRay Components, Transparent Shadow On
+string $modelPanelPreset = "modelEditor -e -acx 1 -tsl 1 modelPanel1;modelEditor -e -acx 1 -tsl 1 modelPanel2;modelEditor -e -acx 1 -tsl 1 modelPanel3;modelEditor -e -acx 1 -tsl 1 modelPanel4;setAttr \"hardwareRenderingGlobals.transparentShadow\" 1";
 scriptJob -e "NewSceneOpened" $modelPanelPreset;
 
 // Outliner Options
