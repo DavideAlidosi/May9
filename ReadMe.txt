@@ -6,12 +6,15 @@ May9 Pro is an alternative user experience for Autodesk Maya, is designed to imp
 The main concept of May9 Pro is streamline useful commands into a single keyboard button (Z), by predicting them from the context.
 May9 Pro is targeted to anyone, from beginner to expert, from schools to studios.
 
+
 Installation
 For more information about installation please read the included user guide
 
+
 Release Note
 - Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.0
-- May9 Workspaces do not autosave, so needed manually save the workspace changes
+- May9 Workspaces do not autosave, so is needed manually save the workspace changes
+
 
 Exclusive script
 - da_intPlay: this script add the interactive play button directly to Time Slider
@@ -32,6 +35,9 @@ Exclusive script
 - da_EdgeToLoopToCurve: this script convert edge selection to loop and then make a batch conversion to curves, this is useful for converting polygonal hair to curve hair
 - da_SurfaceScatterMash: this script scatter and constrain a polygonal object on a mesh
 - da_CurveLength: this script returns the length of a curve in Maya unit
+- da_MouseTrack: this script tracks the mouse movement and create an animation
+- da_FacesFollicles: this script creates a follicle in the centre of selected faces
+
 
 Version 2.0 highlight
 - Modular structure, work over existing configuration
@@ -39,6 +45,7 @@ Version 2.0 highlight
 - New Auto Bevel script
 - General polish and performance improvement
 - Comprehensive user guide
+
 
 Useful links
 fb.com/May9Prefs
