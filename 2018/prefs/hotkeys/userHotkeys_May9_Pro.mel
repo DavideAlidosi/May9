@@ -1854,7 +1854,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    da_ToggleUvToolkit")
+	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    toggleUVToolkit;")
 	da_OpenUvToolkit;
 
 runTimeCommand
