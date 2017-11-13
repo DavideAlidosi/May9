@@ -1,4 +1,4 @@
-May9 Pro 2.0.5.1 - A new user experience for Autodesk Maya 2017 and 2018
+May9 Pro 2.0.6 - A new user experience for Autodesk Maya 2017 and 2018
 
 
 General info

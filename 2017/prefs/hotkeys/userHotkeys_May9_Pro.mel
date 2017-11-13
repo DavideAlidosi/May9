@@ -2720,3 +2720,11 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("currentUnit -a rad;\nrecordAttr -at \"tx\" -at \"ty\" -at \"tz\" -at \"rx\" -at \"ry\" -at \"rx\" -at \"sx\" -at \"sy\" -at \"sz\";\nplay -record;\n\ncurrentUnit -a deg;")
 	da_MouseTrack;
+
+runTimeCommand
+	-annotation "Create aiVolume"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("python(\"arnoldmenu.createVolume()\");\nPickWalkUp;\n\nstring $mySelShape[] = `listRelatives -s`;\nstring $shadingEngine = `createNode shadingEngine -n aiVolumeShapeSG1`;\nstring $myStandardVolume = `createNode aiStandardVolume`;\n\nconnectAttr -f ($mySelShape[0] + \".instObjGroups[0]\") ($shadingEngine + \".dagSetMembers[0]\");\nconnectAttr -f ($myStandardVolume + \".outColor\") ($shadingEngine + \".surfaceShader\");\n\nselect $mySelShape[0];\nAttributeEditor;")
+	da_AiVolume;

@@ -713,24 +713,17 @@ menuItem
 menuEditorMenuItem2;
 
 menuItem
--l "Duplicate"
--c "DuplicateWithTransform" 
--rp "S"
--i "da_duplicate.png"
--stp "mel"
-menuEditorMenuItem12;
-
-menuItem
--l "menuEditorMenuItem13"
--c "DuplicateSpecialOptions"
--ob 1
+-l "Arnold Volume"
+-c "da_AiVolume"
+-i "VolumeShelf.png"
+-rp "SE"
 -stp "mel"
 menuEditorMenuItem13;
 
 menuItem
 -l "Paint Effects"
 -c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
--rp "SE"
+-rp "S"
 -i "userPaint.png"
 -stp "mel"
 menuEditorMenuItem17;
@@ -771,6 +764,13 @@ menuItem
 -ob 1
 -stp "mel"
 menuEditorMenuItem19;
+
+menuItem
+-l "Duplicate Special"
+-c "DuplicateSpecialOptions" 
+-i "da_duplicate.png"
+-stp "mel"
+menuEditorMenuItem12;
 
 menuItem
 -l "separator" 
