@@ -186,6 +186,13 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
         menuEditorMenuItem11;
 
     menuItem
+        -label "Create Curve Collector"
+        -command "da_aiCurveCollector"
+        -image "CurveCollectorShelf.png"
+        -sourceType "mel"
+        menuEditorMenuItem28;
+
+    menuItem
         -label "Connect Shapes" 
         -command "da_ConnectNurbsShapes" 
         -image "da_OneToMany.png" 
@@ -662,29 +669,6 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
             -enableCommandRepeat 0
             -sourceType "mel"
             menuEditorMenuItem22;
-
-    setParent -m ..;
-
-    menuItem
-        -label "Renderable"
-        -subMenu 1
-        -image "MtoA_Logo.png"
-        -sourceType "mel"
-        menuEditorMenuItem28;
-
-        menuItem
-            -label "On"
-            -command "da_AiRenderCurve"
-            -sourceType "mel"
-			-image "rvViewingPipelineOn.png"
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Off"
-            -command "da_AiNoRenderCurve"
-            -sourceType "mel"
-			-image "rvViewingPipelineOff.png"
-            menuEditorMenuItem2;
 
     setParent -m ..;
 

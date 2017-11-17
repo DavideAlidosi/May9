@@ -1306,22 +1306,6 @@ runTimeCommand
 	da_TxManager;
 
 runTimeCommand
-	-annotation "Enable Arnold Render Curves"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    if ( `objExists CurveShader` ) {\n        setAttr ($each +\".aiRenderCurve\") 1;\n    \tsetAttr ($each +\".aiMode\") 1;\n    \tsetAttr ($each +\".aiCurveWidth\") 1;\n        connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n    } else {\n        createNode aiStandard -n CurveShader;\n        setAttr ($each +\".aiRenderCurve\") 1;\n    \tsetAttr ($each +\".aiMode\") 1;\n    \tsetAttr ($each +\".aiCurveWidth\") 1;\n        connectAttr -f \"CurveShader.outColor\" ($each +\".aiCurveShader\");\n    }\n}\n\ninViewMessage -pos topCenter -msg \"Arnold enable on selected curve(s)\" -fade;")
-	da_AiRenderCurve;
-
-runTimeCommand
-	-annotation "Disable Arnold Render Curves"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiRenderCurve\") 0;\n\ninViewMessage -pos topCenter -msg \"Arnold render disable on selected curve(s)\" -fade;")
-	da_AiNoRenderCurve;
-
-runTimeCommand
 	-annotation "Enable Arnold Light Normalization"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
@@ -2792,4 +2776,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySelShape[] = `listRelatives -s`;\nselect $mySelShape[0];\nAttributeEditor;\nPickWalkUp")
 	da_AiVolumeShape;
+
+runTimeCommand
+	-annotation "Apply Curve Collector to Selected Curves"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.doCreateCurveCollector()")
+	da_aiCurveCollector;
 

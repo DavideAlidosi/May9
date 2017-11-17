@@ -12,7 +12,7 @@ For more information about installation please read the included user guide
 
 
 Release Note
-- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.0
+- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.1.0
 - May9 Workspaces do not autosave, so is needed manually save the workspace changes
 
 
