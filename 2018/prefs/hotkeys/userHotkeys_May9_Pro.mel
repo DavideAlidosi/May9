@@ -488,7 +488,7 @@ nameCommand
 nameCommand
 	-annotation "da_ConnectionEditorNameCommand"
 	-sourceType "mel"
-	-command ("ConnectionEditor")
+	-command ("if (`pluginInfo -q -l contextConnector` == 1){da_ContextConnector;}else{ConnectionEditor;}")
 	da_ConnectionEditorNameCommand;
 
 nameCommand
@@ -2792,4 +2792,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("int $myScrollWheel = `optionVar -q \"useScrollWheel\"`;\n\nif ($myScrollWheel == 0){\n    mouse -esw 1;\n    savePrefsChanges;\n}else{\n    mouse -esw 0;\n\tsavePrefsChanges;\n}")
 	da_ToggleMouseWheel;
+
+runTimeCommand
+	-annotation "Open ContextConnector Window"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("global contextConnector_win\ntry:\n\tcontextConnector_win.close()\n\tcontextConnector_win.deleteLater()\nexcept: pass\n\ncontextConnector_win = contextConnector.main.MainWindow() \ncontextConnector_win.show()\n\ncontextConnector_win.updateSelection() ")
+	da_ContextConnector;
 

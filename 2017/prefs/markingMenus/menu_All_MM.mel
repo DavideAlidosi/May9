@@ -361,12 +361,21 @@ menuItem
 -stp "mel"
 menuEditorMenuItem31;
 
+if (`pluginInfo -q -l contextConnector` == 1){
+menuItem
+-l "Context Connector"
+-c "da_ContextConnector"
+-i "out_geoConnectable.png"
+-stp "mel"
+menuEditorMenuItem13;
+}else{
 menuItem
 -l "Connection Editor"
 -c "ConnectionEditor"
 -i "out_list.png"
 -stp "mel"
 menuEditorMenuItem13;
+}
 
 menuItem
 -l "Attributes"
