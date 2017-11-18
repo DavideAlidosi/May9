@@ -2785,3 +2785,11 @@ runTimeCommand
 	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.doCreateCurveCollector()")
 	da_aiCurveCollector;
 
+runTimeCommand
+	-annotation "Toggle Mouse Wheel"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $myScrollWheel = `optionVar -q \"useScrollWheel\"`;\n\nif ($myScrollWheel == 0){\n    mouse -esw 1;\n    savePrefsChanges;\n}else{\n    mouse -esw 0;\n\tsavePrefsChanges;\n}")
+	da_ToggleMouseWheel;
+

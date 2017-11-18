@@ -1,3 +1,5 @@
+int $myScrollWheel = `optionVar -q "useScrollWheel"`;
+
 da_commonObjectOptionsPopup();
 
 menuItem
@@ -38,6 +40,13 @@ menuItem
     -image "Camera.png" 
     -sourceType "mel" 
     menuEditorMenuItem99;
+
+menuItem
+    -label "Wheel Zoom" 
+    -command "da_ToggleMouseWheel" 
+    -sourceType "mel" 
+    -cb (true == $myScrollWheel)
+    menuEditorMenuItem100;
 
 menuItem
     -label "menuEditorMenuItem7" 
