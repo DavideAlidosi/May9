@@ -2801,3 +2801,11 @@ runTimeCommand
 	-command ("global contextConnector_win\ntry:\n\tcontextConnector_win.close()\n\tcontextConnector_win.deleteLater()\nexcept: pass\n\ncontextConnector_win = contextConnector.main.MainWindow() \ncontextConnector_win.show()\n\ncontextConnector_win.updateSelection() ")
 	da_ContextConnector;
 
+runTimeCommand
+	-annotation "Combine Curves"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nda_ClearFreeze;\nselect -cl;\nGroup;\nstring $myGroupTMP[] = `ls -sl`;\nselect $mySelShape $myGroupTMP;\nparent -r -s;\nselect $mySel;\ndelete;\nselect $myGroupTMP;\nrename CombinedCurve1;\nCenterPivot;")
+	da_CombineCurves;
+

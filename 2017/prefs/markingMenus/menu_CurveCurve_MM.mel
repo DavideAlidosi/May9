@@ -199,6 +199,13 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
         -sourceType "mel" 
         menuEditorMenuItem80;
 
+    menuItem
+        -label "Combine Shapes" 
+        -command "da_CombineCurves" 
+        -image "da_combineCurves.png" 
+        -sourceType "mel" 
+        menuEditorMenuItem81;
+
 	menuItem
 		-label "separator" 
 		-divider 1
