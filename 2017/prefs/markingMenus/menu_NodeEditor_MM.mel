@@ -248,25 +248,21 @@
         -longDivider 1
         menuEditorMenuItem4;
 
-    menuItem
-        -label "Connection Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ConnectionEditor" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_list.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
+	if (`pluginInfo -q -l contextConnector` == 1){
+		menuItem
+		-l "Context Connector"
+		-c "da_ContextConnector"
+		-i "out_geoConnectable.png"
+		-stp "mel"
+		menuEditorMenuItem6;
+	}else{
+		menuItem
+		-l "Connection Editor"
+		-c "ConnectionEditor"
+		-i "out_list.png"
+		-stp "mel"
+		menuEditorMenuItem6;
+	}
 
     menuItem
         -label "Expression Editor" 
