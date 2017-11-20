@@ -2471,7 +2471,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nselect -cl;\n\nfor ($i=0; $i<`size$mySelShape`; $i++){\n    //Cycle mesh selection\n    select $mySelShape[$i];\n    //Select edge by angle\n    polySelectConstraint -m 3 -t 0x8000 -a on -ab 40 140;\n    string $bevelAngleSel[] = `ls -sl`;\n    polySelectConstraint -a off;\n    select $bevelAngleSel;\n    //Bevel edge selection\n\tpolyBevel3 -f 0.05 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 2 -ws 1 -sa 47 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;\n}\n\nselect $mySel;\nsetToolTo ShowManips;")
-	Da_AutoBevel;
+	da_AutoBevel;
 
 runTimeCommand
 	-annotation "Enable MASH Bullet Gravity"
@@ -2551,7 +2551,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("SelectMeshUVShell;\nSelectAll;\nu3dUnfold -ite 1 -p 1 -bi 1 -tf 1 -ms 2048 -rs 6;\ntexOrientShells;\nu3dLayout -res 2048 -scl 1 -trs 0 -rmn 0 -rmx 360 -rst 90 -spc 0.0029296875 -mar 0.0029296875 -box 0 1 0 1;\npolyMultiLayoutUV -lm 1 -sc 1 -rbf 1 -fr 1 -ps 0.05 -l 2 -gu 1 -gv 1 -psc 0 -su 1 -sv 1 -ou 0 -ov 0;\nSelectEdgeMask;")
-	Da_AutoUnwrap;
+	da_AutoUnwrap;
 
 runTimeCommand
 	-annotation "Enable Alpha Luminance"
@@ -2559,7 +2559,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".alphaIsLuminance\") 1")
-	Da_FileAlphaLuminance;
+	da_FileAlphaLuminance;
 
 runTimeCommand
 	-annotation "Disable Alpha Luminance"
@@ -2567,7 +2567,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".alphaIsLuminance\") 0")
-	Da_FileNoAlphaLuminance;
+	da_FileNoAlphaLuminance;
 
 runTimeCommand
 	-annotation "Set File Color Space in sRGB"
@@ -2575,7 +2575,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr -type \"string\" ($each + \".colorSpace\") sRGB")
-	Da_FileColorSpaceSrgb;
+	da_FileColorSpaceSrgb;
 
 runTimeCommand
 	-annotation "Set File Color Space in Raw"
@@ -2583,7 +2583,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr -type \"string\" ($each + \".colorSpace\") Raw")
-	Da_FileColorSpaceRaw;
+	da_FileColorSpaceRaw;
 
 runTimeCommand
 	-annotation "Set File Filter Quadratic"
@@ -2591,7 +2591,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".filterType\") 3")
-	Da_FileFilterQuadratic;
+	da_FileFilterQuadratic;
 
 runTimeCommand
 	-annotation "Set File Filter Off"
@@ -2599,7 +2599,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\n    setAttr ($each + \".filterType\") 0")
-	Da_FileFilterOff;
+	da_FileFilterOff;
 
 runTimeCommand
 	-annotation "Connect MASH to nParticle"
