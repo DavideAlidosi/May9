@@ -963,7 +963,7 @@ global proc da_FacesFollicles()
 // da_Compass
 
 global proc da_Compass(){
-	sphere -p 0 0 0 -ax 0 1 0 -ssw 0 -esw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -nsp 4 -ch 0;
+	sphere -p 0 0 0 -ax 0 1 0 -ssw 0 -esw 360 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -nsp 4 -ch 0;
 	rename Compass1;
 	string $myCompassSphere[] = `ls -sl`;
 	string $myCompassSphereShape[] = `listRelatives -s`;
@@ -971,7 +971,7 @@ global proc da_Compass(){
 	setAttr ($myCompassSphereShape[0] + ".overrideEnabled") 1;
 	setAttr ($myCompassSphereShape[0] + ".overrideColor") 25;
 
-	circle  -c 0 0 0 -nr 0 1 0 -sw 180 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
+	circle  -c 0 0 0 -nr 0 1 0 -sw 180 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
 	string $myVectorDir1[] = `ls -sl`;
 	setAttr ($myVectorDir1[0] + ".sx") -2;
 	setAttr ($myVectorDir1[0] + ".sz") 0.02;
@@ -982,7 +982,7 @@ global proc da_Compass(){
 	setAttr ($myVectorDir2[0] + ".rx") 90;
 	da_ClearFreeze;
 
-	circle  -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
+	circle  -c 0 0 0 -nr 0 1 0 -sw 360 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
 	string $myVectorDir3[] = `ls -sl`;
 	setAttr ($myVectorDir3[0] + ".rz") 90;
 	setAttr ($myVectorDir3[0] + ".sx") 0.02;
@@ -994,12 +994,11 @@ global proc da_Compass(){
 	da_CombineCurves;
 	rename CompassVector1;
 	string $myCompassVector[] = `ls -sl`;
-	move 0 0 0 ($myCompassVector[0] + ".scalePivot") ($myCompassVector[0] + ".rotatePivot");
 	setAttr ($myCompassVector[0] + ".overrideEnabled") 1;
 	setAttr ($myCompassVector[0] + ".overrideColor") 4;
 
 	select $myCompassVector[0] $myCompassSphere[0];
-	parent;
+
 	setAttr -lock true ($myCompassSphere[0] + ".rx");
 	setAttr -lock true ($myCompassSphere[0] + ".ry");
 	setAttr -lock true ($myCompassSphere[0] + ".rz");
@@ -1018,7 +1017,6 @@ global proc da_Compass(){
 	setAttr ($myCompassDirection[0] + ".translateX") 1;
 
 	select $myCompassDirection[0] $myCompassSphere[0];
-	parent;
 	select $myCompassVector[0] $myCompassDirection[0];
 	doCreateParentConstraintArgList 1 { "1","0","0","0","0","0","0","0","1","","1" };
 
@@ -1031,6 +1029,9 @@ global proc da_Compass(){
 	connectAttr($myCompassDirection[0] + ".tx", $myCompassSphere[0] + ".VectorX");
 	connectAttr($myCompassDirection[0] + ".ty", $myCompassSphere[0] + ".VectorY");
 	connectAttr($myCompassDirection[0] + ".tz", $myCompassSphere[0] + ".VectorZ");
+	
+	select $myCompassDirection[0] $myCompassVector[0] $myCompassSphere[0];
+	parent;
 
 	select $myCompassSphere[0];
 }

@@ -2806,6 +2806,22 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nda_ClearFreeze;\nselect -cl;\nGroup;\nstring $myGroupTMP[] = `ls -sl`;\nselect $mySelShape $myGroupTMP;\nparent -r -s;\nselect $mySel;\ndelete;\nselect $myGroupTMP;\nrename CombinedCurve1;\nCenterPivot;")
+	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nstring $myTransform[] = `ls -sl -head 1`;\nda_ClearFreeze;\ncatchQuiet(`parent -r -s $mySelShape $myTransform`);\nselect $mySel;\nselect -d $myTransform;\ndelete;\nselect $myTransform;\nrename CombinedCurve1;")
 	da_CombineCurves;
+
+runTimeCommand
+	-annotation "Create Nucleus Wind Controller"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myNucleus[] = `ls -sl`;\nda_Compass;\nstring $myDirection[] = `ls -sl`;\n\nconnectAttr($myDirection[0] + \".VectorX\", $myNucleus[0] + \".windDirectionX\");\nconnectAttr($myDirection[0] + \".VectorY\", $myNucleus[0] + \".windDirectionY\");\nconnectAttr($myDirection[0] + \".VectorZ\", $myNucleus[0] + \".windDirectionZ\");")
+	da_NucleusWindController;
+
+runTimeCommand
+	-annotation "Add Air Wind Controller"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myNucleus[] = `ls -sl`;\nda_Compass;\nstring $myDirection[] = `ls -sl`;\n\nconnectAttr($myDirection[0] + \".VectorX\", $myNucleus[0] + \".directionX\");\nconnectAttr($myDirection[0] + \".VectorY\", $myNucleus[0] + \".directionY\");\nconnectAttr($myDirection[0] + \".VectorZ\", $myNucleus[0] + \".directionZ\");")
+	da_AirWindController;
 
