@@ -110,7 +110,44 @@ hotkeyCtx -type "Tool" -addClient "SymmetrizeUVBrush";
 hotkeyCtx -type "Tool" -addClient "Unfold3DBrush";
 
 //
-// The nameCommand set
+// userPrefs set
+//
+
+//Soft Mod Tool
+optionVar -iv "softModToolMode" 1;
+
+// Paintable Attributes
+makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "tangentialDragPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "dragPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "liftPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "wrinklePerVertex";
+makePaintable  -at "doubleArray" "nCloth" "restLengthScalePerVertex";
+makePaintable  -at "doubleArray" "nCloth" "inputAttractPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "deformPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "rigidityPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "dampPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "restitutionAnglePerVertex";
+makePaintable  -at "doubleArray" "nCloth" "bendAngleDropoffPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "bendPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "compressionPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "stretchPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "massPerVertex";
+makePaintable  -at "doubleArray" "nRigid" "fieldMagnitudePerVertex";
+makePaintable  -at "doubleArray" "nRigid" "collideStrengthPerVertex";
+makePaintable  -at "doubleArray" "nRigid" "stickinessPerVertex";
+makePaintable  -at "doubleArray" "nRigid" "frictionPerVertex";
+makePaintable  -at "doubleArray" "nRigid" "bouncePerVertex";
+makePaintable  -at "doubleArray" "nRigid" "thicknessPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "fieldMagnitudePerVertex";
+makePaintable  -at "doubleArray" "nCloth" "collideStrengthPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "stickinessPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "frictionPerVertex";
+makePaintable  -at "doubleArray" "nCloth" "bouncePerVertex";
+makePaintable  -at "doubleArray" "nCloth" "thicknessPerVertex";
+
+//
+// nameCommand set
 //
 
 nameCommand
@@ -510,7 +547,7 @@ nameCommand
 	da_ToggleResolutionGateNameCommand;
 
 //
-// The runTimeCommand set
+// runTimeCommand set
 //
 
 runTimeCommand
