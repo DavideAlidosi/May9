@@ -3029,3 +3029,11 @@ runTimeCommand
 	-command ("string $myNucleus[] = `ls -sl`;\nda_Compass;\nstring $myDirection[] = `ls -sl`;\n\nconnectAttr($myDirection[0] + \".VectorX\", $myNucleus[0] + \".directionX\");\nconnectAttr($myDirection[0] + \".VectorY\", $myNucleus[0] + \".directionY\");\nconnectAttr($myDirection[0] + \".VectorZ\", $myNucleus[0] + \".directionZ\");")
 	da_AirWindController;
 
+runTimeCommand
+	-annotation "Add Physical Sky to Sky Dome"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySkyDomeLight[] = `listRelatives -s`;\ncreateNode aiPhysicalSky;\nstring $myPhysicalSky[] = `ls -sl`;\nconnectAttr -f ($myPhysicalSky[0] + \".outColor\") ($mySkyDomeLight[0] + \".color\");")
+	da_AddPhysicalSky;
+
