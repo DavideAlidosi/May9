@@ -53,7 +53,8 @@ ikSpringSolver;
 python( "from maya.app.general import creaseSetEditor");
 
 // Preload Boss Editor
-python( "import boss.BossEditor as be" );
+if ( catch( `python( "import boss.BossEditor as be" )` ) )
+	print "Please check Bifrost installation";
 
 // Layouts
 panelConfiguration -label (localizedPanelLabel("daFourView")) 
