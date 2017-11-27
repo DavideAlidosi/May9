@@ -346,6 +346,13 @@ menuItem
 menuEditorMenuItem18;
 
 menuItem
+-l "Remesh"
+-c "polyRemesh"
+-i "out_mesh.png"
+-stp "mel"
+menuEditorMenuItem41;
+
+menuItem
 -l "separator" 
 -d 1
 -dl "separator"
@@ -481,13 +488,6 @@ menuItem
 menuEditorMenuItem1;
 
 menuItem
--l "Type to Curves"
--c "convertTypeCapsToCurves"
--i "text.png"
--stp "mel"
-menuEditorMenuItem10;
-
-menuItem
 -l "menuEditorMenuItem6"
 -c "CreateSubdivSurfaceOptions"
 -ob 1
@@ -500,6 +500,13 @@ menuItem
 -i "instanceToObject.png"
 -stp "mel"
 menuEditorMenuItem6;
+
+menuItem
+-l "Type to Curves"
+-c "convertTypeCapsToCurves"
+-i "text.png"
+-stp "mel"
+menuEditorMenuItem10;
 
 setParent -m ..;
 
