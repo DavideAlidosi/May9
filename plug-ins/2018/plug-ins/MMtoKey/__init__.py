@@ -1,7 +1,9 @@
 import sys
 import os
 import Engine
+import maya.mel as mel
 
+mel.eval('source "da_May9Pro.mel"')
 
 def ui():
     """open marking menu editor"""
