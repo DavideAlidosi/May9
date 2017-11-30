@@ -1,5 +1,3 @@
-int $myScrollWheel = `optionVar -q "useScrollWheel"`;
-
 da_commonObjectOptionsPopup();
 
 menuItem
@@ -42,18 +40,18 @@ menuItem
     menuEditorMenuItem99;
 
 menuItem
-    -label "Wheel Zoom" 
-    -command "da_ToggleMouseWheel" 
-    -sourceType "mel" 
-    -cb (true == $myScrollWheel)
-    menuEditorMenuItem100;
-
-menuItem
     -label "menuEditorMenuItem7" 
     -command "da_SelectCamera;\nAttributeEditor\n" 
     -optionBox 1
     -sourceType "mel" 
     menuEditorMenuItem50;
+
+menuItem
+    -label "Wheel Zoom" 
+    -command "da_ToggleMouseWheel" 
+    -sourceType "mel" 
+    -cb (`optionVar -q "useScrollWheel"`)
+    menuEditorMenuItem100;
 
 menuItem
     -label "separator" 

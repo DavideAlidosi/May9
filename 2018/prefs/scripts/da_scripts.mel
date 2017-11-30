@@ -19,8 +19,7 @@ menuItem
     -subMenu 1
     -radialPosition "NE" 
 	-image "RS_visible.png"
-    -sourceType "mel" 
-    menuEditorMenuItem5;
+    -sourceType "mel";
 
     menuItem
         -label "Curves" 
@@ -85,6 +84,39 @@ menuItem
         -radialPosition "E" 
         -sourceType "mel" 
         menuEditorMenuItem9;
+
+setParent -m ..;
+
+menuItem
+    -label "UI Elements" 
+    -subMenu 1
+    -radialPosition "NW" 
+	-image "out_displayLayer.png"
+    -sourceType "mel";
+
+	menuItem
+	    -label "Shelf" 
+	    -command "ToggleShelf" 
+	    -sourceType "mel" 
+	    -radialPosition "NW" 
+	    -cb (`workspaceControl -q -vis Shelf`)
+	    menuEditorMenuItem104;
+
+	menuItem
+	    -label "Menu Bars" 
+	    -command "TogglePanelMenubar" 
+	    -sourceType "mel" 
+	    -radialPosition "N" 
+	    -cb (`optionVar -q allowMenusInPanels`)
+	    menuEditorMenuItem101;
+
+	menuItem
+	    -label "Icon Bars" 
+	    -command "ToggleModelEditorBars" 
+	    -sourceType "mel" 
+	    -radialPosition "W" 
+	    -cb (false == `optionVar -q collapseIconBarsInPanels`)
+	    menuEditorMenuItem102;
 
 setParent -m ..;
 }
