@@ -1,0 +1,154 @@
+
+    menuItem
+        -label "No Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 0 -vertexValue 0 $each;\n}" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "10 Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 10 -vertexValue 10 $each;\n}" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "0.5 Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value .5 -vertexValue .5 $each;\n}" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "2 Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 2 -vertexValue 2 $each;\n}" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "4 Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 4 -vertexValue 4 $each;\n}" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
+        -label "Crease Set Editor" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyCrease.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+
+setParent -m ..;
+
