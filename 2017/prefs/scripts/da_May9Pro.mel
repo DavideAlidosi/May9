@@ -7,31 +7,12 @@ catchQuiet(dagMenuProc("", ""));
 // Inizialize Break Connections
 channelBoxCommand -break;
 
-// Enable Anti-alias based on OS
-string $osVer = `about -os`;
-$osTest = `gmatch $osVer "*mac*"`;
-if ($osTest == 1) {
-	string $HWantiAlias = "setAttr \"hardwareRenderingGlobals.multiSampleEnable\" 1";
-	scriptJob -e "NewSceneOpened" $HWantiAlias;
-} else {
-	string $HWantiAlias = "setAttr \"hardwareRenderingGlobals.lineAAEnable\" 1; setAttr \"hardwareRenderingGlobals.multiSampleEnable\" 1";
-	scriptJob -e "NewSceneOpened" $HWantiAlias;
-}
+// Source May9 Pro Scripts
+source da_scripts.mel;
 
-// Two Sided Lighting On, XRay Components
-string $modelPanelPreset = "modelEditor -e -acx 1 -tsl 1 modelPanel1;modelEditor -e -acx 1 -tsl 1 modelPanel2;modelEditor -e -acx 1 -tsl 1 modelPanel3;modelEditor -e -acx 1 -tsl 1 modelPanel4";
-scriptJob -e "NewSceneOpened" $modelPanelPreset;
-
-// Outliner Options
-string $outlinerOptions = "outlinerEditor  -e -sam 1 -rfv 1 -atr 1 outlinerPanel1";
-scriptJob -e "NewSceneOpened" $outlinerOptions;
-
-// Custom color on Initial Shading Group
-string $initialShadingGroupColor = "setAttr \"lambert1.color\" -type double3 0.3725 0.3607 0.349";
-scriptJob -e "NewSceneOpened" $initialShadingGroupColor;
-
-// Set Channel Box Settings
-channelBoxSettings slow 2;
+// Set new scene opened preferences
+string $may9Configurations = "da_may9Configurations()";
+scriptJob -e "NewSceneOpened" $may9Configurations;
 
 // Source May9 Pro Scripts
 source da_scripts.mel;
@@ -41,9 +22,6 @@ da_intPlay();
 
 // Preload MMtoKey as Plug-in
 loadPlugin MMtoKey;
-
-// Preload contextConnector as Plug-in
-loadPlugin contextConnector;
 
 // Preload Two Bone IK and Spring IK
 ik2Bsolver;

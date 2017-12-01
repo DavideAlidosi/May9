@@ -16,6 +16,8 @@ global proc da_may9Configurations(){
 	setAttr "hardwareRenderingGlobals.transparentShadow" 1;
 
 	outlinerEditor  -e -sam 1 -rfv 1 -atr 1 outlinerPanel1;
+
+	channelBoxSettings slow 2;
 }
 
 
@@ -177,11 +179,11 @@ global proc da_curveToPoly(){
 	int $numObj = size($renderBrush);
 	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".Radius", $renderBrush[$i] + ".brushWidth");
 	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".Section", $renderBrush[$i] + ".tubeSections");
-	int $numObj = size($renderStroke);
-	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".Clipping", $renderStroke[$i] + ".maxClip");
-	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".Density", $renderStroke[$i] + ".sampleDensity");
-	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".PolyLimit", $renderStroke[$i] + ".meshPolyLimit");
-	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".HardEdges", $renderStroke[$i] + ".meshHardEdges");
+	int $numObj2 = size($renderStroke);
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".Clipping", $renderStroke[$i] + ".maxClip");
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".Density", $renderStroke[$i] + ".sampleDensity");
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".PolyLimit", $renderStroke[$i] + ".meshPolyLimit");
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".HardEdges", $renderStroke[$i] + ".meshHardEdges");
 
 	//Rig Procedure
 	string $renderMesh[] = `listConnections -t mesh $renderStroke`;
