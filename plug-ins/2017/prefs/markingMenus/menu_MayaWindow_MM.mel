@@ -1,0 +1,77 @@
+da_commonObjectOptionsPopup();
+
+menuItem
+    -label "Front View" 
+    -command "dR_DoCmd(\"viewFront\");" 
+    -radialPosition "E" 
+    -image "da_z.png" 
+    -sourceType "mel" 
+    menuEditorMenuItem1;
+
+menuItem
+    -label "Side View" 
+    -command "dR_DoCmd(\"viewRight\");" 
+    -radialPosition "W" 
+    -image "da_x.png" 
+    -sourceType "mel" 
+    menuEditorMenuItem3;
+
+menuItem
+    -label "Persp View" 
+    -command "dR_DoCmd(\"viewPersp\");" 
+    -radialPosition "S" 
+    -image "singlePerspLayout.png" 
+    -sourceType "mel" 
+    menuEditorMenuItem4;
+
+menuItem
+    -label "Top View" 
+    -command "dR_DoCmd(\"viewTop\");" 
+    -radialPosition "N" 
+    -image "da_y.png" 
+    -sourceType "mel" 
+    menuEditorMenuItem2;
+
+menuItem
+    -label "Select Camera" 
+    -command "da_SelectCamera" 
+    -image "Camera.png" 
+    -sourceType "mel" 
+    menuEditorMenuItem99;
+
+menuItem
+    -label "menuEditorMenuItem7" 
+    -command "da_SelectCamera;\nAttributeEditor\n" 
+    -optionBox 1
+    -sourceType "mel" 
+    menuEditorMenuItem50;
+
+menuItem
+    -label "Wheel Zoom" 
+    -command "da_ToggleMouseWheel" 
+    -sourceType "mel" 
+    -cb (`optionVar -q "useScrollWheel"`)
+    menuEditorMenuItem100;
+
+menuItem
+    -label "separator" 
+    -divider 1
+    -sourceType "mel" 
+    menuEditorMenuItem9;
+
+menuItem
+    -label "Add Image Plane" 
+    -command "da_ImagePlane" 
+    -image "out_imagePlane.png" 
+    -sourceType "mel" 
+    menuEditorMenuItem8;
+
+menuItem
+    -label "Add Movie Plane" 
+    -command "da_VideoPlane" 
+    -image "da_video_plane.png" 
+    -sourceType "mel" 
+    menuEditorMenuItem10;
+
+setParent -m ..;
+
