@@ -523,14 +523,14 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
 
         menuItem
             -label "Create Soft Body"
-            -command "nSoft -c "
+            -command "soft -c"
             -image "soft.png"
             -sourceType "mel"
             menuEditorMenuItem15;
 
         menuItem
             -label "menuEditorMenuItem19"
-            -command "CreateNSoftBodyOptions"
+            -command "CreateSoftBodyOptions"
             -optionBox 1
             -enableCommandRepeat 0
             -sourceType "mel"
