@@ -1,5 +1,3 @@
-int $XGenHUDCheck = `optionVar -q xgenHUDVisibility`;
-
 menuItem
 -l "Multi Cut Tool"
 -c "dR_multiCutTool;"
@@ -1447,7 +1445,7 @@ menuItem
 menuItem
 -l "HUD Info"
 -c "ToggleXGenDisplayHUD"
--cb (1 == $XGenHUDCheck)
+-cb (`optionVar -q xgenHUDVisibility`)
 -stp "mel";
 
 setParent -m ..;

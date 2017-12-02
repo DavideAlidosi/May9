@@ -1,9 +1,3 @@
-int $PolyIntCheck = `optionVar -q createPolyPrimitiveAsTool`;
-int $NurbsIntCheck = `optionVar -q createNurbsPrimitiveAsTool`;
-int $cmCheck = `colorManagementPrefs -q -cme`;
-int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
-    && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
-
 menuItem
 -l "Poly/Curves"
 -sm 1
@@ -105,13 +99,13 @@ menuItem
 menuItem
 -l "Poly Interactive Creation"
 -c "toggleCreatePolyPrimitiveAsTool"
--cb (1 == $PolyIntCheck)
+-cb (`optionVar -q createPolyPrimitiveAsTool`)
 -stp "mel";
 
 menuItem
 -l "Curve Interactive Creation"
 -c "toggleCreateNurbsPrimitiveAsTool;"
--cb (1 == $NurbsIntCheck)
+-cb (`optionVar -q createNurbsPrimitiveAsTool`)
 -stp "mel";
 
 setParent -m ..;
@@ -146,7 +140,7 @@ menuItem
 -l "Color Management"
 -c "da_ToggleColorManagement" 
 -rp "S"
--checkBox (1 == $cmCheck) 
+-checkBox (`colorManagementPrefs -q -cme`) 
 -stp "mel";
 
 menuItem
@@ -912,7 +906,8 @@ menuItem
 -l "HUD Info"
 -c "da_ToggleHUD"
 -rp "SE"
--cb (true == $HUDCheck)
+-cb (`optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
+    && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`)
 -stp "mel";
 
 menuItem
