@@ -738,55 +738,56 @@ menuItem
 menuEditorMenuItem17;
 
 menuItem
--l "menuEditorMenuItem18"
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
 -ob 1
--stp "mel"
-menuEditorMenuItem18;
+-stp "mel";
 
 menuItem
--l "nParticle Tool"
--c "NParticleTool"
+-l "Particle Emitter"
+-c "CreateEmitter"
 -rp "NW"
--i "particle.png"
--stp "mel"
-menuEditorMenuItem8;
+-i "emitter.png"
+-stp "mel";
 
 menuItem
--l "menuEditorMenuItem11"
--c "NParticleToolOptions"
+-c "CreateEmitterOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem11;
+-stp "mel";
 
 menuItem
 -l "nParticle Emitter"
 -c "NCreateEmitter;"
 -rp "W"
 -i "posEmitter.png"
--stp "mel"
-menuEditorMenuItem10;
+-stp "mel";
 
 menuItem
--l "menuEditorMenuItem11"
 -c "NCreateEmitterOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem19;
+-stp "mel";
 
 menuItem
 -l "Duplicate Special"
 -c "DuplicateSpecialOptions" 
 -i "da_duplicate.png"
--stp "mel"
-menuEditorMenuItem12;
+-stp "mel";
+
+menuItem
+-l "nParticle Tool"
+-c "NParticleTool"
+-i "particle.png"
+-stp "mel";
+
+menuItem
+-c "NParticleToolOptions"
+-ob 1
+-stp "mel";
 
 menuItem
 -l "separator" 
 -d 1
 -dl "separator"
--stp "mel"
-menuEditorMenuItem15;
+-stp "mel";
 
 menuItem
 -l "Particle Style"
