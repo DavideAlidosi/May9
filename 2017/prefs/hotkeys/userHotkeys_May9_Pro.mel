@@ -2784,6 +2784,6 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySkyDomeLight[] = `listRelatives -s`;\nstring $myColorCheck[] = `listConnections ($mySkyDomeLight[0] + \".color\")`;\nif($myColorCheck[0] == \"\"){\n   string $myPhysicalSky[] = `ls -sl`;\n   connectAttr ($myPhysicalSky[0] + \".outColor\") ($mySkyDomeLight[0] + \".color\");\n}else{\n   warning \"A color node is already connected to the current Sky Dome\";\n}")
+	-command ("string $mySkyDomeLight[] = `listRelatives -s`;\nstring $myColorCheck[] = `listConnections ($mySkyDomeLight[0] + \".color\")`;\nif($myColorCheck[0] == \"\"){\n    createNode aiPhysicalSky;\n    string $myPhysicalSky[] = `ls -sl`;\n    connectAttr ($myPhysicalSky[0] + \".outColor\") ($mySkyDomeLight[0] + \".color\");\n}else{\n    warning \"A color node is already connected to the current Sky Dome\";\n}")
 	da_AddPhysicalSky;
 

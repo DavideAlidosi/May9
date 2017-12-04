@@ -1125,20 +1125,9 @@ menuItem
 -stp "mel";
 
 menuItem
--l "Create Soft Body"
--c "soft -c"
--i "soft.png"
--stp "mel";
-
-menuItem
--c "CreateSoftBodyOptions"
--ob 1
--stp "mel";
-
-menuItem
--l "Emit Particle"
+-l "Emit nParticle"
 -c "NEmitFromObject"
--i "emitter.png"
+-i "posEmitter.png"
 -stp "mel";
 
 menuItem
@@ -1161,6 +1150,34 @@ menuItem
 -l "Set Initial State"
 -c "setNClothStartState;"
 -i "fluidInitialStateSet.png"
+-stp "mel";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem
+-l "Create Soft Body"
+-c "soft -c"
+-i "soft.png"
+-stp "mel";
+
+menuItem
+-c "CreateSoftBodyOptions"
+-ob 1
+-stp "mel";
+
+menuItem
+-l "Emit Particle"
+-c "EmitFromObject"
+-i "emitter.png"
+-stp "mel";
+
+menuItem
+-c "EmitFromObjectOptions"
+-ob 1
 -stp "mel";
 
 menuItem
