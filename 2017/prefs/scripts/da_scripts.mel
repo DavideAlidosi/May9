@@ -1064,4 +1064,7 @@ global proc da_Compass(){
 
 	select $myCompassSphere[0];
 	toggle -localAxis;
+
+	select $myCompassVector[0];
+	RotateTool;
 }
