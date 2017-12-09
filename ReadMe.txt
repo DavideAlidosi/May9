@@ -37,6 +37,7 @@ Exclusive script
 - da_CurveLength: this script returns the length of a curve in Maya unit
 - da_MouseTrack: this script tracks the mouse movement and create an animation
 - da_FacesFollicles: this script creates a follicle in the centre of selected faces
+- da_Compass: this script converts Euler angle into a XYZ vector, for drive wind direction in Nucleus and Air Filed
 
 
 Version 2.0 highlight
