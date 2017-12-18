@@ -966,6 +966,14 @@ menuItem
 -i "render_adskMaterial.png"
 -stp "mel";
 
+$item = "";
+
+$menuAssign = `menuItem -label (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -subMenu true -allowOptionBoxes true -i "out_shaderList.png"`;
+menuItem 
+	-edit 
+	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+setParent -menu ..;
+
 menuItem
 -l "Assign New Material"
 -c "createAssignNewMaterialTreeLister \"\""
