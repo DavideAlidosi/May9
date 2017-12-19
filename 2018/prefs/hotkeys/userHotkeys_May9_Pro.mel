@@ -24,6 +24,7 @@ hotkey -keyShortcut "w" -alt -sht -name ("da_ToggleWireOnShadeNameCommand");
 hotkey -keyShortcut "t" -alt -name ("da_ToolSettingsNameCommand");
 hotkey -keyShortcut "k" -name ("da_TimeDraggerSmoothNameCommand");
 hotkey -keyShortcut "k" -releaseName ("da_TimeDraggerNoSmoothNameCommand");
+hotkey -keyShortcut "k" -ctl -name ("da_MassAttrNameCommand");
 hotkey -keyShortcut "0" -alt -name ("da_ReferenceEditorNameCommand");
 hotkey -keyShortcut "c" -alt -name ("da_ToggleChannelLayerNameCommand");
 hotkey -keyShortcut "|" -name ("da_ManipToggleNameCommand");
@@ -509,6 +510,12 @@ nameCommand
 	-sourceType "mel"
 	-command ("da_ToggleResolutionGate")
 	da_ToggleResolutionGateNameCommand;
+
+nameCommand
+	-annotation "da_MassAttrNameCommand"
+	-sourceType "mel"
+	-command ("da_MassAttr")
+	da_MassAttrNameCommand;
 
 
 //
@@ -2834,4 +2841,12 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySkyDomeLight[] = `listRelatives -s`;\nstring $myColorCheck[] = `listConnections ($mySkyDomeLight[0] + \".color\")`;\nif($myColorCheck[0] == \"\"){\n    createNode aiPhysicalSky;\n    string $myPhysicalSky[] = `ls -sl`;\n    connectAttr ($myPhysicalSky[0] + \".outColor\") ($mySkyDomeLight[0] + \".color\");\n}else{\n    warning \"A color node is already connected to the current Sky Dome\";\n}")
 	da_AddPhysicalSky;
+
+runTimeCommand
+	-annotation "Open Massive UI"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import maya.cmds as cmds\n\ntry:\n    mass_attr.mass_attr.Display_Massive_Toggle()\nexcept Exception: \n    cmds.warning( \"To use this command please load \\\"mass_attr\\\" from Plug-in Manager\" )")
+	da_MassAttr;
 

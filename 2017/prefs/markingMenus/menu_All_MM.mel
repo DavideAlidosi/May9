@@ -307,6 +307,14 @@ menuItem
 -stp "mel";
 }
 
+if (`pluginInfo -q -l mass_attr` == 1){
+menuItem
+-l "Massive Attribute"
+-c "da_MassAttr"
+-i "RS_multiple_filters.png"
+-stp "mel";
+}
+
 menuItem
 -l "Attributes"
 -sm 1
