@@ -31,7 +31,6 @@ hotkey -keyShortcut "|" -name ("da_ManipToggleNameCommand");
 hotkey -keyShortcut "m" -ctl -alt -sht -name ("da_ToggleShelfNameCommand");
 hotkey -keyShortcut "l" -alt -name ("da_OpenColorEditorNameCommand");
 hotkey -keyShortcut "t" -sht -name ("da_CreateAssigNodeNameCommand");
-hotkey -keyShortcut "?" -name ("da_FindMenuNameCommand");
 hotkey -keyShortcut "Space" -alt -sht -name ("da_TogglePlaybackNameCommand");
 hotkey -keyShortcut "2" -ctl -alt -name ("da_EditAndFrameShadersNameCommand");
 hotkey -keyShortcut "*" -ctl -name ("SmoothProxyNameCommand");
@@ -288,12 +287,6 @@ nameCommand
 	-sourceType "mel"
 	-command ("toggleMainWindowFullScreenMode")
 	da_toggleMainWindowFullScreenModeNameCommand;
-
-nameCommand
-	-annotation "da_FindMenuNameCommand"
-	-sourceType "mel"
-	-command ("da_FindMenu")
-	da_FindMenuNameCommand;
 
 nameCommand
 	-annotation "da_ZeroTransfomationsNameCommand"
@@ -1441,14 +1434,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("setNamedPanelLayout \"Four View\";\nstring $destinationPanel = `getPanel -wl \"Persp View\"`;\ndoSwitchPanes(1, {\"single\", $destinationPanel});\ninViewMessage -pos topCenter -msg \"Persp View\" -fade;")
 	da_GoToPersp;
-
-runTimeCommand
-	-annotation "Find Maya Menu"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("findMenuItem")
-	da_FindMenu;
 
 runTimeCommand
 	-annotation "Open Tool Property Window"
