@@ -65,7 +65,6 @@ menuItem
         -label "Locator" 
         -command "da_ToggleLocVis" 
 		-checkBox (1 == $locatorsCheck)
-        -radialPosition "SW" 
         -sourceType "mel" 
         menuEditorMenuItem7;
 
@@ -117,6 +116,14 @@ menuItem
 	    -radialPosition "W" 
 	    -cb (false == `optionVar -q collapseIconBarsInPanels`)
 	    menuEditorMenuItem102;
+
+	menuItem
+	    -label "Main Menu Bars" 
+	    -command "ToggleMainMenubar" 
+	    -sourceType "mel" 
+	    -radialPosition "NE" 
+	    -cb (`optionVar -q mainWindowMenubarVis`)
+	    menuEditorMenuItem106;
 
 	menuItem
 	    -label "Save Workspace" 
