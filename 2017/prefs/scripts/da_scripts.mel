@@ -118,6 +118,14 @@ menuItem
 	    -cb (false == `optionVar -q collapseIconBarsInPanels`)
 	    menuEditorMenuItem102;
 
+	menuItem
+	    -label "Save Workspace" 
+	    -command "SaveCurrentWorkspace" 
+	    -sourceType "mel" 
+	    -image "fileSave.png"
+	    -radialPosition "S" 
+	    menuEditorMenuItem103;
+
 setParent -m ..;
 }
 
