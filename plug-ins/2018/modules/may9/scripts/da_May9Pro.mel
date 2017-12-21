@@ -10,7 +10,7 @@ channelBoxCommand -break;
 // Source May9 Pro Scripts
 source da_scripts.mel;
 
-// Store initial shelf configuration
+// Store initial Shelf configuration
 string $myShelfCheck = `workspaceControl -q -vis Shelf`;
 
 // Set new scene opened preferences
@@ -50,8 +50,9 @@ python( "from maya.app.general import creaseSetEditor");
 if ( catchQuiet( `python( "import boss.BossEditor as be" )` ) )
 	print "Please check Bifrost installation";
 
-// Source User Named Commands, User Run Time Commands and User Prefs only at first May9 Pro run
+// Initialize May9 as Plug-in
 if (`optionVar -ex May9ActivationCheck` == 0){
+    //Source da_userPrefs only at first May9 run
     source da_userPrefs.mel;
     optionVar -iv May9ActivationCheck 1;
 
@@ -60,14 +61,13 @@ if (`optionVar -ex May9ActivationCheck` == 0){
 	workspaceLayoutManager -setCurrent "May9 Pro";
 	da_may9Configurations();
 
+	// Shelf configuration
     if ($myShelfCheck){
 		ToggleShelf;
 		workspaceLayoutManager -sa "May9 Pro";
 	}
-} else {
-	evalDeferred("workspaceLayoutManager -setCurrent \"May9 Pro\"");
-	workspaceLayoutManager -setCurrent "May9 Pro";
-	da_may9Configurations();	
+}else{
+	da_may9Configurations();
 }
 
 // Load userRuntime

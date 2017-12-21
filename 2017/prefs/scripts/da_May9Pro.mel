@@ -56,7 +56,7 @@ if (`optionVar -ex May9ActivationCheck` == 0){
     optionVar -iv May9ActivationCheck 1;
 }
 
-// Load userRuntime
+// Preload userRuntime
 global proc da_userRuntime(){
     source da_userRuntime.mel;
 }

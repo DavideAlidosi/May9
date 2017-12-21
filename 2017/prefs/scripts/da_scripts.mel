@@ -120,11 +120,18 @@ menuItem
 
 	menuItem
 	    -label "Save Workspace" 
-	    -command "SaveCurrentWorkspace" 
+	    -command "workspaceLayoutManager -s" 
 	    -sourceType "mel" 
 	    -image "fileSave.png"
 	    -radialPosition "S" 
 	    menuEditorMenuItem103;
+
+	menuItem
+		-label "menuEditorMenuItem103" 
+		-command "SaveCurrentWorkspace" 
+		-optionBox 1
+		-sourceType "mel" 
+		menuEditorMenuItem105;
 
 setParent -m ..;
 }
