@@ -2722,3 +2722,11 @@ runTimeCommand
 	-commandLanguage "python"
 	-command ("import maya.cmds as cmds\n\ntry:\n    mass_attr.mass_attr.Display_Massive_Toggle()\nexcept Exception: \n    cmds.warning( \"To use this command please load \\\"mass_attr\\\" from Plug-in Manager\" )")
 	da_MassAttr;
+
+runTimeCommand
+	-annotation "Convert curve to nHair"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"0\", \"1\"};\nstring $myHairSystemShape[] = `ls -sl`;\napplyPresetToNode $myHairSystemShape[0] \"\" \"\" \"da_DefaultSettings\" 1;")
+	da_CurveToNHair;

@@ -5,11 +5,6 @@
         -subMenu 0
         -tearOff 0
         -command "ProjectCurveOnMesh;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -31,11 +26,6 @@
         -subMenu 0
         -tearOff 0
         -command "ProjectCurveOnMeshOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -55,11 +45,6 @@
         -subMenu 0
         -tearOff 0
         -command "SplitMeshWithProjectedCurve" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -81,11 +66,6 @@
         -subMenu 0
         -tearOff 0
         -command "SplitMeshWithProjectedCurveOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -105,11 +85,6 @@
         -subMenu 0
         -tearOff 0
         -command "da_CurveDistributionMash" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -131,11 +106,6 @@
         -subMenu 0
         -tearOff 0
         -command "WireTool;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -157,11 +127,6 @@
         -subMenu 0
         -tearOff 0
         -command "WireToolOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -181,15 +146,10 @@
         -subMenu 0
         -tearOff 0
         -command "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"};" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NW" 
+        -radialPosition "W" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -207,11 +167,6 @@
         -subMenu 0
         -tearOff 0
         -command "MakeCurvesDynamicOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
         -enable 1
         -data 0
@@ -231,11 +186,6 @@
         -subMenu 0
         -tearOff 0
         -command "createCurveWarp;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 0
         -enable 1
         -data 0
@@ -250,6 +200,27 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
+
+    menuItem
+        -label "Curves to nHair" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_CurveToNHair" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_pfxHair.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
 
 setParent -m ..;
 

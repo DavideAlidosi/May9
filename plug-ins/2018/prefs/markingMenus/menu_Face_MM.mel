@@ -540,6 +540,28 @@ menuItem
 menuEditorMenuItem8;
 
 menuItem
+-label "Create Hair"
+-command "createHair 8 8 10 0 0 0 0 5 0 1 1 2"
+-image "hairCreate.png"
+-sourceType "mel"
+menuEditorMenuItem7;
+
+menuItem
+-label "menuEditorMenuItem7"
+-command "CreateHairOptions"
+-optionBox 1
+-enableCommandRepeat 0
+-sourceType "mel"
+menuEditorMenuItem8;
+
+menuItem
+-label "separator" 
+-divider 1
+-dividerLabel "separator"
+-sourceType "mel"
+menuEditorMenuItem9;
+
+menuItem
 -label "Emit Particle"
 -command "NEmitFromObject;"
 -image "emitter.png"
