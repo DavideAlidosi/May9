@@ -1,5 +1,5 @@
 // Store May9 Version
-$may9Version = "May9 Pro 2.0.7";
+$may9Version = "May9 Pro 2.1.0";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -22,11 +22,6 @@ global proc da_may9Configurations(){
 		setAttr "hardwareRenderingGlobals.lineAAEnable" 1;
 		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
 	}
-
-	modelEditor -e -tsl 1 modelPanel1;
-	modelEditor -e -tsl 1 modelPanel2;
-	modelEditor -e -tsl 1 modelPanel3;
-	modelEditor -e -tsl 1 modelPanel4;
 
 	outlinerEditor  -e -sam 1 -rfv 1 -atr 1 outlinerPanel1;
 }
