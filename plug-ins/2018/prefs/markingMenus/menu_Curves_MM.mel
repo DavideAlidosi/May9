@@ -346,26 +346,18 @@ string $myFollcie[] = `listConnections -s 1 -d 0 -sh 1 -t "follicle" $objectShap
         menuEditorMenuItem4;
 
         menuItem
-            -label "Make Curve Dynamic"
-            -command "MakeCurvesDynamic;"
+            -label "Make Curves Dynamic"
+            -command "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
             -image "hairDynamicCurves.png"
             -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
-            -label "menuEditorMenuItem2"
-            -command "MakeCurvesDynamicOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
-            -sourceType "mel"
+            -label "Curves to nHair" 
+            -command "da_CurveToNHair" 
+            -image "out_pfxHair.png" 
+            -sourceType "mel" 
             menuEditorMenuItem12;
-
-        menuItem
-            -label "Assign Hair to Curve"
-            -command "AssignBrushToHairSystem;"
-            -image "hairPaint.png"
-            -sourceType "mel"
-            menuEditorMenuItem9;
 
         if ($myFollcie[0] != ""){
 		menuItem
