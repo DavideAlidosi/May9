@@ -2104,7 +2104,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daFourView\";\ndoSwitchPanes(1, {\"single\", $myCurPane});\ninViewMessage -pos topCenter -msg \"Perspective/Four View layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 1){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daFourView\";\n    doSwitchPanes(1, {\"single\", $myCurPane});\n    inViewMessage -pos topCenter -msg \"Perspective/Four View layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 1\n")
 	da_LayoutPersp;
 
 runTimeCommand
@@ -2112,7 +2112,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daNodeEditor\";\ninViewMessage -pos topCenter -msg \"Node Editor layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 2){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daNodeEditor\";\n    inViewMessage -pos topCenter -msg \"Node Editor layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 2")
 	da_LayoutNodeEditor;
 
 runTimeCommand
@@ -2120,7 +2120,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daUvEditor\";\n\n//Hide Texture\nstring $texWinName[] = `getPanel -sty polyTexturePlacementPanel`;\ntextureWindowToggleTextureImageOff( $texWinName[0], \"textureWindow\" );\ntxtWndUpdateEditor( $texWinName[0], \"textureWindow\", \"null\", 101 );\n\ninViewMessage -pos topCenter -msg \"UV Texture layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 3){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daUvEditor\";\n    \n    //Hide Texture\n    string $texWinName[] = `getPanel -sty polyTexturePlacementPanel`;\n    textureWindowToggleTextureImageOff( $texWinName[0], \"textureWindow\" );\n    txtWndUpdateEditor( $texWinName[0], \"textureWindow\", \"null\", 101 );\n    \n    inViewMessage -pos topCenter -msg \"UV Texture layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 3")
 	da_LayoutUvTextureEditor;
 
 runTimeCommand
@@ -2128,7 +2128,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daGraphEditor\";\ninViewMessage -pos topCenter -msg \"Graph Editor\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 4){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daGraphEditor\";\n    inViewMessage -pos topCenter -msg \"Graph Editor\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 4")
 	da_LayoutGraphEditor;
 
 runTimeCommand
@@ -2136,7 +2136,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daShapeEditor\";\ninViewMessage -pos topCenter -msg \"Shape layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 5){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daShapeEditor\";\n    inViewMessage -pos topCenter -msg \"Shape layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 5")
 	da_LayoutShapeEditor;
 
 runTimeCommand
@@ -2144,7 +2144,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daPoseEditor\";\ninViewMessage -pos topCenter -msg \"Pose layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 6){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daPoseEditor\";\n    inViewMessage -pos topCenter -msg \"Pose layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 6")
 	da_LayoutPoseEditor;
 
 runTimeCommand
@@ -2152,7 +2152,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daComponentEditor\";\ninViewMessage -pos topCenter -msg \"Component layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 7){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daComponentEditor\";\n    inViewMessage -pos topCenter -msg \"Component layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 7")
 	da_LayoutComponentEditor;
 
 runTimeCommand
@@ -2160,7 +2160,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daRelationshipEditor\";\ninViewMessage -pos topCenter -msg \"Relationship layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 8){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daRelationshipEditor\";\n    inViewMessage -pos topCenter -msg \"Relationship layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 8")
 	da_LayoutRelationshipEditor;
 
 runTimeCommand
@@ -2168,7 +2168,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daDynamicRelationshipEditor\";\ninViewMessage -pos topCenter -msg \"Dynamic Relationship layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 9){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daDynamicRelationshipEditor\";\n    inViewMessage -pos topCenter -msg \"Dynamic Relationship layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 9")
 	da_LayoutDynamicRelationshipEditor;
 
 runTimeCommand
@@ -2176,7 +2176,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("//Get Current Camera\nstring $myCurPanel = `playblast -ae`;\nstring $myCurPane = `match \"[^|]*$\" $myCurPanel`;\nstring $myCurCam = `modelPanel -q -cam $myCurPane`;\n\n//Change Layout\nsetNamedPanelLayout \"daReferenceEditor\";\ninViewMessage -pos topCenter -msg \"Reference layout\" -fade;\n\n//Switch back to Current Camera\nlookThru $myCurPane $myCurCam;")
+	-command ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daReferenceEditor\";\n    inViewMessage -pos topCenter -msg \"Reference layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 10")
 	da_LayoutReferenceEditor;
 
 runTimeCommand

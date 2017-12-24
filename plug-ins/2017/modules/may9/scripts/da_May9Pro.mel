@@ -13,6 +13,9 @@ source da_scripts.mel;
 // Store initial Shelf configuration
 string $myShelfCheck = `workspaceControl -q -vis Shelf`;
 
+// Declare initial layout state
+int $myLayout = 0;
+
 // Set new scene opened preferences
 global proc da_may9Configurations(){
 	string $osVer = `about -os`;
