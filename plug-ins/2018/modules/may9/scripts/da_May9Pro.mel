@@ -58,6 +58,9 @@ if (`optionVar -ex May9ActivationCheck` == 0){
 	workspaceLayoutManager -setCurrent "May9 Pro";
 	da_may9Configurations();
 
+	// Disable Duplicate Variable Warnings
+	melOptions -duplicateVariableWarnings off;
+
 	// Shelf configuration
     if ($myShelfCheck){
 		ToggleShelf;
