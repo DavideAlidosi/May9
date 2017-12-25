@@ -273,10 +273,10 @@ nameCommand
 	da_DynamicRelationshipEditorNameCommand;
 
 nameCommand
-	-annotation "da_ReferenceEditorNameCommand"
+	-annotation "da_LayoutHypershadeNameCommand"
 	-sourceType "mel"
-	-command ("da_LayoutReferenceEditor")
-	da_ReferenceEditorNameCommand;
+	-command ("da_LayoutHypershade")
+	da_LayoutHypershadeNameCommand;
 
 nameCommand
 	-annotation "da_GraphEditorNameCommand"
@@ -2172,11 +2172,19 @@ runTimeCommand
 	da_LayoutDynamicRelationshipEditor;
 
 runTimeCommand
+	-annotation "Layout Hypershade"
+	-category "Custom Scripts.May9_Pro.Layout"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daHyperShade\";\n    inViewMessage -pos topCenter -msg \"Hypershade layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 10")
+	da_LayoutHypershade;
+
+runTimeCommand
 	-annotation "Layout Reference Editor"
 	-category "Custom Scripts.May9_Pro.Layout"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daReferenceEditor\";\n    inViewMessage -pos topCenter -msg \"Reference layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 10")
+	-command ("if ($myLayout != 11){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daReferenceEditor\";\n    inViewMessage -pos topCenter -msg \"Reference layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 11")
 	da_LayoutReferenceEditor;
 
 runTimeCommand
