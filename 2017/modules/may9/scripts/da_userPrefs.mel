@@ -2,7 +2,7 @@
 optionVar
  -iv "HypershadeGridVisibility" 1
  -iv "hyperShadeBringCreatePanelToFront" 1
- -sv "hyperShadeDockingLayout" "000000ff00000000fd00000002000000000000010c00000260fc0200000001fc000000f100000260000000a501000011fa000000000100000002fb00000024004c006f006f006b00640065007600430072006500610074006500500061006e0065006c01000000000000010c000000b500fffffffb00000020004c006f006f006b00640065007600420069006e007300500061006e0065006c0100000000ffffffff0000005600ffffff00000002000002c4000000ebfc0100000003fb00000026004c006f006f006b00640065007600420072006f007700730065007200500061006e0065006c0100000000000002c40000008700fffffffb00000028004c006f006f006b00640065007600500072006f0070006500720074007900500061006e0065006c00000000ad000001bd0000000000000000fb0000002c004c006f006f006b00640065007600530068006100640065007200620061006c006c00500061006e0065006c02000001b000000253000002bc00000190000001b20000026000000004000000020000000800000002fc00000000";
+ -sv "hyperShadeDockingLayout" "000000ff00000000fd00000002000000000000013300000286fc0200000001fc0000011100000286000000a501000011fa000000000100000002fb00000024004c006f006f006b00640065007600430072006500610074006500500061006e0065006c01000000000000010c000000b500fffffffb00000020004c006f006f006b00640065007600420069006e007300500061006e0065006c0100000000ffffffff0000005600ffffff00000002000002c40000010bfc0100000003fb00000026004c006f006f006b00640065007600420072006f007700730065007200500061006e0065006c0100000000000002c40000008700fffffffb00000028004c006f006f006b00640065007600500072006f0070006500720074007900500061006e0065006c00000000ad000001bd000001bd00fffffffb0000002c004c006f006f006b00640065007600530068006100640065007200620061006c006c00500061006e0065006c02000001b000000253000002bc000001900000018b0000028600000004000000020000000800000002fc00000000";
 
 // Paintable Attributes
 makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
@@ -39,7 +39,7 @@ panelConfiguration -label (localizedPanelLabel("daFourView"))
 	-defaultImage "fourViewLayout.png"
 	-image ""
 	-sc false
-	-configString "paneLayout -e -cn \"quad\" $gMainPane"
+	-configString "global string $gMainPane; paneLayout -e -cn \"quad\" $gMainPane"
 	-ap true
 		(localizedPanelLabel("Top View")) 
 		"modelPanel"
@@ -93,7 +93,7 @@ panelConfiguration -label (localizedPanelLabel("daGraphEditor"))
 	-defaultImage "perspGraphLayout.png"
 	-image ""
 	-sc false
-	-configString "paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
 	-ap true
 		(localizedPanelLabel("Persp View")) 
 		"modelPanel"
@@ -109,7 +109,7 @@ panelConfiguration -label (localizedPanelLabel("daShapeEditor"))
 	-defaultImage "vacantCell.png"
 	-image ""
 	-sc false
-	-configString "paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-configString "global string $gMainPane; paneLayout -e -cn \"right3\" -ps 1 55 100 -ps 2 45 50 -ps 3 45 50 $gMainPane;"
 	-ap true
 		(localizedPanelLabel("Persp View")) 
 		"modelPanel"
@@ -119,18 +119,7 @@ panelConfiguration -label (localizedPanelLabel("daShapeEditor"))
 		(localizedPanelLabel("Shape Editor")) 
 		"shapePanel"
 		"shapePanel -unParent -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels "
-		"shapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName";
-
-panelConfiguration -label (localizedPanelLabel("daPoseEditor")) 
-	-defaultImage "vacantCell.png"
-	-image ""
-	-sc false
-	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
-	-ap true
-		(localizedPanelLabel("Persp View")) 
-		"modelPanel"
-		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
-		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+		"shapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName"
 	-ap false
 		(localizedPanelLabel("Pose Editor")) 
 		"posePanel"
@@ -157,7 +146,7 @@ panelConfiguration -label (localizedPanelLabel("daRelationshipEditor"))
 	-defaultImage "perspRelationshipEditorLayout.png"
 	-image ""
 	-sc false
-	-configString "paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
 	-ap true
 		(localizedPanelLabel("Persp View")) 
 		"modelPanel"
@@ -173,7 +162,7 @@ panelConfiguration -label (localizedPanelLabel("daDynamicRelationshipEditor"))
 	-defaultImage "perspRelationshipEditorLayout.png"
 	-image ""
 	-sc false
-	-configString "paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
 	-ap true
 		(localizedPanelLabel("Persp View")) 
 		"modelPanel"

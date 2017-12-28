@@ -13,9 +13,6 @@ source da_scripts.mel;
 // Store initial Shelf configuration
 string $myShelfCheck = `workspaceControl -q -vis Shelf`;
 
-// Declare initial layout state
-int $myLayout = 0;
-
 // Set new scene opened preferences
 global proc da_may9Configurations(){
 	string $osVer = `about -os`;
@@ -30,6 +27,10 @@ global proc da_may9Configurations(){
 }
 string $may9Configurations = "da_may9Configurations()";
 scriptJob -e "NewSceneOpened" $may9Configurations;
+
+string $myLayoutReset = "int $myLayout = 0";
+scriptJob -e "NewSceneOpened" $myLayoutReset;
+scriptJob -e "SceneOpened" $myLayoutReset;
 
 // Initialize Interactive Play button
 da_intPlay();
@@ -58,6 +59,9 @@ if (`optionVar -ex May9ActivationCheck` == 0){
 
 	// Disable Duplicate Variable Warnings
 	melOptions -duplicateVariableWarnings off;
+
+	// Declare initial layout state
+	global int $myLayout = 0;
 
 	// Shelf configuration
     if ($myShelfCheck){
