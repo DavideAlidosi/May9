@@ -1,13 +1,13 @@
 import __main__
-import MMtoKey
+import May9_Pro
 
 
 def initializePlugin(*args):
-    __main__.MMtoKey = MMtoKey
+    __main__.May9_Pro = May9_Pro
 
 
 def uninitializePlugin(*args):
     try:
-        __main__.__delattr__("MMtoKey")
+        __main__.__delattr__("May9_Pro")
     except AttributeError:
         pass

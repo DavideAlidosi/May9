@@ -70,6 +70,9 @@ if (`optionVar -ex May9ActivationCheck` == 0){
 		ToggleShelf;
 		workspaceLayoutManager -sa "May9 Pro";
 	}
+
+	// Install confimation
+	inViewMessage -pos midCenterTop -msg "May9 Pro is installed and ready" -fade;
 }else{
 	da_may9Configurations();
 }
