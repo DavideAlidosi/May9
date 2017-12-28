@@ -2192,7 +2192,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"May9 Pro Workspace Resetted\" -fade")
+	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\nsetNamedPanelLayout \"Single Perspective View\";\ninViewMessage -pos topCenter -msg \"May9 Pro Workspace Resetted\" -fade;\nint $myLayout = 0")
 	da_CloseAllPanel;
 
 runTimeCommand
