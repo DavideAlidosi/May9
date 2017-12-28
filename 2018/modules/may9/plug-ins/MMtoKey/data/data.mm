@@ -2629,7 +2629,7 @@ S'PolynCloth_MM'
 p565
 sg26
 I0
-ssVany lambert
+ssVnodeEditorPanel lambert
 p566
 (dp567
 S'search_filter'
@@ -2706,7 +2706,7 @@ p596
 sS'command_type'
 p597
 I0
-ssVany aiShadowMatte
+ssVnodeEditorPanel aiShadowMatte
 p598
 (dp599
 g568
@@ -2938,7 +2938,7 @@ VPoly_MM
 p649
 sg597
 I0
-ssVany anisotropic
+ssVnodeEditorPanel anisotropic
 p650
 (dp651
 g568
@@ -3113,7 +3113,7 @@ S'ParticlePoints_MM'
 p689
 sg26
 I0
-ssVany aiStandardHair
+ssVnodeEditorPanel aiStandardHair
 p690
 (dp691
 g568
@@ -3158,7 +3158,7 @@ p703
 sS'command_type'
 p704
 I0
-ssVany aiStandardSurface
+ssVnodeEditorPanel aiStandardSurface
 p705
 (dp706
 g568
@@ -3409,7 +3409,7 @@ VShaders_MM
 p775
 sg576
 I0
-ssVany rampShader
+ssVnodeEditorPanel rampShader
 p776
 (dp777
 g568

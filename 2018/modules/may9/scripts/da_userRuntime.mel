@@ -2272,7 +2272,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if ($myLayout != 10){\n    da_LayoutHypershade;\n    da_SelectAssignedShader;\n    AttributeEditor;\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n\n    inViewMessage -pos topCenter -msg \"Edit Shaders\" -fade;\n}else{\n    da_SelectAssignedShader;\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n}")
+	-command ("if ($myLayout != 10){\n    da_LayoutHypershade;\n    da_SelectAssignedShader;\n    AttributeEditor;\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n\n    inViewMessage -pos topCenter -msg \"Edit Shaders\" -fade;\n}else{\n    da_SelectAssignedShader;\n\tAttributeEditor;\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n}")
 	da_EditAndFrameShaders;
 
 runTimeCommand
@@ -2304,7 +2304,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if ($myLayout != 10){\n    da_LayoutHypershade;\n    AttributeEditor;\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n\n    inViewMessage -pos topCenter -msg \"Edit Shaders\" -fade;\n}else{\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n}")
+	-command ("if ($myLayout != 10){\n    da_LayoutHypershade;\n    AttributeEditor;\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n\n    inViewMessage -pos topCenter -msg \"Edit Shaders\" -fade;\n}else{\n\tAttributeEditor;\n    hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\");\n}")
 	da_EditAndFrameShaderOutliner;
 
 runTimeCommand
