@@ -428,17 +428,10 @@ menuItem
 -stp "mel";
 
 menuItem
--l "Shape Editor"
+-l "Shape/Pose Editor"
 -c "da_LayoutShapeEditor"
 -rp "SW"
 -i "da_ShapeEditor_Layout.png"
--stp "mel";
-
-menuItem
--l "Pose Editor"
--c "da_LayoutPoseEditor"
--rp "NW"
--i "da_PoseEditor_Layout.png"
 -stp "mel";
 
 menuItem
@@ -480,15 +473,10 @@ menuItem
 -stp "mel";
 
 menuItem
--l "separator" 
--d 1
--dl "separator"
--stp "mel";
-
-menuItem
 -l "Reference Editor"
 -c "da_LayoutReferenceEditor"
 -i "da_ReferenceEditor_Layout.png"
+-rp "NW"
 -stp "mel";
 
 setParent -m ..;
