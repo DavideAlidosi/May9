@@ -5,73 +5,69 @@ menuItem
     -command "dR_DoCmd(\"viewFront\");" 
     -radialPosition "E" 
     -image "da_z.png" 
-    -sourceType "mel" 
-    menuEditorMenuItem1;
+    -sourceType "mel";
 
 menuItem
     -label "Side View" 
     -command "dR_DoCmd(\"viewRight\");" 
     -radialPosition "W" 
     -image "da_x.png" 
-    -sourceType "mel" 
-    menuEditorMenuItem3;
+    -sourceType "mel";
 
 menuItem
     -label "Persp View" 
     -command "dR_DoCmd(\"viewPersp\");" 
     -radialPosition "S" 
     -image "singlePerspLayout.png" 
-    -sourceType "mel" 
-    menuEditorMenuItem4;
+    -sourceType "mel";
 
 menuItem
     -label "Top View" 
     -command "dR_DoCmd(\"viewTop\");" 
     -radialPosition "N" 
     -image "da_y.png" 
-    -sourceType "mel" 
-    menuEditorMenuItem2;
+    -sourceType "mel";
 
 menuItem
     -label "Select Camera" 
     -command "da_SelectCamera" 
     -image "Camera.png" 
-    -sourceType "mel" 
-    menuEditorMenuItem99;
+    -sourceType "mel";
 
 menuItem
     -label "menuEditorMenuItem7" 
     -command "da_SelectCamera;\nAttributeEditor\n" 
     -optionBox 1
+    -sourceType "mel";
+
+menuItem
+    -label "Anti-Aliasing" 
+    -command "da_AntiAliasToggle" 
     -sourceType "mel" 
-    menuEditorMenuItem50;
+    -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
 
 menuItem
     -label "Wheel Zoom" 
     -command "da_ToggleMouseWheel" 
     -sourceType "mel" 
-    -cb (`optionVar -q "useScrollWheel"`)
-    menuEditorMenuItem100;
+    -cb (`optionVar -q "useScrollWheel"`);
 
 menuItem
     -label "separator" 
     -divider 1
-    -sourceType "mel" 
-    menuEditorMenuItem9;
+    -sourceType "mel";
 
 menuItem
     -label "Add Image Plane" 
     -command "da_ImagePlane" 
     -image "out_imagePlane.png" 
-    -sourceType "mel" 
-    menuEditorMenuItem8;
+    -sourceType "mel";
 
 menuItem
     -label "Add Movie Plane" 
     -command "da_VideoPlane" 
     -image "da_video_plane.png" 
-    -sourceType "mel" 
-    menuEditorMenuItem10;
+    -sourceType "mel";
 
 setParent -m ..;
 

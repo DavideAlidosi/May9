@@ -14,20 +14,6 @@ source da_scripts.mel;
 string $myShelfCheck = `workspaceControl -q -vis Shelf`;
 
 // Set new scene opened preferences
-global proc da_may9Configurations(){
-	string $osVer = `about -os`;
-	if (`gmatch $osVer "*mac*"` == 1) {
-		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
-	} else {
-		setAttr "hardwareRenderingGlobals.lineAAEnable" 1;
-		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
-	}
-
-	outlinerEditor  -e -sam 1 -rfv 1 -atr 1 outlinerPanel1;
-}
-string $may9Configurations = "da_may9Configurations()";
-scriptJob -e "NewSceneOpened" $may9Configurations;
-
 string $myLayoutReset = "int $myLayout = 0";
 scriptJob -e "NewSceneOpened" $myLayoutReset;
 scriptJob -e "SceneOpened" $myLayoutReset;
@@ -55,7 +41,6 @@ if (`optionVar -ex May9ActivationCheck` == 0){
     // Inizialize May9 Pro as plug-in
 	evalDeferred("workspaceLayoutManager -setCurrent \"May9 Pro\"");
 	workspaceLayoutManager -setCurrent "May9 Pro";
-	da_may9Configurations();
 
 	// Disable Duplicate Variable Warnings
 	melOptions -duplicateVariableWarnings off;
@@ -71,8 +56,6 @@ if (`optionVar -ex May9ActivationCheck` == 0){
 
 	// Install confimation
 	inViewMessage -pos midCenterTop -msg "May9 Pro is installed and ready" -fade;
-}else{
-	da_may9Configurations();
 }
 
 // Preload userRuntime
@@ -80,3 +63,8 @@ global proc da_userRuntime(){
     source da_userRuntime.mel;
 }
 catchQuiet (`da_userRuntime`);
+
+// Check Anti-Alasing
+if (`optionVar -q da_AntiAliasPref`){
+	da_AntiAliasOn;
+}

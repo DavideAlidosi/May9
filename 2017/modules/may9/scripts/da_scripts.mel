@@ -1066,3 +1066,47 @@ global proc da_Compass(){
 	select $myCompassSphere[0];
 	toggle -localAxis;
 }
+
+// da_AntiAlias
+
+global proc da_AntiAliasOn(){
+	string $osVer = `about -os`;
+	if (`gmatch $osVer "*mac*"` == 1) {
+		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
+	} else {
+		setAttr "hardwareRenderingGlobals.lineAAEnable" 1;
+		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
+	}
+}
+
+global proc da_AntiAliasOff(){
+	string $osVer = `about -os`;
+	if (`gmatch $osVer "*mac*"` == 1) {
+		setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
+	} else {
+		setAttr "hardwareRenderingGlobals.lineAAEnable" 0;
+		setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
+	}
+}
+
+global proc da_AntiAliasDefaultOn(){
+	da_AntiAliasOn();
+	string $da_AntiAliasOn = "da_AntiAliasOn()";
+	scriptJob -e "NewSceneOpened" $da_AntiAliasOn;
+	optionVar -iv da_AntiAliasPref 1;
+}
+
+global proc da_AntiAliasDefaultOff(){
+	da_AntiAliasOff();
+	string $da_AntiAliasOff = "da_AntiAliasOff()";
+	scriptJob -e "NewSceneOpened" $da_AntiAliasOff;
+	optionVar -iv da_AntiAliasPref 0;
+}
+
+global proc da_AntiAliasToggle(){
+	if(`getAttr "hardwareRenderingGlobals.multiSampleEnable"`){
+    	da_AntiAliasDefaultOff;
+	}else{
+	    da_AntiAliasDefaultOn;
+	}
+}
