@@ -2674,3 +2674,28 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"0\", \"1\"};\nstring $myHairSystemShape[] = `ls -sl`;\napplyPresetToNode $myHairSystemShape[0] \"\" \"\" \"da_DefaultSettings\" 1;")
 	da_CurveToNHair;
+
+runTimeCommand
+	-annotation "Toggle Two Sided Lighting"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $selectedPanel = `getPanel -wf`;\nint $twoSidedLighting = `modelEditor -q -tsl $selectedPanel`;\nif(`modelEditor -ex $selectedPanel`)\n{\n    modelEditor -e -tsl (!$twoSidedLighting) $selectedPanel;\n}")
+	da_ToggleTwoSidedLighting;
+
+runTimeCommand
+	-annotation "Toggle Active Components Xray"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $selectedPanel = `getPanel -wf`;\nint $activeComponentsXray = `modelEditor -q -acx $selectedPanel`;\nif(`modelEditor -ex $selectedPanel`)\n{\n    modelEditor -e -acx (!$activeComponentsXray) $selectedPanel;\n}")
+	da_ToggleActiveComponentsXray;
+
+runTimeCommand
+	-annotation "Toggle Joint Xray"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $selectedPanel = `getPanel -wf`;\nint $jointXray = `modelEditor -q -jx $selectedPanel`;\nif(`modelEditor -ex $selectedPanel`)\n{\n    modelEditor -e -jx (!$jointXray) $selectedPanel;\n}")
+	da_ToggleJointXray;
+

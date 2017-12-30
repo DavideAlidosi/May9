@@ -4,16 +4,6 @@ global proc da_commonObjectOptionsPopup(){
 
 string $panel = `getPanel -wf`;
 
-int $nurbsCurvesCheck = `modelEditor -q -nurbsCurves $panel`;
-int $nurbsSurfacesCheck = `modelEditor -q -nurbsSurfaces $panel`;
-int $subdivSurfacesCheck = `modelEditor -q -subdivSurfaces $panel`;
-int $polymeshesCheck = `modelEditor -q -polymeshes $panel`;
-int $lightsCheck = `modelEditor -q -lights $panel`;
-int $jointsCheck = `modelEditor -q -joints $panel`;
-int $ikHandlesCheck = `modelEditor -q -ikHandles $panel`;
-int $deformersCheck = `modelEditor -q -deformers $panel`;
-int $locatorsCheck = `modelEditor -q -locators $panel`;
-
 menuItem
     -label "Visibility" 
     -subMenu 1
@@ -24,65 +14,57 @@ menuItem
     menuItem
         -label "Curves" 
         -command "da_ToggleNurbsCurvesVis" 
-		-checkBox (1 == $nurbsCurvesCheck)
+		-checkBox (`modelEditor -q -nurbsCurves $panel`)
         -radialPosition "NE" 
-        -sourceType "mel" 
-        menuEditorMenuItem1;
+        -sourceType "mel";
 
     menuItem
         -label "Polygons" 
         -command "da_TogglePolyVis" 
-		-checkBox (1 == $polymeshesCheck)
+		-checkBox (`modelEditor -q -polymeshes $panel`)
         -radialPosition "N" 
-        -sourceType "mel" 
-        menuEditorMenuItem3;
+        -sourceType "mel";
 
     menuItem
         -label "Light" 
         -command "da_ToggleLightVis" 
-		-checkBox (1 == $lightsCheck)
+		-checkBox (`modelEditor -q -lights $panel`)
         -radialPosition "NW" 
-        -sourceType "mel" 
-        menuEditorMenuItem4;
+        -sourceType "mel";
 
     menuItem
         -label "Joint" 
         -command "da_ToggleJointVis" 
-		-checkBox (1 == $jointsCheck)
+		-checkBox (`modelEditor -q -joints $panel`)
         -radialPosition "SE" 
-        -sourceType "mel" 
-        menuEditorMenuItem5;
+        -sourceType "mel";
 
     menuItem
         -label "IK Handle" 
         -command "da_ToggleIkVis" 
-		-checkBox (1 == $ikHandlesCheck)
+		-checkBox (`modelEditor -q -ikHandles $panel`)
         -radialPosition "S" 
-        -sourceType "mel" 
-        menuEditorMenuItem6;
+        -sourceType "mel";
 
     menuItem
         -label "Locator" 
         -command "da_ToggleLocVis" 
-		-checkBox (1 == $locatorsCheck)
-        -sourceType "mel" 
-        menuEditorMenuItem7;
+		-checkBox (`modelEditor -q -locators $panel`)
+        -sourceType "mel";
 
     menuItem
         -label "Deformers" 
         -command "da_ToggleDefVis" 
-		-checkBox (1 == $deformersCheck)
+		-checkBox (`modelEditor -q -deformers $panel`)
         -radialPosition "W" 
-        -sourceType "mel" 
-        menuEditorMenuItem8;
+        -sourceType "mel";
 
     menuItem
         -label "Nurbs" 
         -command "da_ToggleNurbsVis" 
-		-checkBox (1 == $nurbsSurfacesCheck)
+		-checkBox (`modelEditor -q -nurbsSurfaces $panel`)
         -radialPosition "E" 
-        -sourceType "mel" 
-        menuEditorMenuItem9;
+        -sourceType "mel";
 
 setParent -m ..;
 
@@ -98,47 +80,78 @@ menuItem
 	    -command "ToggleShelf" 
 	    -sourceType "mel" 
 	    -radialPosition "NW" 
-	    -cb (`workspaceControl -q -vis Shelf`)
-	    menuEditorMenuItem104;
+	    -cb (`workspaceControl -q -vis Shelf`);
 
 	menuItem
 	    -label "Menu Bars" 
 	    -command "TogglePanelMenubar" 
 	    -sourceType "mel" 
 	    -radialPosition "N" 
-	    -cb (`optionVar -q allowMenusInPanels`)
-	    menuEditorMenuItem101;
+	    -cb (`optionVar -q allowMenusInPanels`);
 
 	menuItem
 	    -label "Icon Bars" 
 	    -command "ToggleModelEditorBars" 
 	    -sourceType "mel" 
 	    -radialPosition "W" 
-	    -cb (false == `optionVar -q collapseIconBarsInPanels`)
-	    menuEditorMenuItem102;
+	    -cb (false == `optionVar -q collapseIconBarsInPanels`);
 
 	menuItem
 	    -label "Main Menu Bars" 
 	    -command "ToggleMainMenubar" 
 	    -sourceType "mel" 
 	    -radialPosition "NE" 
-	    -cb (`optionVar -q mainWindowMenubarVis`)
-	    menuEditorMenuItem106;
+	    -cb (`optionVar -q mainWindowMenubarVis`);
 
 	menuItem
 	    -label "Save Workspace" 
 	    -command "workspaceLayoutManager -s" 
 	    -sourceType "mel" 
 	    -image "fileSave.png"
-	    -radialPosition "S" 
-	    menuEditorMenuItem103;
+	    -radialPosition "S";
 
 	menuItem
 		-label "menuEditorMenuItem103" 
 		-command "SaveCurrentWorkspace" 
 		-optionBox 1
-		-sourceType "mel" 
-		menuEditorMenuItem105;
+		-sourceType "mel";
+
+setParent -m ..;
+
+menuItem
+    -label "Shading" 
+    -subMenu 1
+    -radialPosition "SE" 
+	-image "WireFrameOnShaded.png"
+    -sourceType "mel";
+
+    menuItem
+	    -label "Wireframe on Shaded" 
+	    -command "da_ToggleWireOnShade" 
+	    -radialPosition "SE" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -wos $panel`);
+
+    menuItem
+	    -label "Two Sided Lighting" 
+	    -command "da_ToggleTwoSidedLighting" 
+	    -radialPosition "S" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -tsl $panel`);
+
+    menuItem
+	    -label "X-Ray Active Components" 
+	    -command "da_ToggleActiveComponentsXray" 
+	    -radialPosition "E" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -acx $panel`);
+
+    menuItem
+	    -label "X-Ray Joints" 
+	    -command "da_ToggleJointXray" 
+	    -radialPosition "NE" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -jx $panel`);
 
 setParent -m ..;
 }
