@@ -68,3 +68,8 @@ catchQuiet (`da_userRuntime`);
 if (`optionVar -q da_AntiAliasPref`){
 	da_AntiAliasOn;
 }
+
+// Check Transparent Shadow
+if (`optionVar -q da_TransparentShadowsPref`){
+	da_TransparentShadowsOn;
+}

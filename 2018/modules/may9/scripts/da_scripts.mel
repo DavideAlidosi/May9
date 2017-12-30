@@ -1123,3 +1123,35 @@ global proc da_AntiAliasToggle(){
 	    da_AntiAliasDefaultOn;
 	}
 }
+
+// da_TransparentShadows
+
+global proc da_TransparentShadowsOn(){
+		setAttr "hardwareRenderingGlobals.transparentShadow" 1;
+}
+
+global proc da_TransparentShadowsOff(){
+		setAttr "hardwareRenderingGlobals.transparentShadow" 0;
+}
+
+global proc da_TransparentShadowsDefaultOn(){
+	da_TransparentShadowsOn();
+	string $da_TransparentShadowsOn = "da_TransparentShadowsOn()";
+	scriptJob -e "NewSceneOpened" $da_TransparentShadowsOn;
+	optionVar -iv da_TransparentShadowsPref 1;
+}
+
+global proc da_TransparentShadowsDefaultOff(){
+	da_TransparentShadowsOff();
+	string $da_TransparentShadowsOff = "da_TransparentShadowsOff()";
+	scriptJob -e "NewSceneOpened" $da_TransparentShadowsOff;
+	optionVar -iv da_TransparentShadowsPref 0;
+}
+
+global proc da_TransparentShadowsToggle(){
+	if(`getAttr "hardwareRenderingGlobals.transparentShadow"`){
+    	da_TransparentShadowsDefaultOff;
+	}else{
+	    da_TransparentShadowsDefaultOn;
+	}
+}
