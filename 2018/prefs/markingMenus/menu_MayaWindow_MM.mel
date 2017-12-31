@@ -41,18 +41,6 @@ menuItem
     -sourceType "mel";
 
 menuItem
-    -label "Anti-Aliasing" 
-    -command "da_AntiAliasToggle" 
-    -sourceType "mel" 
-    -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
-
-menuItem
-    -label "Transparent Shadow" 
-    -command "da_TransparentShadowsToggle" 
-    -sourceType "mel" 
-    -cb (`getAttr "hardwareRenderingGlobals.transparentShadow"`);
-
-menuItem
     -label "Wheel Zoom" 
     -command "da_ToggleMouseWheel" 
     -sourceType "mel" 

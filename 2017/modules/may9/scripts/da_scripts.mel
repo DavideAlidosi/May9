@@ -154,6 +154,29 @@ menuItem
 	    -cb (`modelEditor -q -jx $panel`);
 
 setParent -m ..;
+
+menuItem
+    -label "Viewport" 
+    -subMenu 1
+    -radialPosition "SW" 
+	-image "MultisampleAA.png"
+    -sourceType "mel";
+
+	menuItem
+	    -label "Anti-Aliasing" 
+	    -command "da_AntiAliasToggle" 
+	    -radialPosition "SW" 
+	    -sourceType "mel" 
+	    -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
+
+	menuItem
+	    -label "Motion Blur" 
+	    -command "da_motionBlurEnableToggle" 
+	    -radialPosition "S" 
+	    -sourceType "mel" 
+	    -cb (`getAttr "hardwareRenderingGlobals.motionBlurEnable"`);
+
+setParent -m ..;
 }
 
 
@@ -1121,5 +1144,15 @@ global proc da_AntiAliasToggle(){
     	da_AntiAliasDefaultOff;
 	}else{
 	    da_AntiAliasDefaultOn;
+	}
+}
+
+// da_motionBlurEnable
+
+global proc da_motionBlurEnableToggle(){
+	if(`getAttr "hardwareRenderingGlobals.motionBlurEnable"`){
+    	setAttr "hardwareRenderingGlobals.motionBlurEnable" 0;
+	}else{
+	    setAttr "hardwareRenderingGlobals.motionBlurEnable" 1;
 	}
 }

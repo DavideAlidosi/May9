@@ -129,7 +129,7 @@
                                     "tabWidget": {
                                         "selectedIndex": 0,
                                         "controlWidth": 248,
-                                        "collapsed": true,
+                                        "collapsed": false,
                                         "controls": [
                                             {
                                                 "objectName": "ChannelBoxLayerEditor",
@@ -193,11 +193,52 @@
                                                 "closed": true,
                                                 "widthProperty": "free",
                                                 "heightProperty": "free",
-                                                "controlWidth": 387,
-                                                "controlHeight": 877
+                                                "controlWidth": 387
                                             }
                                         ]
                                     }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "tabWidget": {
+                            "selectedIndex": 0,
+                            "controlHeight": 27,
+                            "collapsed": false,
+                            "controls": [
+                                {
+                                    "objectName": "TimeSlider",
+                                    "title": "Time Slider",
+                                    "uiScript": "global string $gTimeSliderForm; formLayout $gTimeSliderForm;",
+                                    "retain": true,
+                                    "loadImmediately": true,
+                                    "checkPlugins": false,
+                                    "tabDirection": 0,
+                                    "closed": false,
+                                    "widthProperty": "free",
+                                    "heightProperty": "fixed"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "tabWidget": {
+                            "selectedIndex": 0,
+                            "controlHeight": 25,
+                            "collapsed": false,
+                            "controls": [
+                                {
+                                    "objectName": "RangeSlider",
+                                    "title": "Range Slider",
+                                    "uiScript": "global string $gPlaybackRangeForm; formLayout $gPlaybackRangeForm;",
+                                    "retain": true,
+                                    "loadImmediately": true,
+                                    "checkPlugins": false,
+                                    "tabDirection": 0,
+                                    "closed": false,
+                                    "widthProperty": "free",
+                                    "heightProperty": "fixed"
                                 }
                             ]
                         }
@@ -209,59 +250,7 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 815,
-                                        "controlHeight": 31,
-                                        "collapsed": false,
-                                        "controls": [
-                                            {
-                                                "objectName": "TimeSlider",
-                                                "title": "Time Slider",
-                                                "uiScript": "global string $gTimeSliderForm; formLayout $gTimeSliderForm;",
-                                                "retain": true,
-                                                "loadImmediately": true,
-                                                "checkPlugins": false,
-                                                "tabDirection": 0,
-                                                "closed": false,
-                                                "widthProperty": "free",
-                                                "heightProperty": "fixed"
-                                            }
-                                        ]
-                                    }
-                                },
-                                {
-                                    "tabWidget": {
-                                        "selectedIndex": 0,
-                                        "controlWidth": 1095,
-                                        "controlHeight": 31,
-                                        "collapsed": false,
-                                        "controls": [
-                                            {
-                                                "objectName": "RangeSlider",
-                                                "title": "Range Slider",
-                                                "uiScript": "global string $gPlaybackRangeForm; formLayout $gPlaybackRangeForm;",
-                                                "retain": true,
-                                                "loadImmediately": true,
-                                                "checkPlugins": false,
-                                                "tabDirection": 0,
-                                                "closed": false,
-                                                "widthProperty": "free",
-                                                "heightProperty": "fixed"
-                                            }
-                                        ]
-                                    }
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        "splitter": {
-                            "orientation": "horizontal",
-                            "children": [
-                                {
-                                    "tabWidget": {
-                                        "selectedIndex": 0,
-                                        "controlWidth": 804,
-                                        "controlHeight": 27,
+                                        "controlHeight": 24,
                                         "collapsed": false,
                                         "controls": [
                                             {
@@ -282,8 +271,7 @@
                                 {
                                     "tabWidget": {
                                         "selectedIndex": 0,
-                                        "controlWidth": 1106,
-                                        "controlHeight": 27,
+                                        "controlHeight": 24,
                                         "collapsed": false,
                                         "controls": [
                                             {
