@@ -1156,3 +1156,13 @@ global proc da_motionBlurEnableToggle(){
 	    setAttr "hardwareRenderingGlobals.motionBlurEnable" 1;
 	}
 }
+
+// da_maxPlaybackSpeed
+
+global proc da_maxPlaybackSpeedToggle(){
+	if(`playbackOptions -q -maxPlaybackSpeed`){
+    	playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 0;
+	}else{
+	    playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 1;
+	}
+}

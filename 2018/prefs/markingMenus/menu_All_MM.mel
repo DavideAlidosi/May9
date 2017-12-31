@@ -861,14 +861,15 @@ menuItem
 
 menuItem
 -l "Bake Animation"
--c "doBakeSimulationArgList 8 { \"1\",\"0\",\"10\",\"1\",\"0\",\"0\",\"1\",\"1\",\"0\",\"1\",\"animationList\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"1\" };"
+-c "BakeSimulationOptions"
 -rp "E"
 -i "bakeAnimation.png"
 -stp "mel";
 
 menuItem
--c "BakeSimulationOptions"
--ob 1
+-l "Play Max Real-time"
+-c "da_maxPlaybackSpeedToggle"
+-cb (`playbackOptions -q -maxPlaybackSpeed`)
 -stp "mel";
 
 menuItem
