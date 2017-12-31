@@ -2747,3 +2747,11 @@ runTimeCommand
 	-command ("string $selectedPanel = `getPanel -wf`;\nint $jointXray = `modelEditor -q -jx $selectedPanel`;\nif(`modelEditor -ex $selectedPanel`)\n{\n    modelEditor -e -jx (!$jointXray) $selectedPanel;\n}")
 	da_ToggleJointXray;
 
+runTimeCommand
+	-annotation "Toggle Motion Trial Handles"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`getAttr \"motionTrail1HandleShape.showInTangent\"` || `getAttr \"motionTrail1HandleShape.showInTangent\"`){\n    setAttr \"motionTrail1HandleShape.showInTangent\" false;\n    setAttr \"motionTrail1HandleShape.showOutTangent\" false;\n}else{\n    setAttr \"motionTrail1HandleShape.showInTangent\" true;\n    setAttr \"motionTrail1HandleShape.showOutTangent\" true;\n}")
+	da_ToggleMotionTrialHandles;
+
