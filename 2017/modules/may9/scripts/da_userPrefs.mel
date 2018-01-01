@@ -1,8 +1,10 @@
 // Hypershade prefs
 optionVar
+ -iv "connectWindowLeftSHD" 1
+ -iv "connectWindowRightSHD" 1
  -sv "hyperShadeDockingLayout" "000000ff00000000fd00000002000000000000013300000286fc0200000001fc0000011100000286000000a501000011fa000000000100000002fb00000024004c006f006f006b00640065007600430072006500610074006500500061006e0065006c01000000000000010c000000b500fffffffb00000020004c006f006f006b00640065007600420069006e007300500061006e0065006c0100000000ffffffff0000005600ffffff00000002000002c40000010bfc0100000003fb00000026004c006f006f006b00640065007600420072006f007700730065007200500061006e0065006c0100000000000002c40000008700fffffffb00000028004c006f006f006b00640065007600500072006f0070006500720074007900500061006e0065006c00000000ad000001bd000001bd00fffffffb0000002c004c006f006f006b00640065007600530068006100640065007200620061006c006c00500061006e0065006c02000001b000000253000002bc000001900000018b0000028600000004000000020000000800000002fc00000000";
 
-// Paintable Attributes
+// Preload Paintable Attributes
 makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
 makePaintable  -at "doubleArray" "nCloth" "tangentialDragPerVertex";
 makePaintable  -at "doubleArray" "nCloth" "dragPerVertex";
@@ -31,6 +33,31 @@ makePaintable  -at "doubleArray" "nCloth" "stickinessPerVertex";
 makePaintable  -at "doubleArray" "nCloth" "frictionPerVertex";
 makePaintable  -at "doubleArray" "nCloth" "bouncePerVertex";
 makePaintable  -at "doubleArray" "nCloth" "thicknessPerVertex";
+makePaintable  -at "multiFloat" -sm "deformer" "bulgeMesh" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "cMuscleMultiCollide" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "cMuscleSystem" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "cMuscleStretch" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "cMuscleSplineDeformer" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "cMuscleRelative" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "cMuscleMirror" "weights";
+makePaintable  -at "doubleArray" -aa "goalPP0" "particle" "goalPP";
+makePaintable  -at "doubleArray" "polyReduce" "vertexWeights";
+makePaintable  -at "doubleArray" "cacheFile" "perPtWeights";
+makePaintable  -at "doubleArray" "skinCluster" "paintWeights";
+makePaintable  -at "multiFloat" -sm "deformer" "blendShape" "baseWeights";
+makePaintable  -at "multiFloat" -sm "deformer" "blendShape" "paintTargetWeights";
+makePaintable  -at "multiFloat" -sm "deformer" "shrinkWrap" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "transferAttributes" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "proxWrap" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "tension" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "deltaMush" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "wire" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "jiggle" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "softMod" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "nonLinear" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "oceanDeformer" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "textureDeformer" "weights";
+makePaintable  -at "multiFloat" -sm "deformer" "cluster" "weights";
 
 // Layouts
 panelConfiguration -label (localizedPanelLabel("daFourView")) 
