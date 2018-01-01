@@ -42,12 +42,9 @@ Exclusive script
 - da_CombineCurves: this script combines curves in a single transform
 
 
-Version 2.0 highlight
-- Modular structure, work over existing configuration
-- Support to Maya 2018
-- New Auto Bevel script
-- General polish and performance improvement
-- Comprehensive user guide
+Version 3.0 highlight
+- Plugin structure, work over existing configuration
+- Overral improvements
 
 
 Useful links
