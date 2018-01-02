@@ -1,0 +1,24 @@
+
+    menuItem
+        -label "Extract Curve" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_ExtractCurveShape" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_nurbsCurve.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+setParent -m ..;
+

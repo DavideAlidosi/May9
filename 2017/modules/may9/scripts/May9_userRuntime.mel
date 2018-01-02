@@ -2707,3 +2707,11 @@ runTimeCommand
 	-command ("if(`getAttr \"motionTrail1HandleShape.showInTangent\"` || `getAttr \"motionTrail1HandleShape.showInTangent\"`){\n    setAttr \"motionTrail1HandleShape.showInTangent\" false;\n    setAttr \"motionTrail1HandleShape.showOutTangent\" false;\n}else{\n    setAttr \"motionTrail1HandleShape.showInTangent\" true;\n    setAttr \"motionTrail1HandleShape.showOutTangent\" true;\n}")
 	da_ToggleMotionTrialHandles;
 
+runTimeCommand
+	-annotation "Extract Curve Shape"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nselect -cl;\nGroup;\nrename nurbsCurve1;\nstring $myGroup[] = `ls -sl`;\ncatchQuiet(`parent -r -s $mySel $myGroup`);")
+	da_ExtractCurveShape;
+
