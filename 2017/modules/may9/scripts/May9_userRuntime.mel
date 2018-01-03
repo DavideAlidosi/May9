@@ -2715,3 +2715,11 @@ runTimeCommand
 	-command ("string $mySel[] = `ls -sl`;\nselect -cl;\nGroup;\nrename nurbsCurve1;\nstring $myGroup[] = `ls -sl`;\ncatchQuiet(`parent -r -s $mySel $myGroup`);")
 	da_ExtractCurveShape;
 
+runTimeCommand
+	-annotation "Separe Combined Curves"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myCombineSel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s`;\n$myShapeSize = size($myShape);\nfor($i=0; $i<$myShapeSize; $i++){\n    select $myCombineSel[0];\n    pickWalkDown;\n    da_ExtractCurveShape;\n}\nselect $myCombineSel[0];\ndelete;")
+	da_SepareCurves;
+
