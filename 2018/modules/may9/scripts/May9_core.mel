@@ -11,7 +11,7 @@ channelBoxCommand -break;
 source May9_scripts.mel;
 
 // Store initial Shelf configuration
-string $myShelfCheck = `workspaceControl -q -vis Shelf`;
+int $myShelfCheck = `workspaceControl -q -vis Shelf`;
 
 // Set new scene opened preferences
 string $myLayoutReset = "int $myLayout = 0";
@@ -21,10 +21,6 @@ scriptJob -e "SceneOpened" $myLayoutReset;
 // Initialize Interactive Play button
 da_intPlay();
 
-// Preload Two Bone IK and Spring IK
-ik2Bsolver;
-ikSpringSolver;
-
 // Preload Crease Set Editor
 python( "from maya.app.general import creaseSetEditor");
 
@@ -32,29 +28,20 @@ python( "from maya.app.general import creaseSetEditor");
 if ( catchQuiet( `python( "import boss.BossEditor as be" )` ) )
 	print "Please check Bifrost installation";
 
-// Install May9 as Plug-in
+// First run May9 procedure
 if (`optionVar -ex May9ActivationCheck` == 0){
     //Source userPrefs only at May9 initialization
     source May9_userPrefs.mel;
 
-    // Inizialize May9 Pro as plug-in
-	evalDeferred("workspaceLayoutManager -setCurrent \"May9 Pro\"");
+    // Set May9 Pro workspace
 	workspaceLayoutManager -setCurrent "May9 Pro";
-
-	// Disable Duplicate Variable Warnings
-	melOptions -duplicateVariableWarnings off;
 
 	// Declare initial layout state
 	global int $myLayout = 0;
 
 	// Shelf configuration
-    if ($myShelfCheck){
-		ToggleShelf;
-		workspaceLayoutManager -sa "May9 Pro";
-	}
-
-	// Install confimation
-	inViewMessage -pos midCenterTop -msg "May9 Pro is installed and ready" -fade;
+	workspaceControl -e -visible $myShelfCheck Shelf;
+	workspaceLayoutManager -sa "May9 Pro";
 }
 
 // Preload userRuntime

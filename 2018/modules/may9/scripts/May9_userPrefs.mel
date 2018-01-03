@@ -19,6 +19,9 @@ toggleIPMButton(0);
 // Set HotBox transparency to 0%
 hotBox -tr 0;
 
+// Disable Duplicate Variable Warnings
+melOptions -duplicateVariableWarnings off;
+
 // Layouts
 panelConfiguration -label (localizedPanelLabel("daFourView")) 
 	-defaultImage "fourViewLayout.png"
