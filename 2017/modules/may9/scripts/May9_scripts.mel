@@ -1058,6 +1058,7 @@ global proc da_Compass(){
 
 	select $myVectorDir1[0] $myVectorDir2[0] $myVectorDir3[0];
 	da_CombineCurves;
+	xform -ws -a -rp 0 0 0;
 	rename CompassVector1;
 	string $myCompassVector[] = `ls -sl`;
 	setAttr ($myCompassVector[0] + ".overrideEnabled") 1;

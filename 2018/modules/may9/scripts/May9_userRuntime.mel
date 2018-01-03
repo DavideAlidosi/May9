@@ -2680,7 +2680,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nstring $myTransform[] = `ls -sl -head 1`;\nda_ClearFreeze;\ncatchQuiet(`parent -r -s $mySelShape $myTransform`);\nselect $mySel;\nselect -d $myTransform;\ndelete;\nselect $myTransform;\nrename CombinedCurve1;")
+	-command ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nstring $myTransform[] = `ls -sl -head 1`;\nda_ClearFreeze;\ncatchQuiet(`parent -r -s $mySelShape $myTransform`);\nselect $mySel;\nselect -d $myTransform;\ndelete;\nselect $myTransform;\nrename CombinedCurve1;\nCenterPivot")
 	da_CombineCurves;
 
 runTimeCommand
@@ -2760,7 +2760,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nselect -cl;\nGroup;\nrename nurbsCurve1;\nstring $myGroup[] = `ls -sl`;\ncatchQuiet(`parent -r -s $mySel $myGroup`);")
+	-command ("string $mySel[] = `ls -sl`;\nselect -cl;\nGroup;\nrename nurbsCurve1;\nstring $myGroup[] = `ls -sl`;\ncatchQuiet(`parent -r -s $mySel $myGroup`);\nCenterPivot")
 	da_ExtractCurveShape;
 
 runTimeCommand
