@@ -471,7 +471,7 @@ I00
 sg21
 I0
 sg22
-S'da_NconstraintTransform'
+S'performCreateDynamicConstraint 1 "transform"'
 p126
 sg24
 S'CurveVertex_MM'
@@ -621,7 +621,7 @@ I00
 sg21
 I0
 sg22
-S'ParentConstraint'
+S'ParentConstraintOptions'
 p156
 sg24
 S'Constraint_MM'
@@ -640,7 +640,7 @@ I00
 sg21
 I0
 sg22
-S'ParentConstraint'
+S'ParentConstraintOptions'
 p160
 sg24
 S'Constraint_MM'
@@ -809,7 +809,7 @@ I00
 sg21
 I0
 sg22
-S'ParentConstraint'
+S'ParentConstraintOptions'
 p194
 sg24
 S'Constraint_MM'
@@ -946,7 +946,7 @@ I00
 sg21
 I0
 sg22
-S'da_NconstraintTransform'
+S'performCreateDynamicConstraint 1 "transform"'
 p226
 sg24
 S'LocatorVertex_MM'
@@ -1354,7 +1354,7 @@ I00
 sg21
 I0
 sg22
-S'da_NconstraintTransform'
+S'performCreateDynamicConstraint 1 "transform"'
 p304
 sg24
 S'PolyVertex_MM'
@@ -1562,7 +1562,7 @@ I00
 sg21
 I0
 sg22
-S'ParentConstraint'
+S'ParentConstraintOptions'
 p347
 sg24
 S'Constraint_MM'
@@ -1661,7 +1661,7 @@ I00
 sg21
 I0
 sg22
-S'ParentConstraint'
+S'ParentConstraintOptions'
 p371
 sg24
 S'Constraint_MM'
@@ -1735,7 +1735,7 @@ I00
 sg21
 I0
 sg22
-S'da_NconstraintTransform'
+S'performCreateDynamicConstraint 1 "transform"'
 p385
 sg24
 S'LocatorVertex_MM'
@@ -1939,7 +1939,7 @@ I00
 sg21
 I0
 sg22
-S'SmoothBindSkin'
+S'SmoothBindSkinOptions'
 p439
 sg24
 S'JointPoly_MM'
