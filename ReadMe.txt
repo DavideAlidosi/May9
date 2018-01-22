@@ -40,10 +40,12 @@ Exclusive script
 - da_FacesFollicles: this script creates a follicle in the centre of selected faces
 - da_Compass: this script converts Euler angle into a XYZ vector, for drive wind direction in Nucleus and Air Filed
 - da_CombineCurves: this script combines curves in a single transform
+- da_SepareCurves: this script separate combined curves
 
 
 Version 3.0 highlight
 - Plugin structure, work over existing configuration
+- Removed almost all custom preferences
 - Overral improvements
 
 
