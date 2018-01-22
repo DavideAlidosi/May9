@@ -1,0 +1,59 @@
+/*
+The MIT License (MIT)
+
+Copyright (c) 2016 Davide Alidosi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+*/
+
+global proc da_intPlay(){
+    string $ctrlUI;
+    string $ctrlUI_controlName;
+    string $command;
+    string $layout;
+    $command = "InteractivePlayback;";
+
+    $ctrlsUI = `lsUI -type control MayaWindow`;
+    for ($ctrlUI in $ctrlsUI)
+    {
+        if ((`match "symbolButton" $ctrlUI`) == "symbolButton")
+            if (`symbolButton -q -c $ctrlUI`=="playButtonBackward")
+            {
+                $layout = `symbolButton -q -p $ctrlUI`;
+                
+                // store the current name of the control
+                $ctrlUI_controlName = $ctrlUI;
+                
+                deleteUI $ctrlUI;
+                $stepBtn = `symbolButton -p $layout -image "da_interactivePlayback.png" -c $command -ann "Interactive Playback. Pressing the ESC key will stop playback." stepBtn`;
+            }
+    }
+    
+    $ctrlsUI = `lsUI -type control MayaWindow`;
+    for ($ctrlUI in $ctrlsUI)
+    {
+        if ((`match "symbolButton" $ctrlUI`) == "symbolButton")
+            if (`symbolButton -q -c $ctrlUI`=="playButtonForward")
+                symbolButton -e -c "play -state (!`play -q -state`);" $ctrlUI;
+    }    
+    
+    // add a column to the timeSlider layout and recreate the play backwards button
+    gridLayout -e -nc (`gridLayout -q -nc $layout` + 1) $layout;
+    symbolButton -m 0 -p $layout $ctrlUI_controlName;
+}

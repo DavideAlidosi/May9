@@ -1,0 +1,577 @@
+////////////////////////////////////////////////////////////////////////////////////////////
+// djRivet.mel		
+//
+// author: David Johnson
+// contact: david@djx.com.au
+// website: www.djx.com.au
+// last rev: 02 Nov 2009
+// version: 1.6.0
+//
+//
+//      Use follicles as a way of constraining objects to a poly or nurbs surface.
+//
+//      Follicles are part of the maya hair system, but can be created independantly.
+//      Input a uv-coordinate to the follicle node and it will stick to that point
+//      on the surface and orientate itself to the surface normal. Other objects can
+//      be parented to or constrained to the follicle node.
+//	
+//      Advantages: surface can be modified (eg. smoothed)
+//                  follicle can be repositioned by changing (maybe animating) uv-coordinate
+//
+//	Disadvantages: works best with properly layed out, non-overlapping uv's (extra work!)
+//
+//      USAGE:	place djRivet.mel in your scripts folder
+//              source djRivet.mel (or restart maya)
+//
+//              select object(s) then shift-select a surface
+//		(either poly mesh or nurbs surface must be last selected)
+//
+//              type "djRivet" (without the quotes)
+//
+//              a follicle will be created at the point on the surface closest to each object
+//		and the object(s) will be parent constrained to the follicle(s)
+//
+//              The objects to constrain can be any type that has a transform node,
+//              but the target surface must either be a poly mesh or a nurbs surface.
+//
+//		If vertices, cv's or lattice-points are part of the selection list,
+//		they will be clustered and the cluster will be constrained to the follicle.
+//		You will be asked whether this should be done individually or together. 
+//
+//	WARNINGS:
+//		Save your scene file as a precaution before you use djRivet.mel
+//
+//	LIMITATIONS:
+//		Fails if objects to be constrained have their translate/rotate channels locked or animated.
+//
+//	TO DO LIST:
+//              Add error handling to clean up on failure
+//
+//	CREDITS:
+//		Michael Bazhutkin, I used your excellent rivet.mel for years - thanks for sharing!
+//		Mike Rhone, who said "Better than rivet:Use a follicle."
+//		Brecht Debaene, for showing me how to hook up a follicle
+//		robthebloke.org, for sharing the knowlege.
+//
+//	HISTORY:
+//		1.0	09 Oct 2006 - working version
+//		1.1	11 Oct 2006 - fixed problem with closestPointOnMesh ignoring parent transforms
+//		1.2	14 Oct 2006 - fixed duplicate names problem
+//                        fixed problem determining object location 
+//                        object now parent-constrained to follicle
+//                        multiple objects can be constrained in a single execution
+//      1.3	16 Oct 2006 - fixed problem if shapeNode was not alone under the transform
+//                        add check for surface type (currently only poly mesh supported)
+//      1.4	 9 Oct 2006 - target surface can now be poly mesh or nurbs
+//                      - removed transform heirarchy limitation (improved baking method)
+//		1.4.1	21 Oct 2006 - fix small error in nurbs uv normalization
+//                            fix error with heirarchy handling
+//		1.4.2   21 Oct 2006 - prevent failure that occured if target surface had locked transforms
+//				    		  check for locked attributes on objects to be constrained and skip if locked
+//		1.5	27 Oct 2006 	- cv's and vertices can now be riveted
+//		1.5.1	29 Oct 2006 - lattice-points can now be riveted
+//				      		  user is asked whether pnts should be constrained individually or together
+//		1.5.2	30 Oct 2006 - clean up point handling code, so original selection list is preserved
+//		1.5.3	11 Feb 2007 - new maya8.5 follicle attributes accounted for
+//                            script now checks maya version and works correctly in maya 7, 8.0, 8.5
+//                            follicles and clusters are grouped under a locked transform called djRivetX
+//		1.5.5	28 Aug 2007 - detect maya8.5sp1 correctly
+//							  catch errors when transforms are animated and warn user
+//		1.6.0	02 Nov 2009	- multiple uv set handling
+//
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+// LOCAL PROCEDURES (must come first)
+//
+// djRivetHideFollicleChannels() hides most of the channelbox channels to make it less confusing to look at
+
+proc djRivetHideFollicleChannels(string $fol, string $fols, float $ver) {
+
+	setAttr -keyable false -channelBox false ($fol + ".tx");
+	setAttr -keyable false -channelBox false ($fol + ".ty");
+	setAttr -keyable false -channelBox false ($fol + ".tz");
+	setAttr -keyable false -channelBox false ($fol + ".rx");
+	setAttr -keyable false -channelBox false ($fol + ".ry");
+	setAttr -keyable false -channelBox false ($fol + ".rz");
+	setAttr -keyable false -channelBox false ($fol + ".sx");
+	setAttr -keyable false -channelBox false ($fol + ".sy");
+	setAttr -keyable false -channelBox false ($fol + ".sz");
+
+	setAttr -keyable false -channelBox false ($fols + ".rsp");
+	setAttr -keyable false -channelBox false ($fols + ".ptl");
+	setAttr -keyable false -channelBox false ($fols + ".sim");
+	setAttr -keyable false -channelBox false ($fols + ".sdr");
+	setAttr -keyable false -channelBox false ($fols + ".fld");
+	setAttr -keyable false -channelBox false ($fols + ".ovd");
+	setAttr -keyable false -channelBox false ($fols + ".cld");
+	setAttr -keyable false -channelBox false ($fols + ".dmp");
+	setAttr -keyable false -channelBox false ($fols + ".stf");
+	setAttr -keyable false -channelBox false ($fols + ".lfl");
+	setAttr -keyable false -channelBox false ($fols + ".cwm");
+	setAttr -keyable false -channelBox false ($fols + ".dml");
+	setAttr -keyable false -channelBox false ($fols + ".cml");
+	setAttr -keyable false -channelBox false ($fols + ".ctf");
+	setAttr -keyable false -channelBox false ($fols + ".brd");
+	setAttr -keyable false -channelBox false ($fols + ".cbl");
+	setAttr -keyable false -channelBox false ($fols + ".cr");
+	setAttr -keyable false -channelBox false ($fols + ".cg");
+	setAttr -keyable false -channelBox false ($fols + ".cb");
+	setAttr -keyable false -channelBox false ($fols + ".sdn");
+	setAttr -keyable false -channelBox false ($fols + ".dgr");
+
+	// maya8+
+	if($ver >= 8.0) {
+		setAttr -keyable false -channelBox false ($fols + ".fsl");
+		setAttr -keyable false -channelBox false ($fols + ".sgl");
+	}
+	
+	// maya8.5+
+	if($ver >= 8.5) {
+		setAttr -keyable false -channelBox false ($fols + ".sct");
+		setAttr -keyable false -channelBox false ($fols + ".ad");
+		setAttr -keyable false -channelBox false ($fols + ".clumpWidth");
+	}
+
+}
+
+//.........................................................................................................
+// djRivetUnlockChannels() unlocks the translate, rotate and scale channels
+
+proc djRivetUnlockChannels(string $surf) {
+
+	setAttr -lock off ($surf + ".tx");
+	setAttr -lock off ($surf + ".ty");
+	setAttr -lock off ($surf + ".tz");
+	setAttr -lock off ($surf + ".rx");
+	setAttr -lock off ($surf + ".ry");
+	setAttr -lock off ($surf + ".rz");
+	setAttr -lock off ($surf + ".sx");
+	setAttr -lock off ($surf + ".sy");
+	setAttr -lock off ($surf + ".sz");
+}
+
+//.........................................................................................................
+// djRivetIsTransformLocked() checks to see if one of the translate or rotate attributes is locked
+
+proc int djRivetIsTransformLocked(string $dag){
+	
+	string $locked[] = `listAttr -locked $dag`;
+	if(size($locked) == 0) return(0);
+	string $xl;
+	for ($xl in $locked) {
+		switch ($xl) {
+			case "translateX":
+			case "translateY":
+			case "translateZ":
+			case "rotateX":
+			case "rotateY":
+			case "rotateZ":
+				return(1);
+			default:
+				break;
+		}
+	}
+	// if we got to here, there were locked attributes, but not translate or rotate
+	return(0);
+}
+
+//.........................................................................................................
+// djRivetIsTransformAnimated() checks to see if one of the translate or rotate attributes is animated
+
+proc int djRivetIsTransformAnimated(string $node) {
+
+	// get the connections and connected nodes
+	string $animated[] = `listConnections -s true -d false $node`;
+	if(size($animated) == 0) return(0);
+
+	string $a;
+	for($a in $animated) {
+		string $t[];
+		tokenize $a "_" $t;
+		switch ($t[1]) {
+			case "translateX":
+			case "translateY":
+			case "translateZ":
+			case "rotateX":
+			case "rotateY":
+			case "rotateZ":
+				return(1);
+			default:
+				break;
+		}
+	}
+	// if we got to here, there were animated attributes, but not translate or rotate
+	return(0);
+}
+
+//.........................................................................................................
+// djRivetChooseUVSetWindow()
+
+global proc djRivetChooseUVSetWindow() {
+
+	string $uvSets[] = `polyUVSet -q -allUVSets`;
+	string $form = `setParent -q`;
+	
+	formLayout -e -width 300 -height 75 $form;
+	
+		string $djRivetUVSetNames = `optionMenu -l "Choose a UV Set and click OK " djRivetUVSetNames`;
+		for($s in $uvSets) menuItem -l $s;
+					
+		string $xBut = `button -l "OK" -c( "layoutDialog -dismiss `optionMenu -q -v djRivetUVSetNames`")`;
+
+	formLayout -e
+		-af $djRivetUVSetNames "top" 5
+		-af $djRivetUVSetNames "left" 5
+		-af $djRivetUVSetNames "right" 5
+		-ap $djRivetUVSetNames "bottom" 0 50
+
+		-ac $xBut "top" 5 $djRivetUVSetNames
+		-af $xBut "left" 5
+		-af $xBut "right" 5
+		-af $xBut "bottom" 1
+		$form;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+// GLOBAL PROCEDURES
+//
+// djRivet()
+
+global proc djRivet() {
+
+	// version number
+	string $vS[];
+	string $verS = `about -v`;
+	tokenize $verS $vS;
+	float $ver = $vS[0];
+	
+	int $lockedAttributeCount = 0;	// used to count failures due to locked attributes
+	int $rivetCount = 0;			// count the objects actually riveted
+	string $rivetList[];			// used to build list of objects to be riveted
+	string $djRX;					// store name of djRivet_follicles group
+	
+	print("djRivet start\n");
+
+	// skip select flag was introduced in maya 8, used by createNode command, doesnt work in maya 7	
+	string $SS = ($ver >= 8) ? " -ss " : " ";
+	
+	string $sel[] = `ls -sl -fl`;
+	int $ns = size($sel);
+	if($ns < 2) {
+		warning("Invalid selection. First select at least one object, then last select a poly or nurbs surface.");
+		return;
+	}
+	
+	// get the shape node of the last object in the list (must be mesh or nurbsSurface, otherwise fail)
+	//
+	string $surf[] = `ls -dag -s $sel[$ns-1]`;
+	string $surfType = `nodeType $surf[0]`;
+	if($surfType!="mesh" && $surfType!="nurbsSurface") {
+		warning("Invalid selection. First select at least one object then last select a poly or nurbs surface.");
+		return;
+	}
+		
+	// Create an empty group called djRivetX, lock and hide its transforms
+	// This is where follicles and clusters will be hidden
+	//
+	if(!(`objExists djRivetX`)) {
+		$djRX = eval("createNode transform -n djRivetX" + $SS);
+
+		setAttr -lock true -keyable false ($djRX + ".tx");
+		setAttr -lock true -keyable false ($djRX + ".ty");
+		setAttr -lock true -keyable false ($djRX + ".tz");
+		setAttr -lock true -keyable false ($djRX + ".rx");
+		setAttr -lock true -keyable false ($djRX + ".ry");
+		setAttr -lock true -keyable false ($djRX + ".rz");
+		setAttr -lock true -keyable false ($djRX + ".sx");
+		setAttr -lock true -keyable false ($djRX + ".sy");
+		setAttr -lock true -keyable false ($djRX + ".sz");
+		
+		print("Follicle group called " + $djRX +" has been created.\n");
+
+	}
+	else {
+		$djRX = "djRivetX";
+		print("Follicle group called " + $djRX +" has been discovered.\n");
+	}
+
+	// check for vertices, cv's and lattice-points in the selected object list
+	// Ask whether to cluster and constrain individually or together
+	//
+	string $pntHandling;
+	string $pntList = "";
+	int $pnts=0;
+	for($i=0;$i<$ns-1;$i++) {
+		if(size(`match "\\.vtx" $sel[$i]`) || size(`match "\\.cv" $sel[$i]`) || size(`match "\\.pt" $sel[$i]`)) {
+		
+			// vertices, cv's or lattice-points
+			//
+			$pnts++;
+			if($pnts == 1) $pntHandling = `confirmDialog -title "djRivet" -message "How should vertices, cv's or lattice points be constrained?" -button "individually" -button "together" -defaultButton "individually" -dismissString "ignore" -cancelButton "ignore"`;
+
+			if($pntHandling == "individually") {
+
+				string $djCluster[] = `cluster -n "djCluster#" $sel[$i]`;
+			
+				// $djCluster[0] is the cluster, $djCluster[1] is the clusterHandle
+				//
+				string $cn[] = `parent $djCluster[1] $djRX`;	// parent clusterHandle to $djRX
+				$djCluster[1] = $cn[0];							// just incase name was changed
+				setAttr ($djCluster[1] + ".visibility") 0;
+				$rivetList[$rivetCount++] = $djCluster[1];		// put cluster name in the rivet list
+			}
+			else if($pntHandling == "together") {
+				$pntList = ($pntList + " " + $sel[$i]);
+			}
+		}
+		else {
+			// transform nodes
+			//
+			$rivetList[$rivetCount++] = $sel[$i];	// put node name in the rivet list
+		}
+	}
+	
+	// Cluster the pnts together
+	//
+	if($pntHandling == "together") {
+		string $djCluster[] = eval("cluster -n \"djCluster#\" " + $pntList);
+			
+		// $djCluster[0] is the cluster, $djCluster[1] is the clusterHandle
+		//
+		string $cn[] = `parent $djCluster[1] $djRX`;	// parent clusterHandle to $djRX
+		$djCluster[1] = $cn[0];							// just incase name was changed
+		setAttr ($djCluster[1] + ".visibility") 0;
+		$rivetList[$rivetCount++] = $djCluster[1];		// put cluster name in the rivet list
+	}
+	
+	//
+	// POLY MESH target
+	//
+	if($surfType == "mesh") {
+
+		// closestPointOnMesh ignores polymesh transforms,
+		// so we need make a temporary copy and freeze the transforms
+		// (make sure transform channels are not locked)
+		//
+		string $tmpPolyMesh[] = `duplicate -n $sel[$ns-1] $sel[$ns-1]`;
+		string $tforms[]=`listTransforms $tmpPolyMesh[0]`;
+		if(size($tforms)!=0) parent -w $tmpPolyMesh[0];
+		djRivetUnlockChannels($tmpPolyMesh[0]);
+		makeIdentity -a true $tmpPolyMesh[0];
+		
+		string $tmpSurf[] = `ls -dag -s $tmpPolyMesh[0]`;
+		
+		// uv set handling: If there are multiple uv sets, ask which to use
+		//
+		string $uvSets[] = `polyUVSet -q -allUVSets $tmpSurf[0]`;
+		string $uvSet = $uvSets[0];
+		if(size($uvSets) > 1) {		
+			select -r $tmpSurf[0];
+			$uvSet = `layoutDialog -title "djRivet: Multi UV Set" -ui "djRivetChooseUVSetWindow"`;
+						
+			if($uvSet != $uvSets[0] && $uvSet != "dismiss")
+				// closestPointOnMesh uses the default uv set so copy the chosen uv set into the default
+				polyUVSet -copy -uvSet $uvSet -newUVSet $uvSets[0] $tmpSurf[0];
+			else
+				// reset $uvSet if window was closed without making a choice
+				$uvSet = $uvSets[0];			
+		}
+
+		// create closestPointOnMesh node
+		// and connect it to the polymesh
+		//
+		string $cpom = eval("createNode closestPointOnMesh -n cpom1" + $SS);
+		connectAttr -f ($tmpSurf[0] + ".outMesh") ($cpom + ".inMesh");
+
+		// create a temporary transform node to store the location of the object
+		// and connect it to the closestPointOnMesh node
+		//
+		string $loc = eval("createNode transform -n loc1" + $SS);
+		connectAttr -f ($loc + ".translate") ($cpom + ".inPosition");
+
+		// loop through the objects
+		//
+		for($i=0;$i<size($rivetList);$i++) {
+				
+			// make sure the translate and rotate attributes are not locked
+			// if they are make a note in the script editor and skip the object
+			//
+			if(`djRivetIsTransformLocked($rivetList[$i])`) {
+				$lockedAttributeCount++;
+				warning($rivetList[$i] + " could not be constrained due to translate or rotate attributes being locked.");
+				continue;
+			}
+			if(`djRivetIsTransformAnimated($rivetList[$i])`) {
+				$lockedAttributeCount++;
+				warning($rivetList[$i] + " could not be constrained due to translate or rotate attributes already animated.");
+				continue;
+			}
+			
+			//
+			// move the transform node to the worldspace location of the object's rotatePivot
+			//
+			float $fpos[] = `xform -q -ws -rp $rivetList[$i]`;
+			xform -ws -t $fpos[0] $fpos[1] $fpos[2] $loc;
+
+			// get the uv coords from the closestPointOnMesh node
+			//
+			float $fu = `getAttr ($cpom + ".u")`;
+			float $fv = `getAttr ($cpom + ".v")`;
+
+			// create a follicle and parent it to a new transform
+			//
+			string $fol = eval("createNode transform -n \"follicle#\" -p " + $djRX + $SS);
+			string $folN = `match "[0-9]+$" $fol`;
+			string $fols = eval("createNode follicle -n follicleShape" + $folN + " -p " + $fol + $SS);
+
+			// hook up the the follicle to the polymesh
+			// and position it at the uv coords we got earlier
+			// (these uv's can be easily edited later in the channel box)
+			//
+			connectAttr -f ($surf[0] + ".worldMatrix[0]") ($fols + ".inputWorldMatrix");
+			connectAttr -f ($surf[0] + ".worldMesh[0]") ($fols + ".inputMesh");
+			connectAttr -f ($fols + ".outRotate") ($fol + ".rotate");
+			connectAttr -f ($fols + ".outTranslate") ($fol + ".translate");
+
+			setAttr -type "string" ($fols + ".mapSetName") $uvSet;
+			setAttr ($fols + ".parameterU") $fu;
+			setAttr ($fols + ".parameterV") $fv;
+
+			// tidy up channel box
+			//
+			djRivetHideFollicleChannels($fol, $fols, $ver);
+			
+			// parent constrain the object to the follicle
+			//
+			parentConstraint -mo -weight 1 $fol $rivetList[$i];
+		}
+
+		// clean up intermediate nodes
+		//
+		delete $cpom $loc $tmpPolyMesh[0];
+	}
+	//
+	// NURBS target
+	//
+	else if($surfType == "nurbsSurface") {
+
+		// closestPointOnSurface ignores surface transforms,
+		// so we need make a temporary copy and freeze the transforms
+		// (make sure transform channels are not locked)
+		//
+		string $tmpNurb[] = `duplicate -n $sel[$ns-1] $sel[$ns-1]`;
+		string $tforms[]=`listTransforms $tmpNurb[0]`;
+		if(size($tforms)!=0) parent -w $tmpNurb[0];
+		djRivetUnlockChannels($tmpNurb[0]);
+		makeIdentity -a true $tmpNurb[0];
+		
+		string $tmpSurf[] = `ls -dag -s $tmpNurb[0]`;
+
+		// follicles use normalized uv's when attaching to nurbs
+		// so we need to know the uv min max values
+		//
+		float $uRange[] = `getAttr ($tmpSurf[0] + ".minMaxRangeU")`;
+		float $vRange[] = `getAttr ($tmpSurf[0] + ".minMaxRangeV")`;
+		
+		// create closestPointOnSurface node
+		// and connect it to the nurbs surface
+		//
+		string $cpos = eval("createNode closestPointOnSurface -n cpos1" + $SS);
+		connectAttr -f ($tmpSurf[0] + ".local") ($cpos + ".inputSurface");
+
+		// create a temporary transform node to store the location of the object
+		// and connect it to the closestPointOnSurface node
+		//
+		string $loc = eval("createNode transform -n loc1" + $SS);
+		connectAttr -f ($loc + ".translate") ($cpos + ".inPosition");
+
+		// loop through the objects
+		//
+		for($i=0;$i<size($rivetList);$i++) {
+		
+			// make sure the translate and rotate attributes are not locked
+			// if they are make a note in the script editor and skip the object
+			//
+			if(`djRivetIsTransformLocked($rivetList[$i])`) {
+				$lockedAttributeCount++;
+				warning($rivetList[$i] + " could not be constrained due to translate or rotate attributes being locked.");
+				continue;
+			}
+			if(`djRivetIsTransformAnimated($rivetList[$i])`) {
+				$lockedAttributeCount++;
+				warning($rivetList[$i] + " could not be constrained due to translate or rotate attributes already animated.");
+				continue;
+			}
+
+			// move the transform node to the worldspace location of the object's rotatePivot
+			//
+			float $fpos[] = `xform -q -ws -rp $rivetList[$i]`;
+			xform -ws -t $fpos[0] $fpos[1] $fpos[2] $loc;
+
+			// get the uv coords from the closestPointOnSurface node
+			//
+			float $fuX = `getAttr ($cpos + ".u")`;
+			float $fvX = `getAttr ($cpos + ".v")`;
+			
+			// follicles use normalized uv's when attaching to nurbs
+			// so we need to convert the cpos sampled uv values
+			//
+			float $fu = abs(($fuX - $uRange[0])/($uRange[1] - $uRange[0]));
+			float $fv = abs(($fvX - $vRange[0])/($vRange[1] - $vRange[0]));
+
+			// create a follicle and parent it to a new transform
+			//
+			string $fol = eval("createNode transform -n \"follicle#\" -p " + $djRX + $SS);
+			string $folN = `match "[0-9]+$" $fol`;
+			string $fols = eval("createNode follicle -n follicleShape" + $folN + " -p " + $fol + $SS);
+
+			// hook up the the follicle to the nurbs surface
+			// and position it at the uv coords we got earlier
+			// (these uv's can be easily edited later in the channel box)
+			//
+			connectAttr -f ($surf[0] + ".worldMatrix[0]") ($fols + ".inputWorldMatrix");
+			connectAttr -f ($surf[0] + ".local") ($fols + ".inputSurface");
+			connectAttr -f ($fols + ".outRotate") ($fol + ".rotate");
+			connectAttr -f ($fols + ".outTranslate") ($fol + ".translate");
+
+			setAttr ($fols + ".parameterU") $fu;
+			setAttr ($fols + ".parameterV") $fv;
+
+			// tidy up channel box
+			//
+			djRivetHideFollicleChannels($fol, $fols, $ver);
+			
+			// parent constrain the object to the follicle
+			//
+			parentConstraint -mo -weight 1 $fol $rivetList[$i];
+		}
+
+		// clean up intermediate nodes
+		//
+		delete $cpos $loc $tmpNurb[0];
+	}
+	else {
+		warning("Invalid selection. First select at least one object then last select a poly or nurbs surface.");
+		return;
+	}
+	
+	// restore original selection
+	//
+	select -r $sel;
+	
+	// final status report
+	if($lockedAttributeCount == 1) {
+		print("\n");
+		warning($lockedAttributeCount + " object was not constrained. See script editor for details.");
+	}
+	else if($lockedAttributeCount > 1) {
+		print("\n");
+		warning($lockedAttributeCount + " objects were not constrained. See script editor for details.");
+	}
+	else {
+		print("djRivet done\n");
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,0 +1,116 @@
+/*
+Interactive Booleans 1.2
+
+The MIT License (MIT)
+
+Copyright (c) 2017 Davide Alidosi
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+Usage, select polys and run the following code as MEL:
+source da_interactiveBooleans;
+da_interactiveUnion // for Boolean Union
+da_interactiveDifference // for Boolean Difference
+da_interactiveIntersection // for Boolean Intersection
+
+Changelog:
+1.2 Implement base for Cut Plane script
+1.1 Fix cast shadow bug
+*/
+
+global proc da_wireframeTemplate(){
+	string $myBoolOperators[] = `ls -sl`;
+	string $myBool[] = `listConnections -s 1 -d 0 -sh 1`;
+	select $myBool;
+	for ($i=0; $i<size($myBool); $i++) {
+		setAttr ($myBool[$i] + ".intermediateObject") 0;
+		setAttr ($myBool[$i] + ".primaryVisibility") 0;
+		setAttr ($myBool[$i] + ".overrideEnabled") 1;
+		setAttr ($myBool[$i] + ".overrideShading") 0;
+		setAttr ($myBool[$i] + ".visibility") 1;
+		setAttr ($myBool[$i] + ".castsShadows") 0;
+		setAttr ($myBool[$i] + ".receiveShadows") 0;
+		setAttr ($myBool[$i] + ".motionBlur") 0;
+		setAttr ($myBool[$i] + ".smoothShading") 0;
+		setAttr ($myBool[$i] + ".visibleInReflections") 0;
+		setAttr ($myBool[$i] + ".visibleInRefractions") 0;
+	}
+
+	showHidden -a;
+	select $myBoolOperators;
+}
+
+global proc da_wireframeTemplateA(){
+	string $myBoolOperators[] = `ls -sl`;
+	string $myBool[] = `listConnections -s 1 -d 0 -sh 1`;
+	select $myBool;
+	for ($i=0; $i<size($myBool); $i++) {
+		setAttr ($myBool[1] + ".intermediateObject") 0;
+		setAttr ($myBool[1] + ".primaryVisibility") 0;
+		setAttr ($myBool[1] + ".overrideEnabled") 1;
+		setAttr ($myBool[1] + ".overrideShading") 0;
+		setAttr ($myBool[1] + ".visibility") 1;
+		setAttr ($myBool[1] + ".castsShadows") 0;
+		setAttr ($myBool[1] + ".receiveShadows") 0;
+		setAttr ($myBool[1] + ".motionBlur") 0;
+		setAttr ($myBool[1] + ".smoothShading") 0;
+		setAttr ($myBool[1] + ".visibleInReflections") 0;
+		setAttr ($myBool[1] + ".visibleInRefractions") 0;
+	}
+
+	showHidden -a;
+	select $myBoolOperators;
+}
+
+global proc da_wireframeTemplateB(){
+	string $myBoolOperators[] = `ls -sl`;
+	string $myBool[] = `listConnections -s 1 -d 0 -sh 1`;
+	select $myBool;
+	for ($i=0; $i<size($myBool); $i++) {
+		setAttr ($myBool[0] + ".intermediateObject") 0;
+		setAttr ($myBool[0] + ".primaryVisibility") 0;
+		setAttr ($myBool[0] + ".overrideEnabled") 1;
+		setAttr ($myBool[0] + ".overrideShading") 0;
+		setAttr ($myBool[0] + ".visibility") 1;
+		setAttr ($myBool[0] + ".castsShadows") 0;
+		setAttr ($myBool[0] + ".receiveShadows") 0;
+		setAttr ($myBool[0] + ".motionBlur") 0;
+		setAttr ($myBool[0] + ".smoothShading") 0;
+		setAttr ($myBool[0] + ".visibleInReflections") 0;
+		setAttr ($myBool[0] + ".visibleInRefractions") 0;
+	}
+
+	showHidden -a;
+	select $myBoolOperators;
+}
+
+global proc da_interactiveUnion(){
+	PolygonBooleanUnion;
+	da_wireframeTemplate;
+}
+
+global proc da_interactiveDifference(){
+	PolygonBooleanDifference;
+	da_wireframeTemplate;
+}
+
+global proc da_interactiveIntersection(){
+	PolygonBooleanIntersection;
+	da_wireframeTemplate;
+}
