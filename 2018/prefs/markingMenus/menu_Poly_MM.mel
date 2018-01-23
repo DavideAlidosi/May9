@@ -276,6 +276,14 @@ menuItem
 -i "da_ShellProxy.png"
 -stp "mel";
 
+if (`pluginInfo -q -loaded SOuP` == 1){
+menuItem
+-l "Shatter Mesh"
+-c "da_ShatterMesh"
+-i "out_shatter.xpm"
+-stp "mel";
+}
+
 menuItem
 -l "separator" 
 -d 1
@@ -790,6 +798,20 @@ menuItem
 -sm 1
 -i "polyUnfoldUVs.png"
 -stp "mel";
+
+if (`pluginInfo -q -loaded SOuP` == 1){
+menuItem
+-l "Viewport UV"
+-c "da_ViewportUV"
+-i "out_mapToMesh.xpm"
+-stp "mel";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+}
 
 menuItem
 -l "Select UVs"

@@ -2771,3 +2771,19 @@ runTimeCommand
 	-command ("string $myCombineSel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s`;\n$myShapeSize = size($myShape);\nfor($i=0; $i<$myShapeSize; $i++){\n    select $myCombineSel[0];\n    pickWalkDown;\n    da_ExtractCurveShape;\n}\nselect $myCombineSel[0];\ndelete;")
 	da_SepareCurves;
 
+runTimeCommand
+	-annotation "Projection Mesh UV on Viewport"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nstring $originalMesh[] = `listRelatives -s`;\ncreateNode mapToMesh;\nstring $MapToMeshNode[] = `ls -sl`;\nconnectAttr -f ($originalMesh[0] + \".outMesh\") ($MapToMeshNode[0] + \".inMesh\");\nstring $UVsMesh[] = `duplicate $originalMesh`;\nconnectAttr -f ($MapToMeshNode[0] + \".outMesh\") ($UVsMesh[0] + \".inMesh\");\ncreateNode meshToMap;\nstring $MeshToMapNode[] = `ls -sl`;\nstring $FinalMesh[] = `duplicate $originalMesh`;\nconnectAttr -f ($originalMesh[0] + \".outMesh\") ($MeshToMapNode[0] + \".inMesh\");\nconnectAttr -f ($UVsMesh[0] + \".outMesh\") ($MeshToMapNode[0] + \".inMesh2\");\nconnectAttr -f ($MeshToMapNode[0] + \".outMesh\") ($FinalMesh[0] + \".inMesh\");\n\nhide $mySel;\n\nselect $UVsMesh;\nselect -add $FinalMesh;\nda_ResetTweakPoint;\ndR_modeObject;\n\nselect $UVsMesh;\nCenterPivot;\nda_ZeroTransfomations;\nsetAttr ($UVsMesh[0] + \".rotateZ\") 180;\n\nrename $UVsMesh UvMeshPlanar1;\nrename $FinalMesh UvMesh1;\n\ndR_modeObject;")
+	da_ViewportUV;
+
+runTimeCommand
+	-annotation "Shatter Current Mesh"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("import maya.cmds as cmds\ninitialGeo = cmds.ls(sl=1)\ncmds.duplicate(initialGeo)\ncmds.hide(initialGeo)\ntoShatterTrans = cmds.ls(sl=1)\ncmds.pickWalk(direction='down')\ntoShatterGeo = cmds.ls(sl=1)\nlocatorShatter = cmds.createNode('locator')\ncmds.parent(toShatterGeo,locatorShatter)\ncmds.da_ClearFreeze(toShatterGeo)\nvolumeScatter = cmds.createNode('scatter')\ncmds.setAttr(volumeScatter+'.pointDensity',250)\ncmds.connectAttr(toShatterTrans[0]+'.worldMatrix[0]', volumeScatter+'.inWorldMatrix')\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', volumeScatter+'.inGeometry')\nshatterOperator = cmds.createNode('shatter')\ncmds.setAttr(shatterOperator+'.distance',0.01)\ncmds.setAttr(shatterOperator+'.autoEvaluate',1)\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', shatterOperator+'.inGeometry')\ncmds.connectAttr(volumeScatter+'.outPositionPP', shatterOperator+'.inPositionPP')\nShatterGeo = cmds.duplicate(toShatterGeo)\ncmds.connectAttr(shatterOperator+'.outGeometry', ShatterGeo[0]+'.inMesh')\ncmds.hide(toShatterTrans)\ncmds.select(ShatterGeo)\ncmds.da_ResetTweakPoint(ShatterGeo)\ncmds.dR_DoCmd(\"modeObject\")\ncmds.dR_DoCmd(\"modeObject\")")
+	da_ShatterMesh;
+
