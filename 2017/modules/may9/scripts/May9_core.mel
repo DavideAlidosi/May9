@@ -7,9 +7,6 @@ catchQuiet(dagMenuProc("", ""));
 // Inizialize Break Connections
 channelBoxCommand -break;
 
-// Source scripts
-source May9_scripts.mel;
-
 // Store initial Shelf configuration
 int $myShelfCheck = `workspaceControl -q -vis Shelf`;
 
@@ -17,9 +14,6 @@ int $myShelfCheck = `workspaceControl -q -vis Shelf`;
 string $myLayoutReset = "int $myLayout = 0";
 scriptJob -e "NewSceneOpened" $myLayoutReset;
 scriptJob -e "SceneOpened" $myLayoutReset;
-
-// Initialize Interactive Play button
-da_intPlay();
 
 // Preload Crease Set Editor
 python( "from maya.app.general import creaseSetEditor");

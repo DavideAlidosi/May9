@@ -399,6 +399,9 @@ global proc da_intPlay(){
     symbolButton -m 0 -p $layout $ctrlUI_controlName;
 }
 
+// Initialize Interactive Play button
+da_intPlay();
+
 
 // da_nParticleConverter
 
@@ -1205,5 +1208,93 @@ global proc da_maxPlaybackSpeedToggle(){
     	playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 0;
 	}else{
 	    playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 1;
+	}
+}
+
+// buildSelectAllMM
+
+global proc buildSelectAllMM(){
+    if( `popupMenu -exists tempMM` )
+    {
+        deleteUI tempMM;
+    }
+
+	global string $MMcmd;
+
+	$MMcmd = "";
+	
+    popupMenu -mm 1 -b 1 -aob 1 -p `findPanelPopupParent` -pmc ("$MMcmd = \"Posted\"") tempMM;
+
+	menuItem -radialPosition "W" -label (uiRes("m_buildSelectAllMM.kSelectAllInputs"))  
+		-c "$MMcmd = \"selectHistory\"";
+	menuItem -radialPosition "E" -label (uiRes("m_buildSelectAllMM.kSelectAllOutputs"))  
+		-c "$MMcmd = \"selectFuture\"";
+
+	menuItem -radialPosition "N" -label (uiRes("m_buildSelectAllMM.kEnableAllOutputs"))  
+		-c "$MMcmd = \"enableFuture\"";
+	menuItem -radialPosition "S" -label (uiRes("m_buildSelectAllMM.kDisableAllOutputs"))  
+		-c "$MMcmd = \"disableFuture\"";
+
+	menuItem -radialPosition "NW" -label (uiRes("m_buildSelectAllMM.kDeleteHistory"))  
+		-c "$MMcmd = \"deleteHistory\"" -version "2015";
+	menuItem -radialPosition "NE" -label (uiRes("m_buildSelectAllMM.kDeleteNonDeformerHistory"))  
+		-c "$MMcmd = \"deleteNDHistory\"" -version "2015";
+
+	menuItem -radialPosition "SE" -label (uiRes("m_buildSelectAllMM.kFreezeTransforms"))  
+		-c "$MMcmd = \"freezeTransformations\"" ;
+
+	menuItem
+		-label (uiRes("m_buildSelectAllMM.kFreezeTransformsOptions"))
+		-c "$MMcmd = \"freezeTransformationsOptions\""
+		-optionBox 1
+		-radialPosition "SE" ;
+
+	if (`pluginInfo -q -loaded SOuP` == 1){
+		python("smartConnect_SOuP().main()") ;
+	}
+
+	setParent -m ..;
+}
+
+global proc buildSelectAllMM_release(){
+	global string $MMcmd;
+
+	if ($MMcmd != "") {
+		//	Process Marking menu selection
+		switch ($MMcmd) {
+			case "selectHistory" :
+				selectAllInputOutput false;
+				break;
+			case "selectFuture" :
+				selectAllInputOutput true;
+				break;
+			case "enableFuture" :
+				disableOfSelected 1 0;
+				break;
+			case "disableFuture" :
+				disableOfSelected 1 1;
+				break;
+			case "deleteHistory" :
+				DeleteHistory;
+				break;
+			case "deleteNDHistory" :
+				BakeNonDefHistory;
+				break;
+			case "freezeTransformations" :
+				FreezeTransformations;
+				break;
+			case "freezeTransformationsOptions" :
+				FreezeTransformationsOptions;
+				break;
+		}
+		$MMcmd = "Processed";
+	} 
+	
+	if( `popupMenu -exists tempMM` ) {
+		deleteUI tempMM;
+	} 
+	
+	if ($MMcmd == "") {
+		FrameAll;
 	}
 }

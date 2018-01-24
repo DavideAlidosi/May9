@@ -24,7 +24,6 @@ Exclusive script
 - da_BooleanFullIntersect: this script make a full intersect, so this execute a mesh subtraction but maintain subtracted part as separate object
 - da_PlaneCutter: this script cut a mesh by using a flat mesh, this can be useful for simulate surface cracks
 - da_AutoBevel: this script analyse the angle between faces and try to add a Bevel node only on needed edges
-- da_SoftSelectionRig: this script create a rig on a soft selection deformer, to make it animable
 - da_ClothAsDeformer: this script set up the current mesh to be deformed by nCloth solver, this can be useful for simulate character selfcollision skin or muscle dynamics
 - da_nParticleConverter: this script add the ability to convert particle to a specific type after their creation
 - da_perspToggle: this script convert the current persp view to the closest ortho, and vice versa

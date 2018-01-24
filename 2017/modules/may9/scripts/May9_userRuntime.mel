@@ -2739,3 +2739,26 @@ runTimeCommand
 	-command ("import maya.cmds as cmds\ninitialGeo = cmds.ls(sl=1)\ncmds.duplicate(initialGeo)\ncmds.hide(initialGeo)\ntoShatterTrans = cmds.ls(sl=1)\ncmds.pickWalk(direction='down')\ntoShatterGeo = cmds.ls(sl=1)\nlocatorShatter = cmds.createNode('locator')\ncmds.parent(toShatterGeo,locatorShatter)\ncmds.da_ClearFreeze(toShatterGeo)\nvolumeScatter = cmds.createNode('scatter')\ncmds.setAttr(volumeScatter+'.pointDensity',250)\ncmds.connectAttr(toShatterTrans[0]+'.worldMatrix[0]', volumeScatter+'.inWorldMatrix')\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', volumeScatter+'.inGeometry')\nshatterOperator = cmds.createNode('shatter')\ncmds.setAttr(shatterOperator+'.distance',0.01)\ncmds.setAttr(shatterOperator+'.autoEvaluate',1)\ncmds.connectAttr(toShatterGeo[0]+'.worldMesh[0]', shatterOperator+'.inGeometry')\ncmds.connectAttr(volumeScatter+'.outPositionPP', shatterOperator+'.inPositionPP')\nShatterGeo = cmds.duplicate(toShatterGeo)\ncmds.connectAttr(shatterOperator+'.outGeometry', ShatterGeo[0]+'.inMesh')\ncmds.hide(toShatterTrans)\ncmds.select(ShatterGeo)\ncmds.da_ResetTweakPoint(ShatterGeo)\ncmds.dR_DoCmd(\"modeObject\")\ncmds.dR_DoCmd(\"modeObject\")")
 	da_ShatterMesh;
 
+runTimeCommand
+	-annotation "Collide Two Object Outward"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    python( \"soup().create('collide')\" );\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    select -add $myCollide[0];\n    python( \"collide_SOuP().addColObj()\" );\n    setAttr ($myCollide[0] + \".direction\") 5;\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	da_CollideOutward;
+
+runTimeCommand
+	-annotation "Collide Two Object Inward"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    select $mySel[0];\n    python( \"soup().create('collide')\" );\n    string $myCollide[] = `ls -sl`;\n    select $mySel[1];\n    select -add $myCollide[0];\n    python( \"collide_SOuP().addColObj()\" );\n    setAttr ($myCollide[0] + \".direction\") 1;\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the deformed then the collider and retry.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
+	da_CollideInward;
+
+runTimeCommand
+	-annotation "Apply Tension Blend Shape to Selected Mesh"
+	-category "Custom Scripts.May9_Pro.SOuP"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myResult = `confirmDialog -title \"Tension Blend Shape\" -message \"Before continue check to have select meshes in this orded:\\nBase, Stretch and Compression\" \n-button \"Create Tension Blend Shape\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Create Tension Blend Shape\"){\n    string $mySel[] = `ls -sl`;\n    select $mySel[0];\n    python( \"soup().create('tensionBlendShape')\" );\n    string $myTensionBS[] = `ls -sl`;\n    \n    select $mySel[1];\n    string $stretchShape[] = `listRelatives -s`;\n    \n    connectAttr -f ($stretchShape[0] + \".outMesh\") ($myTensionBS[0] + \".inStretchMesh\");\n    \n    select $mySel[2];\n    string $compressionShape[] = `listRelatives -s`;\n    \n    connectAttr -f ($compressionShape[0] + \".worldMesh\") ($myTensionBS[0] + \".inCompressionMesh\");\n    \n    select $mySel[0];\n}\n")
+	da_TensionBlendShape;

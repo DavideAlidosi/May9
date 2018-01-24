@@ -686,6 +686,36 @@ menuItem
 -i "polyUnfoldUVs.png"
 -stp "mel";
 
+if (`pluginInfo -q -loaded SOuP` == 1){
+
+menuItem
+-l "Tension Blend Shape"
+-c "da_TensionBlendShape"
+-i "out_tensionBlendShape.xpm"
+-stp "mel";
+
+menuItem
+-l "Collide"
+-sm 1
+-i "out_collide.xpm"
+-stp "mel";
+
+menuItem
+-l "Outward"
+-c "da_CollideOutward"
+-i "polyBooleansDifference.png"
+-stp "mel";
+
+menuItem
+-l "Inward"
+-c "da_CollideInward"
+-i "polyBooleansUnion.png"
+-stp "mel";
+
+setParent -m ..;
+}
+
+
 menuItem
 -l "Texture"
 -sm 1
