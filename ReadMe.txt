@@ -12,8 +12,8 @@ For more information about installation please read the included user guide
 
 
 Release Note
-- May9 Pro 2.1.0 and up are relase only as plug-in
-- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.1.0
+- May9 Pro 3.0.0 and up are relase only as plug-in
+- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 3.0.0
 - May9 Workspaces do not autosave, so is needed manually save the workspace changes
 
 
@@ -67,3 +67,12 @@ Adaptaded as plug-in and ported to Pyside2 by Davide Alidosi
 Massive Attribute Editor is licensed under Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)
 Originally Copyright (c) by Mehdi Louala (https://www.highend3d.com/maya/script/context-connector-for-maya)
 Adaptaded as plug-in by Davide Alidosi
+
+Bool is licensed under custom EULA (https://www.mainframe.co.uk/s/Bool-EULA.pdf)
+Copyright (c) Mainframe North
+
+ngSkinTools is licensed under custom license (https://www.ngskintools.com/license/)
+Copyright (c) Viktoras Makauskas
+
+SOuP is licensed under custom license
+Copyright (c) Peter Shipkov
