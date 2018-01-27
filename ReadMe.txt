@@ -13,7 +13,7 @@ For more information about installation please read the included user guide
 
 Release Note
 - May9 Pro 3.0.0 and up are relase only as plug-in
-- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 3.0.0
+- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.1.0
 - May9 Workspaces do not autosave, so is needed manually save the workspace changes
 
 
@@ -45,6 +45,7 @@ Exclusive script
 Version 3.0 highlight
 - Plugin structure, work over existing configuration
 - Removed almost all custom preferences
+- Improved documentation
 - Overral improvements
 
 
