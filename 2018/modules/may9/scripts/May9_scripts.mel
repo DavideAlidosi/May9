@@ -1298,3 +1298,59 @@ global proc buildSelectAllMM_release(){
 		FrameAll;
 	}
 }
+
+//da_proceduralBevel, required SOuP
+global proc da_proceduralBevel(){
+    string $mySource[] = `ls -sl -typ "transform"`;
+    
+    duplicate;
+    delete -ch;
+    FreezeTransformations;
+    rename inBevelObj1;
+    
+    string $myInTransform[] = `ls -sl -typ "transform"`;
+    string $myInShape[] = `listRelatives -s`;
+    
+    python("soup().create('group');");
+    string $myGroupNode[] = `ls -sl`;
+    
+    select $myInTransform[0];
+    duplicate;
+    rename outBevelObj1;
+    string $myOutTransform[] = `ls -sl -typ "transform"`;
+    string $myOutShape[] = `listRelatives -s`;
+    
+    createNode polyBevel3;
+    string $myPolyBevelNode[] = `ls -sl`;
+    connectAttr -f ($myGroupNode[0] + ".outComponents") ($myPolyBevelNode[0] + ".inputComponents");
+    connectAttr -f ($myGroupNode[0] + ".outGeometry") ($myPolyBevelNode[0] + ".inputPolymesh");
+    connectAttr -f ($myPolyBevelNode[0] + ".output") ($myOutShape[0] + ".inMesh");
+    
+    setAttr ($myGroupNode[0] + ".componentType") 1;
+    setAttr ($myGroupNode[0] + ".operation") 3;
+    
+    setAttr ($myPolyBevelNode[0] + ".subdivideNgons") 1;
+    setAttr ($myPolyBevelNode[0] + ".mergeVertices") 1;
+    setAttr ($myPolyBevelNode[0] + ".segments") 2;
+    
+    setAttr ($myInShape[0] + ".intermediateObject") 1;
+    
+    select $myOutTransform[0];
+    ResetTransformations;
+    
+    string $mySel[] = `listRelatives -s`;
+    dR_DoCmd("modeVert");
+    for ($each in $mySel){
+        $indices = `getAttr -mi ($each + ".pnts")`;
+        for ($i in $indices){
+          setAttr($each + ".pnts[" + $i + "]", 0,0,0);
+        }
+    }
+    dR_modeObject;
+    
+    select $mySource[0];
+    hide;
+      
+    python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
+    select $myOutTransform[0];
+}

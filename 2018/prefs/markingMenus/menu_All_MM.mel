@@ -1,3 +1,5 @@
+int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
+    && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
 menuItem
 -l "Poly/Curves"
 -sm 1
@@ -915,8 +917,8 @@ menuItem
 -l "HUD Info"
 -c "da_ToggleHUD"
 -rp "SE"
--cb (`optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
-    && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`)
+-cb (true == $HUDCheck)
+
 -stp "mel";
 
 menuItem
