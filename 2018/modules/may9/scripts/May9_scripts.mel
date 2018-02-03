@@ -1299,7 +1299,23 @@ global proc buildSelectAllMM_release(){
 	}
 }
 
+
+global proc da_pivotKeyable(){
+	string $myTransform[] = `ls -sl -type "transform"`;
+
+	for ($each in $myTransform){
+	    setAttr -k on ($each + ".rotatePivotX");
+	    setAttr -k on ($each + ".rotatePivotY");
+	    setAttr -k on ($each + ".rotatePivotZ");
+	    
+	    setAttr -k on ($each + ".rotatePivotTranslateX");
+	    setAttr -k on ($each + ".rotatePivotTranslateY");
+	    setAttr -k on ($each + ".rotatePivotTranslateZ");    
+	}
+}
+
 //da_proceduralBevel, required SOuP
+
 global proc da_proceduralBevel(){
     string $mySource[] = `ls -sl -typ "transform"`;
     

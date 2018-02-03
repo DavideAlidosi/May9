@@ -1,5 +1,6 @@
 int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
     && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
+
 menuItem
 -l "Poly/Curves"
 -sm 1
@@ -318,6 +319,12 @@ menuItem
 }
 
 menuItem
+-l "Channel Control"
+-c "ChannelControlEditor"
+-i "channelBox.png"
+-stp "mel";
+
+menuItem
 -l "Attributes"
 -sm 1
 -i "attributes.png"
@@ -325,7 +332,7 @@ menuItem
 
 menuItem
 -l "Add"
--c "AddAttribute;"
+-c "AddAttribute"
 -i "publishAttributes.png"
 -stp "mel";
 
@@ -385,6 +392,12 @@ menuItem
 -l "separator" 
 -d 1
 -dl "separator"
+-stp "mel";
+
+menuItem
+-l "Make Pivot Keyable"
+-c "da_pivotKeyable"
+-i "CenterPivot.png"
 -stp "mel";
 
 menuItem
