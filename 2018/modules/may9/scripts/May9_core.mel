@@ -7,9 +7,6 @@ catchQuiet(dagMenuProc("", ""));
 // Inizialize Break Connections
 channelBoxCommand -break;
 
-// Store initial Shelf configuration
-int $myShelfCheck = `workspaceControl -q -vis Shelf`;
-
 // Set new scene opened preferences
 string $myLayoutReset = "int $myLayout = 0";
 scriptJob -e "NewSceneOpened" $myLayoutReset;
@@ -32,10 +29,6 @@ if (`optionVar -ex May9ActivationCheck` == 0){
 
 	// Declare initial layout state
 	global int $myLayout = 0;
-
-	// Shelf configuration
-	workspaceControl -e -visible $myShelfCheck Shelf;
-	workspaceLayoutManager -sa "May9 Pro";
 }
 
 // Preload userRuntime
