@@ -43,8 +43,3 @@ global proc May9_userRuntime(){
     source May9_userRuntime.mel;
 }
 catchQuiet (`May9_userRuntime`);
-
-// Check Anti-Alasing
-if (`optionVar -q da_AntiAliasPref`){
-	da_AntiAliasOn;
-}

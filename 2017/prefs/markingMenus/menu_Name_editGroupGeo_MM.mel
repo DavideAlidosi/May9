@@ -1,0 +1,65 @@
+
+    menuItem
+        -label "Retrive Group Node" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_retrievePBGroupNode" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_group.xpm" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Retrieve Source Mesh" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_retrievePBSourceMesh" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_mesh.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Unlock Final Mesh" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_retrievePBFinalMesh" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "nodeGrapherUnlocked.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+setParent -m ..;
+

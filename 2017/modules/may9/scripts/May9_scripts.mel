@@ -177,6 +177,7 @@ menuItem
 	    -cb (`getAttr "hardwareRenderingGlobals.motionBlurEnable"`);
 
 setParent -m ..;
+
 }
 
 
@@ -351,48 +352,6 @@ global proc da_interactiveIntersection(){
 	da_wireframeTemplate;
 	ShowManipulators;
 }
-
-
-// da_intPlay
-
-global proc da_intPlay(){
-    string $ctrlUI;
-    string $ctrlUI_controlName;
-    string $command;
-    string $layout;
-    $command = "InteractivePlayback;";
-
-    $ctrlsUI = `lsUI -type control MayaWindow`;
-    for ($ctrlUI in $ctrlsUI)
-    {
-        if ((`match "symbolButton" $ctrlUI`) == "symbolButton")
-            if (`symbolButton -q -c $ctrlUI`=="playButtonBackward")
-            {
-                $layout = `symbolButton -q -p $ctrlUI`;
-                
-                // store the current name of the control
-                $ctrlUI_controlName = $ctrlUI;
-                
-                deleteUI $ctrlUI;
-                $stepBtn = `symbolButton -p $layout -image "da_interactivePlayback.png" -c $command -ann "Interactive Playback. Pressing the ESC key will stop playback." stepBtn`;
-            }
-    }
-    
-    $ctrlsUI = `lsUI -type control MayaWindow`;
-    for ($ctrlUI in $ctrlsUI)
-    {
-        if ((`match "symbolButton" $ctrlUI`) == "symbolButton")
-            if (`symbolButton -q -c $ctrlUI`=="playButtonForward")
-                symbolButton -e -c "play -state (!`play -q -state`);" $ctrlUI;
-    }    
-    
-    // add a column to the timeSlider layout and recreate the play backwards button
-    gridLayout -e -nc (`gridLayout -q -nc $layout` + 1) $layout;
-    symbolButton -m 0 -p $layout $ctrlUI_controlName;
-}
-
-// Initialize Interactive Play button
-da_intPlay();
 
 
 // da_nParticleConverter
@@ -1029,6 +988,7 @@ global proc da_FacesFollicles()
 	select -r;
 }
 
+
 // da_Compass
 
 global proc da_Compass(){
@@ -1107,6 +1067,7 @@ global proc da_Compass(){
 	toggle -localAxis;
 }
 
+
 // da_AntiAlias
 
 global proc da_AntiAliasOn(){
@@ -1116,6 +1077,7 @@ global proc da_AntiAliasOn(){
 	} else {
 		setAttr "hardwareRenderingGlobals.lineAAEnable" 1;
 		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
+		setAttr "hardwareRenderingGlobals.multiSampleCount" 4;
 	}
 }
 
@@ -1126,21 +1088,16 @@ global proc da_AntiAliasOff(){
 	} else {
 		setAttr "hardwareRenderingGlobals.lineAAEnable" 0;
 		setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
+		setAttr "hardwareRenderingGlobals.multiSampleCount" 4;
 	}
 }
 
-global proc da_AntiAliasDefaultOn(){
-	da_AntiAliasOn();
-	string $da_AntiAliasOn = "da_AntiAliasOn()";
-	scriptJob -e "NewSceneOpened" $da_AntiAliasOn;
-	optionVar -iv da_AntiAliasPref 1;
-}
-
-global proc da_AntiAliasDefaultOff(){
-	da_AntiAliasOff();
-	string $da_AntiAliasOff = "da_AntiAliasOff()";
-	scriptJob -e "NewSceneOpened" $da_AntiAliasOff;
-	optionVar -iv da_AntiAliasPref 0;
+global proc da_AntiAliasToggle(){
+	if(`getAttr "hardwareRenderingGlobals.multiSampleEnable"`){
+    	da_AntiAliasOff;
+	}else{
+	    da_AntiAliasOn;
+	}
 }
 
 global proc da_AntiAliasToggle(){
@@ -1246,6 +1203,8 @@ global proc buildSelectAllMM_release(){
 }
 
 
+// da_pivotKeyable
+
 global proc da_pivotKeyable(){
 	string $myTransform[] = `ls -sl -type "transform"`;
 
@@ -1260,18 +1219,23 @@ global proc da_pivotKeyable(){
 	}
 }
 
+
 //da_proceduralBevel, required SOuP
 
 global proc da_proceduralBevel(){
+	python( "from editGroup import *" );//Temporary fix
+
     string $mySource[] = `ls -sl -typ "transform"`;
+    string $mySourceShape[] = `listRelatives -s`;
     
     duplicate;
-    delete -ch;
-    FreezeTransformations;
+    da_ClearFreeze;
     rename inBevelObj1;
     
     string $myInTransform[] = `ls -sl -typ "transform"`;
     string $myInShape[] = `listRelatives -s`;
+    
+    connectAttr -f ($mySourceShape[0] + ".outMesh") ($myInShape[0] + ".inMesh");
     
     python("soup().create('group');");
     string $myGroupNode[] = `ls -sl`;
@@ -1281,6 +1245,7 @@ global proc da_proceduralBevel(){
     rename outBevelObj1;
     string $myOutTransform[] = `ls -sl -typ "transform"`;
     string $myOutShape[] = `listRelatives -s`;
+    da_EnableReference;
     
     createNode polyBevel3;
     string $myPolyBevelNode[] = `ls -sl`;
@@ -1300,14 +1265,7 @@ global proc da_proceduralBevel(){
     select $myOutTransform[0];
     ResetTransformations;
     
-    string $mySel[] = `listRelatives -s`;
-    dR_DoCmd("modeVert");
-    for ($each in $mySel){
-        $indices = `getAttr -mi ($each + ".pnts")`;
-        for ($i in $indices){
-          setAttr($each + ".pnts[" + $i + "]", 0,0,0);
-        }
-    }
+    da_ResetTweakPoint;
     dR_modeObject;
     
     select $mySource[0];
@@ -1315,4 +1273,55 @@ global proc da_proceduralBevel(){
       
     python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
     select $myOutTransform[0];
+    print "";
+    inViewMessage -pos midCenterTop -msg "To complete Procedural Bevel operatiom click select button" -fade;
+}
+
+global proc da_retrievePBGroupNode(){
+	string $mySel[] = `ls -sl`;
+	maintainActiveChangeSelectMode $mySel[0] 1;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
+	inViewMessage -pos midCenterTop -msg "To complete Procedural Bevel operation click select button" -fade;
+}
+
+global proc da_retrievePBSourceMesh(){
+	string $mySel[] = `ls -sl`;
+	maintainActiveChangeSelectMode $mySel[0] 1;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $mySourceObj[] = `listConnections -s 1 -d 0`;
+	select $mySourceObj[0];
+	ShowSelectedObjects;
+	inViewMessage -pos midCenterTop -msg "Move original mesh for continue modeling" -fade;
+}
+
+global proc da_retrievePBFinalMesh(){
+	string $mySel[] = `ls -sl`;
+	maintainActiveChangeSelectMode $mySel[0] 1;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	string $myPolyBevel3[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel3[0];
+	string $myFinalObj[] = `listConnections -s 0 -d 1`;
+	select $myFinalObj[0];
+	da_DisableReference;
+	inViewMessage -pos midCenterTop -msg "Final mesh is unlocked" -fade;
 }
