@@ -46,7 +46,7 @@
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "da_retrievePBFinalMesh" 
+        -command "da_unlockPBFinalMesh" 
         -optionBox 0
         -enable 1
         -data 0
@@ -60,6 +60,26 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
+		
+	menuItem
+        -label "Lock Final Mesh" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_lockPBFinalMesh" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "nodeGrapherLocked.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
 
 setParent -m ..;
 

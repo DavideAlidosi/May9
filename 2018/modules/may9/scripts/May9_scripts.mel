@@ -1331,7 +1331,7 @@ global proc da_retrievePBSourceMesh(){
 	inViewMessage -pos midCenterTop -msg "Move original mesh for continue modeling" -fade;
 }
 
-global proc da_retrievePBFinalMesh(){
+global proc da_unlockPBFinalMesh(){
 	string $mySel[] = `ls -sl`;
 	maintainActiveChangeSelectMode $mySel[0] 1;
 	string $myShape[] = `listRelatives -s`;
@@ -1348,4 +1348,24 @@ global proc da_retrievePBFinalMesh(){
 	select $myFinalObj[0];
 	da_DisableReference;
 	inViewMessage -pos midCenterTop -msg "Final mesh is unlocked" -fade;
+}
+
+global proc da_lockPBFinalMesh(){
+	string $mySel[] = `ls -sl`;
+	maintainActiveChangeSelectMode $mySel[0] 1;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	string $myPolyBevel3[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel3[0];
+	string $myFinalObj[] = `listConnections -s 0 -d 1`;
+	select $myFinalObj[0];
+	da_EnableReference;
+	inViewMessage -pos midCenterTop -msg "Final mesh is locked" -fade;
+	select -d;
 }
