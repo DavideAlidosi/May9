@@ -8,7 +8,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "N" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -56,12 +56,12 @@
         -image "nodeGrapherUnlocked.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
-		
-	menuItem
+
+    menuItem
         -label "Lock Final Mesh" 
         -divider 0
         -subMenu 0
@@ -76,10 +76,31 @@
         -image "nodeGrapherLocked.png" 
         -echoCommand 0
         -italicized 0
-        -boldFont 0
+        -boldFont 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
+
+    menuItem
+        -label "Retrieve Bevel Node" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_retrievePBBevelNode" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyBevel24.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
 
 setParent -m ..;
 

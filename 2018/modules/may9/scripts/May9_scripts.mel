@@ -1283,6 +1283,8 @@ global proc da_proceduralBevel(){
     setAttr ($myPolyBevelNode[0] + ".subdivideNgons") 1;
     setAttr ($myPolyBevelNode[0] + ".mergeVertices") 1;
     setAttr ($myPolyBevelNode[0] + ".segments") 2;
+    setAttr ($myPolyBevelNode[0] + ".offsetAsFraction") 1;
+    setAttr ($myPolyBevelNode[0] + ".fraction") 0.1;
     
     setAttr ($myInShape[0] + ".intermediateObject") 1;
     
@@ -1368,4 +1370,20 @@ global proc da_lockPBFinalMesh(){
 	da_EnableReference;
 	inViewMessage -pos midCenterTop -msg "Final mesh is locked" -fade;
 	select -d;
+}
+
+global proc da_retrievePBBevelNode(){
+	string $mySel[] = `ls -sl`;
+	maintainActiveChangeSelectMode $mySel[0] 1;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	string $myPolyBevel3[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel3[0];
+	ShowManipulators;
 }
