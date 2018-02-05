@@ -771,19 +771,25 @@ menuItem
 
 menuItem
 -l "Default Muscle Weights"
--c "cMuscleWeightDefaultUI(); "
+-c "cMuscleWeightDefaultUI()"
 -i "cMuscle_skin_applyDefault.png"
 -stp "mel";
 
 menuItem
+-l "Muscle Smart Collide"
+-c "cMuscleSmartCollide_setup()"
+-i "cMuscle_smart_create.png"
+-stp "mel";
+
+menuItem
 -l "Paint Muscle Weights"
--c "cMusclePaint(); "
+-c "cMusclePaint()"
 -i "cMuscle_skin_paint.png"
 -stp "mel";
 
 menuItem
 -l "Smooth Skin to Muscle System"
--c "cMuscleConvertSkin(); "
+-c "cMuscleConvertSkin()"
 -i "cMuscle_skin_convert.png"
 -stp "mel";
 
