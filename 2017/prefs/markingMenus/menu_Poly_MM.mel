@@ -790,12 +790,6 @@ menuItem
 -stp "mel";
 
 menuItem
--l "Muscle Smart Collide"
--c "cMuscleSmartCollide_setup()"
--i "cMuscle_smart_create.png"
--stp "mel";
-
-menuItem
 -l "Paint Muscle Weights"
 -c "cMusclePaint()"
 -i "cMuscle_skin_paint.png"
@@ -805,6 +799,12 @@ menuItem
 -l "Smooth Skin to Muscle System"
 -c "cMuscleConvertSkin()"
 -i "cMuscle_skin_convert.png"
+-stp "mel";
+
+menuItem
+-l "Connect to Muscle Smart Collide"
+-c "cMuscleSmartCollide_connectSCToSystem(1)"
+-i "cMuscle_smart_connect.png"
 -stp "mel";
 
 menuItem
