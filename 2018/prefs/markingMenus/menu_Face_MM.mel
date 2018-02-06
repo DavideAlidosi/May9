@@ -14,7 +14,6 @@ menuItem
 -label "menuEditorMenuItem6"
 -command "BridgeEdgeOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem6;
 
@@ -30,7 +29,6 @@ menuItem
 -label "menuEditorMenuItem10"
 -command "PokePolygonOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem10;
 
@@ -62,7 +60,6 @@ menuItem
 -label "menuEditorMenuItem16"
 -command "BevelPolygonOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem16;
 
@@ -78,7 +75,6 @@ menuItem
 -label "menuEditorMenuItem12"
 -command "PolyExtrudeOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem12;
 
@@ -98,8 +94,6 @@ menuEditorMenuItem1002;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem1001;
 
@@ -114,7 +108,6 @@ menuItem
 -label "menuEditorMenuItem27"
 -command "MovePolygonComponentOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem14;
 
@@ -129,7 +122,6 @@ menuItem
 -label "menuEditorMenuItem995"
 -command "PolyCircularizeOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem994;
 
@@ -144,7 +136,6 @@ menuItem
 -label "menuEditorMenuItem29"
 -command "ExtractFaceOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem20;
 
@@ -159,14 +150,11 @@ menuItem
 -label "menuEditorMenuItem22"
 -command "DuplicateFaceOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem29;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem999;
 
@@ -186,21 +174,17 @@ menuEditorMenuItem34;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem24;
 
 menuItem
 -label "Deformers"
--subMenu 1
 -image "menuIconDeformations.png"
 -sourceType "mel"
 menuEditorMenuItem31;
 
 menuItem
 -label "Nonlinear"
--subMenu 1
 -image "bendNLD.png"
 -sourceType "mel"
 menuEditorMenuItem1;
@@ -217,7 +201,6 @@ menuItem
 -label "menuEditorMenuItem3"
 -command "BendOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem2;
 
@@ -232,7 +215,6 @@ menuItem
 -label "menuEditorMenuItem5"
 -command "FlareOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem3;
 
@@ -247,7 +229,6 @@ menuItem
 -label "menuEditorMenuItem7"
 -command "SineOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem5;
 
@@ -262,7 +243,6 @@ menuItem
 -label "menuEditorMenuItem9"
 -command "SquashOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem7;
 
@@ -277,7 +257,6 @@ menuItem
 -label "menuEditorMenuItem11"
 -command "TwistOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem9;
 
@@ -292,7 +271,6 @@ menuItem
 -label "menuEditorMenuItem13"
 -command "WaveOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem11;
 
@@ -309,7 +287,6 @@ menuItem
 -label "menuEditorMenuItem10"
 -command "CreateClusterOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem10;
 
@@ -324,7 +301,6 @@ menuItem
 -label "menuEditorMenuItem9"
 -command "CreateLatticeOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem11;
 
@@ -332,7 +308,6 @@ setParent -m ..;
 
 menuItem
 -label "UV Mapping"
--subMenu 1
 -image "polyUnfoldUVs.png"
 -sourceType "mel"
 menuEditorMenuItem32;
@@ -348,7 +323,6 @@ menuItem
 -label "menuEditorMenuItem4"
 -command "performPolyAutoProj 1;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem2;
 
@@ -363,7 +337,6 @@ menuItem
 -label "menuEditorMenuItem4"
 -command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem19;
 
@@ -378,7 +351,6 @@ menuItem
 -label "menuEditorMenuItem5"
 -command "performPolyProjectionArgList \"1\" {\"1\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem20;
 
@@ -393,7 +365,6 @@ menuItem
 -label "menuEditorMenuItem7"
 -command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem22;
 
@@ -401,7 +372,6 @@ setParent -m ..;
 
 menuItem
 -label "Normals"
--subMenu 1
 -image "polyNormalsPropagate.png"
 -sourceType "mel"
 menuEditorMenuItem33;
@@ -424,14 +394,11 @@ menuItem
 -label "menuEditorMenuItem15"
 -command "ReversePolygonNormalsOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem15;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem6;
 
@@ -446,7 +413,6 @@ menuItem
 -label "menuEditorMenuItem6"
 -command "polySoftEdgeWin"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem7;
 
@@ -461,14 +427,12 @@ setParent -m ..;
 
 menuItem
 -label "Shading"
--subMenu 1
 -image "render_adskMaterial.png"
 -sourceType "mel"
 menuEditorMenuItem22;
 
 $item = "";
 
-$menuAssign = `menuItem -label (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -subMenu true -allowOptionBoxes true -i "out_shaderList.png"`;
 menuItem 
 	-edit 
 	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
@@ -490,8 +454,6 @@ menuEditorMenuItem12;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem2;
 
@@ -518,8 +480,6 @@ menuEditorMenuItem5;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem6;
 
@@ -534,7 +494,6 @@ setParent -m ..;
 
 menuItem
 -label "Dynamics"
--subMenu 1
 -image "out_nucleus.png"
 -sourceType "mel"
 menuEditorMenuItem8;
@@ -550,14 +509,11 @@ menuItem
 -label "menuEditorMenuItem7"
 -command "CreateHairOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem8;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem9;
 
@@ -572,13 +528,11 @@ menuItem
 -label "menuEditorMenuItem4"
 -command "NEmitFromObjectOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem6;
 
 menuItem
 -label "Particle Style"
--subMenu 1
 -image "out_particle.png"
 -sourceType "mel"
 menuEditorMenuItem5;
@@ -623,7 +577,6 @@ setParent -m ..;
 
 menuItem
 -label "Add Fields"
--subMenu 1
 -image "posRadial.png"
 -sourceType "mel"
 menuEditorMenuItem11;
@@ -686,8 +639,6 @@ menuEditorMenuItem8;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem9;
 
@@ -704,7 +655,6 @@ setParent -m ..;
 
 menuItem
 -label "nConstraint"
--subMenu 1
 -image "menuIconConstraints.png"
 -sourceType "mel"
 menuEditorMenuItem35;
@@ -720,7 +670,6 @@ menuItem
 -label "menuEditorMenuItem3"
 -command "performCreateDynamicConstraint 1 \"transform\";"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem12;
 
@@ -735,7 +684,6 @@ menuItem
 -label "menuEditorMenuItem7"
 -command "performCreateDynamicConstraint 1 \"pointToPoint\";"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem5;
 
@@ -750,7 +698,6 @@ menuItem
 -label "menuEditorMenuItem5"
 -command "performCreateComponentNConstraint 1;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem16;
 
@@ -765,7 +712,6 @@ menuItem
 -label "menuEditorMenuItem9"
 -command "performCreateDynamicConstraint 1 \"tearableSurface\";"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem7;
 
@@ -780,14 +726,11 @@ menuItem
 -label "menuEditorMenuItem11"
 -command "performCreateDynamicConstraint 1 \"force\";"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem11;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem13;
 
@@ -809,7 +752,6 @@ setParent -m ..;
 
 menuItem
 -label "XGen"
--subMenu 1
 -image "xgDEditor.png"
 -sourceType "mel"
 menuEditorMenuItem13;
@@ -825,7 +767,6 @@ menuItem
 -label "menuEditorMenuItem7"
 -command "XgmCreateInteractiveGroomSplinesOption"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem7;
 
@@ -838,8 +779,6 @@ menuEditorMenuItem1;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem8;
 
@@ -861,8 +800,6 @@ setParent -m ..;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem17;
 

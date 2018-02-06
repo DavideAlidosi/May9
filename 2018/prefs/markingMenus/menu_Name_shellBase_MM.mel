@@ -3,535 +3,165 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 
     menuItem
         -label "Extrude" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "PolyExtrude" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "polyExtrudeFacet.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
         -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "PolyExtrudeOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
         -label "Select Edges" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
         -image "edges_NEX.png" 
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem3;
 
         menuItem
             -label "On Border" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "da_EdgeBorder" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
             -image "da_borderEdge.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
             -label "Inside" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "da_EdgeInside" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
             -image "da_insideEdge.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
             -label "By Straight Angle" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "da_EdgeStraightAngle" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
             -image "da_sraightAngle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
             -label "By Right Angle\n" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "da_EdgeRightAngle" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
             -image "da_rightAngle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem4;
 
         menuItem
             -label "By Acute Angle" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "da_EdgeAcuteAngle" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "S" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
             -image "da_acuteAngle.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem5;
 
         menuItem
             -label "Hard" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "da_EdgeHard" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
             -image "da_hardEdge.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem6;
 
         menuItem
             -label "Soft" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "da_EdgeSoft" 
-            -altModifier 0
-            -optionModifier 0
-            -commandModifier 0
-            -ctrlModifier 0
-            -shiftModifier 0
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
             -image "da_softEdge.png" 
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem7;
 
     setParent -m ..;
 
     menuItem
         -label "Multi Cut Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "dR_multiCutTool;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "multiCut_NEX32.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem4;
 	if (`size($edgeCheck)` > 1){
 		menuItem
 			-label "Fill Hole" 
-			-divider 0
-			-subMenu 0
-			-tearOff 0
 			-command "FillHole" 
-			-altModifier 0
-			-optionModifier 0
-			-commandModifier 0
-			-ctrlModifier 0
-			-shiftModifier 0
-			-optionBox 0
-			-enable 1
-			-data 0
 			-radialPosition "N" 
-			-allowOptionBoxes 1
-			-postMenuCommandOnce 0
-			-enableCommandRepeat 1
 			-image "polyCloseBorder.png" 
-			-echoCommand 0
-			-italicized 0
-			-boldFont 1
 			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem5;
 	}
 	if (`size($polyCheck)` != 0){
 		menuItem
 			-label "Sculpt Geometry" 
-			-divider 0
-			-subMenu 0
-			-tearOff 0
 			-command "SetMeshSculptTool" 
-			-altModifier 0
-			-optionModifier 0
-			-commandModifier 0
-			-ctrlModifier 0
-			-shiftModifier 0
-			-optionBox 0
-			-enable 1
-			-data 0
 			-radialPosition "N" 
-			-allowOptionBoxes 1
-			-postMenuCommandOnce 0
-			-enableCommandRepeat 1
 			-image "Sculpt.png" 
-			-echoCommand 0
-			-italicized 0
-			-boldFont 1
 			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem5;
 	}
     menuItem
         -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "ShowMeshSculptToolOptions" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
         -label "Smooth" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "SmoothPolygon" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "polySmooth.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
         -label "menuEditorMenuItem8" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "SmoothPolygonOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem8;
 
     menuItem
         -label "Bevel" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "BevelPolygon;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "polyBevel.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
         -label "menuEditorMenuItem10" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "BevelPolygonOptions;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem10;
 
 	if (`size($polyCheck)` != 0){
 		menuItem
 			-label "Sudivide Shell" 
-			-divider 0
-			-subMenu 1
-			-tearOff 0
-			-altModifier 0
-			-optionModifier 0
-			-commandModifier 0
-			-ctrlModifier 0
-			-shiftModifier 0
-			-optionBox 0
-			-enable 1
-			-data 0
-			-allowOptionBoxes 1
-			-enableCommandRepeat 1
 			-image "out_subdiv.png" 
-			-italicized 0
-			-boldFont 1
 			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem13;
 
 			menuItem
 				-label "On" 
-				-divider 0
-				-subMenu 0
-				-tearOff 0
 				-command "da_shellSubdiv" 
-				-altModifier 0
-				-optionModifier 0
-				-commandModifier 0
-				-ctrlModifier 0
-				-shiftModifier 0
-				-optionBox 0
-				-enable 1
-				-data 0
-				-allowOptionBoxes 1
-				-postMenuCommandOnce 0
-				-enableCommandRepeat 1
-				-echoCommand 0
 				-image "rvViewingPipelineOn.png"
-				-italicized 0
-				-boldFont 1
 				-sourceType "mel" 
-				-longDivider 1
 				menuEditorMenuItem1;
 
 			menuItem
 				-label "Off" 
-				-divider 0
-				-subMenu 0
-				-tearOff 0
 				-command "da_shellNoSubdiv" 
-				-altModifier 0
-				-optionModifier 0
-				-commandModifier 0
-				-ctrlModifier 0
-				-shiftModifier 0
-				-optionBox 0
-				-enable 1
-				-data 0
-				-allowOptionBoxes 1
-				-postMenuCommandOnce 0
-				-enableCommandRepeat 1
-				-echoCommand 0
 				-image "rvViewingPipelineOff.png"
-				-italicized 0
-				-boldFont 1
 				-sourceType "mel" 
-				-longDivider 1
 				menuEditorMenuItem2;
 
 		setParent -m ..;
@@ -539,103 +169,32 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 
     menuItem
         -label "Detach Shell" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "da_shellDetach" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "error.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem11;
 
 	if (`size($edgeCheck)` != 0){
 		menuItem
 			-label "Bridge" 
-			-divider 0
-			-subMenu 0
-			-tearOff 0
 			-command "BridgeEdge;" 
-			-altModifier 0
-			-optionModifier 0
-			-commandModifier 0
-			-ctrlModifier 0
-			-shiftModifier 0
-			-optionBox 0
-			-enable 1
-			-data 0
 			-radialPosition "NE" 
-			-allowOptionBoxes 1
-			-postMenuCommandOnce 0
-			-enableCommandRepeat 1
 			-image "polyBridge.png" 
-			-echoCommand 0
-			-italicized 0
-			-boldFont 0
 			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem12;
 
 		menuItem
-			-divider 0
-			-subMenu 0
-			-tearOff 0
 			-command "BridgeEdgeOptions;" 
-			-altModifier 0
-			-optionModifier 0
-			-commandModifier 0
-			-ctrlModifier 0
-			-shiftModifier 0
 			-optionBox 1
-			-enable 1
-			-data 0
-			-allowOptionBoxes 1
-			-postMenuCommandOnce 0
-			-enableCommandRepeat 0
-			-echoCommand 0
-			-italicized 0
-			-boldFont 0
 			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem13;
 
 		menuItem
 			-label "Delete Edge" 
-			-divider 0
-			-subMenu 0
-			-tearOff 0
 			-command "DeletePolyElements;" 
-			-altModifier 0
-			-optionModifier 0
-			-commandModifier 0
-			-ctrlModifier 0
-			-shiftModifier 0
-			-optionBox 0
-			-enable 1
-			-data 0
 			-radialPosition "SW" 
-			-allowOptionBoxes 1
-			-postMenuCommandOnce 0
-			-enableCommandRepeat 1
 			-image "polyDelEdgeVertex.png" 
-			-echoCommand 0
-			-italicized 0
-			-boldFont 0
 			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem14;
 	}
 

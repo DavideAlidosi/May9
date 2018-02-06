@@ -1,86 +1,34 @@
 
     menuItem
         -label "Edit Membership Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "EditMembershipTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "setEdit.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
         -label "Deformer Set Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "DeformerSetEditor" 
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "da_deformerSetEditor.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
         -label "Set Membership" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "PaintSetMembershipToolOptions" 
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "paintSetMembership.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
         -label "Edit Deformer" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "ShowManipulators;da_LastOpInStack" 
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "selectObject.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem1;
 
 setParent -m ..;

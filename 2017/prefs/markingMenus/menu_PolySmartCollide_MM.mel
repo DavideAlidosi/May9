@@ -1,23 +1,10 @@
 
     menuItem
         -label "Connect selected Muscle Smart Collide nodes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "cMuscleSmartCollide_connectSCToSystem(1)" 
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "cMuscle_smart_connect.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem1;
 
 setParent -m ..;

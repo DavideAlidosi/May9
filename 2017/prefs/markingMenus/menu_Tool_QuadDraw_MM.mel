@@ -4,189 +4,63 @@ int $extendMode = `nexOpt -q extendType`;
 
     menuItem
         -label "Clear Dots" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "dR_quadDrawClearDots" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
         -image "RS_delete.png" 
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
         -label "Complete Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "buildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
         -image "aselect.png" 
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
         -label "Multi Cut Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "dR_multiCutTool;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "multiCut_NEX32.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
         -label "Extend Border" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "nexOpt -e extendType 2;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -checkBox (2 == $extendMode)
         -radioButton 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
         -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
         -label "Extend Edge" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "nexOpt -e extendType 0;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -checkBox (0 == $extendMode)
         -radioButton 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
         -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
         -label "Extend Loop" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "nexOpt -e extendType 1;" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
         -checkBox (1 == $extendMode)
         -radioButton 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
         -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 0
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
         -label "Reset Settings" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "nexCtx -resetManip" 
-        -altModifier 0
-        -optionModifier 0
-        -commandModifier 0
-        -ctrlModifier 0
-        -shiftModifier 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
         -image "CN_refresh.png" 
-        -italicized 0
-        -boldFont 0
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem7;
 
 setParent -m ..;

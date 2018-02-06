@@ -2,352 +2,127 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
 
     menuItem
         -label "Add to Simulation" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "E" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem1;
 
         menuItem
             -label "Emitter" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "RemoveBifrostEmitter" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
             -label "Collider" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "AddBifrostCollider" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
             -label "Accelerator" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "AddBifrostAccelerator" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
             -label "Guide" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "AddBifrostGuide" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem6;
 
         menuItem
             -label "Kill Field" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "AddBifrostKillField" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem4;
 
     setParent -m ..;
 
     menuItem
         -label "Remove from Simulation" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "W" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem2;
 
         menuItem
             -label "Emitter" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "evalEcho( \"RemoveBifrostEmitter\" );" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
             -label "Collider" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "evalEcho( \"RemoveBifrostCollider\" );" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
             -label "Accelerator" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "evalEcho( \"RemoveBifrostAccelerator\" );" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
             -label "Guide" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
             -command "RemoveBifrostGuide" 
-            -optionBox 0
-            -enable 1
-            -data 0
             -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -italicized 0
-            -boldFont 1
             -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem6;
 
     setParent -m ..;
 
     menuItem
         -label "Stop Processing" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "bifrost -edit -stopProcessing;" 
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
         -image "kAlertStopIcon.png" 
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
         -label "Bifrost Options" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "performBifrostOptionsChange" 
-        -optionBox 0
-        -enable 1
-        -data 0
         -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
         -label "Create Cache" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "performCreateBifrostCache 0 0;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
         -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "performCreateBifrostCache 1 0;\n" 
         -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
         -label "Delete Cache" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "bifrost -edit -flushScratchCache;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
         -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem22;
 
     menuItem
         -label "HUD Info" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
         -command "ToggleBifrostHUD" 
         -checkBox (1 == $bifrostHUDCheck)
-        -enable 1
-        -data 0
-        -echoCommand 0
-        -italicized 0
-        -boldFont 1
         -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem23;
 
 setParent -m ..;

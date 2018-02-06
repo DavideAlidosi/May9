@@ -26,7 +26,6 @@ menuItem
 -label "menuEditorMenuItem22"
 -command "BevelPlusOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem22;
 
@@ -50,7 +49,6 @@ menuItem
 -label "menuEditorMenuItem26"
 -command "RevolveOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem26;
 
@@ -66,7 +64,6 @@ menuItem
 -label "menuEditorMenuItem9"
 -command "ReverseCurveOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem9;
 
@@ -82,7 +79,6 @@ menuItem
 -label "menuEditorMenuItem11"
 -command "OffsetCurveOptions;"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem11;
 
@@ -98,7 +94,6 @@ menuItem
 -label "menuEditorMenuItem18"
 -command "OpenCloseCurveOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem18;
 
@@ -132,8 +127,6 @@ menuEditorMenuItem24;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem99;
 
@@ -148,7 +141,6 @@ menuItem
 -label "menuEditorMenuItem21"
 -command "PlanarOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem5;
 
@@ -170,20 +162,16 @@ menuItem
 -label "menuEditorMenuItem24"
 -command "BevelPlusOptions"
 -optionBox 1
--enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem6;
 
 menuItem
 -label "separator" 
--divider 1
--dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem16;
 
 menuItem
 -label "Component Display" 
--subMenu 1
 -image "RS_visible.png" 
 -sourceType "mel" 
 menuEditorMenuItem90;
@@ -206,14 +194,12 @@ setParent -m ..;
 
 menuItem
 -label "Deformers"
--subMenu 1
 -image "menuIconDeformations.png"
 -sourceType "mel"
 menuEditorMenuItem31;
 
 menuItem
     -label "Nonlinear"
-    -subMenu 1
     -image "bendNLD.png"
     -sourceType "mel"
     menuEditorMenuItem1;
@@ -229,7 +215,6 @@ menuItem
         -label "menuEditorMenuItem2"
         -command "BendOptions;"
         -optionBox 1
-        -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem13;
 
@@ -244,7 +229,6 @@ menuItem
         -label "menuEditorMenuItem4"
         -command "FlareOptions;"
         -optionBox 1
-        -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem14;
 
@@ -259,7 +243,6 @@ menuItem
         -label "menuEditorMenuItem6"
         -command "SineOptions;"
         -optionBox 1
-        -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem15;
 
@@ -274,7 +257,6 @@ menuItem
         -label "menuEditorMenuItem8"
         -command "SquashOptions;"
         -optionBox 1
-        -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem16;
 
@@ -289,7 +271,6 @@ menuItem
         -label "menuEditorMenuItem10"
         -command "TwistOptions"
         -optionBox 1
-        -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem17;
 
@@ -304,7 +285,6 @@ menuItem
         -label "menuEditorMenuItem12"
         -command "WaveOptions;"
         -optionBox 1
-        -enableCommandRepeat 0
         -sourceType "mel"
         menuEditorMenuItem18;
 
@@ -321,7 +301,6 @@ menuItem
     -label "menuEditorMenuItem8"
     -command "CreateClusterOptions"
     -optionBox 1
-    -enableCommandRepeat 0
     -sourceType "mel"
     menuEditorMenuItem4;
 
@@ -336,7 +315,6 @@ menuItem
     -label "menuEditorMenuItem7"
     -command "CreateLatticeOptions;"
     -optionBox 1
-    -enableCommandRepeat 0
     -sourceType "mel"
     menuEditorMenuItem5;
 
@@ -344,7 +322,6 @@ setParent -m ..;
 
 menuItem
 -label "Dynamics"
--subMenu 1
 -image "out_nucleus.png"
 -sourceType "mel"
 menuEditorMenuItem4;
@@ -365,7 +342,6 @@ menuItem
 
 menuItem
     -label "Simulation Method"
-    -subMenu 1
     -sourceType "mel"
     menuEditorMenuItem18;
 
@@ -391,7 +367,6 @@ setParent -m ..;
 
 menuItem
     -label "Point Lock"
-    -subMenu 1
     -sourceType "mel"
     menuEditorMenuItem17;
 
@@ -423,7 +398,6 @@ setParent -m ..;
 
 menuItem
     -label "Follicle Braid"
-    -subMenu 1
     -sourceType "mel"
     menuEditorMenuItem13;
 
@@ -444,8 +418,6 @@ setParent -m ..;
 
 menuItem
     -label "separator" 
-    -divider 1
-    -dividerLabel "separator"
     -sourceType "mel"
     menuEditorMenuItem6;
 
@@ -460,13 +432,11 @@ menuItem
     -label "menuEditorMenuItem3"
     -command "NEmitFromObjectOptions;"
     -optionBox 1
-    -enableCommandRepeat 0
     -sourceType "mel"
     menuEditorMenuItem16;
 
 menuItem
     -label "Particle Style"
-    -subMenu 1
     -image "out_particle.png"
     -sourceType "mel"
     menuEditorMenuItem7;
@@ -510,8 +480,6 @@ setParent -m ..;
 
 menuItem
     -label "separator" 
-    -divider 1
-    -dividerLabel "separator"
     -sourceType "mel"
     menuEditorMenuItem5;
 
@@ -526,14 +494,11 @@ menuItem
     -label "menuEditorMenuItem19"
     -command "CreateSoftBodyOptions"
     -optionBox 1
-    -enableCommandRepeat 0
     -sourceType "mel"
     menuEditorMenuItem20;
 
 menuItem
     -label "separator" 
-    -divider 1
-    -dividerLabel "separator"
     -sourceType "mel"
     menuEditorMenuItem21;
 
@@ -548,7 +513,6 @@ menuItem
     -label "menuEditorMenuItem12"
     -command "SetFluidAttrFromCurveOptions"
     -optionBox 1
-    -enableCommandRepeat 0
     -sourceType "mel"
     menuEditorMenuItem22;
 
