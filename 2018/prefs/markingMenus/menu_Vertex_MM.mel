@@ -326,13 +326,6 @@ menuItem
 menuEditorMenuItem8;
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem15;
-
-menuItem
 -label "Paint Skin Weights"
 -command "ArtPaintSkinWeightsTool"
 -image "paintSkinWeights.png"
@@ -347,6 +340,14 @@ menuItem
 -boldFont 0
 -sourceType "mel"
 menuEditorMenuItem12;
+
+menuItem
+-label "Hammer Skin Weights"
+-command "weightHammerVerts"
+-image "weightHammer.png"
+-boldFont 0
+-sourceType "mel"
+menuEditorMenuItem16;
 
 menuItem
 -label "Copy Skin Weights"
