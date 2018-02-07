@@ -1,5 +1,5 @@
 
-    menuItem
+    menuItem 
         -label "Mirror Off" 
         -divider 0
         -subMenu 0
@@ -17,7 +17,7 @@
         -longDivider 1
         menuEditorMenuItem9;
 
-    menuItem
+    menuItem 
         -label "Mirror Z" 
         -divider 0
         -subMenu 0
@@ -35,7 +35,7 @@
         -longDivider 1
         menuEditorMenuItem10;
 
-    menuItem
+    menuItem 
         -label "Mirror Y" 
         -divider 0
         -subMenu 0
@@ -53,7 +53,7 @@
         -longDivider 1
         menuEditorMenuItem11;
 
-    menuItem
+    menuItem 
         -label "Mirror X" 
         -divider 0
         -subMenu 0
@@ -71,7 +71,7 @@
         -longDivider 1
         menuEditorMenuItem12;
 
-    menuItem
+    menuItem 
         -label "Length" 
         -divider 0
         -subMenu 0
@@ -90,7 +90,7 @@
         -longDivider 1
         menuEditorMenuItem4;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem5" 
         -divider 0
         -subMenu 0
@@ -107,7 +107,7 @@
         -longDivider 1
         menuEditorMenuItem5;
 
-    menuItem
+    menuItem 
         -label "Comb" 
         -divider 0
         -subMenu 0
@@ -126,7 +126,7 @@
         -longDivider 1
         menuEditorMenuItem13;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem14" 
         -divider 0
         -subMenu 0
@@ -143,7 +143,7 @@
         -longDivider 1
         menuEditorMenuItem14;
 
-    menuItem
+    menuItem 
         -label "Freeze" 
         -divider 0
         -subMenu 0
@@ -162,7 +162,7 @@
         -longDivider 1
         menuEditorMenuItem15;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem16" 
         -divider 0
         -subMenu 0
@@ -179,7 +179,7 @@
         -longDivider 1
         menuEditorMenuItem16;
 
-    menuItem
+    menuItem 
         -label "Grab" 
         -divider 0
         -subMenu 0
@@ -198,7 +198,7 @@
         -longDivider 1
         menuEditorMenuItem8;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem17" 
         -divider 0
         -subMenu 0
@@ -214,58 +214,6 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem17;
-
-    menuItem
-        -label "Mesh Collide" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
-
-        menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_XGenBrushMangement_CollisionOn" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -image "rvViewingPipelineOn.png"
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
-
-        menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_XGenBrushMangement_CollisionOff" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -image "rvViewingPipelineOff.png"
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
-
-    setParent -m ..;
 
     menuItem 
         -label "Groom Editor" 
@@ -301,7 +249,7 @@
         -sourceType "python" 
         -longDivider 1;
 
-    menuItem
+    menuItem 
         -label "separator" 
         -divider 1
         -dividerLabel "separator" 
@@ -317,7 +265,7 @@
         -longDivider 1
         menuEditorMenuItem2;
 
-    menuItem
+    menuItem 
         -label "Density" 
         -divider 0
         -subMenu 0
@@ -335,7 +283,7 @@
         -longDivider 1
         menuEditorMenuItem6;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem8" 
         -divider 0
         -subMenu 0
@@ -352,7 +300,7 @@
         -longDivider 1
         menuEditorMenuItem3;
 
-    menuItem
+    menuItem 
         -label "Place" 
         -divider 0
         -subMenu 0
@@ -370,7 +318,7 @@
         -longDivider 1
         menuEditorMenuItem18;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem19" 
         -divider 0
         -subMenu 0
@@ -387,7 +335,7 @@
         -longDivider 1
         menuEditorMenuItem19;
 
-    menuItem
+    menuItem 
         -label "Cut" 
         -divider 0
         -subMenu 0
@@ -405,7 +353,7 @@
         -longDivider 1
         menuEditorMenuItem20;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem21" 
         -divider 0
         -subMenu 0
@@ -422,7 +370,7 @@
         -longDivider 1
         menuEditorMenuItem21;
 
-    menuItem
+    menuItem 
         -label "Width" 
         -divider 0
         -subMenu 0
@@ -440,7 +388,7 @@
         -longDivider 1
         menuEditorMenuItem22;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem23" 
         -divider 0
         -subMenu 0
@@ -457,7 +405,7 @@
         -longDivider 1
         menuEditorMenuItem23;
 
-    menuItem
+    menuItem 
         -label "Twist" 
         -divider 0
         -subMenu 0
@@ -475,7 +423,7 @@
         -longDivider 1
         menuEditorMenuItem44;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem46" 
         -divider 0
         -subMenu 0
@@ -492,7 +440,7 @@
         -longDivider 1
         menuEditorMenuItem25;
 
-    menuItem
+    menuItem 
         -label "Smooth" 
         -divider 0
         -subMenu 0
@@ -510,7 +458,7 @@
         -longDivider 1
         menuEditorMenuItem24;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem25" 
         -divider 0
         -subMenu 0
@@ -527,7 +475,7 @@
         -longDivider 1
         menuEditorMenuItem27;
 
-    menuItem
+    menuItem 
         -label "Noise" 
         -divider 0
         -subMenu 0
@@ -545,7 +493,7 @@
         -longDivider 1
         menuEditorMenuItem26;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem27" 
         -divider 0
         -subMenu 0
@@ -562,7 +510,7 @@
         -longDivider 1
         menuEditorMenuItem29;
 
-    menuItem
+    menuItem 
         -label "Clump" 
         -divider 0
         -subMenu 0
@@ -580,7 +528,7 @@
         -longDivider 1
         menuEditorMenuItem28;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem29" 
         -divider 0
         -subMenu 0
@@ -597,7 +545,7 @@
         -longDivider 1
         menuEditorMenuItem31;
 
-    menuItem
+    menuItem 
         -label "Part" 
         -divider 0
         -subMenu 0
@@ -615,7 +563,7 @@
         -longDivider 1
         menuEditorMenuItem30;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem31" 
         -divider 0
         -subMenu 0
@@ -632,7 +580,7 @@
         -longDivider 1
         menuEditorMenuItem34;
 
-    menuItem
+    menuItem 
         -label "separator" 
         -divider 1
         -dividerLabel "separator" 
@@ -648,7 +596,7 @@
         -longDivider 1
         menuEditorMenuItem32;
 
-    menuItem
+    menuItem 
         -label "Select" 
         -divider 0
         -subMenu 0
@@ -666,7 +614,7 @@
         -longDivider 1
         menuEditorMenuItem33;
 
-    menuItem
+    menuItem 
         -label "menuEditorMenuItem34" 
         -divider 0
         -subMenu 0
@@ -684,4 +632,3 @@
         menuEditorMenuItem35;
 
 setParent -m ..;
-
