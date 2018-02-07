@@ -1,69 +1,196 @@
 
     menuItem
         -label "Automatic Map" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "performPolyAutoProj 0;" 
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "polyAutoProj.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
         -label "menuEditorMenuItem2" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "performPolyAutoProj 1;" 
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem11;
 
     menuItem
         -label "Spherical Map" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";" 
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "polySphereProj.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
         -label "menuEditorMenuItem8" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";" 
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem14;
 
     menuItem
         -label "UV Toolkit" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "da_OpenUvToolkit" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "UVTk.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem15;
 
     menuItem
         -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem16;
 
     menuItem
         -label "Layout" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "LayoutUV" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "layoutUV.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem17;
 
     menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "LayoutUVOptions" 
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem18;
 
     menuItem
         -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
         -label "Convert to UVs" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "ConvertSelectionToUVs" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "UVEditorVertex.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem10;
 
 setParent -m ..;

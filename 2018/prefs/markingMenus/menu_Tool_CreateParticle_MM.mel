@@ -1,49 +1,157 @@
 
     menuItem
         -label "Points Style" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "optionVar -stringValue NParticleStyle \"Points\";" 
 		-image "nPartPoints.png"
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
         -label "Balls Style" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "optionVar -stringValue NParticleStyle \"Balls\";" 
 		-image "nPartBalls.png"
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
         -label "Cloud Style" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "optionVar -stringValue NParticleStyle \"Cloud\";" 
 		-image "nPartCloud.png"
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
         -label "ThickCloud Style" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
 		-image "nPartThickCloud.png"
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
         -label "Water Style" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "optionVar -stringValue NParticleStyle \"Water\";" 
 		-image "nPartWater.png"
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
         -label "Complete Tool" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "buildSelectMM;MarkingMenuPopDown;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -italicized 0
+        -boldFont 0
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem6;
 
 setParent -m ..;

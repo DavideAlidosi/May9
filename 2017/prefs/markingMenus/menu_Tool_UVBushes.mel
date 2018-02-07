@@ -1,136 +1,451 @@
 
     menuItem
         -label "Cut" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "cutUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
         -label "menuEditorMenuItem2" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
         -label "Sew" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "sewUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
         -label "menuEditorMenuItem6" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;\ntoolPropertyWindow" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
         -label "Grab" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "grabUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
         -label "menuEditorMenuItem8" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;\ntoolPropertyWindow;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem8;
 
     menuItem
         -label "Pin" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "pinUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
         -label "menuEditorMenuItem10" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;\ntoolPropertyWindow" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem10;
 
     menuItem
         -label "Smear" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "smearUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem11;
 
     menuItem
         -label "menuEditorMenuItem12" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;\ntoolPropertyWindow" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem12;
 
     menuItem
         -label "Optimize" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "optimizeUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem16;
 
     menuItem
         -label "menuEditorMenuItem17" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem17;
 
     menuItem
         -label "Symmetrize" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "symmetrizeUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
         -label "menuEditorMenuItem4" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem15;
 
     menuItem
         -label "Unfold" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "unfoldUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem18;
 
     menuItem
         -label "menuEditorMenuItem19" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;\ntoolPropertyWindow" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem20;
 
     menuItem
         -label "Pinch" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "pinchUVTool.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem13;
 
     menuItem
         -label "menuEditorMenuItem14" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj\ntoolPropertyWindow;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
         -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem21;
 
 setParent -m ..;

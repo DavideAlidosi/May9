@@ -993,6 +993,7 @@ menuItem
 
 $item = "";
 
+$menuAssign = `menuItem -label (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -subMenu true -allowOptionBoxes true -i "out_shaderList.png"`;
 menuItem 
 	-edit 
 	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;

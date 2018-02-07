@@ -1,57 +1,183 @@
 
     menuItem
         -label "Refine selected" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "subdivCreateRegion" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "subdivMatchToplogy.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
         -label "Uncrease Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "UncreaseSubdivSurface" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "subdivUncrease.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
         -label "Partial Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "PartialCreaseSubdivSurface" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "subdivPartialCrease.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
         -label "Full Crease" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "FullCreaseSubdivSurface" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "subdivCrease.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
         -label "Display Finer" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "string $mySel[] = `ls -sl -o`;\nsetSubdivDisplayLevelAndFilter $mySel \"+1\" 0;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "subdivRefineRegion.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
         -label "Display Coarser" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "string $mySel[] = `ls -sl -o`;\nsetSubdivDisplayLevelAndFilter $mySel \"-1\" 0;" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
         -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "subdivSelectCoarser.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
         -label "Assign New Material" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
         -command "createAssignNewMaterialTreeLister \"\";" 
+        -altModifier 0
+        -optionModifier 0
+        -commandModifier 0
+        -ctrlModifier 0
+        -shiftModifier 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
         -image "render_adskMaterial.png" 
+        -echoCommand 0
+        -italicized 0
+        -boldFont 1
         -sourceType "mel" 
+        -longDivider 1
         menuEditorMenuItem7;
 
     menuItem

@@ -14,6 +14,7 @@ menuItem
 -label "menuEditorMenuItem2"
 -command "BevelPolygonOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem2;
 
@@ -29,6 +30,7 @@ menuItem
 -label "menuEditorMenuItem4"
 -command "BridgeEdgeOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem4;
 
@@ -60,11 +62,13 @@ menuItem
 -label "menuEditorMenuItem14"
 -command "PolyExtrudeOptions"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem14;
 
 menuItem
 -label "Select Edges"
+-subMenu 1
 -radialPosition "SE"
 -image "edges_NEX.png"
 -sourceType "mel"
@@ -144,6 +148,8 @@ menuEditorMenuItem1000;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem1001;
 
@@ -158,6 +164,7 @@ menuItem
 -label "menuEditorMenuItem17"
 -command "MovePolygonComponentOptions"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem8;
 
@@ -172,6 +179,7 @@ menuItem
 -label "menuEditorMenuItem997"
 -command "PolyEditEdgeFlowOptions"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem997;
 
@@ -193,11 +201,14 @@ menuItem
 -label "menuEditorMenuItem19"
 -command "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem10;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem999;
 
@@ -217,6 +228,8 @@ menuEditorMenuItem38;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem51;
 
@@ -238,22 +251,27 @@ menuItem
 -label "menuEditorMenuItem39"
 -command "CreateCurveFromPolyOptions"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem40;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem18;
 
 menuItem
 -label "Deformers"
+-subMenu 1
 -image "menuIconDeformations.png"
 -sourceType "mel"
 menuEditorMenuItem32;
 
 menuItem
 -label "Nonlinear"
+-subMenu 1
 -image "bendNLD.png"
 -sourceType "mel"
 menuEditorMenuItem1;
@@ -269,6 +287,7 @@ menuItem
 -label "menuEditorMenuItem2"
 -command "BendOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem2;
 
@@ -283,6 +302,7 @@ menuItem
 -label "menuEditorMenuItem4"
 -command "FlareOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem4;
 
@@ -297,6 +317,7 @@ menuItem
 -label "menuEditorMenuItem6"
 -command "SineOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem6;
 
@@ -311,6 +332,7 @@ menuItem
 -label "menuEditorMenuItem8"
 -command "SquashOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem8;
 
@@ -325,6 +347,7 @@ menuItem
 -label "menuEditorMenuItem10"
 -command "TwistOptions"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem10;
 
@@ -339,6 +362,7 @@ menuItem
 -label "menuEditorMenuItem12"
 -command "WaveOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem12;
 
@@ -355,6 +379,7 @@ menuItem
 -label "menuEditorMenuItem8"
 -command "CreateClusterOptions"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem2;
 
@@ -369,11 +394,14 @@ menuItem
 -label "menuEditorMenuItem4"
 -command "CreateLatticeOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem4;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem5;
 
@@ -381,6 +409,7 @@ menuItem
 -label "Paste Skin Weights"
 -command "artAttrSkinWeightPaste"
 -image "polyPasteUV.png"
+-boldFont 0
 -sourceType "mel"
 menuEditorMenuItem6;
 
@@ -388,6 +417,7 @@ setParent -m ..;
 
 menuItem
 -label "UV Mapping"
+-subMenu 1
 -image "polyUnfoldUVs.png"
 -sourceType "mel"
 menuEditorMenuItem29;
@@ -415,6 +445,8 @@ menuEditorMenuItem3;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem5;
 
@@ -429,6 +461,7 @@ setParent -m ..;
 
 menuItem
 -label "Normals"
+-subMenu 1
 -image "polyNormalsPropagate.png"
 -sourceType "mel"
 menuEditorMenuItem31;
@@ -442,6 +475,8 @@ menuEditorMenuItem1;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem5;
 
@@ -456,6 +491,7 @@ menuItem
 -label "menuEditorMenuItem5"
 -command "polySoftEdgeWin"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem3;
 
@@ -470,6 +506,7 @@ setParent -m ..;
 
 menuItem
 -label "Dynamics"
+-subMenu 1
 -image "out_nucleus.png"
 -sourceType "mel"
 menuEditorMenuItem34;
@@ -485,11 +522,13 @@ menuItem
 -label "menuEditorMenuItem5"
 -command "NEmitFromObjectOptions;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem5;
 
 menuItem
 -label "Particle Style"
+-subMenu 1
 -image "out_particle.png"
 -sourceType "mel"
 menuEditorMenuItem6;
@@ -533,6 +572,7 @@ setParent -m ..;
 
 menuItem
 -label "Add Fields"
+-subMenu 1
 -image "posRadial.png"
 -sourceType "mel"
 menuEditorMenuItem12;
@@ -595,6 +635,8 @@ menuEditorMenuItem8;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem9;
 
@@ -611,6 +653,7 @@ setParent -m ..;
 
 menuItem
 -label "nConstraint"
+-subMenu 1
 -image "menuIconConstraints.png"
 -sourceType "mel"
 menuEditorMenuItem33;
@@ -626,6 +669,7 @@ menuItem
 -label "menuEditorMenuItem3"
 -command "performCreateDynamicConstraint 1 \"transform\";"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem13;
 
@@ -640,6 +684,7 @@ menuItem
 -label "menuEditorMenuItem5"
 -command "performCreateComponentNConstraint 1;"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem14;
 
@@ -654,6 +699,7 @@ menuItem
 -label "menuEditorMenuItem7"
 -command "performCreateDynamicConstraint 1 \"pointToPoint\";"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem15;
 
@@ -668,6 +714,7 @@ menuItem
 -label "menuEditorMenuItem9"
 -command "performCreateDynamicConstraint 1 \"tearableSurface\";"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem17;
 
@@ -682,11 +729,14 @@ menuItem
 -label "menuEditorMenuItem12"
 -command "performCreateDynamicConstraint 1 \"force\";"
 -optionBox 1
+-enableCommandRepeat 0
 -sourceType "mel"
 menuEditorMenuItem18;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem9;
 
@@ -708,6 +758,8 @@ setParent -m ..;
 
 menuItem
 -label "separator" 
+-divider 1
+-dividerLabel "separator"
 -sourceType "mel"
 menuEditorMenuItem22;
 
