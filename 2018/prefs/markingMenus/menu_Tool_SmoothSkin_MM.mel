@@ -2,7 +2,7 @@ string $currentCtx = `currentCtx`;
 int $reflectionCheck = `artAttrCtx -q -rn $currentCtx`;
 string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
 
-    menuItem
+    menuItem -itl 1 
         -label "X Axis" 
         -divider 0
         -subMenu 0
@@ -21,7 +21,7 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -longDivider 1
         menuEditorMenuItem1;
 
-    menuItem
+    menuItem -itl 1 
         -label "Y Axis" 
         -divider 0
         -subMenu 0
@@ -40,7 +40,7 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -longDivider 1
         menuEditorMenuItem2;
 
-    menuItem
+    menuItem -itl 1 
         -label "Z Axis" 
         -divider 0
         -subMenu 0
@@ -59,7 +59,7 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -longDivider 1
         menuEditorMenuItem3;
 
-    menuItem
+    menuItem -itl 1 
         -label "Symmetry" 
         -divider 0
         -subMenu 0
@@ -78,7 +78,7 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -longDivider 1
         menuEditorMenuItem4;
 
-    menuItem
+    menuItem -itl 1 
         -label "Flood Smooth" 
         -divider 0
         -subMenu 0

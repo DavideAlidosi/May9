@@ -1,5 +1,77 @@
 
     menuItem
+        -label "Mirror Off" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_XGenBrushMangement_MirrorOff" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
+
+    menuItem
+        -label "Mirror Z" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_XGenBrushMangement_MirrorZ" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
+
+    menuItem
+        -label "Mirror Y" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_XGenBrushMangement_MirrorY" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
+
+    menuItem
+        -label "Mirror X" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_XGenBrushMangement_MirrorX" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem12;
+
+    menuItem
         -label "Length" 
         -divider 0
         -subMenu 0
@@ -16,10 +88,10 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem5;
+        menuEditorMenuItem4;
 
     menuItem
-        -label "menuEditorMenuItem6" 
+        -label "menuEditorMenuItem5" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -33,7 +105,7 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem6;
+        menuEditorMenuItem5;
 
     menuItem
         -label "Comb" 
@@ -72,150 +144,6 @@
         menuEditorMenuItem14;
 
     menuItem
-        -label "Smooth" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetSmoothBrushTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgIG_smooth.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
-
-    menuItem
-        -label "menuEditorMenuItem10" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetSmoothBrushToolOption" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem10;
-
-    menuItem
-        -label "Noise" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetNoiseBrushTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgIG_noise.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem15;
-
-    menuItem
-        -label "menuEditorMenuItem16" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetNoiseBrushToolOption" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem16;
-
-    menuItem
-        -label "Clump" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetClumpBrushTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgIG_clump.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem22;
-
-    menuItem
-        -label "menuEditorMenuItem24" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetClumpBrushToolOption" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem24;
-
-    menuItem
-        -label "Cut" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetCutBrushTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgIG_cut.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem21;
-
-    menuItem
-        -label "menuEditorMenuItem23" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetCutBrushToolOption" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem12;
-
-    menuItem
         -label "Freeze" 
         -divider 0
         -subMenu 0
@@ -232,10 +160,10 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem3;
+        menuEditorMenuItem15;
 
     menuItem
-        -label "menuEditorMenuItem4" 
+        -label "menuEditorMenuItem16" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -249,7 +177,7 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem19;
+        menuEditorMenuItem16;
 
     menuItem
         -label "Grab" 
@@ -268,10 +196,10 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem1;
+        menuEditorMenuItem8;
 
     menuItem
-        -label "menuEditorMenuItem2" 
+        -label "menuEditorMenuItem17" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -285,10 +213,62 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem25;
+        menuEditorMenuItem17;
 
     menuItem
-        -label "Interactive Groom Editor" 
+        -label "Mesh Collide" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+        menuItem
+            -label "On" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "da_XGenBrushMangement_CollisionOn" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -image "rvViewingPipelineOn.png"
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Off" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "da_XGenBrushMangement_CollisionOff" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -image "rvViewingPipelineOff.png"
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem3;
+
+    setParent -m ..;
+
+    menuItem 
+        -label "Groom Editor" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -302,15 +282,14 @@
         -image "xgIG_editor.png" 
         -echoCommand 0
         -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
+        -longDivider 1;
 
-    menuItem
-        -label "Interactive Groom to Polygons" 
+    menuItem 
+        -label "Groom to Polygons" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "python(\"import xgenm.xmaya.xgmSplineToGeometryConvert as convert;convert.convertPrimToPolygon(True)\")" 
+        -command "import xgenm.xmaya.xgmSplineToGeometryConvert as convert;convert.convertPrimToPolygon(True)" 
         -optionBox 0
         -enable 1
         -data 0
@@ -319,9 +298,8 @@
         -enableCommandRepeat 1
         -image "xgConvertToPoly.png" 
         -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem30;
+        -sourceType "python" 
+        -longDivider 1;
 
     menuItem
         -label "separator" 
@@ -337,7 +315,7 @@
         -enableCommandRepeat 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem20;
+        menuEditorMenuItem2;
 
     menuItem
         -label "Density" 
@@ -355,10 +333,10 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem17;
+        menuEditorMenuItem6;
 
     menuItem
-        -label "menuEditorMenuItem18" 
+        -label "menuEditorMenuItem8" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -372,42 +350,7 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem2;
-
-    menuItem
-        -label "Twist" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetDirectionBrushTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgIG_twist.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem26;
-
-    menuItem
-        -label "menuEditorMenuItem30" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgmSetDirectionBrushToolOption" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
+        menuEditorMenuItem3;
 
     menuItem
         -label "Place" 
@@ -425,10 +368,10 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem34;
+        menuEditorMenuItem18;
 
     menuItem
-        -label "menuEditorMenuItem35" 
+        -label "menuEditorMenuItem19" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -442,7 +385,42 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem8;
+        menuEditorMenuItem19;
+
+    menuItem
+        -label "Cut" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetCutBrushTool" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_cut.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem20;
+
+    menuItem
+        -label "menuEditorMenuItem21" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetCutBrushToolOption" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem21;
 
     menuItem
         -label "Width" 
@@ -460,10 +438,10 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem32;
+        menuEditorMenuItem22;
 
     menuItem
-        -label "menuEditorMenuItem33" 
+        -label "menuEditorMenuItem23" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -477,7 +455,147 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem18;
+        menuEditorMenuItem23;
+
+    menuItem
+        -label "Twist" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetDirectionBrushTool" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_twist.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem44;
+
+    menuItem
+        -label "menuEditorMenuItem46" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetDirectionBrushToolOption" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem25;
+
+    menuItem
+        -label "Smooth" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetSmoothBrushTool" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_smooth.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem24;
+
+    menuItem
+        -label "menuEditorMenuItem25" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetSmoothBrushToolOption" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem27;
+
+    menuItem
+        -label "Noise" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetNoiseBrushTool" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_noise.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem26;
+
+    menuItem
+        -label "menuEditorMenuItem27" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetNoiseBrushToolOption" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem29;
+
+    menuItem
+        -label "Clump" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetClumpBrushTool" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "xgIG_clump.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem28;
+
+    menuItem
+        -label "menuEditorMenuItem29" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "XgmSetClumpBrushToolOption" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem31;
 
     menuItem
         -label "Part" 
@@ -495,7 +613,7 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem29;
+        menuEditorMenuItem30;
 
     menuItem
         -label "menuEditorMenuItem31" 
@@ -512,7 +630,7 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem23;
+        menuEditorMenuItem34;
 
     menuItem
         -label "separator" 
@@ -528,7 +646,7 @@
         -enableCommandRepeat 1
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem27;
+        menuEditorMenuItem32;
 
     menuItem
         -label "Select" 
@@ -546,10 +664,10 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem7;
+        menuEditorMenuItem33;
 
     menuItem
-        -label "menuEditorMenuItem8" 
+        -label "menuEditorMenuItem34" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -563,7 +681,7 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem28;
+        menuEditorMenuItem35;
 
 setParent -m ..;
 

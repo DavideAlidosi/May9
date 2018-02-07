@@ -4,7 +4,7 @@ int $deleteFaceOn = `nexOpt -q useDeleteFaces`;
 int $extractFacesOn = `nexOpt -q useExtractFaces`;
 int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
 
-	menuItem
+	menuItem -itl 1 
 	-label "Quad Draw"
 	-command "dR_quadDrawTool;"
 	-radialPosition "NW"
@@ -12,7 +12,7 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
 	-sourceType "mel"
 	menuEditorMenuItem11;
 	
-    menuItem
+    menuItem -itl 1 
         -label "Cut Mode" 
         -divider 0
         -subMenu 0
@@ -31,7 +31,7 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -longDivider 1
         menuEditorMenuItem1;
 
-    menuItem
+    menuItem -itl 1 
         -label "Extract Mode" 
         -divider 0
         -subMenu 0
@@ -50,7 +50,7 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -longDivider 1
         menuEditorMenuItem3;
 
-    menuItem
+    menuItem -itl 1 
         -label "Split Mode" 
         -divider 0
         -subMenu 0
@@ -69,7 +69,7 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -longDivider 1
         menuEditorMenuItem2;
 
-    menuItem
+    menuItem -itl 1 
         -label "Slice Plane" 
         -divider 0
         -subMenu 0
@@ -88,7 +88,7 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -longDivider 1
         menuEditorMenuItem4;
 
-    menuItem
+    menuItem -itl 1 
         -label "Reset Settings" 
         -divider 0
         -subMenu 0
