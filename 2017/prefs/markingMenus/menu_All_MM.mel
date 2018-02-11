@@ -1182,6 +1182,18 @@ menuItem -bld 1
 -stp "mel";
 
 menuItem -bld 1 
+-l "Vertex Animation Cache"
+-c "da_vertexAnimationCache"
+-cb (`getAttr "hardwareRenderingGlobals.vertexAnimationCache"`)
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
 -l "Create nCache"
 -c "nClothCache"
 -i "nClothCacheCreate.png"

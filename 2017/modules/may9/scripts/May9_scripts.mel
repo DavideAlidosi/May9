@@ -1121,6 +1121,16 @@ global proc da_maxPlaybackSpeedToggle(){
 	}
 }
 
+// da_vertexAnimationCache
+
+global proc da_vertexAnimationCache(){
+	if(`getAttr "hardwareRenderingGlobals.vertexAnimationCache"`){
+    	setAttr "hardwareRenderingGlobals.vertexAnimationCache" 0;
+	}else{
+	    setAttr "hardwareRenderingGlobals.vertexAnimationCache" 2;
+	}
+}
+
 
 // buildSelectAllMM
 
