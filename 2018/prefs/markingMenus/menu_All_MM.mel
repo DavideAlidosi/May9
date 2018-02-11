@@ -944,7 +944,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Freeze Transform"
 -c "FreezeTransformations" 
--rp "NE"
+-rp "E"
 -i "FreezeTransform.png"
 -stp "mel";
 
@@ -956,7 +956,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Delete History"
 -c "DeleteHistory" 
--rp "E"
+-rp "NE"
 -i "DeleteHistory.png"
 -stp "mel";
 
@@ -968,15 +968,10 @@ menuItem -bld 1
 -stp "mel";
 
 menuItem -bld 1 
--l "Optimize Scene Sizes"
--c "OptimizeScene"
+-l "Delete Non-Deformer History"
+-c "BakeNonDefHistory"
 -rp "N"
--i "sequenceCompress.png"
--stp "mel";
-
-menuItem -bld 1 
--c "OptimizeSceneOptions"
--ob 1
+-i "nodeGrapherDisplayNone.png"
 -stp "mel";
 
 menuItem -bld 1 
@@ -1009,7 +1004,7 @@ setParent -m ..;
 menuItem -bld 1 
 -l "Optimize Scene Size" 
 -c "OptimizeSceneOptions"
--i "deleteActive.png" 
+-i "sequenceCompress.png" 
 -rp "S"
 -stp "mel";
 
