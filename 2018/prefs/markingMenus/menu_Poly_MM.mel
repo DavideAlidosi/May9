@@ -190,6 +190,14 @@ menuItem
 -i "MASH_CreateNetwork.png"
 -stp "mel";
 
+if (`pluginInfo -q -loaded proSets` == 1){
+menuItem
+-l "Create ProSets"
+-c "import proSetsAPI;proSetsAPI.createProSet();mel.eval('AttributeEditor;OutlinerWindow')"
+-i "out_proSet.png"
+-stp "python";
+}
+
 if (`pluginInfo -q -loaded ngSkinTools` == 1){
 menuItem
 -l "ngSkin Tools"

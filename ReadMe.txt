@@ -72,6 +72,9 @@ Adaptaded as plug-in by Davide Alidosi
 Bool is licensed under custom EULA (https://www.mainframe.co.uk/s/Bool-EULA.pdf)
 Copyright (c) Mainframe North
 
+ProSets is licensed under custom EULA (https://www.mainframe.co.uk/s/ProSets-EULA.pdf)
+Copyright (c) Mainframe North
+
 ngSkinTools is licensed under custom license (https://www.ngskintools.com/license/)
 Copyright (c) Viktoras Makauskas
 
