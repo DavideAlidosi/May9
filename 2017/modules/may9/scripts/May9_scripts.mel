@@ -79,8 +79,15 @@ menuItem
 	    -label "Shelf" 
 	    -command "ToggleShelf" 
 	    -sourceType "mel" 
-	    -radialPosition "NW" 
+	    -radialPosition "SW" 
 	    -cb (`workspaceControl -q -vis Shelf`);
+
+	menuItem
+	    -label "Shelf Tabs" 
+	    -command "toggleShelfTabs" 
+	    -sourceType "mel" 
+	    -radialPosition "W" 
+	    -cb (`optionVar -q shelfTabsVisible`);
 
 	menuItem
 	    -label "Menu Bars" 
@@ -93,7 +100,7 @@ menuItem
 	    -label "Icon Bars" 
 	    -command "ToggleModelEditorBars" 
 	    -sourceType "mel" 
-	    -radialPosition "W" 
+	    -radialPosition "NW" 
 	    -cb (false == `optionVar -q collapseIconBarsInPanels`);
 
 	menuItem
@@ -1229,18 +1236,11 @@ global proc da_pivotKeyable(){
 global proc da_proceduralBevel(){
     python( "from editGroup import *" );//Temporary fix
 
-    string $mySel[] = `ls -sl`;
-    hide;
-    select $mySel[0];
-    duplicate;
-    showHidden;
-    rename "PBevelMesh";
-
     string $mySource[] = `ls -sl -typ "transform"`;
     string $mySourceShape[] = `listRelatives -s`;
-    ResetTransformations;
     
     duplicate;
+    da_ClearFreeze;
     rename ($mySource[0] + "_BevelIn");
     
     string $myInTransform[] = `ls -sl -typ "transform"`;
@@ -1272,12 +1272,18 @@ global proc da_proceduralBevel(){
     setAttr ($myPolyBevelNode[0] + ".segments") 2;
     setAttr ($myPolyBevelNode[0] + ".offsetAsFraction") 1;
     setAttr ($myPolyBevelNode[0] + ".fraction") 0.1;
-   
+    
     setAttr ($myInShape[0] + ".intermediateObject") 1;
+    
+    select $myOutTransform[0];
+    ResetTransformations;
+    
+    da_ResetTweakPoint;
+    dR_modeObject;
     
     select $mySource[0];
     hide;
-
+      
     python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
     select $myOutTransform[0];
     print "";
