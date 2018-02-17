@@ -1091,7 +1091,6 @@ global proc da_AntiAliasOn(){
 	} else {
 		setAttr "hardwareRenderingGlobals.lineAAEnable" 1;
 		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
-		setAttr "hardwareRenderingGlobals.multiSampleCount" 4;
 	}
 }
 
@@ -1102,7 +1101,6 @@ global proc da_AntiAliasOff(){
 	} else {
 		setAttr "hardwareRenderingGlobals.lineAAEnable" 0;
 		setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
-		setAttr "hardwareRenderingGlobals.multiSampleCount" 4;
 	}
 }
 
