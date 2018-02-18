@@ -1285,7 +1285,7 @@ global proc da_proceduralBevel(){
 
     python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
     select $myOutTransform[0];
-    print "";
+    print " ";
     inViewMessage -pos midCenterTop -msg "To complete Procedural Bevel operation click select button" -f;
 }
 
