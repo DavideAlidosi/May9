@@ -1317,7 +1317,7 @@ global proc da_proceduralBevel(){
 }
 
 global proc da_retrievePBGroupNode(){
-	da_SetObjectMode;
+	changeSelectMode -object;
 	string $myShape[] = `listRelatives -s`;
 	select $myShape[0];
 	string $myBevelObj[] = `listConnections -s 1 -d 0`;
@@ -1331,7 +1331,7 @@ global proc da_retrievePBGroupNode(){
 }
 
 global proc da_retrievePBSourceMesh(){
-	da_SetObjectMode;
+	changeSelectMode -object;
 	string $myShape[] = `listRelatives -s`;
 	select $myShape[0];
 	string $myBevelObj[] = `listConnections -s 1 -d 0`;
@@ -1345,7 +1345,7 @@ global proc da_retrievePBSourceMesh(){
 }
 
 global proc da_unlockPBFinalMesh(){
-	da_SetObjectMode;
+	changeSelectMode -object;
 	string $myShape[] = `listRelatives -s`;
 	select $myShape[0];
 	string $myBevelObj[] = `listConnections -s 1 -d 0`;
@@ -1363,7 +1363,7 @@ global proc da_unlockPBFinalMesh(){
 }
 
 global proc da_lockPBFinalMesh(){
-	da_SetObjectMode;
+	changeSelectMode -object;
 	string $myShape[] = `listRelatives -s`;
 	select $myShape[0];
 	string $myBevelObj[] = `listConnections -s 1 -d 0`;
@@ -1382,7 +1382,7 @@ global proc da_lockPBFinalMesh(){
 }
 
 global proc da_retrievePBBevelNode(){
-	da_SetObjectMode;
+	changeSelectMode -object;
 	string $myShape[] = `listRelatives -s`;
 	select $myShape[0];
 	string $myBevelObj[] = `listConnections -s 1 -d 0`;
