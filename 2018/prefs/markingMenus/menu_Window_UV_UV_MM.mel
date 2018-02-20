@@ -129,6 +129,72 @@
         menuEditorMenuItem16;
 
     menuItem
+        -label "Auto Seams" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyAutoSeamUV 0" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyAutoSeams.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1;
+
+    menuItem
+        -label "menuEditorMenuItem15" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performPolyAutoSeamUV 1" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1;
+
+    menuItem
+        -label "Unfold" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performUnfold 0" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "textureEditorUnfoldUVs.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1;
+
+    menuItem
+        -label "menuEditorMenuItem6" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "performUnfold 1" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1;
+
+    menuItem
         -label "Layout" 
         -divider 0
         -subMenu 0

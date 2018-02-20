@@ -840,7 +840,13 @@ menuItem
 -stp "mel";
 
 menuItem
--l "Select UVs"
+-l "Match"
+-c "da_MatchUV"
+-i "polyMatchUV.png"
+-stp "mel";
+
+menuItem
+-l "Select All"
 -c "da_SelectUV"
 -i "polyGridUV.png"
 -stp "mel";
@@ -906,24 +912,18 @@ menuItem
 -ob 1
 -stp "mel";
 
-menuItem
--l "separator" 
--d 1
--dl "separator"
--stp "mel";
-
-menuItem
--l "UV Borders"
--c "da_ToggleUVBorders"
--i "UVEditorTextureBorder.png"
--stp "mel";
-
 setParent -m ..;
 
 menuItem
 -l "Normals"
 -sm 1
 -i "polyNormalsPropagate.png"
+-stp "mel";
+
+menuItem
+-l "Match"
+-c "da_MatchNormals"
+-i "polyNormalSetToFace.png"
 -stp "mel";
 
 menuItem

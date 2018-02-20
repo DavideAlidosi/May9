@@ -829,7 +829,7 @@ menuItem
 }
 
 menuItem
--l "Select UVs"
+-l "Select All"
 -c "da_SelectUV"
 -i "polyGridUV.png"
 -stp "mel";
@@ -921,12 +921,6 @@ menuItem
 menuItem
 -c "performPolyAutoSeamUV 1"
 -ob 1
--stp "mel";
-
-menuItem
--l "UV Borders"
--c "da_ToggleUVBorders"
--i "UVEditorTextureBorder.png"
 -stp "mel";
 
 setParent -m ..;

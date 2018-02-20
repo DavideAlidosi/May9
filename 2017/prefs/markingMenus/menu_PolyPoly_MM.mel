@@ -839,7 +839,13 @@ menuItem
 -stp "mel";
 
 menuItem
--l "Select UVs"
+-l "Match"
+-c "da_MatchUV"
+-i "polyMatchUV.png"
+-stp "mel";
+
+menuItem
+-l "Select All"
 -c "da_SelectUV"
 -i "polyGridUV.png"
 -stp "mel";
@@ -923,6 +929,12 @@ menuItem
 -l "Normals"
 -sm 1
 -i "polyNormalsPropagate.png"
+-stp "mel";
+
+menuItem
+-l "Match"
+-c "da_MatchNormals"
+-i "polyNormalSetToFace.png"
 -stp "mel";
 
 menuItem
