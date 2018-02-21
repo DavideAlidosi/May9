@@ -125,7 +125,6 @@ menuItem
 	    -radialPosition "S";
 
 	menuItem
-		-label "menuEditorMenuItem103" 
 		-command "SaveCurrentWorkspace" 
 		-optionBox 1
 		-sourceType "mel";
@@ -186,7 +185,7 @@ menuItem
 	menuItem
 	    -label "Transparent Shadow" 
 	    -command "da_TransparentShadowsToggle" 
-	    -radialPosition "W" 
+	    -radialPosition "SE" 
 	    -sourceType "mel" 
 	    -cb (`getAttr "hardwareRenderingGlobals.transparentShadow"`);
 
@@ -200,7 +199,19 @@ menuItem
 	menuItem
 	    -label "Grid" 
 	    -command "ToggleGrid" 
-	    -radialPosition "SE" 
+	    -radialPosition "NW" 
+	    -sourceType "mel" 
+	    -cb (`optionVar -q showGrid`);
+
+	menuItem
+		-command "GridOptions" 
+		-optionBox 1
+		-sourceType "mel";
+
+	menuItem
+	    -label "Ambient Occlusion" 
+	    -command "da_ToggleAO" 
+	    -radialPosition "W" 
 	    -sourceType "mel" 
 	    -cb (`optionVar -q showGrid`);
 
@@ -1152,6 +1163,16 @@ global proc da_motionBlurEnableToggle(){
     	setAttr "hardwareRenderingGlobals.motionBlurEnable" 0;
 	}else{
 	    setAttr "hardwareRenderingGlobals.motionBlurEnable" 1;
+	}
+}
+
+// da_ToggleAO
+
+global proc da_ToggleAO(){
+	if(`getAttr "hardwareRenderingGlobals.ssaoEnable"`){
+    	setAttr "hardwareRenderingGlobals.ssaoEnable" 0;
+	}else{
+	    setAttr "hardwareRenderingGlobals.ssaoEnable" 1;
 	}
 }
 
