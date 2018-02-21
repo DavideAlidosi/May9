@@ -184,6 +184,58 @@
         menuEditorMenuItem20;
 
     menuItem
+        -label "Show Local Axes" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem21;
+
+        menuItem
+            -label "On" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "da_ShowLocalAxis" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
+            -echoCommand 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Off" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "da_HideLocalAxis" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
+            -echoCommand 0
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+    setParent -m ..;
+
+    menuItem
         -label "Display As" 
         -divider 0
         -subMenu 1
@@ -260,6 +312,7 @@
         -optionBox 0
         -enable 1
         -data 0
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -358,10 +411,22 @@
         menuEditorMenuItem1;
 
     menuItem
-        -l "Muscle Smart Collide"
-        -c "cMuscleSmartCollide_setup()"
-        -i "cMuscle_smart_create.png"
-        -stp "mel";
+        -label "Muscle Smart Collide" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "cMuscleSmartCollide_setup()" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "cMuscle_smart_create.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuItem8959;
 
     menuItem
         -label "separator" 

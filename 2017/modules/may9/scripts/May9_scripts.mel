@@ -93,7 +93,7 @@ menuItem
 	    -label "Menu Bars" 
 	    -command "TogglePanelMenubar" 
 	    -sourceType "mel" 
-	    -radialPosition "N" 
+	    -radialPosition "NE" 
 	    -cb (`optionVar -q allowMenusInPanels`);
 
 	menuItem
@@ -107,8 +107,15 @@ menuItem
 	    -label "Main Menu Bars" 
 	    -command "ToggleMainMenubar" 
 	    -sourceType "mel" 
-	    -radialPosition "NE" 
+	    -radialPosition "E" 
 	    -cb (`optionVar -q mainWindowMenubarVis`);
+
+	menuItem
+	    -label "Title Bar" 
+	    -command "da_TitleBarToggle" 
+	    -sourceType "mel" 
+	    -radialPosition "N" 
+	    -cb (`window -q -titleBar MayaWindow`);
 
 	menuItem
 	    -label "Save Workspace" 
@@ -1112,6 +1119,14 @@ global proc da_AntiAliasToggle(){
 	}
 }
 
+global proc da_JointMode(){
+	if(`selectMode -q -component`){
+    	changeSelectMode -object;
+	}else{
+	    changeSelectMode -component;
+    	setComponentPickMask "Other" 1;
+	}
+}
 
 // da_motionBlurEnable
 
@@ -1140,6 +1155,16 @@ global proc da_vertexAnimationCache(){
     	setAttr "hardwareRenderingGlobals.vertexAnimationCache" 0;
 	}else{
 	    setAttr "hardwareRenderingGlobals.vertexAnimationCache" 2;
+	}
+}
+
+// da_TitleBarToggle
+
+global proc da_TitleBarToggle(){
+	if(`window -q -titleBar MayaWindow`){
+    	window -e -titleBar 0 MayaWindow;
+	}else{
+	    window -e -titleBar 1 MayaWindow;
 	}
 }
 
@@ -1253,6 +1278,23 @@ global proc da_MatchUV(){
     string $myTargets[] = stringArrayRemove(`ls -sl -tail 1`, `ls -sl -fl`);
     int $numObj = size($myTargets);
     for($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 0 -uvs 1 -col 0 -spa 0 -sm 3 -clb 1 $myRefUV[0] $myTargets[$i];
+}
+
+
+// da_ShowLocalAxis
+
+global proc da_ShowLocalAxis(){
+	string $mySel[] = `ls -sl`;
+	int $numObj = size($mySel);
+    for($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + ".displayLocalAxis") 1;
+}
+
+// da_HideLocalAxis
+
+global proc da_HideLocalAxis(){
+	string $mySel[] = `ls -sl`;
+	int $numObj = size($mySel);
+    for($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + ".displayLocalAxis") 0;
 }
 
 
