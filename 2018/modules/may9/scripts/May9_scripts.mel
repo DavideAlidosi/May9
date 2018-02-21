@@ -213,7 +213,7 @@ menuItem
 	    -command "da_ToggleAO" 
 	    -radialPosition "W" 
 	    -sourceType "mel" 
-	    -cb (`optionVar -q showGrid`);
+	    -cb (`getAttr "hardwareRenderingGlobals.ssaoEnable"`);
 
 setParent -m ..;
 
