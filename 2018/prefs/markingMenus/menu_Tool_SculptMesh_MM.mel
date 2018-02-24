@@ -131,6 +131,25 @@ menuItem -itl 1
 menuEditorMenuItem6;
 
 menuItem -itl 1 
+-label "Flood" 
+-divider 0
+-subMenu 0
+-tearOff 0
+-command "sculptMeshCacheCtx -e -flood 1 sculptMeshCacheContext" 
+-optionBox 0
+-enable 1
+-data 0
+-radialPosition "S" 
+-allowOptionBoxes 1
+-postMenuCommandOnce 0
+-enableCommandRepeat 1
+-image "polySmoothProxy.png" 
+-echoCommand 0
+-sourceType "mel" 
+-longDivider 1
+menuEditorMenuItem29;
+
+menuItem -itl 1 
 -label "Smooth" 
 -divider 0
 -subMenu 0
@@ -139,7 +158,6 @@ menuItem -itl 1
 -optionBox 0
 -enable 1
 -data 0
--radialPosition "S" 
 -allowOptionBoxes 1
 -postMenuCommandOnce 0
 -enableCommandRepeat 1
