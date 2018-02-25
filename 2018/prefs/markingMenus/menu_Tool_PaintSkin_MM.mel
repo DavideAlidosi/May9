@@ -54,7 +54,7 @@
         menuEditorMenuItem7;
 
     menuItem -itl 1 
-        -label "Toggle XRay Joints" 
+        -label "XRay Joints" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -64,16 +64,16 @@
         -data 0
         -radialPosition "E" 
         -allowOptionBoxes 1
+        -checkBox (`artAttrSkinPaintCtx -q -xrayJoints artAttrSkinContext`) 
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "XRayJoints.png" 
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
 
     menuItem -itl 1 
-        -label "Toggle Ramp Type" 
+        -label "Color Ramp" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -83,9 +83,9 @@
         -data 0
         -radialPosition "S" 
         -allowOptionBoxes 1
+        -checkBox (`artAttrSkinPaintCtx -q -useColorRamp artAttrSkinContext`) 
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "da_rampType.png" 
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
@@ -110,7 +110,7 @@
         menuEditorMenuItem10;
 
     menuItem -itl 1 
-        -label "Toogle Wireframe" 
+        -label "Wireframe" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -120,13 +120,20 @@
         -data 0
         -radialPosition "SE" 
         -allowOptionBoxes 1
+        -checkBox (`artAttrSkinPaintCtx -q -showactive artAttrSkinContext`) 
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "WireFrameOnShaded.png" 
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
+
+    menuItem -itl 1 
+        -label "Anti-Aliasing" 
+        -command "da_AntiAliasToggle" 
+        -radialPosition "SW" 
+        -sourceType "mel" 
+        -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
 
 setParent -m ..;
 
