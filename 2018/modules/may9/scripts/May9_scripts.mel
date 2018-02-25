@@ -1207,6 +1207,15 @@ global proc da_TitleBarToggle(){
 }
 
 
+// da_SculptFlood
+
+global proc da_SculptFlood(){
+	string $myCurrentTool = `currentCtx`;
+	float $myStrengthValue = `sculptMeshCacheCtx -q -strength $myCurrentTool`;
+	sculptMeshCacheCtx -e -flood $myStrengthValue $myCurrentTool;
+}
+
+
 // buildSelectAllMM
 
 global proc buildSelectAllMM(){
@@ -1349,6 +1358,12 @@ global proc da_HideLocalAxis(){
     for($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + ".displayLocalAxis") 0;
 }
 
+// da_FreezeDelNonDef
+
+global proc da_FreezeDelNonDef(){
+	FreezeTransformations;
+	BakeNonDefHistory;
+}
 
 //da_proceduralBevel, required SOuP
 
