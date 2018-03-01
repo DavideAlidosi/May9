@@ -156,7 +156,7 @@ I00
 sg21
 I0
 sg22
-S'da_GoToComponentMode'
+S'da_GoToCvsMode'
 p51
 sg24
 S'CurvesOnSurface_MM'
@@ -212,7 +212,7 @@ I00
 sg21
 I0
 sg22
-S'da_GoToComponentMode'
+S'da_GoToCvsMode'
 p62
 sg24
 S'Curves_MM'
@@ -395,7 +395,7 @@ I00
 sg21
 I0
 sg22
-S'da_GoToComponentMode'
+S'da_GoToCvsMode'
 p110
 sg24
 S'Nurbs_MM'
@@ -527,7 +527,7 @@ I00
 sg21
 I0
 sg22
-S'da_GoToComponentMode'
+S'da_GoToCvsMode'
 p137
 sg24
 S'NurbsCurve_MM'
@@ -546,7 +546,7 @@ I00
 sg21
 I0
 sg22
-S'da_GoToComponentMode'
+S'da_GoToCvsMode'
 p141
 sg24
 S'NurbsNurbs_MM'
@@ -678,7 +678,7 @@ I00
 sg21
 I0
 sg22
-S'da_GoToComponentMode'
+S'da_GoToCvsMode'
 p168
 sg24
 S'CurveCurve_MM'

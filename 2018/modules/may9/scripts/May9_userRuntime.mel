@@ -416,6 +416,14 @@ nameCommand
 //
 
 runTimeCommand
+	-annotation "Go to CVs Mode"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("changeSelectMode -component;\nsetComponentPickMask \"Point\" true;")
+	da_GoToCvsMode;
+
+runTimeCommand
 	-annotation "Cleare History end Freeze Transformation"
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""
