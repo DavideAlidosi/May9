@@ -15,9 +15,11 @@
         -image "smoothSkin.png" 
         -echoCommand 0
         -sourceType "mel" 
-        -longDivider 1;
+        -longDivider 1
+        menuItem1957;
 
     menuItem
+        -label "menuItem1958" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -30,7 +32,8 @@
         -enableCommandRepeat 0
         -echoCommand 0
         -sourceType "mel" 
-        -longDivider 1;
+        -longDivider 1
+        menuItem1958;
 
     menuItem
         -label "Aim Constraint" 
@@ -41,7 +44,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "E" 
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -113,7 +116,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -139,25 +142,6 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
-
-    menuItem
-        -label "Remove Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doRemoveConstraintTarget 1  { \"all\",\"0\"};" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "menuIconConstraints.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
 
     menuItem
         -label "Pole Vector Constraint" 
@@ -196,44 +180,6 @@
         menuEditorMenuItem8;
 
     menuItem
-        -label "IK Spline Handle on Selected Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "IKSplineHandleToolOptions;\nresetTool ikSplineHandleContext;\nikSplineHandlePropCallback \"ToolSettings|MainToolSettingsLayout|tabLayout1|ikSplineHandle|ikSplineHandleFrame|ikSplineHandleOptions\" \"createCurveOff\"; " 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "kinSplineHandle.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
-
-    menuItem
-        -label "Connect selected Muscle" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "cMuscle_connectToSystem(); " 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "cMuscle_skin_connMus.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem10;
-
-    menuItem
         -label "Add Influence" 
         -divider 0
         -subMenu 0
@@ -252,6 +198,7 @@
         menuEditorMenuItem11;
 
     menuItem
+        -label "menuEditorMenuItem14" 
         -divider 0
         -subMenu 0
         -tearOff 0
@@ -265,7 +212,7 @@
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
-        menuEditorMenuItem14;
+        menuEditorMenuItem1;
 
     menuItem
         -label "Remove Influence" 
@@ -284,6 +231,145 @@
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
+
+    menuItem
+        -label "IK Spline Handle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKSplineHandleTool;" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "kinSplineHandle.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "IKSplineHandleToolOptions;" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem14;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
+    menuItem
+        -label "Connect selected Muscle" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "cMuscle_connectToSystem(); " 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "cMuscle_skin_connMus.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
+
+    menuItem
+        -label "Point Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "PointConstraint" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "posConstraint.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem16;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "PointConstraintOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem17;
+
+    menuItem
+        -label "Orient Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "OrientConstraint" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NW" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "orientConstraint.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem18;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "OrientConstraintOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem20;
 
 setParent -m ..;
 

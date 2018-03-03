@@ -44,7 +44,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "NE" 
+        -radialPosition "E" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -80,7 +80,7 @@
         -optionBox 0
         -enable 1
         -data 0
-        -radialPosition "E" 
+        -radialPosition "S" 
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
@@ -133,8 +133,8 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOn.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOn.png"
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -151,8 +151,8 @@
             -allowOptionBoxes 1
             -postMenuCommandOnce 0
             -enableCommandRepeat 1
+            -image "rvViewingPipelineOff.png" 
             -echoCommand 0
-			-image "rvViewingPipelineOff.png"
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -160,11 +160,11 @@
     setParent -m ..;
 
     menuItem
-        -label "Remove Constraint" 
+        -label "Orient Constraint" 
         -divider 0
         -subMenu 0
         -tearOff 0
-        -command "doRemoveConstraintTarget 1  { \"all\",\"0\"};" 
+        -command "OrientConstraint" 
         -optionBox 0
         -enable 1
         -data 0
@@ -172,11 +172,62 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "menuIconConstraints.png" 
+        -image "orientConstraint.png" 
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "OrientConstraintOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Point Constraint" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "PointConstraint" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "posConstraint.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "PointConstraintOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
 
 setParent -m ..;
 
