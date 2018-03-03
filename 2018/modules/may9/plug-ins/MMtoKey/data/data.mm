@@ -433,7 +433,7 @@ I00
 sg21
 I0
 sg22
-S'da_SelectMulti;da_GoToComponentMode'
+S'da_GoToCvsMode'
 p118
 sg24
 S'PolyMuscle_MM'
@@ -1467,7 +1467,7 @@ I00
 sg21
 I0
 sg22
-S'da_GoToComponentMode'
+S'da_GoToCvsMode'
 p327
 sg24
 S'PolyCurve_MM'

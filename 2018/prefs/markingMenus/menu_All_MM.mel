@@ -214,49 +214,78 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Create Joint"
--c "JointTool;"
+-c "JointTool"
 -rp "SW"
 -i "kinJoint.png"
 -stp "mel";
 
 menuItem -bld 1 
--c "JointToolOptions;"
+-c "JointToolOptions"
 -ob 1
 -stp "mel";
 
 menuItem -bld 1 
 -l "Parent Constraint"
--c "ParentConstraint;"
+-c "ParentConstraint"
 -rp "S"
 -i "parentConstraint.png"
 -stp "mel";
 
 menuItem -bld 1 
--c "ParentConstraintOptions;"
+-c "ParentConstraintOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Orient Constraint"
+-c "OrientConstraint"
+-rp "E"
+-i "orientConstraint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "OrientConstraintOptions"
 -ob 1
 -stp "mel";
 
 menuItem -bld 1 
 -l "Aim Constraint"
--c "AimConstraint;"
--rp "E"
+-c "AimConstraint"
+-rp "N"
 -i "aimConstraint.png"
 -stp "mel";
 
 menuItem -bld 1 
--c "AimConstraintOptions;"
+-c "AimConstraintOptions"
 -ob 1
 -stp "mel";
 
 menuItem -bld 1 
 -l "Scale Constraint"
--c "scaleConstraint;"
--rp "SE"
+-c "scaleConstraint"
 -i "scaleConstraint.png"
 -stp "mel";
 
 menuItem -bld 1 
--c "ScaleConstraintOptions;"
+-c "ScaleConstraintOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Point Constraint"
+-c "PointConstraint"
+-rp "SE"
+-i "posConstraint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "PointConstraintOptions"
 -ob 1
 -stp "mel";
 
@@ -284,18 +313,6 @@ menuItem -bld 1
 -ob 1
 -stp "mel";
 
-menuItem -bld 1 
--l "Closest Point on Surface"
--c "ClosestPointOn"
--rp "N"
--i "locator.png"
--stp "mel";
-
-menuItem -bld 1 
--c "ClosestPointOnOptions"
--ob 1
--stp "mel";
-
 if (`pluginInfo -q -l contextConnector` == 1){
 menuItem -bld 1 
 -l "Context Connector"
@@ -319,15 +336,21 @@ menuItem -bld 1
 }
 
 menuItem -bld 1 
+-l "Attributes"
+-sm 1
+-i "attributes.png"
+-stp "mel";
+
+menuItem -bld 1 
 -l "Channel Control"
 -c "ChannelControlEditor"
 -i "channelBox.png"
 -stp "mel";
 
 menuItem -bld 1 
--l "Attributes"
--sm 1
--i "attributes.png"
+-l "separator" 
+-d 1
+-dl "separator"
 -stp "mel";
 
 menuItem -bld 1 
