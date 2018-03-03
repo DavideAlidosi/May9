@@ -1342,8 +1342,6 @@ global proc da_FreezeDelNonDef(){
 //da_proceduralBevel, required SOuP
 
 global proc da_proceduralBevel(){
-    python( "from editGroup import *" );//Temporary fix
-
     string $mySel[] = `ls -sl`;
     hide;
     select $mySel[0];
