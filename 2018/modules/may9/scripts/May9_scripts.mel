@@ -1031,14 +1031,6 @@ global proc da_FacesFollicles()
 // da_Compass
 
 global proc da_Compass(){
-	sphere -p 0 0 0 -ax 0 1 0 -ssw 0 -esw 360 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -nsp 4 -ch 0;
-	rename Compass1;
-	string $myCompassSphere[] = `ls -sl`;
-	string $myCompassSphereShape[] = `listRelatives -s`;
-	da_PolyNoShade;
-	setAttr ($myCompassSphereShape[0] + ".overrideEnabled") 1;
-	setAttr ($myCompassSphereShape[0] + ".overrideColor") 25;
-
 	circle  -c 0 0 0 -nr 0 1 0 -sw 180 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
 	string $myVectorDir1[] = `ls -sl`;
 	setAttr ($myVectorDir1[0] + ".sx") -2;
@@ -1066,44 +1058,26 @@ global proc da_Compass(){
 	setAttr ($myCompassVector[0] + ".overrideEnabled") 1;
 	setAttr ($myCompassVector[0] + ".overrideColor") 4;
 
-	select $myCompassVector[0] $myCompassSphere[0];
+	string $myVectorProduct = `createNode vectorProduct`;
+	setAttr ($myVectorProduct + ".operation") 3;
+	setAttr ($myVectorProduct + ".input1X") 1;
 
-	setAttr -lock true ($myCompassSphere[0] + ".rx");
-	setAttr -lock true ($myCompassSphere[0] + ".ry");
-	setAttr -lock true ($myCompassSphere[0] + ".rz");
+	connectAttr ($myCompassVector[0] + ".worldMatrix[0]", $myVectorProduct + ".matrix");
 
-	setAttr -lock true ($myCompassVector[0] + ".tx");
-	setAttr -lock true ($myCompassVector[0] + ".ty");
-	setAttr -lock true ($myCompassVector[0] + ".tz");
-	setAttr -lock true ($myCompassVector[0] + ".sx");
-	setAttr -lock true ($myCompassVector[0] + ".sy");
-	setAttr -lock true ($myCompassVector[0] + ".sz");
+	addAttr -ln "VectorX" -at double $myCompassVector[0];
+	addAttr -ln "VectorY" -at double $myCompassVector[0];
+	addAttr -ln "VectorZ" -at double $myCompassVector[0];
+	setAttr -e -k 1 ($myCompassVector[0] + ".VectorX");
+	setAttr -e -k 1 ($myCompassVector[0] + ".VectorY");
+	setAttr -e -k 1 ($myCompassVector[0] + ".VectorZ");
+	setAttr -l 1 ($myCompassVector[0] + ".sx");
+	setAttr -l 1 ($myCompassVector[0] + ".sy");
+	setAttr -l 1 ($myCompassVector[0] + ".sz");
+	connectAttr($myVectorProduct + ".output.outputX", $myCompassVector[0] + ".VectorX");
+	connectAttr($myVectorProduct + ".output.outputY", $myCompassVector[0] + ".VectorY");
+	connectAttr($myVectorProduct + ".output.outputZ", $myCompassVector[0] + ".VectorZ");
 
-	select -cl;
-	Group;
-	rename CompassDirection;
-	string $myCompassDirection[] = `ls -sl`;
-	setAttr ($myCompassDirection[0] + ".translateX") 1;
-
-	select $myCompassDirection[0] $myCompassSphere[0];
-	select $myCompassVector[0] $myCompassDirection[0];
-	doCreateParentConstraintArgList 1 { "1","0","0","0","0","0","0","0","1","","1" };
-
-	addAttr -ln "VectorX"  -at double $myCompassSphere;
-	addAttr -ln "VectorY"  -at double $myCompassSphere;
-	addAttr -ln "VectorZ"  -at double $myCompassSphere;
-	setAttr -e-keyable true ($myCompassSphere[0] + ".VectorX");
-	setAttr -e-keyable true ($myCompassSphere[0] + ".VectorY");
-	setAttr -e-keyable true ($myCompassSphere[0] + ".VectorZ");
-	connectAttr($myCompassDirection[0] + ".tx", $myCompassSphere[0] + ".VectorX");
-	connectAttr($myCompassDirection[0] + ".ty", $myCompassSphere[0] + ".VectorY");
-	connectAttr($myCompassDirection[0] + ".tz", $myCompassSphere[0] + ".VectorZ");
-	
-	select $myCompassDirection[0] $myCompassVector[0] $myCompassSphere[0];
-	parent;
-
-	select $myCompassSphere[0];
-	toggle -localAxis;
+	select $myCompassVector[0];
 }
 
 
