@@ -198,6 +198,14 @@ menuItem
 -i "out_MASH_Points.png"
 -stp "mel";
 
+if (`pluginInfo -q -loaded SOuP` == 1){
+menuItem
+-l "Mesh Fitting"
+-c "meshFitting_SOuP().gui()"
+-i "out_rayProject.xpm" 
+-stp "python";
+}
+
 menuItem
 -l "separator" 
 -d 1

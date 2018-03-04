@@ -279,10 +279,10 @@ menuItem
 if (`pluginInfo -q -loaded SOuP` == 1){
 
 menuItem
--l "Procedural Bevel"
--c "da_proceduralBevel"
+-l "Edit Components List"
+-c "editComponentsList_SOuP().main()"
 -i "out_group.xpm"
--stp "mel";
+-stp "Python";
 
 menuItem
 -l "Shatter Mesh"
