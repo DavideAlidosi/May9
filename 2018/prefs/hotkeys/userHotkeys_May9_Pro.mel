@@ -91,6 +91,8 @@ hotkey -keyShortcut "t" -cmd -name ("da_ToolSettingsNameCommand");
 hotkey -keyShortcut "5" -alt -name ("da_ShapeEditorNameCommand");
 hotkey -keyShortcut "Space" -ctl -alt -name ("InteractivePlaybackNameCommand");
 hotkey -keyShortcut "Return" -ctl -sht -name ("MatchPivotsNameCommand");
+hotkey -keyShortcut "p" -ctl -sht -name ("TagAsControllerParentNameCommand");
+hotkey -keyShortcut "t" -ctl -sht -name ("TagAsControllerNameCommand");
 hotkeyCtx -type "Editor" -addClient "shapePanel";
 hotkeyCtx -type "Editor" -addClient "cteEditor";
 hotkeyCtx -type "Editor" -addClient "posePanel";
