@@ -7,9 +7,8 @@ import zipfile
 from maya import mel, cmds
 
 
-__location__ = os.path.dirname(__file__)
-__version__ = "1.2"
-__protocol__ = 1
+location = os.path.dirname(__file__)
+protocol = 1
 
 
 class Menu(object):
@@ -50,10 +49,10 @@ class Menu(object):
         i = 0
         for item in item_list:
             if preferences["preset_radial"] and i < len(cls.POSITIONS):
-                cmds.menuItem(stp="python", c="MMtoKey.engine.setPreset('%s')" % item, rp=cls.POSITIONS[i], l=item)
+                cmds.menuItem(stp="python", c="MMtoKey.engine.setPreset('%s')" % item, rp=cls.POSITIONS[i], label=item)
                 i += 1
             else:
-                cmds.menuItem(stp="python", c="MMtoKey.engine.setPreset('%s')" % item, l=item)
+                cmds.menuItem(stp="python", c="MMtoKey.engine.setPreset('%s')" % item, label=item)
 
     @staticmethod
     def _mel(file_name, **kwargs):
@@ -64,8 +63,7 @@ class Menu(object):
     @staticmethod
     def _python(module_name, **kwargs):
         """show python generated temp menu"""
-        cmds.popupMenu("mm_%i" % kwargs["b"], **kwargs)
-        importlib.import_module("data.menu." + module_name).run()
+        importlib.import_module("MMtoKey.menus." + module_name).run(cmds.popupMenu("mm_%i" % kwargs["b"], **kwargs))
 
 
 class Command(object):
@@ -82,7 +80,7 @@ class Command(object):
         elif language == cls.PYTHON:
             exec command
         else:
-            importlib.import_module("data.command." + command).run()
+            importlib.import_module("MMtoKey.commands." + command).run()
 
 
 class DefaultData(object):
@@ -125,11 +123,11 @@ class UserData(object):
         cls._createDirs()
         preferences, cluster = DefaultData.preferences(), DefaultData.cluster()
         try:  # check protocol version
-            if os.path.isfile(__location__ + "/UserData.mm"):  # import old data
+            if os.path.isfile(location + "/UserData.mm"):  # import old data
                 cls.write(*cls._import())
-            data = pickle.load(open(__location__ + "/data/data.mm", "rb"))
+            data = pickle.load(open(location + "/data/data.mm", "rb"))
             preferences, cluster = data[1:]
-            if data[0] != __protocol__:     # update data to current protocol
+            if data[0] != protocol:     # update data to current protocol
                 cluster_empty = DefaultData.cluster()
                 cluster_empty.update(cluster)
                 for nodes in cluster_empty.values():
@@ -147,20 +145,18 @@ class UserData(object):
     def write(cls, preferences, nodes):
         """store data into file"""
         cls._createDirs()
-        pickle.dump((__protocol__, preferences, nodes), open(__location__ + "/data/data.mm", "wb"))
+        pickle.dump((protocol, preferences, nodes), open(location + "/data/data.mm", "wb"))
 
     @staticmethod
     def _createDirs():
         """create default directories for data"""
-        for directory in [__location__ + "/data/menu", __location__ + "/data/command"]:
+        for directory in location + "/menus", location + "/commands":
             if os.path.isfile(directory):
                 os.remove(directory)
             if not os.path.isdir(directory):
                 os.makedirs(directory)
-        for init_file in [__location__ + "/data/__init__.py", __location__ + "/data/menu/__init__.py",
-                          __location__ + "/data/command/__init__.py"]:
-            if not os.path.isfile(init_file):
-                open(init_file, "w").close()
+            if not os.path.isfile(directory + "/__init__.py"):
+                open(directory + "/__init__.py", "w").close()
 
     @staticmethod
     def _import():
@@ -174,8 +170,8 @@ class UserData(object):
                 node["menu"] = file_data.read(ord(file_data.read(1)))[:-4]
                 node["command"] = file_data.read(ord(file_data.read(1)))
                 node["menu_type"] = ord(file_data.read(1))
-                if ord(file_data.read(1)) and os.path.isfile("%s/scripts/%s.script" % (__location__, node["command"])):
-                    with open("%s/scripts/%s.script" % (__location__, node["command"]), "r") as command_file:
+                if ord(file_data.read(1)) and os.path.isfile("%s/scripts/%s.script" % (location, node["command"])):
+                    with open("%s/scripts/%s.script" % (location, node["command"]), "r") as command_file:
                         node["command"] = command_file.read()
                 if is_panel:
                     node["search_filter"] = ord(file_data.read(1))
@@ -188,7 +184,7 @@ class UserData(object):
 
         preferences, cluster = DefaultData.preferences(), DefaultData.cluster()
         try:
-            with open(__location__ + "/UserData.mm", "rb") as file_data:
+            with open(location + "/UserData.mm", "rb") as file_data:
                 assert ord(file_data.read(1)) == 1  # version 1.0.5 supported only
                 ord(file_data.read(1))  # save into file (obsolete)
                 preferences["same_non_dag"] = bool(ord(file_data.read(1)))
@@ -207,8 +203,8 @@ class UserData(object):
                 cluster["tool"] = loadNode(False, True)
                 cluster["preset"] = loadNode(False)
         finally:
-            os.remove(__location__ + "/UserData.mm")
-            shutil.rmtree(__location__ + "/scripts", ignore_errors=True)
+            os.remove(location + "/UserData.mm")
+            shutil.rmtree(location + "/scripts", ignore_errors=True)
             return preferences, cluster
 
     @classmethod
@@ -216,8 +212,8 @@ class UserData(object):
         """export to zip archive"""
         cls.write(*args)
         zip_file = zipfile.ZipFile(cmds.fileDialog2(fm=0, ff="*.zip")[0], "w")
-        for directory in "/data", "/data/menu", "/data/command":
-            full_dir = __location__ + directory
+        for directory in "/data", "/menus", "/commands":
+            full_dir = location + directory
             files = filter(lambda f: os.path.isfile("%s/%s" % (full_dir, f)), os.listdir(full_dir))
             for x in files:
                 zip_file.write("%s/%s" % (full_dir, x), "%s/%s" % (directory, x))
@@ -225,7 +221,6 @@ class UserData(object):
         for m in os.listdir(marking_menu):
             if os.path.isfile("%s/%s" % (marking_menu, m)):
                 zip_file.write("%s/%s" % (marking_menu, m), "markingMenus/%s" % m)
-
         zip_file.close()
 
     @classmethod
@@ -233,10 +228,10 @@ class UserData(object):
         """import from zip archive"""
         zip_file = zipfile.ZipFile(cmds.fileDialog2(fm=1, ff="*.zip")[0], "r")
         for f in zip_file.namelist():
-            if f.find("data") == 0:
-                zip_file.extract(f, __location__)
-            elif f.find("markingMenus") == 0:
+            if f.find("markingMenus/") == 0:
                 zip_file.extract(f, cmds.internalVar(upd=True))
+            else:
+                zip_file.extract(f, location)
         return cls.load()
 
 
@@ -425,7 +420,7 @@ class Engine(object):
                   pmc=self._postMenu, **self._preset_modifiers)
         if self.preferences["preset_hud"]:
             cmds.headsUpDisplay('MMtoKeyHUD', s=self.preferences["preset_hud_s"], b=self.preferences["preset_hud_b"],
-                                l='MMtoKey preset', ba='center', lfs='large', dfs='large', c=lambda: preset,
+                                label='MMtoKey preset', ba='center', lfs='large', dfs='large', c=lambda: preset,
                                 ev='NewSceneOpened')
 
     def pressCustom(self, **kwargs):

@@ -1,6 +1,7 @@
-	int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;
-	int $ShapesCheck = `outlinerEditor -q -shp outlinerPanel1`;
-	int $MaterialCheck = `outlinerEditor -q -sam outlinerPanel1`;
+	string $UnderPointerPanel = `getPanel -underPointer`;
+	int $DAGCheck = `outlinerEditor -q -dag $UnderPointerPanel`;
+	int $ShapesCheck = `outlinerEditor -q -shp $UnderPointerPanel`;
+	int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
 
     menuItem
         -label "Duplicate" 

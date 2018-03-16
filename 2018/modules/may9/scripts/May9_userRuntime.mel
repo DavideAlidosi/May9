@@ -428,6 +428,22 @@ nameCommand
 //
 
 runTimeCommand
+	-annotation "Unlock Selected Node(s)"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tlockNode -lock off $allMySel;\n}")
+	da_UnLock;
+
+runTimeCommand
+	-annotation "Lock Selected Node(s)"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tlockNode -lock on $allMySel;\n}")
+	da_Lock;
+
+runTimeCommand
 	-annotation "Go to CVs Mode"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
@@ -2298,22 +2314,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("catchQuiet (`AssignNewMaterial`);\nif (`window -q -ex \"assignNewMaterialWindow\"` == 0 || `window -q -vis \"assignNewMaterialWindow\"` == 0)\n    createNodeWindow;")
 	da_CreateAssigNode;
-
-runTimeCommand
-	-annotation "Unlock Selected Node(s)"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tda_LockNode -lock off $allMySel;\n}")
-	da_UnLockNode;
-
-runTimeCommand
-	-annotation "Lock Selected Node(s)"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel) \n{\n\tda_LockNode -lock on $allMySel;\n}")
-	da_LockNode;
 
 runTimeCommand
 	-annotation "Edit And Frame Shader from Outliner"
