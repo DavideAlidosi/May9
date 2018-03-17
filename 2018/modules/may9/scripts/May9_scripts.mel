@@ -1083,33 +1083,15 @@ global proc da_Compass(){
 
 // da_AntiAlias
 
-global proc da_AntiAliasOn(){
-	string $osVer = `about -os`;
-	if (`gmatch $osVer "*mac*"` == 1) {
-		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
-	} else {
-		setAttr "hardwareRenderingGlobals.lineAAEnable" 1;
-		setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
-	}
-}
-
-global proc da_AntiAliasOff(){
-	string $osVer = `about -os`;
-	if (`gmatch $osVer "*mac*"` == 1) {
-		setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
-	} else {
-		setAttr "hardwareRenderingGlobals.lineAAEnable" 0;
-		setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
-	}
-}
-
 global proc da_AntiAliasToggle(){
 	if(`getAttr "hardwareRenderingGlobals.multiSampleEnable"`){
-    	da_AntiAliasOff;
+    	setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
 	}else{
-	    da_AntiAliasOn;
+	    setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
 	}
 }
+
+// da_JointMode
 
 global proc da_JointMode(){
 	if(`selectMode -q -component`){
