@@ -1024,13 +1024,13 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "On" 
--c "da_LockNode" 
+-c "da_Lock" 
 -i "rvViewingPipelineOn.png"
 -stp "mel";
 
 menuItem -bld 1 
 -l "Off" 
--c "da_UnLockNode" 
+-c "da_UnLock" 
 -i "rvViewingPipelineOff.png"
 -stp "mel";
 
@@ -1120,6 +1120,13 @@ menuItem -bld 1
 -c "ogs -r -rlt"
 -rp "SW"
 -i "singlePerspLayout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Transformations"
+-c "da_ResetAllTransformations"
+-rp "N"
+-i "out_buttonManip.png"
 -stp "mel";
 
 setParent -m ..;
@@ -1419,6 +1426,12 @@ menuItem -bld 1
 -l "Evaluation Toolkit"
 -c "EvaluationToolkit"
 -i "polyColorSetEditor.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Namespace Editor"
+-c "NamespaceEditor"
+-i "namespaceEditor.png"
 -stp "mel";
 
 setParent -m ..;

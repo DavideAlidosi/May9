@@ -1,11 +1,33 @@
-import sys
 import os
+import sys
+import maya.cmds as cmds
 import Engine
 
-def ui():
+
+def ui(*args):
     """open marking menu editor"""
     import Editor
     Editor.MainWindow(engine)
+
+
+def languageChange(*args):
+    import LanguageChange
+    LanguageChange.MainWindow()
+
+
+def hotkeyMaker(*args):
+    import HotkeyMaker
+    HotkeyMaker.MainWindow()
+
+
+def menu(parent):
+    """load via amTinyTools"""
+    cmds.setParent(parent, menu=True)
+    cmds.menuItem(label="MMtoKey", sm=True, to=True)
+    cmds.menuItem(label="MMtoKey", c=ui)
+    cmds.menuItem(label="Hotkey Maker", c=hotkeyMaker)
+    cmds.menuItem(label="Marking Menu Language", c=languageChange)
+    cmds.setParent(u=True, menu=True)
 
 
 sys.path.append(os.path.dirname(__file__))

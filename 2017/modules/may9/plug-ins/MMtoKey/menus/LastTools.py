@@ -4,8 +4,9 @@ import maya.cmds as cmds
 POSITIONS = "N", "NE", "E", "SE", "S", "SW", "W", "NW"
 
 
-def run():
+def run(parent):
     """press enter point"""
+    cmds.setParent(parent, menu=True)
     for item, pos in zip(last_tools_list, POSITIONS):
         cmds.menuItem(stp="python", c="cmds.setToolTo('%s')" % item, rp=pos, l=item)
 
