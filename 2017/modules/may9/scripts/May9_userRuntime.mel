@@ -183,10 +183,10 @@ nameCommand
 	da_ZeroTransfomationsNameCommand;
 
 nameCommand
-	-annotation "da_ResetAllTransformationsNameCommand"
+	-annotation "da_ResetTransformNameCommand"
 	-sourceType "mel"
-	-command ("da_ResetAllTransformations")
-	da_ResetAllTransformationsNameCommand;
+	-command ("da_ResetTransform")
+	da_ResetTransformNameCommand;
 
 nameCommand
 	-annotation "da_MatchTransformNameCommand"
@@ -426,6 +426,14 @@ nameCommand
 //
 // runTimeCommand set
 //
+
+runTimeCommand
+	-annotation "Reset All Transformations"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\n\nfor ($each in $mySel){\n    catchQuiet(`setAttr ($each + \".tx\") 0`);\n    catchQuiet(`setAttr ($each + \".ty\") 0`);\n    catchQuiet(`setAttr ($each + \".tz\") 0`);\n\n    catchQuiet(`setAttr ($each + \".rx\") 0`);\n    catchQuiet(`setAttr ($each + \".ry\") 0`);\n    catchQuiet(`setAttr ($each + \".rz\") 0`);\n\n    catchQuiet(`setAttr ($each + \".sx\") 1`);\n    catchQuiet(`setAttr ($each + \".sy\") 1`);\n    catchQuiet(`setAttr ($each + \".sz\") 1`);\n}")
+	da_ResetTransform;
 
 runTimeCommand
 	-annotation "Unlock Selected Node(s)"
@@ -1554,14 +1562,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tmove -rpr 0 0 0 $each;\n}\nFreezeTransformations")
 	da_ZeroTransfomations;
-
-runTimeCommand
-	-annotation "Reset All Transformations"
-	-category "Custom Scripts.May9_Pro.Object"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tmove -a 0 0 0 $each;\n\trotate -a 0 0 0 $each;\n\tscale -a 1 1 1 $each;\n}")
-	da_ResetAllTransformations;
 
 runTimeCommand
 	-annotation "Connect Shapes"
