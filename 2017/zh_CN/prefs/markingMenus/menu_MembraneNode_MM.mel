@@ -1,0 +1,22 @@
+
+    menuItem
+        -label "Connect Collider" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_MembraneCollider" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "da_connection_in.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+setParent -m ..;
+

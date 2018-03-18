@@ -1,0 +1,364 @@
+	string $UnderPointerPanel = `getPanel -underPointer`;
+	int $DAGCheck = `outlinerEditor -q -dag $UnderPointerPanel`;
+	int $ShapesCheck = `outlinerEditor -q -shp $UnderPointerPanel`;
+	int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
+
+    menuItem
+        -label "Duplicate" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "DuplicateWithTransform" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "da_duplicate.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "menuEditorMenuItem3" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "DuplicateSpecialOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem3;
+
+    menuItem
+        -label "Select Hierarchy" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "SelectHierarchy" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "selectByHierarchy.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Create Set" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "CreateSet" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_objectSet.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "CreateSetOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem13;
+
+    menuItem
+        -label "Show Local Axes" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ToggleLocalRotationAxes;" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "SE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "polyNormalSetToFace.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem7;
+
+    menuItem
+        -label "Select by Shader" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_SelectObjectMaterial" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_phongE.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem8;
+
+    menuItem
+        -label "Reference" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+		-image "selectByObject.png" 
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem11;
+
+        menuItem
+            -label "On" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "da_EnableReference" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+			-image "rvViewingPipelineOn.png"
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Off" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "da_DisableReference" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+			-image "rvViewingPipelineOff.png"
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+    setParent -m ..;
+
+	menuItem
+		-label "Shading" 
+		-divider 0
+		-subMenu 1
+		-tearOff 0
+		-optionBox 0
+		-enable 1
+		-data 0
+		-allowOptionBoxes 1
+		-enableCommandRepeat 1
+		-image "bevel.png" 
+		-sourceType "mel" 
+		-longDivider 1
+		menuEditorMenuItem12;
+
+	menuItem
+			-label "On" 
+			-divider 0
+			-subMenu 0
+			-tearOff 0
+			-command "da_PolyShade" 
+			-optionBox 0
+			-enable 1
+			-data 0
+			-allowOptionBoxes 1
+			-postMenuCommandOnce 0
+			-enableCommandRepeat 1
+			-echoCommand 0
+			-image "rvViewingPipelineOn.png"
+			-sourceType "mel" 
+			-longDivider 1
+			menuEditorMenuItem1;
+
+		menuItem
+			-label "Off" 
+			-divider 0
+			-subMenu 0
+			-tearOff 0
+			-command "da_PolyNoShade" 
+			-optionBox 0
+			-enable 1
+			-data 0
+			-allowOptionBoxes 1
+			-postMenuCommandOnce 0
+			-enableCommandRepeat 1
+			-echoCommand 0
+			-image "rvViewingPipelineOff.png"
+			-sourceType "mel" 
+			-longDivider 1
+			menuEditorMenuItem2;
+
+	setParent -m ..;
+
+    menuItem
+        -label "X-Ray" 
+        -divider 0
+        -subMenu 1
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -enableCommandRepeat 1
+        -image "da_Xray.png" 
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem15;
+
+    menuItem
+            -label "On" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "displaySurface -x 1" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -image "rvViewingPipelineOn.png"
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem1;
+
+        menuItem
+            -label "Off" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "displaySurface -x 0" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -echoCommand 0
+            -image "rvViewingPipelineOff.png"
+            -sourceType "mel" 
+            -longDivider 1
+            menuEditorMenuItem2;
+
+    setParent -m ..;
+
+    menuItem
+        -label "separator" 
+        -divider 1
+        -dividerLabel "separator" 
+        -subMenu 0
+        -tearOff 0
+        -optionBox 0
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem10;
+
+    menuItem
+        -label "DAG Only" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+		-command "da_ToggleDagNode" 
+        -optionBox 0
+		-checkBox (1 == $DAGCheck)
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem6;
+		
+	menuItem
+        -label "Shapes" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+		-command "da_ToggleShapes" 
+        -optionBox 0
+		-checkBox (1 == $ShapesCheck)
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+		
+	menuItem
+        -label "Materials" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+		-command "da_ToggleMaterial" 
+        -optionBox 0
+		-checkBox (1 == $MaterialCheck)
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem9;
+
+setParent -m ..;
+

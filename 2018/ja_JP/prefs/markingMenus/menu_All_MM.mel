@@ -1,0 +1,1462 @@
+int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
+    && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
+
+menuItem -bld 1 
+-l "Poly/Curves"
+-sm 1
+-rp "N"
+-i "da_PolyCurve.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Cube"
+-c "CreatePolygonCube;"
+-rp "W"
+-i "polyCube.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreatePolygonCubeOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Plane"
+-c "CreatePolygonPlane"
+-rp "SW"
+-i "polyMesh.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreatePolygonPlaneOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "CV Curve"
+-c "CVCurveTool"
+-rp "NE"
+-i "curveCV.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CVCurveToolOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Circle"
+-c "CreateNURBSCircle;"
+-rp "E"
+-i "circle.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateNURBSCircleOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Quad Draw"
+-c "dR_quadDrawTool;"
+-rp "N"
+-i "quadDraw_NEX32.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreatePolygonSphereOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Create"
+-c "CreatePolygonTool;"
+-rp "NW"
+-i "polyCreateFacet.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreatePolygonToolOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Type"
+-c "CreatePolygonType"
+-rp "SE"
+-i "polyType.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Import Illustrator Curves"
+-c "CreateIllustratorCurves;"
+-i "ai.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Poly Interactive Creation"
+-c "toggleCreatePolyPrimitiveAsTool"
+-cb (`optionVar -q createPolyPrimitiveAsTool`)
+-stp "mel";
+
+menuItem -bld 1 
+-l "Curve Interactive Creation"
+-c "toggleCreateNurbsPrimitiveAsTool;"
+-cb (`optionVar -q createNurbsPrimitiveAsTool`)
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Rendering"
+-sm 1
+-rp "W"
+-i "render.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Batch Render"
+-c "BatchRender"
+-rp "NW"
+-i "batchRender.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "BatchRenderOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Render Sequence"
+-c "RenderSequence"
+-rp "NE"
+-i "menuIconRender.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Color Management"
+-c "da_ToggleColorManagement" 
+-rp "S"
+-checkBox (`colorManagementPrefs -q -cme`) 
+-stp "mel";
+
+menuItem -bld 1 
+-l "Edit Shaders"
+-c "da_EditAndFrameShaders"
+-rp "W"
+-i "hsGraphMaterial.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Render View"
+-c "da_AiRenderView"
+-rp "SE"
+-i "RenderShelf.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Resolution Gate"
+-c "da_ToggleResolutionGate"
+-rp "SW"
+-i "ResolutionGate.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Playblast"
+-c "PlayblastWindow"
+-rp "N"
+-i "playblast.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "PlayblastOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Camera Bookmark"
+-c "da_CameraBookmark"
+-i "Bookmark.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Rendering Flags"
+-c "RenderFlagsWindow"
+-i "editRenderPass.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "File Path Editor"
+-c "FilePathEditor;"
+-i "folder-open.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Transfer Maps"
+-c "performSurfaceSampling 1"
+-i "UseDefaultMaterial.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Rigging"
+-sm 1
+-rp "SW"
+-i "humanIK_CharCtrl.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Create Joint"
+-c "JointTool"
+-rp "SW"
+-i "kinJoint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "JointToolOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Parent Constraint"
+-c "ParentConstraint"
+-rp "S"
+-i "parentConstraint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "ParentConstraintOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Orient Constraint"
+-c "OrientConstraint"
+-rp "E"
+-i "orientConstraint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "OrientConstraintOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Aim Constraint"
+-c "AimConstraint"
+-rp "N"
+-i "aimConstraint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "AimConstraintOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Scale Constraint"
+-c "scaleConstraint"
+-i "scaleConstraint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "ScaleConstraintOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Point Constraint"
+-c "PointConstraint"
+-rp "SE"
+-i "posConstraint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "PointConstraintOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "IK Handle"
+-c "IKHandleTool;"
+-rp "NW"
+-i "kinHandle.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "IKHandleToolOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "IK Spline Handle"
+-c "IKSplineHandleTool;"
+-rp "W"
+-i "kinSplineHandle.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "IKSplineHandleToolOptions;"
+-ob 1
+-stp "mel";
+
+if (`pluginInfo -q -l contextConnector` == 1){
+menuItem -bld 1 
+-l "Context Connector"
+-c "da_ContextConnector"
+-i "out_geoConnectable.png"
+-stp "mel";
+}else{
+menuItem -bld 1 
+-l "Connection Editor"
+-c "ConnectionEditor"
+-i "out_list.png"
+-stp "mel";
+}
+
+if (`pluginInfo -q -l mass_attr` == 1){
+menuItem -bld 1 
+-l "Massive Attribute"
+-c "da_MassAttr"
+-i "RS_multiple_filters.png"
+-stp "mel";
+}
+
+menuItem -bld 1 
+-l "Attributes"
+-sm 1
+-i "attributes.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Channel Control"
+-c "ChannelControlEditor"
+-i "channelBox.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Add"
+-c "AddAttribute"
+-i "publishAttributes.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Edit"
+-c "RenameAttribute"
+-i "setEdEditMode.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Delete"
+-c "DeleteAttribute"
+-i "unpublishAttributes.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Controllers"
+-sm 1
+-i "teLockUnchecked.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Tag As Controller"
+-c "TagAsController"
+-i "checkboxOn.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Parent Controller"
+-c "TagAsControllerParent"
+-i "parent.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Prossimity On"
+-c "da_ControllerProssimity"
+-i "rvViewingPipelineOn.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Prossimity Off"
+-c "da_ControllerNoProssimity"
+-i "rvViewingPipelineOff.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Make Pivot Keyable"
+-c "da_pivotKeyable"
+-i "CenterPivot.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Bake Deformer"
+-c "BakeDeformerTool"
+-i "out_baked.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Quick Rig"
+-c "QuickRigEditor"
+-i "QR_QuickRigTool.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Layouts"
+-sm 1
+-rp "S"
+-i "perspHypergraphLayout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Node Editor"
+-c "da_LayoutNodeEditor"
+-rp "NE"
+-i "perspHypergraphLayout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "UV Texture Editor"
+-c "da_LayoutUvTextureEditor"
+-rp "E"
+-i "da_UV_Layout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Graph Editor"
+-c "da_LayoutGraphEditor"
+-rp "SE"
+-i "perspGraphLayout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Shape/Pose Editor"
+-c "da_LayoutShapeEditor"
+-rp "SW"
+-i "da_ShapeEditor_Layout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Component Editor"
+-c "da_LayoutComponentEditor"
+-i "da_ComponentEditor_Layout.png"
+-rp "W"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Hypershade"
+-c "da_LayoutHypershade"
+-i "da_Hypershade_Layout.png"
+-rp "S"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Perspective/Four View"
+-c "da_LayoutPersp"
+-i "fourViewLayout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Relationship Editor"
+-c "da_LayoutRelationshipEditor"
+-i "perspRelationshipEditorLayout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Dynamic Relationship"
+-c "da_LayoutDynamicRelationshipEditor"
+-i "da_DynamicRelationship_Layout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Reference Editor"
+-c "da_LayoutReferenceEditor"
+-i "da_ReferenceEditor_Layout.png"
+-rp "NW"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Lights"
+-sm 1
+-rp "E"
+-i "spotlight.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Directional"
+-c "CreateDirectionalLight;"
+-rp "E"
+-i "directionallight.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateDirectionalLightOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Spot"
+-c "CreateSpotLight;"
+-rp "SE"
+-i "spotlight.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateSpotLightOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Point"
+-c "CreatePointLight;"
+-rp "SW"
+-i "pointlight.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreatePointLightOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Area"
+-c "CreateAreaLight"
+-rp "NE"
+-i "AreaLightShelf.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateAreaLightOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "SkyDome"
+-c "da_AiSkyDome;PickWalkUp"
+-rp "NW"
+-i "SkydomeLightShelf.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Photometric"
+-c "da_AiPhotometric;PickWalkUp"
+-rp "S"
+-i "PhotometricLightShelf.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Portal"
+-c "da_AiLightPortal"
+-rp "N"
+-i "LightPortalShelf.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Light Editor"
+-c "da_LightList"
+-i "light_manager.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Light Linking"
+-c "LightCentricLightLinkingEditor"
+-i "out_defaultLightList.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Objects"
+-sm 1
+-rp "NE"
+-i "posEmitter.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Camera"
+-c "CreateCameraOnly"
+-rp "N"
+-i "Camera.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateCameraOnlyOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Locator"
+-c "CreateLocator"
+-rp "NE"
+-i "out_locator.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Fluid Container"
+-c "Create3DContainer"
+-rp "E"
+-i "fluidCreate3D.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "Create3DContainerOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Arnold Volume"
+-c "da_AiVolume"
+-i "VolumeShelf.png"
+-rp "SE"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Paint Effects"
+-c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-rp "S"
+-i "userPaint.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Particle Emitter"
+-c "CreateEmitter"
+-rp "NW"
+-i "emitter.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateEmitterOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "nParticle Emitter"
+-c "NCreateEmitter;"
+-rp "W"
+-i "posEmitter.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "NCreateEmitterOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Compass"
+-c "da_Compass" 
+-i "out_implicitSphere.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Duplicate Special"
+-c "DuplicateSpecialOptions" 
+-i "da_duplicate.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "nParticle Tool"
+-c "NParticleTool"
+-i "particle.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "NParticleToolOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Particle Style"
+-sm 1
+-i "out_particle.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Points"
+-c "optionVar -stringValue NParticleStyle \"Points\";"
+-i "nPartPoints.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Balls"
+-c "optionVar -stringValue NParticleStyle \"Balls\";"
+-i "nPartBalls.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Cloud"
+-c "optionVar -stringValue NParticleStyle \"Cloud\";"
+-i "nPartCloud.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "ThickCloud"
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-i "nPartThickCloud.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Water"
+-c "optionVar -stringValue NParticleStyle \"Water\";"
+-i "nPartWater.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Fields"
+-sm 1
+-i "posRadial.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Air"
+-c "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posAir.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Drag"
+-c "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posDrag.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Gravity"
+-c "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posGravity.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Newton"
+-c "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posNewton.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Radial"
+-c "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posRadial.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Turbulence"
+-c "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posTurbulence.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Uniform"
+-c "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posUniform.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Vortex"
+-c "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posVortex.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Volume Axis"
+-c "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
+-i "posVolumeAxis.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Input Order"
+-c "da_ListInputOperations"
+-i "nodeGrapherNext.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Animation"
+-sm 1
+-rp "NW"
+-i "out_animCurveTA.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Add Motion Trail"
+-c "CreateMotionTrail;"
+-rp "S"
+-i "motionTrail.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateMotionTrailOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Mouse Tracker"
+-c "da_MouseTrack"
+-rp "N"
+-i "leftArrow.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Flow Path Object"
+-c "FlowPathObject;"
+-rp "SW"
+-i "flowPathObj.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "FlowPathObjectOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Grease Pencil"
+-c "GreasePencilTool"
+-rp "NE"
+-i "GreasePencil.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Set Motion Path Key"
+-c "SetKeyPath"
+-rp "NW"
+-i "motionPathKey.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Attach To Motion Path"
+-c "AttachToPath;"
+-rp "W"
+-i "motionPath.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "AttachToPathOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Bake Animation"
+-c "BakeSimulationOptions"
+-rp "E"
+-i "bakeAnimation.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Play Max Real-time"
+-c "da_maxPlaybackSpeedToggle"
+-cb (`playbackOptions -q -maxPlaybackSpeed`)
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Create Turntable"
+-c "AnimationTurntableOptions"
+-i "animTurntable.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Set Driven Key"
+-c "SetDrivenKeyOptions"
+-i "setDrivenKeyframe.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Expression Editor"
+-c "ExpressionEditor"
+-i "out_expression.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "MASH Editor"
+-c "MASHOutliner"
+-i "MASH_Editor.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Scene"
+-sm 1
+-rp "SE"
+-i "CameraAE.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "HUD Info"
+-c "da_ToggleHUD"
+-rp "SE"
+-cb (true == $HUDCheck)
+
+-stp "mel";
+
+menuItem -bld 1 
+-l "Edit"
+-sm 1
+-rp "E"
+-i "editRenderPass.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Freeze Transform"
+-c "FreezeTransformations" 
+-rp "E"
+-i "FreezeTransform.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "FreezeTransformationsOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Delete History"
+-c "DeleteHistory" 
+-rp "NE"
+-i "DeleteHistory.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Center Pivot"
+-c "CenterPivot" 
+-rp "SE"
+-i "CenterPivot.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Delete Non-Deformer History"
+-c "BakeNonDefHistory"
+-rp "N"
+-i "nodeGrapherDisplayNone.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Reset Transform"
+-c "da_ResetAllTransformations" 
+-rp "NW"
+-i "teKeyRefresh.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Lock Selected" 
+-c "da_Lock" 
+-i "lockGeneric_100.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Unlock Selected" 
+-c "da_UnLock" 
+-i "unlockGeneric.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Optimize Scene Size" 
+-c "OptimizeSceneOptions"
+-i "sequenceCompress.png" 
+-rp "S"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Select"
+-sm 1
+-rp "NE"
+-i "highlightSelect.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "None"
+-c "SelectNone" 
+-rp "SE"
+-i "hotkeyFieldClear.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Hierarchy"
+-c "SelectHierarchy"
+-rp "NE"
+-i "selectByHierarchy.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "All"
+-c "SelectAll" 
+-rp "E"
+-i "aselect.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Similar"
+-c "SelectSimilar"
+-rp "NW"
+-i "selectSimilar.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "SelectSimilarOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Camera"
+-c "da_SelectCamera"
+-rp "N"
+-i "Camera.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Reset"
+-sm 1
+-rp "W"
+-i "hyperShadeResetCameraView.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Main Camera"
+-c "da_ClearPersp;\nviewSet -h"
+-rp "W"
+-i "hyperShadeResetCameraView.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Render Settings"
+-c "da_ResetUI;\nunifiedRenderGlobalsWindow"
+-rp "NW"
+-i "rvRenderGlobals.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Viewport"
+-c "ogs -r -rlt"
+-rp "SW"
+-i "singlePerspLayout.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Transformations"
+-c "da_ResetAllTransformations"
+-rp "N"
+-i "out_buttonManip.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Match"
+-sm 1
+-rp "N"
+-i "polyAlignUVs.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Scaling"
+-c "MatchScaling"
+-rp "NW"
+-i "scale_M.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Rotation"
+-c "MatchRotation"
+-rp "NE"
+-i "rotate_M.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Translation"
+-c "MatchTranslation"
+-rp "N"
+-i "move_M.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "All Transforms"
+-c "MatchTransform"
+-rp "W"
+-i "nodeGrapherModeAllLarge.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Pivots"
+-c "MatchPivots"
+-rp "E"
+-i "pickPivotComp.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Measure"
+-sm 1
+-rp "SW"
+-i "out_distanceDimShape.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Distance Tool"
+-c "DistanceTool"
+-rp "SW"
+-i "distanceDim.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Arc Length Tool"
+-c "ArcLengthTool"
+-rp "W"
+-i "arcLengthDim.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Parameter Tool"
+-c "ParameterTool"
+-rp "S"
+-i "paramDim.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Align Tool"
+-c "setToolTo alignToolCtx"
+-rp "S"
+-i "alignTool.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Vertex Animation Cache"
+-c "da_vertexAnimationCache"
+-cb (`getAttr "hardwareRenderingGlobals.vertexAnimationCache"`)
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Create nCache"
+-c "nClothCache"
+-i "nClothCacheCreate.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "nClothCacheOpt"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Create Fluid Cache"
+-c "CreateFluidCache"
+-i "fluidCacheCreate.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "CreateFluidCacheOptions;"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Delete Fluid Cache"
+-c "fluidDeleteCache"
+-i "fluidCacheDelete.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "fluidDeleteCacheOpt"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Create Geometry Cache"
+-c "geometryCache"
+-i "createCache.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "geometryCacheOpt"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Delete Geometry Cache"
+-c "deleteGeometryCache"
+-i "deleteCache.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "geometryDeleteCacheOpt"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Create Muscle Cache"
+-c "cMuscle_makeCacheUI(); "
+-i "cMuscle_skin_cacheCreate.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Delete Muscle Node Cache"
+-c "cMuscle_deleteNodeCacheUI(); "
+-i "cMuscle_skin_cacheDelete.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Export Selection to GPU Cache"
+-c "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};"
+-i "greasePencilExport.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "GpuCacheExportSelectionOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Import GPU Cache"
+-c "doGpuCacheImportArgList 1 {\"0\",\"0\"};"
+-i "greasePencilImport.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Refresh GPU Cache"
+-c "GpuCacheRefreshAll"
+-i "QR_refresh.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Export Selection to Alembic"
+-c "doAlembicExportArgList 7 {\"0\",\"2\",\"1\",\"24\",\"1\",\"0\",\"-0.2\",\"0.2\",\"0\",\"0\",\"\",\"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"\",\"\",\"\",\"\",\"0\",\"0\",\"0\",\"2\",\"1\",\"0\",\"0\"};"
+-i "greasePencilExport.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "AlembicExportSelectionOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "Import Alembic"
+-c "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};"
+-i "greasePencilImport.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "AlembicImportOptions"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Export Selection To BIF"
+-c "BifMeshExport"
+-i "greasePencilExport.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Import BIF"
+-c "BifMeshImport"
+-i "greasePencilImport.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Export StandIn"
+-c "da_doExportStandIn"
+-i "ExportStandinShelf.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Import StandIn"
+-c "da_CreateStandInFile"
+-i "StandinShelf.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Profiler"
+-c "ProfilerTool"
+-i "out_timeEditorTrack.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Evaluation Toolkit"
+-c "EvaluationToolkit"
+-i "polyColorSetEditor.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Namespace Editor"
+-c "NamespaceEditor"
+-i "namespaceEditor.png"
+-stp "mel";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Set Project"
+-c "SetProject"
+-i "folder-closed.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Project Window"
+-c "ProjectWindow"
+-i "folder-new.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "Content Browser"
+-c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");"
+-i "folder-open.png"
+-stp "mel";
+
+menuItem -bld 1 
+-l "separator" 
+-d 1
+-dl "separator"
+-stp "mel";
+
+menuItem -bld 1 
+-l "About May9 Pro..."
+-c "da_AboutMay9"
+-i "menuIconHelp.png"
+-stp "mel";
+
+setParent -m ..;
+

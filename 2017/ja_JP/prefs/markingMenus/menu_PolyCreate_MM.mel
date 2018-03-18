@@ -1,0 +1,79 @@
+
+    menuItem
+        -label "Connect to Shape(s)" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_ConnectCereation" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "N" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "da_OneToMany.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem1;
+
+    menuItem
+        -label "Display IVE" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "ShowManipulators" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "S" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "materialEditor.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem2;
+
+    menuItem
+        -label "Go to Mesh" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_GoToMesh" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "E" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "out_polyPlane.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem4;
+
+    menuItem
+        -label "Reset Transform" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "da_ResetAllTransformations" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "W" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "teKeyRefresh.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1
+        menuEditorMenuItem5;
+
+setParent -m ..;
+
