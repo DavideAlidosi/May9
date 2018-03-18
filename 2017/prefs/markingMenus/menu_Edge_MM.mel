@@ -421,16 +421,15 @@ menuItem
 menuEditorMenuItem1;
 
 menuItem
--label "Sew UV Edges"
--command "performPolyMapSewMove 0;"
--image "sewUV.png"
--sourceType "mel"
-menuEditorMenuItem2;
+-l "Stitch" 
+-c "texMultiStitch 1" 
+-i "polyUVMultiStitch.png" 
+-stp "mel";
 
 menuItem
--label "Cut UV Edges"
--command "polyPerformAction polyMapCut e 0;"
--image "cutUV.png"
+-label "Cut"
+-command "CutUVs"
+-image "polyCutUV.png"
 -sourceType "mel"
 menuEditorMenuItem3;
 

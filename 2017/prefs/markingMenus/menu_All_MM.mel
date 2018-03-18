@@ -1017,24 +1017,16 @@ menuItem -bld 1
 -stp "mel";
 
 menuItem -bld 1 
--l "Lock Selected Nodes" 
--sm 1
--i "lockGeneric.png" 
--stp "mel";
-
-menuItem -bld 1 
--l "On" 
+-l "Lock Selected" 
 -c "da_Lock" 
--i "rvViewingPipelineOn.png"
+-i "lockGeneric_100.png"
 -stp "mel";
 
 menuItem -bld 1 
--l "Off" 
+-l "Unlock Selected" 
 -c "da_UnLock" 
--i "rvViewingPipelineOff.png"
+-i "unlockGeneric.png"
 -stp "mel";
-
-setParent -m ..;
 
 menuItem -bld 1 
 -l "Optimize Scene Size" 
