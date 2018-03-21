@@ -1010,13 +1010,6 @@ menuItem -bld 1
 -stp "mel";
 
 menuItem -bld 1 
--l "Reset Transform"
--c "da_ResetAllTransformations" 
--rp "NW"
--i "teKeyRefresh.png"
--stp "mel";
-
-menuItem -bld 1 
 -l "Lock Selected" 
 -c "da_Lock" 
 -i "lockGeneric_100.png"
@@ -1032,7 +1025,7 @@ menuItem -bld 1
 -l "Optimize Scene Size" 
 -c "OptimizeSceneOptions"
 -i "sequenceCompress.png" 
--rp "S"
+-rp "NW"
 -stp "mel";
 
 setParent -m ..;
@@ -1116,7 +1109,7 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Transformations"
--c "da_ResetAllTransformations"
+-c "da_ResetTransform"
 -rp "N"
 -i "out_buttonManip.png"
 -stp "mel";
