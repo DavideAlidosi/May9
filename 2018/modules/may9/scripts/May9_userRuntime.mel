@@ -428,10 +428,24 @@ nameCommand
 	-command ("SelectHierarchy")
 	SelectHierarchyNameCommand;
 
+nameCommand
+	-annotation "da_MMtoKey_cleanNameCommand"
+	-sourceType "mel"
+	-command ("da_MMtoKey_clean")
+	da_MMtoKey_cleanNameCommand;
+
 
 //
 // runTimeCommand set
 //
+
+runTimeCommand
+	-annotation "Clean Sourced Marking Menus"
+	-category "Custom Scripts.May9_Pro.MMtoKey"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("while cmds.popupMenu(\"mm_1\", q=True, ex=True): cmds.deleteUI(\"mm_1\")\nwhile cmds.popupMenu(\"mm_2\", q=True, ex=True): cmds.deleteUI(\"mm_2\")")
+	da_MMtoKey_clean;
 
 runTimeCommand
 	-annotation "Reset All Transformations"
