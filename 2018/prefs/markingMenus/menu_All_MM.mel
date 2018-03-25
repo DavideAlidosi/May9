@@ -15,7 +15,7 @@ menuItem -bld 1
 -rp "W"
 -i "polyCube.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreatePolygonCubeOptions;"
 -ob 1;
 
@@ -25,7 +25,7 @@ menuItem -bld 1
 -rp "SW"
 -i "polyMesh.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreatePolygonPlaneOptions"
 -ob 1;
 
@@ -35,7 +35,7 @@ menuItem -bld 1
 -rp "NE"
 -i "curveCV.png";
 
-menuItem -bld 1 
+menuItem
 -c "CVCurveToolOptions"
 -ob 1;
 
@@ -45,7 +45,7 @@ menuItem -bld 1
 -rp "E"
 -i "circle.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreateNURBSCircleOptions;"
 -ob 1;
 
@@ -55,7 +55,7 @@ menuItem -bld 1
 -rp "N"
 -i "quadDraw_NEX32.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreatePolygonSphereOptions;"
 -ob 1;
 
@@ -65,7 +65,7 @@ menuItem -bld 1
 -rp "NW"
 -i "polyCreateFacet.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreatePolygonToolOptions;"
 -ob 1;
 
@@ -109,7 +109,7 @@ menuItem -bld 1
 -rp "NW"
 -i "batchRender.png";
 
-menuItem -bld 1 
+menuItem
 -c "BatchRenderOptions"
 -ob 1;
 
@@ -149,7 +149,7 @@ menuItem -bld 1
 -rp "N"
 -i "playblast.png";
 
-menuItem -bld 1 
+menuItem
 -c "PlayblastOptions"
 -ob 1;
 
@@ -187,7 +187,7 @@ menuItem -bld 1
 -rp "SW"
 -i "kinJoint.png";
 
-menuItem -bld 1 
+menuItem
 -c "JointToolOptions"
 -ob 1;
 
@@ -197,7 +197,7 @@ menuItem -bld 1
 -rp "S"
 -i "parentConstraint.png";
 
-menuItem -bld 1 
+menuItem
 -c "ParentConstraintOptions"
 -ob 1;
 
@@ -207,7 +207,7 @@ menuItem -bld 1
 -rp "E"
 -i "orientConstraint.png";
 
-menuItem -bld 1 
+menuItem
 -c "OrientConstraintOptions"
 -ob 1;
 
@@ -217,7 +217,7 @@ menuItem -bld 1
 -rp "N"
 -i "aimConstraint.png";
 
-menuItem -bld 1 
+menuItem
 -c "AimConstraintOptions"
 -ob 1;
 
@@ -226,7 +226,7 @@ menuItem -bld 1
 -c "scaleConstraint"
 -i "scaleConstraint.png";
 
-menuItem -bld 1 
+menuItem
 -c "ScaleConstraintOptions"
 -ob 1;
 
@@ -241,7 +241,7 @@ menuItem -bld 1
 -rp "SE"
 -i "posConstraint.png";
 
-menuItem -bld 1 
+menuItem 
 -c "PointConstraintOptions"
 -ob 1;
 
@@ -251,7 +251,7 @@ menuItem -bld 1
 -rp "NW"
 -i "kinHandle.png";
 
-menuItem -bld 1 
+menuItem
 -c "IKHandleToolOptions;"
 -ob 1;
 
@@ -261,7 +261,7 @@ menuItem -bld 1
 -rp "W"
 -i "kinSplineHandle.png";
 
-menuItem -bld 1 
+menuItem
 -c "IKSplineHandleToolOptions;"
 -ob 1;
 
@@ -377,7 +377,7 @@ menuItem -bld 1
 -rp "E"
 -i "directionallight.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreateDirectionalLightOptions;"
 -ob 1;
 
@@ -387,7 +387,7 @@ menuItem -bld 1
 -rp "SE"
 -i "spotlight.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreateSpotLightOptions;"
 -ob 1;
 
@@ -397,7 +397,7 @@ menuItem -bld 1
 -rp "SW"
 -i "pointlight.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreatePointLightOptions;"
 -ob 1;
 
@@ -407,7 +407,7 @@ menuItem -bld 1
 -rp "NE"
 -i "AreaLightShelf.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreateAreaLightOptions"
 -ob 1;
 
@@ -453,7 +453,7 @@ menuItem -bld 1
 -rp "N"
 -i "Camera.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreateCameraOnlyOptions"
 -ob 1;
 
@@ -469,7 +469,7 @@ menuItem -bld 1
 -rp "E"
 -i "fluidCreate3D.png";
 
-menuItem -bld 1 
+menuItem
 -c "Create3DContainerOptions"
 -ob 1;
 
@@ -485,19 +485,15 @@ menuItem -bld 1
 -rp "S"
 -i "userPaint.png";
 
-menuItem -bld 1 
+menuItem
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
 -ob 1;
 
 menuItem -bld 1 
--l "Particle Emitter"
--c "CreateEmitter"
--rp "NW"
--i "emitter.png";
-
-menuItem -bld 1 
--c "CreateEmitterOptions;"
--ob 1;
+-l "Compass"
+-c "da_Compass" 
+-rp "NW" 
+-i "out_implicitSphere.png";
 
 menuItem -bld 1 
 -l "nParticle Emitter"
@@ -505,14 +501,19 @@ menuItem -bld 1
 -rp "W"
 -i "posEmitter.png";
 
-menuItem -bld 1 
+menuItem
 -c "NCreateEmitterOptions;"
 -ob 1;
 
 menuItem -bld 1 
--l "Compass"
--c "da_Compass" 
--i "out_implicitSphere.png";
+-l "Delete Non-Def History"
+-c "BakeNonDefHistory"
+-i "nodeGrapherDisplayNone.png";
+
+menuItem -bld 1 
+-l "Input Order Editor"
+-c "da_ListInputOperations"
+-i "nodeGrapherNext.png";
 
 menuItem
 -l "separator" 
@@ -529,7 +530,7 @@ menuItem -bld 1
 -c "NParticleTool"
 -i "particle.png";
 
-menuItem -bld 1 
+menuItem
 -c "NParticleToolOptions"
 -ob 1;
 
@@ -641,7 +642,7 @@ menuItem -bld 1
 -rp "S"
 -i "motionTrail.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreateMotionTrailOptions;"
 -ob 1;
 
@@ -657,7 +658,7 @@ menuItem -bld 1
 -rp "SW"
 -i "flowPathObj.png";
 
-menuItem -bld 1 
+menuItem
 -c "FlowPathObjectOptions;"
 -ob 1;
 
@@ -679,7 +680,7 @@ menuItem -bld 1
 -rp "W"
 -i "motionPath.png";
 
-menuItem -bld 1 
+menuItem
 -c "AttachToPathOptions;"
 -ob 1;
 
@@ -737,7 +738,7 @@ menuItem -bld 1
 -l "Lock Node" 
 -c "da_Lock"
 -rp "E" 
--i "lockGeneric_100.png";
+-i "lockGeneric.png";
 
 menuItem -bld 1 
 -l "Unlock Node" 
@@ -752,47 +753,27 @@ menuItem -bld 1
 -rp "S";
 
 menuItem -bld 1 
+-l "Clean Context MM"
+-c "da_MMtoKey_clean"
+-i "deleteClip.png"
+-rp "N";
+
+menuItem 
+-l "Reset Persp Camera"
+-c "da_ClearPersp;\nviewSet -h"
+-rp "N"
+-i "hyperShadeResetCameraView.png";
+
+menuItem -bld 1 
 -l "Select Camera"
 -c "da_SelectCamera"
 -rp "NE"
 -i "Camera.png";
 
 menuItem -bld 1 
--l "Reset"
--sm 1
--rp "SW"
--i "hyperShadeResetCameraView.png";
-
-menuItem -bld 1 
--l "Main Camera"
--c "da_ClearPersp;\nviewSet -h"
--rp "W"
--i "hyperShadeResetCameraView.png";
-
-menuItem -bld 1 
--l "Render Settings"
--c "da_ResetUI;\nunifiedRenderGlobalsWindow"
--rp "NW"
--i "rvRenderGlobals.png";
-
-menuItem -bld 1 
--l "Viewport"
--c "ogs -r -rlt"
--rp "SW"
--i "singlePerspLayout.png";
-
-menuItem -bld 1 
--l "Context MM"
--c "da_MMtoKey_clean"
--rp "S"
--i "rmbMenu.png";
-
-setParent -m ..;
-
-menuItem -bld 1 
 -l "Distance Tool"
 -c "DistanceTool"
--rp "N"
+-rp "SW"
 -i "distanceDim.png";
 
 menuItem -bld 1 
@@ -815,7 +796,7 @@ menuItem -bld 1
 -c "nClothCache"
 -i "nClothCacheCreate.png";
 
-menuItem -bld 1 
+menuItem
 -c "nClothCacheOpt"
 -ob 1;
 
@@ -834,7 +815,7 @@ menuItem -bld 1
 -c "CreateFluidCache"
 -i "fluidCacheCreate.png";
 
-menuItem -bld 1 
+menuItem
 -c "CreateFluidCacheOptions;"
 -ob 1;
 
@@ -843,7 +824,7 @@ menuItem -bld 1
 -c "fluidDeleteCache"
 -i "fluidCacheDelete.png";
 
-menuItem -bld 1 
+menuItem
 -c "fluidDeleteCacheOpt"
 -ob 1;
 
@@ -857,7 +838,7 @@ menuItem -bld 1
 -c "geometryCache"
 -i "createCache.png";
 
-menuItem -bld 1 
+menuItem
 -c "geometryCacheOpt"
 -ob 1;
 
@@ -866,7 +847,7 @@ menuItem -bld 1
 -c "deleteGeometryCache"
 -i "deleteCache.png";
 
-menuItem -bld 1 
+menuItem
 -c "geometryDeleteCacheOpt"
 -ob 1;
 
@@ -895,7 +876,7 @@ menuItem -bld 1
 -c "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};"
 -i "greasePencilExport.png";
 
-menuItem -bld 1 
+menuItem
 -c "GpuCacheExportSelectionOptions"
 -ob 1;
 
@@ -919,7 +900,7 @@ menuItem -bld 1
 -c "doAlembicExportArgList 7 {\"0\",\"2\",\"1\",\"24\",\"1\",\"0\",\"-0.2\",\"0.2\",\"0\",\"0\",\"\",\"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"\",\"\",\"\",\"\",\"0\",\"0\",\"0\",\"2\",\"1\",\"0\",\"0\"};"
 -i "greasePencilExport.png";
 
-menuItem -bld 1 
+menuItem
 -c "AlembicExportSelectionOptions"
 -ob 1;
 
@@ -928,7 +909,7 @@ menuItem -bld 1
 -c "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};"
 -i "greasePencilImport.png";
 
-menuItem -bld 1 
+menuItem
 -c "AlembicImportOptions"
 -ob 1;
 
@@ -974,6 +955,11 @@ menuItem -bld 1
 -c "EvaluationToolkit"
 -i "polyColorSetEditor.png";
 
+menuItem -bld 1 
+-l "Namespace Editor"
+-c "NamespaceEditor"
+-i "QR_rename.png";
+
 setParent -m ..;
 
 menuItem -bld 1 
@@ -1001,12 +987,18 @@ menuItem -bld 1
 -i "alignTool.png";
 
 menuItem -bld 1 
+-l "Snap Together Tool"
+-c "setToolTo snapTogetherToolCtx"
+-rp "E"
+-i "snapTogetherTool.png";
+
+menuItem -bld 1 
 -l "Freeze Transforms"
 -c "FreezeTransformations" 
 -rp "NW"
 -i "FreezeTransform.png";
 
-menuItem -bld 1 
+menuItem
 -c "FreezeTransformationsOptions"
 -ob 1;
 
@@ -1015,12 +1007,6 @@ menuItem -bld 1
 -c "CenterPivot" 
 -rp "NE"
 -i "CenterPivot.png";
-
-menuItem -bld 1 
--l "Delete Non-Def History"
--c "BakeNonDefHistory"
--rp "E"
--i "nodeGrapherDisplayNone.png";
 
 menuItem -bld 1 
 -l "Reset Transforms"
@@ -1033,23 +1019,7 @@ menuItem -bld 1
 -c "da_pivotKeyable"
 -i "teSetKeyframe.png";
 
-menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem -bld 1 
--l "Input Order Editor"
--c "da_ListInputOperations"
--i "nodeGrapherNext.png";
-
-menuItem -bld 1 
--l "Namespace Editor"
--c "NamespaceEditor"
--i "QR_rename.png";
-
 setParent -m ..;
-
 
 if (`gmatch $currentPanel "modelPanel*"`){
 menuItem -bld 1
