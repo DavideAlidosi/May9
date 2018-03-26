@@ -515,15 +515,27 @@ menuItem -bld 1
 -c "da_ListInputOperations"
 -i "nodeGrapherNext.png";
 
+menuItem -bld 1 
+-l "Lock Nodes"
+-sm 1
+-i "lockGeneric.png";
+
+menuItem -bld 1 
+-l "On" 
+-c "da_Lock"
+-i "lockGeneric.png";
+
+menuItem -bld 1 
+-l "Off" 
+-c "da_UnLock" 
+-i "unlockGeneric.png";
+
+setParent -m ..;
+
 menuItem
 -l "separator" 
 -d 1
 -dl "separator";
-
-menuItem -bld 1 
--l "Duplicate Special"
--c "DuplicateSpecialOptions" 
--i "da_duplicate.png";
 
 menuItem -bld 1 
 -l "nParticle Tool"
@@ -533,11 +545,6 @@ menuItem -bld 1
 menuItem
 -c "NParticleToolOptions"
 -ob 1;
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
 
 menuItem -bld 1 
 -l "Particle Style"
@@ -568,63 +575,6 @@ menuItem -bld 1
 -l "Water"
 -c "optionVar -stringValue NParticleStyle \"Water\";"
 -i "nPartWater.png";
-
-setParent -m ..;
-
-menuItem -bld 1 
--l "Fields"
--sm 1
--i "posRadial.png";
-
-menuItem -bld 1 
--l "Air"
--c "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posAir.png";
-
-menuItem -bld 1 
--l "Drag"
--c "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posDrag.png";
-
-menuItem -bld 1 
--l "Gravity"
--c "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posGravity.png";
-
-menuItem -bld 1 
--l "Newton"
--c "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posNewton.png";
-
-menuItem -bld 1 
--l "Radial"
--c "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posRadial.png";
-
-menuItem -bld 1 
--l "Turbulence"
--c "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posTurbulence.png";
-
-menuItem -bld 1 
--l "Uniform"
--c "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posUniform.png";
-
-menuItem -bld 1 
--l "Vortex"
--c "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posVortex.png";
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem -bld 1 
--l "Volume Axis"
--c "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--i "posVolumeAxis.png";
 
 setParent -m ..;
 
@@ -735,28 +685,16 @@ menuItem -bld 1
 -cb (true == $HUDCheck);
 
 menuItem -bld 1 
--l "Lock Node" 
--c "da_Lock"
--rp "E" 
--i "lockGeneric.png";
-
-menuItem -bld 1 
--l "Unlock Node" 
--c "da_UnLock" 
--rp "W"
--i "unlockGeneric.png";
-
-menuItem -bld 1 
 -l "Optimize Scene Size" 
 -c "OptimizeSceneOptions"
 -i "sequenceCompress.png" 
 -rp "S";
 
 menuItem -bld 1 
--l "Clean Context MM"
--c "da_MMtoKey_clean"
--i "deleteClip.png"
--rp "N";
+-l "Select Hierarchy"
+-c "SelectHierarchy"
+-rp "N"
+-i "selectByHierarchy.png";
 
 menuItem 
 -l "Reset Persp Camera"
@@ -769,6 +707,18 @@ menuItem -bld 1
 -c "da_SelectCamera"
 -rp "NE"
 -i "Camera.png";
+
+menuItem -bld 1 
+-l "Select None"
+-c "SelectNone" 
+-rp "W"
+-i "hotkeyFieldClear.png";
+
+menuItem -bld 1 
+-l "Select All"
+-c "SelectAll" 
+-rp "E"
+-i "aselect.png";
 
 menuItem -bld 1 
 -l "Distance Tool"
@@ -793,12 +743,8 @@ menuItem
 
 menuItem -bld 1 
 -l "Create nCache"
--c "nClothCache"
--i "nClothCacheCreate.png";
-
-menuItem
 -c "nClothCacheOpt"
--ob 1;
+-i "nClothCacheCreate.png";
 
 menuItem -bld 1 
 -l "Delete nCache"
@@ -812,21 +758,13 @@ menuItem
 
 menuItem -bld 1 
 -l "Create Fluid Cache"
--c "CreateFluidCache"
+-c "CreateFluidCacheOptions"
 -i "fluidCacheCreate.png";
-
-menuItem
--c "CreateFluidCacheOptions;"
--ob 1;
 
 menuItem -bld 1 
 -l "Delete Fluid Cache"
--c "fluidDeleteCache"
--i "fluidCacheDelete.png";
-
-menuItem
 -c "fluidDeleteCacheOpt"
--ob 1;
+-i "fluidCacheDelete.png";
 
 menuItem
 -l "separator" 
@@ -835,21 +773,13 @@ menuItem
 
 menuItem -bld 1 
 -l "Create Geometry Cache"
--c "geometryCache"
--i "createCache.png";
-
-menuItem
 -c "geometryCacheOpt"
--ob 1;
+-i "createCache.png";
 
 menuItem -bld 1 
 -l "Delete Geometry Cache"
--c "deleteGeometryCache"
--i "deleteCache.png";
-
-menuItem
 -c "geometryDeleteCacheOpt"
--ob 1;
+-i "deleteCache.png";
 
 menuItem
 -l "separator" 
@@ -873,12 +803,8 @@ menuItem
 
 menuItem -bld 1 
 -l "Export Selection to GPU Cache"
--c "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};"
--i "greasePencilExport.png";
-
-menuItem
 -c "GpuCacheExportSelectionOptions"
--ob 1;
+-i "greasePencilExport.png";
 
 menuItem -bld 1 
 -l "Import GPU Cache"
@@ -897,21 +823,13 @@ menuItem
 
 menuItem -bld 1 
 -l "Export Selection to Alembic"
--c "doAlembicExportArgList 7 {\"0\",\"2\",\"1\",\"24\",\"1\",\"0\",\"-0.2\",\"0.2\",\"0\",\"0\",\"\",\"\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"\",\"\",\"\",\"\",\"0\",\"0\",\"0\",\"2\",\"1\",\"0\",\"0\"};"
--i "greasePencilExport.png";
-
-menuItem
 -c "AlembicExportSelectionOptions"
--ob 1;
+-i "greasePencilExport.png";
 
 menuItem -bld 1 
 -l "Import Alembic"
--c "doAlembicImportArgList 3 {\"2\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"0\",\"1\",\"1\"};"
--i "greasePencilImport.png";
-
-menuItem
 -c "AlembicImportOptions"
--ob 1;
+-i "greasePencilImport.png";
 
 menuItem
 -l "separator" 
@@ -1013,6 +931,11 @@ menuItem -bld 1
 -c "da_ResetTransform"
 -rp "W"
 -i "out_buttonManip.png";
+
+menuItem -bld 1 
+-l "Duplicate Special"
+-c "DuplicateSpecialOptions" 
+-i "da_duplicate.png";
 
 menuItem -bld 1 
 -l "Make Pivot Keyable"

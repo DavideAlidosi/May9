@@ -19,10 +19,12 @@ global proc da_May9Menu()
     menuItem -p $menuMain -l "Relationship Editor" -c "da_LayoutRelationshipEditor" -i "perspRelationshipEditorLayout.png";
     menuItem -p $menuMain -l "Dynamic Relationship" -c "da_LayoutDynamicRelationshipEditor" -i "da_DynamicRelationship_Layout.png";
     menuItem -p $menuMain -l "Hypershade" -c "da_LayoutHypershade" -i "da_Hypershade_Layout.png";
+    menuItem -p $menuMain -l "Edit Layouts..." -c "PanelPreferencesWindow" -i "editLayout.png";
     menuItem -d 1 -l "Reset";
     menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "hyperShadeResetCameraView.png";
     menuItem -p $menuMain -l "Render Settings" -c "da_ResetUI;\nunifiedRenderGlobalsWindow" -i "rvRenderGlobals.png";
     menuItem -p $menuMain -l "Viewport" -c "ogs -r -rlt" -i "singlePerspLayout.png";
+    menuItem -p $menuMain -l "Clean Context MM" -c "da_MMtoKey_clean" -i "deleteClip.png";
     menuItem -d 1 -l "Built in Plug-ins";
     menuItem -p $menuMain -l "Context Connector" -c "if (`pluginInfo -q -l contextConnector`){unloadPlugin contextConnector;pluginInfo -edit -autoload false contextConnector;} else {loadPlugin contextConnector;pluginInfo -edit -autoload true contextConnector;}" -cb (`pluginInfo -q -l contextConnector`);
     menuItem -p $menuMain -l "Massive Attribute" -c "if (`pluginInfo -q -l mass_attr`){unloadPlugin mass_attr;pluginInfo -edit -autoload false mass_attr;} else {loadPlugin mass_attr;pluginInfo -edit -autoload true mass_attr;}" -cb (`pluginInfo -q -l mass_attr`);
