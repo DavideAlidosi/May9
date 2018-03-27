@@ -1,67 +1,57 @@
 da_commonObjectOptionsPopup();
 
 menuItem
-    -label "Front View" 
-    -command "dR_DoCmd(\"viewFront\");" 
-    -radialPosition "E" 
-    -image "da_z.png" 
-    -sourceType "mel";
+    -l "Front View" 
+    -c "dR_DoCmd(\"viewFront\");" 
+    -rp "E" 
+    -i "da_z.png";
 
 menuItem
-    -label "Side View" 
-    -command "dR_DoCmd(\"viewRight\");" 
-    -radialPosition "W" 
-    -image "da_x.png" 
-    -sourceType "mel";
+    -l "Side View" 
+    -c "dR_DoCmd(\"viewRight\");" 
+    -rp "W" 
+    -i "da_x.png";
 
 menuItem
-    -label "Persp View" 
-    -command "dR_DoCmd(\"viewPersp\");" 
-    -radialPosition "S" 
-    -image "singlePerspLayout.png" 
-    -sourceType "mel";
+    -l "Persp View" 
+    -c "dR_DoCmd(\"viewPersp\");" 
+    -rp "S" 
+    -i "singlePerspLayout.png";
 
 menuItem
-    -label "Top View" 
-    -command "dR_DoCmd(\"viewTop\");" 
-    -radialPosition "N" 
-    -image "da_y.png" 
-    -sourceType "mel";
+    -l "Top View" 
+    -c "dR_DoCmd(\"viewTop\");" 
+    -rp "N" 
+    -i "da_y.png";
 
 menuItem
-    -label "Select Camera" 
-    -command "da_SelectCamera" 
-    -image "Camera.png" 
-    -sourceType "mel";
+    -l "Select Camera" 
+    -c "da_SelectCamera" 
+    -i "Camera.png";
 
 menuItem
-    -label "menuEditorMenuItem7" 
-    -command "da_SelectCamera;\nAttributeEditor\n" 
-    -optionBox 1
-    -sourceType "mel";
+    -l "menuEditorMenuItem7" 
+    -c "da_SelectCamera;\nAttributeEditor\n" 
+    -ob 1;
 
 menuItem
-    -label "Wheel Zoom" 
-    -command "da_ToggleMouseWheel" 
-    -sourceType "mel" 
+    -l "Wheel Zoom" 
+    -c "da_ToggleMouseWheel" 
     -cb (`optionVar -q "useScrollWheel"`);
 
 menuItem
-    -label "separator" 
-    -divider 1
-    -sourceType "mel";
+    -l "separator" 
+    -divider 1;
 
 menuItem
-    -label "Add Image Plane" 
-    -command "da_ImagePlane" 
-    -image "out_imagePlane.png" 
-    -sourceType "mel";
+    -l "Add Image Plane" 
+    -c "da_ImagePlane" 
+    -i "out_imagePlane.png";
 
 menuItem
-    -label "Add Movie Plane" 
-    -command "da_VideoPlane" 
-    -image "da_video_plane.png" 
-    -sourceType "mel";
+    -l "Add Movie Plane" 
+    -c "da_VideoPlane" 
+    -i "da_video_plane.png";
 
 setParent -m ..;
 
