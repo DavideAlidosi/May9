@@ -223,21 +223,11 @@ menuItem
 menuItem -bld 1 
 -l "Aim Constraint"
 -c "AimConstraint"
--rp "NW"
+-rp "N"
 -i "aimConstraint.png";
 
 menuItem
 -c "AimConstraintOptions"
--ob 1;
-
-menuItem -bld 1 
--l "Scale Constraint"
--c "scaleConstraint"
--rp "W"
--i "scaleConstraint.png";
-
-menuItem
--c "ScaleConstraintOptions"
 -ob 1;
 
 menuItem -bld 1 
@@ -253,12 +243,24 @@ menuItem
 menuItem -bld 1 
 -l "IK Handle"
 -c "IKHandleTool;"
--rp "N"
+-rp "NW"
 -i "kinHandle.png";
 
 menuItem
 -c "IKHandleToolOptions;"
 -ob 1;
+
+menuItem -bld 1 
+-l "IK Spline Handle"
+-c "IKSplineHandleTool;"
+-rp "W"
+-i "kinSplineHandle.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "IKSplineHandleToolOptions;"
+-ob 1
+-stp "mel";
 
 if (`pluginInfo -q -l contextConnector` == 1){
 menuItem -bld 1 
