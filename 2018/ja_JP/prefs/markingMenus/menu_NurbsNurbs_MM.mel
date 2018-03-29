@@ -1232,8 +1232,39 @@ menuItem
 -enableCommandRepeat 0
 -echoCommand 0
 -sourceType "mel" 
--longDivider 1
-menuEditorMenuItem19;
+-longDivider 1;
+
+menuItem
+-label "Create nHair" 
+-divider 0
+-subMenu 0
+-tearOff 0
+-command "CreateHair" 
+-optionBox 0
+-enable 1
+-data 0
+-allowOptionBoxes 1
+-postMenuCommandOnce 0
+-enableCommandRepeat 1
+-image "hairCreate.png" 
+-echoCommand 0
+-sourceType "mel" 
+-longDivider 1;
+
+menuItem
+-divider 0
+-subMenu 0
+-tearOff 0
+-command "CreateHairOptions" 
+-optionBox 1
+-enable 1
+-data 0
+-allowOptionBoxes 1
+-postMenuCommandOnce 0
+-enableCommandRepeat 0
+-echoCommand 0
+-sourceType "mel" 
+-longDivider 1;
 
 menuItem
 -label "Create Active Rigid Body" 

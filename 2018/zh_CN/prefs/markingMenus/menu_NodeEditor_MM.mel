@@ -414,6 +414,23 @@
             menuEditorMenuItem9;
 
         menuItem
+            -label "blendColors" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "createNode blendColors" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_blendColors.png" 
+            -echoCommand 0
+            -sourceType "mel" 
+            -longDivider 1;
+
+        menuItem
             -label "blendTwoAttr" 
             -divider 0
             -subMenu 0
@@ -430,6 +447,23 @@
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
+
+        menuItem
+            -label "condition" 
+            -divider 0
+            -subMenu 0
+            -tearOff 0
+            -command "createNode condition" 
+            -optionBox 0
+            -enable 1
+            -data 0
+            -allowOptionBoxes 1
+            -postMenuCommandOnce 0
+            -enableCommandRepeat 1
+            -image "out_condition.png" 
+            -echoCommand 0
+            -sourceType "mel" 
+            -longDivider 1;
 
         menuItem
             -label "choice" 

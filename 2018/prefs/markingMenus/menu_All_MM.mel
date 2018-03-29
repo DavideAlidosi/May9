@@ -163,19 +163,31 @@ menuItem
 -ob 1;
 
 menuItem -bld 1 
--l "Camera Bookmark"
--c "da_CameraBookmark"
--i "Bookmark.png";
+-l "StandIn"
+-sm 1
+-i "ExportStandinShelf.png";
 
 menuItem -bld 1 
--l "Rendering Flags"
--c "RenderFlagsWindow"
--i "editRenderPass.png";
+-l "Export"
+-c "da_doExportStandIn"
+-i "ExportStandinShelf.png";
+
+menuItem -bld 1 
+-l "Import"
+-c "da_CreateStandInFile"
+-i "StandinShelf.png";
+
+setParent -m ..;
 
 menuItem
 -l "separator" 
 -d 1
 -dl "separator";
+
+menuItem -bld 1 
+-l "Camera Bookmark"
+-c "da_CameraBookmark"
+-i "Bookmark.png";
 
 menuItem -bld 1 
 -l "File Path Editor"
@@ -815,23 +827,6 @@ menuItem -bld 1
 -l "Import BIF"
 -c "BifMeshImport"
 -i "greasePencilImport.png";
-
-setParent -m ..;
-
-menuItem -bld 1 
--l "StandIn"
--sm 1
--i "ExportStandinShelf.png";
-
-menuItem -bld 1 
--l "Export"
--c "da_doExportStandIn"
--i "ExportStandinShelf.png";
-
-menuItem -bld 1 
--l "Import"
--c "da_CreateStandInFile"
--i "StandinShelf.png";
 
 setParent -m ..;
 
