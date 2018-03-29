@@ -214,7 +214,7 @@ menuItem
 menuItem -bld 1 
 -l "Aim Constraint"
 -c "AimConstraint"
--rp "N"
+-rp "NW"
 -i "aimConstraint.png";
 
 menuItem
@@ -224,16 +224,12 @@ menuItem
 menuItem -bld 1 
 -l "Scale Constraint"
 -c "scaleConstraint"
+-rp "W"
 -i "scaleConstraint.png";
 
 menuItem
 -c "ScaleConstraintOptions"
 -ob 1;
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
 
 menuItem -bld 1 
 -l "Point Constraint"
@@ -248,21 +244,11 @@ menuItem
 menuItem -bld 1 
 -l "IK Handle"
 -c "IKHandleTool;"
--rp "NW"
+-rp "N"
 -i "kinHandle.png";
 
 menuItem
 -c "IKHandleToolOptions;"
--ob 1;
-
-menuItem -bld 1 
--l "IK Spline Handle"
--c "IKSplineHandleTool;"
--rp "W"
--i "kinSplineHandle.png";
-
-menuItem
--c "IKSplineHandleToolOptions;"
 -ob 1;
 
 if (`pluginInfo -q -l contextConnector` == 1){
@@ -283,38 +269,6 @@ menuItem -bld 1
 -c "da_MassAttr"
 -i "RS_multiple_filters.png";
 }
-
-menuItem -bld 1 
--l "Attributes"
--sm 1
--i "attributes.png";
-
-menuItem -bld 1 
--l "Channel Control"
--c "ChannelControlEditor"
--i "channelBox.png";
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem -bld 1 
--l "Add"
--c "AddAttribute"
--i "publishAttributes.png";
-
-menuItem -bld 1 
--l "Edit"
--c "RenameAttribute"
--i "setEdEditMode.png";
-
-menuItem -bld 1 
--l "Delete"
--c "DeleteAttribute"
--i "unpublishAttributes.png";
-
-setParent -m ..;
 
 menuItem -bld 1 
 -l "Controllers"
@@ -849,14 +803,21 @@ menuItem -bld 1
 setParent -m ..;
 
 menuItem -bld 1 
--l "Export StandIn"
+-l "StandIn"
+-sm 1
+-i "ExportStandinShelf.png";
+
+menuItem -bld 1 
+-l "Export"
 -c "da_doExportStandIn"
 -i "ExportStandinShelf.png";
 
 menuItem -bld 1 
--l "Import StandIn"
+-l "Import"
 -c "da_CreateStandInFile"
 -i "StandinShelf.png";
+
+setParent -m ..;
 
 menuItem 
 -l "separator" 
@@ -937,10 +898,47 @@ menuItem -bld 1
 -c "DuplicateSpecialOptions" 
 -i "da_duplicate.png";
 
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
 menuItem -bld 1 
 -l "Make Pivot Keyable"
 -c "da_pivotKeyable"
 -i "teSetKeyframe.png";
+
+menuItem -bld 1 
+-l "Channel Control"
+-c "ChannelControlEditor"
+-i "channelBox.png";
+
+menuItem -bld 1 
+-l "Attributes"
+-sm 1
+-i "attributes.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem -bld 1 
+-l "Add"
+-c "AddAttribute"
+-i "publishAttributes.png";
+
+menuItem -bld 1 
+-l "Edit"
+-c "RenameAttribute"
+-i "setEdEditMode.png";
+
+menuItem -bld 1 
+-l "Delete"
+-c "DeleteAttribute"
+-i "unpublishAttributes.png";
+
+setParent -m ..;
 
 setParent -m ..;
 
