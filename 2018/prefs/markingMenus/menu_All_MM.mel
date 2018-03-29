@@ -4,7 +4,7 @@ int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrame
 string $currentPanel = `getPanel -withFocus`;
 
 menuItem -bld 1 
--l "Poly/Curves"
+-l "Poly/NURBS"
 -sm 1
 -rp "N"
 -i "da_PolyCurve.png";
@@ -70,15 +70,19 @@ menuItem
 -ob 1;
 
 menuItem -bld 1 
--l "Type"
--c "CreatePolygonType"
+-l "Plane"
+-c "CreateNURBSPlane"
 -rp "SE"
--i "polyType.png";
+-i "plane.png";
+
+menuItem
+-c "CreateNURBSPlaneOptions;"
+-ob 1;
 
 menuItem -bld 1 
 -l "Import Illustrator Curves"
--c "CreateIllustratorCurves;"
--i "ai.png";
+-c "CreateIllustratorCurves"
+-i "aiObject.png";
 
 menuItem
 -l "separator" 
