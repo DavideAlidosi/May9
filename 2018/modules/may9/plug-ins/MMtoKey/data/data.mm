@@ -2310,7 +2310,7 @@ S'Tool_PaintAttr_MM'
 p517
 sg26
 I0
-ssVpolyTexturePlacementPanel superCutUVContext
+ssVany superCutUVContext
 p518
 (dp519
 S'search_filter'
