@@ -34,12 +34,45 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "uvlattice.png" 
+        -image "UVEditorShell.png" 
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
+    menuItem
+        -label "Lattice" 
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "LatticeUVTool" 
+        -optionBox 0
+        -enable 1
+        -data 0
+        -radialPosition "NE" 
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 1
+        -image "uvlattice.png" 
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1;
+
+    menuItem
+        -divider 0
+        -subMenu 0
+        -tearOff 0
+        -command "LatticeUVToolOptions" 
+        -optionBox 1
+        -enable 1
+        -data 0
+        -allowOptionBoxes 1
+        -postMenuCommandOnce 0
+        -enableCommandRepeat 0
+        -echoCommand 0
+        -sourceType "mel" 
+        -longDivider 1;
+		
     menuItem
         -label "Select Shell Border" 
         -divider 0
@@ -53,28 +86,11 @@
         -allowOptionBoxes 1
         -postMenuCommandOnce 0
         -enableCommandRepeat 1
-        -image "polyMapUVBorder.png" 
+        -image "UVEditorShellBorder.png" 
         -echoCommand 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
-
-    menuItem
-        -label "menuEditorMenuItem11" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetCutSewUVTool;toolPropertyWindow;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
 
     menuItem
         -label "UV Toolkit" 

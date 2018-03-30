@@ -2094,7 +2094,7 @@ S'Tool_SmoothSkin_MM'
 p481
 sg26
 I0
-ssS'any texUnfoldUVContext'
+ssS'polyTexturePlacementPanel texUnfoldUVContext'
 p482
 (dp483
 g18
@@ -2166,7 +2166,7 @@ S'Tool_PaintFX_MM'
 p493
 sg26
 I0
-ssS'any texSculptCacheContextObj'
+ssS'polyTexturePlacementPanel texSculptCacheContextObj'
 p494
 (dp495
 g18
@@ -2310,7 +2310,7 @@ S'Tool_PaintAttr_MM'
 p517
 sg26
 I0
-ssVany superCutUVContext
+ssVpolyTexturePlacementPanel superCutUVContext
 p518
 (dp519
 S'search_filter'
@@ -2461,7 +2461,7 @@ S'Tool_XGenBrush_MM'
 p548
 sg26
 I0
-ssS'any texCutUVContext'
+ssS'polyTexturePlacementPanel texCutUVContext'
 p549
 (dp550
 g18
@@ -2533,7 +2533,7 @@ S'Tool_XGenBrush_MM'
 p560
 sg26
 I0
-ssS'any texSymmetrizeUVContext'
+ssS'polyTexturePlacementPanel texSymmetrizeUVContext'
 p561
 (dp562
 g18
