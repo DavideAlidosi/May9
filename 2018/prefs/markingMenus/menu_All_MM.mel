@@ -335,6 +335,13 @@ menuItem
 -d 1
 -dl "separator";
 
+if (`pluginInfo -q -l weightsServer` == 1){
+menuItem -bld 1 
+-l "Weights Server"
+-c "weightsServerEditInfluences"
+-i "move_M.png";
+}
+
 menuItem -bld 1 
 -l "Bake Deformer"
 -c "BakeDeformerTool"
