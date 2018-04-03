@@ -101,10 +101,12 @@ class DefaultData(object):
                   ("nodeEditorPanel", 6), ("outlinerPanel", 6), ("scriptEditorPanel", 0), ("modelPanel", 1),
                   ("polyTexturePlacementPanel", 1), ("profilerPanel", 6), ("referenceEditorPanel", 6),
                   ("relationshipPanel", 6), ("renderView", 6), ("sequenceEditorPanel", 6))
-        for panel in panels:
+
+        # fill panel tab with default data
+        for panel_name, panel_filter in panels:
             node = cls.node()
-            node["search_filter"] = panel[1]
-            cluster["panel"][panel[0]] = node
+            node["search_filter"] = panel_filter
+            cluster["panel"][panel_name] = node
         return cluster
 
     @staticmethod
@@ -130,7 +132,7 @@ class UserData(object):
             if data[0] != protocol:     # update data to current protocol
                 cluster_empty = DefaultData.cluster()
                 cluster_empty.update(cluster)
-                for nodes in cluster_empty.values():
+                for nodes in cluster_empty.values():    # iterate through every node and update to current
                     for node in nodes:
                         node_empty = DefaultData.node()
                         node_empty.update(nodes[node])
@@ -146,6 +148,7 @@ class UserData(object):
         """store data into file"""
         cls._createDirs()
         pickle.dump((protocol, preferences, nodes), open(location + "/data/data.mm", "wb"))
+        cmds.warning(" saved")
 
     @staticmethod
     def _createDirs():

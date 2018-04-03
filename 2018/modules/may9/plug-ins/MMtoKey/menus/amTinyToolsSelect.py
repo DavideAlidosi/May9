@@ -5,6 +5,6 @@ def run(parent):
     """requires amTinyTools"""
     try:
         import amTinyTools
-        amTinyTools.Menu.menu(parent, True)
+        amTinyTools.Menu.menuSelect(parent)
     except ImportError:
         cmds.confirmDialog(m="this module requires amTinyTools")

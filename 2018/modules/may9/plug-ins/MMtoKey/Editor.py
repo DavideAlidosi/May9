@@ -299,7 +299,7 @@ class MainWindow(QMainWindow):
 
     def _update(self):
         """give new nodes to all widgets and update"""
-        for i, name in zip(xrange(6), ["panel", "name", "non dag", "dag", "tool", "preset"]):
+        for i, name in enumerate(["panel", "name", "non dag", "dag", "tool", "preset"]):
             self.ui.tab_widgets.widget(i).reload(self._engine.cluster[name])
 
     def _import(self):
@@ -349,3 +349,4 @@ class Preferences(QMainWindow):
         self._preferences["preset_hud"] = self.ui.chb_hud.isChecked()
         self._preferences["preset_hud_s"] = self.ui.spin_hud_s.value()
         self._preferences["preset_hud_b"] = self.ui.spin_hud_b.value()
+        cmds.warning("preferences saved")
