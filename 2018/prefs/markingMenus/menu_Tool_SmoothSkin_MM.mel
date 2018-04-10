@@ -11,7 +11,6 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -ob 0
         -checkBox ($reflectionDirection == "x") 
         -en 1
-        -data 0
         -rp "SW" 
         -aob 1
         -pmo 0
@@ -28,7 +27,6 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -ob 0
         -checkBox ($reflectionDirection == "y") 
         -en 1
-        -data 0
         -rp "S" 
         -aob 1
         -pmo 0
@@ -45,7 +43,6 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -checkBox ($reflectionDirection == "z") 
         -ob 0
         -en 1
-        -data 0
         -rp "SE" 
         -aob 1
         -pmo 0
@@ -62,7 +59,6 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -ob 0
         -checkBox $reflectionCheck 
         -en 1
-        -data 0
         -rp "E" 
         -aob 1
         -pmo 0
@@ -78,7 +74,6 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -c "artAttrPaintOperation artAttrCtx Replace;\nartAttrCtx -e -clear `currentCtx`;" 
         -ob 0
         -en 1
-        -data 0
         -rp "N" 
         -aob 1
         -pmo 0

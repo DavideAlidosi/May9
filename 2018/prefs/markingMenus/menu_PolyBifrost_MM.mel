@@ -7,7 +7,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -to 0
         -ob 0
         -en 1
-        -data 0
         -rp "E" 
         -aob 1
         -ecr 1
@@ -21,7 +20,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "RemoveBifrostEmitter" 
             -ob 0
             -en 1
-            -data 0
             -rp "E" 
             -aob 1
             -pmo 0
@@ -37,7 +35,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "AddBifrostCollider" 
             -ob 0
             -en 1
-            -data 0
             -rp "NE" 
             -aob 1
             -pmo 0
@@ -53,7 +50,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "AddBifrostAccelerator" 
             -ob 0
             -en 1
-            -data 0
             -rp "N" 
             -aob 1
             -pmo 0
@@ -69,7 +65,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "AddBifrostGuide" 
             -ob 0
             -en 1
-            -data 0
             -rp "SE" 
             -aob 1
             -pmo 0
@@ -85,7 +80,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "AddBifrostKillField" 
             -ob 0
             -en 1
-            -data 0
             -rp "NW" 
             -aob 1
             -pmo 0
@@ -102,7 +96,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -to 0
         -ob 0
         -en 1
-        -data 0
         -rp "W" 
         -aob 1
         -ecr 1
@@ -116,7 +109,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "evalEcho( \"RemoveBifrostEmitter\" );" 
             -ob 0
             -en 1
-            -data 0
             -rp "W" 
             -aob 1
             -pmo 0
@@ -132,7 +124,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "evalEcho( \"RemoveBifrostCollider\" );" 
             -ob 0
             -en 1
-            -data 0
             -rp "NW" 
             -aob 1
             -pmo 0
@@ -148,7 +139,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "evalEcho( \"RemoveBifrostAccelerator\" );" 
             -ob 0
             -en 1
-            -data 0
             -rp "N" 
             -aob 1
             -pmo 0
@@ -164,7 +154,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
             -c "RemoveBifrostGuide" 
             -ob 0
             -en 1
-            -data 0
             -rp "SW" 
             -aob 1
             -pmo 0
@@ -182,7 +171,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -c "bifrost -edit -stopProcessing;" 
         -ob 0
         -en 1
-        -data 0
         -rp "N" 
         -aob 1
         -pmo 0
@@ -199,7 +187,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -c "performBifrostOptionsChange" 
         -ob 0
         -en 1
-        -data 0
         -rp "S" 
         -aob 1
         -pmo 0
@@ -215,7 +202,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -c "performCreateBifrostCache 0 0;" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -223,14 +209,12 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         menuEditorMenuItem5;
 
     menuItem
-        -l "menuEditorMenuItem6" 
         -d 0
         -sm 0
         -to 0
         -c "performCreateBifrostCache 1 0;\n" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -245,7 +229,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -c "bifrost -edit -flushScratchCache;" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -260,7 +243,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -to 0
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -274,7 +256,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -c "ToggleBifrostHUD" 
         -checkBox (1 == $bifrostHUDCheck)
         -en 1
-        -data 0
         -ec 0
         menuEditorMenuItem23;
 

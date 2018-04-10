@@ -20,7 +20,6 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -checkBox $deleteFaceOn
         -ob 0
         -en 1
-        -data 0
         -rp "NE" 
         -aob 1
         -pmo 0
@@ -37,7 +36,6 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -checkBox $extractFacesOn
         -ob 0
         -en 1
-        -data 0
         -rp "SE" 
         -aob 1
         -pmo 0
@@ -54,7 +52,6 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -checkBox $splitModeOn
         -ob 0
         -en 1
-        -data 0
         -rp "E" 
         -aob 1
         -pmo 0
@@ -70,7 +67,6 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -c "dr_polyCut(0);" 
         -ob 0
         -en 1
-        -data 0
         -rp "S" 
         -aob 1
         -pmo 0
@@ -87,7 +83,6 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
         -c "nexCtx -resetManip" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1

@@ -7,7 +7,6 @@
         -c "artAttrPaintOperation artAttrSkinPaintCtx Add;" 
         -ob 0
         -en 1
-        -data 0
         -rp "NE" 
         -aob 1
         -pmo 0
@@ -23,7 +22,6 @@
         -c "artAttrPaintOperation artAttrSkinPaintCtx Replace;" 
         -ob 0
         -en 1
-        -data 0
         -rp "N" 
         -aob 1
         -pmo 0
@@ -39,7 +37,6 @@
         -c "artAttrPaintOperation artAttrSkinPaintCtx Scale;" 
         -ob 0
         -en 1
-        -data 0
         -rp "NW" 
         -aob 1
         -pmo 0
@@ -55,7 +52,6 @@
         -c "da_ToggleXRayJointsSkin" 
         -ob 0
         -en 1
-        -data 0
         -rp "E" 
         -aob 1
         -checkBox (`artAttrSkinPaintCtx -q -xrayJoints artAttrSkinContext`) 
@@ -72,7 +68,6 @@
         -c "da_ToggleRampSkin;artAttrCtx -e -colorRamp \" 1,0,0,0.5,1,1,1,0,0.986,1,0.12,0,0.12,0.014,1,1,1,0.86,1,1,0.004,0,0.004,0,1 \" artAttrSkinContext" 
         -ob 0
         -en 1
-        -data 0
         -rp "S" 
         -aob 1
         -checkBox (`artAttrSkinPaintCtx -q -useColorRamp artAttrSkinContext`) 
@@ -89,7 +84,6 @@
         -c "artAttrPaintOperation artAttrSkinPaintCtx Smooth;\nartAttrSkinPaintCtx -e -clear `currentCtx`;" 
         -ob 0
         -en 1
-        -data 0
         -rp "W" 
         -aob 1
         -pmo 0
@@ -105,7 +99,6 @@
         -c "da_ToggleSkinWireframe" 
         -ob 0
         -en 1
-        -data 0
         -rp "SE" 
         -aob 1
         -checkBox (`artAttrSkinPaintCtx -q -showactive artAttrSkinContext`) 

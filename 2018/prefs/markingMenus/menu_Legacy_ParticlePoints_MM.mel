@@ -8,7 +8,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -c "CreateLattice" 
         -ob 0
         -en 1
-        -data 0
         -rp "NE" 
         -aob 1
         -pmo 0
@@ -18,14 +17,12 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem1;
 
     menuItem
-        -l "menuEditorMenuItem2" 
         -d 0
         -sm 0
         -to 0
         -c "CreateLatticeOptions;" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -40,7 +37,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -c "CreateCluster" 
         -ob 0
         -en 1
-        -data 0
         -rp "E" 
         -aob 1
         -pmo 0
@@ -50,14 +46,12 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem3;
 
     menuItem
-        -l "menuEditorMenuItem4" 
         -d 0
         -sm 0
         -to 0
         -c "CreateClusterOptions" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -79,7 +73,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem13;
 
         menuItem
-        -l "menuEditorMenuItem1"
         -c "BendOptions;"
         -ob 1
         -stp "mel"
@@ -93,7 +86,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem15;
 
         menuItem
-        -l "menuEditorMenuItem2"
         -c "FlareOptions;"
         -ob 1
         -stp "mel"
@@ -107,7 +99,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem17;
 
         menuItem
-        -l "menuEditorMenuItem3"
         -c "SineOptions;"
         -ob 1
         -stp "mel"
@@ -121,7 +112,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem19;
 
         menuItem
-        -l "menuEditorMenuItem4"
         -c "SquashOptions;"
         -ob 1
         -stp "mel"
@@ -135,7 +125,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem21;
 
         menuItem
-        -l "menuEditorMenuItem5"
         -c "TwistOptions"
         -ob 1
         -stp "mel"
@@ -149,7 +138,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         menuEditorMenuItem23;
 
         menuItem
-        -l "menuEditorMenuItem6"
         -c "WaveOptions;"
         -ob 1
         -stp "mel"
@@ -165,7 +153,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -to 0
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -179,7 +166,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -c "ToggleParticleCount" 
         -checkBox (1 == $particleCountCheck)
         -en 1
-        -data 0
         -ec 0
         menuEditorMenuItem23;
 

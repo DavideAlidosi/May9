@@ -7,7 +7,6 @@
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
         -ob 0
         -en 1
-        -data 0
         -rp "NE" 
         -aob 1
         -pmo 0
@@ -17,14 +16,12 @@
         menuEditorMenuItem2;
 
     menuItem
-        -l "menuEditorMenuItem3" 
         -d 0
         -sm 0
         -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -46,7 +43,6 @@
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
         -ob 0
         -en 1
-        -data 0
         -rp "NW" 
         -aob 1
         -pmo 0
@@ -56,14 +52,12 @@
         menuEditorMenuItem4;
 
     menuItem
-        -l "menuEditorMenuItem5" 
         -d 0
         -sm 0
         -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -78,7 +72,6 @@
         -c "da_OpenUvToolkit" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -94,7 +87,6 @@
         -c "UVSetEditor" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -110,7 +102,6 @@
         -c "UVCentricUVLinkingEditor" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1

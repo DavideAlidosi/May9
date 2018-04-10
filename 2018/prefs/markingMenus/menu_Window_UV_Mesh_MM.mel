@@ -10,7 +10,6 @@
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
         -ob 0
         -en 1
-        -data 0
         -rp "NW" 
         -aob 1
         -pmo 0
@@ -20,14 +19,12 @@
         menuEditorMenuItem29;
 
     menuItem
-        -l "menuEditorMenuItem30" 
         -d 0
         -sm 0
         -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -42,7 +39,6 @@
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
         -ob 0
         -en 1
-        -data 0
         -rp "NE" 
         -aob 1
         -pmo 0
@@ -52,14 +48,12 @@
         menuEditorMenuItem18;
 
     menuItem
-        -l "menuEditorMenuItem28" 
         -d 0
         -sm 0
         -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -74,7 +68,6 @@
         -c "performPolyAutoProj 0;" 
         -ob 0
         -en 1
-        -data 0
         -rp "SW" 
         -aob 1
         -pmo 0
@@ -84,14 +77,12 @@
         menuEditorMenuItem11;
 
     menuItem
-        -l "menuEditorMenuItem12" 
         -d 0
         -sm 0
         -to 0
         -c "performPolyAutoProj 1;" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -106,7 +97,6 @@
         -c "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";" 
         -ob 0
         -en 1
-        -data 0
         -rp "SE" 
         -aob 1
         -pmo 0
@@ -116,14 +106,12 @@
         menuEditorMenuItem13;
 
     menuItem
-        -l "menuEditorMenuItem20" 
         -d 0
         -sm 0
         -to 0
         -c "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -138,7 +126,6 @@
         -c "da_OpenUvToolkit" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -154,7 +141,6 @@
         -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -163,14 +149,12 @@
         menuEditorMenuItem26;
 
     menuItem
-        -l "menuEditorMenuItem31" 
         -d 0
         -sm 0
         -to 0
         -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -185,7 +169,6 @@
         -to 0
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -199,7 +182,6 @@
         -c "performPolyAutoSeamUV 0" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -208,14 +190,12 @@
         menuEditorMenuItem14;
 
     menuItem
-        -l "menuEditorMenuItem18" 
         -d 0
         -sm 0
         -to 0
         -c "performPolyAutoSeamUV 1" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -230,7 +210,6 @@
         -c "performUnfold 0" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -239,14 +218,12 @@
         menuEditorMenuItem15;
 
     menuItem
-        -l "menuEditorMenuItem20" 
         -d 0
         -sm 0
         -to 0
         -c "performUnfold 1" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -261,7 +238,6 @@
         -c "LayoutUV" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -270,14 +246,12 @@
         menuEditorMenuItem50;
 
     menuItem
-        -l "menuEditorMenuItem50" 
         -d 0
         -sm 0
         -to 0
         -c "LayoutUVOptions" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -292,7 +266,6 @@
         -to 0
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -306,7 +279,6 @@
         -c "UVSetEditor" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -322,7 +294,6 @@
         -c "UVCentricUVLinkingEditor" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -338,7 +309,6 @@
         -to 0
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -352,7 +322,6 @@
         -c "ConvertSelectionToUVs" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1

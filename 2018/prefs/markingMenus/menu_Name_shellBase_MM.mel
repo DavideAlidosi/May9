@@ -9,7 +9,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -c "PolyExtrude" 
         -ob 0
         -en 1
-        -data 0
         -rp "E" 
         -aob 1
         -pmo 0
@@ -19,14 +18,12 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         menuEditorMenuItem1;
 
     menuItem
-        -l "menuEditorMenuItem2" 
         -d 0
         -sm 0
         -to 0
         -c "PolyExtrudeOptions" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -40,7 +37,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -to 0
         -ob 0
         -en 1
-        -data 0
         -rp "SE" 
         -aob 1
         -ecr 1
@@ -55,7 +51,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -c "da_EdgeBorder" 
             -ob 0
             -en 1
-            -data 0
             -rp "N" 
             -aob 1
             -pmo 0
@@ -72,7 +67,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -c "da_EdgeInside" 
             -ob 0
             -en 1
-            -data 0
             -rp "NE" 
             -aob 1
             -pmo 0
@@ -89,7 +83,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -c "da_EdgeStraightAngle" 
             -ob 0
             -en 1
-            -data 0
             -rp "E" 
             -aob 1
             -pmo 0
@@ -106,7 +99,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -c "da_EdgeRightAngle" 
             -ob 0
             -en 1
-            -data 0
             -rp "SE" 
             -aob 1
             -pmo 0
@@ -123,7 +115,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -c "da_EdgeAcuteAngle" 
             -ob 0
             -en 1
-            -data 0
             -rp "S" 
             -aob 1
             -pmo 0
@@ -140,7 +131,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -c "da_EdgeHard" 
             -ob 0
             -en 1
-            -data 0
             -rp "SW" 
             -aob 1
             -pmo 0
@@ -157,7 +147,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -c "da_EdgeSoft" 
             -ob 0
             -en 1
-            -data 0
             -rp "W" 
             -aob 1
             -pmo 0
@@ -176,7 +165,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -c "dR_multiCutTool;" 
         -ob 0
         -en 1
-        -data 0
         -rp "W" 
         -aob 1
         -pmo 0
@@ -193,7 +181,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-c "FillHole" 
 			-ob 0
 			-en 1
-			-data 0
 			-rp "N" 
 			-aob 1
 			-pmo 0
@@ -211,7 +198,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-c "SetMeshSculptTool" 
 			-ob 0
 			-en 1
-			-data 0
 			-rp "N" 
 			-aob 1
 			-pmo 0
@@ -221,14 +207,12 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			menuEditorMenuItem5;
 	}
     menuItem
-        -l "menuEditorMenuItem6" 
         -d 0
         -sm 0
         -to 0
         -c "ShowMeshSculptToolOptions" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -243,7 +227,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -c "SmoothPolygon" 
         -ob 0
         -en 1
-        -data 0
         -rp "S" 
         -aob 1
         -pmo 0
@@ -253,14 +236,12 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         menuEditorMenuItem7;
 
     menuItem
-        -l "menuEditorMenuItem8" 
         -d 0
         -sm 0
         -to 0
         -c "SmoothPolygonOptions;" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -275,7 +256,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -c "BevelPolygon;" 
         -ob 0
         -en 1
-        -data 0
         -rp "NW" 
         -aob 1
         -pmo 0
@@ -285,14 +265,12 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         menuEditorMenuItem9;
 
     menuItem
-        -l "menuEditorMenuItem10" 
         -d 0
         -sm 0
         -to 0
         -c "BevelPolygonOptions;" 
         -ob 1
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 0
@@ -307,7 +285,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-to 0
 			-ob 0
 			-en 1
-			-data 0
 			-aob 1
 			-ecr 1
 			-i "out_subdiv.png" 
@@ -321,7 +298,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 				-c "da_shellSubdiv" 
 				-ob 0
 				-en 1
-				-data 0
 				-aob 1
 				-pmo 0
 				-ecr 1
@@ -337,7 +313,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 				-c "da_shellNoSubdiv" 
 				-ob 0
 				-en 1
-				-data 0
 				-aob 1
 				-pmo 0
 				-ecr 1
@@ -356,7 +331,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -c "da_shellDetach" 
         -ob 0
         -en 1
-        -data 0
         -aob 1
         -pmo 0
         -ecr 1
@@ -373,7 +347,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-c "BridgeEdge;" 
 			-ob 0
 			-en 1
-			-data 0
 			-rp "NE" 
 			-aob 1
 			-pmo 0
@@ -389,7 +362,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-c "BridgeEdgeOptions;" 
 			-ob 1
 			-en 1
-			-data 0
 			-aob 1
 			-pmo 0
 			-ecr 0
@@ -404,7 +376,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-c "DeletePolyElements;" 
 			-ob 0
 			-en 1
-			-data 0
 			-rp "SW" 
 			-aob 1
 			-pmo 0

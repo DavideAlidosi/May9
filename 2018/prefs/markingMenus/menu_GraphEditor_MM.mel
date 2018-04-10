@@ -6,7 +6,6 @@ menuItem
     -c "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
     -ob 0
     -en 1
-    -data 0
     -rp "W" 
     -aob 1
     -pmo 0
@@ -22,7 +21,6 @@ menuItem
     -c "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
     -ob 0
     -en 1
-    -data 0
     -rp "E" 
     -aob 1
     -pmo 0
@@ -38,7 +36,6 @@ menuItem
     -c "da_InsertKeyFrame" 
     -ob 0
     -en 1
-    -data 0
     -rp "N" 
     -aob 1
     -pmo 0
@@ -55,7 +52,6 @@ menuItem
     -c "DeleteStaticChannels" 
     -ob 0
     -en 1
-    -data 0
     -rp "S" 
     -aob 1
     -pmo 0
@@ -65,14 +61,12 @@ menuItem
     menuEditorMenuItem6;
 
 menuItem
-    -l "menuEditorMenuItem7" 
     -d 0
     -sm 0
     -to 0
     -c "DeleteStaticChannelsOptions" 
     -ob 1
     -en 1
-    -data 0
     -aob 1
     -pmo 0
     -ecr 0
@@ -87,7 +81,6 @@ menuItem
     -c "GraphEditorLockChannel" 
     -ob 0
     -en 1
-    -data 0
     -rp "SE" 
     -aob 1
     -pmo 0
@@ -104,7 +97,6 @@ menuItem
     -c "GraphEditorUnlockChannel;" 
     -ob 0
     -en 1
-    -data 0
     -rp "SW" 
     -aob 1
     -pmo 0
@@ -121,7 +113,6 @@ menuItem
     -c "doMuteChannel graphEditor1FromOutliner -true;" 
     -ob 0
     -en 1
-    -data 0
     -rp "NE" 
     -aob 1
     -pmo 0
@@ -138,7 +129,6 @@ menuItem
     -c "doMuteChannel graphEditor1FromOutliner -false;" 
     -ob 0
     -en 1
-    -data 0
     -rp "NW" 
     -aob 1
     -pmo 0
@@ -155,7 +145,6 @@ menuItem
     -c "SetDrivenKeyOptions" 
     -ob 0
     -en 1
-    -data 0
     -aob 1
     -pmo 0
     -ecr 1
@@ -171,7 +160,6 @@ menuItem
     -to 0
     -ob 0
     -en 1
-    -data 0
     -aob 1
     -pmo 0
     -ecr 1
@@ -185,7 +173,6 @@ menuItem
     -c "performSimplify 3 graphEditor1GraphEd;" 
     -ob 0
     -en 1
-    -data 0
     -aob 1
     -pmo 0
     -ecr 1
@@ -194,14 +181,12 @@ menuItem
     menuEditorMenuItem3;
 
 menuItem
-    -l "menuEditorMenuItem8" 
     -d 0
     -sm 0
     -to 0
     -c "performSimplify 4 graphEditor1GraphEd;" 
     -ob 1
     -en 1
-    -data 0
     -aob 1
     -pmo 0
     -ecr 0
@@ -217,7 +202,6 @@ menuItem
     -checkBox (`selectType -q -animCurve`)
     -ob 0
     -en 1
-    -data 0
     -aob 1
     -pmo 0
     -ecr 1
@@ -233,7 +217,6 @@ menuItem
     -checkBox (`animCurveEditor -q -psh graphEditor1GraphEd`)
     -ob 0
     -en 1
-    -data 0
     -aob 1
     -pmo 0
     -ecr 1

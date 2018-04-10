@@ -7,7 +7,6 @@
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 0 -vertexValue 0 $each;\n}" 
         -ob 0
         -en 1
-        -data 0
         -rp "S" 
         -aob 1
         -pmo 0
@@ -23,7 +22,6 @@
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 10 -vertexValue 10 $each;\n}" 
         -ob 0
         -en 1
-        -data 0
         -rp "N" 
         -aob 1
         -pmo 0
@@ -39,7 +37,6 @@
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value .5 -vertexValue .5 $each;\n}" 
         -ob 0
         -en 1
-        -data 0
         -rp "SE" 
         -aob 1
         -pmo 0
@@ -55,7 +52,6 @@
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 2 -vertexValue 2 $each;\n}" 
         -ob 0
         -en 1
-        -data 0
         -rp "E" 
         -aob 1
         -pmo 0
@@ -71,7 +67,6 @@
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 4 -vertexValue 4 $each;\n}" 
         -ob 0
         -en 1
-        -data 0
         -rp "NE" 
         -aob 1
         -pmo 0
@@ -87,7 +82,6 @@
         -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
         -ob 0
         -en 1
-        -data 0
         -rp "W" 
         -aob 1
         -pmo 0
