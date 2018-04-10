@@ -14,8 +14,6 @@
         -ecr 1
         -i "time.svg" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
@@ -30,8 +28,6 @@
         -aob 1
         -ecr 1
         -i "out_dagNode.png" 
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem10;
 
         menuItem
@@ -49,8 +45,6 @@
             -ecr 1
             -i "enabled.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
@@ -68,8 +62,6 @@
             -ecr 1
             -i "RS_disable.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem2;
 
     setParent -m ..;
@@ -89,8 +81,6 @@
         -ecr 1
         -i "createNode.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
@@ -108,8 +98,6 @@
         -ecr 1
         -i "deleteActive.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem8;
 
     menuItem
@@ -127,8 +115,6 @@
         -ecr 1
         -i "createBinFromSelectedNodes.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
@@ -146,8 +132,6 @@
         -ecr 1
         -i "duplicateReference.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem12;
 
     menuItem
@@ -165,8 +149,6 @@
         -ecr 1
         -i "greasePencilImport.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem13;
 
     menuItem
@@ -184,8 +166,6 @@
         -ecr 1
         -i "greasePencilExport.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem14;
 
 	if (`pluginInfo -q -l contextConnector` == 1){
@@ -218,8 +198,6 @@
         -ecr 1
         -i "out_expression.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
@@ -234,8 +212,6 @@
         -aob 1
         -pmo 0
         -ecr 1
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
@@ -249,8 +225,6 @@
         -aob 1
         -ecr 1
         -i "nodeGrapherAddNodes.png" 
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem3;
 
         menuItem
@@ -267,8 +241,6 @@
             -ecr 1
             -i "out_ramp.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem11;
 
         menuItem
@@ -285,8 +257,6 @@
             -ecr 1
             -i "out_samplerInfo.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem8;
 
         menuItem
@@ -301,8 +271,6 @@
             -aob 1
             -pmo 0
             -ecr 1
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem5;
 
         menuItem
@@ -319,8 +287,6 @@
             -ecr 1
             -i "render_vectorProduct.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
@@ -337,8 +303,6 @@
             -ecr 1
             -i "out_decomposeMatrix.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
@@ -355,8 +319,6 @@
             -ecr 1
             -i "render_multiplyDivide.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
@@ -373,8 +335,6 @@
             -ecr 1
             -i "out_plusMinusAverage.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem6;
 
         menuItem
@@ -391,8 +351,6 @@
             -ecr 1
             -i "out_reverse.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem7;
 
         menuItem
@@ -409,8 +367,6 @@
             -ecr 1
             -i "render_chooser.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem9;
 
         menuItem
@@ -427,8 +383,6 @@
             -ecr 1
             -i "out_blendColors.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1;
 
         menuItem
             -l "blendTwoAttr" 
@@ -444,8 +398,6 @@
             -ecr 1
             -i "render_blendTwoAttr.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem10;
 
         menuItem
@@ -462,8 +414,6 @@
             -ecr 1
             -i "out_condition.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1;
 
         menuItem
             -l "choice" 
@@ -479,8 +429,6 @@
             -ecr 1
             -i "render_choice.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem12;
 
         menuItem
@@ -495,8 +443,6 @@
             -aob 1
             -pmo 0
             -ecr 1
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem13;
 
         menuItem
@@ -513,8 +459,6 @@
             -ecr 1
             -i "out_instancer.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem4;
 
     setParent -m ..;

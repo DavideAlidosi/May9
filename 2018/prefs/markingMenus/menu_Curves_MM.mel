@@ -3,7 +3,6 @@ menuItem
 -c "RebuildCurveOptions"
 -rp "N"
 -i "rebuildCurve.png"
--sourceType "mel"
 menuEditorMenuItem7;
 
 menuItem
@@ -11,7 +10,6 @@ menuItem
 -c "AddPointsTool;"
 -rp "S"
 -i "curveAddPt.png"
--sourceType "mel"
 menuEditorMenuItem3;
 
 menuItem
@@ -19,7 +17,6 @@ menuItem
 -c "BevelPlus;"
 -rp "E"
 -i "bevelPlus.png"
--sourceType "mel"
 menuEditorMenuItem19;
 
 menuItem
@@ -27,7 +24,6 @@ menuItem
 -c "BevelPlusOptions;"
 -ob 1
 -ecr 0
--sourceType "mel"
 menuEditorMenuItem22;
 
 menuItem
@@ -35,7 +31,6 @@ menuItem
 -c "da_CurveLength"
 -rp "SE"
 -i "out_curveInfo.png"
--sourceType "mel"
 menuEditorMenuItem100;
 
 menuItem
@@ -43,7 +38,6 @@ menuItem
 -c "Revolve;"
 -rp "W"
 -i "revolve.png"
--sourceType "mel"
 menuEditorMenuItem14;
 
 menuItem
@@ -51,7 +45,6 @@ menuItem
 -c "RevolveOptions;"
 -ob 1
 -ecr 0
--sourceType "mel"
 menuEditorMenuItem26;
 
 menuItem
@@ -59,7 +52,6 @@ menuItem
 -c "ReverseCurve;"
 -rp "NW"
 -i "reverse.png"
--sourceType "mel"
 menuEditorMenuItem2;
 
 menuItem
@@ -67,7 +59,6 @@ menuItem
 -c "ReverseCurveOptions;"
 -ob 1
 -ecr 0
--sourceType "mel"
 menuEditorMenuItem9;
 
 menuItem
@@ -75,7 +66,6 @@ menuItem
 -c "OffsetCurve;"
 -rp "NE"
 -i "offsetCurve.png"
--sourceType "mel"
 menuEditorMenuItem10;
 
 menuItem
@@ -83,7 +73,6 @@ menuItem
 -c "OffsetCurveOptions;"
 -ob 1
 -ecr 0
--sourceType "mel"
 menuEditorMenuItem11;
 
 menuItem
@@ -91,7 +80,6 @@ menuItem
 -c "OpenCloseCurve"
 -rp "SW"
 -i "closeGeom.png"
--sourceType "mel"
 menuEditorMenuItem12;
 
 menuItem
@@ -99,61 +87,52 @@ menuItem
 -c "OpenCloseCurveOptions"
 -ob 1
 -ecr 0
--sourceType "mel"
 menuEditorMenuItem18;
 
 menuItem
 -l "Select Hierarchy" 
 -c "SelectHierarchy" 
 -i "selectByHierarchy.png" 
--sourceType "mel" ;
 
 menuItem
 -l "separator" 
 -d 1
 -dLabel "separator"
--sourceType "mel";
 
 menuItem
 -l "Paint FX to Curve"
 -c "AttachBrushToCurves;"
 -i "paintFXtoCurve.png"
--sourceType "mel"
 menuEditorMenuItem23;
 
 menuItem
 -l "Convert to Polygons"
 -c "da_curveToPoly"
 -i "da_curveToPoly.png"
--sourceType "mel"
 menuEditorMenuItem1;
 
 menuItem
 -l "Create Curve Collector"
 -c "da_aiCurveCollector"
 -i "CurveCollectorShelf.png"
--sourceType "mel"
 menuEditorMenuItem13;
 
 menuItem
 -l "Separate"
 -c "da_SepareCurves"
 -i "da_separateCurves.png"
--sourceType "mel"
 menuEditorMenuItem24;
 
 menuItem
 -l "separator" 
 -d 1
 -dLabel "separator"
--sourceType "mel"
 menuEditorMenuItem99;
 
 menuItem
 -l "Planar"
 -c "planarSrf -ch 1 -d 3 -ko 0 -tol 0.01 -rn 0 -po 0"
 -i "planarTrim.png"
--sourceType "mel"
 menuEditorMenuItem8;
 
 menuItem
@@ -161,21 +140,18 @@ menuItem
 -c "PlanarOptions"
 -ob 1
 -ecr 0
--sourceType "mel"
 menuEditorMenuItem5;
 
 menuItem
 -l "Flat Surface"
 -c "da_FlattenSurface"
 -i "da_flatPoly.png"
--sourceType "mel"
 menuEditorMenuItem17;
 
 menuItem
 -l "Bevel Plus for Text"
 -c "da_BevelPlusForText"
 -i "polyBevel.png"
--sourceType "mel"
 menuEditorMenuItem28;
 
 menuItem
@@ -183,35 +159,30 @@ menuItem
 -c "BevelPlusOptions"
 -ob 1
 -ecr 0
--sourceType "mel"
 menuEditorMenuItem6;
 
 menuItem
 -l "separator" 
 -d 1
 -dLabel "separator"
--sourceType "mel"
 menuEditorMenuItem16;
 
 menuItem
 -l "Component Display" 
 -sm 1
 -i "RS_visible.png" 
--sourceType "mel" 
 menuEditorMenuItem90;
 
 menuItem
     -l "CVs" 
     -c "ToggleCVs" 
     -i "selectCVs.png" 
-    -sourceType "mel" 
     menuEditorMenuItem1;
 
 menuItem
     -l "Hull" 
     -c "ToggleHulls" 
     -i "pickHullComp.png" 
-    -sourceType "mel" 
     menuEditorMenuItem2;
 
 setParent -m ..;
@@ -220,21 +191,18 @@ menuItem
 -l "Deformers"
 -sm 1
 -i "menuIconDeformations.png"
--sourceType "mel"
 menuEditorMenuItem31;
 
 menuItem
     -l "Nonlinear"
     -sm 1
     -i "bendNLD.png"
-    -sourceType "mel"
     menuEditorMenuItem1;
 
     menuItem
         -l "Bend"
         -c "Bend;"
         -i "bendNLD.png"
-        -sourceType "mel"
         menuEditorMenuItem1;
 
     menuItem
@@ -242,14 +210,12 @@ menuItem
         -c "BendOptions;"
         -ob 1
         -ecr 0
-        -sourceType "mel"
         menuEditorMenuItem13;
 
     menuItem
         -l "Flare"
         -c "Flare;"
         -i "flareNLD.png"
-        -sourceType "mel"
         menuEditorMenuItem3;
 
     menuItem
@@ -257,14 +223,12 @@ menuItem
         -c "FlareOptions;"
         -ob 1
         -ecr 0
-        -sourceType "mel"
         menuEditorMenuItem14;
 
     menuItem
         -l "Sine"
         -c "Sine"
         -i "sineNLD.png"
-        -sourceType "mel"
         menuEditorMenuItem5;
 
     menuItem
@@ -272,14 +236,12 @@ menuItem
         -c "SineOptions;"
         -ob 1
         -ecr 0
-        -sourceType "mel"
         menuEditorMenuItem15;
 
     menuItem
         -l "Squash"
         -c "Squash"
         -i "squashNLD.png"
-        -sourceType "mel"
         menuEditorMenuItem7;
 
     menuItem
@@ -287,14 +249,12 @@ menuItem
         -c "SquashOptions;"
         -ob 1
         -ecr 0
-        -sourceType "mel"
         menuEditorMenuItem16;
 
     menuItem
         -l "Twist"
         -c "Twist"
         -i "twistNLD.png"
-        -sourceType "mel"
         menuEditorMenuItem9;
 
     menuItem
@@ -302,14 +262,12 @@ menuItem
         -c "TwistOptions"
         -ob 1
         -ecr 0
-        -sourceType "mel"
         menuEditorMenuItem17;
 
     menuItem
         -l "Wave"
         -c "Wave"
         -i "waveNLD.png"
-        -sourceType "mel"
         menuEditorMenuItem11;
 
     menuItem
@@ -317,7 +275,6 @@ menuItem
         -c "WaveOptions;"
         -ob 1
         -ecr 0
-        -sourceType "mel"
         menuEditorMenuItem18;
 
 setParent -m ..;
@@ -326,7 +283,6 @@ menuItem
     -l "Cluster"
     -c "CreateCluster"
     -i "cluster.png"
-    -sourceType "mel"
     menuEditorMenuItem3;
 
 menuItem
@@ -334,14 +290,12 @@ menuItem
     -c "CreateClusterOptions"
     -ob 1
     -ecr 0
-    -sourceType "mel"
     menuEditorMenuItem4;
 
 menuItem
     -l "Lattice"
     -c "CreateLattice"
     -i "lattice.png"
-    -sourceType "mel"
     menuEditorMenuItem6;
 
 menuItem
@@ -349,7 +303,6 @@ menuItem
     -c "CreateLatticeOptions;"
     -ob 1
     -ecr 0
-    -sourceType "mel"
     menuEditorMenuItem5;
 
 setParent -m ..;
@@ -358,45 +311,38 @@ menuItem
 -l "Dynamics"
 -sm 1
 -i "out_nucleus.png"
--sourceType "mel"
 menuEditorMenuItem4;
 
 menuItem
     -l "Make Curves Dynamic"
     -c "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
     -i "hairDynamicCurves.png"
-    -sourceType "mel"
     menuEditorMenuItem1;
 
 menuItem
     -l "Curves to nHair" 
     -c "da_CurveToNHair" 
     -i "out_pfxHair.png" 
-    -sourceType "mel" 
     menuEditorMenuItem12;
 
 menuItem
     -l "Simulation Method"
     -sm 1
-    -sourceType "mel"
     menuEditorMenuItem18;
 
     menuItem
         -l "Static"
         -c "da_HairStatic"
-        -sourceType "mel"
         menuEditorMenuItem3;
 
     menuItem
         -l "Passive"
         -c "da_HairPassive"
-        -sourceType "mel"
         menuEditorMenuItem2;
 
     menuItem
         -l "Dynamic"
         -c "da_HairDynamic"
-        -sourceType "mel"
         menuEditorMenuItem1;
 
 setParent -m ..;
@@ -404,31 +350,26 @@ setParent -m ..;
 menuItem
     -l "Point Lock"
     -sm 1
-    -sourceType "mel"
     menuEditorMenuItem17;
 
     menuItem
         -l "No Attach"
         -c "da_HairNoLock"
-        -sourceType "mel"
         menuEditorMenuItem3;
 
     menuItem
         -l "Base"
         -c "da_HairLockBase"
-        -sourceType "mel"
         menuEditorMenuItem2;
 
 	menuItem
         -l "Tip"
         -c "da_nHairLockTip"
-        -sourceType "mel"
         menuEditorMenuItem4;
 
     menuItem
         -l "Both Ends"
         -c "da_HairLockBothEnds"
-        -sourceType "mel"
         menuEditorMenuItem1;
 
 setParent -m ..;
@@ -436,20 +377,17 @@ setParent -m ..;
 menuItem
     -l "Follicle Braid"
     -sm 1
-    -sourceType "mel"
     menuEditorMenuItem13;
 
     menuItem
         -l "Enable"
         -c "da_FollicleBraid"
         -rp "N"
-        -sourceType "mel"
         menuEditorMenuItem1;
 
     menuItem
         -l "Disable"
         -c "da_FollicleNoBraid"
-        -sourceType "mel"
         menuEditorMenuItem2;
 
 setParent -m ..;
@@ -458,14 +396,12 @@ menuItem
     -l "separator" 
     -d 1
     -dLabel "separator"
-    -sourceType "mel"
     menuEditorMenuItem6;
 
 menuItem
     -l "Emit Particle From CV"
     -c "NEmitFromObject;"
     -i "emitter.png"
-    -sourceType "mel"
     menuEditorMenuItem4;
 
 menuItem
@@ -473,49 +409,42 @@ menuItem
     -c "NEmitFromObjectOptions;"
     -ob 1
     -ecr 0
-    -sourceType "mel"
     menuEditorMenuItem16;
 
 menuItem
     -l "Particle Style"
     -sm 1
     -i "out_particle.png"
-    -sourceType "mel"
     menuEditorMenuItem7;
 
     menuItem
         -l "Points"
         -c "optionVar -stringValue NParticleStyle \"Points\";"
         -i "nPartPoints.png"
-        -sourceType "mel"
         menuEditorMenuItem2;
 
     menuItem
         -l "Balls"
         -c "optionVar -stringValue NParticleStyle \"Balls\";"
         -i "nPartBalls.png"
-        -sourceType "mel"
         menuEditorMenuItem1;
 
     menuItem
         -l "Cloud"
         -c "optionVar -stringValue NParticleStyle \"Cloud\";"
         -i "nPartCloud.png"
-        -sourceType "mel"
         menuEditorMenuItem3;
 
     menuItem
         -l "ThickCloud"
         -c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
         -i "nPartThickCloud.png"
-        -sourceType "mel"
         menuEditorMenuItem5;
 
     menuItem
         -l "Water"
         -c "optionVar -stringValue NParticleStyle \"Water\";"
         -i "nPartWater.png"
-        -sourceType "mel"
         menuEditorMenuItem4;
 
 setParent -m ..;
@@ -524,14 +453,12 @@ menuItem
     -l "separator" 
     -d 1
     -dLabel "separator"
-    -sourceType "mel"
     menuEditorMenuItem5;
 
 menuItem
     -l "Create Soft Body"
     -c "soft -c"
     -i "soft.png"
-    -sourceType "mel"
     menuEditorMenuItem15;
 
 menuItem
@@ -539,21 +466,18 @@ menuItem
     -c "CreateSoftBodyOptions"
     -ob 1
     -ecr 0
-    -sourceType "mel"
     menuEditorMenuItem20;
 
 menuItem
     -l "separator" 
     -d 1
     -dLabel "separator"
-    -sourceType "mel"
     menuEditorMenuItem21;
 
 menuItem
     -l "Set Fluid Contents"
     -c "SetFluidAttrFromCurve"
     -i "menuIconFluids.png"
-    -sourceType "mel"
     menuEditorMenuItem8;
 
 menuItem
@@ -561,7 +485,6 @@ menuItem
     -c "SetFluidAttrFromCurveOptions"
     -ob 1
     -ecr 0
-    -sourceType "mel"
     menuEditorMenuItem22;
 
 setParent -m ..;

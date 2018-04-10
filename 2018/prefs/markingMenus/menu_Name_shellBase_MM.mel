@@ -16,8 +16,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -ecr 1
         -i "polyExtrudeFacet.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
@@ -33,8 +31,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -pmo 0
         -ecr 0
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
@@ -49,8 +45,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -aob 1
         -ecr 1
         -i "edges_NEX.png" 
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem3;
 
         menuItem
@@ -68,8 +62,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -ecr 1
             -i "da_borderEdge.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
@@ -87,8 +79,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -ecr 1
             -i "da_insideEdge.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
@@ -106,8 +96,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -ecr 1
             -i "da_sraightAngle.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
@@ -125,8 +113,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -ecr 1
             -i "da_rightAngle.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem4;
 
         menuItem
@@ -144,8 +130,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -ecr 1
             -i "da_acuteAngle.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem5;
 
         menuItem
@@ -163,8 +147,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -ecr 1
             -i "da_hardEdge.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem6;
 
         menuItem
@@ -182,8 +164,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
             -ecr 1
             -i "da_softEdge.png" 
             -ec 0
-            -sourceType "mel" 
-            -longDivider 1
             menuEditorMenuItem7;
 
     setParent -m ..;
@@ -203,8 +183,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -ecr 1
         -i "multiCut_NEX32.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem4;
 	if (`size($edgeCheck)` > 1){
 		menuItem
@@ -222,8 +200,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-ecr 1
 			-i "polyCloseBorder.png" 
 			-ec 0
-			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem5;
 	}
 	if (`size($polyCheck)` != 0){
@@ -242,8 +218,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-ecr 1
 			-i "Sculpt.png" 
 			-ec 0
-			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem5;
 	}
     menuItem
@@ -259,8 +233,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -pmo 0
         -ecr 0
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
@@ -278,8 +250,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -ecr 1
         -i "polySmooth.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
@@ -295,8 +265,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -pmo 0
         -ecr 0
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem8;
 
     menuItem
@@ -314,8 +282,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -ecr 1
         -i "polyBevel.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
@@ -331,8 +297,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -pmo 0
         -ecr 0
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem10;
 
 	if (`size($polyCheck)` != 0){
@@ -347,8 +311,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-aob 1
 			-ecr 1
 			-i "out_subdiv.png" 
-			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem13;
 
 			menuItem
@@ -365,8 +327,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 				-ecr 1
 				-ec 0
 				-i "rvViewingPipelineOn.png"
-				-sourceType "mel" 
-				-longDivider 1
 				menuEditorMenuItem1;
 
 			menuItem
@@ -383,8 +343,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 				-ecr 1
 				-ec 0
 				-i "rvViewingPipelineOff.png"
-				-sourceType "mel" 
-				-longDivider 1
 				menuEditorMenuItem2;
 
 		setParent -m ..;
@@ -404,8 +362,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
         -ecr 1
         -i "error.png" 
         -ec 0
-        -sourceType "mel" 
-        -longDivider 1
         menuEditorMenuItem11;
 
 	if (`size($edgeCheck)` != 0){
@@ -424,8 +380,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-ecr 1
 			-i "polyBridge.png" 
 			-ec 0
-			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem12;
 
 		menuItem
@@ -440,8 +394,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-pmo 0
 			-ecr 0
 			-ec 0
-			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem13;
 
 		menuItem
@@ -459,8 +411,6 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 			-ecr 1
 			-i "polyDelEdgeVertex.png" 
 			-ec 0
-			-sourceType "mel" 
-			-longDivider 1
 			menuEditorMenuItem14;
 	}
 
