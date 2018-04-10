@@ -3,366 +3,366 @@
 	commonTexSelectOptionsPopup();
 
     menuItem
-        -label "Optimize" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -optionBox 0
-        -enable 1
+        -l "Optimize" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "optimizeUVTool.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "optimizeUVTool.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem29;
 
     menuItem
-        -label "Select Shell" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SelectUVShell" 
-        -optionBox 0
-        -enable 1
+        -l "Select Shell" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "SelectUVShell" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "UVEditorShell.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "UVEditorShell.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Lattice" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LatticeUVTool" 
-        -optionBox 0
-        -enable 1
+        -l "Lattice" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "LatticeUVTool" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "uvlattice.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "uvlattice.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LatticeUVToolOptions" 
-        -optionBox 1
-        -enable 1
+        -d 0
+        -sm 0
+        -to 0
+        -c "LatticeUVToolOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1;
 		
     menuItem
-        -label "Select Shell Border" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SelectUVBorder" 
-        -optionBox 0
-        -enable 1
+        -l "Select Shell Border" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "SelectUVBorder" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "UVEditorShellBorder.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "UVEditorShellBorder.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "UV Toolkit" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_OpenUvToolkit" 
-        -optionBox 0
-        -enable 1
+        -l "UV Toolkit" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_OpenUvToolkit" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "UVTk.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "UVTk.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "Take Snapshot" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performUVSnapshot" 
-        -optionBox 0
-        -enable 1
+        -l "Take Snapshot" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performUVSnapshot" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_snapshot.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "out_snapshot.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem16;
 
     menuItem
-        -label "Auto Seams" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performPolyAutoSeamUV 0" 
-        -optionBox 0
-        -enable 1
+        -l "Auto Seams" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performPolyAutoSeamUV 0" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyAutoSeams.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "polyAutoSeams.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1;
 
     menuItem
-        -label "menuEditorMenuItem15" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performPolyAutoSeamUV 1" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem15" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performPolyAutoSeamUV 1" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1;
 
     menuItem
-        -label "Unfold" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performUnfold 0" 
-        -optionBox 0
-        -enable 1
+        -l "Unfold" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performUnfold 0" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "textureEditorUnfoldUVs.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "textureEditorUnfoldUVs.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1;
 
     menuItem
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performUnfold 1" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem6" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performUnfold 1" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1;
 
     menuItem
-        -label "Layout" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LayoutUV" 
-        -optionBox 0
-        -enable 1
+        -l "Layout" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "LayoutUV" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "layoutUV.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "layoutUV.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LayoutUVOptions" 
-        -optionBox 1
-        -enable 1
+        -d 0
+        -sm 0
+        -to 0
+        -c "LayoutUVOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
 
     menuItem
-        -label "Convert to Edges" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ConvertSelectionToContainedEdges" 
-        -optionBox 0
-        -enable 1
+        -l "Convert to Edges" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ConvertSelectionToContainedEdges" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "edges_NEX.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "edges_NEX.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -label "Convert to Vertices" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolySelectConvert 3" 
-        -optionBox 0
-        -enable 1
+        -l "Convert to Vertices" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "PolySelectConvert 3" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "vertex_NEX.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "vertex_NEX.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
-        -label "menuEditorMenuItem14" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem14" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Symmetrize" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SymmetrizeUV" 
-        -optionBox 0
-        -enable 1
+        -l "Symmetrize" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "SymmetrizeUV" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polySymmetrizeUV.png" 
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "polySymmetrizeUV.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SymmetrizeUVOptions" 
-        -optionBox 1
-        -enable 1
+        -d 0
+        -sm 0
+        -to 0
+        -c "SymmetrizeUVOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Match Shells Scale" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "uvTkDoSetTexelDensity" 
-        -optionBox 0
-        -enable 1
+        -l "Match Shells Scale" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "uvTkDoSetTexelDensity" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyScaleUV.png" 
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "polyScaleUV.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;

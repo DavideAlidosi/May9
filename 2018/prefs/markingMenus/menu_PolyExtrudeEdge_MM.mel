@@ -1,110 +1,110 @@
 
     menuItem
-        -label "Show Manips" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo ShowManips" 
-        -optionBox 0
-        -enable 1
+        -l "Show Manips" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setToolTo ShowManips" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "showManip.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "showManip.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Edit Attributes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AttributeEditor" 
-        -optionBox 0
-        -enable 1
+        -l "Edit Attributes" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "AttributeEditor" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "attributes.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "attributes.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Extrude" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrude" 
-        -optionBox 0
-        -enable 1
+        -l "Extrude" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "PolyExtrude" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyExtrudeFacet.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "polyExtrudeFacet.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrudeOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem6" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "PolyExtrudeOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Keep Faces Together On" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 1;" 
-        -optionBox 0
-        -enable 1
+        -l "Keep Faces Together On" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 1;" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "rvViewingPipelineOn.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "rvViewingPipelineOn.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
-        -label "Keep Faces Together Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 0;" 
-        -optionBox 0
-        -enable 1
+        -l "Keep Faces Together Off" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 0;" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "rvViewingPipelineOff.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "rvViewingPipelineOff.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;

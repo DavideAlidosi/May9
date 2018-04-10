@@ -1,213 +1,213 @@
 
     menuItem
-        -label "Batch Render" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BatchRender;" 
-        -optionBox 0
-        -enable 1
+        -l "Batch Render" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "BatchRender;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "batchRender.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "batchRender.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
     menuItem
-        -label "menuEditorMenuItem11" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BatchRenderOptions;" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem11" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "BatchRenderOptions;" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
 
     menuItem
-        -label "Color Picker" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "colorEditor" 
-        -optionBox 0
-        -enable 1
+        -l "Color Picker" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "colorEditor" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "render_swColorPerVertex.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "render_swColorPerVertex.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Save Image" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "renderWindowMenuCommand saveImage renderView" 
-        -optionBox 0
-        -enable 1
+        -l "Save Image" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "renderWindowMenuCommand saveImage renderView" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fileSave.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fileSave.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "Render Sequence" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "RenderSequence" 
-        -optionBox 0
-        -enable 1
+        -l "Render Sequence" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "RenderSequence" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "menuIconRender.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "menuIconRender.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Real Size" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "renderWindowEditor -edit -realSize renderView;" 
-        -optionBox 0
-        -enable 1
+        -l "Real Size" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "renderWindowEditor -edit -realSize renderView;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "rvRealSize.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "rvRealSize.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Keep Image" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "renderWindowMenuCommand keepImageInRenderView renderView;" 
-        -optionBox 0
-        -enable 1
+        -l "Keep Image" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "renderWindowMenuCommand keepImageInRenderView renderView;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "rvKeepIt.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "rvKeepIt.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Test Resolution" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Test Resolution" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-		-image "ResolutionGate.png" 
+        -aob 1
+        -ecr 1
+		-i "ResolutionGate.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
         menuItem
-            -label "Half" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setTestResolutionVar(4);" 
-            -optionBox 0
-            -enable 1
+            -l "Half" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "setTestResolutionVar(4);" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
-            -label "Quarter" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setTestResolutionVar(3)" 
-            -optionBox 0
-            -enable 1
+            -l "Quarter" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "setTestResolutionVar(3)" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -optionBox 0
-            -enable 1
+            -l "separator" 
+            -d 1
+            -dLabel "separator" 
+            -sm 0
+            -to 0
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
+            -aob 1
+            -pmo 0
+            -ecr 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
 
         menuItem
-            -label "Full" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "setTestResolutionVar(1);" 
-            -optionBox 0
-            -enable 1
+            -l "Full" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "setTestResolutionVar(1);" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
@@ -215,36 +215,36 @@
     setParent -m ..;
 
     menuItem
-        -label "Select Camera" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_SelectCamera" 
-        -optionBox 0
-        -enable 1
+        -l "Select Camera" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_SelectCamera" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "Camera.png" 
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "Camera.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_SelectCamera;\nAttributeEditor\n" 
-        -optionBox 1
-        -enable 1
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_SelectCamera;\nAttributeEditor\n" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;

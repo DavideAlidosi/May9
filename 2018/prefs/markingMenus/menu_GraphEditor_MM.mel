@@ -1,271 +1,271 @@
 menuItem
-    -label "Non-weighted Tangents" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-    -optionBox 0
-    -enable 1
+    -l "Non-weighted Tangents" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "W" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -echoCommand 0
+    -rp "W" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem4;
 
 menuItem
-    -label "Weighted Tangents" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-    -optionBox 0
-    -enable 1
+    -l "Weighted Tangents" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "E" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -echoCommand 0
+    -rp "E" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem5;
 
 menuItem
-    -label "Insert Keyframe" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "da_InsertKeyFrame" 
-    -optionBox 0
-    -enable 1
+    -l "Insert Keyframe" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "da_InsertKeyFrame" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "N" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "keyIntoclip.png" 
-    -echoCommand 0
+    -rp "N" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "keyIntoclip.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem1;
 
 menuItem
-    -label "Delete Static Channels" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "DeleteStaticChannels" 
-    -optionBox 0
-    -enable 1
+    -l "Delete Static Channels" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "DeleteStaticChannels" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "S" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "deleteGeneric.png" 
-    -echoCommand 0
+    -rp "S" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "deleteGeneric.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem6;
 
 menuItem
-    -label "menuEditorMenuItem7" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "DeleteStaticChannelsOptions" 
-    -optionBox 1
-    -enable 1
+    -l "menuEditorMenuItem7" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "DeleteStaticChannelsOptions" 
+    -ob 1
+    -en 1
     -data 0
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 0
-    -echoCommand 0
+    -aob 1
+    -pmo 0
+    -ecr 0
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem7;
 
 menuItem
-    -label "Lock Channel" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "GraphEditorLockChannel" 
-    -optionBox 0
-    -enable 1
+    -l "Lock Channel" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "GraphEditorLockChannel" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "SE" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "nodeGrapherLocked.png" 
-    -echoCommand 0
+    -rp "SE" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "nodeGrapherLocked.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem11;
 
 menuItem
-    -label "Unlock Channel" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "GraphEditorUnlockChannel;" 
-    -optionBox 0
-    -enable 1
+    -l "Unlock Channel" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "GraphEditorUnlockChannel;" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "SW" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "nodeGrapherUnlocked.png" 
-    -echoCommand 0
+    -rp "SW" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "nodeGrapherUnlocked.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem12;
 
 menuItem
-    -label "Mute Channel" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "doMuteChannel graphEditor1FromOutliner -true;" 
-    -optionBox 0
-    -enable 1
+    -l "Mute Channel" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "doMuteChannel graphEditor1FromOutliner -true;" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "NE" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "muted.png" 
-    -echoCommand 0
+    -rp "NE" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "muted.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem15;
 
 menuItem
-    -label "Unmute Channel" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "doMuteChannel graphEditor1FromOutliner -false;" 
-    -optionBox 0
-    -enable 1
+    -l "Unmute Channel" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "doMuteChannel graphEditor1FromOutliner -false;" 
+    -ob 0
+    -en 1
     -data 0
-    -radialPosition "NW" 
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "teMuteOff.png" 
-    -echoCommand 0
+    -rp "NW" 
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "teMuteOff.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem16;
 
 menuItem
-    -label "Set Driven Key" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "SetDrivenKeyOptions" 
-    -optionBox 0
-    -enable 1
+    -l "Set Driven Key" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "SetDrivenKeyOptions" 
+    -ob 0
+    -en 1
     -data 0
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "setDrivenKeyframe.png" 
-    -echoCommand 0
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "setDrivenKeyframe.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem2;
 
 menuItem
-    -label "separator" 
-    -divider 1
-    -dividerLabel "separator" 
-    -subMenu 0
-    -tearOff 0
-    -optionBox 0
-    -enable 1
+    -l "separator" 
+    -d 1
+    -dLabel "separator" 
+    -sm 0
+    -to 0
+    -ob 0
+    -en 1
     -data 0
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
+    -aob 1
+    -pmo 0
+    -ecr 1
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem13;
 
 menuItem
-    -label "Simplify Curves" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "performSimplify 3 graphEditor1GraphEd;" 
-    -optionBox 0
-    -enable 1
+    -l "Simplify Curves" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "performSimplify 3 graphEditor1GraphEd;" 
+    -ob 0
+    -en 1
     -data 0
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -image "da_simplifyCurve.png" 
-    -echoCommand 0
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -i "da_simplifyCurve.png" 
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem3;
 
 menuItem
-    -label "menuEditorMenuItem8" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "performSimplify 4 graphEditor1GraphEd;" 
-    -optionBox 1
-    -enable 1
+    -l "menuEditorMenuItem8" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "performSimplify 4 graphEditor1GraphEd;" 
+    -ob 1
+    -en 1
     -data 0
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 0
-    -echoCommand 0
+    -aob 1
+    -pmo 0
+    -ecr 0
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem17;
 
 menuItem
-    -label "Select Curve" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "selectType -animCurve (!`selectType -q -animCurve`)" 
+    -l "Select Curve" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "selectType -animCurve (!`selectType -q -animCurve`)" 
     -checkBox (`selectType -q -animCurve`)
-    -optionBox 0
-    -enable 1
+    -ob 0
+    -en 1
     -data 0
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -echoCommand 0
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem9;
 
 menuItem
-    -label "Pre-Select Highlight" 
-    -divider 0
-    -subMenu 0
-    -tearOff 0
-    -command "animCurveEditor -e -psh (!`animCurveEditor -q -psh graphEditor1GraphEd`) graphEditor1GraphEd" 
+    -l "Pre-Select Highlight" 
+    -d 0
+    -sm 0
+    -to 0
+    -c "animCurveEditor -e -psh (!`animCurveEditor -q -psh graphEditor1GraphEd`) graphEditor1GraphEd" 
     -checkBox (`animCurveEditor -q -psh graphEditor1GraphEd`)
-    -optionBox 0
-    -enable 1
+    -ob 0
+    -en 1
     -data 0
-    -allowOptionBoxes 1
-    -postMenuCommandOnce 0
-    -enableCommandRepeat 1
-    -echoCommand 0
+    -aob 1
+    -pmo 0
+    -ecr 1
+    -ec 0
     -sourceType "mel" 
     -longDivider 1
     menuEditorMenuItem18;

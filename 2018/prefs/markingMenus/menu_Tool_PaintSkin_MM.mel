@@ -1,137 +1,137 @@
 
     menuItem -itl 1 
-        -label "Add" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrPaintOperation artAttrSkinPaintCtx Add;" 
-        -optionBox 0
-        -enable 1
+        -l "Add" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrPaintOperation artAttrSkinPaintCtx Add;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -label "Replace" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrPaintOperation artAttrSkinPaintCtx Replace;" 
-        -optionBox 0
-        -enable 1
+        -l "Replace" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrPaintOperation artAttrSkinPaintCtx Replace;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem -itl 1 
-        -label "Scale" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrPaintOperation artAttrSkinPaintCtx Scale;" 
-        -optionBox 0
-        -enable 1
+        -l "Scale" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrPaintOperation artAttrSkinPaintCtx Scale;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem -itl 1 
-        -label "XRay Joints" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ToggleXRayJointsSkin" 
-        -optionBox 0
-        -enable 1
+        -l "XRay Joints" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_ToggleXRayJointsSkin" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
+        -rp "E" 
+        -aob 1
         -checkBox (`artAttrSkinPaintCtx -q -xrayJoints artAttrSkinContext`) 
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
 
     menuItem -itl 1 
-        -label "Color Ramp" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ToggleRampSkin;artAttrCtx -e -colorRamp \" 1,0,0,0.5,1,1,1,0,0.986,1,0.12,0,0.12,0.014,1,1,1,0.86,1,1,0.004,0,0.004,0,1 \" artAttrSkinContext" 
-        -optionBox 0
-        -enable 1
+        -l "Color Ramp" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_ToggleRampSkin;artAttrCtx -e -colorRamp \" 1,0,0,0.5,1,1,1,0,0.986,1,0.12,0,0.12,0.014,1,1,1,0.86,1,1,0.004,0,0.004,0,1 \" artAttrSkinContext" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
+        -rp "S" 
+        -aob 1
         -checkBox (`artAttrSkinPaintCtx -q -useColorRamp artAttrSkinContext`) 
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
 
     menuItem -itl 1 
-        -label "Flood Smooth" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrPaintOperation artAttrSkinPaintCtx Smooth;\nartAttrSkinPaintCtx -e -clear `currentCtx`;" 
-        -optionBox 0
-        -enable 1
+        -l "Flood Smooth" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrPaintOperation artAttrSkinPaintCtx Smooth;\nartAttrSkinPaintCtx -e -clear `currentCtx`;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
     menuItem -itl 1 
-        -label "Wireframe" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ToggleSkinWireframe" 
-        -optionBox 0
-        -enable 1
+        -l "Wireframe" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_ToggleSkinWireframe" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
+        -rp "SE" 
+        -aob 1
         -checkBox (`artAttrSkinPaintCtx -q -showactive artAttrSkinContext`) 
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Anti-Aliasing" 
-        -command "da_AntiAliasToggle" 
-        -radialPosition "SW" 
+        -l "Anti-Aliasing" 
+        -c "da_AntiAliasToggle" 
+        -rp "SW" 
         -sourceType "mel" 
         -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
 

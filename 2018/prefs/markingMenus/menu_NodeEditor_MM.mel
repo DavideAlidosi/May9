@@ -1,73 +1,73 @@
 
     menuItem
-        -label "Select Time Node" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "select time1" 
-        -optionBox 0
-        -enable 1
+        -l "Select Time Node" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "select time1" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "time.svg" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "time.svg" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
-        -label "Output Nodes" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Output Nodes" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "out_dagNode.png" 
+        -rp "E" 
+        -aob 1
+        -ecr 1
+        -i "out_dagNode.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
         menuItem
-            -label "Enable All" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "enableFuture" 
-            -optionBox 0
-            -enable 1
+            -l "Enable All" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "enableFuture" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "enabled.png" 
-            -echoCommand 0
+            -rp "E" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "enabled.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Disable All" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "disableFuture" 
-            -optionBox 0
-            -enable 1
+            -l "Disable All" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "disableFuture" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "RS_disable.png" 
-            -echoCommand 0
+            -rp "NE" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "RS_disable.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -75,115 +75,115 @@
     setParent -m ..;
 
     menuItem
-        -label "Create Node" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "createNodeWindow" 
-        -optionBox 0
-        -enable 1
+        -l "Create Node" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "createNodeWindow" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "createNode.png" 
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "createNode.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Delete Unused Nodes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
-        -optionBox 0
-        -enable 1
+        -l "Delete Unused Nodes" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "deleteActive.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "deleteActive.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
 
     menuItem
-        -label "Select All Nodes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "select `listHistory -ac`" 
-        -optionBox 0
-        -enable 1
+        -l "Select All Nodes" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "select `listHistory -ac`" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "createBinFromSelectedNodes.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "createBinFromSelectedNodes.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
-        -label "Duplicate Network" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
-        -optionBox 0
-        -enable 1
+        -l "Duplicate Network" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "duplicateReference.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "duplicateReference.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
 
     menuItem
-        -label "Import Network" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
-        -optionBox 0
-        -enable 1
+        -l "Import Network" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilImport.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilImport.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
 
     menuItem
-        -label "Export Network" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
-        -optionBox 0
-        -enable 1
+        -l "Export Network" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilExport.png" 
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilExport.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
@@ -205,314 +205,314 @@
 	}
 
     menuItem
-        -label "Expression Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ExpressionEditor" 
-        -optionBox 0
-        -enable 1
+        -l "Expression Editor" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ExpressionEditor" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_expression.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "out_expression.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -label "Create Common Nodes" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Create Common Nodes" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "nodeGrapherAddNodes.png" 
+        -aob 1
+        -ecr 1
+        -i "nodeGrapherAddNodes.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
         menuItem
-            -label "ramp" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode ramp" 
-            -optionBox 0
-            -enable 1
+            -l "ramp" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode ramp" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_ramp.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_ramp.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;
 
         menuItem
-            -label "samplerInfo" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode samplerInfo" 
-            -optionBox 0
-            -enable 1
+            -l "samplerInfo" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode samplerInfo" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_samplerInfo.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_samplerInfo.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem8;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -optionBox 0
-            -enable 1
+            -l "separator" 
+            -d 1
+            -dLabel "separator" 
+            -sm 0
+            -to 0
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
+            -aob 1
+            -pmo 0
+            -ecr 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem5;
 
         menuItem
-            -label "vectorProduct" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode vectorProduct;" 
-            -optionBox 0
-            -enable 1
+            -l "vectorProduct" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode vectorProduct;" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "render_vectorProduct.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "render_vectorProduct.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "decomposeMatrix" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode decomposeMatrix;" 
-            -optionBox 0
-            -enable 1
+            -l "decomposeMatrix" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode decomposeMatrix;" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_decomposeMatrix.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_decomposeMatrix.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
-            -label "multiplyDivide" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode multiplyDivide;" 
-            -optionBox 0
-            -enable 1
+            -l "multiplyDivide" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode multiplyDivide;" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "render_multiplyDivide.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "render_multiplyDivide.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
-            -label "plusMinusAverage" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode plusMinusAverage" 
-            -optionBox 0
-            -enable 1
+            -l "plusMinusAverage" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode plusMinusAverage" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_plusMinusAverage.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_plusMinusAverage.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
 
         menuItem
-            -label "reverse" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode reverse" 
-            -optionBox 0
-            -enable 1
+            -l "reverse" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode reverse" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_reverse.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_reverse.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem7;
 
         menuItem
-            -label "chooser" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode chooser" 
-            -optionBox 0
-            -enable 1
+            -l "chooser" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode chooser" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "render_chooser.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "render_chooser.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem9;
 
         menuItem
-            -label "blendColors" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode blendColors" 
-            -optionBox 0
-            -enable 1
+            -l "blendColors" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode blendColors" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_blendColors.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_blendColors.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1;
 
         menuItem
-            -label "blendTwoAttr" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode blendTwoAttr" 
-            -optionBox 0
-            -enable 1
+            -l "blendTwoAttr" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode blendTwoAttr" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "render_blendTwoAttr.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "render_blendTwoAttr.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
 
         menuItem
-            -label "condition" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode condition" 
-            -optionBox 0
-            -enable 1
+            -l "condition" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode condition" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_condition.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_condition.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1;
 
         menuItem
-            -label "choice" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode choice" 
-            -optionBox 0
-            -enable 1
+            -l "choice" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode choice" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "render_choice.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "render_choice.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem12;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -optionBox 0
-            -enable 1
+            -l "separator" 
+            -d 1
+            -dLabel "separator" 
+            -sm 0
+            -to 0
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
+            -aob 1
+            -pmo 0
+            -ecr 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem13;
 
         menuItem
-            -label "instancer" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode instancer" 
-            -optionBox 0
-            -enable 1
+            -l "instancer" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode instancer" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_instancer.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_instancer.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;

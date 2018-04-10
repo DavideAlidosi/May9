@@ -1,270 +1,270 @@
 
     menuItem
-        -label "Paint Fluids" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PaintFluidsTool" 
-        -optionBox 0
-        -enable 1
+        -l "Paint Fluids" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "PaintFluidsTool" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidPaint.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidPaint.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Add Emitter" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "FluidEmitter" 
-        -optionBox 0
-        -enable 1
+        -l "Add Emitter" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "FluidEmitter" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidEmitterAdd.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidEmitterAdd.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "menuEditorMenuItem3" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "FluidEmitterOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem3" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "FluidEmitterOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Emit from Object" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dynExecFluidEmitterCommands 1 { \"0\", \"fluidEmitter -type surface -der 1 -her 1 -fer 1 -fdr 2 -r 100.0 -cye none -cyi 1 -mxd 1 -mnd 0 \", 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0} " 
-        -optionBox 0
-        -enable 1
+        -l "Emit from Object" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "dynExecFluidEmitterCommands 1 { \"0\", \"fluidEmitter -type surface -der 1 -her 1 -fer 1 -fdr 2 -r 100.0 -cye none -cyi 1 -mxd 1 -mnd 0 \", 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0} " 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidObjectEmit.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidObjectEmit.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "EmitFluidFromObjectOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem7" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "EmitFluidFromObjectOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -label "Initial Library" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "InitialFluidStates" 
-        -optionBox 0
-        -enable 1
+        -l "Initial Library" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "InitialFluidStates" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidGetInitialStatePresets.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidGetInitialStatePresets.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
 
     menuItem
-        -label "Gradients" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doFluidGradients 1 { \"1\", \"3\", \"0\", \"1\", \"0\", \"1\", \"0\", \"1\"  };" 
-        -optionBox 0
-        -enable 1
+        -l "Gradients" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doFluidGradients 1 { \"1\", \"3\", \"0\", \"1\", \"0\", \"1\", \"0\", \"1\"  };" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "menuIconFluids.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "menuIconFluids.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
-        -label "menuEditorMenuItem10" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "FluidGradientsOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem10" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "FluidGradientsOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
     menuItem
-        -label "Make Collide" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doMakeCollideFluid 1 { \"200\" } " 
-        -optionBox 0
-        -enable 1
+        -l "Make Collide" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doMakeCollideFluid 1 { \"200\" } " 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidCollide.png" 
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidCollide.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
 
     menuItem
-        -label "menuEditorMenuItem16" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "MakeFluidCollideOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem16" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "MakeFluidCollideOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem16;
 
     menuItem
-        -label "Convert to Polygons" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_FluidToMesh" 
-        -optionBox 0
-        -enable 1
+        -l "Convert to Polygons" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_FluidToMesh" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidtoPoly.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidtoPoly.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem17;
 
     menuItem
-        -label "Assign Field to Selected" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AffectSelectedObject" 
-        -optionBox 0
-        -enable 1
+        -l "Assign Field to Selected" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "AffectSelectedObject" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "connectField.png" 
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "connectField.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
 
     menuItem
-        -label "AutoResize" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "AutoResize" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_FluidAutoResizeOn" 
-            -optionBox 0
-            -enable 1
+            -l "On" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_FluidAutoResizeOn" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOn.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_FluidAutoResizeOff" 
-            -optionBox 0
-            -enable 1
+            -l "Off" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_FluidAutoResizeOff" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOff.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -272,263 +272,263 @@
     setParent -m ..;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
 
     menuItem
-        -label "Set Initial State" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetInitialState" 
-        -optionBox 0
-        -enable 1
+        -l "Set Initial State" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "SetInitialState" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidInitialStateSet.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidInitialStateSet.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "menuEditorMenuItem5" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SetInitialStateOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem5" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "SetInitialStateOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem18;
 
     menuItem
-        -label "Add Fields" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Add Fields" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "posRadial.png" 
+        -aob 1
+        -ecr 1
+        -i "posRadial.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
 
         menuItem
-            -label "Air" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Air" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posAir.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posAir.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Drag" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Drag" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posDrag.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posDrag.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
-            -label "Gravity" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Gravity" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posGravity.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posGravity.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
-            -label "Newton" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Newton" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posNewton.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posNewton.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
 
         menuItem
-            -label "Radial" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Radial" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posRadial.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posRadial.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem5;
 
         menuItem
-            -label "Turbulence" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Turbulence" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posTurbulence.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posTurbulence.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
 
         menuItem
-            -label "Uniform" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Uniform" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posUniform.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posUniform.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem7;
 
         menuItem
-            -label "Vortex" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Vortex" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posVortex.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posVortex.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem8;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -optionBox 0
-            -enable 1
+            -l "separator" 
+            -d 1
+            -dLabel "separator" 
+            -sm 0
+            -to 0
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
+            -aob 1
+            -pmo 0
+            -ecr 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem9;
 
         menuItem
-            -label "Volume Axis" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
+            -l "Volume Axis" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posVolumeAxis.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "posVolumeAxis.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem10;
 
         menuItem
-            -label "Kill Volume" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_FluidKillField" 
-            -optionBox 0
-            -enable 1
+            -l "Kill Volume" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_FluidKillField" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "removeTweaks.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "removeTweaks.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem11;

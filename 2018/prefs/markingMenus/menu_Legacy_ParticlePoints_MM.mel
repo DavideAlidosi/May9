@@ -1,73 +1,73 @@
 int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
     menuItem
-        -label "Lattice" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateLattice" 
-        -optionBox 0
-        -enable 1
+        -l "Lattice" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "CreateLattice" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "lattice.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "lattice.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateLatticeOptions;" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem2" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "CreateLatticeOptions;" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Cluster" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateCluster" 
-        -optionBox 0
-        -enable 1
+        -l "Cluster" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "CreateCluster" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "cluster.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "cluster.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem4" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateClusterOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem4" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "CreateClusterOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
@@ -166,31 +166,31 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
     setParent -m ..;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem22;
 
     menuItem
-        -label "HUD Info" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleParticleCount" 
+        -l "HUD Info" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ToggleParticleCount" 
         -checkBox (1 == $particleCountCheck)
-        -enable 1
+        -en 1
         -data 0
-        -echoCommand 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem23;

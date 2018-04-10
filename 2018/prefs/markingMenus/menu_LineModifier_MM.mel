@@ -1,36 +1,36 @@
 
     menuItem
-        -label "Occupy Volume On" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ModifierOccupyVolume" 
-        -optionBox 0
-        -enable 1
+        -l "Occupy Volume On" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_ModifierOccupyVolume" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Occupy Volume Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ModifierNoOccupyVolume" 
-        -optionBox 0
-        -enable 1
+        -l "Occupy Volume Off" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_ModifierNoOccupyVolume" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;

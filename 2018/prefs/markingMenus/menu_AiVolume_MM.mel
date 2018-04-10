@@ -1,38 +1,38 @@
 
     menuItem
-        -label "Edit Shader" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_AiStandardVolume" 
-        -optionBox 0
-        -enable 1
+        -l "Edit Shader" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_AiStandardVolume" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "VolumeShelf.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "VolumeShelf.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Edit Volume" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_AiVolumeShape" 
-        -optionBox 0
-        -enable 1
+        -l "Edit Volume" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_AiVolumeShape" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "WireFrameOnShaded.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "WireFrameOnShaded.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;

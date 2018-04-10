@@ -1,37 +1,37 @@
 
     menuItem
-        -label "Convert to Interactive Groom" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"xgui.createXgIgConvertToInteractiveGroomWindow()\")" 
-        -optionBox 0
-        -enable 1
+        -l "Convert to Interactive Groom" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "python(\"xgui.createXgIgConvertToInteractiveGroomWindow()\")" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgConvertToIG.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "xgConvertToIG.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "XGen Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
-        -optionBox 0
-        -enable 1
+        -l "XGen Editor" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgDEditor.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "xgDEditor.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;

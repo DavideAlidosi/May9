@@ -1,162 +1,162 @@
 
     menuItem
-        -label "PaintFX to Polygon" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PaintEffectsToPoly;" 
-        -optionBox 0
-        -enable 1
+        -l "PaintFX to Polygon" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "PaintEffectsToPoly;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "paintFXtoPoly.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "paintFXtoPoly.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PaintEffectsToPolyOptions;" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem2" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "PaintEffectsToPolyOptions;" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "PaintFX To Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PaintEffectsToCurve;" 
-        -optionBox 0
-        -enable 1
+        -l "PaintFX To Curve" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "PaintEffectsToCurve;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "paintFXtoCurve.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "paintFXtoCurve.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Simplify Stroke Curves" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SimplifyStrokePathCurves;" 
-        -optionBox 0
-        -enable 1
+        -l "Simplify Stroke Curves" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "SimplifyStrokePathCurves;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_stroke.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "out_stroke.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "Create Modifier" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "createLineModifier;" 
-        -optionBox 0
-        -enable 1
+        -l "Create Modifier" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "createLineModifier;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "toonLineModifier.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "toonLineModifier.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
-        -label "Get Brush" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
-        -optionBox 0
-        -enable 1
+        -l "Get Brush" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "paintEffectsBrushesLarge.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "paintEffectsBrushesLarge.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
 
     menuItem
-        -label "Surface Snap" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Surface Snap" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushSurfaceSnap" 
-            -optionBox 0
-            -enable 1
+            -l "On" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushSurfaceSnap" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOn.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushNoSurfaceSnap" 
-            -optionBox 0
-            -enable 1
+            -l "Off" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushNoSurfaceSnap" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOff.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -164,100 +164,100 @@
     setParent -m ..;
 
     menuItem
-        -label "Surface Collide" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Surface Collide" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
 
         menuItem
-            -label "Outside" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushSurfaceCollideOutside" 
-            -optionBox 0
-            -enable 1
+            -l "Outside" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushSurfaceCollideOutside" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Inside" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushSurfaceCollideInside" 
-            -optionBox 0
-            -enable 1
+            -l "Inside" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushSurfaceCollideInside" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
-            -label "Both" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushSurfaceCollideBoth" 
-            -optionBox 0
-            -enable 1
+            -l "Both" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushSurfaceCollideBoth" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -optionBox 0
-            -enable 1
+            -l "separator" 
+            -d 1
+            -dLabel "separator" 
+            -sm 0
+            -to 0
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
+            -aob 1
+            -pmo 0
+            -ecr 1
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushNoSurfaceCollide" 
-            -optionBox 0
-            -enable 1
+            -l "Off" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushNoSurfaceCollide" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOff.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem5;
@@ -265,51 +265,51 @@
     setParent -m ..;
 
     menuItem
-        -label "Occupy Attraction" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Occupy Attraction" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushOccupyAttraction" 
-            -optionBox 0
-            -enable 1
+            -l "On" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushOccupyAttraction" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOn.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_BrushNoOccupyAttraction" 
-            -optionBox 0
-            -enable 1
+            -l "Off" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_BrushNoOccupyAttraction" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOff.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -317,87 +317,87 @@
     setParent -m ..;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
 
     menuItem
-        -label "Get Settings from Selected" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setTemplateToCurrentBrush" 
-        -optionBox 0
-        -enable 1
+        -l "Get Settings from Selected" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setTemplateToCurrentBrush" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "RS_isolate.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "RS_isolate.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Apply Settings to Selected" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "copyTemplateBrushToSelected" 
-        -optionBox 0
-        -enable 1
+        -l "Apply Settings to Selected" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "copyTemplateBrushToSelected" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "RS_import_layer.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "RS_import_layer.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;
 
     menuItem
-        -label "Reset Brush" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "resetBrush" 
-        -optionBox 0
-        -enable 1
+        -l "Reset Brush" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "resetBrush" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "RS_disable.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "RS_disable.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;

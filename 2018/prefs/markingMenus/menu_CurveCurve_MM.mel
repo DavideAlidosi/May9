@@ -1,298 +1,298 @@
 menuItem
-    -label "Surface from Curves"
-    -subMenu 1
-    -radialPosition "W"
-    -image "skin.png"
+    -l "Surface from Curves"
+    -sm 1
+    -rp "W"
+    -i "skin.png"
     -sourceType "mel"
     menuEditorMenuItem7;
 
     menuItem
-        -label "Birail 1"
-        -command "Birail1"
-        -radialPosition "N"
-        -image "birail1Gen.png"
+        -l "Birail 1"
+        -c "Birail1"
+        -rp "N"
+        -i "birail1Gen.png"
         -sourceType "mel"
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2"
-        -command "Birail1Options"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem2"
+        -c "Birail1Options"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem2;
 
     menuItem
-        -label "Loft"
-        -command "Loft"
-        -radialPosition "NW"
-        -image "skin.png"
+        -l "Loft"
+        -c "Loft"
+        -rp "NW"
+        -i "skin.png"
         -sourceType "mel"
         menuEditorMenuItem11;
 
     menuItem
-        -label "menuEditorMenuItem12"
-        -command "LoftOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem12"
+        -c "LoftOptions"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem12;
 
     menuItem
-        -label "Boundary"
-        -command "performBoundaryPreset 1 0 0 0 0 1 0.01 0.01"
-        -radialPosition "SW"
-        -image "boundary.png"
+        -l "Boundary"
+        -c "performBoundaryPreset 1 0 0 0 0 1 0.01 0.01"
+        -rp "SW"
+        -i "boundary.png"
         -sourceType "mel"
         menuEditorMenuItem13;
 
     menuItem
-        -label "menuEditorMenuItem14"
-        -command "BoundaryOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem14"
+        -c "BoundaryOptions"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem14;
 
     menuItem
-        -label "Square"
-        -command "squareSrfPreset 1 2 5 0 0 0 0 0 1 0.01 0.01"
-        -radialPosition "W"
-        -image "squareSrf.png"
+        -l "Square"
+        -c "squareSrfPreset 1 2 5 0 0 0 0 0 1 0.01 0.01"
+        -rp "W"
+        -i "squareSrf.png"
         -sourceType "mel"
         menuEditorMenuItem15;
 
     menuItem
-        -label "menuEditorMenuItem16"
-        -command "SquareSurfaceOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem16"
+        -c "SquareSurfaceOptions"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem16;
 
 setParent -m ..;
 
 menuItem
-    -label "Bevel Plus"
-    -command "BevelPlus;"
-    -radialPosition "E"
-    -image "bevelPlus.png"
+    -l "Bevel Plus"
+    -c "BevelPlus;"
+    -rp "E"
+    -i "bevelPlus.png"
     -sourceType "mel"
     menuEditorMenuItem21;
 
 menuItem
-    -label "menuEditorMenuItem22"
-    -command "BevelPlusOptions;"
-    -optionBox 1
-    -enableCommandRepeat 0
+    -l "menuEditorMenuItem22"
+    -c "BevelPlusOptions;"
+    -ob 1
+    -ecr 0
     -sourceType "mel"
     menuEditorMenuItem4;
 
 menuItem
-    -label "Rebuild"
-    -command "RebuildCurveOptions"
-    -radialPosition "N"
-    -image "rebuildCurve.png"
+    -l "Rebuild"
+    -c "RebuildCurveOptions"
+    -rp "N"
+    -i "rebuildCurve.png"
     -sourceType "mel"
     menuEditorMenuItem18;
 
 menuItem
-    -label "Attach"
-    -command "AttachCurve"
-    -radialPosition "SE"
-    -image "attachCurves.png"
+    -l "Attach"
+    -c "AttachCurve"
+    -rp "SE"
+    -i "attachCurves.png"
     -sourceType "mel"
     menuEditorMenuItem8;
 
 menuItem
-    -label "Reverse"
-    -command "ReverseCurve;"
-    -radialPosition "NW"
-    -image "reverse.png"
+    -l "Reverse"
+    -c "ReverseCurve;"
+    -rp "NW"
+    -i "reverse.png"
     -sourceType "mel"
     menuEditorMenuItem9;
 
 menuItem
-    -label "menuEditorMenuItem23"
-    -command "ReverseCurveOptions;"
-    -optionBox 1
-    -enableCommandRepeat 0
+    -l "menuEditorMenuItem23"
+    -c "ReverseCurveOptions;"
+    -ob 1
+    -ecr 0
     -sourceType "mel"
     menuEditorMenuItem23;
 
 menuItem
-    -label "Open/Close"
-    -command "OpenCloseCurve"
-    -radialPosition "SW"
-    -image "closeGeom.png"
+    -l "Open/Close"
+    -c "OpenCloseCurve"
+    -rp "SW"
+    -i "closeGeom.png"
     -sourceType "mel"
     menuEditorMenuItem24;
 
 menuItem
-    -label "menuEditorMenuItem25"
-    -command "OpenCloseCurveOptions"
-    -optionBox 1
-    -enableCommandRepeat 0
+    -l "menuEditorMenuItem25"
+    -c "OpenCloseCurveOptions"
+    -ob 1
+    -ecr 0
     -sourceType "mel"
     menuEditorMenuItem25;
 
 menuItem
-    -label "Offset"
-    -command "OffsetCurve;"
-    -radialPosition "NE"
-    -image "offsetCurve.png"
+    -l "Offset"
+    -c "OffsetCurve;"
+    -rp "NE"
+    -i "offsetCurve.png"
     -sourceType "mel"
     menuEditorMenuItem26;
 
 menuItem
-    -label "menuEditorMenuItem27"
-    -command "OffsetCurveOptions;"
-    -optionBox 1
-    -enableCommandRepeat 0
+    -l "menuEditorMenuItem27"
+    -c "OffsetCurveOptions;"
+    -ob 1
+    -ecr 0
     -sourceType "mel"
     menuEditorMenuItem27;
 
 menuItem
-    -label "Extrude"
-    -command "Extrude;"
-    -radialPosition "S"
-    -image "extrude.png"
+    -l "Extrude"
+    -c "Extrude;"
+    -rp "S"
+    -i "extrude.png"
     -sourceType "mel"
     menuEditorMenuItem30;
 
 menuItem
-    -label "menuEditorMenuItem31"
-    -command "ExtrudeOptions;"
-    -optionBox 1
-    -enableCommandRepeat 0
+    -l "menuEditorMenuItem31"
+    -c "ExtrudeOptions;"
+    -ob 1
+    -ecr 0
     -sourceType "mel"
     menuEditorMenuItem31;
 
 menuItem
-    -label "Select Hierarchy" 
-    -command "SelectHierarchy" 
-    -image "selectByHierarchy.png" 
+    -l "Select Hierarchy" 
+    -c "SelectHierarchy" 
+    -i "selectByHierarchy.png" 
     -sourceType "mel" ;
 
 menuItem
-    -label "separator" 
-    -divider 1
-    -dividerLabel "separator"
+    -l "separator" 
+    -d 1
+    -dLabel "separator"
     -sourceType "mel";
 
 menuItem
-    -label "Paint FX to Curves"
-    -command "AttachBrushToCurves;"
-    -image "paintFXtoCurve.png"
+    -l "Paint FX to Curves"
+    -c "AttachBrushToCurves;"
+    -i "paintFXtoCurve.png"
     -sourceType "mel"
     menuEditorMenuItem17;
 
 menuItem
-    -label "Convert to Polygons"
-    -command "da_curveToPoly"
-    -image "da_curveToPoly.png"
+    -l "Convert to Polygons"
+    -c "da_curveToPoly"
+    -i "da_curveToPoly.png"
     -sourceType "mel"
     menuEditorMenuItem11;
 
 menuItem
-    -label "Create Curve Collector"
-    -command "da_aiCurveCollector"
-    -image "CurveCollectorShelf.png"
+    -l "Create Curve Collector"
+    -c "da_aiCurveCollector"
+    -i "CurveCollectorShelf.png"
     -sourceType "mel"
     menuEditorMenuItem28;
 
 menuItem
-    -label "Connect Shapes" 
-    -command "da_ConnectNurbsShapes" 
-    -image "da_OneToMany.png" 
+    -l "Connect Shapes" 
+    -c "da_ConnectNurbsShapes" 
+    -i "da_OneToMany.png" 
     -sourceType "mel" 
     menuEditorMenuItem80;
 
 menuItem
-    -label "Combine" 
-    -command "da_CombineCurves" 
-    -image "da_combineCurves.png" 
+    -l "Combine" 
+    -c "da_CombineCurves" 
+    -i "da_combineCurves.png" 
     -sourceType "mel" 
     menuEditorMenuItem81;
 
 menuItem
-	-label "separator" 
-	-divider 1
-	-dividerLabel "separator"
+	-l "separator" 
+	-d 1
+	-dLabel "separator"
 	-sourceType "mel"
 	menuEditorMenuItem98;
 
 menuItem
-    -label "Planar"
-    -command "planarSrf -ch 1 -d 3 -ko 0 -tol 0.01 -rn 0 -po 0"
-    -image "planarTrim.png"
+    -l "Planar"
+    -c "planarSrf -ch 1 -d 3 -ko 0 -tol 0.01 -rn 0 -po 0"
+    -i "planarTrim.png"
     -sourceType "mel"
     menuEditorMenuItem6;
 
 menuItem
-    -label "menuEditorMenuItem16"
-    -command "PlanarOptions"
-    -optionBox 1
-    -enableCommandRepeat 0
+    -l "menuEditorMenuItem16"
+    -c "PlanarOptions"
+    -ob 1
+    -ecr 0
     -sourceType "mel"
     menuEditorMenuItem13;
 
 menuItem
-    -label "Flat Surface"
-    -command "da_FlattenSurface"
-    -image "da_flatPoly.png"
+    -l "Flat Surface"
+    -c "da_FlattenSurface"
+    -i "da_flatPoly.png"
     -sourceType "mel"
     menuEditorMenuItem12;
 
 menuItem
-    -label "Bevel Plus for Text"
-    -command "da_BevelPlusForText"
-    -image "polyBevel.png"
+    -l "Bevel Plus for Text"
+    -c "da_BevelPlusForText"
+    -i "polyBevel.png"
     -sourceType "mel"
     menuEditorMenuItem16;
 
 menuItem
-    -label "menuEditorMenuItem20"
-    -command "BevelPlusOptions"
-    -optionBox 1
-    -enableCommandRepeat 0
+    -l "menuEditorMenuItem20"
+    -c "BevelPlusOptions"
+    -ob 1
+    -ecr 0
     -sourceType "mel"
     menuEditorMenuItem14;
 
 menuItem
-    -label "separator" 
-    -divider 1
-    -dividerLabel "separator"
+    -l "separator" 
+    -d 1
+    -dLabel "separator"
     -sourceType "mel"
     menuEditorMenuItem3;
 
 menuItem
-    -label "Component Display" 
-    -subMenu 1
-	-image "RS_visible.png" 
+    -l "Component Display" 
+    -sm 1
+	-i "RS_visible.png" 
     -sourceType "mel" 
     menuEditorMenuItem90;
 
 	menuItem
-        -label "CVs" 
-        -command "ToggleCVs" 
-        -image "selectCVs.png" 
+        -l "CVs" 
+        -c "ToggleCVs" 
+        -i "selectCVs.png" 
         -sourceType "mel" 
         menuEditorMenuItem1;
 
 	menuItem
-        -label "Hull" 
-        -command "ToggleHulls" 
-        -image "pickHullComp.png" 
+        -l "Hull" 
+        -c "ToggleHulls" 
+        -i "pickHullComp.png" 
         -sourceType "mel" 
         menuEditorMenuItem2;
 
 setParent -m ..;
 
 menuItem
-    -label "Deformers"
-    -subMenu 1
-    -image "menuIconDeformations.png"
+    -l "Deformers"
+    -sm 1
+    -i "menuIconDeformations.png"
     -sourceType "mel"
     menuEditorMenuItem10;
 
@@ -335,342 +335,342 @@ menuItem
         setParent -m ..;
 
     menuItem
-        -label "Nonlinear"
-        -subMenu 1
-        -image "bendNLD.png"
+        -l "Nonlinear"
+        -sm 1
+        -i "bendNLD.png"
         -sourceType "mel"
         menuEditorMenuItem5;
 
         menuItem
-            -label "Bend"
-            -command "Bend;"
-            -image "bendNLD.png"
+            -l "Bend"
+            -c "Bend;"
+            -i "bendNLD.png"
             -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
-            -label "menuEditorMenuItem2"
-            -command "BendOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
+            -l "menuEditorMenuItem2"
+            -c "BendOptions;"
+            -ob 1
+            -ecr 0
             -sourceType "mel"
             menuEditorMenuItem13;
 
         menuItem
-            -label "Flare"
-            -command "Flare;"
-            -image "flareNLD.png"
+            -l "Flare"
+            -c "Flare;"
+            -i "flareNLD.png"
             -sourceType "mel"
             menuEditorMenuItem3;
 
         menuItem
-            -label "menuEditorMenuItem4"
-            -command "FlareOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
+            -l "menuEditorMenuItem4"
+            -c "FlareOptions;"
+            -ob 1
+            -ecr 0
             -sourceType "mel"
             menuEditorMenuItem14;
 
         menuItem
-            -label "Sine"
-            -command "Sine"
-            -image "sineNLD.png"
+            -l "Sine"
+            -c "Sine"
+            -i "sineNLD.png"
             -sourceType "mel"
             menuEditorMenuItem5;
 
         menuItem
-            -label "menuEditorMenuItem6"
-            -command "SineOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
+            -l "menuEditorMenuItem6"
+            -c "SineOptions;"
+            -ob 1
+            -ecr 0
             -sourceType "mel"
             menuEditorMenuItem15;
 
         menuItem
-            -label "Squash"
-            -command "Squash"
-            -image "squashNLD.png"
+            -l "Squash"
+            -c "Squash"
+            -i "squashNLD.png"
             -sourceType "mel"
             menuEditorMenuItem7;
 
         menuItem
-            -label "menuEditorMenuItem8"
-            -command "SquashOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
+            -l "menuEditorMenuItem8"
+            -c "SquashOptions;"
+            -ob 1
+            -ecr 0
             -sourceType "mel"
             menuEditorMenuItem16;
 
         menuItem
-            -label "Twist"
-            -command "Twist"
-            -image "twistNLD.png"
+            -l "Twist"
+            -c "Twist"
+            -i "twistNLD.png"
             -sourceType "mel"
             menuEditorMenuItem9;
 
         menuItem
-            -label "menuEditorMenuItem10"
-            -command "TwistOptions"
-            -optionBox 1
-            -enableCommandRepeat 0
+            -l "menuEditorMenuItem10"
+            -c "TwistOptions"
+            -ob 1
+            -ecr 0
             -sourceType "mel"
             menuEditorMenuItem17;
 
         menuItem
-            -label "Wave"
-            -command "Wave"
-            -image "waveNLD.png"
+            -l "Wave"
+            -c "Wave"
+            -i "waveNLD.png"
             -sourceType "mel"
             menuEditorMenuItem11;
 
         menuItem
-            -label "menuEditorMenuItem12"
-            -command "WaveOptions;"
-            -optionBox 1
-            -enableCommandRepeat 0
+            -l "menuEditorMenuItem12"
+            -c "WaveOptions;"
+            -ob 1
+            -ecr 0
             -sourceType "mel"
             menuEditorMenuItem18;
 
     setParent -m ..;
 
     menuItem
-        -label "Cluster"
-        -command "CreateCluster"
-        -image "cluster.png"
+        -l "Cluster"
+        -c "CreateCluster"
+        -i "cluster.png"
         -sourceType "mel"
         menuEditorMenuItem8;
 
     menuItem
-        -label "menuEditorMenuItem9"
-        -command "CreateClusterOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem9"
+        -c "CreateClusterOptions"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem9;
 
     menuItem
-        -label "Lattice"
-        -command "CreateLattice"
-        -image "lattice.png"
+        -l "Lattice"
+        -c "CreateLattice"
+        -i "lattice.png"
         -sourceType "mel"
         menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem4"
-        -command "CreateLatticeOptions;"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem4"
+        -c "CreateLatticeOptions;"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem10;
 
 setParent -m ..;
 
 menuItem
-    -label "Dynamics"
-    -subMenu 1
-    -image "out_nucleus.png"
+    -l "Dynamics"
+    -sm 1
+    -i "out_nucleus.png"
     -sourceType "mel"
     menuEditorMenuItem2;
 
     menuItem
-        -label "Make Curves Dynamic"
-        -command "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
-        -image "hairDynamicCurves.png"
+        -l "Make Curves Dynamic"
+        -c "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
+        -i "hairDynamicCurves.png"
         -sourceType "mel"
         menuEditorMenuItem1;
 
     menuItem
-        -label "Curves to nHair" 
-        -command "da_CurveToNHair" 
-        -image "out_pfxHair.png" 
+        -l "Curves to nHair" 
+        -c "da_CurveToNHair" 
+        -i "out_pfxHair.png" 
         -sourceType "mel" 
         menuEditorMenuItem12;
 
     menuItem
-        -label "Simulation Method"
-        -subMenu 1
+        -l "Simulation Method"
+        -sm 1
         -sourceType "mel"
         menuEditorMenuItem17;
 
         menuItem
-            -label "Static"
-            -command "da_HairStatic"
+            -l "Static"
+            -c "da_HairStatic"
             -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
-            -label "Passive"
-            -command "da_HairPassive"
+            -l "Passive"
+            -c "da_HairPassive"
             -sourceType "mel"
             menuEditorMenuItem2;
 
         menuItem
-            -label "Dynamic"
-            -command "da_HairDynamic"
+            -l "Dynamic"
+            -c "da_HairDynamic"
             -sourceType "mel"
             menuEditorMenuItem3;
 
     setParent -m ..;
 
     menuItem
-        -label "Point Lock"
-        -subMenu 1
+        -l "Point Lock"
+        -sm 1
         -sourceType "mel"
         menuEditorMenuItem18;
 
         menuItem
-            -label "No Attach"
-            -command "da_HairNoLock"
+            -l "No Attach"
+            -c "da_HairNoLock"
             -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
-            -label "Base"
-            -command "da_HairLockBase"
+            -l "Base"
+            -c "da_HairLockBase"
             -sourceType "mel"
             menuEditorMenuItem2;
 			
 		menuItem
-            -label "Tip"
-            -command "da_nHairLockTip"
+            -l "Tip"
+            -c "da_nHairLockTip"
             -sourceType "mel"
             menuEditorMenuItem4;
 
         menuItem
-            -label "Both Ends"
-            -command "da_HairLockBothEnds"
+            -l "Both Ends"
+            -c "da_HairLockBothEnds"
             -sourceType "mel"
             menuEditorMenuItem3;
 
     setParent -m ..;
 
     menuItem
-        -label "Follicle Braid"
-        -subMenu 1
+        -l "Follicle Braid"
+        -sm 1
         -sourceType "mel"
         menuEditorMenuItem13;
 
         menuItem
-            -label "Enable"
-            -command "da_FollicleBraid"
+            -l "Enable"
+            -c "da_FollicleBraid"
             -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
-            -label "Disable"
-            -command "da_FollicleNoBraid"
+            -l "Disable"
+            -c "da_FollicleNoBraid"
             -sourceType "mel"
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator"
+        -l "separator" 
+        -d 1
+        -dLabel "separator"
         -sourceType "mel"
         menuEditorMenuItem5;
 
     menuItem
-        -label "Emit Particle From CV"
-        -command "NEmitFromObject;"
-        -image "emitter.png"
+        -l "Emit Particle From CV"
+        -c "NEmitFromObject;"
+        -i "emitter.png"
         -sourceType "mel"
         menuEditorMenuItem6;
 
     menuItem
-        -label "menuEditorMenuItem7"
-        -command "NEmitFromObjectOptions;"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem7"
+        -c "NEmitFromObjectOptions;"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem20;
 
     menuItem
-        -label "Particle Style"
-        -subMenu 1
-        -image "out_particle.png"
+        -l "Particle Style"
+        -sm 1
+        -i "out_particle.png"
         -sourceType "mel"
         menuEditorMenuItem8;
 
         menuItem
-            -label "Points"
-            -command "optionVar -stringValue NParticleStyle \"Points\";"
-            -radialPosition "N"
-            -image "nPartPoints.png"
+            -l "Points"
+            -c "optionVar -stringValue NParticleStyle \"Points\";"
+            -rp "N"
+            -i "nPartPoints.png"
             -sourceType "mel"
             menuEditorMenuItem1;
 
         menuItem
-            -label "Balls"
-            -command "optionVar -stringValue NParticleStyle \"Balls\";"
-            -image "nPartBalls.png"
+            -l "Balls"
+            -c "optionVar -stringValue NParticleStyle \"Balls\";"
+            -i "nPartBalls.png"
             -sourceType "mel"
             menuEditorMenuItem2;
 
         menuItem
-            -label "Cloud"
-            -command "optionVar -stringValue NParticleStyle \"Cloud\";"
-            -image "nPartCloud.png"
+            -l "Cloud"
+            -c "optionVar -stringValue NParticleStyle \"Cloud\";"
+            -i "nPartCloud.png"
             -sourceType "mel"
             menuEditorMenuItem3;
 
         menuItem
-            -label "ThickCloud"
-            -command "optionVar -stringValue NParticleStyle \"ThickCloud\";"
-            -image "nPartThickCloud.png"
+            -l "ThickCloud"
+            -c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+            -i "nPartThickCloud.png"
             -sourceType "mel"
             menuEditorMenuItem4;
 
         menuItem
-            -label "Water"
-            -command "optionVar -stringValue NParticleStyle \"Water\";"
-            -image "nPartWater.png"
+            -l "Water"
+            -c "optionVar -stringValue NParticleStyle \"Water\";"
+            -i "nPartWater.png"
             -sourceType "mel"
             menuEditorMenuItem5;
 
     setParent -m ..;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator"
+        -l "separator" 
+        -d 1
+        -dLabel "separator"
         -sourceType "mel"
         menuEditorMenuItem19;
 
     menuItem
-        -label "Create Soft Body"
-        -command "soft -c"
-        -image "soft.png"
+        -l "Create Soft Body"
+        -c "soft -c"
+        -i "soft.png"
         -sourceType "mel"
         menuEditorMenuItem23;
 
     menuItem
-        -command "CreateSoftBodyOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -c "CreateSoftBodyOptions"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem25;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator"
+        -l "separator" 
+        -d 1
+        -dLabel "separator"
         -sourceType "mel"
         menuEditorMenuItem7;
 
     menuItem
-        -label "Set Fluid Contents"
-        -command "SetFluidAttrFromCurve"
-        -image "menuIconFluids.png"
+        -l "Set Fluid Contents"
+        -c "SetFluidAttrFromCurve"
+        -i "menuIconFluids.png"
         -sourceType "mel"
         menuEditorMenuItem9;
 
     menuItem
-        -label "menuEditorMenuItem12"
-        -command "SetFluidAttrFromCurveOptions"
-        -optionBox 1
-        -enableCommandRepeat 0
+        -l "menuEditorMenuItem12"
+        -c "SetFluidAttrFromCurveOptions"
+        -ob 1
+        -ecr 0
         -sourceType "mel"
         menuEditorMenuItem22;
 

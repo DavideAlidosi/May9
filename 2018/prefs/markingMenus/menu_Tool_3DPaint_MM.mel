@@ -3,153 +3,153 @@ int $reflectionCheck = `art3dPaintCtx -q -rn $currentCtx`;
 string $reflectionDirection = `art3dPaintCtx -q -ra $currentCtx`;
 
     menuItem -itl 1 
-        -label "Symmetry" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "if ($reflectionCheck == 1) art3dPaintCtx -e -reflection  false `currentCtx`; else art3dPaintCtx -e -reflection  true `currentCtx`;" 
-        -optionBox 0
-        -enable 1
+        -l "Symmetry" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "if ($reflectionCheck == 1) art3dPaintCtx -e -reflection  false `currentCtx`; else art3dPaintCtx -e -reflection  true `currentCtx`;" 
+        -ob 0
+        -en 1
         -checkBox $reflectionCheck 
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Z Axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"z\" `currentCtx`;" 
-        -optionBox 0
+        -l "Z Axis" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"z\" `currentCtx`;" 
+        -ob 0
         -checkBox ($reflectionDirection == "z") 
-        -enable 1
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Y Axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"y\" `currentCtx`;" 
-        -optionBox 0
+        -l "Y Axis" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"y\" `currentCtx`;" 
+        -ob 0
         -checkBox ($reflectionDirection == "y") 
-        -enable 1
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "X Axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"x\" `currentCtx`;" 
-        -optionBox 0
+        -l "X Axis" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"x\" `currentCtx`;" 
+        -ob 0
         -checkBox ($reflectionDirection == "x") 
-        -enable 1
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "Paint Color" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"Color\")` `currentCtx`;" 
-        -optionBox 0
-        -image "colorPresetSpectrum.png" 
-        -enable 1
+        -l "Paint Color" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"Color\")` `currentCtx`;" 
+        -ob 0
+        -i "colorPresetSpectrum.png" 
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -label "Paint Transparency" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"Transparency\")` `currentCtx`;" 
-        -optionBox 0
-        -image "colorPresetBlackRedYellow.png"
-        -enable 1
+        -l "Paint Transparency" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"Transparency\")` `currentCtx`;" 
+        -ob 0
+        -i "colorPresetBlackRedYellow.png"
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem -itl 1 
-        -label "Paint BumpMap" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"BumpMap\")` `currentCtx`;" 
-        -optionBox 0
-        -image "colorPresetGrayscale.png" 
-        -enable 1
+        -l "Paint BumpMap" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"BumpMap\")` `currentCtx`;" 
+        -ob 0
+        -i "colorPresetGrayscale.png" 
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem -itl 1 
-        -label "Assign/Edit Texture" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "art3dPaintAssignFileTexture( \"art3dFileTextureFrame\");" 
-        -optionBox 0
-        -image "imageDisplay.png"
-        -enable 1
+        -l "Assign/Edit Texture" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "art3dPaintAssignFileTexture( \"art3dFileTextureFrame\");" 
+        -ob 0
+        -i "imageDisplay.png"
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;

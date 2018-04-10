@@ -3,95 +3,95 @@ int $reflectionCheck = `artAttrCtx -q -rn $currentCtx`;
 string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
 
     menuItem -itl 1 
-        -label "X Axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
-        -optionBox 0
+        -l "X Axis" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
+        -ob 0
         -checkBox ($reflectionDirection == "x") 
-        -enable 1
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Y Axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
-        -optionBox 0
+        -l "Y Axis" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
+        -ob 0
         -checkBox ($reflectionDirection == "y") 
-        -enable 1
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Z Axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
+        -l "Z Axis" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
         -checkBox ($reflectionDirection == "z") 
-        -optionBox 0
-        -enable 1
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Symmetry" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
-        -optionBox 0
+        -l "Symmetry" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
+        -ob 0
         -checkBox $reflectionCheck 
-        -enable 1
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "Flood Smooth" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "artAttrPaintOperation artAttrCtx Replace;\nartAttrCtx -e -clear `currentCtx`;" 
-        -optionBox 0
-        -enable 1
+        -l "Flood Smooth" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "artAttrPaintOperation artAttrCtx Replace;\nartAttrCtx -e -clear `currentCtx`;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;

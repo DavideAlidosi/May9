@@ -1,90 +1,90 @@
 
     menuItem
-        -label "Instancer" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ParticleInstancer" 
-        -optionBox 0
-        -enable 1
+        -l "Instancer" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ParticleInstancer" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "instancer.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "instancer.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ParticleInstancerOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem2" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ParticleInstancerOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Set Initial State" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setNClothStartState;" 
-        -optionBox 0
-        -enable 1
+        -l "Set Initial State" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setNClothStartState;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidInitialStateSet.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "fluidInitialStateSet.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Make Collide" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dynExecuteCollisionCommand \"collision -r 1 -f 0 -o 0.01 \"" 
-        -optionBox 0
-        -enable 1
+        -l "Make Collide" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "dynExecuteCollisionCommand \"collision -r 1 -f 0 -o 0.01 \"" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "collision.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "collision.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "MakeCollideOptions" 
-        -optionBox 1
-        -enable 1
+        -d 0
+        -sm 0
+        -to 0
+        -c "MakeCollideOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;

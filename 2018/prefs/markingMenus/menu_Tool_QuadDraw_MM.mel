@@ -3,139 +3,139 @@ commonReflectionOptionsPopup();
 int $extendMode = `nexOpt -q extendType`;
 
     menuItem -itl 1 
-        -label "Clear Dots" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dR_quadDrawClearDots" 
-        -optionBox 0
-        -enable 1
+        -l "Clear Dots" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "dR_quadDrawClearDots" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -image "RS_delete.png" 
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
+        -i "RS_delete.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Complete Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "buildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode" 
-        -optionBox 0
-        -enable 1
+        -l "Complete Tool" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "buildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -image "aselect.png" 
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
+        -i "aselect.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Multi Cut Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dR_multiCutTool;" 
-        -optionBox 0
-        -enable 1
+        -l "Multi Cut Tool" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "dR_multiCutTool;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "multiCut_NEX32.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "multiCut_NEX32.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Extend Border" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexOpt -e extendType 2;" 
+        -l "Extend Border" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "nexOpt -e extendType 2;" 
         -checkBox (2 == $extendMode)
         -radioButton 0
-        -optionBox 0
-        -enable 1
+        -ob 0
+        -en 1
         -data 0
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "Extend Edge" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexOpt -e extendType 0;" 
+        -l "Extend Edge" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "nexOpt -e extendType 0;" 
         -checkBox (0 == $extendMode)
         -radioButton 0
-        -optionBox 0
-        -enable 1
+        -ob 0
+        -en 1
         -data 0
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -label "Extend Loop" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexOpt -e extendType 1;" 
+        -l "Extend Loop" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "nexOpt -e extendType 1;" 
         -checkBox (1 == $extendMode)
         -radioButton 0
-        -optionBox 0
-        -enable 1
+        -ob 0
+        -en 1
         -data 0
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem -itl 1 
-        -label "Reset Settings" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexCtx -resetManip" 
-        -optionBox 0
-        -enable 1
+        -l "Reset Settings" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "nexCtx -resetManip" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -image "CN_refresh.png" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
+        -i "CN_refresh.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;

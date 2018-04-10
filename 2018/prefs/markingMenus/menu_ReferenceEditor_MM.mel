@@ -1,95 +1,95 @@
 
     menuItem
-        -label "Reload Reference" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "referenceEdLoadCB" 
-        -optionBox 0
-        -enable 1
+        -l "Reload Reference" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "referenceEdLoadCB" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "reloadReference.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "reloadReference.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Duplicate Reference" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "duplicateReference 1 referenceEditorPanel1referenceEditorPanel" 
-        -optionBox 0
-        -enable 1
+        -l "Duplicate Reference" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "duplicateReference 1 referenceEditorPanel1referenceEditorPanel" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "duplicateReference.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "duplicateReference.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Select Reference" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "referenceEdSelectCB" 
-        -optionBox 0
-        -enable 1
+        -l "Select Reference" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "referenceEdSelectCB" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "selectFileContents.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "selectFileContents.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Create Reference" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateReference" 
-        -optionBox 0
-        -enable 1
+        -l "Create Reference" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "CreateReference" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "createReference.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "createReference.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "Remove Reference" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "referenceEdRemoveCB;" 
-        -optionBox 0
-        -enable 1
+        -l "Remove Reference" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "referenceEdRemoveCB;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "removeReference.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "removeReference.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;

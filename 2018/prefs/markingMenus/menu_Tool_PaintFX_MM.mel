@@ -1,74 +1,74 @@
 
     menuItem -itl 1 
-        -label "Get Brush" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
-        -optionBox 0
-        -enable 1
+        -l "Get Brush" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "paintEffectsBrushesLarge.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "paintEffectsBrushesLarge.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Reset Template Brush" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ResetTemplateBrush" 
-        -optionBox 0
-        -enable 1
+        -l "Reset Template Brush" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ResetTemplateBrush" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "resetTemplateBrush.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "resetTemplateBrush.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Get Settings from Selected Stroke" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "GetSettingsFromSelectedStroke" 
-        -optionBox 0
-        -enable 1
+        -l "Get Settings from Selected Stroke" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "GetSettingsFromSelectedStroke" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Apply Settings to Selected Strokes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ApplySettingsToSelectedStroke" 
-        -optionBox 0
-        -enable 1
+        -l "Apply Settings to Selected Strokes" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ApplySettingsToSelectedStroke" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;

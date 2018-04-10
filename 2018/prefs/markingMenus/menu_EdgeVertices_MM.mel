@@ -1,19 +1,19 @@
 
     menuItem
-        -label "Crease Set Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
-        -optionBox 0
-        -enable 1
+        -l "Crease Set Editor" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyCrease.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "polyCrease.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;

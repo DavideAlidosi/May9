@@ -1,150 +1,150 @@
 
     menuItem
-        -label "Delete Unused Nodes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
-        -optionBox 0
-        -enable 1
+        -l "Delete Unused Nodes" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "deleteActive.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "deleteActive.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Select Object With Material" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_SelectObjectMaterial" 
-        -optionBox 0
-        -enable 1
+        -l "Select Object With Material" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_SelectObjectMaterial" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "aselect.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "aselect.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Duplicate Network" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
-        -optionBox 0
-        -enable 1
+        -l "Duplicate Network" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "duplicateReference.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "duplicateReference.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Import Network" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
-        -optionBox 0
-        -enable 1
+        -l "Import Network" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilImport.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilImport.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Select All Nodes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "select `listHistory -ac`" 
-        -optionBox 0
-        -enable 1
+        -l "Select All Nodes" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "select `listHistory -ac`" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "createBinFromSelectedNodes.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "createBinFromSelectedNodes.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem16;
 
     menuItem
-        -label "Export Network" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
-        -optionBox 0
-        -enable 1
+        -l "Export Network" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilExport.png" 
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilExport.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "Texture Link" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "TextureCentricUVLinkingEditor" 
-        -optionBox 0
-        -enable 1
+        -l "Texture Link" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "TextureCentricUVLinkingEditor" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "textureEditor.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "textureEditor.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -label "TX Manager" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_TxManager" 
-        -optionBox 0
-        -enable 1
+        -l "TX Manager" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_TxManager" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "TXManagerShelf.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "TXManagerShelf.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
@@ -166,122 +166,122 @@
 	}
 
     menuItem
-        -label "Expression Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ExpressionEditor" 
-        -optionBox 0
-        -enable 1
+        -l "Expression Editor" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ExpressionEditor" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_expression.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "out_expression.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
 
     menuItem
-        -label "Create Common Nodes" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Create Common Nodes" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "nodeGrapherAddNodes.png" 
+        -aob 1
+        -ecr 1
+        -i "nodeGrapherAddNodes.png" 
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
 
         menuItem
-            -label "file" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createRenderNodeCB -as2DTexture \"\" file \"\"" 
-            -optionBox 0
-            -enable 1
+            -l "file" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createRenderNodeCB -as2DTexture \"\" file \"\"" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_file.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_file.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
 
         menuItem
-            -label "ramp" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode ramp" 
-            -optionBox 0
-            -enable 1
+            -l "ramp" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode ramp" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_ramp.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_ramp.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "layeredTexture" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode layeredTexture" 
-            -optionBox 0
-            -enable 1
+            -l "layeredTexture" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode layeredTexture" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_layeredTexture.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_layeredTexture.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
-            -label "samplerInfo" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "createNode samplerInfo" 
-            -optionBox 0
-            -enable 1
+            -l "samplerInfo" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "createNode samplerInfo" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "out_samplerInfo.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "out_samplerInfo.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
@@ -289,20 +289,20 @@
     setParent -m ..;
 
     menuItem
-        -label "Create Node" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "createNodeWindow" 
-        -optionBox 0
-        -enable 1
+        -l "Create Node" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "createNodeWindow" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "createNode.png" 
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "createNode.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;

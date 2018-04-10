@@ -1,85 +1,85 @@
 
     menuItem
-        -label "MASH Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "MASHOutliner;" 
-        -optionBox 0
-        -enable 1
+        -l "MASH Editor" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "MASHOutliner;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "MASH_Editor.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "MASH_Editor.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem2" 
+        -d 0
+        -sm 0
+        -to 0
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
+        -aob 1
+        -pmo 0
+        -ecr 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Gravity" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Gravity" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_MashBulletGravity" 
-            -optionBox 0
-            -enable 1
+            -l "On" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_MashBulletGravity" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
+            -rp "N" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOn.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_MashBulletNoGravity" 
-            -optionBox 0
-            -enable 1
+            -l "Off" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_MashBulletNoGravity" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOff.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
@@ -87,51 +87,51 @@
     setParent -m ..;
 
     menuItem
-        -label "Use Ground" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Use Ground" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_MashBulletGround" 
-            -optionBox 0
-            -enable 1
+            -l "On" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_MashBulletGround" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOn.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_MashBulletNoGround" 
-            -optionBox 0
-            -enable 1
+            -l "Off" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "da_MashBulletNoGround" 
+            -ob 0
+            -en 1
             -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -i "rvViewingPipelineOff.png" 
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;

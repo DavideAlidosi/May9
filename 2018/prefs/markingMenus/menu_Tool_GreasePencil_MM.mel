@@ -1,152 +1,152 @@
 
     menuItem -itl 1 
-        -label "Pencil" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 1;" 
-        -optionBox 0
-        -enable 1
+        -l "Pencil" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setGreasePencilType 1;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilPencil.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilPencil.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Eraser" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 4;" 
-        -optionBox 0
-        -enable 1
+        -l "Eraser" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setGreasePencilType 4;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilEraser.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilEraser.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Remove Frame" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "removeGreasePencilFrameAtCurrentTime();" 
-        -optionBox 0
-        -enable 1
+        -l "Remove Frame" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "removeGreasePencilFrameAtCurrentTime();" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilDeleteFrame.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilDeleteFrame.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Add Frame" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "createOrEditGreasePencilFrameAtCurrentTime();" 
-        -optionBox 0
-        -enable 1
+        -l "Add Frame" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "createOrEditGreasePencilFrameAtCurrentTime();" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilAddFrame.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilAddFrame.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "Pre-Frame Ghost" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "toggleGreasePencilPreFrameCount();" 
-        -optionBox 0
-        -enable 1
+        -l "Pre-Frame Ghost" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "toggleGreasePencilPreFrameCount();" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilPreGhostOn.png" 
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilPreGhostOn.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -label "Post-Frame Ghost" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "toggleGreasePencilPostFrameCount();" 
-        -optionBox 0
-        -enable 1
+        -l "Post-Frame Ghost" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "toggleGreasePencilPostFrameCount();" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilPostGhostOn.png" 
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilPostGhostOn.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem -itl 1 
-        -label "Marker" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 2;" 
-        -optionBox 0
-        -enable 1
+        -l "Marker" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setGreasePencilType 2;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilMarker.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilMarker.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem -itl 1 
-        -label "Soft Pencil" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 3;" 
-        -optionBox 0
-        -enable 1
+        -l "Soft Pencil" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "setGreasePencilType 3;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilSoftPencil.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilSoftPencil.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem8;

@@ -1,214 +1,214 @@
 
     menuItem
-        -label "Detach Surfaces" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DetachSurfaces" 
-        -optionBox 0
-        -enable 1
+        -l "Detach Surfaces" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "DetachSurfaces" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "detach.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "detach.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DetachSurfacesOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem2" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "DetachSurfacesOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Insert Isoparms" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "insertKnotPreset 1 1 1 1 0 0" 
-        -optionBox 0
-        -enable 1
+        -l "Insert Isoparms" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "insertKnotPreset 1 1 1 1 0 0" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "insert.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "insert.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem4" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "InsertIsoparmsOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem4" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "InsertIsoparmsOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "Stitch Edges Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "StitchEdgesTool" 
-        -optionBox 0
-        -enable 1
+        -l "Stitch Edges Tool" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "StitchEdgesTool" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "stitchSrf.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "stitchSrf.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
-        -label "menuEditorMenuItem10" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "StitchEdgesToolOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem10" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "StitchEdgesToolOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
     menuItem
-        -label "Duplicate Surface Curves" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "duplicateCurvePresetArgList( \"2\", {\"1\",\"0\",\"0\",\"2\"} )" 
-        -optionBox 0
-        -enable 1
+        -l "Duplicate Surface Curves" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "duplicateCurvePresetArgList( \"2\", {\"1\",\"0\",\"0\",\"2\"} )" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "duplicateCurve.png" 
-        -echoCommand 0
+        -rp "NW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "duplicateCurve.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem11;
 
     menuItem
-        -label "menuEditorMenuItem12" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DuplicateCurveOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem12" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "DuplicateCurveOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem12;
 
     menuItem
-        -label "Freeform Fillet" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "freeFormFilletPreset(1,0,0.5,0,0.01,0.1)" 
-        -optionBox 0
-        -enable 1
+        -l "Freeform Fillet" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "freeFormFilletPreset(1,0,0.5,0,0.01,0.1)" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "filletFreeform_S.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "filletFreeform_S.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "FreeformFilletOptions" 
-        -optionBox 1
-        -enable 1
+        -d 0
+        -sm 0
+        -to 0
+        -c "FreeformFilletOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
 
     menuItem
-        -label "Fillet Blend Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doFilletBlendArgList 2 {\"1\", \"1\", \"1\", \"0\", \"0\", \"0\", \"0.1\", \"0.1\", \"0\", \"1\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"1\", \"0\" }" 
-        -optionBox 0
-        -enable 1
+        -l "Fillet Blend Tool" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doFilletBlendArgList 2 {\"1\", \"1\", \"1\", \"0\", \"0\", \"0\", \"0.1\", \"0.1\", \"0\", \"1\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"1\", \"0\" }" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "blendSurface.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "blendSurface.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "FilletBlendToolOptions" 
-        -optionBox 1
-        -enable 1
+        -d 0
+        -sm 0
+        -to 0
+        -c "FilletBlendToolOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem16;

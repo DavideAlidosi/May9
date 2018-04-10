@@ -1,106 +1,106 @@
 int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
 
     menuItem
-        -label "Add to Simulation" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Add to Simulation" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -rp "E" 
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
         menuItem
-            -label "Emitter" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RemoveBifrostEmitter" 
-            -optionBox 0
-            -enable 1
+            -l "Emitter" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "RemoveBifrostEmitter" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "E" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Collider" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AddBifrostCollider" 
-            -optionBox 0
-            -enable 1
+            -l "Collider" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "AddBifrostCollider" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "NE" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
-            -label "Accelerator" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AddBifrostAccelerator" 
-            -optionBox 0
-            -enable 1
+            -l "Accelerator" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "AddBifrostAccelerator" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "N" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
-            -label "Guide" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AddBifrostGuide" 
-            -optionBox 0
-            -enable 1
+            -l "Guide" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "AddBifrostGuide" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "SE" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
 
         menuItem
-            -label "Kill Field" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "AddBifrostKillField" 
-            -optionBox 0
-            -enable 1
+            -l "Kill Field" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "AddBifrostKillField" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "NW" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem4;
@@ -108,88 +108,88 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
     setParent -m ..;
 
     menuItem
-        -label "Remove from Simulation" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "Remove from Simulation" 
+        -d 0
+        -sm 1
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
+        -rp "W" 
+        -aob 1
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
         menuItem
-            -label "Emitter" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "evalEcho( \"RemoveBifrostEmitter\" );" 
-            -optionBox 0
-            -enable 1
+            -l "Emitter" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "evalEcho( \"RemoveBifrostEmitter\" );" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "W" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem1;
 
         menuItem
-            -label "Collider" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "evalEcho( \"RemoveBifrostCollider\" );" 
-            -optionBox 0
-            -enable 1
+            -l "Collider" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "evalEcho( \"RemoveBifrostCollider\" );" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "NW" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem2;
 
         menuItem
-            -label "Accelerator" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "evalEcho( \"RemoveBifrostAccelerator\" );" 
-            -optionBox 0
-            -enable 1
+            -l "Accelerator" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "evalEcho( \"RemoveBifrostAccelerator\" );" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "N" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem3;
 
         menuItem
-            -label "Guide" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "RemoveBifrostGuide" 
-            -optionBox 0
-            -enable 1
+            -l "Guide" 
+            -d 0
+            -sm 0
+            -to 0
+            -c "RemoveBifrostGuide" 
+            -ob 0
+            -en 1
             -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
+            -rp "SW" 
+            -aob 1
+            -pmo 0
+            -ecr 1
+            -ec 0
             -sourceType "mel" 
             -longDivider 1
             menuEditorMenuItem6;
@@ -197,119 +197,119 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
     setParent -m ..;
 
     menuItem
-        -label "Stop Processing" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "bifrost -edit -stopProcessing;" 
-        -optionBox 0
-        -enable 1
+        -l "Stop Processing" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "bifrost -edit -stopProcessing;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "kAlertStopIcon.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "kAlertStopIcon.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Bifrost Options" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performBifrostOptionsChange" 
-        -optionBox 0
-        -enable 1
+        -l "Bifrost Options" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performBifrostOptionsChange" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -label "Create Cache" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateBifrostCache 0 0;" 
-        -optionBox 0
-        -enable 1
+        -l "Create Cache" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performCreateBifrostCache 0 0;" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
 
     menuItem
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateBifrostCache 1 0;\n" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem6" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performCreateBifrostCache 1 0;\n" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Delete Cache" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "bifrost -edit -flushScratchCache;" 
-        -optionBox 0
-        -enable 1
+        -l "Delete Cache" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "bifrost -edit -flushScratchCache;" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
+        -l "separator" 
+        -d 1
+        -dLabel "separator" 
+        -sm 0
+        -to 0
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
+        -aob 1
+        -pmo 0
+        -ecr 1
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem22;
 
     menuItem
-        -label "HUD Info" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleBifrostHUD" 
+        -l "HUD Info" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "ToggleBifrostHUD" 
         -checkBox (1 == $bifrostHUDCheck)
-        -enable 1
+        -en 1
         -data 0
-        -echoCommand 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem23;

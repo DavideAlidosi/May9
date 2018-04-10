@@ -1,199 +1,199 @@
 
     menuItem
-        -label "Connect Shapes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ConnectNurbsShapes" 
-        -optionBox 0
-        -enable 1
+        -l "Connect Shapes" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "da_ConnectNurbsShapes" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "da_OneToMany.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "da_OneToMany.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Component to Component" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doCreateNConstraint pointToPoint 0" 
-        -optionBox 0
-        -enable 1
+        -l "Component to Component" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doCreateNConstraint pointToPoint 0" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "nConstraintComponent.png" 
-        -echoCommand 0
+        -rp "W" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "nConstraintComponent.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "menuEditorMenuItem3" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateComponentNConstraint 1" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem3" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performCreateComponentNConstraint 1" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem13;
 
     menuItem
-        -label "Force Field" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doCreateNConstraint force 0" 
-        -optionBox 0
-        -enable 1
+        -l "Force Field" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doCreateNConstraint force 0" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "nConstraintForceField.png" 
-        -echoCommand 0
+        -rp "SW" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "nConstraintForceField.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem4;
 
     menuItem
-        -label "menuEditorMenuItem5" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateDynamicConstraint 1 \"pointToPoint\"" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem5" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem14;
 
     menuItem
-        -label "Transform Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doCreateNConstraint transform 0" 
-        -optionBox 0
-        -enable 1
+        -l "Transform Constraint" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doCreateNConstraint transform 0" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "nConstraintTransform.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "nConstraintTransform.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateDynamicConstraint 1 \"force\"" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem7" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performCreateDynamicConstraint 1 \"force\"" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem15;
 
     menuItem
-        -label "Point to Surface" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doCreateNConstraint pointToSurface 0" 
-        -optionBox 0
-        -enable 1
+        -l "Point to Surface" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doCreateNConstraint pointToSurface 0" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "nConstraintPointoSurface.png" 
-        -echoCommand 0
+        -rp "SE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "nConstraintPointoSurface.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem9;
 
     menuItem
-        -label "menuEditorMenuItem11" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateDynamicConstraint 1 \"pointToSurface\"" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem11" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performCreateDynamicConstraint 1 \"pointToSurface\"" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem16;
 
     menuItem
-        -label "Slide on Surface" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doCreateNConstraint slideOnSurface 0" 
-        -optionBox 0
-        -enable 1
+        -l "Slide on Surface" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doCreateNConstraint slideOnSurface 0" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "nConstraintSlideonSurface.png" 
-        -echoCommand 0
+        -rp "E" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "nConstraintSlideonSurface.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem10;
 
     menuItem
-        -label "menuEditorMenuItem12" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateDynamicConstraint 1 \"slideOnSurface\"" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem12" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "performCreateDynamicConstraint 1 \"slideOnSurface\"" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem17;

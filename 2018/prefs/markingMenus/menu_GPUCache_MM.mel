@@ -1,110 +1,110 @@
 
     menuItem
-        -label "Make Live" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $mySel[] = `ls -sl`;\nMakeLive;\nselect $mySel;" 
-        -optionBox 0
-        -enable 1
+        -l "Make Live" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "string $mySel[] = `ls -sl`;\nMakeLive;\nselect $mySel;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "makeLive.png" 
-        -echoCommand 0
+        -rp "N" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "makeLive.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Quad Draw" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dR_quadDrawTool;" 
-        -optionBox 0
-        -enable 1
+        -l "Quad Draw" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "dR_quadDrawTool;" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "quadDraw_NEX32.png" 
-        -echoCommand 0
+        -rp "S" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "quadDraw_NEX32.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Unmake Live" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "makeLive -n" 
-        -optionBox 0
-        -enable 1
+        -l "Unmake Live" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "makeLive -n" 
+        -ob 0
+        -en 1
         -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setEdRemoveCmd.png" 
-        -echoCommand 0
+        -rp "NE" 
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "setEdRemoveCmd.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Export Selection" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};" 
-        -optionBox 0
-        -enable 1
+        -l "Export Selection" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilExport.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "greasePencilExport.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem7;
 
     menuItem
-        -label "menuEditorMenuItem8" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "GpuCacheExportSelectionOptions" 
-        -optionBox 1
-        -enable 1
+        -l "menuEditorMenuItem8" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "GpuCacheExportSelectionOptions" 
+        -ob 1
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 0
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Refresh GPU Cache" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "GpuCacheRefreshAll" 
-        -optionBox 0
-        -enable 1
+        -l "Refresh GPU Cache" 
+        -d 0
+        -sm 0
+        -to 0
+        -c "GpuCacheRefreshAll" 
+        -ob 0
+        -en 1
         -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "QR_refresh.png" 
-        -echoCommand 0
+        -aob 1
+        -pmo 0
+        -ecr 1
+        -i "QR_refresh.png" 
+        -ec 0
         -sourceType "mel" 
         -longDivider 1
         menuEditorMenuItem5;
