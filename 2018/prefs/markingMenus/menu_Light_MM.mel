@@ -11,9 +11,7 @@ int $lightCheck = `renderManip -q -st`;
         -rp "W" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "out_defaultLightList.png" 
-        -ec 0
         menuEditorMenuItem16;
 
     menuItem
@@ -27,9 +25,7 @@ int $lightCheck = `renderManip -q -st`;
         -rp "E" 
         -aob 1
         -pmo 0
-        -ecr 1
         -checkBox (1 == $lightCheck) 
-        -ec 0
         menuEditorMenuItem1;
 
     menuItem
@@ -43,9 +39,7 @@ int $lightCheck = `renderManip -q -st`;
         -rp "N" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "snapshot.svg" 
-        -ec 0
         menuEditorMenuItem2;
 
     menuItem
@@ -59,9 +53,7 @@ int $lightCheck = `renderManip -q -st`;
         -rp "S" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "singlePerspLayout.png" 
-        -ec 0
         menuEditorMenuItem3;
 
     menuItem
@@ -75,9 +67,7 @@ int $lightCheck = `renderManip -q -st`;
         -rp "NW" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "light_manager.png" 
-        -ec 0
         menuEditorMenuItem5;
 
     menuItem
@@ -91,9 +81,7 @@ int $lightCheck = `renderManip -q -st`;
         -rp "SW" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "attributes.png" 
-        -ec 0
         menuEditorMenuItem8;
 
     menuItem
@@ -104,7 +92,6 @@ int $lightCheck = `renderManip -q -st`;
         -ob 0
         -en 1
         -aob 1
-        -ecr 1
         -i "MtoA_Logo.png" 
         menuEditorMenuItem7;
 
@@ -118,9 +105,7 @@ int $lightCheck = `renderManip -q -st`;
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "rvViewingPipelineOn.png" 
-            -ec 0
             menuEditorMenuItem1;
 
         menuItem
@@ -133,9 +118,7 @@ int $lightCheck = `renderManip -q -st`;
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "rvViewingPipelineOff.png" 
-            -ec 0
             menuEditorMenuItem2;
 
     setParent -m ..;
@@ -148,7 +131,6 @@ int $lightCheck = `renderManip -q -st`;
         -ob 0
         -en 1
         -aob 1
-        -ecr 1
         -i "MtoA_Logo.png" 
         menuEditorMenuItem4;
 
@@ -162,9 +144,7 @@ int $lightCheck = `renderManip -q -st`;
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "rvViewingPipelineOn.png" 
-            -ec 0
             menuEditorMenuItem1;
 
         menuItem
@@ -177,9 +157,7 @@ int $lightCheck = `renderManip -q -st`;
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "rvViewingPipelineOff.png" 
-            -ec 0
             menuEditorMenuItem2;
 
     setParent -m ..;

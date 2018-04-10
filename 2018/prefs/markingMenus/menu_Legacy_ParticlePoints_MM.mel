@@ -11,9 +11,7 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -rp "NE" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "lattice.png" 
-        -ec 0
         menuEditorMenuItem1;
 
     menuItem
@@ -25,8 +23,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -en 1
         -aob 1
         -pmo 0
-        -ecr 0
-        -ec 0
         menuEditorMenuItem2;
 
     menuItem
@@ -40,9 +36,7 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -rp "E" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "cluster.png" 
-        -ec 0
         menuEditorMenuItem3;
 
     menuItem
@@ -54,8 +48,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -en 1
         -aob 1
         -pmo 0
-        -ecr 0
-        -ec 0
         menuEditorMenuItem4;
 
     menuItem
@@ -155,7 +147,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -en 1
         -aob 1
         -pmo 0
-        -ecr 1
         menuEditorMenuItem22;
 
     menuItem
@@ -166,7 +157,6 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -c "ToggleParticleCount" 
         -checkBox (1 == $particleCountCheck)
         -en 1
-        -ec 0
         menuEditorMenuItem23;
 
 setParent -m ..;

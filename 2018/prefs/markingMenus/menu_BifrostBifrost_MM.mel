@@ -11,9 +11,7 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -rp "N" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "kAlertStopIcon.png" 
-        -ec 0
         menuEditorMenuItem1;
 
     menuItem
@@ -27,8 +25,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -rp "S" 
         -aob 1
         -pmo 0
-        -ecr 1
-        -ec 0
         menuEditorMenuItem7;
 
     menuItem
@@ -42,8 +38,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -rp "E" 
         -aob 1
         -pmo 0
-        -ecr 1
-        -ec 0
         menuEditorMenuItem9;
 
     menuItem
@@ -57,8 +51,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -rp "W" 
         -aob 1
         -pmo 0
-        -ecr 1
-        -ec 0
         menuEditorMenuItem14;
 
     menuItem
@@ -71,8 +63,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -en 1
         -aob 1
         -pmo 0
-        -ecr 1
-        -ec 0
         menuEditorMenuItem2;
 
     menuItem
@@ -84,8 +74,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -en 1
         -aob 1
         -pmo 0
-        -ecr 0
-        -ec 0
         menuEditorMenuItem6;
 
     menuItem
@@ -98,8 +86,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -en 1
         -aob 1
         -pmo 0
-        -ecr 1
-        -ec 0
         menuEditorMenuItem4;
 
     menuItem
@@ -112,7 +98,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -en 1
         -aob 1
         -pmo 0
-        -ecr 1
         menuEditorMenuItem11;
 
     menuItem
@@ -123,7 +108,6 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
         -c "ToggleBifrostHUD" 
         -checkBox (1 == $bifrostHUDCheck)
         -en 1
-        -ec 0
         menuEditorMenuItem12;
 
 setParent -m ..;

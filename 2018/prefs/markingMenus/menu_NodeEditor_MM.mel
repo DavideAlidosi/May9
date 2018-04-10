@@ -10,9 +10,7 @@
         -rp "N" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "time.svg" 
-        -ec 0
         menuEditorMenuItem5;
 
     menuItem
@@ -24,7 +22,6 @@
         -en 1
         -rp "E" 
         -aob 1
-        -ecr 1
         -i "out_dagNode.png" 
         menuEditorMenuItem10;
 
@@ -39,9 +36,7 @@
             -rp "E" 
             -aob 1
             -pmo 0
-            -ecr 1
             -i "enabled.png" 
-            -ec 0
             menuEditorMenuItem1;
 
         menuItem
@@ -55,9 +50,7 @@
             -rp "NE" 
             -aob 1
             -pmo 0
-            -ecr 1
             -i "RS_disable.png" 
-            -ec 0
             menuEditorMenuItem2;
 
     setParent -m ..;
@@ -73,9 +66,7 @@
         -rp "SE" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "createNode.png" 
-        -ec 0
         menuEditorMenuItem1;
 
     menuItem
@@ -89,9 +80,7 @@
         -rp "S" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "deleteActive.png" 
-        -ec 0
         menuEditorMenuItem8;
 
     menuItem
@@ -105,9 +94,7 @@
         -rp "W" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "createBinFromSelectedNodes.png" 
-        -ec 0
         menuEditorMenuItem9;
 
     menuItem
@@ -121,9 +108,7 @@
         -rp "NE" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "duplicateReference.png" 
-        -ec 0
         menuEditorMenuItem12;
 
     menuItem
@@ -137,9 +122,7 @@
         -rp "NW" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "greasePencilImport.png" 
-        -ec 0
         menuEditorMenuItem13;
 
     menuItem
@@ -153,9 +136,7 @@
         -rp "SW" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "greasePencilExport.png" 
-        -ec 0
         menuEditorMenuItem14;
 
 	if (`pluginInfo -q -l contextConnector` == 1){
@@ -184,9 +165,7 @@
         -en 1
         -aob 1
         -pmo 0
-        -ecr 1
         -i "out_expression.png" 
-        -ec 0
         menuEditorMenuItem2;
 
     menuItem
@@ -199,7 +178,6 @@
         -en 1
         -aob 1
         -pmo 0
-        -ecr 1
         menuEditorMenuItem7;
 
     menuItem
@@ -210,7 +188,6 @@
         -ob 0
         -en 1
         -aob 1
-        -ecr 1
         -i "nodeGrapherAddNodes.png" 
         menuEditorMenuItem3;
 
@@ -224,9 +201,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_ramp.png" 
-            -ec 0
             menuEditorMenuItem11;
 
         menuItem
@@ -239,9 +214,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_samplerInfo.png" 
-            -ec 0
             menuEditorMenuItem8;
 
         menuItem
@@ -254,7 +227,6 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             menuEditorMenuItem5;
 
         menuItem
@@ -267,9 +239,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "render_vectorProduct.png" 
-            -ec 0
             menuEditorMenuItem1;
 
         menuItem
@@ -282,9 +252,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_decomposeMatrix.png" 
-            -ec 0
             menuEditorMenuItem2;
 
         menuItem
@@ -297,9 +265,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "render_multiplyDivide.png" 
-            -ec 0
             menuEditorMenuItem3;
 
         menuItem
@@ -312,9 +278,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_plusMinusAverage.png" 
-            -ec 0
             menuEditorMenuItem6;
 
         menuItem
@@ -327,9 +291,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_reverse.png" 
-            -ec 0
             menuEditorMenuItem7;
 
         menuItem
@@ -342,9 +304,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "render_chooser.png" 
-            -ec 0
             menuEditorMenuItem9;
 
         menuItem
@@ -357,9 +317,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_blendColors.png" 
-            -ec 0
 
         menuItem
             -l "blendTwoAttr" 
@@ -371,9 +329,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "render_blendTwoAttr.png" 
-            -ec 0
             menuEditorMenuItem10;
 
         menuItem
@@ -386,9 +342,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_condition.png" 
-            -ec 0
 
         menuItem
             -l "choice" 
@@ -400,9 +354,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "render_choice.png" 
-            -ec 0
             menuEditorMenuItem12;
 
         menuItem
@@ -415,7 +367,6 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             menuEditorMenuItem13;
 
         menuItem
@@ -428,9 +379,7 @@
             -en 1
             -aob 1
             -pmo 0
-            -ecr 1
             -i "out_instancer.png" 
-            -ec 0
             menuEditorMenuItem4;
 
     setParent -m ..;

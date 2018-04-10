@@ -11,9 +11,7 @@ int $cameraCheck = `renderManip -q -st`;
         -rp "N" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "snapshot.svg" 
-        -ec 0
         menuEditorMenuItem1;
 
     menuItem
@@ -27,9 +25,7 @@ int $cameraCheck = `renderManip -q -st`;
         -rp "E" 
         -aob 1
         -pmo 0
-        -ecr 1
         -checkBox (1 == $cameraCheck) 
-        -ec 0
         menuEditorMenuItem2;
 
     menuItem
@@ -43,9 +39,7 @@ int $cameraCheck = `renderManip -q -st`;
         -rp "S" 
         -aob 1
         -pmo 0
-        -ecr 1
         -i "singlePerspLayout.png" 
-        -ec 0
         menuEditorMenuItem3;
 
 setParent -m ..;
