@@ -1,226 +1,109 @@
 
     menuItem -itl 1 
         -l "Cut" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "cutUVTool.png" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Sew" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "sewUVTool.png" 
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;\ntoolPropertyWindow" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem -itl 1 
         -l "Grab" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "grabUVTool.png" 
         menuEditorMenuItem7;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;\ntoolPropertyWindow;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem8;
 
     menuItem -itl 1 
         -l "Pin" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "pinUVTool.png" 
         menuEditorMenuItem9;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;\ntoolPropertyWindow" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem10;
 
     menuItem -itl 1 
         -l "Smear" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "smearUVTool.png" 
         menuEditorMenuItem11;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;\ntoolPropertyWindow" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem12;
 
     menuItem -itl 1 
         -l "Optimize" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "optimizeUVTool.png" 
         menuEditorMenuItem16;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem17;
 
     menuItem -itl 1 
         -l "Symmetrize" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "symmetrizeUVTool.png" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem15;
 
     menuItem -itl 1 
         -l "Unfold" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "unfoldUVTool.png" 
         menuEditorMenuItem18;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;\ntoolPropertyWindow" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem20;
 
     menuItem -itl 1 
         -l "Pinch" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "pinchUVTool.png" 
         menuEditorMenuItem13;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj\ntoolPropertyWindow;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem21;
 
 setParent -m ..;

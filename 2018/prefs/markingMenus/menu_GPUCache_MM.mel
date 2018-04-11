@@ -1,80 +1,39 @@
 
     menuItem
         -l "Make Live" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl`;\nMakeLive;\nselect $mySel;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "makeLive.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Quad Draw" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dR_quadDrawTool;" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "quadDraw_NEX32.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Unmake Live" 
-        -d 0
-        -sm 0
-        -to 0
         -c "makeLive -n" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "setEdRemoveCmd.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "Export Selection" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doGpuCacheExportArgList 5 {\"0\",\"2\",\"1\",\"24\",\"1\",\"1\",\"\",\"1\",\"40000\",\"1\",\"0\",\"0\",\"\",\"1\",\"2\",\"0\"};" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "greasePencilExport.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "GpuCacheExportSelectionOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem
         -l "Refresh GPU Cache" 
-        -d 0
-        -sm 0
-        -to 0
         -c "GpuCacheRefreshAll" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "QR_refresh.png" 
         menuEditorMenuItem5;
 

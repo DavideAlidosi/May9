@@ -2,122 +2,61 @@ int $lightCheck = `renderManip -q -st`;
 
     menuItem
         -l "Light Linking" 
-        -d 0
-        -sm 0
-        -to 0
         -c "LightCentricLightLinkingEditor;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "out_defaultLightList.png" 
         menuEditorMenuItem16;
 
     menuItem
         -l "Light Manipulators" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_ToggleLightManipulators" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -checkBox (1 == $lightCheck) 
         menuEditorMenuItem1;
 
     menuItem
         -l "Look Through" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_LookThruSelected" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "snapshot.svg" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Persp View" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dR_DoCmd(\"viewPersp\");" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "singlePerspLayout.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Light Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_LightList" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "light_manager.png" 
         menuEditorMenuItem5;
 
     menuItem
         -l "Edit Light" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AttributeEditor" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "attributes.png" 
         menuEditorMenuItem8;
 
     menuItem
         -l "Normalize" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "MtoA_Logo.png" 
         menuEditorMenuItem7;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_AiLightNormalize" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_AiNoLightNormalize" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -125,38 +64,19 @@ int $lightCheck = `renderManip -q -st`;
 
     menuItem
         -l "Area to Portal Light" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "MtoA_Logo.png" 
         menuEditorMenuItem4;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_AiPortalLight" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_AiNoPortalLight" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 

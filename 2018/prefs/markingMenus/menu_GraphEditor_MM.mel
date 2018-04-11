@@ -1,134 +1,65 @@
 menuItem
     -l "Non-weighted Tangents" 
-    -d 0
-    -sm 0
-    -to 0
     -c "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-    -ob 0
-    -en 1
     -rp "W" 
-    -aob 1
-    -pmo 0
     menuEditorMenuItem4;
 
 menuItem
     -l "Weighted Tangents" 
-    -d 0
-    -sm 0
-    -to 0
     -c "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
-    -ob 0
-    -en 1
     -rp "E" 
-    -aob 1
-    -pmo 0
     menuEditorMenuItem5;
 
 menuItem
     -l "Insert Keyframe" 
-    -d 0
-    -sm 0
-    -to 0
     -c "da_InsertKeyFrame" 
-    -ob 0
-    -en 1
     -rp "N" 
-    -aob 1
-    -pmo 0
     -i "keyIntoclip.png" 
     menuEditorMenuItem1;
 
 menuItem
     -l "Delete Static Channels" 
-    -d 0
-    -sm 0
-    -to 0
     -c "DeleteStaticChannels" 
-    -ob 0
-    -en 1
     -rp "S" 
-    -aob 1
-    -pmo 0
     -i "deleteGeneric.png" 
     menuEditorMenuItem6;
 
 menuItem
-    -d 0
-    -sm 0
-    -to 0
     -c "DeleteStaticChannelsOptions" 
     -ob 1
-    -en 1
-    -aob 1
-    -pmo 0
     menuEditorMenuItem7;
 
 menuItem
     -l "Lock Channel" 
-    -d 0
-    -sm 0
-    -to 0
     -c "GraphEditorLockChannel" 
-    -ob 0
-    -en 1
     -rp "SE" 
-    -aob 1
-    -pmo 0
     -i "nodeGrapherLocked.png" 
     menuEditorMenuItem11;
 
 menuItem
     -l "Unlock Channel" 
-    -d 0
-    -sm 0
-    -to 0
     -c "GraphEditorUnlockChannel;" 
-    -ob 0
-    -en 1
     -rp "SW" 
-    -aob 1
-    -pmo 0
     -i "nodeGrapherUnlocked.png" 
     menuEditorMenuItem12;
 
 menuItem
     -l "Mute Channel" 
-    -d 0
-    -sm 0
-    -to 0
     -c "doMuteChannel graphEditor1FromOutliner -true;" 
-    -ob 0
-    -en 1
     -rp "NE" 
-    -aob 1
-    -pmo 0
     -i "muted.png" 
     menuEditorMenuItem15;
 
 menuItem
     -l "Unmute Channel" 
-    -d 0
-    -sm 0
-    -to 0
     -c "doMuteChannel graphEditor1FromOutliner -false;" 
-    -ob 0
-    -en 1
     -rp "NW" 
-    -aob 1
-    -pmo 0
     -i "teMuteOff.png" 
     menuEditorMenuItem16;
 
 menuItem
     -l "Set Driven Key" 
-    -d 0
-    -sm 0
-    -to 0
     -c "SetDrivenKeyOptions" 
-    -ob 0
-    -en 1
-    -aob 1
-    -pmo 0
     -i "setDrivenKeyframe.png" 
     menuEditorMenuItem2;
 
@@ -136,62 +67,29 @@ menuItem
     -l "separator" 
     -d 1
     -dLabel "separator" 
-    -sm 0
-    -to 0
-    -ob 0
-    -en 1
-    -aob 1
-    -pmo 0
     menuEditorMenuItem13;
 
 menuItem
     -l "Simplify Curves" 
-    -d 0
-    -sm 0
-    -to 0
     -c "performSimplify 3 graphEditor1GraphEd;" 
-    -ob 0
-    -en 1
-    -aob 1
-    -pmo 0
     -i "da_simplifyCurve.png" 
     menuEditorMenuItem3;
 
 menuItem
-    -d 0
-    -sm 0
-    -to 0
     -c "performSimplify 4 graphEditor1GraphEd;" 
     -ob 1
-    -en 1
-    -aob 1
-    -pmo 0
     menuEditorMenuItem17;
 
 menuItem
     -l "Select Curve" 
-    -d 0
-    -sm 0
-    -to 0
     -c "selectType -animCurve (!`selectType -q -animCurve`)" 
     -checkBox (`selectType -q -animCurve`)
-    -ob 0
-    -en 1
-    -aob 1
-    -pmo 0
     menuEditorMenuItem9;
 
 menuItem
     -l "Pre-Select Highlight" 
-    -d 0
-    -sm 0
-    -to 0
     -c "animCurveEditor -e -psh (!`animCurveEditor -q -psh graphEditor1GraphEd`) graphEditor1GraphEd" 
     -checkBox (`animCurveEditor -q -psh graphEditor1GraphEd`)
-    -ob 0
-    -en 1
-    -aob 1
-    -pmo 0
     menuEditorMenuItem18;
 
 setParent -m ..;

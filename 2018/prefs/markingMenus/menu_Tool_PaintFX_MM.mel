@@ -1,56 +1,28 @@
 
     menuItem -itl 1 
         -l "Get Brush" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "paintEffectsBrushesLarge.png" 
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Reset Template Brush" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ResetTemplateBrush" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "resetTemplateBrush.png" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Get Settings from Selected Stroke" 
-        -d 0
-        -sm 0
-        -to 0
         -c "GetSettingsFromSelectedStroke" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Apply Settings to Selected Strokes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ApplySettingsToSelectedStroke" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
 setParent -m ..;

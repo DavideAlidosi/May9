@@ -13,70 +13,35 @@ int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
 	
     menuItem -itl 1 
         -l "Cut Mode" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexOpt -e useDeleteFaces true; refresh -f;\nnexOpt -e useExtractFaces false; floatFieldGrp -e -en false nexExtractFacesFloatGrp; refresh -f;\ninViewMessage -pos topCenter -msg \"Cut Mode\" -fade;" 
         -checkBox $deleteFaceOn
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Extract Mode" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexOpt -e useExtractFaces true; floatFieldGrp -e -en true nexExtractFacesFloatGrp; refresh -f;\nnexOpt -e useDeleteFaces false; refresh -f;\ninViewMessage -pos topCenter -msg \"Extract Mode\" -fade;" 
         -checkBox $extractFacesOn
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Split Mode" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexOpt -e useExtractFaces false; floatFieldGrp -e -en false nexExtractFacesFloatGrp; refresh -f;\nnexOpt -e useDeleteFaces false; refresh -f;\ninViewMessage -pos topCenter -msg \"Split Mode\" -fade;" 
         -checkBox $splitModeOn
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Slice Plane" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dr_polyCut(0);" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
 		-i "sketchPlane.png"
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "Reset Settings" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexCtx -resetManip" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "CN_refresh.png" 
         menuEditorMenuItem7;
 

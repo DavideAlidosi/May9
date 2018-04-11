@@ -1,80 +1,38 @@
 
     menuItem -itl 1 
         -l "No Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 0 -vertexValue 0 $each;\n}" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "10 Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 10 -vertexValue 10 $each;\n}" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "0.5 Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value .5 -vertexValue .5 $each;\n}" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "2 Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 2 -vertexValue 2 $each;\n}" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "4 Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 4 -vertexValue 4 $each;\n}" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem -itl 1 
         -l "Crease Set Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "polyCrease.png" 
         menuEditorMenuItem6;
 

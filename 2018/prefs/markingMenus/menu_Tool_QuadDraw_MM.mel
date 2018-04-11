@@ -4,104 +4,55 @@ int $extendMode = `nexOpt -q extendType`;
 
     menuItem -itl 1 
         -l "Clear Dots" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dR_quadDrawClearDots" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "RS_delete.png" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Complete Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "buildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "aselect.png" 
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Multi Cut Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dR_multiCutTool;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "multiCut_NEX32.png" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Extend Border" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexOpt -e extendType 2;" 
         -checkBox (2 == $extendMode)
         -radioButton 0
-        -ob 0
-        -en 1
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
         -rp "W" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "Extend Edge" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexOpt -e extendType 0;" 
         -checkBox (0 == $extendMode)
         -radioButton 0
-        -ob 0
-        -en 1
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
         -rp "SW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem -itl 1 
         -l "Extend Loop" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexOpt -e extendType 1;" 
         -checkBox (1 == $extendMode)
         -radioButton 0
-        -ob 0
-        -en 1
         -collection "MMEditorWnd_Tool_QuadDraw_MM|form1|frameLayout53|popupMenu255|" 
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem -itl 1 
         -l "Reset Settings" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nexCtx -resetManip" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "CN_refresh.png" 
         menuEditorMenuItem7;
 

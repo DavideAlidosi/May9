@@ -1,64 +1,31 @@
 
     menuItem
         -l "Automatic Map" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyAutoProj 0;" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "polyAutoProj.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyAutoProj 1;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem11;
 
     menuItem
         -l "Spherical Map" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "polySphereProj.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "UV Toolkit" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_OpenUvToolkit" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "UVTk.png" 
         menuEditorMenuItem15;
 
@@ -66,60 +33,28 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
     menuItem
         -l "Layout" 
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUV" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "layoutUV.png" 
         menuEditorMenuItem17;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUVOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem18;
 
     menuItem
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem9;
 
     menuItem
         -l "Convert to UVs" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ConvertSelectionToUVs" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "UVEditorVertex.png" 
         menuEditorMenuItem10;
 

@@ -1,98 +1,49 @@
 
     menuItem
         -l "Refine selected" 
-        -d 0
-        -sm 0
-        -to 0
         -c "subdivCreateRegion" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "subdivMatchToplogy.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Uncrease Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "UncreaseSubdivSurface" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "subdivUncrease.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Partial Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PartialCreaseSubdivSurface" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "subdivPartialCrease.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Full Crease" 
-        -d 0
-        -sm 0
-        -to 0
         -c "FullCreaseSubdivSurface" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "subdivCrease.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Display Finer" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl -o`;\nsetSubdivDisplayLevelAndFilter $mySel \"+1\" 0;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "subdivRefineRegion.png" 
         menuEditorMenuItem5;
 
     menuItem
         -l "Display Coarser" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $mySel[] = `ls -sl -o`;\nsetSubdivDisplayLevelAndFilter $mySel \"-1\" 0;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "subdivSelectCoarser.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "Assign New Material" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createAssignNewMaterialTreeLister \"\";" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "render_adskMaterial.png" 
         menuEditorMenuItem7;
 

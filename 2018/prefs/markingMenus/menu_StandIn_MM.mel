@@ -1,55 +1,27 @@
 
     menuItem
         -l "Create MASH Network" 
-        -d 0
-        -sm 0
-        -to 0
         -c "MASHcreateOptions" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "MASH_CreateNetwork.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Display as Boundry Box" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_aiStandInBoundryBox" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Display as Polywire" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_aiStandinPolyWire" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem
         -l "display as Point Cloud" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_aiStandinPointCloud" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
 setParent -m ..;

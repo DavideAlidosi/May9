@@ -1,28 +1,14 @@
 
     menuItem
         -l "Convert to UVs" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ConvertSelectionToUVs" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "UVEditorVertex.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "UV Toolkit" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_OpenUvToolkit" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "UVTk.png" 
         menuEditorMenuItem2;
 
@@ -30,36 +16,17 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Layout" 
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUV" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "layoutUV.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUVOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
 setParent -m ..;

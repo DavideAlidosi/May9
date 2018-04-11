@@ -1,111 +1,55 @@
 
     menuItem
         -l "Delete Unused Nodes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "deleteActive.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Select Object With Material" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_SelectObjectMaterial" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "aselect.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "Duplicate Network" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "duplicateReference.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Import Network" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "greasePencilImport.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Select All Nodes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "select `listHistory -ac`" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "createBinFromSelectedNodes.png" 
         menuEditorMenuItem16;
 
     menuItem
         -l "Export Network" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "greasePencilExport.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Texture Link" 
-        -d 0
-        -sm 0
-        -to 0
         -c "TextureCentricUVLinkingEditor" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "textureEditor.png" 
         menuEditorMenuItem7;
 
     menuItem
         -l "TX Manager" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_TxManager" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "TXManagerShelf.png" 
         menuEditorMenuItem12;
 
@@ -127,14 +71,7 @@
 
     menuItem
         -l "Expression Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ExpressionEditor" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "out_expression.png" 
         menuEditorMenuItem13;
 
@@ -142,74 +79,35 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "Create Common Nodes" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "nodeGrapherAddNodes.png" 
         menuEditorMenuItem15;
 
         menuItem
             -l "file" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createRenderNodeCB -as2DTexture \"\" file \"\"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_file.png" 
             menuEditorMenuItem4;
 
         menuItem
             -l "ramp" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode ramp" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_ramp.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "layeredTexture" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode layeredTexture" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_layeredTexture.png" 
             menuEditorMenuItem2;
 
         menuItem
             -l "samplerInfo" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode samplerInfo" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_samplerInfo.png" 
             menuEditorMenuItem3;
 
@@ -217,15 +115,8 @@
 
     menuItem
         -l "Create Node" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createNodeWindow" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "createNode.png" 
         menuEditorMenuItem8;
 

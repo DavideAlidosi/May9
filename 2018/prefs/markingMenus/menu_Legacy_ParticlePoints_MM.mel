@@ -2,52 +2,26 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
     menuItem
         -l "Lattice" 
-        -d 0
-        -sm 0
-        -to 0
         -c "CreateLattice" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "lattice.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "CreateLatticeOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem
         -l "Cluster" 
-        -d 0
-        -sm 0
-        -to 0
         -c "CreateCluster" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "cluster.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "CreateClusterOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem
@@ -141,22 +115,12 @@ int $particleCountCheck = `optionVar -q particleCountVisibility`;
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem22;
 
     menuItem
         -l "HUD Info" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ToggleParticleCount" 
         -checkBox (1 == $particleCountCheck)
-        -en 1
         menuEditorMenuItem23;
 
 setParent -m ..;

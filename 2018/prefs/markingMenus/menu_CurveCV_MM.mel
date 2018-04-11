@@ -4,29 +4,15 @@
 	
     menuItem
         -l "Lock Length" 
-        -d 0
-        -sm 0
-        -to 0
         -c "LockCurveLength;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "lockLength.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Unlock Length" 
-        -d 0
-        -sm 0
-        -to 0
         -c "UnlockCurveLength" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "unlockLength.png" 
         menuEditorMenuItem2;
 
@@ -44,331 +30,159 @@
 
     menuItem
         -l "Deformers" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "menuIconDeformations.png" 
         menuEditorMenuItem3;
 
         menuItem
             -l "Nonlinear" 
-            -d 0
             -sm 1
-            -to 0
-            -ob 0
-            -en 1
-            -aob 1
             -i "bendNLD.png" 
             menuEditorMenuItem3;
 
             menuItem
                 -l "Bend" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "Bend;" 
-                -ob 0
-                -en 1
                 -rp "N" 
-                -aob 1
-                -pmo 0
                 -i "bendNLD.png" 
                 menuEditorMenuItem1;
 
             menuItem
-                -d 0
-                -sm 0
-                -to 0
                 -c "BendOptions;" 
                 -ob 1
-                -en 1
-                -aob 1
-                -pmo 0
                 menuEditorMenuItem3;
 
             menuItem
                 -l "Flare" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "Flare;" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "flareNLD.png" 
                 menuEditorMenuItem4;
 
             menuItem
-                -d 0
-                -sm 0
-                -to 0
                 -c "FlareOptions;" 
                 -ob 1
-                -en 1
-                -aob 1
-                -pmo 0
                 menuEditorMenuItem5;
 
             menuItem
                 -l "Sine" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "Sine" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "sineNLD.png" 
                 menuEditorMenuItem6;
 
             menuItem
-                -d 0
-                -sm 0
-                -to 0
                 -c "SineOptions;" 
                 -ob 1
-                -en 1
-                -aob 1
-                -pmo 0
                 menuEditorMenuItem7;
 
             menuItem
                 -l "Squash" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "Squash" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "squashNLD.png" 
                 menuEditorMenuItem8;
 
             menuItem
-                -d 0
-                -sm 0
-                -to 0
                 -c "SquashOptions;" 
                 -ob 1
-                -en 1
-                -aob 1
-                -pmo 0
                 menuEditorMenuItem9;
 
             menuItem
                 -l "Twist" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "Twist" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "twistNLD.png" 
                 menuEditorMenuItem10;
 
             menuItem
-                -d 0
-                -sm 0
-                -to 0
                 -c "TwistOptions" 
                 -ob 1
-                -en 1
-                -aob 1
-                -pmo 0
                 menuEditorMenuItem11;
 
             menuItem
                 -l "Wave" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "Wave" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "waveNLD.png" 
                 menuEditorMenuItem12;
 
             menuItem
-                -d 0
-                -sm 0
-                -to 0
                 -c "WaveOptions;" 
                 -ob 1
-                -en 1
-                -aob 1
-                -pmo 0
                 menuEditorMenuItem13;
 
         setParent -m ..;
 
         menuItem
             -l "Cluster" 
-            -d 0
-            -sm 0
-            -to 0
             -c "CreateCluster" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "cluster.png" 
             menuEditorMenuItem8;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "CreateClusterOptions" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Lattice" 
-            -d 0
-            -sm 0
-            -to 0
             -c "CreateLattice" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "lattice.png" 
             menuEditorMenuItem5;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "CreateLatticeOptions;" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem6;
 
     setParent -m ..;
 
     menuItem
         -l "Dynamics" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "out_nucleus.png" 
         menuEditorMenuItem4;
 
         menuItem
             -l "Emit Particle From CV" 
-            -d 0
-            -sm 0
-            -to 0
             -c "NEmitFromObject;" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "emitter.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "NEmitFromObjectOptions;" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem7;
 
         menuItem
             -l "Particle Style" 
-            -d 0
             -sm 1
-            -to 0
-            -ob 0
-            -en 1
-            -aob 1
             -i "out_particle.png" 
             menuEditorMenuItem4;
 
             menuItem
                 -l "Points" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "optionVar -stringValue NParticleStyle \"Points\";" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "nPartPoints.png" 
                 menuEditorMenuItem1;
 
             menuItem
                 -l "Balls" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "optionVar -stringValue NParticleStyle \"Balls\";" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "nPartBalls.png" 
                 menuEditorMenuItem2;
 
             menuItem
                 -l "Cloud" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "optionVar -stringValue NParticleStyle \"Cloud\";" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "nPartCloud.png" 
                 menuEditorMenuItem3;
 
             menuItem
                 -l "ThickCloud" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "nPartThickCloud.png" 
                 menuEditorMenuItem4;
 
             menuItem
                 -l "Water" 
-                -d 0
-                -sm 0
-                -to 0
                 -c "optionVar -stringValue NParticleStyle \"Water\";" 
-                -ob 0
-                -en 1
-                -aob 1
-                -pmo 0
                 -i "nPartWater.png" 
                 menuEditorMenuItem5;
 
@@ -378,85 +192,41 @@
 
     menuItem
         -l "nConstraint" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
 		-i "menuIconConstraints.png" 
         menuEditorMenuItem5;
 
         menuItem
             -l "Component to Component" 
-            -d 0
-            -sm 0
-            -to 0
             -c "doCreateNConstraint pointToPoint 0" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "nConstraintComponent.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "performCreateComponentNConstraint 1" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Force Field" 
-            -d 0
-            -sm 0
-            -to 0
             -c "doCreateNConstraint force 0" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "nConstraintForceField.png" 
             menuEditorMenuItem3;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem4;
 
         menuItem
             -l "Transform Constraint" 
-            -d 0
-            -sm 0
-            -to 0
             -c "doCreateNConstraint transform 0" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "nConstraintTransform.png" 
             menuEditorMenuItem5;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "performCreateDynamicConstraint 1 \"force\"" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem6;
 
     setParent -m ..;

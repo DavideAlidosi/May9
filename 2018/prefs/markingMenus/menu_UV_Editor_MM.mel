@@ -1,27 +1,14 @@
 
     menuItem
         -l "Cut/Sew" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "CutSewUVTool.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
@@ -33,65 +20,31 @@
 
     menuItem
         -l "Optimize" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "optimizeUVTool.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem
         -l "UV Toolkit" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_OpenUvToolkit" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "UVTk.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "UV Set Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "UVSetEditor" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "polyUVSetEditor.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "UV Link Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "UVCentricUVLinkingEditor" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "da_uvLinkEditor.png" 
         menuEditorMenuItem7;
 

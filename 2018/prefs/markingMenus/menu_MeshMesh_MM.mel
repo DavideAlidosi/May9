@@ -1,228 +1,114 @@
 
     menuItem
         -l "Connect Shapes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_ConnectShapes" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "da_OneToMany.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Component to Component" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doCreateNConstraint pointToPoint 0" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "nConstraintComponent.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Extrude" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrude" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "polyExtrudeFacet.png" 
         menuEditorMenuItem6;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrudeOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem
         -l "Bevel" 
-        -d 0
-        -sm 0
-        -to 0
         -c "BevelPolygon;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "polyBevel.png" 
         menuEditorMenuItem8;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "BevelPolygonOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem9;
 
     menuItem
         -l "Multi Cut Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dR_multiCutTool;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "multiCut_NEX32.png" 
         menuEditorMenuItem12;
 
     menuItem
         -l "Delete Edge" 
-        -d 0
-        -sm 0
-        -to 0
         -c "DeletePolyElements;" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "polyDelEdgeVertex.png" 
         menuEditorMenuItem13;
 
     menuItem
         -l "Select Edges" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
         -i "edges_NEX.png"
         menuEditorMenuItem14;
 
         menuItem
             -l "By Right Angle\n" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeRightAngle" 
-            -ob 0
-            -en 1
             -rp "SE" 
-            -aob 1
-            -pmo 0
             -i "da_rightAngle.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "By Acute Angle" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeAcuteAngle" 
-            -ob 0
-            -en 1
             -rp "S" 
-            -aob 1
-            -pmo 0
             -i "da_acuteAngle.png" 
             menuEditorMenuItem2;
 
         menuItem
             -l "By Straight Angle" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeStraightAngle" 
-            -ob 0
-            -en 1
             -rp "E" 
-            -aob 1
-            -pmo 0
             -i "da_sraightAngle.png" 
             menuEditorMenuItem3;
 
         menuItem
             -l "Inside" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeInside" 
-            -ob 0
-            -en 1
             -rp "NE" 
-            -aob 1
-            -pmo 0
             -i "da_insideEdge.png" 
             menuEditorMenuItem4;
 
         menuItem
             -l "On Border" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeBorder" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             -i "da_borderEdge.png" 
             menuEditorMenuItem5;
 
         menuItem
             -l "Soft" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeSoft" 
-            -ob 0
-            -en 1
             -rp "W" 
-            -aob 1
-            -pmo 0
             -i "da_softEdge.png" 
             menuEditorMenuItem6;
 
         menuItem
             -l "Hard" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeHard" 
-            -ob 0
-            -en 1
             -rp "SW" 
-            -aob 1
-            -pmo 0
             -i "da_hardEdge.png" 
             menuEditorMenuItem7;
 
@@ -230,50 +116,24 @@
 
     menuItem
         -l "Transform" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyMove \"\" 0" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "polyMoveVertex.png" 
         menuEditorMenuItem15;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "MovePolygonComponentOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
     menuItem
         -l "Crease Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyCreaseTool" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "polyCrease.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem17;
 
 setParent -m ..;

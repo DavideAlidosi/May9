@@ -1,183 +1,90 @@
 
     menuItem
         -l "Batch Render" 
-        -d 0
-        -sm 0
-        -to 0
         -c "BatchRender;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "batchRender.png" 
         menuEditorMenuItem10;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "BatchRenderOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem11;
 
     menuItem
         -l "Color Picker" 
-        -d 0
-        -sm 0
-        -to 0
         -c "colorEditor" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "render_swColorPerVertex.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Save Image" 
-        -d 0
-        -sm 0
-        -to 0
         -c "renderWindowMenuCommand saveImage renderView" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "fileSave.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Render Sequence" 
-        -d 0
-        -sm 0
-        -to 0
         -c "RenderSequence" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "menuIconRender.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Real Size" 
-        -d 0
-        -sm 0
-        -to 0
         -c "renderWindowEditor -edit -realSize renderView;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "rvRealSize.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Keep Image" 
-        -d 0
-        -sm 0
-        -to 0
         -c "renderWindowMenuCommand keepImageInRenderView renderView;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "rvKeepIt.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "Test Resolution" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
 		-i "ResolutionGate.png" 
         menuEditorMenuItem5;
 
         menuItem
             -l "Half" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setTestResolutionVar(4);" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Quarter" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setTestResolutionVar(3)" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
         menuItem
             -l "separator" 
             -d 1
             -dLabel "separator" 
-            -sm 0
-            -to 0
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem4;
 
         menuItem
             -l "Full" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setTestResolutionVar(1);" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
     setParent -m ..;
 
     menuItem
         -l "Select Camera" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_SelectCamera" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "Camera.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "da_SelectCamera;\nAttributeEditor\n" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem8;
 
 setParent -m ..;

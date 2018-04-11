@@ -2,229 +2,112 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
 
     menuItem
         -l "Add to Simulation" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
         menuEditorMenuItem1;
 
         menuItem
             -l "Emitter" 
-            -d 0
-            -sm 0
-            -to 0
             -c "RemoveBifrostEmitter" 
-            -ob 0
-            -en 1
             -rp "E" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Collider" 
-            -d 0
-            -sm 0
-            -to 0
             -c "AddBifrostCollider" 
-            -ob 0
-            -en 1
             -rp "NE" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Accelerator" 
-            -d 0
-            -sm 0
-            -to 0
             -c "AddBifrostAccelerator" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
         menuItem
             -l "Guide" 
-            -d 0
-            -sm 0
-            -to 0
             -c "AddBifrostGuide" 
-            -ob 0
-            -en 1
             -rp "SE" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem6;
 
         menuItem
             -l "Kill Field" 
-            -d 0
-            -sm 0
-            -to 0
             -c "AddBifrostKillField" 
-            -ob 0
-            -en 1
             -rp "NW" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem4;
 
     setParent -m ..;
 
     menuItem
         -l "Remove from Simulation" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
         menuEditorMenuItem2;
 
         menuItem
             -l "Emitter" 
-            -d 0
-            -sm 0
-            -to 0
             -c "evalEcho( \"RemoveBifrostEmitter\" );" 
-            -ob 0
-            -en 1
             -rp "W" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Collider" 
-            -d 0
-            -sm 0
-            -to 0
             -c "evalEcho( \"RemoveBifrostCollider\" );" 
-            -ob 0
-            -en 1
             -rp "NW" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Accelerator" 
-            -d 0
-            -sm 0
-            -to 0
             -c "evalEcho( \"RemoveBifrostAccelerator\" );" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
         menuItem
             -l "Guide" 
-            -d 0
-            -sm 0
-            -to 0
             -c "RemoveBifrostGuide" 
-            -ob 0
-            -en 1
             -rp "SW" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem6;
 
     setParent -m ..;
 
     menuItem
         -l "Stop Processing" 
-        -d 0
-        -sm 0
-        -to 0
         -c "bifrost -edit -stopProcessing;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "kAlertStopIcon.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Bifrost Options" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performBifrostOptionsChange" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem
         -l "Create Cache" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateBifrostCache 0 0;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateBifrostCache 1 0;\n" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Delete Cache" 
-        -d 0
-        -sm 0
-        -to 0
         -c "bifrost -edit -flushScratchCache;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem22;
 
     menuItem
         -l "HUD Info" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ToggleBifrostHUD" 
         -checkBox (1 == $bifrostHUDCheck)
-        -en 1
         menuEditorMenuItem23;
 
 setParent -m ..;

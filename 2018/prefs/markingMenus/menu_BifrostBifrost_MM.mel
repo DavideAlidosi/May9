@@ -2,112 +2,54 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
 
     menuItem
         -l "Stop Processing" 
-        -d 0
-        -sm 0
-        -to 0
         -c "bifrost -edit -stopProcessing;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "kAlertStopIcon.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Bifrost Options" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performBifrostOptionsChange" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem
         -l "Add Foam" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AddBifrostFoam" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem9;
 
     menuItem
         -l "Remove Foam" 
-        -d 0
-        -sm 0
-        -to 0
         -c "RemoveBifrostFoam" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "Create Cache" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateBifrostCache 0 0;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateBifrostCache 1 0;\n" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Delete Cache" 
-        -d 0
-        -sm 0
-        -to 0
         -c "bifrost -edit -flushScratchCache;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem11;
 
     menuItem
         -l "HUD Info" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ToggleBifrostHUD" 
         -checkBox (1 == $bifrostHUDCheck)
-        -en 1
         menuEditorMenuItem12;
 
 setParent -m ..;

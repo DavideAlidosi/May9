@@ -1,269 +1,132 @@
 
     menuItem
         -l "Attach" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AttachCurve" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "attachCurves.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Bevel Plus" 
-        -d 0
-        -sm 0
-        -to 0
         -c "BevelPlus;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "bevelPlus.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "BevelPlusOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Offset Curve On Surface" 
-        -d 0
-        -sm 0
-        -to 0
         -c "offsetCosPreset(1,0,2,1,0,1,0.01,5)" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "offsetCos.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "OffsetCurveOnSurfaceOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem
         -l "Surface from Curves" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
         -i "skin.png" 
         menuEditorMenuItem6;
 
         menuItem
             -l "Loft" 
-            -d 0
-            -sm 0
-            -to 0
             -c "Loft" 
-            -ob 0
-            -en 1
             -rp "NW" 
-            -aob 1
-            -pmo 0
             -i "skin.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "LoftOptions" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Freeform Fillet" 
-            -d 0
-            -sm 0
-            -to 0
             -c "freeFormFilletPreset(1,0,0.5,0,0.01,0.1)" 
-            -ob 0
-            -en 1
             -rp "W" 
-            -aob 1
-            -pmo 0
             -i "filletFreeform_S.png" 
             menuEditorMenuItem7;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "FreeformFilletOptions" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem8;
 
         menuItem
             -l "Fillet Blend Tool" 
-            -d 0
-            -sm 0
-            -to 0
             -c "doFilletBlendArgList 2 {\"1\", \"1\", \"1\", \"0\", \"0\", \"0\", \"0.1\", \"0.1\", \"0\", \"1\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"1\", \"0\" }" 
-            -ob 0
-            -en 1
             -rp "SW" 
-            -aob 1
-            -pmo 0
             -i "blendSurface.png" 
             menuEditorMenuItem9;
 
         menuItem
-            -d 0
-            -sm 0
-            -to 0
             -c "FilletBlendToolOptions" 
             -ob 1
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem10;
 
     setParent -m ..;
 
     menuItem
         -l "Reverse" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ReverseCurve;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "reverse.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "ReverseCurveOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem10;
 
     menuItem
         -l "Open/Close" 
-        -d 0
-        -sm 0
-        -to 0
         -c "OpenCloseCurve" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "closeGeom.png" 
         menuEditorMenuItem11;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "OpenCloseCurveOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem12;
 
     menuItem
         -l "Rebuild" 
-        -d 0
-        -sm 0
-        -to 0
         -c "RebuildCurveOptions" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "rebuildCurve.png" 
         menuEditorMenuItem13;
 
     menuItem
         -l "Extend Curve On Surface" 
-        -d 0
-        -sm 0
-        -to 0
         -c "extendCurvePresetArgList( \"2\", { \"1\", \"1\",\"0\",\"2\",\"0.1\",\"0\",\"0\", \"0\", \"0\",\"1\",\"1\",\"1\" } )" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "extendCos.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "ExtendCurveOnSurfaceOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem15;
 
     menuItem
         -l "Paint FX to Curves" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AttachBrushToCurves;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "paintFXtoCurve.png" 
         menuEditorMenuItem18;
 
     menuItem
         -l "Curves to Polygons" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_curveToPoly" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "da_curveToPoly.png" 
         menuEditorMenuItem19;
 
@@ -271,113 +134,54 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem20;
 
     menuItem
         -l "Emit Particle From CV" 
-        -d 0
-        -sm 0
-        -to 0
         -c "NEmitFromObject;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "emitter.png" 
         menuEditorMenuItem21;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "NEmitFromObjectOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "Particle Style" 
 		-i "out_particle.png" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem23;
 
         menuItem
             -l "Points" 
-            -d 0
-            -sm 0
-            -to 0
             -c "optionVar -stringValue NParticleStyle \"Points\";" 
 			-i "nPartPoints.png"
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Balls" 
-            -d 0
-            -sm 0
-            -to 0
             -c "optionVar -stringValue NParticleStyle \"Balls\";" 
 			-i "nPartBalls.png"
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Cloud" 
-            -d 0
-            -sm 0
-            -to 0
             -c "optionVar -stringValue NParticleStyle \"Cloud\";" 
 			-i "nPartCloud.png"
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
         menuItem
             -l "ThickCloud" 
-            -d 0
-            -sm 0
-            -to 0
             -c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
 			-i "nPartThickCloud.png"
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem4;
 
         menuItem
             -l "Water" 
-            -d 0
-            -sm 0
-            -to 0
             -c "optionVar -stringValue NParticleStyle \"Water\";" 
 			-i "nPartWater.png"
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem5;
 
     setParent -m ..;

@@ -1,80 +1,39 @@
 
     menuItem
         -l "Show Manips" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo ShowManips" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "showManip.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Edit Attributes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AttributeEditor" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "attributes.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Extrude" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrude" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "polyExtrudeFacet.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrudeOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Keep Faces Together On" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 1;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "rvViewingPipelineOn.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Keep Faces Together Off" 
-        -d 0
-        -sm 0
-        -to 0
         -c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 0;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "rvViewingPipelineOff.png" 
         menuEditorMenuItem1;
 

@@ -4,114 +4,58 @@ string $reflectionDirection = `art3dPaintCtx -q -ra $currentCtx`;
 
     menuItem -itl 1 
         -l "Symmetry" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if ($reflectionCheck == 1) art3dPaintCtx -e -reflection  false `currentCtx`; else art3dPaintCtx -e -reflection  true `currentCtx`;" 
-        -ob 0
-        -en 1
         -checkBox $reflectionCheck 
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Z Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"z\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "z") 
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Y Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"y\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "y") 
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "X Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"x\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "x") 
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "Paint Color" 
-        -d 0
-        -sm 0
-        -to 0
         -c "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"Color\")` `currentCtx`;" 
-        -ob 0
         -i "colorPresetSpectrum.png" 
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem -itl 1 
         -l "Paint Transparency" 
-        -d 0
-        -sm 0
-        -to 0
         -c "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"Transparency\")` `currentCtx`;" 
-        -ob 0
         -i "colorPresetBlackRedYellow.png"
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem -itl 1 
         -l "Paint BumpMap" 
-        -d 0
-        -sm 0
-        -to 0
         -c "art3dPaintCtx -e -painttxtattrname `attributeToPaint_uiToMel(\"BumpMap\")` `currentCtx`;" 
-        -ob 0
         -i "colorPresetGrayscale.png" 
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem -itl 1 
         -l "Assign/Edit Texture" 
-        -d 0
-        -sm 0
-        -to 0
         -c "art3dPaintAssignFileTexture( \"art3dFileTextureFrame\");" 
-        -ob 0
         -i "imageDisplay.png"
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem8;
 
 setParent -m ..;

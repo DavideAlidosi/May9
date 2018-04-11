@@ -17,78 +17,38 @@
 
     menuItem
         -l "Stitch" 
-        -d 0
-        -sm 0
-        -to 0
         -c "texMultiStitch 1" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "polyUVMultiStitch.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Optimize" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "optimizeUVTool.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Cut/Sew" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "CutSewUVTool.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem10;
 
     menuItem
         -l "UV Toolkit" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_OpenUvToolkit" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "UVTk.png" 
         menuEditorMenuItem21;
 
@@ -96,121 +56,56 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem18;
 
     menuItem
         -l "Auto Seams" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyAutoSeamUV 0" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "polyAutoSeams.png" 
         menuEditorMenuItem11;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyAutoSeamUV 1" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Unfold" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performUnfold 0" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "textureEditorUnfoldUVs.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performUnfold 1" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem15;
 
     menuItem
         -l "Layout" 
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUV" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "layoutUV.png" 
         menuEditorMenuItem16;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUVOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem17;
 
     menuItem
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem13;
 
     menuItem
         -l "Edges to Curves" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_ConvertUvEdgeToCurve" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "polyEdgeToCurves.png" 
         menuEditorMenuItem12;
 
     menuItem
         -l "To Loops to Curves" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_EdgeToLoopToCurve" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "da_EdgeToLoopToCurve.png" 
         menuEditorMenuItem14;
 
@@ -218,24 +113,11 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem8;
 
     menuItem
         -l "Convert to UVs" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ConvertSelectionToUVs" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "UVEditorVertex.png" 
         menuEditorMenuItem7;
 

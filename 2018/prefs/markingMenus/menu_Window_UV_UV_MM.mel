@@ -4,92 +4,44 @@
 
     menuItem
         -l "Optimize" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "optimizeUVTool.png" 
         menuEditorMenuItem29;
 
     menuItem
         -l "Select Shell" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SelectUVShell" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "UVEditorShell.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Lattice" 
-        -d 0
-        -sm 0
-        -to 0
         -c "LatticeUVTool" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "uvlattice.png" 
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "LatticeUVToolOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
 		
     menuItem
         -l "Select Shell Border" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SelectUVBorder" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "UVEditorShellBorder.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "UV Toolkit" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_OpenUvToolkit" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "UVTk.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Take Snapshot" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performUVSnapshot" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "out_snapshot.png" 
         menuEditorMenuItem10;
 
@@ -97,167 +49,76 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
     menuItem
         -l "Auto Seams" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyAutoSeamUV 0" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "polyAutoSeams.png" 
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performPolyAutoSeamUV 1" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
 
     menuItem
         -l "Unfold" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performUnfold 0" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "textureEditorUnfoldUVs.png" 
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performUnfold 1" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
 
     menuItem
         -l "Layout" 
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUV" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "layoutUV.png" 
         menuEditorMenuItem14;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "LayoutUVOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem15;
 
     menuItem
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem12;
 
     menuItem
         -l "Convert to Edges" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ConvertSelectionToContainedEdges" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "edges_NEX.png" 
         menuEditorMenuItem7;
 
     menuItem
         -l "Convert to Vertices" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PolySelectConvert 3" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "vertex_NEX.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Symmetrize" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SymmetrizeUV" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "polySymmetrizeUV.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "SymmetrizeUVOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Match Shells Scale" 
-        -d 0
-        -sm 0
-        -to 0
         -c "uvTkDoSetTexelDensity" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "polyScaleUV.png" 
         menuEditorMenuItem13;
 

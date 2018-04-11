@@ -1,104 +1,51 @@
 
     menuItem
         -l "Transform nConstraint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateDynamicConstraint 0 \"transform\";" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "nConstraintTransform.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateDynamicConstraint 1 \"transform\";" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem
         -l "Point to Surface" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doCreateNConstraint pointToSurface 0" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "nConstraintPointoSurface.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateDynamicConstraint 1 \"pointToSurface\"" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem
         -l "Slide on Surface" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doCreateNConstraint slideOnSurface 0" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "nConstraintSlideonSurface.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "performCreateDynamicConstraint 1 \"slideOnSurface\"" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Rivet On Selected Vertex" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_RivetMashVertex" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "MASH_CreateMeshFromPoints.png" 
         menuEditorMenuItem7;
 
     menuItem
         -l "Constraint Point On Poly" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doCreatePointOnPolyConstraintArgList 2 {   \"0\" ,\"0\" ,\"0\" ,\"1\" ,\"\" ,\"1\" ,\"0\" ,\"0\" ,\"0\" ,\"0\" };" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "pointOnPolyConstraint.png" 
         menuEditorMenuItem8;
 

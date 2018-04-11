@@ -1,67 +1,33 @@
 
     menuItem
         -l "Create Locator" 
-        -d 0
-        -sm 0
-        -to 0
         -c "CreateLocator;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "locator.png" 
         menuEditorMenuItem14;
 
     menuItem
         -l "Create Circle" 
-        -d 0
-        -sm 0
-        -to 0
         -c "CreateNURBSCircle;" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "circle.png" 
         menuEditorMenuItem15;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "CreateNURBSCircleOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
     menuItem
         -l "Set Preferred Angle" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_SetIKPerfAngle" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem
         -l "Assume Preferred Angle" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_AssumeIKPrefAngle" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
 setParent -m ..;

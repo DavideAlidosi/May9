@@ -1,78 +1,38 @@
 
     menuItem
         -l "Sculpt Guides" 
-        -d 0
-        -sm 0
-        -to 0
         -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "xgGuideSculptTool.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem
         -l "Guides Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "XgGuideTool" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "xgGuideContext.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Primitives to Poly" 
-        -d 0
-        -sm 0
-        -to 0
         -c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "da_xgPolyConvert.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem
         -l "XGen Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "xgDEditor.png" 
         menuEditorMenuItem6;
 

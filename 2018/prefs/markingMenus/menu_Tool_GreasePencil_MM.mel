@@ -1,113 +1,57 @@
 
     menuItem -itl 1 
         -l "Pencil" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setGreasePencilType 1;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "greasePencilPencil.png" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Eraser" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setGreasePencilType 4;" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "greasePencilEraser.png" 
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Remove Frame" 
-        -d 0
-        -sm 0
-        -to 0
         -c "removeGreasePencilFrameAtCurrentTime();" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "greasePencilDeleteFrame.png" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Add Frame" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createOrEditGreasePencilFrameAtCurrentTime();" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "greasePencilAddFrame.png" 
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "Pre-Frame Ghost" 
-        -d 0
-        -sm 0
-        -to 0
         -c "toggleGreasePencilPreFrameCount();" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "greasePencilPreGhostOn.png" 
         menuEditorMenuItem5;
 
     menuItem -itl 1 
         -l "Post-Frame Ghost" 
-        -d 0
-        -sm 0
-        -to 0
         -c "toggleGreasePencilPostFrameCount();" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "greasePencilPostGhostOn.png" 
         menuEditorMenuItem6;
 
     menuItem -itl 1 
         -l "Marker" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setGreasePencilType 2;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "greasePencilMarker.png" 
         menuEditorMenuItem7;
 
     menuItem -itl 1 
         -l "Soft Pencil" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setGreasePencilType 3;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "greasePencilSoftPencil.png" 
         menuEditorMenuItem8;
 

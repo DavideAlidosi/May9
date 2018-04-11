@@ -1,152 +1,74 @@
 
     menuItem
         -l "Detach Surfaces" 
-        -d 0
-        -sm 0
-        -to 0
         -c "DetachSurfaces" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "detach.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "DetachSurfacesOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem
         -l "Insert Isoparms" 
-        -d 0
-        -sm 0
-        -to 0
         -c "insertKnotPreset 1 1 1 1 0 0" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "insert.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "InsertIsoparmsOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem
         -l "Stitch Edges Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "StitchEdgesTool" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "stitchSrf.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "StitchEdgesToolOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem10;
 
     menuItem
         -l "Duplicate Surface Curves" 
-        -d 0
-        -sm 0
-        -to 0
         -c "duplicateCurvePresetArgList( \"2\", {\"1\",\"0\",\"0\",\"2\"} )" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "duplicateCurve.png" 
         menuEditorMenuItem11;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "DuplicateCurveOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem12;
 
     menuItem
         -l "Freeform Fillet" 
-        -d 0
-        -sm 0
-        -to 0
         -c "freeFormFilletPreset(1,0,0.5,0,0.01,0.1)" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "filletFreeform_S.png" 
         menuEditorMenuItem13;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "FreeformFilletOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "Fillet Blend Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doFilletBlendArgList 2 {\"1\", \"1\", \"1\", \"0\", \"0\", \"0\", \"0.1\", \"0.1\", \"0\", \"1\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"1\", \"0\" }" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "blendSurface.png" 
         menuEditorMenuItem15;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "FilletBlendToolOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
 setParent -m ..;

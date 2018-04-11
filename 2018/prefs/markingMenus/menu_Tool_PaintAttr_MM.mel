@@ -4,110 +4,54 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
 
     menuItem -itl 1 
         -l "Z Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "z") 
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Y Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "y") 
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "X Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "x") 
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Symmetry" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
-        -ob 0
         -checkBox $reflectionCheck
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "Replace" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrPaintOperation artAttrCtx Replace;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem -itl 1 
         -l "Add" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrPaintOperation artAttrCtx Add;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem -itl 1 
         -l "Scale" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrPaintOperation artAttrCtx Scale;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem -itl 1 
         -l "Flood Smooth" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrPaintOperation artAttrCtx Smooth;\nartAttrCtx -e -clear `currentCtx`;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem8;
 
 setParent -m ..;

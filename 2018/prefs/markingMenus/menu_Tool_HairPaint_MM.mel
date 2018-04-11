@@ -4,72 +4,37 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
 
     menuItem -itl 1 
         -l "Paint Hair Settings" 
-        -d 0
-        -sm 0
-        -to 0
         -c "paintHairTool 0;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "hairPaint.png" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Symmetry" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
-        -ob 0
         -checkBox $reflectionCheck 
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Z Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "z") 
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Y Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "y") 
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "X Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "x") 
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
 setParent -m ..;

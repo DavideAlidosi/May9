@@ -1,55 +1,29 @@
 
     menuItem
         -l "Select Time Node" 
-        -d 0
-        -sm 0
-        -to 0
         -c "select time1" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "time.svg" 
         menuEditorMenuItem5;
 
     menuItem
         -l "Output Nodes" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
         -i "out_dagNode.png" 
         menuEditorMenuItem10;
 
         menuItem
             -l "Enable All" 
-            -d 0
-            -sm 0
-            -to 0
             -c "enableFuture" 
-            -ob 0
-            -en 1
             -rp "E" 
-            -aob 1
-            -pmo 0
             -i "enabled.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Disable All" 
-            -d 0
-            -sm 0
-            -to 0
             -c "disableFuture" 
-            -ob 0
-            -en 1
             -rp "NE" 
-            -aob 1
-            -pmo 0
             -i "RS_disable.png" 
             menuEditorMenuItem2;
 
@@ -57,85 +31,43 @@
 
     menuItem
         -l "Create Node" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createNodeWindow" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "createNode.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Delete Unused Nodes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "deleteActive.png" 
         menuEditorMenuItem8;
 
     menuItem
         -l "Select All Nodes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "select `listHistory -ac`" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "createBinFromSelectedNodes.png" 
         menuEditorMenuItem9;
 
     menuItem
         -l "Duplicate Network" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "duplicateReference.png" 
         menuEditorMenuItem12;
 
     menuItem
         -l "Import Network" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "greasePencilImport.png" 
         menuEditorMenuItem13;
 
     menuItem
         -l "Export Network" 
-        -d 0
-        -sm 0
-        -to 0
         -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "greasePencilExport.png" 
         menuEditorMenuItem14;
 
@@ -157,14 +89,7 @@
 
     menuItem
         -l "Expression Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ExpressionEditor" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "out_expression.png" 
         menuEditorMenuItem2;
 
@@ -172,48 +97,23 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem
         -l "Create Common Nodes" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "nodeGrapherAddNodes.png" 
         menuEditorMenuItem3;
 
         menuItem
             -l "ramp" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode ramp" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_ramp.png" 
             menuEditorMenuItem11;
 
         menuItem
             -l "samplerInfo" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode samplerInfo" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_samplerInfo.png" 
             menuEditorMenuItem8;
 
@@ -221,139 +121,63 @@
             -l "separator" 
             -d 1
             -dLabel "separator" 
-            -sm 0
-            -to 0
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem5;
 
         menuItem
             -l "vectorProduct" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode vectorProduct;" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "render_vectorProduct.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "decomposeMatrix" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode decomposeMatrix;" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_decomposeMatrix.png" 
             menuEditorMenuItem2;
 
         menuItem
             -l "multiplyDivide" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode multiplyDivide;" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "render_multiplyDivide.png" 
             menuEditorMenuItem3;
 
         menuItem
             -l "plusMinusAverage" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode plusMinusAverage" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_plusMinusAverage.png" 
             menuEditorMenuItem6;
 
         menuItem
             -l "reverse" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode reverse" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_reverse.png" 
             menuEditorMenuItem7;
 
         menuItem
             -l "chooser" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode chooser" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "render_chooser.png" 
             menuEditorMenuItem9;
 
         menuItem
             -l "blendColors" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode blendColors" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_blendColors.png" 
 
         menuItem
             -l "blendTwoAttr" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode blendTwoAttr" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "render_blendTwoAttr.png" 
             menuEditorMenuItem10;
 
         menuItem
             -l "condition" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode condition" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_condition.png" 
 
         menuItem
             -l "choice" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode choice" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "render_choice.png" 
             menuEditorMenuItem12;
 
@@ -361,24 +185,11 @@
             -l "separator" 
             -d 1
             -dLabel "separator" 
-            -sm 0
-            -to 0
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem13;
 
         menuItem
             -l "instancer" 
-            -d 0
-            -sm 0
-            -to 0
             -c "createNode instancer" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_instancer.png" 
             menuEditorMenuItem4;
 

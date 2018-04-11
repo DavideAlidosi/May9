@@ -1,94 +1,47 @@
 
     menuItem
         -l "nComponent Attribute" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_LastOpInStack" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "attributes.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Remove nConstraint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dynamicConstraintRemove;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "nConstraintRemoveMembers.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Select Members" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dynamicConstraintMembership \"select\";" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "nConstraintSelectMembers.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Membership Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "nConstraintMembershipTool;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "nConstraintMembership.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Slide Constraint" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "nConstraintSlideonSurface.png" 
         menuEditorMenuItem17;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_SlideConstraintOn" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_SlideConstraintOff" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -98,132 +51,61 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem15;
 
     menuItem
         -l "Parent Constraint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ParentConstraint;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "parentConstraint.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "ParentConstraintOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Point Constraint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PointConstraint;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "posConstraint.png" 
         menuEditorMenuItem11;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "PointConstraintOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
     menuItem
         -l "Orient Constraint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "performOrientConstraint 0;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "orientConstraint.png" 
         menuEditorMenuItem14;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "OrientConstraintOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem18;
 
     menuItem
         -l "Scale Constraint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "scaleConstraint;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "scaleConstraint.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "ScaleConstraintOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem19;
 
     menuItem
         -l "Aim Constraint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AimConstraint;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "aimConstraint.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "AimConstraintOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem20;
 
 setParent -m ..;

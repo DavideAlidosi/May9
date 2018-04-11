@@ -1,179 +1,87 @@
 
     menuItem
         -l "Joint Orientation" 
-        -d 0
-        -sm 0
-        -to 0
         -c "OrientJointOptions" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "orientJoint.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Go To Bind Pose" 
-        -d 0
-        -sm 0
-        -to 0
         -c "GoToBindPose;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "goToBindPose.png" 
         menuEditorMenuItem8;
 
     menuItem
         -l "Mirror Joint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "mirrorJoint" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "kinMirrorJoint_S.png" 
         menuEditorMenuItem10;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "MirrorJointOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem11;
 
     menuItem
         -l "Select Hierarchy" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SelectHierarchy" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "selectByHierarchy.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "IK Spline Handle" 
-        -d 0
-        -sm 0
-        -to 0
         -c "IKSplineHandleTool;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "kinSplineHandle.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "IKSplineHandleToolOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem18;
 
     menuItem
         -l "IK Handle" 
-        -d 0
-        -sm 0
-        -to 0
         -c "IKHandleTool;" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "kinHandle.png" 
         menuEditorMenuItem19;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "IKHandleToolOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem20;
 
     menuItem
         -l "Bind Skin" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SmoothBindSkin;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "smoothSkin.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "SmoothBindSkinOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem
         -l "Display Joint As" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem12;
 
         menuItem
             -l "Bone" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_JointsAsBone" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "out_joint.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "None" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_JointsAsNone" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "RS_disable.png" 
             menuEditorMenuItem2;
 
@@ -181,37 +89,18 @@
 
     menuItem
         -l "Display Bone As" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem13;
 
         menuItem
             -l "Fat" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BoneAsFat" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "pickJointObj.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BoneAsOff" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -221,37 +110,17 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "Muscle Builder" 
-        -d 0
-        -sm 0
-        -to 0
         -c "cMuscleBuilder(); " 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "cMuscle_muscle_muscleBuilder.png" 
         menuEditorMenuItem15;
 
     menuItem
         -l "Connect selected Muscle Objects" 
-        -d 0
-        -sm 0
-        -to 0
         -c "cMuscle_connectToSystem(); " 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "cMuscle_skin_connMus.png" 
         menuEditorMenuItem1;
 
@@ -259,24 +128,11 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem
         -l "Joint Size" 
-        -d 0
-        -sm 0
-        -to 0
         -c "jdsWin;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "resizeWindow.png" 
         menuEditorMenuItem3;
 

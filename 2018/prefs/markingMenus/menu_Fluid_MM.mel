@@ -1,193 +1,94 @@
 
     menuItem
         -l "Paint Fluids" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PaintFluidsTool" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "fluidPaint.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Add Emitter" 
-        -d 0
-        -sm 0
-        -to 0
         -c "FluidEmitter" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "fluidEmitterAdd.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "FluidEmitterOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Emit from Object" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dynExecFluidEmitterCommands 1 { \"0\", \"fluidEmitter -type surface -der 1 -her 1 -fer 1 -fdr 2 -r 100.0 -cye none -cyi 1 -mxd 1 -mnd 0 \", 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0} " 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "fluidObjectEmit.png" 
         menuEditorMenuItem6;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "EmitFluidFromObjectOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem7;
 
     menuItem
         -l "Initial Library" 
-        -d 0
-        -sm 0
-        -to 0
         -c "InitialFluidStates" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "fluidGetInitialStatePresets.png" 
         menuEditorMenuItem8;
 
     menuItem
         -l "Gradients" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doFluidGradients 1 { \"1\", \"3\", \"0\", \"1\", \"0\", \"1\", \"0\", \"1\"  };" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "menuIconFluids.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "FluidGradientsOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem10;
 
     menuItem
         -l "Make Collide" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doMakeCollideFluid 1 { \"200\" } " 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         -i "fluidCollide.png" 
         menuEditorMenuItem15;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "MakeFluidCollideOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
     menuItem
         -l "Convert to Polygons" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_FluidToMesh" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "fluidtoPoly.png" 
         menuEditorMenuItem17;
 
     menuItem
         -l "Assign Field to Selected" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AffectSelectedObject" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         -i "connectField.png" 
         menuEditorMenuItem13;
 
     menuItem
         -l "AutoResize" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem12;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_FluidAutoResizeOn" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_FluidAutoResizeOff" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -197,150 +98,70 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "Set Initial State" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SetInitialState" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "fluidInitialStateSet.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "SetInitialStateOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem18;
 
     menuItem
         -l "Add Fields" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         -i "posRadial.png" 
         menuEditorMenuItem11;
 
         menuItem
             -l "Air" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posAir.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Drag" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posDrag.png" 
             menuEditorMenuItem2;
 
         menuItem
             -l "Gravity" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posGravity.png" 
             menuEditorMenuItem3;
 
         menuItem
             -l "Newton" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posNewton.png" 
             menuEditorMenuItem4;
 
         menuItem
             -l "Radial" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posRadial.png" 
             menuEditorMenuItem5;
 
         menuItem
             -l "Turbulence" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posTurbulence.png" 
             menuEditorMenuItem6;
 
         menuItem
             -l "Uniform" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posUniform.png" 
             menuEditorMenuItem7;
 
         menuItem
             -l "Vortex" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posVortex.png" 
             menuEditorMenuItem8;
 
@@ -348,37 +169,17 @@
             -l "separator" 
             -d 1
             -dLabel "separator" 
-            -sm 0
-            -to 0
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem9;
 
         menuItem
             -l "Volume Axis" 
-            -d 0
-            -sm 0
-            -to 0
             -c "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "posVolumeAxis.png" 
             menuEditorMenuItem10;
 
         menuItem
             -l "Kill Volume" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_FluidKillField" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "removeTweaks.png" 
             menuEditorMenuItem11;
 

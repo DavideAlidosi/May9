@@ -3,136 +3,69 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 
     menuItem
         -l "Extrude" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrude" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "polyExtrudeFacet.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrudeOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem
         -l "Select Edges" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
         -i "edges_NEX.png" 
         menuEditorMenuItem3;
 
         menuItem
             -l "On Border" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeBorder" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             -i "da_borderEdge.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Inside" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeInside" 
-            -ob 0
-            -en 1
             -rp "NE" 
-            -aob 1
-            -pmo 0
             -i "da_insideEdge.png" 
             menuEditorMenuItem2;
 
         menuItem
             -l "By Straight Angle" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeStraightAngle" 
-            -ob 0
-            -en 1
             -rp "E" 
-            -aob 1
-            -pmo 0
             -i "da_sraightAngle.png" 
             menuEditorMenuItem3;
 
         menuItem
             -l "By Right Angle\n" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeRightAngle" 
-            -ob 0
-            -en 1
             -rp "SE" 
-            -aob 1
-            -pmo 0
             -i "da_rightAngle.png" 
             menuEditorMenuItem4;
 
         menuItem
             -l "By Acute Angle" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeAcuteAngle" 
-            -ob 0
-            -en 1
             -rp "S" 
-            -aob 1
-            -pmo 0
             -i "da_acuteAngle.png" 
             menuEditorMenuItem5;
 
         menuItem
             -l "Hard" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeHard" 
-            -ob 0
-            -en 1
             -rp "SW" 
-            -aob 1
-            -pmo 0
             -i "da_hardEdge.png" 
             menuEditorMenuItem6;
 
         menuItem
             -l "Soft" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_EdgeSoft" 
-            -ob 0
-            -en 1
             -rp "W" 
-            -aob 1
-            -pmo 0
             -i "da_softEdge.png" 
             menuEditorMenuItem7;
 
@@ -140,143 +73,71 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 
     menuItem
         -l "Multi Cut Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "dR_multiCutTool;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "multiCut_NEX32.png" 
         menuEditorMenuItem4;
 	if (`size($edgeCheck)` > 1){
 		menuItem
 			-l "Fill Hole" 
-			-d 0
-			-sm 0
-			-to 0
 			-c "FillHole" 
-			-ob 0
-			-en 1
 			-rp "N" 
-			-aob 1
-			-pmo 0
 			-i "polyCloseBorder.png" 
 			menuEditorMenuItem5;
 	}
 	if (`size($polyCheck)` != 0){
 		menuItem
 			-l "Sculpt Geometry" 
-			-d 0
-			-sm 0
-			-to 0
 			-c "SetMeshSculptTool" 
-			-ob 0
-			-en 1
 			-rp "N" 
-			-aob 1
-			-pmo 0
 			-i "Sculpt.png" 
 			menuEditorMenuItem5;
 	}
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "ShowMeshSculptToolOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
     menuItem
         -l "Smooth" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SmoothPolygon" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "polySmooth.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "SmoothPolygonOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem8;
 
     menuItem
         -l "Bevel" 
-        -d 0
-        -sm 0
-        -to 0
         -c "BevelPolygon;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "polyBevel.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "BevelPolygonOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem10;
 
 	if (`size($polyCheck)` != 0){
 		menuItem
 			-l "Sudivide Shell" 
-			-d 0
 			-sm 1
-			-to 0
-			-ob 0
-			-en 1
-			-aob 1
 			-i "out_subdiv.png" 
 			menuEditorMenuItem13;
 
 			menuItem
 				-l "On" 
-				-d 0
-				-sm 0
-				-to 0
 				-c "da_shellSubdiv" 
-				-ob 0
-				-en 1
-				-aob 1
-				-pmo 0
 				-i "rvViewingPipelineOn.png"
 				menuEditorMenuItem1;
 
 			menuItem
 				-l "Off" 
-				-d 0
-				-sm 0
-				-to 0
 				-c "da_shellNoSubdiv" 
-				-ob 0
-				-en 1
-				-aob 1
-				-pmo 0
 				-i "rvViewingPipelineOff.png"
 				menuEditorMenuItem2;
 
@@ -285,54 +146,27 @@ string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
 
     menuItem
         -l "Detach Shell" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_shellDetach" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "error.png" 
         menuEditorMenuItem11;
 
 	if (`size($edgeCheck)` != 0){
 		menuItem
 			-l "Bridge" 
-			-d 0
-			-sm 0
-			-to 0
 			-c "BridgeEdge;" 
-			-ob 0
-			-en 1
 			-rp "NE" 
-			-aob 1
-			-pmo 0
 			-i "polyBridge.png" 
 			menuEditorMenuItem12;
 
 		menuItem
-			-d 0
-			-sm 0
-			-to 0
 			-c "BridgeEdgeOptions;" 
 			-ob 1
-			-en 1
-			-aob 1
-			-pmo 0
 			menuEditorMenuItem13;
 
 		menuItem
 			-l "Delete Edge" 
-			-d 0
-			-sm 0
-			-to 0
 			-c "DeletePolyElements;" 
-			-ob 0
-			-en 1
 			-rp "SW" 
-			-aob 1
-			-pmo 0
 			-i "polyDelEdgeVertex.png" 
 			menuEditorMenuItem14;
 	}

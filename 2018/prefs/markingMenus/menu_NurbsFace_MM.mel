@@ -1,46 +1,26 @@
 
     menuItem
         -l "Duplicate" 
-        -d 0
-        -sm 0
-        -to 0
         -c "duplicateSurfacePresetArgList( \"2\", {\"1\",\"0\"} )" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "duplicateSurface.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Surface Editing" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SurfaceEditingTool" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "surfaceEditor.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "SurfaceEditingToolOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     $item = "";
 
-    $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -aob true -i "out_shaderList.png"`;
+    $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
     menuItem 
         -edit 
         -postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
@@ -48,14 +28,7 @@
 
     menuItem
         -l "Assign New Material" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createAssignNewMaterialTreeLister \"\";" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "render_adskMaterial.png" 
         menuEditorMenuItem4;
 

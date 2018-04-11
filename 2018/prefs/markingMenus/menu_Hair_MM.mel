@@ -1,227 +1,108 @@
 
     menuItem
         -l "Scale Hair" 
-        -d 0
-        -sm 0
-        -to 0
         -c "scaleHairCtx;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "hairScaleTool.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Paint Hair Follicle" 
-        -d 0
-        -sm 0
-        -to 0
         -c "paintHairTool 0;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "hairPaint.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "paintHairTool 1;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem
         -l "Set Start Position" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setSelectedHairCurves \"current\" \"start\";" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "hairStartFromCurrent.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Set Rest Position" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setSelectedHairCurves \"current\" \"rest\";" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "hairRestFromCurrent.png" 
         menuEditorMenuItem5;
 
     menuItem
         -l "PaintFX To Curve" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PaintEffectsToCurve;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "paintFXtoCurve.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "Simulation Method" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem8;
 
         menuItem
             -l "Static" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairStatic" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Passive" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairPassive" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Dynamic" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairDynamic" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
     setParent -m ..;
 
     menuItem
         -l "Point Lock" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem9;
 
         menuItem
             -l "No Attach" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairNoLock" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Base" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairLockBase" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Tip" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairLockTip" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem4;
 
         menuItem
             -l "Both Ends" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairLockBothEnds" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
     setParent -m ..;
 
     menuItem
         -l "Self Collide" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem10;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairSelfCollideOn" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairSelfCollideOff" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -229,38 +110,19 @@
 
     menuItem
         -l "Collide" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem11;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairCollideOn" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairColllideOff" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -268,37 +130,18 @@
 
     menuItem
         -l "Braid" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem7;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_FollicleBraid" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_FollicleNoBraid" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -306,15 +149,8 @@
 
     menuItem
         -l "Add aiStandardHair" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_AiStandardHairToPfxHair" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "hairConvertHairSystem.png" 
         menuEditorMenuItem12;
 

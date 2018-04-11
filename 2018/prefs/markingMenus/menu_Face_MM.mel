@@ -363,7 +363,7 @@ menuEditorMenuItem22;
 
 $item = "";
 
-$menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -aob true -i "out_shaderList.png"`;
+$menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
 menuItem 
 	-edit 
 	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;

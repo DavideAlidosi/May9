@@ -1,142 +1,68 @@
 
     menuItem
         -l "Toon To Polygons" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PaintEffectsToPoly" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "toonToPolygons.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Assign PaintFX  to Outline" 
-        -d 0
-        -sm 0
-        -to 0
         -c "assignBrushToPfxToon" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "toonAssignPfxBrush.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
     menuItem
         -l "Create Modifier" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createLineModifier" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "toonLineModifier.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Paint Attributes" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem4;
 
         menuItem
             -l "Line Width" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setToolSettingsVisible 1;\npaintToonAttribute \"lineWidthMap\" \"Line Width\"" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "toonPaintWidth.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Line Offset" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setToolSettingsVisible 1;\npaintToonAttribute \"lineOffsetMap\" \"Line Offset\" " 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "toonPaintOffset.png" 
             menuEditorMenuItem2;
 
         menuItem
             -l "Line Opacity" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setToolSettingsVisible 1;\npaintToonAttribute \"lineOpacityMap\" \"Line Opacity\" " 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "toonPaintOpacity.png" 
             menuEditorMenuItem3;
 
         menuItem
             -l "Profile Color" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setToolSettingsVisible 1;\npaintToonAttribute \"profileColor\" \"Profile Color\" " 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "toonPaintProfileColor.png" 
             menuEditorMenuItem4;
 
         menuItem
             -l "Crease Color" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setToolSettingsVisible 1;\npaintToonAttribute \"creaseColor\" \"Crease Color\" " 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "toonPaintCreaseColor.png" 
             menuEditorMenuItem5;
 
         menuItem
             -l "Border Color" 
-            -d 0
-            -sm 0
-            -to 0
             -c "setToolSettingsVisible 1;\npaintToonAttribute \"borderColor\" \"Border Color\" " 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "toonPaintBorderColor.png" 
             menuEditorMenuItem6;
 

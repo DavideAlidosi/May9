@@ -1,118 +1,58 @@
 
     menuItem
         -l "PaintFX to Polygon" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PaintEffectsToPoly;" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "paintFXtoPoly.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "PaintEffectsToPolyOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem
         -l "PaintFX To Curve" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PaintEffectsToCurve;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "paintFXtoCurve.png" 
         menuEditorMenuItem3;
 
     menuItem
         -l "Simplify Stroke Curves" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SimplifyStrokePathCurves;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "out_stroke.png" 
         menuEditorMenuItem4;
 
     menuItem
         -l "Create Modifier" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createLineModifier;" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "toonLineModifier.png" 
         menuEditorMenuItem5;
 
     menuItem
         -l "Get Brush" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "paintEffectsBrushesLarge.png" 
         menuEditorMenuItem15;
 
     menuItem
         -l "Surface Snap" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem10;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushSurfaceSnap" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushNoSurfaceSnap" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -120,72 +60,33 @@
 
     menuItem
         -l "Surface Collide" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem11;
 
         menuItem
             -l "Outside" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushSurfaceCollideOutside" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Inside" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushSurfaceCollideInside" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Both" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushSurfaceCollideBoth" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
         menuItem
             -l "separator" 
             -d 1
             -dLabel "separator" 
-            -sm 0
-            -to 0
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             menuEditorMenuItem4;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushNoSurfaceCollide" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem5;
 
@@ -193,37 +94,18 @@
 
     menuItem
         -l "Occupy Attraction" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem13;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushOccupyAttraction" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_BrushNoOccupyAttraction" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
             -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
@@ -233,37 +115,17 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem12;
 
     menuItem
         -l "Get Settings from Selected" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setTemplateToCurrentBrush" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "RS_isolate.png" 
         menuEditorMenuItem6;
 
     menuItem
         -l "Apply Settings to Selected" 
-        -d 0
-        -sm 0
-        -to 0
         -c "copyTemplateBrushToSelected" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "RS_import_layer.png" 
         menuEditorMenuItem7;
 
@@ -271,24 +133,11 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem8;
 
     menuItem
         -l "Reset Brush" 
-        -d 0
-        -sm 0
-        -to 0
         -c "resetBrush" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "RS_disable.png" 
         menuEditorMenuItem9;
 

@@ -1,55 +1,28 @@
 
     menuItem
         -l "Show Manips" 
-        -d 0
-        -sm 0
-        -to 0
         -c "setToolTo ShowManips" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "showManip.png" 
         menuEditorMenuItem1;
 
     menuItem
         -l "Edit Attributes" 
-        -d 0
-        -sm 0
-        -to 0
         -c "AttributeEditor" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "attributes.png" 
         menuEditorMenuItem2;
 
     menuItem
         -l "Extrude" 
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrude" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "polyExtrudeFacet.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "PolyExtrudeOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
 setParent -m ..;

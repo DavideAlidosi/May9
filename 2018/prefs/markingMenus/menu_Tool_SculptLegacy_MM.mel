@@ -6,86 +6,44 @@ string $reflectionDirection = `artPuttyCtx -q -ra $currentCtx`;
 
     menuItem -itl 1 
         -l "X Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artPuttyCtx -e -reflection  true `currentCtx`;\nartPuttyCtx -e -ra \"x\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "x") 
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "Y Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artPuttyCtx -e -reflection  true `currentCtx`;\nartPuttyCtx -e -ra \"y\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "y") 
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Z Axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "artPuttyCtx -e -reflection  true `currentCtx`;\nartPuttyCtx -e -ra \"z\" `currentCtx`;" 
-        -ob 0
         -checkBox ($reflectionDirection == "z") 
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Symmetry" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if ($reflectionCheck == 1) artPuttyCtx -e -reflection  false `currentCtx`; else artPuttyCtx -e -reflection  true `currentCtx`;" 
-        -ob 0
         -checkBox $reflectionCheck 
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "Wireframe" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if ($wfCheck == 1) artPuttyCtx -e -showactive false `currentCtx`; else artPuttyCtx -e -showactive true `currentCtx`;" 
-        -ob 0
         -checkBox $wfCheck 
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem5;
 
 	menuItem -itl 1 
         -l "Auto Smooth" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if ($autoSmoothCheck == 1) artPuttyCtx -e -autosmooth false `currentCtx`; else artPuttyCtx -e -autosmooth true `currentCtx`;" 
-        -ob 0
         -checkBox $autoSmoothCheck 
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem6;
 
 setParent -m ..;

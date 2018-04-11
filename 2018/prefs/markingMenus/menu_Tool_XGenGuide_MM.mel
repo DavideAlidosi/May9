@@ -1,108 +1,52 @@
 
     menuItem -itl 1 
         -l "3D Falloff On" 
-        -d 0
-        -sm 0
-        -to 0
         -c "xgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool;" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem1;
 
     menuItem -itl 1 
         -l "3D Falloff Off" 
-        -d 0
-        -sm 0
-        -to 0
         -c "xgmGuideSculptContext -e -volumetricSel 0 xgmGuideSculptTool;" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Highlight On" 
-        -d 0
-        -sm 0
-        -to 0
         -c "xgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;" 
-        -ob 0
-        -en 1
         -rp "SE" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Highlight Off" 
-        -d 0
-        -sm 0
-        -to 0
         -c "xgmGuideSculptContext -e -selHilight 0 xgmGuideSculptTool;" 
-        -ob 0
-        -en 1
         -rp "SW" 
-        -aob 1
-        -pmo 0
         menuEditorMenuItem4;
 
     menuItem -itl 1 
         -l "Lock Length Off" 
-        -d 0
-        -sm 0
-        -to 0
         -c "xgmGuideSculptContext -e -lockLength 0 `currentCtx`;" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "unlockLength.png" 
         menuEditorMenuItem5;
 
     menuItem -itl 1 
         -l "Lock Length On" 
-        -d 0
-        -sm 0
-        -to 0
         -c "xgmGuideSculptContext -e -lockLength 1 `currentCtx`;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "lockLength.png" 
         menuEditorMenuItem6;
 
     menuItem -itl 1 
         -l "Guides Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "XgGuideTool" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "xgGuideContext.png" 
         menuEditorMenuItem8;
 
     menuItem -itl 1 
         -l "XGen Editor" 
-        -d 0
-        -sm 0
-        -to 0
         -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "xgDEditor.png" 
         menuEditorMenuItem7;
 

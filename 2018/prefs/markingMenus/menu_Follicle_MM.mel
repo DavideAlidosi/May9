@@ -1,156 +1,78 @@
 
     menuItem
         -l "Simulation Method" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
 		-i "out_nucleus.png" 
         menuEditorMenuItem1;
 
         menuItem
             -l "Static" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairStatic" 
-            -ob 0
-            -en 1
             -rp "NE" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Passive" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairPassive" 
-            -ob 0
-            -en 1
             -rp "E" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Dynamic" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairDynamic" 
-            -ob 0
-            -en 1
             -rp "SE" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
     setParent -m ..;
 
     menuItem
         -l "Point Lock" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
 		-i "pinned.png" 
         menuEditorMenuItem2;
 
         menuItem
             -l "No Attach" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairNoLock" 
-            -ob 0
-            -en 1
             -rp "W" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem1;
 
         menuItem
             -l "Base" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairLockBase" 
-            -ob 0
-            -en 1
             -rp "NW" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem2;
 
         menuItem
             -l "Both Ends" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_HairLockBothEnds" 
-            -ob 0
-            -en 1
             -rp "SW" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem3;
 
         menuItem
             -l "Tip" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairLockTip" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
             menuEditorMenuItem4;
 
     setParent -m ..;
 
     menuItem
         -l "Self Collide" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem9;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairSelfCollideOn" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
 			-i "rvViewingPipelineOn.png"
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairSelfCollideOff" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
 			-i "rvViewingPipelineOff.png"
             menuEditorMenuItem2;
 
@@ -158,37 +80,18 @@
 
     menuItem
         -l "Collide" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem10;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairCollideOn" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
 			-i "rvViewingPipelineOn.png"
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_nHairColllideOff" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
 			-i "rvViewingPipelineOff.png"
             menuEditorMenuItem2;
 
@@ -196,38 +99,19 @@
 
     menuItem
         -l "Braid" 
-        -d 0
         -sm 1
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
         menuEditorMenuItem11;
 
         menuItem
             -l "On" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_FollicleBraid" 
-            -ob 0
-            -en 1
             -rp "N" 
-            -aob 1
-            -pmo 0
 			-i "rvViewingPipelineOn.png"
             menuEditorMenuItem1;
 
         menuItem
             -l "Off" 
-            -d 0
-            -sm 0
-            -to 0
             -c "da_FollicleNoBraid" 
-            -ob 0
-            -en 1
-            -aob 1
-            -pmo 0
 			-i "rvViewingPipelineOff.png"
             menuEditorMenuItem2;
 

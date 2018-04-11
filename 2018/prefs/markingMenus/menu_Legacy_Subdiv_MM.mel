@@ -1,145 +1,71 @@
 
     menuItem
         -l "Sculpt" 
-        -d 0
-        -sm 0
-        -to 0
         -c "SculptGeometryToolOptions" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "Sculpt.png" 
         menuEditorMenuItem8;
 
     menuItem
         -l "Paint" 
-        -d 0
-        -sm 0
-        -to 0
         -c "Art3dPaintToolOptions" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "art3dPaint.png" 
         menuEditorMenuItem9;
 
     menuItem
         -l "Paint Select" 
-        -d 0
-        -sm 0
-        -to 0
         -c "ArtPaintSelectToolOptions" 
-        -ob 0
-        -en 1
         -rp "NW" 
-        -aob 1
-        -pmo 0
         -i "artPaintSelect.png" 
         menuEditorMenuItem10;
 
     menuItem
         -l "Clean Topology" 
-        -d 0
-        -sm 0
-        -to 0
         -c "subdCleanTopology" 
-        -ob 0
-        -en 1
         -rp "S" 
-        -aob 1
-        -pmo 0
         -i "subdivCleanToplogy.png" 
         menuEditorMenuItem11;
 
     menuItem
         -l "Bevel" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_LegacySubdivPolyMode;\nBevelPolygon;" 
-        -ob 0
-        -en 1
         -rp "E" 
-        -aob 1
-        -pmo 0
         -i "polyBevel.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "BevelPolygonOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem17;
 
     menuItem
         -l "Multi Cut Tool" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_LegacySubdivPolyMode;\ndR_multiCutTool" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "multiCut_NEX32.png" 
         menuEditorMenuItem12;
 
     menuItem
         -l "Mirror Geometry" 
-        -d 0
-        -sm 0
-        -to 0
         -c "da_LegacySubdivPolyMode;\nMirrorPolygonGeometry;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "polyMirrorGeometry.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "MirrorPolygonGeometryOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem15;
 
     menuItem
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem13;
 
     menuItem
         -l "Assign New Material" 
-        -d 0
-        -sm 0
-        -to 0
         -c "createAssignNewMaterialTreeLister \"\";" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "render_adskMaterial.png" 
         menuEditorMenuItem20;
 
@@ -153,60 +79,28 @@
         -l "separator" 
         -d 1
         -dLabel "separator" 
-        -sm 0
-        -to 0
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem22;
 
     menuItem
         -l "Convert to NURBS" 
-        -d 0
-        -sm 0
-        -to 0
         -c "doSubdivToNurbs( {\"1\",\"1\",\"0\"} );\nhyperShade -assign initialShadingGroup;" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "subdivToNurbs.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "SubdivToNURBSOptions;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem14;
 
     menuItem
         -l "Convert to Poly" 
-        -d 0
-        -sm 0
-        -to 0
         -c "TesselateSubdivSurface" 
-        -ob 0
-        -en 1
-        -aob 1
-        -pmo 0
         -i "subdivTessellate.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -d 0
-        -sm 0
-        -to 0
         -c "TesselateSubdivSurfaceOptions" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem16;
 
 setParent -m ..;

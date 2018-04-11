@@ -1,54 +1,27 @@
 
     menuItem -itl 1 
         -l "Sculpt Guides" 
-        -d 0
-        -sm 0
-        -to 0
         -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
-        -ob 0
-        -en 1
         -rp "N" 
-        -aob 1
-        -pmo 0
         -i "xgGuideSculptTool.png" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -d 0
-        -sm 0
-        -to 0
         -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
         -ob 1
-        -en 1
-        -aob 1
-        -pmo 0
         menuEditorMenuItem2;
 
     menuItem -itl 1 
         -l "Mirror Guides X-axis" 
-        -d 0
-        -sm 0
-        -to 0
         -c "xgmFlipGuides( python(\"xgui.createDescriptionEditor(False).currentDescription()\") )" 
-        -ob 0
-        -en 1
         -rp "W" 
-        -aob 1
-        -pmo 0
         -i "xgFlipGuides.png" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
         -l "Select Description" 
-        -d 0
-        -sm 0
-        -to 0
         -c "python(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\");\npython(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\")" 
-        -ob 0
-        -en 1
         -rp "NE" 
-        -aob 1
-        -pmo 0
         -i "xgSelectionToggle.png" 
         menuEditorMenuItem4;
 
