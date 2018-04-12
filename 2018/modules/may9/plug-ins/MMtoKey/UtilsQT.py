@@ -10,10 +10,9 @@ except ImportError:
     from shiboken2 import wrapInstance
     from PySide2.QtUiTools import QUiLoader
 from maya import cmds, OpenMayaUI as omui
-import Version
 
 
-version = "1.1"
+version = "1.1.1"
 parent = cmds.columnLayout(p=cmds.window())		# empty hidden layout for temp parenting
 location = os.path.dirname(__file__)
 
@@ -52,6 +51,7 @@ def removeWidgets(*widget_names):
 
 def about():
     """show parent info"""
+    import Version
     window = QMainWindow(wrapWidget())
     reloadWidget(Version.name + "About", window)
     window.setWindowTitle("About")

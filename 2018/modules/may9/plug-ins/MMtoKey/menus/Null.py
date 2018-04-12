@@ -1,5 +1,5 @@
-from MMtoKey.Engine import Menu
+from maya import cmds
 
 
-def run(*args):
-    Menu.hide()
+def run(parent):
+    cmds.deleteUI(parent)

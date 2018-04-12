@@ -148,16 +148,17 @@ class UserData(object):
         """store data into file"""
         cls._createDirs()
         pickle.dump((protocol, preferences, nodes), open(location + "/data/data.mm", "wb"))
-        cmds.warning(" saved")
+        cmds.warning("saved")
 
     @staticmethod
     def _createDirs():
         """create default directories for data"""
-        for directory in location + "/menus", location + "/commands":
+        for directory in location + "/menus", location + "/commands", location + "/data":
             if os.path.isfile(directory):
                 os.remove(directory)
             if not os.path.isdir(directory):
                 os.makedirs(directory)
+        for directory in location + "/menus", location + "/commands":
             if not os.path.isfile(directory + "/__init__.py"):
                 open(directory + "/__init__.py", "w").close()
 
