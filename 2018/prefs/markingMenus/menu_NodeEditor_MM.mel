@@ -1,199 +1,199 @@
 
-    menuItem
-        -l "Select Time Node" 
-        -c "select time1" 
-        -rp "N" 
-        -i "time.svg" 
-        menuEditorMenuItem5;
+menuItem
+-l "Select Time Node" 
+-c "select time1" 
+-rp "N" 
+-i "time.svg" 
+menuEditorMenuItem5;
 
-    menuItem
-        -l "Output Nodes" 
-        -sm 1
-        -rp "E" 
-        -i "out_dagNode.png" 
-        menuEditorMenuItem10;
+menuItem
+-l "Output Nodes" 
+-sm 1
+-rp "E" 
+-i "out_dagNode.png" 
+menuEditorMenuItem10;
 
-        menuItem
-            -l "Enable All" 
-            -c "enableFuture" 
-            -rp "E" 
-            -i "enabled.png" 
-            menuEditorMenuItem1;
+menuItem
+-l "Enable All" 
+-c "enableFuture" 
+-rp "E" 
+-i "enabled.png" 
+menuEditorMenuItem1;
 
-        menuItem
-            -l "Disable All" 
-            -c "disableFuture" 
-            -rp "NE" 
-            -i "RS_disable.png" 
-            menuEditorMenuItem2;
+menuItem
+-l "Disable All" 
+-c "disableFuture" 
+-rp "NE" 
+-i "RS_disable.png" 
+menuEditorMenuItem2;
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem
-        -l "Create Node" 
-        -c "createNodeWindow" 
-        -rp "SE" 
-        -i "createNode.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Create Node" 
+-c "createNodeWindow" 
+-rp "SE" 
+-i "createNode.png" 
+menuEditorMenuItem1;
 
-    menuItem
-        -l "Delete Unused Nodes" 
-        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
-        -rp "S" 
-        -i "deleteActive.png" 
-        menuEditorMenuItem8;
+menuItem
+-l "Delete Unused Nodes" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
+-rp "S" 
+-i "deleteActive.png" 
+menuEditorMenuItem8;
 
-    menuItem
-        -l "Select All Nodes" 
-        -c "select `listHistory -ac`" 
-        -rp "W" 
-        -i "createBinFromSelectedNodes.png" 
-        menuEditorMenuItem9;
+menuItem
+-l "Select All Nodes" 
+-c "select `listHistory -ac`" 
+-rp "W" 
+-i "createBinFromSelectedNodes.png" 
+menuEditorMenuItem9;
 
-    menuItem
-        -l "Duplicate Network" 
-        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
-        -rp "NE" 
-        -i "duplicateReference.png" 
-        menuEditorMenuItem12;
+menuItem
+-l "Duplicate Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
+-rp "NE" 
+-i "duplicateReference.png" 
+menuEditorMenuItem12;
 
-    menuItem
-        -l "Import Network" 
-        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
-        -rp "NW" 
-        -i "greasePencilImport.png" 
-        menuEditorMenuItem13;
+menuItem
+-l "Import Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
+-rp "NW" 
+-i "greasePencilImport.png" 
+menuEditorMenuItem13;
 
-    menuItem
-        -l "Export Network" 
-        -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
-        -rp "SW" 
-        -i "greasePencilExport.png" 
-        menuEditorMenuItem14;
+menuItem
+-l "Export Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
+-rp "SW" 
+-i "greasePencilExport.png" 
+menuEditorMenuItem14;
 
-	if (`pluginInfo -q -l contextConnector` == 1){
-		menuItem
-		-l "Context Connector"
-		-c "da_ContextConnector"
-		-i "out_geoConnectable.png"
-		-stp "mel"
-		menuEditorMenuItem6;
-	}else{
-		menuItem
-		-l "Connection Editor"
-		-c "ConnectionEditor"
-		-i "out_list.png"
-		-stp "mel"
-		menuEditorMenuItem6;
-	}
+if (`pluginInfo -q -l contextConnector` == 1){
+menuItem
+-l "Context Connector"
+-c "da_ContextConnector"
+-i "out_geoConnectable.png"
+-stp "mel"
+menuEditorMenuItem6;
+}else{
+menuItem
+-l "Connection Editor"
+-c "ConnectionEditor"
+-i "out_list.png"
+-stp "mel"
+menuEditorMenuItem6;
+}
 
-    menuItem
-        -l "Expression Editor" 
-        -c "ExpressionEditor" 
-        -i "out_expression.png" 
-        menuEditorMenuItem2;
+menuItem
+-l "Expression Editor" 
+-c "ExpressionEditor" 
+-i "out_expression.png" 
+menuEditorMenuItem2;
 
-    menuItem
-        -l "separator" 
-        -d 1
-        -dLabel "separator" 
-        menuEditorMenuItem7;
+menuItem
+-l "separator" 
+-d 1
+-dLabel "separator" 
+menuEditorMenuItem7;
 
-    menuItem
-        -l "Create Common Nodes" 
-        -sm 1
-        -i "nodeGrapherAddNodes.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Create Common Nodes" 
+-sm 1
+-i "nodeGrapherAddNodes.png" 
+menuEditorMenuItem3;
 
-        menuItem
-            -l "ramp" 
-            -c "createNode ramp" 
-            -i "out_ramp.png" 
-            menuEditorMenuItem11;
+menuItem
+-l "ramp" 
+-c "createNode ramp" 
+-i "out_ramp.png" 
+menuEditorMenuItem11;
 
-        menuItem
-            -l "samplerInfo" 
-            -c "createNode samplerInfo" 
-            -i "out_samplerInfo.png" 
-            menuEditorMenuItem8;
+menuItem
+-l "samplerInfo" 
+-c "createNode samplerInfo" 
+-i "out_samplerInfo.png" 
+menuEditorMenuItem8;
 
-        menuItem
-            -l "separator" 
-            -d 1
-            -dLabel "separator" 
-            menuEditorMenuItem5;
+menuItem
+-l "separator" 
+-d 1
+-dLabel "separator" 
+menuEditorMenuItem5;
 
-        menuItem
-            -l "vectorProduct" 
-            -c "createNode vectorProduct;" 
-            -i "render_vectorProduct.png" 
-            menuEditorMenuItem1;
+menuItem
+-l "vectorProduct" 
+-c "createNode vectorProduct;" 
+-i "render_vectorProduct.png" 
+menuEditorMenuItem1;
 
-        menuItem
-            -l "decomposeMatrix" 
-            -c "createNode decomposeMatrix;" 
-            -i "out_decomposeMatrix.png" 
-            menuEditorMenuItem2;
+menuItem
+-l "decomposeMatrix" 
+-c "createNode decomposeMatrix;" 
+-i "out_decomposeMatrix.png" 
+menuEditorMenuItem2;
 
-        menuItem
-            -l "multiplyDivide" 
-            -c "createNode multiplyDivide;" 
-            -i "render_multiplyDivide.png" 
-            menuEditorMenuItem3;
+menuItem
+-l "multiplyDivide" 
+-c "createNode multiplyDivide;" 
+-i "render_multiplyDivide.png" 
+menuEditorMenuItem3;
 
-        menuItem
-            -l "plusMinusAverage" 
-            -c "createNode plusMinusAverage" 
-            -i "out_plusMinusAverage.png" 
-            menuEditorMenuItem6;
+menuItem
+-l "plusMinusAverage" 
+-c "createNode plusMinusAverage" 
+-i "out_plusMinusAverage.png" 
+menuEditorMenuItem6;
 
-        menuItem
-            -l "reverse" 
-            -c "createNode reverse" 
-            -i "out_reverse.png" 
-            menuEditorMenuItem7;
+menuItem
+-l "reverse" 
+-c "createNode reverse" 
+-i "out_reverse.png" 
+menuEditorMenuItem7;
 
-        menuItem
-            -l "chooser" 
-            -c "createNode chooser" 
-            -i "render_chooser.png" 
-            menuEditorMenuItem9;
+menuItem
+-l "chooser" 
+-c "createNode chooser" 
+-i "render_chooser.png" 
+menuEditorMenuItem9;
 
-        menuItem
-            -l "blendColors" 
-            -c "createNode blendColors" 
-            -i "out_blendColors.png" 
+menuItem
+-l "blendColors" 
+-c "createNode blendColors" 
+-i "out_blendColors.png" 
 
-        menuItem
-            -l "blendTwoAttr" 
-            -c "createNode blendTwoAttr" 
-            -i "render_blendTwoAttr.png" 
-            menuEditorMenuItem10;
+menuItem
+-l "blendTwoAttr" 
+-c "createNode blendTwoAttr" 
+-i "render_blendTwoAttr.png" 
+menuEditorMenuItem10;
 
-        menuItem
-            -l "condition" 
-            -c "createNode condition" 
-            -i "out_condition.png" 
+menuItem
+-l "condition" 
+-c "createNode condition" 
+-i "out_condition.png" 
 
-        menuItem
-            -l "choice" 
-            -c "createNode choice" 
-            -i "render_choice.png" 
-            menuEditorMenuItem12;
+menuItem
+-l "choice" 
+-c "createNode choice" 
+-i "render_choice.png" 
+menuEditorMenuItem12;
 
-        menuItem
-            -l "separator" 
-            -d 1
-            -dLabel "separator" 
-            menuEditorMenuItem13;
+menuItem
+-l "separator" 
+-d 1
+-dLabel "separator" 
+menuEditorMenuItem13;
 
-        menuItem
-            -l "instancer" 
-            -c "createNode instancer" 
-            -i "out_instancer.png" 
-            menuEditorMenuItem4;
+menuItem
+-l "instancer" 
+-c "createNode instancer" 
+-i "out_instancer.png" 
+menuEditorMenuItem4;
 
-    setParent -m ..;
+setParent -m ..;
 
 setParent -m ..;
 

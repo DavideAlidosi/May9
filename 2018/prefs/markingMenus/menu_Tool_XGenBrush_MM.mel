@@ -1,222 +1,222 @@
 
-    menuItem -itl 1 
-        -l "Mirror Off" 
-        -c "da_XGenBrushMangement_MirrorOff" 
-        -rp "E" 
-        menuEditorMenuItem9;
+menuItem -itl 1 
+-l "Mirror Off" 
+-c "da_XGenBrushMangement_MirrorOff" 
+-rp "E" 
+menuEditorMenuItem9;
 
-    menuItem -itl 1 
-        -l "Mirror Z" 
-        -c "da_XGenBrushMangement_MirrorZ" 
-        -rp "SE" 
-        menuEditorMenuItem10;
+menuItem -itl 1 
+-l "Mirror Z" 
+-c "da_XGenBrushMangement_MirrorZ" 
+-rp "SE" 
+menuEditorMenuItem10;
 
-    menuItem -itl 1 
-        -l "Mirror Y" 
-        -c "da_XGenBrushMangement_MirrorY" 
-        -rp "S" 
-        menuEditorMenuItem11;
+menuItem -itl 1 
+-l "Mirror Y" 
+-c "da_XGenBrushMangement_MirrorY" 
+-rp "S" 
+menuEditorMenuItem11;
 
-    menuItem -itl 1 
-        -l "Mirror X" 
-        -c "da_XGenBrushMangement_MirrorX" 
-        -rp "SW" 
-        menuEditorMenuItem12;
+menuItem -itl 1 
+-l "Mirror X" 
+-c "da_XGenBrushMangement_MirrorX" 
+-rp "SW" 
+menuEditorMenuItem12;
 
-    menuItem -itl 1 
-        -l "Length" 
-        -c "XgmSetLengthBrushTool" 
-        -rp "N" 
-        -i "xgIG_length.png" 
-        menuEditorMenuItem4;
+menuItem -itl 1 
+-l "Length" 
+-c "XgmSetLengthBrushTool" 
+-rp "N" 
+-i "xgIG_length.png" 
+menuEditorMenuItem4;
 
-    menuItem -itl 1 
-        -c "XgmSetLengthBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem5;
+menuItem -itl 1 
+-c "XgmSetLengthBrushToolOption" 
+-ob 1
+menuEditorMenuItem5;
 
-    menuItem -itl 1 
-        -l "Comb" 
-        -c "XgmSetCombBrushTool" 
-        -rp "W" 
-        -i "xgIG_comb.png" 
-        menuEditorMenuItem13;
+menuItem -itl 1 
+-l "Comb" 
+-c "XgmSetCombBrushTool" 
+-rp "W" 
+-i "xgIG_comb.png" 
+menuEditorMenuItem13;
 
-    menuItem -itl 1 
-        -c "XgmSetCombBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem14;
+menuItem -itl 1 
+-c "XgmSetCombBrushToolOption" 
+-ob 1
+menuEditorMenuItem14;
 
-    menuItem -itl 1 
-        -l "Freeze" 
-        -c "XgmSetFreezeBrushTool" 
-        -rp "NE" 
-        -i "xgIG_freeze.png" 
-        menuEditorMenuItem15;
+menuItem -itl 1 
+-l "Freeze" 
+-c "XgmSetFreezeBrushTool" 
+-rp "NE" 
+-i "xgIG_freeze.png" 
+menuEditorMenuItem15;
 
-    menuItem -itl 1 
-        -c "XgmSetFreezeBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem16;
+menuItem -itl 1 
+-c "XgmSetFreezeBrushToolOption" 
+-ob 1
+menuEditorMenuItem16;
 
-    menuItem -itl 1 
-        -l "Grab" 
-        -c "XgmSetGrabBrushTool" 
-        -rp "NW" 
-        -i "xgIG_grab.png" 
-        menuEditorMenuItem8;
+menuItem -itl 1 
+-l "Grab" 
+-c "XgmSetGrabBrushTool" 
+-rp "NW" 
+-i "xgIG_grab.png" 
+menuEditorMenuItem8;
 
-    menuItem -itl 1 
-        -c "XgmSetGrabBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem17;
+menuItem -itl 1 
+-c "XgmSetGrabBrushToolOption" 
+-ob 1
+menuEditorMenuItem17;
 
-    menuItem -itl 1 
-        -l "Mesh Collide" 
-        -sm 1
-        menuEditorMenuItem1;
+menuItem -itl 1 
+-l "Mesh Collide" 
+-sm 1
+menuEditorMenuItem1;
 
-        menuItem -itl 1 
-            -l "On" 
-            -c "da_XGenBrushMangement_CollisionOn" 
-			-i "rvViewingPipelineOn.png"
-            menuEditorMenuItem1;
+menuItem -itl 1 
+-l "On" 
+-c "da_XGenBrushMangement_CollisionOn" 
+-i "rvViewingPipelineOn.png"
+menuEditorMenuItem1;
 
-        menuItem -itl 1 
-            -l "Off" 
-            -c "da_XGenBrushMangement_CollisionOff" 
-			-i "rvViewingPipelineOff.png"
-            menuEditorMenuItem3;
+menuItem -itl 1 
+-l "Off" 
+-c "da_XGenBrushMangement_CollisionOff" 
+-i "rvViewingPipelineOff.png"
+menuEditorMenuItem3;
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem -itl 1 
-        -l "Groom Editor" 
-        -c "XgCreateIgSplineEditor" 
-        -i "xgIG_editor.png" 
-        menuEditorMenuItem7;
+menuItem -itl 1 
+-l "Groom Editor" 
+-c "XgCreateIgSplineEditor" 
+-i "xgIG_editor.png" 
+menuEditorMenuItem7;
 
-    menuItem -itl 1 
-        -l "separator" 
-        -d 1
-        -dLabel "separator" 
-        menuEditorMenuItem2;
+menuItem -itl 1 
+-l "separator" 
+-d 1
+-dLabel "separator" 
+menuEditorMenuItem2;
 
-    menuItem -itl 1 
-        -l "Density" 
-        -c "XgmSetDensityBrushTool" 
-        -i "xgIG_density.png" 
-        menuEditorMenuItem6;
+menuItem -itl 1 
+-l "Density" 
+-c "XgmSetDensityBrushTool" 
+-i "xgIG_density.png" 
+menuEditorMenuItem6;
 
-    menuItem -itl 1 
-        -c "XgmSetDensityBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem3;
+menuItem -itl 1 
+-c "XgmSetDensityBrushToolOption" 
+-ob 1
+menuEditorMenuItem3;
 
-    menuItem -itl 1 
-        -l "Place" 
-        -c "XgmSetPlaceBrushTool" 
-        -i "xgIG_place.png" 
-        menuEditorMenuItem18;
+menuItem -itl 1 
+-l "Place" 
+-c "XgmSetPlaceBrushTool" 
+-i "xgIG_place.png" 
+menuEditorMenuItem18;
 
-    menuItem -itl 1 
-        -c "XgmSetPlaceBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem19;
+menuItem -itl 1 
+-c "XgmSetPlaceBrushToolOption" 
+-ob 1
+menuEditorMenuItem19;
 
-    menuItem -itl 1 
-        -l "Cut" 
-        -c "XgmSetCutBrushTool" 
-        -i "xgIG_cut.png" 
-        menuEditorMenuItem20;
+menuItem -itl 1 
+-l "Cut" 
+-c "XgmSetCutBrushTool" 
+-i "xgIG_cut.png" 
+menuEditorMenuItem20;
 
-    menuItem -itl 1 
-        -c "XgmSetCutBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem21;
+menuItem -itl 1 
+-c "XgmSetCutBrushToolOption" 
+-ob 1
+menuEditorMenuItem21;
 
-    menuItem -itl 1 
-        -l "Width" 
-        -c "XgmSetWidthBrushTool" 
-        -i "xgIG_width.png" 
-        menuEditorMenuItem22;
+menuItem -itl 1 
+-l "Width" 
+-c "XgmSetWidthBrushTool" 
+-i "xgIG_width.png" 
+menuEditorMenuItem22;
 
-    menuItem -itl 1 
-        -c "XgmSetWidthBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem23;
+menuItem -itl 1 
+-c "XgmSetWidthBrushToolOption" 
+-ob 1
+menuEditorMenuItem23;
 
-    menuItem -itl 1 
-        -l "Twist" 
-        -c "XgmSetDirectionBrushTool" 
-        -i "xgIG_twist.png" 
-        menuEditorMenuItem44;
+menuItem -itl 1 
+-l "Twist" 
+-c "XgmSetDirectionBrushTool" 
+-i "xgIG_twist.png" 
+menuEditorMenuItem44;
 
-    menuItem -itl 1 
-        -c "XgmSetDirectionBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem25;
+menuItem -itl 1 
+-c "XgmSetDirectionBrushToolOption" 
+-ob 1
+menuEditorMenuItem25;
 
-    menuItem -itl 1 
-        -l "Smooth" 
-        -c "XgmSetSmoothBrushTool" 
-        -i "xgIG_smooth.png" 
-        menuEditorMenuItem24;
+menuItem -itl 1 
+-l "Smooth" 
+-c "XgmSetSmoothBrushTool" 
+-i "xgIG_smooth.png" 
+menuEditorMenuItem24;
 
-    menuItem -itl 1 
-        -c "XgmSetSmoothBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem27;
+menuItem -itl 1 
+-c "XgmSetSmoothBrushToolOption" 
+-ob 1
+menuEditorMenuItem27;
 
-    menuItem -itl 1 
-        -l "Noise" 
-        -c "XgmSetNoiseBrushTool" 
-        -i "xgIG_noise.png" 
-        menuEditorMenuItem26;
+menuItem -itl 1 
+-l "Noise" 
+-c "XgmSetNoiseBrushTool" 
+-i "xgIG_noise.png" 
+menuEditorMenuItem26;
 
-    menuItem -itl 1 
-        -c "XgmSetNoiseBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem29;
+menuItem -itl 1 
+-c "XgmSetNoiseBrushToolOption" 
+-ob 1
+menuEditorMenuItem29;
 
-    menuItem -itl 1 
-        -l "Clump" 
-        -c "XgmSetClumpBrushTool" 
-        -i "xgIG_clump.png" 
-        menuEditorMenuItem28;
+menuItem -itl 1 
+-l "Clump" 
+-c "XgmSetClumpBrushTool" 
+-i "xgIG_clump.png" 
+menuEditorMenuItem28;
 
-    menuItem -itl 1 
-        -c "XgmSetClumpBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem31;
+menuItem -itl 1 
+-c "XgmSetClumpBrushToolOption" 
+-ob 1
+menuEditorMenuItem31;
 
-    menuItem -itl 1 
-        -l "Part" 
-        -c "XgmSetPartBrushTool" 
-        -i "xgIG_part.png" 
-        menuEditorMenuItem30;
+menuItem -itl 1 
+-l "Part" 
+-c "XgmSetPartBrushTool" 
+-i "xgIG_part.png" 
+menuEditorMenuItem30;
 
-    menuItem -itl 1 
-        -c "XgmSetPartBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem34;
+menuItem -itl 1 
+-c "XgmSetPartBrushToolOption" 
+-ob 1
+menuEditorMenuItem34;
 
-    menuItem -itl 1 
-        -l "separator" 
-        -d 1
-        -dLabel "separator" 
-        menuEditorMenuItem32;
+menuItem -itl 1 
+-l "separator" 
+-d 1
+-dLabel "separator" 
+menuEditorMenuItem32;
 
-    menuItem -itl 1 
-        -l "Select" 
-        -c "XgmSetSelectBrushTool" 
-        -i "xgIG_select.png" 
-        menuEditorMenuItem33;
+menuItem -itl 1 
+-l "Select" 
+-c "XgmSetSelectBrushTool" 
+-i "xgIG_select.png" 
+menuEditorMenuItem33;
 
-    menuItem -itl 1 
-        -c "XgmSetSelectBrushToolOption" 
-        -ob 1
-        menuEditorMenuItem35;
+menuItem -itl 1 
+-c "XgmSetSelectBrushToolOption" 
+-ob 1
+menuEditorMenuItem35;
 
 setParent -m ..;
 

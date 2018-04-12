@@ -1,190 +1,190 @@
 
-    menuItem
-        -l "Attach" 
-        -c "AttachCurve" 
-        -rp "S" 
-        -i "attachCurves.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Attach" 
+-c "AttachCurve" 
+-rp "S" 
+-i "attachCurves.png" 
+menuEditorMenuItem1;
 
-    menuItem
-        -l "Bevel Plus" 
-        -c "BevelPlus;" 
-        -rp "E" 
-        -i "bevelPlus.png" 
-        menuEditorMenuItem2;
+menuItem
+-l "Bevel Plus" 
+-c "BevelPlus;" 
+-rp "E" 
+-i "bevelPlus.png" 
+menuEditorMenuItem2;
 
-    menuItem
-        -c "BevelPlusOptions;" 
-        -ob 1
-        menuEditorMenuItem3;
+menuItem
+-c "BevelPlusOptions;" 
+-ob 1
+menuEditorMenuItem3;
 
-    menuItem
-        -l "Offset Curve On Surface" 
-        -c "offsetCosPreset(1,0,2,1,0,1,0.01,5)" 
-        -rp "NE" 
-        -i "offsetCos.png" 
-        menuEditorMenuItem4;
+menuItem
+-l "Offset Curve On Surface" 
+-c "offsetCosPreset(1,0,2,1,0,1,0.01,5)" 
+-rp "NE" 
+-i "offsetCos.png" 
+menuEditorMenuItem4;
 
-    menuItem
-        -c "OffsetCurveOnSurfaceOptions" 
-        -ob 1
-        menuEditorMenuItem5;
+menuItem
+-c "OffsetCurveOnSurfaceOptions" 
+-ob 1
+menuEditorMenuItem5;
 
-    menuItem
-        -l "Surface from Curves" 
-        -sm 1
-        -rp "W" 
-        -i "skin.png" 
-        menuEditorMenuItem6;
+menuItem
+-l "Surface from Curves" 
+-sm 1
+-rp "W" 
+-i "skin.png" 
+menuEditorMenuItem6;
 
-        menuItem
-            -l "Loft" 
-            -c "Loft" 
-            -rp "NW" 
-            -i "skin.png" 
-            menuEditorMenuItem1;
+menuItem
+-l "Loft" 
+-c "Loft" 
+-rp "NW" 
+-i "skin.png" 
+menuEditorMenuItem1;
 
-        menuItem
-            -c "LoftOptions" 
-            -ob 1
-            menuEditorMenuItem2;
+menuItem
+-c "LoftOptions" 
+-ob 1
+menuEditorMenuItem2;
 
-        menuItem
-            -l "Freeform Fillet" 
-            -c "freeFormFilletPreset(1,0,0.5,0,0.01,0.1)" 
-            -rp "W" 
-            -i "filletFreeform_S.png" 
-            menuEditorMenuItem7;
+menuItem
+-l "Freeform Fillet" 
+-c "freeFormFilletPreset(1,0,0.5,0,0.01,0.1)" 
+-rp "W" 
+-i "filletFreeform_S.png" 
+menuEditorMenuItem7;
 
-        menuItem
-            -c "FreeformFilletOptions" 
-            -ob 1
-            menuEditorMenuItem8;
+menuItem
+-c "FreeformFilletOptions" 
+-ob 1
+menuEditorMenuItem8;
 
-        menuItem
-            -l "Fillet Blend Tool" 
-            -c "doFilletBlendArgList 2 {\"1\", \"1\", \"1\", \"0\", \"0\", \"0\", \"0.1\", \"0.1\", \"0\", \"1\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"1\", \"0\" }" 
-            -rp "SW" 
-            -i "blendSurface.png" 
-            menuEditorMenuItem9;
+menuItem
+-l "Fillet Blend Tool" 
+-c "doFilletBlendArgList 2 {\"1\", \"1\", \"1\", \"0\", \"0\", \"0\", \"0.1\", \"0.1\", \"0\", \"1\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"1\", \"0\" }" 
+-rp "SW" 
+-i "blendSurface.png" 
+menuEditorMenuItem9;
 
-        menuItem
-            -c "FilletBlendToolOptions" 
-            -ob 1
-            menuEditorMenuItem10;
+menuItem
+-c "FilletBlendToolOptions" 
+-ob 1
+menuEditorMenuItem10;
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem
-        -l "Reverse" 
-        -c "ReverseCurve;" 
-        -rp "NW" 
-        -i "reverse.png" 
-        menuEditorMenuItem9;
+menuItem
+-l "Reverse" 
+-c "ReverseCurve;" 
+-rp "NW" 
+-i "reverse.png" 
+menuEditorMenuItem9;
 
-    menuItem
-        -c "ReverseCurveOptions;" 
-        -ob 1
-        menuEditorMenuItem10;
+menuItem
+-c "ReverseCurveOptions;" 
+-ob 1
+menuEditorMenuItem10;
 
-    menuItem
-        -l "Open/Close" 
-        -c "OpenCloseCurve" 
-        -rp "SW" 
-        -i "closeGeom.png" 
-        menuEditorMenuItem11;
+menuItem
+-l "Open/Close" 
+-c "OpenCloseCurve" 
+-rp "SW" 
+-i "closeGeom.png" 
+menuEditorMenuItem11;
 
-    menuItem
-        -c "OpenCloseCurveOptions" 
-        -ob 1
-        menuEditorMenuItem12;
+menuItem
+-c "OpenCloseCurveOptions" 
+-ob 1
+menuEditorMenuItem12;
 
-    menuItem
-        -l "Rebuild" 
-        -c "RebuildCurveOptions" 
-        -rp "N" 
-        -i "rebuildCurve.png" 
-        menuEditorMenuItem13;
+menuItem
+-l "Rebuild" 
+-c "RebuildCurveOptions" 
+-rp "N" 
+-i "rebuildCurve.png" 
+menuEditorMenuItem13;
 
-    menuItem
-        -l "Extend Curve On Surface" 
-        -c "extendCurvePresetArgList( \"2\", { \"1\", \"1\",\"0\",\"2\",\"0.1\",\"0\",\"0\", \"0\", \"0\",\"1\",\"1\",\"1\" } )" 
-        -rp "SE" 
-        -i "extendCos.png" 
-        menuEditorMenuItem7;
+menuItem
+-l "Extend Curve On Surface" 
+-c "extendCurvePresetArgList( \"2\", { \"1\", \"1\",\"0\",\"2\",\"0.1\",\"0\",\"0\", \"0\", \"0\",\"1\",\"1\",\"1\" } )" 
+-rp "SE" 
+-i "extendCos.png" 
+menuEditorMenuItem7;
 
-    menuItem
-        -c "ExtendCurveOnSurfaceOptions" 
-        -ob 1
-        menuEditorMenuItem15;
+menuItem
+-c "ExtendCurveOnSurfaceOptions" 
+-ob 1
+menuEditorMenuItem15;
 
-    menuItem
-        -l "Paint FX to Curves" 
-        -c "AttachBrushToCurves;" 
-        -i "paintFXtoCurve.png" 
-        menuEditorMenuItem18;
+menuItem
+-l "Paint FX to Curves" 
+-c "AttachBrushToCurves;" 
+-i "paintFXtoCurve.png" 
+menuEditorMenuItem18;
 
-    menuItem
-        -l "Curves to Polygons" 
-        -c "da_curveToPoly" 
-        -i "da_curveToPoly.png" 
-        menuEditorMenuItem19;
+menuItem
+-l "Curves to Polygons" 
+-c "da_curveToPoly" 
+-i "da_curveToPoly.png" 
+menuEditorMenuItem19;
 
-    menuItem
-        -l "separator" 
-        -d 1
-        -dLabel "separator" 
-        menuEditorMenuItem20;
+menuItem
+-l "separator" 
+-d 1
+-dLabel "separator" 
+menuEditorMenuItem20;
 
-    menuItem
-        -l "Emit Particle From CV" 
-        -c "NEmitFromObject;" 
-        -i "emitter.png" 
-        menuEditorMenuItem21;
+menuItem
+-l "Emit Particle From CV" 
+-c "NEmitFromObject;" 
+-i "emitter.png" 
+menuEditorMenuItem21;
 
-    menuItem
-        -c "NEmitFromObjectOptions;" 
-        -ob 1
-        menuEditorMenuItem14;
+menuItem
+-c "NEmitFromObjectOptions;" 
+-ob 1
+menuEditorMenuItem14;
 
-    menuItem
-        -l "Particle Style" 
-		-i "out_particle.png" 
-        -sm 1
-        menuEditorMenuItem23;
+menuItem
+-l "Particle Style" 
+-i "out_particle.png" 
+-sm 1
+menuEditorMenuItem23;
 
-        menuItem
-            -l "Points" 
-            -c "optionVar -stringValue NParticleStyle \"Points\";" 
-			-i "nPartPoints.png"
-            -rp "N" 
-            menuEditorMenuItem1;
+menuItem
+-l "Points" 
+-c "optionVar -stringValue NParticleStyle \"Points\";" 
+-i "nPartPoints.png"
+-rp "N" 
+menuEditorMenuItem1;
 
-        menuItem
-            -l "Balls" 
-            -c "optionVar -stringValue NParticleStyle \"Balls\";" 
-			-i "nPartBalls.png"
-            menuEditorMenuItem2;
+menuItem
+-l "Balls" 
+-c "optionVar -stringValue NParticleStyle \"Balls\";" 
+-i "nPartBalls.png"
+menuEditorMenuItem2;
 
-        menuItem
-            -l "Cloud" 
-            -c "optionVar -stringValue NParticleStyle \"Cloud\";" 
-			-i "nPartCloud.png"
-            menuEditorMenuItem3;
+menuItem
+-l "Cloud" 
+-c "optionVar -stringValue NParticleStyle \"Cloud\";" 
+-i "nPartCloud.png"
+menuEditorMenuItem3;
 
-        menuItem
-            -l "ThickCloud" 
-            -c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
-			-i "nPartThickCloud.png"
-            menuEditorMenuItem4;
+menuItem
+-l "ThickCloud" 
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
+-i "nPartThickCloud.png"
+menuEditorMenuItem4;
 
-        menuItem
-            -l "Water" 
-            -c "optionVar -stringValue NParticleStyle \"Water\";" 
-			-i "nPartWater.png"
-            menuEditorMenuItem5;
+menuItem
+-l "Water" 
+-c "optionVar -stringValue NParticleStyle \"Water\";" 
+-i "nPartWater.png"
+menuEditorMenuItem5;
 
-    setParent -m ..;
+setParent -m ..;
 
 setParent -m ..;
 
