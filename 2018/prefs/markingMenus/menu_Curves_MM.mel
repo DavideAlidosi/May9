@@ -2,77 +2,65 @@ menuItem
 -l "Rebuild"
 -c "RebuildCurveOptions"
 -rp "N"
--i "rebuildCurve.png"
-menuEditorMenuItem7;
+-i "rebuildCurve.png";
 
 menuItem
 -l "Add CV"
 -c "AddPointsTool;"
 -rp "S"
--i "curveAddPt.png"
-menuEditorMenuItem3;
+-i "curveAddPt.png";
 
 menuItem
 -l "Bevel Plus"
 -c "BevelPlus;"
 -rp "E"
--i "bevelPlus.png"
-menuEditorMenuItem19;
+-i "bevelPlus.png";
 
 menuItem
 -c "BevelPlusOptions;"
--ob 1
-menuEditorMenuItem22;
+-ob 1;
 
 menuItem
 -l "Curve Length"
 -c "da_CurveLength"
 -rp "SE"
--i "out_curveInfo.png"
-menuEditorMenuItem100;
+-i "out_curveInfo.png";
 
 menuItem
 -l "Revolve"
 -c "Revolve;"
 -rp "W"
--i "revolve.png"
-menuEditorMenuItem14;
+-i "revolve.png";
 
 menuItem
 -c "RevolveOptions;"
--ob 1
-menuEditorMenuItem26;
+-ob 1;
 
 menuItem
 -l "Reverse"
 -c "ReverseCurve;"
 -rp "NW"
--i "reverse.png"
-menuEditorMenuItem2;
+-i "reverse.png";
 
 menuItem
 -c "ReverseCurveOptions;"
--ob 1
-menuEditorMenuItem9;
+-ob 1;
 
 menuItem
 -l "Offset"
 -c "OffsetCurve;"
 -rp "NE"
--i "offsetCurve.png"
-menuEditorMenuItem10;
+-i "offsetCurve.png";
 
 menuItem
 -c "OffsetCurveOptions;"
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Open/Close"
 -c "OpenCloseCurve"
 -rp "SW"
--i "closeGeom.png"
-menuEditorMenuItem12;
+-i "closeGeom.png";
 
 menuItem
 -c "OpenCloseCurveOptions"
@@ -95,20 +83,17 @@ menuItem
 menuItem
 -l "Convert to Polygons"
 -c "da_curveToPoly"
--i "da_curveToPoly.png"
-menuEditorMenuItem1;
+-i "da_curveToPoly.png";
 
 menuItem
 -l "Create Curve Collector"
 -c "da_aiCurveCollector"
--i "CurveCollectorShelf.png"
-menuEditorMenuItem13;
+-i "CurveCollectorShelf.png";
 
 menuItem
 -l "Separate"
 -c "da_SepareCurves"
--i "da_separateCurves.png"
-menuEditorMenuItem24;
+-i "da_separateCurves.png";
 
 menuItem
 -l "separator" 
@@ -117,30 +102,25 @@ menuItem
 menuItem
 -l "Planar"
 -c "planarSrf -ch 1 -d 3 -ko 0 -tol 0.01 -rn 0 -po 0"
--i "planarTrim.png"
-menuEditorMenuItem8;
+-i "planarTrim.png";
 
 menuItem
 -c "PlanarOptions"
--ob 1
-menuEditorMenuItem5;
+-ob 1;
 
 menuItem
 -l "Flat Surface"
 -c "da_FlattenSurface"
--i "da_flatPoly.png"
-menuEditorMenuItem17;
+-i "da_flatPoly.png";
 
 menuItem
 -l "Bevel Plus for Text"
 -c "da_BevelPlusForText"
--i "polyBevel.png"
-menuEditorMenuItem28;
+-i "polyBevel.png";
 
 menuItem
 -c "BevelPlusOptions"
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -149,296 +129,263 @@ menuItem
 menuItem
 -l "Component Display" 
 -sm 1
--i "RS_visible.png" 
-menuEditorMenuItem90;
+-i "RS_visible.png" ;
 
 menuItem
-    -l "CVs" 
-    -c "ToggleCVs" 
-    -i "selectCVs.png" 
-    menuEditorMenuItem1;
+-l "CVs" 
+-c "ToggleCVs" 
+-i "selectCVs.png";
 
 menuItem
-    -l "Hull" 
-    -c "ToggleHulls" 
-    -i "pickHullComp.png" 
-    menuEditorMenuItem2;
+-l "Hull" 
+-c "ToggleHulls" 
+-i "pickHullComp.png";
 
 setParent -m ..;
 
 menuItem
 -l "Deformers"
 -sm 1
--i "menuIconDeformations.png"
-menuEditorMenuItem31;
+-i "menuIconDeformations.png";
 
 menuItem
-    -l "Nonlinear"
-    -sm 1
-    -i "bendNLD.png"
-    menuEditorMenuItem1;
+-l "Nonlinear"
+-sm 1
+-i "bendNLD.png";
 
-    menuItem
-        -l "Bend"
-        -c "Bend;"
-        -i "bendNLD.png"
-        menuEditorMenuItem1;
+menuItem
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png";
 
-    menuItem
-        -c "BendOptions;"
-        -ob 1
-        menuEditorMenuItem13;
+menuItem
+-c "BendOptions;"
+-ob 1;
 
-    menuItem
-        -l "Flare"
-        -c "Flare;"
-        -i "flareNLD.png"
-        menuEditorMenuItem3;
+menuItem
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png";
 
-    menuItem
-        -c "FlareOptions;"
-        -ob 1
-        menuEditorMenuItem14;
+menuItem
+-c "FlareOptions;"
+-ob 1;
 
-    menuItem
-        -l "Sine"
-        -c "Sine"
-        -i "sineNLD.png"
-        menuEditorMenuItem5;
+menuItem
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png";
 
-    menuItem
-        -c "SineOptions;"
-        -ob 1
-        menuEditorMenuItem15;
+menuItem
+-c "SineOptions;"
+-ob 1;
 
-    menuItem
-        -l "Squash"
-        -c "Squash"
-        -i "squashNLD.png"
-        menuEditorMenuItem7;
+menuItem
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png";
 
-    menuItem
-        -c "SquashOptions;"
-        -ob 1
-        menuEditorMenuItem16;
+menuItem
+-c "SquashOptions;"
+-ob 1;
 
-    menuItem
-        -l "Twist"
-        -c "Twist"
-        -i "twistNLD.png"
-        menuEditorMenuItem9;
+menuItem
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png";
 
-    menuItem
-        -c "TwistOptions"
-        -ob 1
-        menuEditorMenuItem17;
+menuItem
+-c "TwistOptions"
+-ob 1;
 
-    menuItem
-        -l "Wave"
-        -c "Wave"
-        -i "waveNLD.png"
-        menuEditorMenuItem11;
+menuItem
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png";
 
-    menuItem
-        -c "WaveOptions;"
-        -ob 1
-        menuEditorMenuItem18;
+menuItem
+-c "WaveOptions;"
+-ob 1;
 
 setParent -m ..;
 
 menuItem
-    -l "Cluster"
-    -c "CreateCluster"
-    -i "cluster.png"
-    menuEditorMenuItem3;
+-l "Cluster"
+-c "CreateCluster"
+-i "cluster.png";
 
 menuItem
-    -c "CreateClusterOptions"
-    -ob 1
-    menuEditorMenuItem4;
+-c "CreateClusterOptions"
+-ob 1;
 
 menuItem
-    -l "Lattice"
-    -c "CreateLattice"
-    -i "lattice.png"
-    menuEditorMenuItem6;
+-l "Lattice"
+-c "CreateLattice"
+-i "lattice.png";
 
 menuItem
-    -c "CreateLatticeOptions;"
-    -ob 1
-    menuEditorMenuItem5;
+-c "CreateLatticeOptions;"
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Dynamics"
 -sm 1
--i "out_nucleus.png"
-menuEditorMenuItem4;
+-i "out_nucleus.png";
 
 menuItem
-    -l "Make Curves Dynamic"
-    -c "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
-    -i "hairDynamicCurves.png"
-    menuEditorMenuItem1;
+-l "Make Curves Dynamic"
+-c "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
+-i "hairDynamicCurves.png";
 
 menuItem
-    -l "Curves to nHair" 
-    -c "da_CurveToNHair" 
-    -i "out_pfxHair.png" 
-    menuEditorMenuItem12;
+-l "Curves to nHair" 
+-c "da_CurveToNHair" 
+-i "out_pfxHair.png" ;
 
 menuItem
-    -l "Simulation Method"
-    -sm 1
-    menuEditorMenuItem18;
+-l "Simulation Method"
+-sm 1;
 
-    menuItem
-        -l "Static"
-        -c "da_HairStatic"
-        menuEditorMenuItem3;
+menuItem
+-l "Static"
+-c "da_HairStatic";
 
-    menuItem
-        -l "Passive"
-        -c "da_HairPassive"
-        menuEditorMenuItem2;
+menuItem
+-l "Passive"
+-c "da_HairPassive";
 
-    menuItem
-        -l "Dynamic"
-        -c "da_HairDynamic"
-        menuEditorMenuItem1;
+menuItem
+-l "Dynamic"
+-c "da_HairDynamic";
 
 setParent -m ..;
 
 menuItem
-    -l "Point Lock"
-    -sm 1
-    menuEditorMenuItem17;
+-l "Point Lock"
+-sm 1;
 
-    menuItem
-        -l "No Attach"
-        -c "da_HairNoLock"
-        menuEditorMenuItem3;
+menuItem
+-l "No Attach"
+-c "da_HairNoLock";
 
-    menuItem
-        -l "Base"
-        -c "da_HairLockBase"
-        menuEditorMenuItem2;
+menuItem
+-l "Base"
+-c "da_HairLockBase";
 
-	menuItem
-        -l "Tip"
-        -c "da_nHairLockTip"
-        menuEditorMenuItem4;
+menuItem
+-l "Tip"
+-c "da_nHairLockTip";
 
-    menuItem
-        -l "Both Ends"
-        -c "da_HairLockBothEnds"
-        menuEditorMenuItem1;
+menuItem
+-l "Both Ends"
+-c "da_HairLockBothEnds";
 
 setParent -m ..;
 
 menuItem
-    -l "Follicle Braid"
-    -sm 1
-    menuEditorMenuItem13;
+-l "Follicle Braid"
+-sm 1;
 
-    menuItem
-        -l "Enable"
-        -c "da_FollicleBraid"
-        -rp "N"
-        menuEditorMenuItem1;
+menuItem
+-l "Enable"
+-c "da_FollicleBraid"
+-rp "N";
 
-    menuItem
-        -l "Disable"
-        -c "da_FollicleNoBraid"
-        menuEditorMenuItem2;
+menuItem
+-l "Disable"
+-c "da_FollicleNoBraid";
 
 setParent -m ..;
 
 menuItem
-    -l "separator" 
-    -d 1;
+-l "separator" 
+-d 1;
 
 menuItem
-    -l "Emit Particle From CV"
-    -c "NEmitFromObject;"
-    -i "emitter.png"
-    menuEditorMenuItem4;
+-l "Emit Particle From CV"
+-c "NEmitFromObject;"
+-i "emitter.png";
 
 menuItem
-    -c "NEmitFromObjectOptions;"
-    -ob 1
-    menuEditorMenuItem16;
+-c "NEmitFromObjectOptions;"
+-ob 1;
 
 menuItem
-    -l "Particle Style"
-    -sm 1
-    -i "out_particle.png"
-    menuEditorMenuItem7;
+-l "Particle Style"
+-sm 1
+-i "out_particle.png";
 
-    menuItem
-        -l "Points"
-        -c "optionVar -stringValue NParticleStyle \"Points\";"
-        -i "nPartPoints.png"
-        menuEditorMenuItem2;
+menuItem
+-l "Points"
+-c "optionVar -stringValue NParticleStyle \"Points\";"
+-i "nPartPoints.png";
 
-    menuItem
-        -l "Balls"
-        -c "optionVar -stringValue NParticleStyle \"Balls\";"
-        -i "nPartBalls.png"
-        menuEditorMenuItem1;
+menuItem
+-l "Balls"
+-c "optionVar -stringValue NParticleStyle \"Balls\";"
+-i "nPartBalls.png";
 
-    menuItem
-        -l "Cloud"
-        -c "optionVar -stringValue NParticleStyle \"Cloud\";"
-        -i "nPartCloud.png"
-        menuEditorMenuItem3;
+menuItem
+-l "Cloud"
+-c "optionVar -stringValue NParticleStyle \"Cloud\";"
+-i "nPartCloud.png";
 
-    menuItem
-        -l "ThickCloud"
-        -c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
-        -i "nPartThickCloud.png"
-        menuEditorMenuItem5;
+menuItem
+-l "ThickCloud"
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-i "nPartThickCloud.png";
 
-    menuItem
-        -l "Water"
-        -c "optionVar -stringValue NParticleStyle \"Water\";"
-        -i "nPartWater.png"
-        menuEditorMenuItem4;
+menuItem
+-l "Water"
+-c "optionVar -stringValue NParticleStyle \"Water\";"
+-i "nPartWater.png";
 
 setParent -m ..;
 
 menuItem
-    -l "separator" 
-    -d 1;
+-l "separator" 
+-d 1;
 
 menuItem
-    -l "Create Soft Body"
-    -c "soft -c"
-    -i "soft.png"
-    menuEditorMenuItem15;
+-l "Create Soft Body"
+-c "soft -c"
+-i "soft.png";
 
 menuItem
-    -c "CreateSoftBodyOptions"
-    -ob 1
-    menuEditorMenuItem20;
+-c "CreateSoftBodyOptions"
+-ob 1;
 
 menuItem
-    -l "separator" 
-    -d 1;
+-l "separator" 
+-d 1;
 
 menuItem
-    -l "Set Fluid Contents"
-    -c "SetFluidAttrFromCurve"
-    -i "menuIconFluids.png"
-    menuEditorMenuItem8;
+-l "Set Fluid Contents"
+-c "SetFluidAttrFromCurve"
+-i "menuIconFluids.png";
 
 menuItem
-    -c "SetFluidAttrFromCurveOptions"
-    -ob 1
-    menuEditorMenuItem22;
+-c "SetFluidAttrFromCurveOptions"
+-ob 1;
 
 setParent -m ..;
+
+menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create nCache"
+-c "nClothCacheOpt"
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png";
 
 setParent -m ..;
 

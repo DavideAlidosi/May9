@@ -4,82 +4,69 @@ menuItem
 -l "Set Initial State" 
 -c "setNClothStartState;" 
 -rp "N" 
--i "fluidInitialStateSet.png" 
-menuEditorMenuItem1;
+-i "fluidInitialStateSet.png";
 
 menuItem
 -l "Convert to Polygons" 
 -c "da_ParticleToMesh" 
 -rp "W" 
--i "nParticleToPolygons.png" 
-menuEditorMenuItem3;
+-i "nParticleToPolygons.png" ;
 
 menuItem
 -l "Use as Fluid Emitter" 
 -c "dynExecFluidEmitterCommands 1 { \"0\", \"fluidEmitter -type surface -der 1 -her 1 -fer 1 -fdr 2 -r 100.0 -cye none -cyi 1 -mxd 1 -mnd 0 \", 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0} " 
 -rp "NW" 
--i "fluidObjectEmit.png" 
-menuEditorMenuItem2;
+-i "fluidObjectEmit.png";
 
 menuItem
 -c "EmitFluidFromObjectOptions" 
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 menuItem
 -l "Lattice" 
 -c "CreateLattice" 
 -rp "NE" 
--i "lattice.png" 
-menuEditorMenuItem5;
+-i "lattice.png";
 
 menuItem
 -c "CreateLatticeOptions;" 
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Cluster" 
 -c "CreateCluster" 
 -rp "E" 
--i "cluster.png" 
-menuEditorMenuItem8;
+-i "cluster.png";
 
 menuItem
 -c "CreateClusterOptions" 
--ob 1
-menuEditorMenuItem13;
+-ob 1;
 
 menuItem
 -l "Convert to Metaballs" 
 -c "da_ConvertToMetaballs" 
 -rp "SW" 
--i "da_metaBalls.png" 
-menuEditorMenuItem16;
+-i "da_metaBalls.png";
 
 menuItem
 -l "Create Springs" 
 -c "spring -noDuplicate false -minMax true -mnd 0 -mxd 0 -useRestLengthPS true -s 1 -d 0.2 -sfw 1 -efw 1 " 
 -rp "SE" 
--i "out_spring.png" 
-menuEditorMenuItem17;
+-i "out_spring.png";
 
 menuItem
 -c "CreateSpringOptions" 
--ob 1
-menuEditorMenuItem18;
+-ob 1;
 
 menuItem
 -l "Sprite Wizard" 
 -c "spriteWizardMenu" 
--i "menuIconParticles.png" 
-menuEditorMenuItem6;
+-i "menuIconParticles.png";
 
 menuItem
 -l "Instancer" 
 -c "ParticleInstancerOptions" 
--i "instancer.png" 
-menuEditorMenuItem19;
+-i "instancer.png";
 
 menuItem
 -l "separator" 
@@ -87,39 +74,33 @@ menuItem
 
 menuItem
 -l "Gravity" 
--sm 1
-menuEditorMenuItem9;
+-sm 1;
 
 menuItem
 -l "On" 
 -c "da_nParticleGravity" 
--i "rvViewingPipelineOn.png" 
-menuEditorMenuItem2;
+-i "rvViewingPipelineOn.png";
 
 menuItem
 -l "Off" 
 -c "da_nParticleNoGravity" 
--i "rvViewingPipelineOff.png" 
-menuEditorMenuItem1;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
 menuItem
 -l "Self Collide" 
--sm 1
-menuEditorMenuItem10;
+-sm 1;
 
 menuItem
 -l "On" 
 -c "da_nParticleSelfCollide" 
--i "rvViewingPipelineOn.png" 
-menuEditorMenuItem1;
+-i "rvViewingPipelineOn.png";
 
 menuItem
 -l "Off" 
 -c "da_nParticleNoSelfCollide" 
--i "rvViewingPipelineOff.png" 
-menuEditorMenuItem2;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
@@ -130,181 +111,139 @@ menuItem
 menuItem
 -l "Convert Style to" 
 -sm 1
--i "out_particle.png" 
-menuEditorMenuItem15;
+-i "out_particle.png";
 
 menuItem
 -l "Point" 
 -c "da_convertToPoint" 
--i "nPartPoints.png" 
-menuEditorMenuItem1;
+-i "nPartPoints.png";
 
 menuItem
 -l "Balls" 
 -c "da_convertToBalls" 
--i "nPartBalls.png" 
-menuEditorMenuItem2;
+-i "nPartBalls.png" ;
 
 menuItem
 -l "Cloud" 
 -c "da_convertToCloud" 
--i "nPartCloud.png" 
-menuEditorMenuItem3;
+-i "nPartCloud.png";
 
 menuItem
 -l "Thick Cloud" 
 -c "da_convertToThickCloud" 
--i "nPartThickCloud.png" 
-menuEditorMenuItem4;
+-i "nPartThickCloud.png";
 
 menuItem
 -l "Water" 
--c "da_convertToWater" 
--i "nPartWater.png" 
-menuEditorMenuItem5;
+-c "da_convertToWater";
 
 setParent -m ..;
 
 menuItem
 -l "Add Deformer"
 -sm 1
--i "bendNLD.png"
--stp "mel"
-menuEditorMenuItem24;
+-i "bendNLD.png";
 
 menuItem
 -l "Bend"
 -c "Bend;"
--i "bendNLD.png"
--stp "mel"
-menuEditorMenuItem13;
+-i "bendNLD.png";
 
 menuItem
 -c "BendOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Flare"
 -c "Flare;"
--i "flareNLD.png"
--stp "mel"
-menuEditorMenuItem15;
+-i "flareNLD.png";
 
 menuItem
 -c "FlareOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem8;
+-ob 1;
 
 menuItem
 -l "Sine"
 -c "Sine"
--i "sineNLD.png"
--stp "mel"
-menuEditorMenuItem17;
+-i "sineNLD.png";
 
 menuItem
 -c "SineOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem9;
+-ob 1;
 
 menuItem
 -l "Squash"
 -c "Squash"
--i "squashNLD.png"
--stp "mel"
-menuEditorMenuItem19;
+-i "squashNLD.png";
 
 menuItem
 -c "SquashOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem10;
+-ob 1;
 
 menuItem
 -l "Twist"
 -c "Twist"
--i "twistNLD.png"
--stp "mel"
-menuEditorMenuItem21;
+-i "twistNLD.png";
 
 menuItem
 -c "TwistOptions"
--ob 1
--stp "mel"
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Wave"
 -c "Wave"
--i "waveNLD.png"
--stp "mel"
-menuEditorMenuItem23;
+-i "waveNLD.png";
 
 menuItem
 -c "WaveOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem12;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Add Fields" 
 -sm 1
--i "posRadial.png" 
-menuEditorMenuItem12;
+-i "posRadial.png";
 
 menuItem
 -l "Air" 
 -c "dynExecuteFieldCommands 1 \"air\"" 
--i "posAir.png" 
-menuEditorMenuItem1;
+-i "posAir.png";
 
 menuItem
 -l "Drag" 
 -c "dynExecuteFieldCommands 1 \"drag\"" 
--i "posDrag.png" 
-menuEditorMenuItem2;
+-i "posDrag.png";
 
 menuItem
 -l "Gravity" 
 -c "dynExecuteFieldCommands 1 \"gravity\"" 
--i "posGravity.png" 
-menuEditorMenuItem3;
+-i "posGravity.png";
 
 menuItem
 -l "Newton" 
 -c "dynExecuteFieldCommands 1 \"newton\"" 
--i "posNewton.png" 
-menuEditorMenuItem4;
+-i "posNewton.png";
 
 menuItem
 -l "Radial" 
 -c "dynExecuteFieldCommands 1 \"radial\"" 
--i "posRadial.png" 
-menuEditorMenuItem5;
+-i "posRadial.png";
 
 menuItem
 -l "Turbulence" 
 -c "dynExecuteFieldCommands 1 \"turbulence\"" 
--i "posTurbulence.png" 
-menuEditorMenuItem6;
+-i "posTurbulence.png";
 
 menuItem
 -l "Uniform" 
 -c "dynExecuteFieldCommands 1 \"uniform\"" 
--i "posUniform.png" 
-menuEditorMenuItem7;
+-i "posUniform.png";
 
 menuItem
 -l "Vortex" 
 -c "dynExecuteFieldCommands 1 \"vortex\"" 
--i "posVortex.png" 
-menuEditorMenuItem8;
+-i "posVortex.png";
 
 menuItem
 -l "separator" 
@@ -313,49 +252,58 @@ menuItem
 menuItem
 -l "Volume Axis" 
 -c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
--i "posVolumeAxis.png" 
-menuEditorMenuItem10;
+-i "posVolumeAxis.png" ;
 
 setParent -m ..;
 
 menuItem
 -l "nConstraint" 
 -sm 1
--i "menuIconConstraints.png" 
-menuEditorMenuItem20;
+-i "menuIconConstraints.png" ;
 
 menuItem
 -l "Component to Component" 
 -c "doCreateNConstraint pointToPoint 0" 
--i "nConstraintComponent.png" 
-menuEditorMenuItem1;
+-i "nConstraintComponent.png" ;
 
 menuItem
 -c "performCreateComponentNConstraint 1" 
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 menuItem
 -l "Force Field" 
 -c "doCreateNConstraint force 0" 
--i "nConstraintForceField.png" 
-menuEditorMenuItem2;
+-i "nConstraintForceField.png" ;
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
--ob 1
-menuEditorMenuItem5;
+-ob 1;
 
 menuItem
 -l "Transform Constraint" 
 -c "doCreateNConstraint transform 0" 
--i "nConstraintTransform.png" 
-menuEditorMenuItem3;
+-i "nConstraintTransform.png" ;
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"force\"" 
--ob 1
-menuEditorMenuItem6;
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create nCache"
+-c "nClothCacheOpt"
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png";
 
 setParent -m ..;
 
@@ -366,8 +314,6 @@ menuItem
 menuItem
 -l "HUD Info" 
 -c "ToggleParticleCount" 
--checkBox (1 == $particleCountCheck)
-menuEditorMenuItem23;
+-checkBox (1 == $particleCountCheck);
 
 setParent -m ..;
-

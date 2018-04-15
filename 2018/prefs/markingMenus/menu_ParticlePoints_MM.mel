@@ -4,166 +4,125 @@ menuItem
 -l "Lattice" 
 -c "CreateLattice" 
 -rp "NE" 
--i "lattice.png" 
-menuEditorMenuItem1;
+-i "lattice.png";
 
 menuItem
 -c "CreateLatticeOptions;" 
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Cluster" 
 -c "CreateCluster" 
 -rp "E" 
--i "cluster.png" 
-menuEditorMenuItem3;
+-i "cluster.png";
 
 menuItem
 -c "CreateClusterOptions" 
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 menuItem
 -l "Add Deformer"
 -sm 1
--i "bendNLD.png"
--stp "mel"
-menuEditorMenuItem24;
+-i "bendNLD.png";
 
 menuItem
 -l "Bend"
 -c "Bend;"
--i "bendNLD.png"
--stp "mel"
-menuEditorMenuItem13;
+-i "bendNLD.png";
 
 menuItem
 -c "BendOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Flare"
 -c "Flare;"
--i "flareNLD.png"
--stp "mel"
-menuEditorMenuItem15;
+-i "flareNLD.png";
 
 menuItem
 -c "FlareOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem8;
+-ob 1;
 
 menuItem
 -l "Sine"
 -c "Sine"
--i "sineNLD.png"
--stp "mel"
-menuEditorMenuItem17;
+-i "sineNLD.png";
 
 menuItem
 -c "SineOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem9;
+-ob 1;
 
 menuItem
 -l "Squash"
 -c "Squash"
--i "squashNLD.png"
--stp "mel"
-menuEditorMenuItem19;
+-i "squashNLD.png";
 
 menuItem
 -c "SquashOptions;"
--ob 1
--stp "mel"
-menuEditorMenuItem10;
+-ob 1;
 
 menuItem
 -l "Twist"
 -c "Twist"
--i "twistNLD.png"
--stp "mel"
-menuEditorMenuItem21;
+-i "twistNLD.png";
 
 menuItem
 -c "TwistOptions"
--ob 1
--stp "mel"
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Wave"
 -c "Wave"
--i "waveNLD.png"
--stp "mel"
-menuEditorMenuItem23;
+-i "waveNLD.png";
 
 menuItem
 -c "WaveOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem12;
-
 setParent -m ..;
 
 menuItem
 -l "Add Fields" 
--sm 1
--i "posRadial.png" 
-menuEditorMenuItem12;
+-sm 1;
 
 menuItem
 -l "Air" 
 -c "dynExecuteFieldCommands 1 \"air\"" 
--i "posAir.png" 
-menuEditorMenuItem1;
+-i "posAir.png";
 
 menuItem
 -l "Drag" 
 -c "dynExecuteFieldCommands 1 \"drag\"" 
--i "posDrag.png" 
-menuEditorMenuItem2;
+-i "posDrag.png";
 
 menuItem
 -l "Gravity" 
 -c "dynExecuteFieldCommands 1 \"gravity\"" 
--i "posGravity.png" 
-menuEditorMenuItem3;
+-i "posGravity.png";
 
 menuItem
 -l "Newton" 
 -c "dynExecuteFieldCommands 1 \"newton\"" 
--i "posNewton.png" 
-menuEditorMenuItem4;
+-i "posNewton.png";
 
 menuItem
 -l "Radial" 
 -c "dynExecuteFieldCommands 1 \"radial\"" 
--i "posRadial.png" 
-menuEditorMenuItem5;
+-i "posRadial.png";
 
 menuItem
 -l "Turbulence" 
 -c "dynExecuteFieldCommands 1 \"turbulence\"" 
--i "posTurbulence.png" 
-menuEditorMenuItem6;
+-i "posTurbulence.png";
 
 menuItem
 -l "Uniform" 
 -c "dynExecuteFieldCommands 1 \"uniform\"" 
--i "posUniform.png" 
-menuEditorMenuItem7;
+-i "posUniform.png";
 
 menuItem
 -l "Vortex" 
 -c "dynExecuteFieldCommands 1 \"vortex\"" 
--i "posVortex.png" 
-menuEditorMenuItem8;
+-i "posVortex.png";
 
 menuItem
 -l "separator" 
@@ -172,33 +131,28 @@ menuItem
 menuItem
 -l "Volume Axis" 
 -c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
--i "posVolumeAxis.png" 
-menuEditorMenuItem10;
+-i "posVolumeAxis.png";
 
 setParent -m ..;
 
 menuItem
 -l "nConstraint" 
 -sm 1
--i "menuIconConstraints.png" 
-menuEditorMenuItem5;
+-i "menuIconConstraints.png";
 
 menuItem
 -l "Component to Component" 
 -c "doCreateNConstraint pointToPoint 0" 
--i "nConstraintComponent.png" 
-menuEditorMenuItem1;
+-i "nConstraintComponent.png";
 
 menuItem
 -c "performCreateComponentNConstraint 1" 
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Force Field" 
 -c "doCreateNConstraint force 0" 
--i "nConstraintForceField.png" 
-menuEditorMenuItem3;
+-i "nConstraintForceField.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
@@ -208,13 +162,11 @@ menuEditorMenuItem4;
 menuItem
 -l "Transform Constraint" 
 -c "doCreateNConstraint transform 0" 
--i "nConstraintTransform.png" 
-menuEditorMenuItem5;
+-i "nConstraintTransform.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"force\"" 
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 setParent -m ..;
 
@@ -225,8 +177,7 @@ menuItem
 menuItem
 -l "HUD Info" 
 -c "ToggleParticleCount" 
--checkBox (1 == $particleCountCheck)
-menuEditorMenuItem23;
+-checkBox (1 == $particleCountCheck);
 
 setParent -m ..;
 
