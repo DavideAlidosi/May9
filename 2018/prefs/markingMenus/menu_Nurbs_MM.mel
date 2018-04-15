@@ -357,16 +357,16 @@ menuEditorMenuItem18;
 
 menuItem
 -c "CreateSoftBodyOptions" 
--ob 1
+-ob 1;
 
 menuItem
 -l "Create nHair" 
 -c "CreateHair" 
--i "hairCreate.png" 
+-i "hairCreate.png"; 
 
 menuItem
 -c "CreateHairOptions" 
--ob 1
+-ob 1;
 
 menuItem
 -l "Create Active Rigid Body" 
@@ -497,6 +497,23 @@ menuItem
 menuEditorMenuItem10;
 
 setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create Muscle Cache"
+-c "cMuscle_makeCacheUI(); "
+-i "cMuscle_skin_cacheCreate.png";
+
+menuItem
+-l "Delete Muscle Node Cache"
+-c "cMuscle_deleteNodeCacheUI(); "
+-i "cMuscle_skin_cacheDelete.png";
 
 setParent -m ..;
 

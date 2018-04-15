@@ -1110,21 +1110,6 @@ menuItem
 -dl "separator";
 
 menuItem
--l "Create Muscle Cache"
--c "cMuscle_makeCacheUI(); "
--i "cMuscle_skin_cacheCreate.png";
-
-menuItem
--l "Delete Muscle Node Cache"
--c "cMuscle_deleteNodeCacheUI(); "
--i "cMuscle_skin_cacheDelete.png";
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem
 -l "Export Selection to GPU Cache"
 -c "GpuCacheExportSelectionOptions"
 -i "greasePencilExport.png";
@@ -1152,6 +1137,21 @@ menuItem
 menuItem
 -l "Import Alembic"
 -c "AlembicImportOptions"
+-i "greasePencilImport.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Export Selection To BIF"
+-c "BifMeshExport"
+-i "greasePencilExport.png";
+
+menuItem
+-l "Import BIF"
+-c "BifMeshImport"
 -i "greasePencilImport.png";
 
 setParent -m ..;
