@@ -296,49 +296,14 @@ menuItem
 -i "reorderIDs.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem
 -l "Face Normals"
 -c "ToggleFaceNormalDisplay"
 -i "polyNormalsConform.png";
 
 menuItem
--l "Face Triangles"
--c "TogglePolygonFaceTriangles       polyOptions -r -dt 1"
--i "polyTriangulate.png";
-
-menuItem
--l "Face Centers"
--c "TogglePolygonFaceCenters"
--i "polyConvertToContainedFaces.png";
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem
--l "Standard Edges"
--c "TogglePolyDisplayEdges"
--i "da_standardEdge.png";
-
-menuItem
--l "Soft/Hard Edges"
--c "TogglePolyDisplaySoftEdges"
--i "polyDuplicateEdgeLoop.png";
-
-menuItem
 -l "Border Edges"
 -c "ToggleBorderEdges;"
 -i "da_borderEdge.png";
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
 
 menuItem
 -l "separator" 
@@ -366,11 +331,6 @@ menuItem
 -l "Instance to Object"
 -c "ConvertInstanceToObject"
 -i "instanceToObject.png";
-
-menuItem
--l "Type to Curves"
--c "convertTypeCapsToCurves"
--i "text.png";
 
 setParent -m ..;
 
@@ -858,34 +818,14 @@ menuItem
 -i "render_adskMaterial.png";
 
 menuItem
--l "Assign Initial Shading Group"
--c "hyperShade -assign initialShadingGroup"
--i "out_lambert.png";
-
-menuItem
 -l "separator" 
 -d 1
 -dl "separator";
 
 menuItem
--l "Shaded Brightness Two Tone"
--c "assignToonShader \"shadedBrightness\""
--i "toonBrightness2.png";
-
-menuItem
--l "Shaded Brightness Three Tone"
+-l "Assign Toon Shader"
 -c "assignToonShader \"threeToneBrightness\""
 -i "toonBrightness3.png";
-
-menuItem
--l "Circle Highlight"
--c "assignToonShader \"circleHighlight\""
--i "toonCircleHigh.png";
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
 
 menuItem
 -l "Add Toon Outline"
@@ -942,12 +882,8 @@ menuItem
 
 menuItem
 -l "Create nHair"
--c "CreateHair"
--i "hairCreate.png";
-
-menuItem
 -c "CreateHairOptions"
--ob 1;
+-i "hairCreate.png";
 
 menuItem
 -l "Create Passive Collider"
@@ -1168,6 +1104,88 @@ menuItem
 setParent -m ..;
 
 menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create nCache"
+-c "nClothCacheOpt"
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Create Geometry Cache"
+-c "geometryCacheOpt"
+-i "createCache.png";
+
+menuItem
+-l "Delete Geometry Cache"
+-c "geometryDeleteCacheOpt"
+-i "deleteCache.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Create Muscle Cache"
+-c "cMuscle_makeCacheUI(); "
+-i "cMuscle_skin_cacheCreate.png";
+
+menuItem
+-l "Delete Muscle Node Cache"
+-c "cMuscle_deleteNodeCacheUI(); "
+-i "cMuscle_skin_cacheDelete.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Export Selection to GPU Cache"
+-c "GpuCacheExportSelectionOptions"
+-i "greasePencilExport.png";
+
+menuItem
+-l "Import GPU Cache"
+-c "doGpuCacheImportArgList 1 {\"0\",\"0\"};"
+-i "greasePencilImport.png";
+
+menuItem
+-l "Refresh GPU Cache"
+-c "GpuCacheRefreshAll"
+-i "QR_refresh.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Export Selection to Alembic"
+-c "AlembicExportSelectionOptions"
+-i "greasePencilExport.png";
+
+menuItem
+-l "Import Alembic"
+-c "AlembicImportOptions"
+-i "greasePencilImport.png";
+
+setParent -m ..;
+
+menuItem
 -l "XGen"
 -sm 1
 -i "xgDEditor.png";
@@ -1256,7 +1274,7 @@ menuItem
 -dl "separator";
 
 menuItem
--l "Convert to Vertices"
+-l "Select All Vertices"
 -c "ConvertSelectionToVertices"
 -i "vertex_NEX.png";
 
