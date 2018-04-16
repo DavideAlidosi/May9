@@ -8,6 +8,8 @@ global proc da_May9Menu()
     global string $gMainWindow;
     $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
  
+    menuItem -p $menuMain -l "Toggle Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
+    menuItem -p $menuMain -l "Toggle Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
     menuItem -d 1 -l "Layouts";
     menuItem -p $menuMain -l "Perspective/Four View" -c "da_LayoutPersp" -i "fourViewLayout.png";
     menuItem -p $menuMain -l "Node Editor" -c "da_LayoutNodeEditor" -i "perspHypergraphLayout.png";
@@ -21,10 +23,11 @@ global proc da_May9Menu()
     menuItem -p $menuMain -l "Hypershade" -c "da_LayoutHypershade" -i "da_Hypershade_Layout.png";
     menuItem -p $menuMain -l "Edit Layouts..." -c "PanelPreferencesWindow" -i "editLayout.png";
     menuItem -d 1 -l "Reset";
-    menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "hyperShadeResetCameraView.png";
+    menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "out_camera.png";
     menuItem -p $menuMain -l "Render Settings" -c "da_ResetUI;\nunifiedRenderGlobalsWindow" -i "rvRenderGlobals.png";
     menuItem -p $menuMain -l "Viewport" -c "ogs -r -rlt" -i "singlePerspLayout.png";
-    menuItem -p $menuMain -l "Clean Context MM" -c "da_MMtoKey_clean" -i "deleteClip.png";
+    menuItem -p $menuMain -l "Context MM" -c "da_MMtoKey_clean" -i "deleteClip.png";
+    menuItem -p $menuMain -l "Scene to Last Save" -c "da_RevertToSave" -i "loadPreset.png";
     menuItem -d 1 -l "Built in Plug-ins";
     menuItem -p $menuMain -l "Context Connector" -c "if (`pluginInfo -q -l contextConnector`){unloadPlugin contextConnector;pluginInfo -edit -autoload false contextConnector;} else {loadPlugin contextConnector;pluginInfo -edit -autoload true contextConnector;}" -cb (`pluginInfo -q -l contextConnector`);
     menuItem -p $menuMain -l "Massive Attribute Modifier" -c "if (`pluginInfo -q -l mass_attr`){unloadPlugin mass_attr;pluginInfo -edit -autoload false mass_attr;} else {loadPlugin mass_attr;pluginInfo -edit -autoload true mass_attr;}" -cb (`pluginInfo -q -l mass_attr`);
