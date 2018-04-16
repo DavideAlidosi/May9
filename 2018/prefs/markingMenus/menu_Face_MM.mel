@@ -6,69 +6,58 @@ menuItem
 -l "Bridge"
 -c "BridgeEdge;"
 -rp "NE"
--i "polyBridge.png"
-menuEditorMenuItem5;
+-i "polyBridge.png";
 
 menuItem
 -c "BridgeEdgeOptions;"
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 menuItem
 -l "Poke"
 -c "PokePolygon;"
 -rp "SE"
--i "polyPoke.png"
-menuEditorMenuItem9;
+-i "polyPoke.png";
 
 menuItem
 -c "PokePolygonOptions;"
--ob 1
-menuEditorMenuItem10;
+-ob 1;
 
 menuItem
 -l "Multi Cut Tool"
 -c "dR_multiCutTool;"
 -rp "W"
--i "multiCut_NEX32.png"
-menuEditorMenuItem11;
+-i "multiCut_NEX32.png";
 
 menuItem
 -l "Connect"
 -c "dR_connectTool;"
 -rp "SW"
--i "connect_NEX32.png"
-menuEditorMenuItem7;
+-i "connect_NEX32.png";
 
 menuItem
 -l "Bevel"
 -c "BevelPolygon;"
 -rp "NW"
--i "polyBevel.png"
-menuEditorMenuItem15;
+-i "polyBevel.png";
 
 menuItem
 -c "BevelPolygonOptions;"
--ob 1
-menuEditorMenuItem16;
+-ob 1;
 
 menuItem
 -l "Extrude"
 -c "PolyExtrude"
 -rp "E"
--i "polyExtrudeFacet.png"
-menuEditorMenuItem4;
+-i "polyExtrudeFacet.png";
 
 menuItem
 -c "PolyExtrudeOptions"
--ob 1
-menuEditorMenuItem12;
+-ob 1;
 
 menuItem
 -l "Selection Constraints"
 -c "PolygonSelectionConstraints"
--i "polySelectUsingConstraints.png"
-menuEditorMenuItem1000;
+-i "polySelectUsingConstraints.png";
 
 menuItem
 -l "Select All"
@@ -77,52 +66,49 @@ menuItem
 -stp "mel";
 
 menuItem
+-l "Select Nsided"
+-c "polyCleanupArgList 4 { \"0\",\"2\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"-1\",\"0\",\"0\" }"
+-i "polyCreateFacet.png";
+
+menuItem
 -l "separator" 
 -d 1;
 
 menuItem
 -l "Transform"
 -c "performPolyMove \"\" 0"
--i "polyMoveVertex.png"
-menuEditorMenuItem23;
+-i "polyMoveVertex.png";
 
 menuItem
 -c "MovePolygonComponentOptions"
--ob 1
-menuEditorMenuItem14;
+-ob 1;
 
 menuItem
 -l "Circularize"
 -c "performPolyCircularize 0"
--i "polyCircularize.png"
-menuEditorMenuItem995;
+-i "polyCircularize.png";
 
 menuItem
 -c "PolyCircularizeOptions"
--ob 1
-menuEditorMenuItem994;
+-ob 1;
 
 menuItem
 -l "Extract"
 -c "ExtractFace"
--i "polyChipOff.png"
-menuEditorMenuItem28;
+-i "polyChipOff.png";
 
 menuItem
 -c "ExtractFaceOptions"
--ob 1
-menuEditorMenuItem20;
+-ob 1;
 
 menuItem
 -l "Duplicate"
 -c "performPolyChipOff 0 1"
--i "polyDuplicateFacet.png"
-menuEditorMenuItem19;
+-i "polyDuplicateFacet.png";
 
 menuItem
 -c "DuplicateFaceOptions"
--ob 1
-menuEditorMenuItem29;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -131,14 +117,12 @@ menuItem
 menuItem
 -l "Flip"
 -c "dR_performSymmetryFlip;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
--i "polyFlip.png"
-menuEditorMenuItem27;
+-i "polyFlip.png";
 
 menuItem
 -l "Symmetrize"
 -c "dR_performSymmetrize;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
--i "symmetrize.png"
-menuEditorMenuItem34;
+-i "symmetrize.png";
 
 menuItem
 -l "separator" 
@@ -147,182 +131,151 @@ menuItem
 menuItem
 -l "Deformers"
 -sm 1
--i "bendNLD.png"
-menuEditorMenuItem31;
+-i "bendNLD.png";
 
 menuItem
 -l "Nonlinear"
 -sm 1
--i "bendNLD.png"
-menuEditorMenuItem1;
+-i "bendNLD.png";
 
 menuItem
 -l "Bend"
 -c "Bend;"
 -rp "N"
--i "bendNLD.png"
-menuEditorMenuItem1;
+-i "bendNLD.png";
 
 menuItem
 -c "BendOptions;"
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Flare"
 -c "Flare;"
--i "flareNLD.png"
-menuEditorMenuItem4;
+-i "flareNLD.png";
 
 menuItem
 -c "FlareOptions;"
--ob 1
-menuEditorMenuItem3;
+-ob 1;
 
 menuItem
 -l "Sine"
 -c "Sine"
--i "sineNLD.png"
-menuEditorMenuItem6;
+-i "sineNLD.png";
 
 menuItem
 -c "SineOptions;"
--ob 1
-menuEditorMenuItem5;
+-ob 1;
 
 menuItem
 -l "Squash"
 -c "Squash"
--i "squashNLD.png"
-menuEditorMenuItem8;
+-i "squashNLD.png";
 
 menuItem
 -c "SquashOptions;"
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Twist"
 -c "Twist"
--i "twistNLD.png"
-menuEditorMenuItem10;
+-i "twistNLD.png";
 
 menuItem
 -c "TwistOptions"
--ob 1
-menuEditorMenuItem9;
+-ob 1;
 
 menuItem
 -l "Wave"
 -c "Wave"
--i "waveNLD.png"
-menuEditorMenuItem12;
+-i "waveNLD.png";
 
 menuItem
 -c "WaveOptions;"
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Cluster"
 -c "CreateCluster"
--i "cluster.png"
-menuEditorMenuItem9;
+-i "cluster.png";
 
 menuItem
 -c "CreateClusterOptions"
--ob 1
-menuEditorMenuItem10;
+-ob 1;
 
 menuItem
 -l "Lattice"
 -c "CreateLattice"
--i "lattice.png"
-menuEditorMenuItem3;
+-i "lattice.png";
 
 menuItem
 -c "CreateLatticeOptions;"
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "UV Mapping"
 -sm 1
--i "polyUnfoldUVs.png"
-menuEditorMenuItem32;
+-i "polyUnfoldUVs.png";
 
 menuItem
 -l "Automatic Mapping"
 -c "performPolyAutoProj 0;"
--i "polyAutoProj.png"
-menuEditorMenuItem1;
+-i "polyAutoProj.png";
 
 menuItem
 -c "performPolyAutoProj 1;"
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Planar"
 -c "performPolyProjectionArgList \"1\" {\"0\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
--i "polyPlanProj.png"
-menuEditorMenuItem4;
+-i "polyPlanProj.png";
 
 menuItem
 -c "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
--ob 1
-menuEditorMenuItem19;
+-ob 1;
 
 menuItem
 -l "Cylindrical"
 -c "performPolyProjectionArgList \"1\" {\"0\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
--i "polyCylProj.png"
-menuEditorMenuItem5;
+-i "polyCylProj.png";
 
 menuItem
 -c "performPolyProjectionArgList \"1\" {\"1\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
--ob 1
-menuEditorMenuItem20;
+-ob 1;
 
 menuItem
 -l "Spherical"
 -c "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";"
--i "polySphereProj.png"
-menuEditorMenuItem7;
+-i "polySphereProj.png";
 
 menuItem
 -c "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
--ob 1
-menuEditorMenuItem22;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Normals"
 -sm 1
--i "polyNormalsPropagate.png"
-menuEditorMenuItem33;
+-i "polyNormalsPropagate.png";
 
 menuItem
 -l "Unlock Normals"
 -c "polyNormalPerVertex -ufn true;"
--i "polyNormalUnlock.png"
-menuEditorMenuItem1;
+-i "polyNormalUnlock.png";
 
 menuItem
 -l "Reverse Normals"
 -c "ReversePolygonNormals;"
--i "polyNormal.png"
-menuEditorMenuItem2;
+-i "polyNormal.png";
 
 menuItem
 -c "ReversePolygonNormalsOptions"
--ob 1
-menuEditorMenuItem15;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -331,27 +284,23 @@ menuItem
 menuItem
 -l "Set Soften Edge"
 -c "SoftPolyEdgeElements 1"
--i "polySoftEdge.png"
-menuEditorMenuItem3;
+-i "polySoftEdge.png";
 
 menuItem
 -c "polySoftEdgeWin"
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Set Harden Edge"
 -c "SoftPolyEdgeElements 0"
--i "polyHardEdge.png"
-menuEditorMenuItem5;
+-i "polyHardEdge.png";
 
 setParent -m ..;
 
 menuItem
 -l "Shading"
 -sm 1
--i "render_adskMaterial.png"
-menuEditorMenuItem22;
+-i "render_adskMaterial.png";
 
 $item = "";
 
@@ -364,14 +313,12 @@ setParent -menu ..;
 menuItem
 -l "Assign New Material"
 -c "createAssignNewMaterialTreeLister \"\""
--i "render_adskMaterial.png"
-menuEditorMenuItem1;
+-i "render_adskMaterial.png";
 
 menuItem
 -l "Assign Initial Shading Group"
 -c "hyperShade -assign initialShadingGroup"
--i "out_lambert.png"
-menuEditorMenuItem12;
+-i "out_lambert.png";
 
 menuItem
 -l "separator" 
@@ -380,20 +327,17 @@ menuItem
 menuItem
 -l "Shaded Brightness Two Tone"
 -c "assignToonShader \"shadedBrightness\""
--i "toonBrightness2.png"
-menuEditorMenuItem3;
+-i "toonBrightness2.png";
 
 menuItem
 -l "Shaded Brightness Three Tone"
 -c "assignToonShader \"threeToneBrightness\""
--i "toonBrightness3.png"
-menuEditorMenuItem4;
+-i "toonBrightness3.png";
 
 menuItem
 -l "Circle Highlight"
 -c "assignToonShader \"circleHighlight\""
--i "toonCircleHigh.png"
-menuEditorMenuItem5;
+-i "toonCircleHigh.png";
 
 menuItem
 -l "separator" 
@@ -402,33 +346,28 @@ menuItem
 menuItem
 -l "Select By Shader"
 -c "da_SelectComponentShader"
--i "selectByObject.png"
-menuEditorMenuItem7;
+-i "selectByObject.png";
 
 setParent -m ..;
 
 menuItem
 -l "Dynamics"
 -sm 1
--i "out_nucleus.png"
-menuEditorMenuItem8;
+-i "out_nucleus.png";
 
 menuItem
 -l "Create Follicle"
 -c "da_FacesFollicles"
--i "out_follicle.png"
-menuEditorMenuItem1002;
+-i "out_follicle.png";
 
 menuItem
 -l "Create Hair"
 -c "createHair 8 8 10 0 0 0 0 5 0 1 1 2"
--i "hairCreate.png"
-menuEditorMenuItem7;
+-i "hairCreate.png";
 
 menuItem
 -c "CreateHairOptions"
--ob 1
-menuEditorMenuItem8;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -437,106 +376,89 @@ menuItem
 menuItem
 -l "Emit Particle"
 -c "NEmitFromObject;"
--i "emitter.png"
-menuEditorMenuItem3;
+-i "emitter.png";
 
 menuItem
 -c "NEmitFromObjectOptions;"
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 menuItem
 -l "Particle Style"
 -sm 1
--i "out_particle.png"
-menuEditorMenuItem5;
+-i "out_particle.png";
 
 menuItem
 -l "Points"
 -c "optionVar -stringValue NParticleStyle \"Points\";"
 -rp "N"
--i "nPartPoints.png"
-menuEditorMenuItem1;
+-i "nPartPoints.png";
 
 menuItem
 -l "Balls"
 -c "optionVar -stringValue NParticleStyle \"Balls\";"
--i "nPartBalls.png"
-menuEditorMenuItem2;
+-i "nPartBalls.png";
 
 menuItem
 -l "Cloud"
 -c "optionVar -stringValue NParticleStyle \"Cloud\";"
--i "nPartCloud.png"
-menuEditorMenuItem3;
+-i "nPartCloud.png";
 
 menuItem
 -l "ThickCloud"
 -c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
--i "nPartThickCloud.png"
-menuEditorMenuItem4;
+-i "nPartThickCloud.png";
 
 menuItem
 -l "Water"
 -c "optionVar -stringValue NParticleStyle \"Water\";"
--i "nPartWater.png"
-menuEditorMenuItem5;
+-i "nPartWater.png";
 
 setParent -m ..;
 
 menuItem
 -l "Add Fields"
 -sm 1
--i "posRadial.png"
-menuEditorMenuItem11;
+-i "posRadial.png";
 
 menuItem
 -l "Air"
 -c "dynExecuteFieldCommands 1 \"air\""
--i "posAir.png"
-menuEditorMenuItem1;
+-i "posAir.png";
 
 menuItem
 -l "Drag"
 -c "dynExecuteFieldCommands 1 \"drag\""
--i "posDrag.png"
-menuEditorMenuItem2;
+-i "posDrag.png";
 
 menuItem
 -l "Gravity"
 -c "dynExecuteFieldCommands 1 \"gravity\""
--i "posGravity.png"
-menuEditorMenuItem3;
+-i "posGravity.png";
 
 menuItem
 -l "Newton"
 -c "dynExecuteFieldCommands 1 \"newton\""
--i "posNewton.png"
-menuEditorMenuItem4;
+-i "posNewton.png";
 
 menuItem
 -l "Radial"
 -c "dynExecuteFieldCommands 1 \"radial\""
--i "posRadial.png"
-menuEditorMenuItem5;
+-i "posRadial.png";
 
 menuItem
 -l "Turbulence"
 -c "dynExecuteFieldCommands 1 \"turbulence\""
--i "posTurbulence.png"
-menuEditorMenuItem6;
+-i "posTurbulence.png";
 
 menuItem
 -l "Uniform"
 -c "dynExecuteFieldCommands 1 \"uniform\""
--i "posUniform.png"
-menuEditorMenuItem7;
+-i "posUniform.png";
 
 menuItem
 -l "Vortex"
 -c "dynExecuteFieldCommands 1 \"vortex\""
--i "posVortex.png"
-menuEditorMenuItem8;
+-i "posVortex.png";
 
 menuItem
 -l "separator" 
@@ -545,8 +467,7 @@ menuItem
 menuItem
 -l "Volume Axis"
 -c "dynExecuteFieldCommands 1 \"volumeAxis\""
--i "posVolumeAxis.png"
-menuEditorMenuItem10;
+-i "posVolumeAxis.png";
 
 setParent -m ..;
 
@@ -555,63 +476,52 @@ setParent -m ..;
 menuItem
 -l "nConstraint"
 -sm 1
--i "menuIconConstraints.png"
-menuEditorMenuItem35;
+-i "menuIconConstraints.png";
 
 menuItem
 -l "Transform Constraint"
 -c "doCreateNConstraint transform 0"
--i "nConstraintTransform.png"
-menuEditorMenuItem1;
+-i "nConstraintTransform.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"transform\";"
--ob 1
-menuEditorMenuItem12;
+-ob 1;
 
 menuItem
 -l "Component to Component"
 -c "performCreateDynamicConstraint 0 \"pointToPoint\";"
--i "nConstraintComponent.png"
-menuEditorMenuItem6;
+-i "nConstraintComponent.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"pointToPoint\";"
--ob 1
-menuEditorMenuItem5;
+-ob 1;
 
 menuItem
 -l "Self Component"
 -c "performCreateComponentNConstraint 0;"
--i "nConstraintComponent.png"
-menuEditorMenuItem4;
+-i "nConstraintComponent.png";
 
 menuItem
 -c "performCreateComponentNConstraint 1;"
--ob 1
-menuEditorMenuItem16;
+-ob 1;
 
 menuItem
 -l "Tearable Surface"
 -c "performCreateDynamicConstraint 0 \"tearableSurface\";"
--i "nConstraintTearable.png"
-menuEditorMenuItem8;
+-i "nConstraintTearable.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"tearableSurface\";"
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Force Field"
 -c "doCreateNConstraint force 0"
--i "nConstraintForceField.png"
-menuEditorMenuItem9;
+-i "nConstraintForceField.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"force\";"
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -620,39 +530,33 @@ menuItem
 menuItem
 -l "Add Members"
 -c "ConvertSelectionToVertices;\ndynamicConstraintMembership \"add\";"
--i "nConstraintAddMembers.png"
-menuEditorMenuItem14;
+-i "nConstraintAddMembers.png";
 
 menuItem
 -l "Remove Members"
 -c "ConvertSelectionToVertices;\ndynamicConstraintMembership \"remove\";"
--i "nConstraintRemoveMembers.png"
-menuEditorMenuItem15;
+-i "nConstraintRemoveMembers.png";
 
 setParent -m ..;
 
 menuItem
 -l "XGen"
 -sm 1
--i "xgDEditor.png"
-menuEditorMenuItem13;
+-i "xgDEditor.png";
 
 menuItem
 -l "Create Interactive Groom"
 -c "XgmCreateInteractiveGroomSplines"
--i "xgIG_creation.png"
-menuEditorMenuItem4;
+-i "xgIG_creation.png";
 
 menuItem
 -c "XgmCreateInteractiveGroomSplinesOption"
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Create Description"
 -c "XgCreateDescription"
--i "xgCreateDescription.png"
-menuEditorMenuItem1;
+-i "xgCreateDescription.png";
 
 menuItem
 -l "separator" 
@@ -661,14 +565,12 @@ menuItem
 menuItem
 -l "Guides Tool"
 -c "XgGuideTool"
--i "xgGuideContext.png"
-menuEditorMenuItem3;
+-i "xgGuideContext.png";
 
 menuItem
 -l "Bind Patches Menu"
 -c "python(\"from PySide import QtGui\\nm = QtGui.QMenu()\\nm.addAction(u\\\"Add Selected Faces\\\",  lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Append\\\") )\\nm.addAction(u\\\"Replace with Selected Faces\\\", lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Replace\\\") )\\nm.addAction(u\\\"Remove Selected Faces\\\",  lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Remove\\\") )\\nm.addAction(u\\\"Bind Faces Based on Map...\\\",     lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Map\\\") )\\nm.addSeparator()\\nm.addAction(u\\\"Select Bound Faces\\\",  lambda: xgui.createDescriptionEditor(False).selectBinding() )\\nm.popup(QtGui.QCursor.pos())\\n\")"
--i "xgBindFaces.png"
-menuEditorMenuItem2;
+-i "xgBindFaces.png";
 
 setParent -m ..;
 
@@ -679,14 +581,12 @@ menuItem
 menuItem
 -l "Convert to Vertices"
 -c "ConvertSelectionToVertices"
--i "vertex_NEX.png"
-menuEditorMenuItem26;
+-i "vertex_NEX.png";
 
 menuItem
 -l "Convert to Edge"
 -c "ConvertSelectionToEdgePerimeter"
--i "UVTkEdge.png"
-menuEditorMenuItem90;
+-i "UVTkEdge.png";
 
 setParent -m ..;
 
