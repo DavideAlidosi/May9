@@ -1,573 +1,250 @@
 int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
-    menuItem
-        -label "Use as Fluid Emitter" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dynExecFluidEmitterCommands 1 { \"0\", \"fluidEmitter -type surface -der 1 -her 1 -fer 1 -fdr 2 -r 100.0 -cye none -cyi 1 -mxd 1 -mnd 0 \", 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0} " 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidObjectEmit.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
+menuItem
+-l "Use as Fluid Emitter" 
+-c "dynExecFluidEmitterCommands 1 { \"0\", \"fluidEmitter -type surface -der 1 -her 1 -fer 1 -fdr 2 -r 100.0 -cye none -cyi 1 -mxd 1 -mnd 0 \", 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0} " 
+-rp "NW" 
+-i "fluidObjectEmit.png" 
+menuEditorMenuItem2;
 
-    menuItem
-        -label "menuEditorMenuItem4" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "EmitFluidFromObjectOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
+menuItem
+-c "EmitFluidFromObjectOptions" 
+-ob 1
+menuEditorMenuItem4;
 
-    menuItem
-        -label "Lattice" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateLattice" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "lattice.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
+menuItem
+-l "Lattice" 
+-c "CreateLattice" 
+-rp "NE" 
+-i "lattice.png" 
+menuEditorMenuItem5;
 
-    menuItem
-        -label "menuEditorMenuItem7" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateLatticeOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
+menuItem
+-c "CreateLatticeOptions;" 
+-ob 1
+menuEditorMenuItem7;
 
-    menuItem
-        -label "Cluster" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateCluster" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "cluster.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
+menuItem
+-l "Cluster" 
+-c "CreateCluster" 
+-rp "E" 
+-i "cluster.png" 
+menuEditorMenuItem8;
 
-    menuItem
-        -label "menuEditorMenuItem13" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateClusterOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem13;
+menuItem
+-c "CreateClusterOptions" 
+-ob 1
+menuEditorMenuItem13;
 
-    menuItem
-        -label "Set Initial State" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setDynStartState" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "fluidInitialStateSet.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
+menuItem
+-l "Set Initial State" 
+-c "setDynStartState" 
+-rp "N" 
+-i "fluidInitialStateSet.png" 
+menuEditorMenuItem3;
 
-    menuItem
-        -label "Make Collide" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dynExecuteCollisionCommand \"collision -r 1 -f 0 -o 0.01 \"" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "collision.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
+menuItem
+-l "Make Collide" 
+-c "dynExecuteCollisionCommand \"collision -r 1 -f 0 -o 0.01 \"" 
+-rp "W" 
+-i "collision.png" 
+menuEditorMenuItem9;
 
-    menuItem
-        -label "menuEditorMenuItem11" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "MakeCollideOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
+menuItem
+-c "MakeCollideOptions" 
+-ob 1
+menuEditorMenuItem11;
 
-    menuItem
-        -label "Create Springs" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "spring -noDuplicate false -minMax true -mnd 0 -mxd 0 -useRestLengthPS true -s 1 -d 0.2 -sfw 1 -efw 1 " 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_spring.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem10;
+menuItem
+-l "Create Springs" 
+-c "spring -noDuplicate false -minMax true -mnd 0 -mxd 0 -useRestLengthPS true -s 1 -d 0.2 -sfw 1 -efw 1 " 
+-rp "SE" 
+-i "out_spring.png" 
+menuEditorMenuItem10;
 
-    menuItem
-        -label "menuEditorMenuItem16" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "CreateSpringOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem16;
+menuItem
+-c "CreateSpringOptions" 
+-ob 1
+menuEditorMenuItem16;
 
-    menuItem
-        -label "Sprite Wizard" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "spriteWizardMenu" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "menuIconParticles.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
+menuItem
+-l "Sprite Wizard" 
+-c "spriteWizardMenu" 
+-i "menuIconParticles.png" 
+menuEditorMenuItem6;
 
-    menuItem
-        -label "Instancer" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ParticleInstancerOptions" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "instancer.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem14;
+menuItem
+-l "Instancer" 
+-c "ParticleInstancerOptions" 
+-i "instancer.png" 
+menuEditorMenuItem14;
 
-    menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-    -l "Add Deformer"
-    -sm 1
-    -i "bendNLD.png"
-    -stp "mel"
-    menuEditorMenuItem24;
+menuItem
+-l "Add Deformer"
+-sm 1
+-i "bendNLD.png"
+-stp "mel"
+menuEditorMenuItem24;
 
-        menuItem
-        -l "Bend"
-        -c "Bend;"
-        -i "bendNLD.png"
-        -stp "mel"
-        menuEditorMenuItem13;
+menuItem
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png"
+-stp "mel"
+menuEditorMenuItem13;
 
-        menuItem
-        -l "menuEditorMenuItem1"
-        -c "BendOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem7;
+menuItem
+-c "BendOptions;"
+-ob 1
+-stp "mel"
+menuEditorMenuItem7;
 
-        menuItem
-        -l "Flare"
-        -c "Flare;"
-        -i "flareNLD.png"
-        -stp "mel"
-        menuEditorMenuItem15;
+menuItem
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png"
+-stp "mel"
+menuEditorMenuItem15;
 
-        menuItem
-        -l "menuEditorMenuItem2"
-        -c "FlareOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem8;
+menuItem
+-c "FlareOptions;"
+-ob 1
+-stp "mel"
+menuEditorMenuItem8;
 
-        menuItem
-        -l "Sine"
-        -c "Sine"
-        -i "sineNLD.png"
-        -stp "mel"
-        menuEditorMenuItem17;
+menuItem
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png"
+-stp "mel"
+menuEditorMenuItem17;
 
-        menuItem
-        -l "menuEditorMenuItem3"
-        -c "SineOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem9;
+menuItem
+-c "SineOptions;"
+-ob 1
+-stp "mel"
+menuEditorMenuItem9;
 
-        menuItem
-        -l "Squash"
-        -c "Squash"
-        -i "squashNLD.png"
-        -stp "mel"
-        menuEditorMenuItem19;
+menuItem
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png"
+-stp "mel"
+menuEditorMenuItem19;
 
-        menuItem
-        -l "menuEditorMenuItem4"
-        -c "SquashOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem10;
+menuItem
+-c "SquashOptions;"
+-ob 1
+-stp "mel"
+menuEditorMenuItem10;
 
-        menuItem
-        -l "Twist"
-        -c "Twist"
-        -i "twistNLD.png"
-        -stp "mel"
-        menuEditorMenuItem21;
+menuItem
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png"
+-stp "mel"
+menuEditorMenuItem21;
 
-        menuItem
-        -l "menuEditorMenuItem5"
-        -c "TwistOptions"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem11;
+menuItem
+-c "TwistOptions"
+-ob 1
+-stp "mel"
+menuEditorMenuItem11;
 
-        menuItem
-        -l "Wave"
-        -c "Wave"
-        -i "waveNLD.png"
-        -stp "mel"
-        menuEditorMenuItem23;
+menuItem
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png"
+-stp "mel"
+menuEditorMenuItem23;
 
-        menuItem
-        -l "menuEditorMenuItem6"
-        -c "WaveOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem12;
+menuItem
+-c "WaveOptions;"
+-ob 1
+-stp "mel"
+menuEditorMenuItem12;
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem
-        -label "Add Fields" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "posRadial.png" 
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem12;
+menuItem
+-l "Add Fields" 
+-sm 1
+-i "posRadial.png" 
+menuEditorMenuItem12;
 
-        menuItem
-            -label "Air" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posAir.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem1;
+menuItem
+-l "Air" 
+-c "dynExecuteFieldCommands 1 \"air\"" 
+-i "posAir.png" 
+menuEditorMenuItem1;
 
-        menuItem
-            -label "Drag" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posDrag.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem2;
+menuItem
+-l "Drag" 
+-c "dynExecuteFieldCommands 1 \"drag\"" 
+-i "posDrag.png" 
+menuEditorMenuItem2;
 
-        menuItem
-            -label "Gravity" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posGravity.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem3;
+menuItem
+-l "Gravity" 
+-c "dynExecuteFieldCommands 1 \"gravity\"" 
+-i "posGravity.png" 
+menuEditorMenuItem3;
 
-        menuItem
-            -label "Newton" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posNewton.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem4;
+menuItem
+-l "Newton" 
+-c "dynExecuteFieldCommands 1 \"newton\"" 
+-i "posNewton.png" 
+menuEditorMenuItem4;
 
-        menuItem
-            -label "Radial" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posRadial.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem5;
+menuItem
+-l "Radial" 
+-c "dynExecuteFieldCommands 1 \"radial\"" 
+-i "posRadial.png" 
+menuEditorMenuItem5;
 
-        menuItem
-            -label "Turbulence" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posTurbulence.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem6;
+menuItem
+-l "Turbulence" 
+-c "dynExecuteFieldCommands 1 \"turbulence\"" 
+-i "posTurbulence.png" 
+menuEditorMenuItem6;
 
-        menuItem
-            -label "Uniform" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posUniform.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem7;
+menuItem
+-l "Uniform" 
+-c "dynExecuteFieldCommands 1 \"uniform\"" 
+-i "posUniform.png" 
+menuEditorMenuItem7;
 
-        menuItem
-            -label "Vortex" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posVortex.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem8;
+menuItem
+-l "Vortex" 
+-c "dynExecuteFieldCommands 1 \"vortex\"" 
+-i "posVortex.png" 
+menuEditorMenuItem8;
 
-        menuItem
-            -label "separator" 
-            -divider 1
-            -dividerLabel "separator" 
-            -subMenu 0
-            -tearOff 0
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem9;
+menuItem
+-l "separator" 
+-d 1;
 
-        menuItem
-            -label "Volume Axis" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \"" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "posVolumeAxis.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
-            menuEditorMenuItem10;
+menuItem
+-l "Volume Axis" 
+-c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
+-i "posVolumeAxis.png" 
+menuEditorMenuItem10;
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem22;
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-        -label "HUD Info" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ToggleParticleCount" 
-        -checkBox (1 == $particleCountCheck)
-        -enable 1
-        -data 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem23;
+menuItem
+-l "HUD Info" 
+-c "ToggleParticleCount" 
+-checkBox (1 == $particleCountCheck)
+menuEditorMenuItem23;
 
 setParent -m ..;
 

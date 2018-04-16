@@ -1,40 +1,16 @@
 
     menuItem
-        -label "Edit Shader" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_AiStandardVolume" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "VolumeShelf.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Edit Shader" 
+        -c "da_AiStandardVolume" 
+        -rp "E" 
+        -i "VolumeShelf.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Edit Volume" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_AiVolumeShape" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "WireFrameOnShaded.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Edit Volume" 
+        -c "da_AiVolumeShape" 
+        -rp "W" 
+        -i "WireFrameOnShaded.png" 
         menuEditorMenuItem2;
 
 setParent -m ..;

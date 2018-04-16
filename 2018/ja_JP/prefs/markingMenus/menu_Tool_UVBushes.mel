@@ -1,326 +1,110 @@
 
-    menuItem -itl 1 
-        -label "Cut" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "cutUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem1;
+menuItem -itl 1 
+-l "Cut" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+-rp "NE" 
+-i "cutUVTool.png" 
+menuEditorMenuItem1;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
+menuItem -itl 1 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+-ob 1
+menuEditorMenuItem2;
 
-    menuItem -itl 1 
-        -label "Sew" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "sewUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
+menuItem -itl 1 
+-l "Sew" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext" 
+-rp "E" 
+-i "sewUVTool.png" 
+menuEditorMenuItem5;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;\ntoolPropertyWindow" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
+menuItem -itl 1 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;\ntoolPropertyWindow" 
+-ob 1
+menuEditorMenuItem6;
 
-    menuItem -itl 1 
-        -label "Grab" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "grabUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
+menuItem -itl 1 
+-l "Grab" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj" 
+-rp "SE" 
+-i "grabUVTool.png" 
+menuEditorMenuItem7;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem8" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;\ntoolPropertyWindow;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
+menuItem -itl 1 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;\ntoolPropertyWindow;" 
+-ob 1
+menuEditorMenuItem8;
 
-    menuItem -itl 1 
-        -label "Pin" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "pinUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
+menuItem -itl 1 
+-l "Pin" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj" 
+-rp "S" 
+-i "pinUVTool.png" 
+menuEditorMenuItem9;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem10" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;\ntoolPropertyWindow" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem10;
+menuItem -itl 1 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;\ntoolPropertyWindow" 
+-ob 1
+menuEditorMenuItem10;
 
-    menuItem -itl 1 
-        -label "Smear" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "smearUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
+menuItem -itl 1 
+-l "Smear" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj" 
+-rp "SW" 
+-i "smearUVTool.png" 
+menuEditorMenuItem11;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem12" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;\ntoolPropertyWindow" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem12;
+menuItem -itl 1 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;\ntoolPropertyWindow" 
+-ob 1
+menuEditorMenuItem12;
 
-    menuItem -itl 1 
-        -label "Optimize" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "optimizeUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem16;
+menuItem -itl 1 
+-l "Optimize" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+-rp "NW" 
+-i "optimizeUVTool.png" 
+menuEditorMenuItem16;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem17" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem17;
+menuItem -itl 1 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+-ob 1
+menuEditorMenuItem17;
 
-    menuItem -itl 1 
-        -label "Symmetrize" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "symmetrizeUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
+menuItem -itl 1 
+-l "Symmetrize" 
+-c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
+-i "symmetrizeUVTool.png" 
+menuEditorMenuItem3;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem4" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem15;
+menuItem -itl 1 
+-c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
+-ob 1
+menuEditorMenuItem15;
 
-    menuItem -itl 1 
-        -label "Unfold" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "unfoldUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem18;
+menuItem -itl 1 
+-l "Unfold" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext" 
+-rp "N" 
+-i "unfoldUVTool.png" 
+menuEditorMenuItem18;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem19" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;\ntoolPropertyWindow" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem20;
+menuItem -itl 1 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;\ntoolPropertyWindow" 
+-ob 1
+menuEditorMenuItem20;
 
-    menuItem -itl 1 
-        -label "Pinch" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "pinchUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem13;
+menuItem -itl 1 
+-l "Pinch" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj" 
+-rp "W" 
+-i "pinchUVTool.png" 
+menuEditorMenuItem13;
 
-    menuItem -itl 1 
-        -label "menuEditorMenuItem14" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj\ntoolPropertyWindow;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem21;
+menuItem -itl 1 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj\ntoolPropertyWindow;" 
+-ob 1
+menuEditorMenuItem21;
 
 setParent -m ..;
 

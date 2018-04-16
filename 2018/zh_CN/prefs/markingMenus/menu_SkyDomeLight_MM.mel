@@ -1,222 +1,84 @@
 
     menuItem
-        -label "Light Linking" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LightCentricLightLinkingEditor;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_defaultLightList.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Light Linking" 
+        -c "LightCentricLightLinkingEditor;" 
+        -rp "W" 
+        -i "out_defaultLightList.png" 
         menuEditorMenuItem16;
 
     menuItem
-        -label "Look Through" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_LookThruSelected" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "snapshot.svg" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Look Through" 
+        -c "da_LookThruSelected" 
+        -rp "N" 
+        -i "snapshot.svg" 
         menuEditorMenuItem2;
 
     menuItem
-        -label "Persp View" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dR_DoCmd(\"viewPersp\");" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "singlePerspLayout.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Persp View" 
+        -c "dR_DoCmd(\"viewPersp\");" 
+        -rp "S" 
+        -i "singlePerspLayout.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "Light Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_LightList" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "light_manager.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Light Editor" 
+        -c "da_LightList" 
+        -rp "NW" 
+        -i "light_manager.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -label "Edit Light" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AttributeEditor" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "attributes.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Edit Light" 
+        -c "AttributeEditor" 
+        -rp "SW" 
+        -i "attributes.png" 
         menuEditorMenuItem8;
 
     menuItem
-        -label "Normalize" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "MtoA_Logo.png" 
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Normalize" 
+        -sm 1
+        -i "MtoA_Logo.png" 
         menuEditorMenuItem7;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_AiLightNormalize" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_AiLightNormalize" 
+            -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_AiNoLightNormalize" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_AiNoLightNormalize" 
+            -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Area to Portal Light" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -image "MtoA_Logo.png" 
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Area to Portal Light" 
+        -sm 1
+        -i "MtoA_Logo.png" 
         menuEditorMenuItem4;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_AiPortalLight" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_AiPortalLight" 
+            -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_AiNoPortalLight" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_AiNoPortalLight" 
+            -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Add Physical Sky" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_AddPhysicalSky" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "PhysicalSkyShelf.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Add Physical Sky" 
+        -c "da_AddPhysicalSky" 
+        -rp "E" 
+        -i "PhysicalSkyShelf.png" 
         menuEditorMenuItem1;
 
 setParent -m ..;

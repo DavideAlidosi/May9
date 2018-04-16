@@ -1,154 +1,58 @@
 
     menuItem -itl 1 
-        -label "Pencil" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 1;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilPencil.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Pencil" 
+        -c "setGreasePencilType 1;" 
+        -rp "N" 
+        -i "greasePencilPencil.png" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Eraser" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 4;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilEraser.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Eraser" 
+        -c "setGreasePencilType 4;" 
+        -rp "S" 
+        -i "greasePencilEraser.png" 
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Remove Frame" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "removeGreasePencilFrameAtCurrentTime();" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilDeleteFrame.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Remove Frame" 
+        -c "removeGreasePencilFrameAtCurrentTime();" 
+        -rp "W" 
+        -i "greasePencilDeleteFrame.png" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Add Frame" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "createOrEditGreasePencilFrameAtCurrentTime();" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilAddFrame.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Add Frame" 
+        -c "createOrEditGreasePencilFrameAtCurrentTime();" 
+        -rp "E" 
+        -i "greasePencilAddFrame.png" 
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "Pre-Frame Ghost" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "toggleGreasePencilPreFrameCount();" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilPreGhostOn.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Pre-Frame Ghost" 
+        -c "toggleGreasePencilPreFrameCount();" 
+        -rp "SW" 
+        -i "greasePencilPreGhostOn.png" 
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -label "Post-Frame Ghost" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "toggleGreasePencilPostFrameCount();" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilPostGhostOn.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Post-Frame Ghost" 
+        -c "toggleGreasePencilPostFrameCount();" 
+        -rp "SE" 
+        -i "greasePencilPostGhostOn.png" 
         menuEditorMenuItem6;
 
     menuItem -itl 1 
-        -label "Marker" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 2;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilMarker.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Marker" 
+        -c "setGreasePencilType 2;" 
+        -rp "NW" 
+        -i "greasePencilMarker.png" 
         menuEditorMenuItem7;
 
     menuItem -itl 1 
-        -label "Soft Pencil" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setGreasePencilType 3;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "greasePencilSoftPencil.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Soft Pencil" 
+        -c "setGreasePencilType 3;" 
+        -rp "NE" 
+        -i "greasePencilSoftPencil.png" 
         menuEditorMenuItem8;
 
 setParent -m ..;

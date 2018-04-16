@@ -1,319 +1,118 @@
 
     menuItem
-        -label "Simulation Method" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-		-image "out_nucleus.png" 
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Simulation Method" 
+        -sm 1
+        -rp "E" 
+		-i "out_nucleus.png" 
         menuEditorMenuItem1;
 
         menuItem
-            -label "Static" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_HairStatic" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Static" 
+            -c "da_HairStatic" 
+            -rp "NE" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Passive" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_HairPassive" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "E" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Passive" 
+            -c "da_HairPassive" 
+            -rp "E" 
             menuEditorMenuItem2;
 
         menuItem
-            -label "Dynamic" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_HairDynamic" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SE" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Dynamic" 
+            -c "da_HairDynamic" 
+            -rp "SE" 
             menuEditorMenuItem3;
 
     setParent -m ..;
 
     menuItem
-        -label "Point Lock" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-		-image "pinned.png" 
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Point Lock" 
+        -sm 1
+        -rp "W" 
+		-i "pinned.png" 
         menuEditorMenuItem2;
 
         menuItem
-            -label "No Attach" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_HairNoLock" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "W" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "No Attach" 
+            -c "da_HairNoLock" 
+            -rp "W" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Base" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_HairLockBase" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "NW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Base" 
+            -c "da_HairLockBase" 
+            -rp "NW" 
             menuEditorMenuItem2;
 
         menuItem
-            -label "Both Ends" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_HairLockBothEnds" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "SW" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Both Ends" 
+            -c "da_HairLockBothEnds" 
+            -rp "SW" 
             menuEditorMenuItem3;
 
         menuItem
-            -label "Tip" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_nHairLockTip" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Tip" 
+            -c "da_nHairLockTip" 
+            -rp "N" 
             menuEditorMenuItem4;
 
     setParent -m ..;
 
     menuItem
-        -label "Self Collide" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Self Collide" 
+        -sm 1
         menuEditorMenuItem9;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_nHairSelfCollideOn" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-			-image "rvViewingPipelineOn.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_nHairSelfCollideOn" 
+			-i "rvViewingPipelineOn.png"
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_nHairSelfCollideOff" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-			-image "rvViewingPipelineOff.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_nHairSelfCollideOff" 
+			-i "rvViewingPipelineOff.png"
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Collide" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Collide" 
+        -sm 1
         menuEditorMenuItem10;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_nHairCollideOn" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-			-image "rvViewingPipelineOn.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_nHairCollideOn" 
+			-i "rvViewingPipelineOn.png"
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_nHairColllideOff" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-			-image "rvViewingPipelineOff.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_nHairColllideOff" 
+			-i "rvViewingPipelineOff.png"
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Braid" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Braid" 
+        -sm 1
         menuEditorMenuItem11;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_FollicleBraid" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-			-image "rvViewingPipelineOn.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_FollicleBraid" 
+            -rp "N" 
+			-i "rvViewingPipelineOn.png"
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_FollicleNoBraid" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-			-image "rvViewingPipelineOff.png"
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_FollicleNoBraid" 
+			-i "rvViewingPipelineOff.png"
             menuEditorMenuItem2;
 
     setParent -m ..;

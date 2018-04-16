@@ -1,110 +1,38 @@
 
     menuItem
-        -label "Alpha is Luminance On" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_FileAlphaLuminance" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Alpha is Luminance On" 
+        -c "da_FileAlphaLuminance" 
+        -rp "E" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Alpha is Luminance Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_FileNoAlphaLuminance" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Alpha is Luminance Off" 
+        -c "da_FileNoAlphaLuminance" 
+        -rp "W" 
         menuEditorMenuItem2;
 
     menuItem
-        -label "Color Space sRGB" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_FileColorSpaceSrgb" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Color Space sRGB" 
+        -c "da_FileColorSpaceSrgb" 
+        -rp "SE" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "Color Space Raw" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_FileColorSpaceRaw" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Color Space Raw" 
+        -c "da_FileColorSpaceRaw" 
+        -rp "SW" 
         menuEditorMenuItem4;
 
     menuItem
-        -label "Filter Type Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_FileFilterOff" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Filter Type Off" 
+        -c "da_FileFilterOff" 
+        -rp "NW" 
         menuEditorMenuItem5;
 
     menuItem
-        -label "Filter Type Quadratic" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_FileFilterQuadratic" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Filter Type Quadratic" 
+        -c "da_FileFilterQuadratic" 
+        -rp "NE" 
         menuEditorMenuItem6;
 
 setParent -m ..;

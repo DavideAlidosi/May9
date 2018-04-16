@@ -1,76 +1,28 @@
 
     menuItem
-        -label "Show Manips" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo ShowManips" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "showManip.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Show Manips" 
+        -c "setToolTo ShowManips" 
+        -rp "N" 
+        -i "showManip.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Edit Attributes" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AttributeEditor" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "attributes.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Edit Attributes" 
+        -c "AttributeEditor" 
+        -rp "S" 
+        -i "attributes.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -label "Extrude" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrude" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyExtrudeFacet.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Extrude" 
+        -c "PolyExtrude" 
+        -rp "E" 
+        -i "polyExtrudeFacet.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem4" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrudeOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "PolyExtrudeOptions" 
+        -ob 1
         menuEditorMenuItem4;
 
 setParent -m ..;

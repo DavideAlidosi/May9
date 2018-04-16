@@ -1,76 +1,28 @@
 
     menuItem -itl 1 
-        -label "Sculpt Guides" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgGuideSculptTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Sculpt Guides" 
+        -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
+        -rp "N" 
+        -i "xgGuideSculptTool.png" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
+        -ob 1
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Mirror Guides X-axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmFlipGuides( python(\"xgui.createDescriptionEditor(False).currentDescription()\") )" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgFlipGuides.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Mirror Guides X-axis" 
+        -c "xgmFlipGuides( python(\"xgui.createDescriptionEditor(False).currentDescription()\") )" 
+        -rp "W" 
+        -i "xgFlipGuides.png" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Select Description" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\");\npython(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\")" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgSelectionToggle.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Select Description" 
+        -c "python(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\");\npython(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\")" 
+        -rp "NE" 
+        -i "xgSelectionToggle.png" 
         menuEditorMenuItem4;
 
 setParent -m ..;

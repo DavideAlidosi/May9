@@ -1,40 +1,16 @@
 
     menuItem
-        -label "Add Mesh as Collider" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AddCollider" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "expandContainer.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Add Mesh as Collider" 
+        -c "AddCollider" 
+        -rp "N" 
+        -i "expandContainer.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Add Mesh as Deformer" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AddDeformer" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "collapseContainer.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Add Mesh as Deformer" 
+        -c "AddDeformer" 
+        -rp "S" 
+        -i "collapseContainer.png" 
         menuEditorMenuItem2;
 
 setParent -m ..;

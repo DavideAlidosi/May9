@@ -1,283 +1,103 @@
 
     menuItem
-        -label "Not Physically Based" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_NucleusPhysicallyBasedOff" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_radiusDimension.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Not Physically Based" 
+        -c "da_NucleusPhysicallyBasedOff" 
+        -rp "W" 
+        -i "out_radiusDimension.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "Physically Based" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_NucleusPhysicallyBasedOn" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_radiusDimension.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Physically Based" 
+        -c "da_NucleusPhysicallyBasedOn" 
+        -rp "E" 
+        -i "out_radiusDimension.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -label "Gravity" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Gravity" 
+        -sm 1
         menuEditorMenuItem12;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusGravityOn" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_NucleusGravityOn" 
+            -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusGravityOff" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_NucleusGravityOff" 
+            -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Use Plane" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Use Plane" 
+        -sm 1
         menuEditorMenuItem11;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusPlaneOn" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -radialPosition "N" 
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_NucleusPlaneOn" 
+            -rp "N" 
+            -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusPlaneOff" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_NucleusPlaneOff" 
+            -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Solver Precision" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Solver Precision" 
+        -sm 1
         menuEditorMenuItem10;
 
         menuItem
-            -label "High" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusHqOn" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "High" 
+            -c "da_NucleusHqOn" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Medium" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusMedium" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Medium" 
+            -c "da_NucleusMedium" 
             menuEditorMenuItem3;
 
         menuItem
-            -label "Low" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusHqOff" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Low" 
+            -c "da_NucleusHqOff" 
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Parallel Override" 
-        -divider 0
-        -subMenu 1
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Parallel Override" 
+        -sm 1
         menuEditorMenuItem13;
 
         menuItem
-            -label "On" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusParallelOn" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOn.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "On" 
+            -c "da_NucleusParallelOn" 
+            -i "rvViewingPipelineOn.png" 
             menuEditorMenuItem1;
 
         menuItem
-            -label "Off" 
-            -divider 0
-            -subMenu 0
-            -tearOff 0
-            -command "da_NucleusParallelOff" 
-            -optionBox 0
-            -enable 1
-            -data 0
-            -allowOptionBoxes 1
-            -postMenuCommandOnce 0
-            -enableCommandRepeat 1
-            -image "rvViewingPipelineOff.png" 
-            -echoCommand 0
-            -sourceType "mel" 
-            -longDivider 1
+            -l "Off" 
+            -c "da_NucleusParallelOff" 
+            -i "rvViewingPipelineOff.png" 
             menuEditorMenuItem2;
 
     setParent -m ..;
 
     menuItem
-        -label "Add Compass to Wind" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_NucleusWindController" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_implicitSphere.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Add Compass to Wind" 
+        -c "da_NucleusWindController" 
+        -rp "N" 
+        -i "out_implicitSphere.png" 
         menuEditorMenuItem1;
 
 setParent -m ..;

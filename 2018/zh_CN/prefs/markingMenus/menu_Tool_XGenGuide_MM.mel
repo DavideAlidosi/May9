@@ -1,149 +1,53 @@
 
     menuItem -itl 1 
-        -label "3D Falloff On" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "3D Falloff On" 
+        -c "xgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool;" 
+        -rp "NE" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "3D Falloff Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmGuideSculptContext -e -volumetricSel 0 xgmGuideSculptTool;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "3D Falloff Off" 
+        -c "xgmGuideSculptContext -e -volumetricSel 0 xgmGuideSculptTool;" 
+        -rp "NW" 
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Highlight On" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Highlight On" 
+        -c "xgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;" 
+        -rp "SE" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Highlight Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmGuideSculptContext -e -selHilight 0 xgmGuideSculptTool;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Highlight Off" 
+        -c "xgmGuideSculptContext -e -selHilight 0 xgmGuideSculptTool;" 
+        -rp "SW" 
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "Lock Length Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmGuideSculptContext -e -lockLength 0 `currentCtx`;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "unlockLength.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Lock Length Off" 
+        -c "xgmGuideSculptContext -e -lockLength 0 `currentCtx`;" 
+        -rp "W" 
+        -i "unlockLength.png" 
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -label "Lock Length On" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmGuideSculptContext -e -lockLength 1 `currentCtx`;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "lockLength.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Lock Length On" 
+        -c "xgmGuideSculptContext -e -lockLength 1 `currentCtx`;" 
+        -rp "E" 
+        -i "lockLength.png" 
         menuEditorMenuItem6;
 
     menuItem -itl 1 
-        -label "Guides Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgGuideTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgGuideContext.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Guides Tool" 
+        -c "XgGuideTool" 
+        -rp "N" 
+        -i "xgGuideContext.png" 
         menuEditorMenuItem8;
 
     menuItem -itl 1 
-        -label "XGen Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgDEditor.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "XGen Editor" 
+        -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
+        -i "xgDEditor.png" 
         menuEditorMenuItem7;
 
 setParent -m ..;

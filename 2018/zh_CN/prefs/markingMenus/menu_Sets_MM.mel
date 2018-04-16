@@ -1,40 +1,16 @@
 
     menuItem
-        -label "Select Set" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "selectAllSetMembers outlinerPanel1" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "aselect.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Select Set" 
+        -c "selectAllSetMembers outlinerPanel1" 
+        -rp "N" 
+        -i "aselect.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Delete Set" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doDelete" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "deleteActive.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Delete Set" 
+        -c "doDelete" 
+        -rp "S" 
+        -i "deleteActive.png" 
         menuEditorMenuItem2;
 
 setParent -m ..;

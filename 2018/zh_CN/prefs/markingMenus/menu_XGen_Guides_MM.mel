@@ -1,149 +1,53 @@
 
     menuItem
-        -label "Sculpt Guides" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgGuideSculptTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Sculpt Guides" 
+        -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
+        -rp "N" 
+        -i "xgGuideSculptTool.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem3" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
+        -ob 1
         menuEditorMenuItem3;
 
     menuItem
-        -label "Guides Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "XgGuideTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgGuideContext.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Guides Tool" 
+        -c "XgGuideTool" 
+        -rp "S" 
+        -i "xgGuideContext.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -label "Primitives to Poly" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "da_xgPolyConvert.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Primitives to Poly" 
+        -c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")" 
+        -rp "E" 
+        -i "da_xgPolyConvert.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -label "menuEditorMenuItem5" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")" 
+        -ob 1
         menuEditorMenuItem5;
 
     menuItem
-        -label "Mirror Guides X-axis" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "xgmFlipGuides( python(\"xgui.createDescriptionEditor(False).currentDescription()\") )" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgFlipGuides.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Mirror Guides X-axis" 
+        -c "xgmFlipGuides( python(\"xgui.createDescriptionEditor(False).currentDescription()\") )" 
+        -rp "W" 
+        -i "xgFlipGuides.png" 
         menuEditorMenuItem6;
 
     menuItem
-        -label "Select Description" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\");\npython(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\")" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgSelectionToggle.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Select Description" 
+        -c "python(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\");\npython(\"xgen.selectionToggle(xgui.createDescriptionEditor(False).currentDescription())\")" 
+        -rp "NE" 
+        -i "xgSelectionToggle.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -label "XGen Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "xgDEditor.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "XGen Editor" 
+        -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
+        -i "xgDEditor.png" 
         menuEditorMenuItem8;
 
 setParent -m ..;

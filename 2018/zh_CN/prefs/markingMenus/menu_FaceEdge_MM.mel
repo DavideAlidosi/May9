@@ -1,73 +1,26 @@
 
     menuItem
-        -label "Wedge" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "WedgePolygon;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyWedgeFace.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Wedge" 
+        -c "WedgePolygon;" 
+        -rp "N" 
+        -i "polyWedgeFace.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "WedgePolygonOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "WedgePolygonOptions;" 
+        -ob 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Bevel" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BevelPolygon;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyBevel.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Bevel" 
+        -c "BevelPolygon;" 
+        -rp "NW" 
+        -i "polyBevel.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BevelPolygonOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "BevelPolygonOptions;" 
+        -ob 1
         menuEditorMenuItem4;
 
 setParent -m ..;

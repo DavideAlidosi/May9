@@ -1,59 +1,23 @@
 
     menuItem
-        -label "Edit Membership Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "EditMembershipTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "setEdit.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Edit Membership Tool" 
+        -c "EditMembershipTool" 
+        -rp "N" 
+        -i "setEdit.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Deformer Set Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DeformerSetEditor" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "da_deformerSetEditor.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Deformer Set Editor" 
+        -c "DeformerSetEditor" 
+        -rp "NW" 
+        -i "da_deformerSetEditor.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -label "Set Membership" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PaintSetMembershipToolOptions" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "paintSetMembership.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Set Membership" 
+        -c "PaintSetMembershipToolOptions" 
+        -rp "NE" 
+        -i "paintSetMembership.png" 
         menuEditorMenuItem3;
 
 setParent -m ..;

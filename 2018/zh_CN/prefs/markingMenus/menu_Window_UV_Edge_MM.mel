@@ -3,335 +3,101 @@
     commonTexSelectOptionsPopup();
 
 	menuItem
-		-label "Cut"
-		-command "CutUVs"
-		-image "polyCutUV.png"
-		-radialPosition "E"
-		-sourceType "mel"
-		menuEditorMenuItem1;
+		-l "Cut"
+		-c "CutUVs"
+		-i "polyCutUV.png"
+		-rp "E";
 
 	menuItem
-		-label "Sew"
-		-command "SewUVs"
-		-image "polySewUV.png"
-		-radialPosition "W"
-		-sourceType "mel";
+		-l "Sew"
+		-c "SewUVs"
+		-i "polySewUV.png"
+		-rp "W";
 
     menuItem
-        -label "Stitch" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "texMultiStitch 1" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyUVMultiStitch.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem2;
+        -l "Stitch" 
+        -c "texMultiStitch 1" 
+        -rp "SW" 
+        -i "polyUVMultiStitch.png";
 
     menuItem
-        -label "Optimize" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "optimizeUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem4;
+        -l "Optimize" 
+        -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+        -rp "NW" 
+        -i "optimizeUVTool.png";
 
     menuItem
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem6;
+        -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+        -ob 1;
 
     menuItem
-        -label "Cut/Sew" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "CutSewUVTool.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem9;
+        -l "Cut/Sew" 
+        -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+        -rp "NE" 
+        -i "CutSewUVTool.png";
 
     menuItem
-        -label "menuEditorMenuItem10" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem10;
+        -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+        -ob 1;
 
     menuItem
-        -label "UV Toolkit" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_OpenUvToolkit" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "UVTk.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem21;
+        -l "UV Toolkit" 
+        -c "da_OpenUvToolkit" 
+        -i "UVTk.png";
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem18;
+        -l "separator" 
+        -d 1;
 
     menuItem
-        -label "Auto Seams" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performPolyAutoSeamUV 0" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyAutoSeams.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem11;
+        -l "Auto Seams" 
+        -c "performPolyAutoSeamUV 0" 
+        -i "polyAutoSeams.png";
 
     menuItem
-        -label "menuEditorMenuItem15" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performPolyAutoSeamUV 1" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem3;
+        -c "performPolyAutoSeamUV 1" 
+        -ob 1;
 
     menuItem
-        -label "Unfold" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performUnfold 0" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "textureEditorUnfoldUVs.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem5;
+        -l "Unfold" 
+        -c "performUnfold 0" 
+        -i "textureEditorUnfoldUVs.png";
 
     menuItem
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performUnfold 1" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem15;
+        -c "performUnfold 1" 
+        -ob 1;
 
     menuItem
-        -label "Layout" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LayoutUV" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "layoutUV.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem16;
+        -l "Layout" 
+        -c "LayoutUV" 
+        -i "layoutUV.png";
 
     menuItem
-        -label "menuEditorMenuItem18" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "LayoutUVOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem17;
+        -c "LayoutUVOptions" 
+        -ob 1;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem13;
+        -l "separator" 
+        -d 1;
 
     menuItem
-        -label "Edges to Curves" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ConvertUvEdgeToCurve" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyEdgeToCurves.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem12;
+        -l "Edges to Curves" 
+        -c "da_ConvertUvEdgeToCurve" 
+        -i "polyEdgeToCurves.png";
 
     menuItem
-        -label "To Loops to Curves" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_EdgeToLoopToCurve" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "da_EdgeToLoopToCurve.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem14;
+        -l "To Loops to Curves" 
+        -c "da_EdgeToLoopToCurve" 
+        -i "da_EdgeToLoopToCurve.png";
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem8;
+        -l "separator" 
+        -d 1;
 
     menuItem
-        -label "Convert to UVs" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ConvertSelectionToUVs" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "UVEditorVertex.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem7;
+        -l "Convert to UVs" 
+        -c "ConvertSelectionToUVs" 
+        -i "UVEditorVertex.png";
 
 setParent -m ..;
 

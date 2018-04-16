@@ -1,38 +1,14 @@
 
     menuItem
-        -label "Project Curve on Surface" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ProjectCurveOnSurface" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "projectCurve.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Project Curve on Surface" 
+        -c "ProjectCurveOnSurface" 
+        -rp "N" 
+        -i "projectCurve.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem4" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ProjectCurveOnSurfaceOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "ProjectCurveOnSurfaceOptions" 
+        -ob 1
         menuEditorMenuItem4;
 
 setParent -m ..;

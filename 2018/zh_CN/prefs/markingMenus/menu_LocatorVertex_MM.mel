@@ -1,37 +1,14 @@
 
     menuItem
-        -label "Transform nConstraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateDynamicConstraint 0 \"transform\";" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "nConstraintTransform.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Transform nConstraint" 
+        -c "performCreateDynamicConstraint 0 \"transform\";" 
+        -rp "N" 
+        -i "nConstraintTransform.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "performCreateDynamicConstraint 1 \"transform\";" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "performCreateDynamicConstraint 1 \"transform\";" 
+        -ob 1
         menuEditorMenuItem2;
 
 setParent -m ..;

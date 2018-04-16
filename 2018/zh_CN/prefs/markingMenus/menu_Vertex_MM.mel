@@ -3,90 +3,71 @@ commonReflectionOptionsPopup();
 commonSelectOptionsPopup();
 
 menuItem
--label "Multi Cut Tool"
--command "dR_multiCutTool;"
--radialPosition "W"
--image "multiCut_NEX32.png"
--sourceType "mel"
+-l "Multi Cut Tool"
+-c "dR_multiCutTool;"
+-rp "W"
+-i "multiCut_NEX32.png"
 menuEditorMenuItem9;
 
 menuItem
--label "Merge"
--command "PolyMerge;"
--radialPosition "NE"
--image "polyMerge.png"
--sourceType "mel"
+-l "Merge"
+-c "PolyMerge;"
+-rp "NE"
+-i "polyMerge.png"
 menuEditorMenuItem12;
 
 menuItem
--label "menuEditorMenuItem15"
--command "PolyMergeOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "PolyMergeOptions;"
+-ob 1
 menuEditorMenuItem15;
 
 menuItem
--label "Average Vertex"
--command "performPolyAverageVertex 0"
--radialPosition "SW"
--image "polyAverageVertex.png"
--sourceType "mel"
+-l "Average Vertex"
+-c "performPolyAverageVertex 0"
+-rp "SW"
+-i "polyAverageVertex.png"
 menuEditorMenuItem11;
 
 menuItem
--label "menuEditorMenuItem17"
--command "performPolyAverageVertex 1"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "performPolyAverageVertex 1"
+-ob 1
 menuEditorMenuItem17;
 
 menuItem
--label "Chamfer"
--command "ChamferVertex"
--radialPosition "NW"
--image "polyChamfer.png"
--sourceType "mel"
+-l "Chamfer"
+-c "ChamferVertex"
+-rp "NW"
+-i "polyChamfer.png"
 menuEditorMenuItem3;
 
 menuItem
--label "menuEditorMenuItem4"
--command "ChamferVertexOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "ChamferVertexOptions"
+-ob 1
 menuEditorMenuItem4;
 
 menuItem
--label "Merge to Center"
--command "MergeToCenter;"
--radialPosition "SE"
--image "polyMergeToCenter.png"
--sourceType "mel"
+-l "Merge to Center"
+-c "MergeToCenter;"
+-rp "SE"
+-i "polyMergeToCenter.png"
 menuEditorMenuItem25;
 
 menuItem
--label "Extrude"
--command "PolyExtrude"
--radialPosition "E"
--image "polyExtrudeFacet.png"
--sourceType "mel"
+-l "Extrude"
+-c "PolyExtrude"
+-rp "E"
+-i "polyExtrudeFacet.png"
 menuEditorMenuItem2;
 
 menuItem
--label "menuEditorMenuItem8"
--command "PolyExtrudeOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "PolyExtrudeOptions"
+-ob 1
 menuEditorMenuItem8;
 
 menuItem
--label "Selection Constraints"
--command "PolygonSelectionConstraints"
--image "polySelectUsingConstraints.png"
--sourceType "mel"
+-l "Selection Constraints"
+-c "PolygonSelectionConstraints"
+-i "polySelectUsingConstraints.png"
 menuEditorMenuItem1000;
 
 menuItem
@@ -96,419 +77,329 @@ menuItem
 -stp "mel";
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem1001;
+-l "separator" 
+-d 1;
 
 menuItem
--label "Transform"
--command "performPolyMove \"\" 0"
--image "polyMoveVertex.png"
--sourceType "mel"
+-l "Transform"
+-c "performPolyMove \"\" 0"
+-i "polyMoveVertex.png"
 menuEditorMenuItem10;
 
 menuItem
--label "menuEditorMenuItem22"
--command "MovePolygonComponentOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "MovePolygonComponentOptions"
+-ob 1
 menuEditorMenuItem19;
 
 menuItem
--label "Detach"
--command "DetachVertexComponent;"
--image "polySplitVertex.png"
--sourceType "mel"
+-l "Detach"
+-c "DetachVertexComponent;"
+-i "polySplitVertex.png"
 menuEditorMenuItem5;
 
 menuItem
--label "Crease Tool"
--command "PolyCreaseTool"
--image "polyCrease.png"
--sourceType "mel"
+-l "Crease Tool"
+-c "PolyCreaseTool"
+-i "polyCrease.png"
 menuEditorMenuItem22;
 
 menuItem
--label "menuEditorMenuItem27"
--command "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";"
+-ob 1
 menuEditorMenuItem20;
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem999;
+-l "separator" 
+-d 1;
 
 menuItem
--label "Transfer Vertex Order"
--command "TransferVertexOrder"
--image "transferIDs.png"
--sourceType "mel"
+-l "Transfer Vertex Order"
+-c "TransferVertexOrder"
+-i "transferIDs.png"
 menuEditorMenuItem23;
 
 menuItem
--label "Flip"
--command "dR_performSymmetryFlip;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
--image "polyFlip.png"
--sourceType "mel"
+-l "Flip"
+-c "dR_performSymmetryFlip;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
+-i "polyFlip.png"
 menuEditorMenuItem33;
 
 menuItem
--label "Symmetrize"
--command "dR_performSymmetrize;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
--image "symmetrize.png"
--sourceType "mel"
+-l "Symmetrize"
+-c "dR_performSymmetrize;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
+-i "symmetrize.png"
 menuEditorMenuItem34;
 
 menuItem
--label "Set CVs to Zero"
--command "da_ResetTweakPoint"
--image "polyCollapseEdge.png"
--sourceType "mel"
+-l "Set CVs to Zero"
+-c "da_ResetTweakPoint"
+-i "polyCollapseEdge.png"
 menuEditorMenuItem27;
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem13;
+-l "separator" 
+-d 1;
 
 menuItem
--label "Deformers"
--subMenu 1
--image "menuIconDeformations.png"
--sourceType "mel"
+-l "Deformers"
+-sm 1
+-i "bendNLD.png"
 menuEditorMenuItem14;
 
 menuItem
--label "Nonlinear"
--subMenu 1
--image "bendNLD.png"
--sourceType "mel"
+-l "Nonlinear"
+-sm 1
+-i "bendNLD.png"
 menuEditorMenuItem1;
 
 menuItem
--label "Bend"
--command "Bend;"
--image "bendNLD.png"
--sourceType "mel"
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png"
 menuEditorMenuItem13;
 
 menuItem
--label "menuEditorMenuItem14"
--command "BendOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "BendOptions;"
+-ob 1
 menuEditorMenuItem1;
 
 menuItem
--label "Flare"
--command "Flare;"
--image "flareNLD.png"
--sourceType "mel"
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png"
 menuEditorMenuItem15;
 
 menuItem
--label "menuEditorMenuItem16"
--command "FlareOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "FlareOptions;"
+-ob 1
 menuEditorMenuItem2;
 
 menuItem
--label "Sine"
--command "Sine"
--image "sineNLD.png"
--sourceType "mel"
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png"
 menuEditorMenuItem17;
 
 menuItem
--label "menuEditorMenuItem18"
--command "SineOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "SineOptions;"
+-ob 1
 menuEditorMenuItem3;
 
 menuItem
--label "Squash"
--command "Squash"
--image "squashNLD.png"
--sourceType "mel"
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png"
 menuEditorMenuItem19;
 
 menuItem
--label "menuEditorMenuItem20"
--command "SquashOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "SquashOptions;"
+-ob 1
 menuEditorMenuItem4;
 
 menuItem
--label "Twist"
--command "Twist"
--image "twistNLD.png"
--sourceType "mel"
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png"
 menuEditorMenuItem21;
 
 menuItem
--label "menuEditorMenuItem22"
--command "TwistOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "TwistOptions"
+-ob 1
 menuEditorMenuItem5;
 
 menuItem
--label "Wave"
--command "Wave"
--image "waveNLD.png"
--sourceType "mel"
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png"
 menuEditorMenuItem23;
 
 menuItem
--label "menuEditorMenuItem24"
--command "WaveOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "WaveOptions;"
+-ob 1
 menuEditorMenuItem6;
 
 setParent -m ..;
 
 menuItem
--label "Cluster"
--command "CreateCluster"
--image "cluster.png"
--sourceType "mel"
+-l "Cluster"
+-c "CreateCluster"
+-i "cluster.png"
 menuEditorMenuItem9;
 
 menuItem
--label "menuEditorMenuItem10"
--command "CreateClusterOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "CreateClusterOptions"
+-ob 1
 menuEditorMenuItem3;
 
 menuItem
--label "Lattice"
--command "CreateLattice"
--image "lattice.png"
--sourceType "mel"
+-l "Lattice"
+-c "CreateLattice"
+-i "lattice.png"
 menuEditorMenuItem2;
 
 menuItem
--label "menuEditorMenuItem8"
--command "CreateLatticeOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "CreateLatticeOptions;"
+-ob 1
 menuEditorMenuItem4;
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem10;
+-l "separator" 
+-d 1;
 
 menuItem
--label "Muscle Self Collision Groups"
--command "cMuscleSelfCollisionUI(); "
--image "cMuscle_multi_apply.png"
--sourceType "mel"
+-l "Muscle Self Collision Groups"
+-c "cMuscleSelfCollisionUI(); "
+-i "cMuscle_multi_apply.png"
 menuEditorMenuItem8;
 
 menuItem
--label "Paint Skin Weights"
--command "ArtPaintSkinWeightsTool"
--image "paintSkinWeights.png"
--sourceType "mel"
+-l "Paint Skin Weights"
+-c "ArtPaintSkinWeightsTool"
+-i "paintSkinWeights.png"
 menuEditorMenuItem11;
 
 menuItem
--command "ArtPaintSkinWeightsToolOptions"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "ArtPaintSkinWeightsToolOptions"
+-ob 1
 menuEditorMenuItem12;
 
 menuItem
--label "Hammer Skin Weights"
--command "weightHammerVerts"
--image "weightHammer.png"
--sourceType "mel"
+-l "Hammer Skin Weights"
+-c "weightHammerVerts"
+-i "weightHammer.png"
 menuEditorMenuItem16;
 
 menuItem
--label "Copy Skin Weights"
--command "artAttrSkinWeightCopy"
--image "polyCopyUV.png"
--sourceType "mel"
+-l "Copy Skin Weights"
+-c "artAttrSkinWeightCopy"
+-i "polyCopyUV.png"
 menuEditorMenuItem13;
 
 menuItem
--label "Paste Skin Weights"
--command "artAttrSkinWeightPaste"
--image "polyPasteUV.png"
--sourceType "mel"
+-l "Paste Skin Weights"
+-c "artAttrSkinWeightPaste"
+-i "polyPasteUV.png"
 menuEditorMenuItem14;
 
 setParent -m ..;
 
 menuItem
--label "Dynamics"
--subMenu 1
--image "out_nucleus.png"
--sourceType "mel"
+-l "Dynamics"
+-sm 1
+-i "out_nucleus.png"
 menuEditorMenuItem21;
 
 menuItem
--label "Emit Particle"
--command "NEmitFromObject;"
--image "emitter.png"
--sourceType "mel"
+-l "Emit Particle"
+-c "NEmitFromObject;"
+-i "emitter.png"
 menuEditorMenuItem3;
 
 menuItem
--label "menuEditorMenuItem4"
--command "NEmitFromObjectOptions;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "NEmitFromObjectOptions;"
+-ob 1
 menuEditorMenuItem1;
 
 menuItem
--label "Particle Style"
--subMenu 1
--image "out_particle.png"
--sourceType "mel"
+-l "Particle Style"
+-sm 1
+-i "out_particle.png"
 menuEditorMenuItem5;
 
 menuItem
--label "Points"
--command "optionVar -stringValue NParticleStyle \"Points\";"
--image "nPartPoints.png"
--sourceType "mel"
+-l "Points"
+-c "optionVar -stringValue NParticleStyle \"Points\";"
+-i "nPartPoints.png"
 menuEditorMenuItem1;
 
 menuItem
--label "Balls"
--command "optionVar -stringValue NParticleStyle \"Balls\";"
--image "nPartBalls.png"
--sourceType "mel"
+-l "Balls"
+-c "optionVar -stringValue NParticleStyle \"Balls\";"
+-i "nPartBalls.png"
 menuEditorMenuItem2;
 
 menuItem
--label "Cloud"
--command "optionVar -stringValue NParticleStyle \"Cloud\";"
--image "nPartCloud.png"
--sourceType "mel"
+-l "Cloud"
+-c "optionVar -stringValue NParticleStyle \"Cloud\";"
+-i "nPartCloud.png"
 menuEditorMenuItem3;
 
 menuItem
--label "ThickCloud"
--command "optionVar -stringValue NParticleStyle \"ThickCloud\";"
--image "nPartThickCloud.png"
--sourceType "mel"
+-l "ThickCloud"
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-i "nPartThickCloud.png"
 menuEditorMenuItem4;
 
 menuItem
--label "Water"
--command "optionVar -stringValue NParticleStyle \"Water\";"
--image "nPartWater.png"
--sourceType "mel"
+-l "Water"
+-c "optionVar -stringValue NParticleStyle \"Water\";"
+-i "nPartWater.png"
 menuEditorMenuItem5;
 
 setParent -m ..;
 
 menuItem
--label "Add Fields"
--subMenu 1
--image "posRadial.png"
--sourceType "mel"
+-l "Add Fields"
+-sm 1
+-i "posRadial.png"
 menuEditorMenuItem12;
 
 menuItem
--label "Air"
--command "dynExecuteFieldCommands 1 \"air -pos 0 0 0 -m 4 -att 1 -dx 0 -dy 1 -dz 0 -s 5 -iv 1 -iro 1 -vco 0 -es 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posAir.png"
--sourceType "mel"
+-l "Air"
+-c "dynExecuteFieldCommands 1 \"air\""
+-i "posAir.png"
 menuEditorMenuItem1;
 
 menuItem
--label "Drag"
--command "dynExecuteFieldCommands 1 \"drag -pos 0 0 0 -m 0.05 -att 1 -dx 0 -dy 0 -dz 0 -ud 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posDrag.png"
--sourceType "mel"
+-l "Drag"
+-c "dynExecuteFieldCommands 1 \"drag\""
+-i "posDrag.png"
 menuEditorMenuItem2;
 
 menuItem
--label "Gravity"
--command "dynExecuteFieldCommands 1 \"gravity -pos 0 0 0 -m 9.8 -att 0 -dx 0 -dy -1 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posGravity.png"
--sourceType "mel"
+-l "Gravity"
+-c "dynExecuteFieldCommands 1 \"gravity\""
+-i "posGravity.png"
 menuEditorMenuItem3;
 
 menuItem
--label "Newton"
--command "dynExecuteFieldCommands 1 \"newton -pos 0 0 0 -m 5 -att 1 -mnd 0.2  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posNewton.png"
--sourceType "mel"
+-l "Newton"
+-c "dynExecuteFieldCommands 1 \"newton\""
+-i "posNewton.png"
 menuEditorMenuItem4;
 
 menuItem
--label "Radial"
--command "dynExecuteFieldCommands 1 \"radial -pos 0 0 0 -m 5 -att 1 -typ 0  -mxd 20  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posRadial.png"
--sourceType "mel"
+-l "Radial"
+-c "dynExecuteFieldCommands 1 \"radial\""
+-i "posRadial.png"
 menuEditorMenuItem5;
 
 menuItem
--label "Turbulence"
--command "dynExecuteFieldCommands 1 \"turbulence -pos 0 0 0 -m 5 -att 1 -f 1 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 0 -noiseRatio 0.707  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posTurbulence.png"
--sourceType "mel"
+-l "Turbulence"
+-c "dynExecuteFieldCommands 1 \"turbulence\""
+-i "posTurbulence.png"
 menuEditorMenuItem6;
 
 menuItem
--label "Uniform"
--command "dynExecuteFieldCommands 1 \"uniform -pos 0 0 0 -m 5 -att 1 -dx 1 -dy 0 -dz 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posUniform.png"
--sourceType "mel"
+-l "Uniform"
+-c "dynExecuteFieldCommands 1 \"uniform\""
+-i "posUniform.png"
 menuEditorMenuItem7;
 
 menuItem
--label "Vortex"
--command "dynExecuteFieldCommands 1 \"vortex -pos 0 0 0 -m 5 -att 1 -ax 0 -ay 1 -az 0  -mxd -1  -vsh none -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posVortex.png"
--sourceType "mel"
+-l "Vortex"
+-c "dynExecuteFieldCommands 1 \"vortex\""
+-i "posVortex.png"
 menuEditorMenuItem8;
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem9;
+-l "separator" 
+-d 1;
 
 menuItem
--label "Volume Axis"
--command "dynExecuteFieldCommands 1 \"volumeAxis -pos 0 0 0 -m 5 -att 0 -ia 0 -afc 1 -afx 1 -arx 0 -alx 0 -drs 0 -dx 1 -dy 0 -dz 0 -trb 0 -trs 0.2 -tfx 1 -tfy 1 -tfz 1 -tox 0 -toy 0 -toz 0 -dtr 0  -mxd -1  -vsh cube -vof 0 0 0 -vsw 360 -tsr 0.5 \""
--image "posVolumeAxis.png"
--sourceType "mel"
+-l "Volume Axis"
+-c "dynExecuteFieldCommands 1 \"volumeAxis\""
+-i "posVolumeAxis.png"
 menuEditorMenuItem10;
 
 setParent -m ..;
@@ -516,136 +407,104 @@ setParent -m ..;
 setParent -m ..;
 
 menuItem
--label "nConstraint"
--subMenu 1
--image "menuIconConstraints.png"
--sourceType "mel"
+-l "nConstraint"
+-sm 1
+-i "menuIconConstraints.png"
 menuEditorMenuItem24;
 
 menuItem
--label "Transform Constraint"
--command "doCreateNConstraint transform 0"
--image "nConstraintTransform.png"
--sourceType "mel"
+-l "Transform Constraint"
+-c "doCreateNConstraint transform 0"
+-i "nConstraintTransform.png"
 menuEditorMenuItem15;
 
 menuItem
--label "menuEditorMenuItem16"
--command "performCreateDynamicConstraint 1 \"transform\";"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "performCreateDynamicConstraint 1 \"transform\";"
+-ob 1
 menuEditorMenuItem14;
 
 menuItem
--label "Self Component"
--command "performCreateComponentNConstraint 0;"
--image "nConstraintComponent.png"
--sourceType "mel"
+-l "Self Component"
+-c "performCreateComponentNConstraint 0;"
+-i "nConstraintComponent.png"
 menuEditorMenuItem12;
 
 menuItem
--label "menuEditorMenuItem16"
--command "performCreateComponentNConstraint 1;"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "performCreateComponentNConstraint 1;"
+-ob 1
 menuEditorMenuItem16;
 
 menuItem
--label "Component to Component"
--command "performCreateDynamicConstraint 0 \"pointToPoint\";"
--image "nConstraintComponent.png"
--sourceType "mel"
+-l "Component to Component"
+-c "performCreateDynamicConstraint 0 \"pointToPoint\";"
+-i "nConstraintComponent.png"
 menuEditorMenuItem4;
 
 menuItem
--label "menuEditorMenuItem5"
--command "performCreateDynamicConstraint 1 \"pointToPoint\";"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "performCreateDynamicConstraint 1 \"pointToPoint\";"
+-ob 1
 menuEditorMenuItem18;
 
 menuItem
--label "Tearable Surface"
--command "performCreateDynamicConstraint 0 \"tearableSurface\";"
--image "nConstraintTearable.png"
--sourceType "mel"
+-l "Tearable Surface"
+-c "performCreateDynamicConstraint 0 \"tearableSurface\";"
+-i "nConstraintTearable.png"
 menuEditorMenuItem1;
 
 menuItem
--label "menuEditorMenuItem3"
--command "performCreateDynamicConstraint 1 \"tearableSurface\";"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "performCreateDynamicConstraint 1 \"tearableSurface\";"
+-ob 1
 menuEditorMenuItem19;
 
 menuItem
--label "Force Field"
--command "doCreateNConstraint force 0"
--image "nConstraintForceField.png"
--sourceType "mel"
+-l "Force Field"
+-c "doCreateNConstraint force 0"
+-i "nConstraintForceField.png"
 menuEditorMenuItem17;
 
 menuItem
--label "menuEditorMenuItem18"
--command "performCreateDynamicConstraint 1 \"force\";"
--optionBox 1
--enableCommandRepeat 0
--sourceType "mel"
+-c "performCreateDynamicConstraint 1 \"force\";"
+-ob 1
 menuEditorMenuItem20;
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem5;
+-l "separator" 
+-d 1;
 
 menuItem
--label "Select Members"
--command "dynamicConstraintMembership \"select\";"
--image "nConstraintSelectMembers.png"
--sourceType "mel"
+-l "Select Members"
+-c "dynamicConstraintMembership \"select\";"
+-i "nConstraintSelectMembers.png"
 menuEditorMenuItem9;
 
 menuItem
--label "Replace Members"
--command "dynamicConstraintMembership \"replace\";"
--image "nConstraintReplaceMembers.png"
--sourceType "mel"
+-l "Replace Members"
+-c "dynamicConstraintMembership \"replace\";"
+-i "nConstraintReplaceMembers.png"
 menuEditorMenuItem6;
 
 menuItem
--label "Add Members"
--command "dynamicConstraintMembership \"add\";"
--image "nConstraintAddMembers.png"
--sourceType "mel"
+-l "Add Members"
+-c "dynamicConstraintMembership \"add\";"
+-i "nConstraintAddMembers.png"
 menuEditorMenuItem7;
 
 menuItem
--label "Remove Members"
--command "dynamicConstraintMembership \"remove\";"
--image "nConstraintRemoveMembers.png"
--sourceType "mel"
+-l "Remove Members"
+-c "dynamicConstraintMembership \"remove\";"
+-i "nConstraintRemoveMembers.png"
 menuEditorMenuItem8;
 
 setParent -m ..;
 
 menuItem
--label "separator" 
--divider 1
--dividerLabel "separator"
--sourceType "mel"
-menuEditorMenuItem18;
+-l "separator" 
+-d 1;
 
 menuItem
--label "Convert to UVs"
--command "ConvertSelectionToUVs"
--image "UVEditorVertex.png"
--sourceType "mel"
+-l "Convert to UVs"
+-c "ConvertSelectionToUVs"
+-i "UVEditorVertex.png"
 menuEditorMenuItem7;
 
 setParent -m ..;

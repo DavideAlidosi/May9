@@ -1,90 +1,41 @@
 
     menuItem
-        -label "Duplicate" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "duplicateSurfacePresetArgList( \"2\", {\"1\",\"0\"} )" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "duplicateSurface.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Duplicate" 
+        -c "duplicateSurfacePresetArgList( \"2\", {\"1\",\"0\"} )" 
+        -rp "N" 
+        -i "duplicateSurface.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Surface Editing" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SurfaceEditingTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "surfaceEditor.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Surface Editing" 
+        -c "SurfaceEditingTool" 
+        -rp "S" 
+        -i "surfaceEditor.png" 
         menuEditorMenuItem2;
 
     menuItem
-        -label "menuEditorMenuItem3" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SurfaceEditingToolOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "SurfaceEditingToolOptions" 
+        -ob 1
         menuEditorMenuItem3;
 
     $item = "";
 
-    $menuAssign = `menuItem -label (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -subMenu true -allowOptionBoxes true -i "out_shaderList.png"`;
+    $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
     menuItem 
         -edit 
         -postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
     setParent -menu ..;
 
     menuItem
-        -label "Assign New Material" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "createAssignNewMaterialTreeLister \"\";" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "render_adskMaterial.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Assign New Material" 
+        -c "createAssignNewMaterialTreeLister \"\";" 
+        -i "render_adskMaterial.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -label "Assign Initial Shading Group"
-        -command "hyperShade -assign initialShadingGroup"
-        -image "out_lambert.png"
-        -sourceType "mel"
+        -l "Assign Initial Shading Group"
+        -c "hyperShade -assign initialShadingGroup"
+        -i "out_lambert.png"
         menuEditorMenuItem5;
 
 setParent -m ..;

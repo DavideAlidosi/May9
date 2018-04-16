@@ -1,40 +1,16 @@
 
     menuItem
-        -label "Connect to Shape(s)" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ConnectCereation" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "da_OneToMany.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Connect to Shape(s)" 
+        -c "da_ConnectCereation" 
+        -rp "N" 
+        -i "da_OneToMany.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Display IVE" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ShowManipulators" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "materialEditor.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Display IVE" 
+        -c "ShowManipulators" 
+        -rp "S" 
+        -i "materialEditor.png" 
         menuEditorMenuItem2;
 
 setParent -m ..;

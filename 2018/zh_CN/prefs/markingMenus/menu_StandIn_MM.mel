@@ -1,75 +1,27 @@
 
     menuItem
-        -label "Create MASH Network" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "MASHcreateOptions" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "MASH_CreateNetwork.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Create MASH Network" 
+        -c "MASHcreateOptions" 
+        -rp "N" 
+        -i "MASH_CreateNetwork.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Display as Boundry Box" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_aiStandInBoundryBox" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Display as Boundry Box" 
+        -c "da_aiStandInBoundryBox" 
+        -rp "NE" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "Display as Polywire" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_aiStandinPolyWire" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Display as Polywire" 
+        -c "da_aiStandinPolyWire" 
+        -rp "SE" 
         menuEditorMenuItem4;
 
     menuItem
-        -label "display as Point Cloud" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_aiStandinPointCloud" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "display as Point Cloud" 
+        -c "da_aiStandinPointCloud" 
+        -rp "E" 
         menuEditorMenuItem5;
 
 setParent -m ..;

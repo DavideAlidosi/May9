@@ -1,40 +1,16 @@
 
     menuItem
-        -label "Insert Knot" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "InsertKnot;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "insertKnot.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Insert Knot" 
+        -c "InsertKnot;" 
+        -rp "N" 
+        -i "insertKnot.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Detach Curve" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "DetachCurve;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "detachCurve.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Detach Curve" 
+        -c "DetachCurve;" 
+        -rp "S" 
+        -i "detachCurve.png" 
         menuEditorMenuItem2;
 
 setParent -m ..;

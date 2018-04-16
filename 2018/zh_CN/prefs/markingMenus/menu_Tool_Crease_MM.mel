@@ -1,111 +1,39 @@
 
     menuItem -itl 1 
-        -label "No Crease" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 0 -vertexValue 0 $each;\n}" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "No Crease" 
+        -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 0 -vertexValue 0 $each;\n}" 
+        -rp "S" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "10 Crease" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 10 -vertexValue 10 $each;\n}" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "10 Crease" 
+        -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 10 -vertexValue 10 $each;\n}" 
+        -rp "N" 
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "0.5 Crease" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value .5 -vertexValue .5 $each;\n}" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "0.5 Crease" 
+        -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value .5 -vertexValue .5 $each;\n}" 
+        -rp "SE" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "2 Crease" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 2 -vertexValue 2 $each;\n}" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "2 Crease" 
+        -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 2 -vertexValue 2 $each;\n}" 
+        -rp "E" 
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "4 Crease" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 4 -vertexValue 4 $each;\n}" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "4 Crease" 
+        -c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 4 -vertexValue 4 $each;\n}" 
+        -rp "NE" 
         menuEditorMenuItem5;
 
     menuItem -itl 1 
-        -label "Crease Set Editor" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyCrease.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Crease Set Editor" 
+        -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
+        -rp "W" 
+        -i "polyCrease.png" 
         menuEditorMenuItem6;
 
 setParent -m ..;

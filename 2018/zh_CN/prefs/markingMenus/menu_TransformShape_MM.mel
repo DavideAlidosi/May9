@@ -1,21 +1,9 @@
 
     menuItem
-        -label "Parent to Transform" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "parent -r -s" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "out_transform.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Parent to Transform" 
+        -c "parent -r -s" 
+        -rp "N" 
+        -i "out_transform.png" 
         menuEditorMenuItem1;
 
 setParent -m ..;

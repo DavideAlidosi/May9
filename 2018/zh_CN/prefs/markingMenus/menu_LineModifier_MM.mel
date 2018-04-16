@@ -1,38 +1,14 @@
 
     menuItem
-        -label "Occupy Volume On" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ModifierOccupyVolume" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Occupy Volume On" 
+        -c "da_ModifierOccupyVolume" 
+        -rp "E" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "Occupy Volume Off" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_ModifierNoOccupyVolume" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Occupy Volume Off" 
+        -c "da_ModifierNoOccupyVolume" 
+        -rp "W" 
         menuEditorMenuItem2;
 
 setParent -m ..;

@@ -1,294 +1,102 @@
 
     menuItem
-        -label "Sculpt" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SculptGeometryToolOptions" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "Sculpt.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Sculpt" 
+        -c "SculptGeometryToolOptions" 
+        -rp "N" 
+        -i "Sculpt.png" 
         menuEditorMenuItem8;
 
     menuItem
-        -label "Paint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "Art3dPaintToolOptions" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "art3dPaint.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Paint" 
+        -c "Art3dPaintToolOptions" 
+        -rp "NE" 
+        -i "art3dPaint.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -label "Paint Select" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ArtPaintSelectToolOptions" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "artPaintSelect.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Paint Select" 
+        -c "ArtPaintSelectToolOptions" 
+        -rp "NW" 
+        -i "artPaintSelect.png" 
         menuEditorMenuItem10;
 
     menuItem
-        -label "Clean Topology" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "subdCleanTopology" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "subdivCleanToplogy.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Clean Topology" 
+        -c "subdCleanTopology" 
+        -rp "S" 
+        -i "subdivCleanToplogy.png" 
         menuEditorMenuItem11;
 
     menuItem
-        -label "Bevel" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_LegacySubdivPolyMode;\nBevelPolygon;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyBevel.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Bevel" 
+        -c "da_LegacySubdivPolyMode;\nBevelPolygon;" 
+        -rp "E" 
+        -i "polyBevel.png" 
         menuEditorMenuItem7;
 
     menuItem
-        -label "menuEditorMenuItem12" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "BevelPolygonOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "BevelPolygonOptions;" 
+        -ob 1
         menuEditorMenuItem17;
 
     menuItem
-        -label "Multi Cut Tool" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_LegacySubdivPolyMode;\ndR_multiCutTool" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "multiCut_NEX32.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Multi Cut Tool" 
+        -c "da_LegacySubdivPolyMode;\ndR_multiCutTool" 
+        -rp "W" 
+        -i "multiCut_NEX32.png" 
         menuEditorMenuItem12;
 
     menuItem
-        -label "Mirror Geometry" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "da_LegacySubdivPolyMode;\nMirrorPolygonGeometry;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyMirrorGeometry.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Mirror Geometry" 
+        -c "da_LegacySubdivPolyMode;\nMirrorPolygonGeometry;" 
+        -i "polyMirrorGeometry.png" 
         menuEditorMenuItem5;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "MirrorPolygonGeometryOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "MirrorPolygonGeometryOptions;" 
+        -ob 1
         menuEditorMenuItem15;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem13;
+        -l "separator" 
+        -d 1;
 
     menuItem
-        -label "Assign New Material" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "createAssignNewMaterialTreeLister \"\";" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "render_adskMaterial.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Assign New Material" 
+        -c "createAssignNewMaterialTreeLister \"\";" 
+        -i "render_adskMaterial.png" 
         menuEditorMenuItem20;
 
     menuItem
-        -label "Assign Initial Shading Group"
-        -command "hyperShade -assign initialShadingGroup"
-        -image "out_lambert.png"
-        -sourceType "mel"
+        -l "Assign Initial Shading Group"
+        -c "hyperShade -assign initialShadingGroup"
+        -i "out_lambert.png"
         menuEditorMenuItem21;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem22;
+        -l "separator" 
+        -d 1;
 
     menuItem
-        -label "Convert to NURBS" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "doSubdivToNurbs( {\"1\",\"1\",\"0\"} );\nhyperShade -assign initialShadingGroup;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "subdivToNurbs.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Convert to NURBS" 
+        -c "doSubdivToNurbs( {\"1\",\"1\",\"0\"} );\nhyperShade -assign initialShadingGroup;" 
+        -i "subdivToNurbs.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SubdivToNURBSOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "SubdivToNURBSOptions;" 
+        -ob 1
         menuEditorMenuItem14;
 
     menuItem
-        -label "Convert to Poly" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "TesselateSubdivSurface" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "subdivTessellate.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Convert to Poly" 
+        -c "TesselateSubdivSurface" 
+        -i "subdivTessellate.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem4" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "TesselateSubdivSurfaceOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "TesselateSubdivSurfaceOptions" 
+        -ob 1
         menuEditorMenuItem16;
 
 setParent -m ..;

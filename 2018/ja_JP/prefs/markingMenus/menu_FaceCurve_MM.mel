@@ -1,38 +1,14 @@
 
     menuItem
-        -label "Extrude" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrude" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "polyExtrudeFacet.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Extrude" 
+        -c "PolyExtrude" 
+        -rp "N" 
+        -i "polyExtrudeFacet.png" 
         menuEditorMenuItem1;
 
     menuItem
-        -label "menuEditorMenuItem2" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PolyExtrudeOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "PolyExtrudeOptions" 
+        -ob 1
         menuEditorMenuItem2;
 
 setParent -m ..;

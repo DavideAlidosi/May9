@@ -6,374 +6,126 @@
 	-stp "mel";
 
     menuItem
-        -label "Bind Skin" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SmoothBindSkin;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "smoothSkin.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Bind Skin" 
+        -c "SmoothBindSkin;" 
+        -i "smoothSkin.png" 
         menuItem1957;
 
     menuItem
-        -label "menuItem1958" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "SmoothBindSkinOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "menuItem1958" 
+        -c "SmoothBindSkinOptions;" 
+        -ob 1
         menuItem1958;
 
     menuItem
-        -label "Aim Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AimConstraint;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "aimConstraint.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Aim Constraint" 
+        -c "AimConstraint;" 
+        -rp "SW" 
+        -i "aimConstraint.png" 
         menuEditorMenuItem13;
 
     menuItem
-        -label "menuEditorMenuItem14" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AimConstraintOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "AimConstraintOptions;" 
+        -ob 1
         menuEditorMenuItem2;
 
     menuItem
-        -label "Parent Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ParentConstraint;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "parentConstraint.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Parent Constraint" 
+        -c "ParentConstraint;" 
+        -rp "N" 
+        -i "parentConstraint.png" 
         menuEditorMenuItem19;
 
     menuItem
-        -label "menuEditorMenuItem20" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ParentConstraintOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "ParentConstraintOptions;" 
+        -ob 1
         menuEditorMenuItem5;
 
     menuItem
-        -label "Scale Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "scaleConstraint;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "scaleConstraint.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Scale Constraint" 
+        -c "scaleConstraint;" 
+        -rp "E" 
+        -i "scaleConstraint.png" 
         menuEditorMenuItem4;
 
     menuItem
-        -label "menuEditorMenuItem6" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "ScaleConstraintOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "ScaleConstraintOptions;" 
+        -ob 1
         menuEditorMenuItem6;
 
     menuItem
-        -label "Pole Vector Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PoleVectorConstraint;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "poleVectorConstraint.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Pole Vector Constraint" 
+        -c "PoleVectorConstraint;" 
+        -rp "SE" 
+        -i "poleVectorConstraint.png" 
         menuEditorMenuItem3;
 
     menuItem
-        -label "menuEditorMenuItem8" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PoleVectorConstraintOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "PoleVectorConstraintOptions;" 
+        -ob 1
         menuEditorMenuItem8;
 
     menuItem
-        -label "Add Influence" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AddInfluence" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "addWrapInfluence.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Add Influence" 
+        -c "AddInfluence" 
+        -i "addWrapInfluence.png" 
         menuEditorMenuItem11;
 
     menuItem
-        -label "menuEditorMenuItem14" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "AddInfluenceOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "AddInfluenceOptions" 
+        -ob 1
         menuEditorMenuItem1;
 
     menuItem
-        -label "Remove Influence" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "RemoveInfluence" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "removeWrapInfluence.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Remove Influence" 
+        -c "RemoveInfluence" 
+        -i "removeWrapInfluence.png" 
         menuEditorMenuItem12;
 
     menuItem
-        -label "IK Spline Handle" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "IKSplineHandleTool;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "W" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "kinSplineHandle.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "IK Spline Handle" 
+        -c "IKSplineHandleTool;" 
+        -rp "W" 
+        -i "kinSplineHandle.png" 
         menuEditorMenuItem9;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "IKSplineHandleToolOptions;" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "IKSplineHandleToolOptions;" 
+        -ob 1
         menuEditorMenuItem14;
 
     menuItem
-        -label "separator" 
-        -divider 1
-        -dividerLabel "separator" 
-        -subMenu 0
-        -tearOff 0
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -sourceType "mel" 
-        -longDivider 1
-        menuEditorMenuItem15;
+        -l "separator" 
+        -d 1;
 
     menuItem
-        -label "Connect selected Muscle" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "cMuscle_connectToSystem(); " 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "cMuscle_skin_connMus.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Connect selected Muscle" 
+        -c "cMuscle_connectToSystem(); " 
+        -i "cMuscle_skin_connMus.png" 
         menuEditorMenuItem10;
 
     menuItem
-        -label "Point Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PointConstraint" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "posConstraint.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Point Constraint" 
+        -c "PointConstraint" 
+        -rp "NE" 
+        -i "posConstraint.png" 
         menuEditorMenuItem16;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "PointConstraintOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "PointConstraintOptions" 
+        -ob 1
         menuEditorMenuItem17;
 
     menuItem
-        -label "Orient Constraint" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "OrientConstraint" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NW" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "orientConstraint.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Orient Constraint" 
+        -c "OrientConstraint" 
+        -rp "NW" 
+        -i "orientConstraint.png" 
         menuEditorMenuItem18;
 
     menuItem
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "OrientConstraintOptions" 
-        -optionBox 1
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 0
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -c "OrientConstraintOptions" 
+        -ob 1
         menuEditorMenuItem20;
 
 setParent -m ..;

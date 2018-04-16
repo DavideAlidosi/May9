@@ -1,21 +1,9 @@
 
     menuItem
-        -label "Bake to objects" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "MASHBakeGUI;" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "N" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -image "instanceToObject.png" 
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Bake to objects" 
+        -c "MASHBakeGUI;" 
+        -rp "N" 
+        -i "instanceToObject.png" 
         menuEditorMenuItem1;
 
 setParent -m ..;

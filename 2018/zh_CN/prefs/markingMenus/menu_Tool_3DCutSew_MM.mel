@@ -3,11 +3,10 @@ commonReflectionOptionsPopup();
 commonSelectOptionsPopup();
 
 menuItem -itl 1 
--label "Auto Unwrap"
--command "da_AutoUnwrap"
--radialPosition "E"
--image "polyAutoUnwrap.png"
--sourceType "mel"
+-l "Auto Unwrap"
+-c "da_AutoUnwrap"
+-rp "E"
+-i "polyAutoUnwrap.png"
 menuEditorMenuItem1;
 
 setParent -m ..;

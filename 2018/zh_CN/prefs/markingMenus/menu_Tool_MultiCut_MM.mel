@@ -5,105 +5,44 @@ int $extractFacesOn = `nexOpt -q useExtractFaces`;
 int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
 
 	menuItem -itl 1 
-	-label "Quad Draw"
-	-command "dR_quadDrawTool;"
-	-radialPosition "NW"
-	-image "quadDraw_NEX32.png"
-	-sourceType "mel"
+	-l "Quad Draw"
+	-c "dR_quadDrawTool;"
+	-rp "NW"
+	-i "quadDraw_NEX32.png"
 	menuEditorMenuItem11;
 	
     menuItem -itl 1 
-        -label "Cut Mode" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexOpt -e useDeleteFaces true; refresh -f;\nnexOpt -e useExtractFaces false; floatFieldGrp -e -en false nexExtractFacesFloatGrp; refresh -f;\ninViewMessage -pos topCenter -msg \"Cut Mode\" -fade;" 
+        -l "Cut Mode" 
+        -c "nexOpt -e useDeleteFaces true; refresh -f;\nnexOpt -e useExtractFaces false; floatFieldGrp -e -en false nexExtractFacesFloatGrp; refresh -f;\ninViewMessage -pos topCenter -msg \"Cut Mode\" -fade;" 
         -checkBox $deleteFaceOn
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "NE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -rp "NE" 
         menuEditorMenuItem1;
 
     menuItem -itl 1 
-        -label "Extract Mode" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexOpt -e useExtractFaces true; floatFieldGrp -e -en true nexExtractFacesFloatGrp; refresh -f;\nnexOpt -e useDeleteFaces false; refresh -f;\ninViewMessage -pos topCenter -msg \"Extract Mode\" -fade;" 
+        -l "Extract Mode" 
+        -c "nexOpt -e useExtractFaces true; floatFieldGrp -e -en true nexExtractFacesFloatGrp; refresh -f;\nnexOpt -e useDeleteFaces false; refresh -f;\ninViewMessage -pos topCenter -msg \"Extract Mode\" -fade;" 
         -checkBox $extractFacesOn
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "SE" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -rp "SE" 
         menuEditorMenuItem3;
 
     menuItem -itl 1 
-        -label "Split Mode" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexOpt -e useExtractFaces false; floatFieldGrp -e -en false nexExtractFacesFloatGrp; refresh -f;\nnexOpt -e useDeleteFaces false; refresh -f;\ninViewMessage -pos topCenter -msg \"Split Mode\" -fade;" 
+        -l "Split Mode" 
+        -c "nexOpt -e useExtractFaces false; floatFieldGrp -e -en false nexExtractFacesFloatGrp; refresh -f;\nnexOpt -e useDeleteFaces false; refresh -f;\ninViewMessage -pos topCenter -msg \"Split Mode\" -fade;" 
         -checkBox $splitModeOn
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "E" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -sourceType "mel" 
-        -longDivider 1
+        -rp "E" 
         menuEditorMenuItem2;
 
     menuItem -itl 1 
-        -label "Slice Plane" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "dr_polyCut(0);" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -radialPosition "S" 
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-		-image "sketchPlane.png"
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Slice Plane" 
+        -c "dr_polyCut(0);" 
+        -rp "S" 
+		-i "sketchPlane.png"
         menuEditorMenuItem4;
 
     menuItem -itl 1 
-        -label "Reset Settings" 
-        -divider 0
-        -subMenu 0
-        -tearOff 0
-        -command "nexCtx -resetManip" 
-        -optionBox 0
-        -enable 1
-        -data 0
-        -allowOptionBoxes 1
-        -postMenuCommandOnce 0
-        -enableCommandRepeat 1
-        -echoCommand 0
-        -image "CN_refresh.png" 
-        -sourceType "mel" 
-        -longDivider 1
+        -l "Reset Settings" 
+        -c "nexCtx -resetManip" 
+        -i "CN_refresh.png" 
         menuEditorMenuItem7;
 
 setParent -m ..;
