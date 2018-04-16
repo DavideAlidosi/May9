@@ -6,35 +6,30 @@ string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
         -l "X Axis" 
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
         -checkBox ($reflectionDirection == "x") 
-        -rp "SW" 
-        menuEditorMenuItem1;
+        -rp "SW";
 
     menuItem -itl 1 
         -l "Y Axis" 
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
         -checkBox ($reflectionDirection == "y") 
-        -rp "S" 
-        menuEditorMenuItem2;
+        -rp "S";
 
     menuItem -itl 1 
         -l "Z Axis" 
         -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
         -checkBox ($reflectionDirection == "z") 
-        -rp "SE" 
-        menuEditorMenuItem3;
+        -rp "SE";
 
     menuItem -itl 1 
         -l "Symmetry" 
         -c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
         -checkBox $reflectionCheck 
-        -rp "E" 
-        menuEditorMenuItem4;
+        -rp "E";
 
     menuItem -itl 1 
         -l "Flood Smooth" 
         -c "artAttrPaintOperation artAttrCtx Replace;\nartAttrCtx -e -clear `currentCtx`;" 
-        -rp "N" 
-        menuEditorMenuItem5;
+        -rp "N";
 
 setParent -m ..;
 
