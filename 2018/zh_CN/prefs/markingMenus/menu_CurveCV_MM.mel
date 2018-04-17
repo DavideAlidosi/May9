@@ -6,21 +6,18 @@ menuItem
 -l "Lock Length" 
 -c "LockCurveLength;" 
 -rp "E" 
--i "lockLength.png" 
-menuEditorMenuItem1;
+-i "lockLength.png" ;
 
 menuItem
 -l "Unlock Length" 
 -c "UnlockCurveLength" 
 -rp "W" 
--i "unlockLength.png" 
-menuEditorMenuItem2;
+-i "unlockLength.png" ;
 
 menuItem
 -l "Select All"
 -c "SelectAll" 
--i "aselect.png"
--stp "mel";
+-i "aselect.png";
 
 menuItem
 -l "separator" 
@@ -29,160 +26,133 @@ menuItem
 menuItem
 -l "Deformers" 
 -sm 1
--i "bendNLD.png" 
-menuEditorMenuItem3;
+-i "bendNLD.png";
 
 menuItem
 -l "Nonlinear" 
 -sm 1
--i "bendNLD.png" 
-menuEditorMenuItem3;
+-i "bendNLD.png";
 
 menuItem
 -l "Bend" 
 -c "Bend;" 
 -rp "N" 
--i "bendNLD.png" 
-menuEditorMenuItem1;
+-i "bendNLD.png";
 
 menuItem
 -c "BendOptions;" 
--ob 1
-menuEditorMenuItem3;
+-ob 1;
 
 menuItem
 -l "Flare" 
 -c "Flare;" 
--i "flareNLD.png" 
-menuEditorMenuItem4;
+-i "flareNLD.png";
 
 menuItem
 -c "FlareOptions;" 
--ob 1
-menuEditorMenuItem5;
+-ob 1;
 
 menuItem
 -l "Sine" 
 -c "Sine" 
--i "sineNLD.png" 
-menuEditorMenuItem6;
+-i "sineNLD.png";
 
 menuItem
 -c "SineOptions;" 
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Squash" 
 -c "Squash" 
--i "squashNLD.png" 
-menuEditorMenuItem8;
+-i "squashNLD.png";
 
 menuItem
 -c "SquashOptions;" 
--ob 1
-menuEditorMenuItem9;
+-ob 1;
 
 menuItem
 -l "Twist" 
 -c "Twist" 
--i "twistNLD.png" 
-menuEditorMenuItem10;
+-i "twistNLD.png";
 
 menuItem
 -c "TwistOptions" 
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Wave" 
 -c "Wave" 
--i "waveNLD.png" 
-menuEditorMenuItem12;
+-i "waveNLD.png";
 
 menuItem
 -c "WaveOptions;" 
--ob 1
-menuEditorMenuItem13;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Cluster" 
 -c "CreateCluster" 
--i "cluster.png" 
-menuEditorMenuItem8;
+-i "cluster.png";
 
 menuItem
 -c "CreateClusterOptions" 
--ob 1
-menuEditorMenuItem1;
+-ob 1;
 
 menuItem
 -l "Lattice" 
 -c "CreateLattice" 
--i "lattice.png" 
-menuEditorMenuItem5;
+-i "lattice.png";
 
 menuItem
 -c "CreateLatticeOptions;" 
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Dynamics" 
 -sm 1
--i "out_nucleus.png" 
-menuEditorMenuItem4;
+-i "out_nucleus.png";
 
 menuItem
 -l "Emit Particle From CV" 
 -c "NEmitFromObject;" 
--i "emitter.png" 
-menuEditorMenuItem1;
+-i "emitter.png";
 
 menuItem
 -c "NEmitFromObjectOptions;" 
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Particle Style" 
 -sm 1
--i "out_particle.png" 
-menuEditorMenuItem4;
+-i "out_particle.png";
 
 menuItem
 -l "Points" 
 -c "optionVar -stringValue NParticleStyle \"Points\";" 
--i "nPartPoints.png" 
-menuEditorMenuItem1;
+-i "nPartPoints.png";
 
 menuItem
 -l "Balls" 
 -c "optionVar -stringValue NParticleStyle \"Balls\";" 
--i "nPartBalls.png" 
-menuEditorMenuItem2;
+-i "nPartBalls.png";
 
 menuItem
 -l "Cloud" 
 -c "optionVar -stringValue NParticleStyle \"Cloud\";" 
--i "nPartCloud.png" 
-menuEditorMenuItem3;
+-i "nPartCloud.png";
 
 menuItem
 -l "ThickCloud" 
 -c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
--i "nPartThickCloud.png" 
-menuEditorMenuItem4;
+-i "nPartThickCloud.png";
 
 menuItem
 -l "Water" 
 -c "optionVar -stringValue NParticleStyle \"Water\";" 
--i "nPartWater.png" 
-menuEditorMenuItem5;
+-i "nPartWater.png";
 
 setParent -m ..;
 
@@ -191,41 +161,34 @@ setParent -m ..;
 menuItem
 -l "nConstraint" 
 -sm 1
--i "menuIconConstraints.png" 
-menuEditorMenuItem5;
+-i "menuIconConstraints.png";
 
 menuItem
 -l "Component to Component" 
 -c "doCreateNConstraint pointToPoint 0" 
--i "nConstraintComponent.png" 
-menuEditorMenuItem1;
+-i "nConstraintComponent.png";
 
 menuItem
 -c "performCreateComponentNConstraint 1" 
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Force Field" 
 -c "doCreateNConstraint force 0" 
--i "nConstraintForceField.png" 
-menuEditorMenuItem3;
+-i "nConstraintForceField.png" ;
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 menuItem
 -l "Transform Constraint" 
 -c "doCreateNConstraint transform 0" 
--i "nConstraintTransform.png" 
-menuEditorMenuItem5;
+-i "nConstraintTransform.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"force\"" 
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 setParent -m ..;
 

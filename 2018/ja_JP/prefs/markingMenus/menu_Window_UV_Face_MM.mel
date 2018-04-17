@@ -3,31 +3,32 @@
         -l "Automatic Map" 
         -c "performPolyAutoProj 0;" 
         -rp "SW" 
-        -i "polyAutoProj.png" 
-        menuEditorMenuItem1;
+        -i "polyAutoProj.png";
 
     menuItem
         -c "performPolyAutoProj 1;" 
-        -ob 1
-        menuEditorMenuItem11;
+        -ob 1;
 
     menuItem
         -l "Spherical Map" 
         -c "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";" 
         -rp "SE" 
-        -i "polySphereProj.png" 
-        menuEditorMenuItem7;
+        -i "polySphereProj.png";
 
     menuItem
         -c "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";" 
-        -ob 1
-        menuEditorMenuItem14;
+        -ob 1;
+
+    menuItem
+        -l "Select Nsided"
+        -c "polyCleanupArgList 4 { \"0\",\"2\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"-1\",\"0\",\"0\" }"
+        -rp "S" 
+        -i "polyCreateFacet.png";
 
     menuItem
         -l "UV Toolkit" 
         -c "da_OpenUvToolkit" 
-        -i "UVTk.png" 
-        menuEditorMenuItem15;
+        -i "UVTk.png";
 
     menuItem
         -l "separator" 
@@ -36,13 +37,11 @@
     menuItem
         -l "Layout" 
         -c "LayoutUV" 
-        -i "layoutUV.png" 
-        menuEditorMenuItem17;
+        -i "layoutUV.png";
 
     menuItem
         -c "LayoutUVOptions" 
-        -ob 1
-        menuEditorMenuItem18;
+        -ob 1;
 
     menuItem
         -l "separator" 
@@ -51,8 +50,7 @@
     menuItem
         -l "Convert to UVs" 
         -c "ConvertSelectionToUVs" 
-        -i "UVEditorVertex.png" 
-        menuEditorMenuItem10;
+        -i "UVEditorVertex.png";
 
 setParent -m ..;
 

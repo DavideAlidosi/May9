@@ -6,138 +6,117 @@ menuItem
 -l "Bevel"
 -c "BevelPolygon;"
 -rp "NW"
--i "polyBevel.png"
-menuEditorMenuItem1;
+-i "polyBevel.png";
 
 menuItem
 -c "BevelPolygonOptions;"
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Bridge"
 -c "BridgeEdge;"
 -rp "NE"
--i "polyBridge.png"
-menuEditorMenuItem3;
+-i "polyBridge.png";
 
 menuItem
 -c "BridgeEdgeOptions;"
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 menuItem
 -l "Multi Cut Tool"
 -c "dR_multiCutTool;"
 -rp "W"
--i "multiCut_NEX32.png"
-menuEditorMenuItem9;
+-i "multiCut_NEX32.png";
 
 menuItem
 -l "Delete Edge"
 -c "DeletePolyElements;"
 -rp "SW"
--i "polyDelEdgeVertex.png"
-menuEditorMenuItem5;
+-i "polyDelEdgeVertex.png";
 
 menuItem
 -l "Extrude"
 -c "PolyExtrude"
 -rp "E"
--i "polyExtrudeFacet.png"
-menuEditorMenuItem13;
+-i "polyExtrudeFacet.png";
 
 menuItem
 -c "PolyExtrudeOptions"
--ob 1
-menuEditorMenuItem14;
+-ob 1;
 
 menuItem
 -l "Select Edges"
 -sm 1
 -rp "SE"
--i "edges_NEX.png"
-menuEditorMenuItem17;
+-i "edges_NEX.png";
 
 menuItem
 -l "By Straight Angle"
 -c "da_EdgeStraightAngle"
 -rp "E"
--i "da_sraightAngle.png"
-menuEditorMenuItem1;
+-i "da_sraightAngle.png";
 
 menuItem
 -l "By Right Angle\n"
 -c "da_EdgeRightAngle"
 -rp "SE"
--i "da_rightAngle.png"
-menuEditorMenuItem2;
+-i "da_rightAngle.png";
 
 menuItem
 -l "By Acute Angle"
 -c "da_EdgeAcuteAngle"
 -rp "S"
--i "da_acuteAngle.png"
-menuEditorMenuItem3;
+-i "da_acuteAngle.png";
 
 menuItem
 -l "Inside"
 -c "da_EdgeInside"
 -rp "NE"
--i "da_insideEdge.png"
-menuEditorMenuItem4;
+-i "da_insideEdge.png";
 
 menuItem
 -l "On Border"
 -c "da_EdgeBorder"
 -rp "N"
--i "da_borderEdge.png"
-menuEditorMenuItem5;
+-i "da_borderEdge.png";
 
 menuItem
 -l "Soft"
 -c "da_EdgeSoft"
 -rp "W"
--i "da_softEdge.png"
-menuEditorMenuItem6;
+-i "da_softEdge.png";
 
 menuItem
 -l "Hard"
 -c "da_EdgeHard"
 -rp "SW"
--i "da_hardEdge.png"
-menuEditorMenuItem7;
+-i "da_hardEdge.png";
 
 menuItem
 -l "Ring and Loop"
 -c "da_EdgeRingAndLoop"
--i "polyDuplicateEdgeLoop.png"
-menuEditorMenuItem10;
+-i "polyDuplicateEdgeLoop.png";
 
 menuItem
 -l "Contiguous"
 -c "SelectContiguousEdges"
--i "polySplitEdgeRing.png"
-menuEditorMenuItem8;
+-i "polySplitEdgeRing.png";
 
 menuItem
 -c "SelectContiguousEdgesOptions"
--ob 1
-menuEditorMenuItem9;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Selection Constraints"
 -c "PolygonSelectionConstraints"
--i "polySelectUsingConstraints.png"
-menuEditorMenuItem1000;
+-i "polySelectUsingConstraints.png";
 
 menuItem
 -l "Select All"
 -c "SelectAll" 
--i "aselect.png"
--stp "mel";
+-i "aselect.png";
 
 menuItem
 -l "separator" 
@@ -146,52 +125,43 @@ menuItem
 menuItem
 -l "Transform"
 -c "performPolyMove \"\" 0"
--i "polyMoveVertex.png"
-menuEditorMenuItem16;
+-i "polyMoveVertex.png";
 
 menuItem
 -c "MovePolygonComponentOptions"
--ob 1
-menuEditorMenuItem8;
+-ob 1;
 
 menuItem
 -l "Edit Edge Flow"
 -c "PolyEditEdgeFlow"
--i "polyEditEdgeFlow.png"
-menuEditorMenuItem998;
+-i "polyEditEdgeFlow.png";
 
 menuItem
 -c "PolyEditEdgeFlowOptions"
--ob 1
-menuEditorMenuItem997;
+-ob 1;
 
 menuItem
 -l "Circularize"
 -c "performPolyCircularize 0"
--i "polyCircularize.png"
-menuEditorMenuItem995;
+-i "polyCircularize.png";
 
 menuItem
 -c "PolyCircularizeOptions"
--ob 1
-menuEditorMenuItem994;
+-ob 1;
 
 menuItem
 -l "Detach"
 -c "DetachEdgeComponent"
--i "polySplitVertex.png"
-menuEditorMenuItem15;
+-i "polySplitVertex.png";
 
 menuItem
 -l "Crease Tool"
 -c "PolyCreaseTool"
--i "polyCrease.png"
-menuEditorMenuItem28;
+-i "polyCrease.png";
 
 menuItem
 -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";"
--ob 1
-menuEditorMenuItem10;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -200,14 +170,12 @@ menuItem
 menuItem
 -l "Flip"
 -c "dR_performSymmetryFlip;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
--i "polyFlip.png"
-menuEditorMenuItem37;
+-i "polyFlip.png";
 
 menuItem
 -l "Symmetrize"
 -c "dR_performSymmetrize;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
--i "symmetrize.png"
-menuEditorMenuItem38;
+-i "symmetrize.png";
 
 menuItem
 -l "separator" 
@@ -216,19 +184,16 @@ menuItem
 menuItem
 -l "Edges to Curves"
 -c "CreateCurveFromPoly"
--i "polyEdgeToCurves.png"
-menuEditorMenuItem39;
+-i "polyEdgeToCurves.png";
 
 menuItem
 -l "To Loops to Curves"
 -c "da_EdgeToLoopToCurve"
--i "da_EdgeToLoopToCurve.png"
-menuEditorMenuItem41;
+-i "da_EdgeToLoopToCurve.png";
 
 menuItem
 -c "CreateCurveFromPolyOptions"
--ob 1
-menuEditorMenuItem40;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -237,131 +202,108 @@ menuItem
 menuItem
 -l "Deformers"
 -sm 1
--i "bendNLD.png"
-menuEditorMenuItem32;
+-i "bendNLD.png";
 
 menuItem
 -l "Nonlinear"
 -sm 1
--i "bendNLD.png"
-menuEditorMenuItem1;
+-i "bendNLD.png";
 
 menuItem
 -l "Bend"
--c "Bend;"
--i "bendNLD.png"
-menuEditorMenuItem1;
+-c "Bend"
+-i "bendNLD.png";
 
 menuItem
 -c "BendOptions;"
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Flare"
--c "Flare;"
--i "flareNLD.png"
-menuEditorMenuItem3;
+-c "Flare"
+-i "flareNLD.png";
 
 menuItem
--c "FlareOptions;"
--ob 1
-menuEditorMenuItem4;
+-c "FlareOptions"
+-ob 1;
 
 menuItem
 -l "Sine"
 -c "Sine"
--i "sineNLD.png"
-menuEditorMenuItem5;
+-i "sineNLD.png";
 
 menuItem
--c "SineOptions;"
--ob 1
-menuEditorMenuItem6;
+-c "SineOptions"
+-ob 1;
 
 menuItem
 -l "Squash"
 -c "Squash"
--i "squashNLD.png"
-menuEditorMenuItem7;
+-i "squashNLD.png";
 
 menuItem
--c "SquashOptions;"
--ob 1
-menuEditorMenuItem8;
+-c "SquashOptions"
+-ob 1;
 
 menuItem
 -l "Twist"
 -c "Twist"
--i "twistNLD.png"
-menuEditorMenuItem9;
+-i "twistNLD.png";
 
 menuItem
 -c "TwistOptions"
--ob 1
-menuEditorMenuItem10;
+-ob 1;
 
 menuItem
 -l "Wave"
 -c "Wave"
--i "waveNLD.png"
-menuEditorMenuItem11;
+-i "waveNLD.png";
 
 menuItem
 -c "WaveOptions;"
--ob 1
-menuEditorMenuItem12;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Cluster"
 -c "CreateCluster"
--i "cluster.png"
-menuEditorMenuItem7;
+-i "cluster.png";
 
 menuItem
 -c "CreateClusterOptions"
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "Lattice"
 -c "CreateLattice"
--i "lattice.png"
-menuEditorMenuItem3;
+-i "lattice.png";
 
 menuItem
 -c "CreateLatticeOptions;"
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "UV Mapping"
 -sm 1
--i "polyUnfoldUVs.png"
-menuEditorMenuItem29;
+-i "polyUnfoldUVs.png";
 
 menuItem
 -l "3D Cut and Sew"
 -c "SetCutSewUVTool"
--i "CutSewUVTool.png"
--stp "mel"
-menuEditorMenuItem1;
+-i "CutSewUVTool.png";
 
 menuItem
 -l "Stitch" 
 -c "texMultiStitch 1" 
--i "polyUVMultiStitch.png" 
--stp "mel";
+-i "polyUVMultiStitch.png";
 
 menuItem
 -l "Cut"
 -c "CutUVs"
--i "polyCutUV.png"
-menuEditorMenuItem3;
+-i "polyCutUV.png";
 
 menuItem
 -l "separator" 
@@ -370,22 +312,19 @@ menuItem
 menuItem
 -l "UV Borders"
 -c "da_ToggleUVBorders"
--i "UVEditorTextureBorder.png"
-menuEditorMenuItem4;
+-i "UVEditorTextureBorder.png";
 
 setParent -m ..;
 
 menuItem
 -l "Normals"
 -sm 1
--i "polyNormalsPropagate.png"
-menuEditorMenuItem31;
+-i "polyNormalsPropagate.png";
 
 menuItem
 -l "Unlock UV"
 -c "polyNormalPerVertex -ufn true;"
--i "polyNormalUnlock.png"
-menuEditorMenuItem1;
+-i "polyNormalUnlock.png";
 
 menuItem
 -l "separator" 
@@ -394,130 +333,109 @@ menuItem
 menuItem
 -l "Set Soften Edge"
 -c "SoftPolyEdgeElements 1"
--i "polySoftEdge.png"
-menuEditorMenuItem2;
+-i "polySoftEdge.png";
 
 menuItem
 -c "polySoftEdgeWin"
--ob 1
-menuEditorMenuItem3;
+-ob 1;
 
 menuItem
 -l "Set Harden Edge"
 -c "SoftPolyEdgeElements 0"
--i "polyHardEdge.png"
-menuEditorMenuItem4;
+-i "polyHardEdge.png";
 
 setParent -m ..;
 
 menuItem
 -l "Dynamics"
 -sm 1
--i "out_nucleus.png"
-menuEditorMenuItem34;
+-i "out_nucleus.png";
 
 menuItem
 -l "Emit Particle"
 -c "NEmitFromObject;"
--i "emitter.png"
-menuEditorMenuItem4;
+-i "emitter.png";
 
 menuItem
 -c "NEmitFromObjectOptions;"
--ob 1
-menuEditorMenuItem5;
+-ob 1;
 
 menuItem
 -l "Particle Style"
 -sm 1
--i "out_particle.png"
-menuEditorMenuItem6;
+-i "out_particle.png";
 
 menuItem
 -l "Points"
 -c "optionVar -stringValue NParticleStyle \"Points\";"
--i "nPartPoints.png"
-menuEditorMenuItem1;
+-i "nPartPoints.png";
 
 menuItem
 -l "Balls"
 -c "optionVar -stringValue NParticleStyle \"Balls\";"
--i "nPartBalls.png"
-menuEditorMenuItem2;
+-i "nPartBalls.png";
 
 menuItem
 -l "Cloud"
 -c "optionVar -stringValue NParticleStyle \"Cloud\";"
--i "nPartCloud.png"
-menuEditorMenuItem3;
+-i "nPartCloud.png";
 
 menuItem
 -l "ThickCloud"
 -c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
--i "nPartThickCloud.png"
-menuEditorMenuItem4;
+-i "nPartThickCloud.png";
 
 menuItem
 -l "Water"
 -c "optionVar -stringValue NParticleStyle \"Water\";"
--i "nPartWater.png"
-menuEditorMenuItem5;
+-i "nPartWater.png";
 
 setParent -m ..;
 
 menuItem
 -l "Add Fields"
 -sm 1
--i "posRadial.png"
-menuEditorMenuItem12;
+-i "posRadial.png";
 
 menuItem
 -l "Air"
 -c "dynExecuteFieldCommands 1 \"air\""
--i "posAir.png"
-menuEditorMenuItem1;
+-i "posAir.png";
 
 menuItem
 -l "Drag"
 -c "dynExecuteFieldCommands 1 \"drag\""
--i "posDrag.png"
-menuEditorMenuItem2;
+-i "posDrag.png";
 
 menuItem
 -l "Gravity"
 -c "dynExecuteFieldCommands 1 \"gravity\""
--i "posGravity.png"
-menuEditorMenuItem3;
+-i "posGravity.png";
 
 menuItem
 -l "Newton"
 -c "dynExecuteFieldCommands 1 \"newton\""
--i "posNewton.png"
-menuEditorMenuItem4;
+-i "posNewton.png";
 
 menuItem
 -l "Radial"
 -c "dynExecuteFieldCommands 1 \"radial\""
--i "posRadial.png"
-menuEditorMenuItem5;
+-i "posRadial.png";
 
 menuItem
 -l "Turbulence"
 -c "dynExecuteFieldCommands 1 \"turbulence\""
--i "posTurbulence.png"
-menuEditorMenuItem6;
+-i "posTurbulence.png";
 
 menuItem
 -l "Uniform"
 -c "dynExecuteFieldCommands 1 \"uniform\""
--i "posUniform.png"
-menuEditorMenuItem7;
+-i "posUniform.png";
 
 menuItem
 -l "Vortex"
 -c "dynExecuteFieldCommands 1 \"vortex\""
--i "posVortex.png"
-menuEditorMenuItem8;
+-i "posVortex.png";
 
 menuItem
 -l "separator" 
@@ -526,8 +444,7 @@ menuItem
 menuItem
 -l "Volume Axis"
 -c "dynExecuteFieldCommands 1 \"volumeAxis\""
--i "posVolumeAxis.png"
-menuEditorMenuItem10;
+-i "posVolumeAxis.png";
 
 setParent -m ..;
 
@@ -536,63 +453,52 @@ setParent -m ..;
 menuItem
 -l "nConstraint"
 -sm 1
--i "menuIconConstraints.png"
-menuEditorMenuItem33;
+-i "menuIconConstraints.png";
 
 menuItem
 -l "Transform Constraint"
 -c "doCreateNConstraint transform 0"
--i "nConstraintTransform.png"
-menuEditorMenuItem1;
+-i "nConstraintTransform.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"transform\";"
--ob 1
-menuEditorMenuItem13;
+-ob 1;
 
 menuItem
 -l "Self Component"
 -c "performCreateComponentNConstraint 0;"
--i "nConstraintComponent.png"
-menuEditorMenuItem4;
+-i "nConstraintComponent.png";
 
 menuItem
 -c "performCreateComponentNConstraint 1;"
--ob 1
-menuEditorMenuItem14;
+-ob 1;
 
 menuItem
 -l "Component to Component"
 -c "performCreateDynamicConstraint 0 \"pointToPoint\";"
--i "nConstraintComponent.png"
-menuEditorMenuItem6;
+-i "nConstraintComponent.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"pointToPoint\";"
--ob 1
-menuEditorMenuItem15;
+-ob 1;
 
 menuItem
 -l "Tearable Surface"
 -c "performCreateDynamicConstraint 0 \"tearableSurface\";"
--i "nConstraintTearable.png"
-menuEditorMenuItem8;
+-i "nConstraintTearable.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"tearableSurface\";"
--ob 1
-menuEditorMenuItem17;
+-ob 1;
 
 menuItem
 -l "Force Field"
 -c "doCreateNConstraint force 0"
--i "nConstraintForceField.png"
-menuEditorMenuItem16;
+-i "nConstraintForceField.png";
 
 menuItem
 -c "performCreateDynamicConstraint 1 \"force\";"
--ob 1
-menuEditorMenuItem18;
+-ob 1;
 
 menuItem
 -l "separator" 
@@ -601,14 +507,12 @@ menuItem
 menuItem
 -l "Add Members"
 -c "ConvertSelectionToVertices;\ndynamicConstraintMembership \"add\";"
--i "nConstraintAddMembers.png"
-menuEditorMenuItem10;
+-i "nConstraintAddMembers.png";
 
 menuItem
 -l "Remove Members"
 -c "ConvertSelectionToVertices;\ndynamicConstraintMembership \"remove\";"
--i "nConstraintRemoveMembers.png"
-menuEditorMenuItem11;
+-i "nConstraintRemoveMembers.png";
 
 setParent -m ..;
 
@@ -619,8 +523,7 @@ menuItem
 menuItem
 -l "Convert to Vertices"
 -c "ConvertSelectionToVertices"
--i "vertex_NEX.png"
-menuEditorMenuItem24;
+-i "vertex_NEX.png";
 
 setParent -m ..;
 

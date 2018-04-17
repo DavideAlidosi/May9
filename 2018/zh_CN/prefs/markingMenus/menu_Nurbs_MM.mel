@@ -3,67 +3,56 @@ menuItem
 -l "Sculpt Geometry" 
 -c "SculptGeometryTool;\nartPuttyCtx -e -showactive false `currentCtx`;" 
 -rp "N" 
--i "putty.png" 
-menuEditorMenuItem5;
+-i "putty.png";
 
 menuItem
 -c "SculptGeometryToolOptions;\nartPuttyCtx -e -showactive true `currentCtx`;" 
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 menuItem
 -l "Trim Tool" 
 -c "TrimTool" 
 -rp "W" 
--i "trim.png" 
-menuEditorMenuItem10;
+-i "trim.png";
 
 menuItem
 -c "TrimToolOptions" 
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Untrim Surfaces" 
 -c "UntrimSurfaces" 
 -rp "E" 
--i "untrim.png" 
-menuEditorMenuItem12;
+-i "untrim.png";
 
 menuItem
 -c "UntrimSurfacesOptions" 
--ob 1
-menuEditorMenuItem13;
+-ob 1;
 
 menuItem
 -l "Open/Close" 
 -c "doCloseSurfaceArgList 2 { \"1\", \"1\", \"1\", \"1\", \"0.5\", \"0\", \"0.1\" }" 
 -rp "SW" 
--i "openCloseSurface.png" 
-menuEditorMenuItem14;
+-i "openCloseSurface.png";
 
 menuItem
 -c "OpenCloseSurfacesOptions" 
--ob 1
-menuEditorMenuItem17;
+-ob 1;
 
 menuItem
 -l "Surface Editing" 
 -c "SurfaceEditingTool" 
 -rp "S" 
--i "surfaceEditor.png" 
-menuEditorMenuItem2;
+-i "surfaceEditor.png";
 
 menuItem
 -c "SurfaceEditingToolOptions" 
--ob 1
-menuEditorMenuItem3;
+-ob 1;
 
 menuItem
 -l "Component Display" 
 -sm 1
--i "RS_visible.png" 
-menuEditorMenuItem1;
+-i "RS_visible.png";
 
 menuItem
 -l "separator" 
@@ -72,163 +61,136 @@ menuItem
 menuItem
 -l "CVs" 
 -c "ToggleCVs" 
--i "selectCVboundary.png" 
-menuEditorMenuItem1;
+-i "selectCVboundary.png";
 
 menuItem
 -l "Normals" 
 -c "ToggleNormals" 
--i "polyNormalsPropagate.png" 
-menuEditorMenuItem2;
+-i "polyNormalsPropagate.png";
 
 menuItem
 -l "Surface Origins" 
 -c "ToggleSurfaceOrigin" 
--i "channelBoxUseManips.png" 
-menuEditorMenuItem3;
+-i "channelBoxUseManips.png";
 
 setParent -m ..;
 
 menuItem
 -l "Convert" 
 -sm 1
--i "da_PolygonsToNurbs.png" 
-menuEditorMenuItem27;
+-i "da_PolygonsToNurbs.png";
 
 menuItem
 -l "NURBS to Polygons" 
 -c "da_NurbsToMesh" 
 -rp "N" 
--i "nurbsToPolygons.png" 
-menuEditorMenuItem1;
+-i "nurbsToPolygons.png";
 
 menuItem
 -c "NURBSToPolygonsOptions;" 
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "NURBS to Legacy Subdiv" 
 -c "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )" 
--i "nurbsToSubdivs.png" 
-menuEditorMenuItem4;
+-i "nurbsToSubdivs.png";
 
 menuItem
 -c "CreateSubdivSurfaceOptions;" 
--ob 1
-menuEditorMenuItem3;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Deformers" 
 -sm 1
--i "bendNLD.png" 
-menuEditorMenuItem25;
+-i "bendNLD.png";
 
 menuItem
 -l "Nonlinear"
 -sm 1
--i "bendNLD.png"
-menuEditorMenuItem5;
+-i "bendNLD.png";
 
 menuItem
 -l "Bend"
 -c "Bend;"
--i "bendNLD.png"
-menuEditorMenuItem1;
+-i "bendNLD.png";
 
 menuItem
 -c "BendOptions;"
--ob 1
-menuEditorMenuItem13;
+-ob 1;
 
 menuItem
 -l "Flare"
 -c "Flare;"
--i "flareNLD.png"
-menuEditorMenuItem3;
+-i "flareNLD.png";
 
 menuItem
 -c "FlareOptions;"
--ob 1
-menuEditorMenuItem14;
+-ob 1;
 
 menuItem
 -l "Sine"
 -c "Sine"
--i "sineNLD.png"
-menuEditorMenuItem5;
+-i "sineNLD.png";
 
 menuItem
 -c "SineOptions;"
--ob 1
-menuEditorMenuItem15;
+-ob 1;
 
 menuItem
 -l "Squash"
 -c "Squash"
--i "squashNLD.png"
-menuEditorMenuItem7;
+-i "squashNLD.png";
 
 menuItem
 -c "SquashOptions;"
--ob 1
-menuEditorMenuItem16;
+-ob 1;
 
 menuItem
 -l "Twist"
 -c "Twist"
--i "twistNLD.png"
-menuEditorMenuItem9;
+-i "twistNLD.png";
 
 menuItem
 -c "TwistOptions"
--ob 1
-menuEditorMenuItem17;
+-ob 1;
 
 menuItem
 -l "Wave"
 -c "Wave"
--i "waveNLD.png"
-menuEditorMenuItem11;
+-i "waveNLD.png";
 
 menuItem
 -c "WaveOptions;"
--ob 1
-menuEditorMenuItem18;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Cluster" 
 -c "CreateCluster" 
--i "cluster.png" 
-menuEditorMenuItem1;
+-i "cluster.png";
 
 menuItem
 -c "CreateClusterOptions" 
--ob 1
-menuEditorMenuItem9;
+-ob 1;
 
 menuItem
 -l "Lattice" 
 -c "CreateLattice" 
--i "lattice.png" 
-menuEditorMenuItem3;
+-i "lattice.png";
 
 menuItem
 -c "CreateLatticeOptions;" 
--ob 1
-menuEditorMenuItem10;
+-ob 1;
 
 setParent -m ..;
 
 menuItem
 -l "Shading" 
 -sm 1
--i "render_adskMaterial.png" 
-menuEditorMenuItem28;
+-i "render_adskMaterial.png";
 
 $item = "";
 
@@ -241,14 +203,7 @@ setParent -menu ..;
 menuItem
 -l "Assign New Material" 
 -c "createAssignNewMaterialTreeLister \"\";" 
--i "render_adskMaterial.png" 
-menuEditorMenuItem1;
-
-menuItem
--l "Assign Initial Shading Group" 
--c "hyperShade -assign initialShadingGroup" 
--i "out_lambert.png" 
-menuEditorMenuItem12;
+-i "render_adskMaterial.png";
 
 menuItem
 -l "separator" 
@@ -257,20 +212,17 @@ menuItem
 menuItem
 -l "Shaded Brightness Two Tone" 
 -c "assignToonShader \"shadedBrightness\"" 
--i "toonBrightness2.png" 
-menuEditorMenuItem3;
+-i "toonBrightness2.png";
 
 menuItem
 -l "Shaded Brightness Three Tone" 
 -c "assignToonShader \"threeToneBrightness\"" 
--i "toonBrightness3.png" 
-menuEditorMenuItem4;
+-i "toonBrightness3.png";
 
 menuItem
 -l "Circle Highlight" 
 -c "assignToonShader \"circleHighlight\"" 
--i "toonCircleHigh.png" 
-menuEditorMenuItem5;
+-i "toonCircleHigh.png";
 
 menuItem
 -l "separator" 
@@ -279,69 +231,58 @@ menuItem
 menuItem
 -l "Add Toon Outline" 
 -c "assignNewPfxToon" 
--i "toonAddOutline.png" 
-menuEditorMenuItem7;
+-i "toonAddOutline.png";
 
 menuItem
 -l "Remove Toon Outlines" 
 -c "removePfxToonOutlines" 
--i "toonRemoveOutline.png" 
-menuEditorMenuItem8;
+-i "toonRemoveOutline.png";
 
 setParent -m ..;
 
 menuItem
 -l "Dynamics" 
 -sm 1
--i "out_nucleus.png" 
-menuEditorMenuItem26;
+-i "out_nucleus.png";
 
 menuItem
 -l "Emit Particle From CV" 
 -c "NEmitFromObject;" 
--i "emitter.png" 
-menuEditorMenuItem1;
+-i "emitter.png";
 
 menuItem
 -c "NEmitFromObjectOptions;" 
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Particle Style" 
 -sm 1
--i "out_particle.png" 
-menuEditorMenuItem10;
+-i "out_particle.png";
 
 menuItem
 -l "Points" 
 -c "optionVar -stringValue NParticleStyle \"Points\";" 
--i "nPartPoints.png" 
-menuEditorMenuItem1;
+-i "nPartPoints.png";
 
 menuItem
 -l "Balls" 
 -c "optionVar -stringValue NParticleStyle \"Balls\";" 
--i "nPartBalls.png" 
-menuEditorMenuItem2;
+-i "nPartBalls.png";
 
 menuItem
 -l "Cloud" 
 -c "optionVar -stringValue NParticleStyle \"Cloud\";" 
--i "nPartCloud.png" 
-menuEditorMenuItem3;
+-i "nPartCloud.png";
 
 menuItem
 -l "ThickCloud" 
 -c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
--i "nPartThickCloud.png" 
-menuEditorMenuItem4;
+-i "nPartThickCloud.png";
 
 menuItem
 -l "Water" 
 -c "optionVar -stringValue NParticleStyle \"Water\";" 
--i "nPartWater.png" 
-menuEditorMenuItem5;
+-i "nPartWater.png";
 
 setParent -m ..;
 
@@ -352,8 +293,7 @@ menuItem
 menuItem
 -l "Create Soft Body" 
 -c "soft -c" 
--i "soft.png" 
-menuEditorMenuItem18;
+-i "soft.png";
 
 menuItem
 -c "CreateSoftBodyOptions" 
@@ -371,62 +311,52 @@ menuItem
 menuItem
 -l "Create Active Rigid Body" 
 -c "CreateActiveRigidBody" 
--i "rigid.png" 
-menuEditorMenuItem4;
+-i "rigid.png";
 
 menuItem
 -c "CreateActiveRigidBodyOptions" 
--ob 1
-menuEditorMenuItem15;
+-ob 1;
 
 menuItem
 -l "Create Passive Rigid Body" 
 -c "CreatePassiveRigidBody" 
--i "rigidPassive.png" 
-menuEditorMenuItem6;
+-i "rigidPassive.png";
 
 menuItem
 -c "CreatePassiveRigidBodyOptions" 
--ob 1
-menuEditorMenuItem16;
+-ob 1;
 
 menuItem
 -l "Constrain" 
 -sm 1
--i "constraint.png" 
-menuEditorMenuItem13;
+-i "constraint.png";
 
 menuItem
 -l "Nail" 
 -c "constrain -nail " 
--i "constraint.png" 
-menuEditorMenuItem1;
+-i "constraint.png";
 
 menuItem
 -l "Hinge" 
 -c "constrain -hinge -o 0 0 0 " 
--i "constraint.png" 
-menuEditorMenuItem2;
+-i "constraint.png";
 
 menuItem
 -l "Spring" 
 -c "constrain -spring -st 5 -d 0.1 " 
--i "constraint.png" 
-menuEditorMenuItem3;
+-i "constraint.png";
 
 menuItem
 -l "Barrier" 
 -c "constrain -barrier -o 0 0 0 " 
--i "constraint.png" 
-menuEditorMenuItem5;
+-i "constraint.png";
 
 setParent -m ..;
 
 menuItem
 -l "Set Initial State" 
 -c "setDynStartState;" 
--i "fluidInitialStateSet.png" 
-menuEditorMenuItem14;
+-i "fluidInitialStateSet.png";
 
 menuItem
 -l "separator" 
@@ -435,56 +365,47 @@ menuItem
 menuItem
 -l "Add Fields" 
 -sm 1
--i "posRadial.png" 
-menuEditorMenuItem12;
+-i "posRadial.png";
 
 menuItem
 -l "Air" 
 -c "dynExecuteFieldCommands 1 \"air\"" 
--i "posAir.png" 
-menuEditorMenuItem1;
+-i "posAir.png";
 
 menuItem
 -l "Drag" 
 -c "dynExecuteFieldCommands 1 \"drag\"" 
--i "posDrag.png" 
-menuEditorMenuItem2;
+-i "posDrag.png";
 
 menuItem
 -l "Gravity" 
 -c "dynExecuteFieldCommands 1 \"gravity\"" 
--i "posGravity.png" 
-menuEditorMenuItem3;
+-i "posGravity.png";
 
 menuItem
 -l "Newton" 
 -c "dynExecuteFieldCommands 1 \"newton\"" 
--i "posNewton.png" 
-menuEditorMenuItem4;
+-i "posNewton.png";
 
 menuItem
 -l "Radial" 
 -c "dynExecuteFieldCommands 1 \"radial\"" 
--i "posRadial.png" 
-menuEditorMenuItem5;
+-i "posRadial.png";
 
 menuItem
 -l "Turbulence" 
 -c "dynExecuteFieldCommands 1 \"turbulence\"" 
--i "posTurbulence.png" 
-menuEditorMenuItem6;
+-i "posTurbulence.png";
 
 menuItem
 -l "Uniform" 
 -c "dynExecuteFieldCommands 1 \"uniform\"" 
--i "posUniform.png" 
-menuEditorMenuItem7;
+-i "posUniform.png";
 
 menuItem
 -l "Vortex" 
 -c "dynExecuteFieldCommands 1 \"vortex\"" 
--i "posVortex.png" 
-menuEditorMenuItem8;
+-i "posVortex.png";
 
 menuItem
 -l "separator" 
@@ -493,8 +414,7 @@ menuItem
 menuItem
 -l "Volume Axis" 
 -c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
--i "posVolumeAxis.png" 
-menuEditorMenuItem10;
+-i "posVolumeAxis.png";
 
 setParent -m ..;
 

@@ -15,19 +15,11 @@ menuItem -bld 1
 -rp "W"
 -i "polyCube.png";
 
-menuItem
--c "CreatePolygonCubeOptions;"
--ob 1;
-
 menuItem -bld 1 
 -l "Plane"
 -c "CreatePolygonPlane"
 -rp "SW"
 -i "polyMesh.png";
-
-menuItem
--c "CreatePolygonPlaneOptions"
--ob 1;
 
 menuItem -bld 1 
 -l "CV Curve"
@@ -35,19 +27,11 @@ menuItem -bld 1
 -rp "NE"
 -i "curveCV.png";
 
-menuItem
--c "CVCurveToolOptions"
--ob 1;
-
 menuItem -bld 1 
 -l "Circle"
 -c "CreateNURBSCircle;"
 -rp "E"
 -i "circle.png";
-
-menuItem
--c "CreateNURBSCircleOptions;"
--ob 1;
 
 menuItem -bld 1 
 -l "Quad Draw"
@@ -55,29 +39,17 @@ menuItem -bld 1
 -rp "N"
 -i "quadDraw_NEX32.png";
 
-menuItem
--c "CreatePolygonSphereOptions;"
--ob 1;
-
 menuItem -bld 1 
 -l "Create"
 -c "CreatePolygonTool;"
 -rp "NW"
 -i "polyCreateFacet.png";
 
-menuItem
--c "CreatePolygonToolOptions;"
--ob 1;
-
 menuItem -bld 1 
 -l "Plane"
 -c "CreateNURBSPlane"
 -rp "SE"
 -i "plane.png";
-
-menuItem
--c "CreateNURBSPlaneOptions;"
--ob 1;
 
 menuItem -bld 1 
 -l "Import Illustrator Curves"
@@ -117,10 +89,6 @@ menuItem -bld 1
 -c "BatchRender"
 -rp "NW"
 -i "batchRender.png";
-
-menuItem
--c "BatchRenderOptions"
--ob 1;
 
 menuItem -bld 1 
 -l "Render Sequence"
@@ -335,12 +303,13 @@ menuItem
 -d 1
 -dl "separator";
 
+/*
 if (`pluginInfo -q -l weightsServer` == 1){
 menuItem -bld 1 
 -l "Weights Server"
 -c "weightsServerEditInfluences"
 -i "move_M.png";
-}
+}*/
 
 menuItem -bld 1 
 -l "Bake Deformer"
@@ -366,19 +335,11 @@ menuItem -bld 1
 -rp "E"
 -i "directionallight.png";
 
-menuItem
--c "CreateDirectionalLightOptions;"
--ob 1;
-
 menuItem -bld 1 
 -l "Spot"
 -c "CreateSpotLight;"
 -rp "SE"
 -i "spotlight.png";
-
-menuItem
--c "CreateSpotLightOptions;"
--ob 1;
 
 menuItem -bld 1 
 -l "Point"
@@ -386,19 +347,11 @@ menuItem -bld 1
 -rp "SW"
 -i "pointlight.png";
 
-menuItem
--c "CreatePointLightOptions;"
--ob 1;
-
 menuItem -bld 1 
 -l "Area"
 -c "CreateAreaLight"
 -rp "NE"
 -i "AreaLightShelf.png";
-
-menuItem
--c "CreateAreaLightOptions"
--ob 1;
 
 menuItem -bld 1 
 -l "SkyDome"
@@ -442,10 +395,6 @@ menuItem -bld 1
 -rp "N"
 -i "Camera.png";
 
-menuItem
--c "CreateCameraOnlyOptions"
--ob 1;
-
 menuItem -bld 1 
 -l "Locator"
 -c "CreateLocator"
@@ -457,10 +406,6 @@ menuItem -bld 1
 -c "Create3DContainer"
 -rp "E"
 -i "fluidCreate3D.png";
-
-menuItem
--c "Create3DContainerOptions"
--ob 1;
 
 menuItem -bld 1 
 -l "Arnold Volume"
@@ -489,20 +434,6 @@ menuItem -bld 1
 -c "NCreateEmitter;"
 -rp "W"
 -i "posEmitter.png";
-
-menuItem
--c "NCreateEmitterOptions;"
--ob 1;
-
-menuItem -bld 1 
--l "Delete Non-Def History"
--c "BakeNonDefHistory"
--i "nodeGrapherDisplayNone.png";
-
-menuItem -bld 1 
--l "Input Order Editor"
--c "da_ListInputOperations"
--i "nodeGrapherNext.png";
 
 menuItem -bld 1 
 -l "Lock Nodes"
@@ -593,13 +524,9 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Flow Path Object"
--c "FlowPathObject;"
+-c "FlowPathObjectOptions"
 -rp "SW"
 -i "flowPathObj.png";
-
-menuItem
--c "FlowPathObjectOptions;"
--ob 1;
 
 menuItem -bld 1 
 -l "Grease Pencil"
@@ -615,13 +542,9 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Attach To Motion Path"
--c "AttachToPath;"
+-c "AttachToPathOptions"
 -rp "W"
 -i "motionPath.png";
-
-menuItem
--c "AttachToPathOptions;"
--ob 1;
 
 menuItem -bld 1 
 -l "Bake Animation"
