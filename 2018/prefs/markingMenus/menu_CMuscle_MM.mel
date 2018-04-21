@@ -3,106 +3,89 @@ menuItem
 -l "Joint Orientation" 
 -c "OrientJointOptions" 
 -rp "N" 
--i "orientJoint.png" 
-menuEditorMenuItem2;
+-i "orientJoint.png";
 
 menuItem
 -l "Go To Bind Pose" 
 -c "GoToBindPose;" 
 -rp "NE" 
--i "goToBindPose.png" 
-menuEditorMenuItem8;
+-i "goToBindPose.png";
 
 menuItem
 -l "Mirror Joint" 
 -c "mirrorJoint" 
 -rp "NW" 
--i "kinMirrorJoint_S.png" 
-menuEditorMenuItem10;
+-i "kinMirrorJoint_S.png";
 
 menuItem
 -c "MirrorJointOptions" 
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Select Hierarchy" 
 -c "SelectHierarchy" 
 -rp "S" 
--i "selectByHierarchy.png" 
-menuEditorMenuItem6;
+-i "selectByHierarchy.png";
 
 menuItem
 -l "IK Spline Handle" 
 -c "IKSplineHandleTool;" 
 -rp "W" 
--i "kinSplineHandle.png" 
-menuEditorMenuItem9;
+-i "kinSplineHandle.png";
 
 menuItem
 -c "IKSplineHandleToolOptions;" 
--ob 1
-menuEditorMenuItem18;
+-ob 1;
 
 menuItem
 -l "IK Handle" 
 -c "IKHandleTool;" 
 -rp "SW" 
--i "kinHandle.png" 
-menuEditorMenuItem19;
+-i "kinHandle.png";
 
 menuItem
 -c "IKHandleToolOptions;" 
--ob 1
-menuEditorMenuItem20;
+-ob 1;
 
 menuItem
 -l "Bind Skin" 
 -c "SmoothBindSkin;" 
 -rp "E" 
--i "smoothSkin.png" 
-menuEditorMenuItem4;
+-i "smoothSkin.png";
 
 menuItem
 -c "SmoothBindSkinOptions;" 
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Display Joint As" 
--sm 1
-menuEditorMenuItem12;
+-sm 1;
 
 menuItem
 -l "Bone" 
 -c "da_JointsAsBone" 
--i "out_joint.png" 
-menuEditorMenuItem1;
+-i "out_joint.png";
 
 menuItem
 -l "None" 
 -c "da_JointsAsNone" 
--i "RS_disable.png" 
-menuEditorMenuItem2;
+-i "RS_disable.png";
 
 setParent -m ..;
 
 menuItem
 -l "Display Bone As" 
--sm 1
-menuEditorMenuItem13;
+-sm 1;
 
 menuItem
 -l "Fat" 
 -c "da_BoneAsFat" 
--i "pickJointObj.png" 
-menuEditorMenuItem1;
+-i "pickJointObj.png";
 
 menuItem
 -l "Off" 
 -c "da_BoneAsOff" 
--i "rvViewingPipelineOff.png" 
-menuEditorMenuItem2;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
@@ -113,14 +96,12 @@ menuItem
 menuItem
 -l "Muscle Builder" 
 -c "cMuscleBuilder(); " 
--i "cMuscle_muscle_muscleBuilder.png" 
-menuEditorMenuItem15;
+-i "cMuscle_muscle_muscleBuilder.png";
 
 menuItem
 -l "Connect selected Muscle Objects" 
 -c "cMuscle_connectToSystem(); " 
--i "cMuscle_skin_connMus.png" 
-menuEditorMenuItem1;
+-i "cMuscle_skin_connMus.png";
 
 menuItem
 -l "separator" 
@@ -129,8 +110,7 @@ menuItem
 menuItem
 -l "Joint Size" 
 -c "jdsWin;" 
--i "resizeWindow.png" 
-menuEditorMenuItem3;
+-i "resizeWindow.png";
 
 setParent -m ..;
 

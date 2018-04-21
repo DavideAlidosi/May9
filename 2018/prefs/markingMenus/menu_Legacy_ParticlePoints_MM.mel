@@ -1,125 +1,107 @@
 int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
-    menuItem
-        -l "Lattice" 
-        -c "CreateLattice" 
-        -rp "NE" 
-        -i "lattice.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Lattice" 
+-c "CreateLattice" 
+-rp "NE" 
+-i "lattice.png";
 
-    menuItem
-        -c "CreateLatticeOptions;" 
-        -ob 1
-        menuEditorMenuItem2;
+menuItem
+-c "CreateLatticeOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Cluster" 
-        -c "CreateCluster" 
-        -rp "E" 
-        -i "cluster.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Cluster" 
+-c "CreateCluster" 
+-rp "E" 
+-i "cluster.png";
 
-    menuItem
-        -c "CreateClusterOptions" 
-        -ob 1
-        menuEditorMenuItem4;
+menuItem
+-c "CreateClusterOptions" 
+-ob 1;
 
-    menuItem
-    -l "Add Deformer"
-    -sm 1
-    -i "bendNLD.png"
-    -stp "mel"
-    menuEditorMenuItem24;
+menuItem
+-l "Add Deformer"
+-sm 1
+-i "bendNLD.png"
+-stp "mel";
 
-        menuItem
-        -l "Bend"
-        -c "Bend;"
-        -i "bendNLD.png"
-        -stp "mel"
-        menuEditorMenuItem13;
+menuItem
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png"
+-stp "mel";
 
-        menuItem
-        -c "BendOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem7;
+menuItem
+-c "BendOptions;"
+-ob 1
+-stp "mel";
 
-        menuItem
-        -l "Flare"
-        -c "Flare;"
-        -i "flareNLD.png"
-        -stp "mel"
-        menuEditorMenuItem15;
+menuItem
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png"
+-stp "mel";
 
-        menuItem
-        -c "FlareOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem8;
+menuItem
+-c "FlareOptions;"
+-ob 1
+-stp "mel";
 
-        menuItem
-        -l "Sine"
-        -c "Sine"
-        -i "sineNLD.png"
-        -stp "mel"
-        menuEditorMenuItem17;
+menuItem
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png"
+-stp "mel";
 
-        menuItem
-        -c "SineOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem9;
+menuItem
+-c "SineOptions;"
+-ob 1
+-stp "mel";
 
-        menuItem
-        -l "Squash"
-        -c "Squash"
-        -i "squashNLD.png"
-        -stp "mel"
-        menuEditorMenuItem19;
+menuItem
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png"
+-stp "mel";
 
-        menuItem
-        -c "SquashOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem10;
+menuItem
+-c "SquashOptions;"
+-ob 1
+-stp "mel";
 
-        menuItem
-        -l "Twist"
-        -c "Twist"
-        -i "twistNLD.png"
-        -stp "mel"
-        menuEditorMenuItem21;
+menuItem
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png"
+-stp "mel";
 
-        menuItem
-        -c "TwistOptions"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem11;
+menuItem
+-c "TwistOptions"
+-ob 1
+-stp "mel";
 
-        menuItem
-        -l "Wave"
-        -c "Wave"
-        -i "waveNLD.png"
-        -stp "mel"
-        menuEditorMenuItem23;
+menuItem
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png"
+-stp "mel";
 
-        menuItem
-        -c "WaveOptions;"
-        -ob 1
-        -stp "mel"
-        menuEditorMenuItem12;
+menuItem
+-c "WaveOptions;"
+-ob 1
+-stp "mel";
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem
-        -l "separator" 
-        -d 1;
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-        -l "HUD Info" 
-        -c "ToggleParticleCount" 
-        -checkBox (1 == $particleCountCheck)
-        menuEditorMenuItem23;
+menuItem
+-l "HUD Info" 
+-c "ToggleParticleCount" 
+-cb (1 == $particleCountCheck);
 
 setParent -m ..;
 

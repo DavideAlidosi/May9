@@ -7,104 +7,88 @@ menuItem
 -l "Duplicate" 
 -c "DuplicateWithTransform" 
 -rp "N" 
--i "da_duplicate.png" 
-menuEditorMenuItem1;
+-i "da_duplicate.png" ;
 
 menuItem
 -c "DuplicateSpecialOptions" 
--ob 1
-menuEditorMenuItem3;
+-ob 1;
 
 menuItem
 -l "Select Hierarchy" 
 -c "SelectHierarchy" 
 -rp "NE" 
--i "selectByHierarchy.png" 
-menuEditorMenuItem4;
+-i "selectByHierarchy.png";
 
 menuItem
 -l "Create Set" 
 -c "CreateSet" 
 -rp "S" 
--i "out_objectSet.png" 
-menuEditorMenuItem5;
+-i "out_objectSet.png";
 
 menuItem
 -c "CreateSetOptions" 
--ob 1
-menuEditorMenuItem13;
+-ob 1;
 
 menuItem
 -l "Show Local Axes" 
 -c "ToggleLocalRotationAxes;" 
 -rp "SE" 
--i "polyNormalSetToFace.png" 
-menuEditorMenuItem7;
+-i "polyNormalSetToFace.png";
 
 menuItem
 -l "Select by Shader" 
 -c "da_SelectObjectMaterial" 
 -rp "E" 
--i "out_phongE.png" 
-menuEditorMenuItem8;
+-i "out_phongE.png";
 
 menuItem
 -l "Reference" 
 -sm 1
--i "selectByObject.png" 
-menuEditorMenuItem11;
+-i "selectByObject.png";
 
 menuItem
 -l "On" 
 -c "da_EnableReference" 
--i "rvViewingPipelineOn.png"
-menuEditorMenuItem1;
+-i "rvViewingPipelineOn.png";
 
 menuItem
 -l "Off" 
 -c "da_DisableReference" 
--i "rvViewingPipelineOff.png"
-menuEditorMenuItem2;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
 menuItem
 -l "Shading" 
 -sm 1
--i "bevel.png" 
-menuEditorMenuItem12;
+-i "bevel.png";
 
 menuItem
 -l "On" 
 -c "da_PolyShade" 
--i "rvViewingPipelineOn.png"
-menuEditorMenuItem1;
+-i "rvViewingPipelineOn.png";
 
 menuItem
 -l "Off" 
 -c "da_PolyNoShade" 
--i "rvViewingPipelineOff.png"
-menuEditorMenuItem2;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
 menuItem
 -l "X-Ray" 
 -sm 1
--i "da_Xray.png" 
-menuEditorMenuItem15;
+-i "da_Xray.png";
 
 menuItem
 -l "On" 
 -c "displaySurface -x 1" 
--i "rvViewingPipelineOn.png"
-menuEditorMenuItem1;
+-i "rvViewingPipelineOn.png";
 
 menuItem
 -l "Off" 
 -c "displaySurface -x 0" 
--i "rvViewingPipelineOff.png"
-menuEditorMenuItem2;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
@@ -115,20 +99,17 @@ menuItem
 menuItem
 -l "DAG Only" 
 -c "da_ToggleDagNode" 
--checkBox (1 == $DAGCheck)
-menuEditorMenuItem6;
+-cb (1 == $DAGCheck);
 
 menuItem
 -l "Shapes" 
 -c "da_ToggleShapes" 
--checkBox (1 == $ShapesCheck)
-menuEditorMenuItem2;
+-cb (1 == $ShapesCheck);
 
 menuItem
 -l "Materials" 
 -c "da_ToggleMaterial" 
--checkBox (1 == $MaterialCheck)
-menuEditorMenuItem9;
+-cb (1 == $MaterialCheck);
 
 setParent -m ..;
 

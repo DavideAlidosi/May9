@@ -1,31 +1,27 @@
 
-    menuItem
-        -l "Convert to UVs" 
-        -c "ConvertSelectionToUVs" 
-        -rp "N" 
-        -i "UVEditorVertex.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Convert to UVs" 
+-c "ConvertSelectionToUVs" 
+-rp "N" 
+-i "UVEditorVertex.png";
 
-    menuItem
-        -l "UV Toolkit" 
-        -c "da_OpenUvToolkit" 
-        -i "UVTk.png" 
-        menuEditorMenuItem2;
+menuItem
+-l "UV Toolkit" 
+-c "da_OpenUvToolkit" 
+-i "UVTk.png";
 
-    menuItem
-        -l "separator" 
-        -d 1;
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-        -l "Layout" 
-        -c "LayoutUV" 
-        -i "layoutUV.png" 
-        menuEditorMenuItem4;
+menuItem
+-l "Layout" 
+-c "LayoutUV" 
+-i "layoutUV.png";
 
-    menuItem
-        -c "LayoutUVOptions" 
-        -ob 1
-        menuEditorMenuItem5;
+menuItem
+-c "LayoutUVOptions" 
+-ob 1;
 
 setParent -m ..;
 

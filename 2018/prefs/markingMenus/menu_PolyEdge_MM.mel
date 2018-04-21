@@ -1,17 +1,15 @@
 
-    menuItem
-        -l "Constraint Point On Poly" 
-        -c "doCreatePointOnPolyConstraintArgList 2 {   \"0\" ,\"0\" ,\"0\" ,\"1\" ,\"\" ,\"1\" ,\"0\" ,\"0\" ,\"0\" ,\"0\" };" 
-        -rp "W" 
-        -i "pointOnPolyConstraint.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Constraint Point On Poly" 
+-c "doCreatePointOnPolyConstraintArgList 2 {   \"0\" ,\"0\" ,\"0\" ,\"1\" ,\"\" ,\"1\" ,\"0\" ,\"0\" ,\"0\" ,\"0\" };" 
+-rp "W" 
+-i "pointOnPolyConstraint.png";
 
-    menuItem
-        -l "Rivet on Selected Edge" 
-        -c "da_RivetMashEdge" 
-        -rp "E" 
-        -i "MASH_CreateMeshFromPoints.png" 
-        menuEditorMenuItem2;
+menuItem
+-l "Rivet on Selected Edge" 
+-c "da_RivetMashEdge" 
+-rp "E" 
+-i "MASH_CreateMeshFromPoints.png";
 
 setParent -m ..;
 

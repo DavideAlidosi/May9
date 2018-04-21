@@ -4,80 +4,67 @@ menuItem
 -l "Use as Fluid Emitter" 
 -c "dynExecFluidEmitterCommands 1 { \"0\", \"fluidEmitter -type surface -der 1 -her 1 -fer 1 -fdr 2 -r 100.0 -cye none -cyi 1 -mxd 1 -mnd 0 \", 0, 0, 0, 0, 0, 0, 10, 10, 10, 10, 10, 10, 0, 0, 0} " 
 -rp "NW" 
--i "fluidObjectEmit.png" 
-menuEditorMenuItem2;
+-i "fluidObjectEmit.png";
 
 menuItem
 -c "EmitFluidFromObjectOptions" 
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 menuItem
 -l "Lattice" 
 -c "CreateLattice" 
 -rp "NE" 
--i "lattice.png" 
-menuEditorMenuItem5;
+-i "lattice.png";
 
 menuItem
 -c "CreateLatticeOptions;" 
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem
 -l "Cluster" 
 -c "CreateCluster" 
 -rp "E" 
--i "cluster.png" 
-menuEditorMenuItem8;
+-i "cluster.png";
 
 menuItem
 -c "CreateClusterOptions" 
--ob 1
-menuEditorMenuItem13;
+-ob 1;
 
 menuItem
 -l "Set Initial State" 
 -c "setDynStartState" 
 -rp "N" 
--i "fluidInitialStateSet.png" 
-menuEditorMenuItem3;
+-i "fluidInitialStateSet.png";
 
 menuItem
 -l "Make Collide" 
 -c "dynExecuteCollisionCommand \"collision -r 1 -f 0 -o 0.01 \"" 
 -rp "W" 
--i "collision.png" 
-menuEditorMenuItem9;
+-i "collision.png";
 
 menuItem
 -c "MakeCollideOptions" 
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem
 -l "Create Springs" 
 -c "spring -noDuplicate false -minMax true -mnd 0 -mxd 0 -useRestLengthPS true -s 1 -d 0.2 -sfw 1 -efw 1 " 
 -rp "SE" 
--i "out_spring.png" 
-menuEditorMenuItem10;
+-i "out_spring.png";
 
 menuItem
 -c "CreateSpringOptions" 
--ob 1
-menuEditorMenuItem16;
+-ob 1;
 
 menuItem
 -l "Sprite Wizard" 
 -c "spriteWizardMenu" 
--i "menuIconParticles.png" 
-menuEditorMenuItem6;
+-i "menuIconParticles.png";
 
 menuItem
 -l "Instancer" 
 -c "ParticleInstancerOptions" 
--i "instancer.png" 
-menuEditorMenuItem14;
+-i "instancer.png";
 
 menuItem
 -l "separator" 
@@ -87,142 +74,120 @@ menuItem
 -l "Add Deformer"
 -sm 1
 -i "bendNLD.png"
--stp "mel"
-menuEditorMenuItem24;
+-stp "mel";
 
 menuItem
 -l "Bend"
 -c "Bend;"
 -i "bendNLD.png"
--stp "mel"
-menuEditorMenuItem13;
+-stp "mel";
 
 menuItem
 -c "BendOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem7;
+-stp "mel";
 
 menuItem
 -l "Flare"
 -c "Flare;"
 -i "flareNLD.png"
--stp "mel"
-menuEditorMenuItem15;
+-stp "mel";
 
 menuItem
 -c "FlareOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem8;
+-stp "mel";
 
 menuItem
 -l "Sine"
 -c "Sine"
 -i "sineNLD.png"
--stp "mel"
-menuEditorMenuItem17;
+-stp "mel";
 
 menuItem
 -c "SineOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem9;
+-stp "mel";
 
 menuItem
 -l "Squash"
 -c "Squash"
 -i "squashNLD.png"
--stp "mel"
-menuEditorMenuItem19;
+-stp "mel";
 
 menuItem
 -c "SquashOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem10;
+-stp "mel";
 
 menuItem
 -l "Twist"
 -c "Twist"
 -i "twistNLD.png"
--stp "mel"
-menuEditorMenuItem21;
+-stp "mel";
 
 menuItem
 -c "TwistOptions"
 -ob 1
--stp "mel"
-menuEditorMenuItem11;
+-stp "mel";
 
 menuItem
 -l "Wave"
 -c "Wave"
 -i "waveNLD.png"
--stp "mel"
-menuEditorMenuItem23;
+-stp "mel";
 
 menuItem
 -c "WaveOptions;"
 -ob 1
--stp "mel"
-menuEditorMenuItem12;
+-stp "mel";
 
 setParent -m ..;
 
 menuItem
 -l "Add Fields" 
 -sm 1
--i "posRadial.png" 
-menuEditorMenuItem12;
+-i "posRadial.png";
 
 menuItem
 -l "Air" 
 -c "dynExecuteFieldCommands 1 \"air\"" 
--i "posAir.png" 
-menuEditorMenuItem1;
+-i "posAir.png";
 
 menuItem
 -l "Drag" 
 -c "dynExecuteFieldCommands 1 \"drag\"" 
--i "posDrag.png" 
-menuEditorMenuItem2;
+-i "posDrag.png";
 
 menuItem
 -l "Gravity" 
 -c "dynExecuteFieldCommands 1 \"gravity\"" 
--i "posGravity.png" 
-menuEditorMenuItem3;
+-i "posGravity.png";
 
 menuItem
 -l "Newton" 
 -c "dynExecuteFieldCommands 1 \"newton\"" 
--i "posNewton.png" 
-menuEditorMenuItem4;
+-i "posNewton.png";
 
 menuItem
 -l "Radial" 
 -c "dynExecuteFieldCommands 1 \"radial\"" 
--i "posRadial.png" 
-menuEditorMenuItem5;
+-i "posRadial.png";
 
 menuItem
 -l "Turbulence" 
 -c "dynExecuteFieldCommands 1 \"turbulence\"" 
--i "posTurbulence.png" 
-menuEditorMenuItem6;
+-i "posTurbulence.png";
 
 menuItem
 -l "Uniform" 
 -c "dynExecuteFieldCommands 1 \"uniform\"" 
--i "posUniform.png" 
-menuEditorMenuItem7;
+-i "posUniform.png";
 
 menuItem
 -l "Vortex" 
 -c "dynExecuteFieldCommands 1 \"vortex\"" 
--i "posVortex.png" 
-menuEditorMenuItem8;
+-i "posVortex.png";
 
 menuItem
 -l "separator" 
@@ -231,8 +196,7 @@ menuItem
 menuItem
 -l "Volume Axis" 
 -c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
--i "posVolumeAxis.png" 
-menuEditorMenuItem10;
+-i "posVolumeAxis.png";
 
 setParent -m ..;
 
@@ -243,8 +207,7 @@ menuItem
 menuItem
 -l "HUD Info" 
 -c "ToggleParticleCount" 
--checkBox (1 == $particleCountCheck)
-menuEditorMenuItem23;
+-cb (1 == $particleCountCheck);
 
 setParent -m ..;
 

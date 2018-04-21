@@ -1,53 +1,45 @@
 
-    menuItem
-        -l "MASH Editor" 
-        -c "MASHOutliner;" 
-        -rp "N" 
-        -i "MASH_Editor.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "MASH Editor" 
+-c "MASHOutliner;" 
+-rp "N" 
+-i "MASH_Editor.png";
 
-    menuItem
-        -ob 1
-        menuEditorMenuItem2;
+menuItem
+-ob 1;
 
-    menuItem
-        -l "Gravity" 
-        -sm 1
-        menuEditorMenuItem3;
+menuItem
+-l "Gravity" 
+-sm 1;
 
-        menuItem
-            -l "On" 
-            -c "da_MashBulletGravity" 
-            -rp "N" 
-            -i "rvViewingPipelineOn.png" 
-            menuEditorMenuItem1;
+menuItem
+-l "On" 
+-c "da_MashBulletGravity" 
+-rp "N" 
+-i "rvViewingPipelineOn.png";
 
-        menuItem
-            -l "Off" 
-            -c "da_MashBulletNoGravity" 
-            -i "rvViewingPipelineOff.png" 
-            menuEditorMenuItem2;
+menuItem
+-l "Off" 
+-c "da_MashBulletNoGravity" 
+-i "rvViewingPipelineOff.png";
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem
-        -l "Use Ground" 
-        -sm 1
-        menuEditorMenuItem4;
+menuItem
+-l "Use Ground" 
+-sm 1;
 
-        menuItem
-            -l "On" 
-            -c "da_MashBulletGround" 
-            -i "rvViewingPipelineOn.png" 
-            menuEditorMenuItem1;
+menuItem
+-l "On" 
+-c "da_MashBulletGround" 
+-i "rvViewingPipelineOn.png";
 
-        menuItem
-            -l "Off" 
-            -c "da_MashBulletNoGround" 
-            -i "rvViewingPipelineOff.png" 
-            menuEditorMenuItem2;
+menuItem
+-l "Off" 
+-c "da_MashBulletNoGround" 
+-i "rvViewingPipelineOff.png";
 
-    setParent -m ..;
+setParent -m ..;
 
 setParent -m ..;
 

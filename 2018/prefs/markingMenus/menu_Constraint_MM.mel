@@ -1,132 +1,112 @@
-	menuItem 
-	-l "Match Pivots"
-	-c "MatchPivots"
-	-rp "S"
-	-i "pickPivotComp.png"
-	-stp "mel";
+menuItem 
+-l "Match Pivots"
+-c "MatchPivots"
+-rp "S"
+-i "pickPivotComp.png"
+-stp "mel";
 
-    menuItem
-        -l "Bind Skin" 
-        -c "SmoothBindSkin;" 
-        -i "smoothSkin.png" 
-        menuItem1957;
+menuItem
+-l "Bind Skin" 
+-c "SmoothBindSkin;" 
+-i "smoothSkin.png";
 
-    menuItem
-        -l "menuItem1958" 
-        -c "SmoothBindSkinOptions;" 
-        -ob 1
-        menuItem1958;
+menuItem
+-l "menuItem1958" 
+-c "SmoothBindSkinOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Aim Constraint" 
-        -c "AimConstraint;" 
-        -rp "SW" 
-        -i "aimConstraint.png" 
-        menuEditorMenuItem13;
+menuItem
+-l "Aim Constraint" 
+-c "AimConstraint;" 
+-rp "SW" 
+-i "aimConstraint.png";
 
-    menuItem
-        -c "AimConstraintOptions;" 
-        -ob 1
-        menuEditorMenuItem2;
+menuItem
+-c "AimConstraintOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Parent Constraint" 
-        -c "ParentConstraint;" 
-        -rp "N" 
-        -i "parentConstraint.png" 
-        menuEditorMenuItem19;
+menuItem
+-l "Parent Constraint" 
+-c "ParentConstraint;" 
+-rp "N" 
+-i "parentConstraint.png";
 
-    menuItem
-        -c "ParentConstraintOptions;" 
-        -ob 1
-        menuEditorMenuItem5;
+menuItem
+-c "ParentConstraintOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Scale Constraint" 
-        -c "scaleConstraint;" 
-        -rp "E" 
-        -i "scaleConstraint.png" 
-        menuEditorMenuItem4;
+menuItem
+-l "Scale Constraint" 
+-c "scaleConstraint;" 
+-rp "E" 
+-i "scaleConstraint.png";
 
-    menuItem
-        -c "ScaleConstraintOptions;" 
-        -ob 1
-        menuEditorMenuItem6;
+menuItem
+-c "ScaleConstraintOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Pole Vector Constraint" 
-        -c "PoleVectorConstraint;" 
-        -rp "SE" 
-        -i "poleVectorConstraint.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Pole Vector Constraint" 
+-c "PoleVectorConstraint;" 
+-rp "SE" 
+-i "poleVectorConstraint.png";
 
-    menuItem
-        -c "PoleVectorConstraintOptions;" 
-        -ob 1
-        menuEditorMenuItem8;
+menuItem
+-c "PoleVectorConstraintOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Add Influence" 
-        -c "AddInfluence" 
-        -i "addWrapInfluence.png" 
-        menuEditorMenuItem11;
+menuItem
+-l "Add Influence" 
+-c "AddInfluence" 
+-i "addWrapInfluence.png";
 
-    menuItem
-        -c "AddInfluenceOptions" 
-        -ob 1
-        menuEditorMenuItem1;
+menuItem
+-c "AddInfluenceOptions" 
+-ob 1;
 
-    menuItem
-        -l "Remove Influence" 
-        -c "RemoveInfluence" 
-        -i "removeWrapInfluence.png" 
-        menuEditorMenuItem12;
+menuItem
+-l "Remove Influence" 
+-c "RemoveInfluence" 
+-i "removeWrapInfluence.png";
 
-    menuItem
-        -l "IK Spline Handle" 
-        -c "IKSplineHandleTool;" 
-        -rp "W" 
-        -i "kinSplineHandle.png" 
-        menuEditorMenuItem9;
+menuItem
+-l "IK Spline Handle" 
+-c "IKSplineHandleTool;" 
+-rp "W" 
+-i "kinSplineHandle.png";
 
-    menuItem
-        -c "IKSplineHandleToolOptions;" 
-        -ob 1
-        menuEditorMenuItem14;
+menuItem
+-c "IKSplineHandleToolOptions;" 
+-ob 1;
 
-    menuItem
-        -l "separator" 
-        -d 1;
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-        -l "Connect selected Muscle" 
-        -c "cMuscle_connectToSystem(); " 
-        -i "cMuscle_skin_connMus.png" 
-        menuEditorMenuItem10;
+menuItem
+-l "Connect selected Muscle" 
+-c "cMuscle_connectToSystem(); " 
+-i "cMuscle_skin_connMus.png";
 
-    menuItem
-        -l "Point Constraint" 
-        -c "PointConstraint" 
-        -rp "NE" 
-        -i "posConstraint.png" 
-        menuEditorMenuItem16;
+menuItem
+-l "Point Constraint" 
+-c "PointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
 
-    menuItem
-        -c "PointConstraintOptions" 
-        -ob 1
-        menuEditorMenuItem17;
+menuItem
+-c "PointConstraintOptions" 
+-ob 1;
 
-    menuItem
-        -l "Orient Constraint" 
-        -c "OrientConstraint" 
-        -rp "NW" 
-        -i "orientConstraint.png" 
-        menuEditorMenuItem18;
+menuItem
+-l "Orient Constraint" 
+-c "OrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
 
-    menuItem
-        -c "OrientConstraintOptions" 
-        -ob 1
-        menuEditorMenuItem20;
+menuItem
+-c "OrientConstraintOptions" 
+-ob 1;
 
 setParent -m ..;
 

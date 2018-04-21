@@ -2,40 +2,35 @@ string $currentCtx = `currentCtx`;
 int $reflectionCheck = `artAttrCtx -q -rn $currentCtx`;
 string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
 
-    menuItem -itl 1 
-        -l "Paint Hair Settings" 
-        -c "paintHairTool 0;" 
-        -rp "N" 
-        -i "hairPaint.png" 
-        menuEditorMenuItem3;
+menuItem -itl 1 
+-l "Paint Hair Settings" 
+-c "paintHairTool 0;" 
+-rp "N" 
+-i "hairPaint.png";
 
-    menuItem -itl 1 
-        -l "Symmetry" 
-        -c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
-        -checkBox $reflectionCheck 
-        -rp "E" 
-        menuEditorMenuItem1;
+menuItem -itl 1 
+-l "Symmetry" 
+-c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
+-cb $reflectionCheck 
+-rp "E";
 
-    menuItem -itl 1 
-        -l "Z Axis" 
-        -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
-        -checkBox ($reflectionDirection == "z") 
-        -rp "SE" 
-        menuEditorMenuItem2;
+menuItem -itl 1 
+-l "Z Axis" 
+-c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
+-cb ($reflectionDirection == "z") 
+-rp "SE";
 
-    menuItem -itl 1 
-        -l "Y Axis" 
-        -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
-        -checkBox ($reflectionDirection == "y") 
-        -rp "S" 
-        menuEditorMenuItem4;
+menuItem -itl 1 
+-l "Y Axis" 
+-c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
+-cb ($reflectionDirection == "y") 
+-rp "S";
 
-    menuItem -itl 1 
-        -l "X Axis" 
-        -c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
-        -checkBox ($reflectionDirection == "x") 
-        -rp "SW" 
-        menuEditorMenuItem5;
+menuItem -itl 1 
+-l "X Axis" 
+-c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
+-cb ($reflectionDirection == "x") 
+-rp "SW";
 
 setParent -m ..;
 

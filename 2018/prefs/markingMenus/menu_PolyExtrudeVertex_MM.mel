@@ -1,29 +1,25 @@
 
-    menuItem
-        -l "Show Manips" 
-        -c "setToolTo ShowManips" 
-        -rp "N" 
-        -i "showManip.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Show Manips" 
+-c "setToolTo ShowManips" 
+-rp "N" 
+-i "showManip.png";
 
-    menuItem
-        -l "Edit Attributes" 
-        -c "AttributeEditor" 
-        -rp "S" 
-        -i "attributes.png" 
-        menuEditorMenuItem2;
+menuItem
+-l "Edit Attributes" 
+-c "AttributeEditor" 
+-rp "S" 
+-i "attributes.png";
 
-    menuItem
-        -l "Extrude" 
-        -c "PolyExtrude" 
-        -rp "E" 
-        -i "polyExtrudeFacet.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Extrude" 
+-c "PolyExtrude" 
+-rp "E" 
+-i "polyExtrudeFacet.png";
 
-    menuItem
-        -c "PolyExtrudeOptions" 
-        -ob 1
-        menuEditorMenuItem4;
+menuItem
+-c "PolyExtrudeOptions" 
+-ob 1;
 
 setParent -m ..;
 

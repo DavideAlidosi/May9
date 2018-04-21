@@ -1,109 +1,109 @@
-	commonTexReflectionOptionsPopup();
-	
-	commonTexSelectOptionsPopup();
+commonTexReflectionOptionsPopup();
 
-    menuItem
-        -l "Optimize" 
-        -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
-        -rp "NW" 
-        -i "optimizeUVTool.png";
+commonTexSelectOptionsPopup();
 
-    menuItem
-        -l "Select Shell" 
-        -c "SelectUVShell" 
-        -rp "E" 
-        -i "UVEditorShell.png";
+menuItem
+-l "Optimize" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+-rp "NW" 
+-i "optimizeUVTool.png";
 
-    menuItem
-        -l "Lattice" 
-        -c "LatticeUVTool" 
-        -rp "NE" 
-        -i "uvlattice.png";
+menuItem
+-l "Select Shell" 
+-c "SelectUVShell" 
+-rp "E" 
+-i "UVEditorShell.png";
 
-    menuItem
-        -c "LatticeUVToolOptions" 
-        -ob 1;
-		
-    menuItem
-        -l "Select Shell Border" 
-        -c "SelectUVBorder" 
-        -rp "W" 
-        -i "UVEditorShellBorder.png";
+menuItem
+-l "Lattice" 
+-c "LatticeUVTool" 
+-rp "NE" 
+-i "uvlattice.png";
 
-    menuItem
-        -l "UV Toolkit" 
-        -c "da_OpenUvToolkit" 
-        -i "UVTk.png";
+menuItem
+-c "LatticeUVToolOptions" 
+-ob 1;
 
-    menuItem
-        -l "Take Snapshot" 
-        -c "performUVSnapshot" 
-        -i "out_snapshot.png";
+menuItem
+-l "Select Shell Border" 
+-c "SelectUVBorder" 
+-rp "W" 
+-i "UVEditorShellBorder.png";
 
-    menuItem
-        -l "separator" 
-        -d 1;
+menuItem
+-l "UV Toolkit" 
+-c "da_OpenUvToolkit" 
+-i "UVTk.png";
 
-    menuItem
-        -l "Auto Seams" 
-        -c "performPolyAutoSeamUV 0" 
-        -i "polyAutoSeams.png";
+menuItem
+-l "Take Snapshot" 
+-c "performUVSnapshot" 
+-i "out_snapshot.png";
 
-    menuItem
-        -c "performPolyAutoSeamUV 1" 
-        -ob 1;
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-        -l "Unfold" 
-        -c "performUnfold 0" 
-        -i "textureEditorUnfoldUVs.png";
+menuItem
+-l "Auto Seams" 
+-c "performPolyAutoSeamUV 0" 
+-i "polyAutoSeams.png";
 
-    menuItem
-        -c "performUnfold 1" 
-        -ob 1;
+menuItem
+-c "performPolyAutoSeamUV 1" 
+-ob 1;
 
-    menuItem
-        -l "Layout" 
-        -c "LayoutUV" 
-        -i "layoutUV.png";
+menuItem
+-l "Unfold" 
+-c "performUnfold 0" 
+-i "textureEditorUnfoldUVs.png";
 
-    menuItem
-        -c "LayoutUVOptions" 
-        -ob 1;
+menuItem
+-c "performUnfold 1" 
+-ob 1;
 
-    menuItem
-        -l "separator" 
-        -d 1;
+menuItem
+-l "Layout" 
+-c "LayoutUV" 
+-i "layoutUV.png";
 
-    menuItem
-        -l "Convert to Edges" 
-        -c "ConvertSelectionToContainedEdges" 
-        -i "edges_NEX.png";
+menuItem
+-c "LayoutUVOptions" 
+-ob 1;
 
-    menuItem
-        -l "Convert to Vertices" 
-        -c "PolySelectConvert 3" 
-        -i "vertex_NEX.png";
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-        -c "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
-        -ob 1;
+menuItem
+-l "Convert to Edges" 
+-c "ConvertSelectionToContainedEdges" 
+-i "edges_NEX.png";
 
-    menuItem
-        -l "Symmetrize" 
-        -c "SymmetrizeUV" 
-        -rp "SE" 
-        -i "polySymmetrizeUV.png";
+menuItem
+-l "Convert to Vertices" 
+-c "PolySelectConvert 3" 
+-i "vertex_NEX.png";
 
-    menuItem
-        -c "SymmetrizeUVOptions" 
-        -ob 1;
+menuItem
+-c "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
+-ob 1;
 
-    menuItem
-        -l "Match Shells Scale" 
-        -c "uvTkDoSetTexelDensity" 
-        -rp "SW" 
-        -i "polyScaleUV.png";
+menuItem
+-l "Symmetrize" 
+-c "SymmetrizeUV" 
+-rp "SE" 
+-i "polySymmetrizeUV.png";
+
+menuItem
+-c "SymmetrizeUVOptions" 
+-ob 1;
+
+menuItem
+-l "Match Shells Scale" 
+-c "uvTkDoSetTexelDensity" 
+-rp "SW" 
+-i "polyScaleUV.png";
 
 setParent -m ..;
 

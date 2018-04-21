@@ -1,38 +1,33 @@
 
-    menuItem
-        -l "Reload Reference" 
-        -c "referenceEdLoadCB" 
-        -rp "N" 
-        -i "reloadReference.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Reload Reference" 
+-c "referenceEdLoadCB" 
+-rp "N" 
+-i "reloadReference.png";
 
-    menuItem
-        -l "Duplicate Reference" 
-        -c "duplicateReference 1 referenceEditorPanel1referenceEditorPanel" 
-        -rp "S" 
-        -i "duplicateReference.png" 
-        menuEditorMenuItem2;
+menuItem
+-l "Duplicate Reference" 
+-c "duplicateReference 1 referenceEditorPanel1referenceEditorPanel" 
+-rp "S" 
+-i "duplicateReference.png";
 
-    menuItem
-        -l "Select Reference" 
-        -c "referenceEdSelectCB" 
-        -rp "NE" 
-        -i "selectFileContents.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Select Reference" 
+-c "referenceEdSelectCB" 
+-rp "NE" 
+-i "selectFileContents.png";
 
-    menuItem
-        -l "Create Reference" 
-        -c "CreateReference" 
-        -rp "E" 
-        -i "createReference.png" 
-        menuEditorMenuItem4;
+menuItem
+-l "Create Reference" 
+-c "CreateReference" 
+-rp "E" 
+-i "createReference.png";
 
-    menuItem
-        -l "Remove Reference" 
-        -c "referenceEdRemoveCB;" 
-        -rp "W" 
-        -i "removeReference.png" 
-        menuEditorMenuItem5;
+menuItem
+-l "Remove Reference" 
+-c "referenceEdRemoveCB;" 
+-rp "W" 
+-i "removeReference.png";
 
 setParent -m ..;
 

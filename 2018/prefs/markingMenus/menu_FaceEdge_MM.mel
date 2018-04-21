@@ -1,27 +1,23 @@
 
-    menuItem
-        -l "Wedge" 
-        -c "WedgePolygon;" 
-        -rp "N" 
-        -i "polyWedgeFace.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Wedge" 
+-c "WedgePolygon" 
+-rp "N" 
+-i "polyWedgeFace.png";
 
-    menuItem
-        -c "WedgePolygonOptions;" 
-        -ob 1
-        menuEditorMenuItem2;
+menuItem
+-c "WedgePolygonOptions" 
+-ob 1;
 
-    menuItem
-        -l "Bevel" 
-        -c "BevelPolygon;" 
-        -rp "NW" 
-        -i "polyBevel.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Bevel" 
+-c "BevelPolygon" 
+-rp "NW" 
+-i "polyBevel.png";
 
-    menuItem
-        -c "BevelPolygonOptions;" 
-        -ob 1
-        menuEditorMenuItem4;
+menuItem
+-c "BevelPolygonOptions" 
+-ob 1;
 
 setParent -m ..;
 

@@ -7,50 +7,42 @@ menuItem -itl 1
 -l "Freeze" 
 -c "SetMeshFreezeTool" 
 -rp "NE" 
--i "Freeze.png" 
-menuEditorMenuItem3;
+-i "Freeze.png";
 
 menuItem -itl 1 
 -c "ShowMeshFreezeToolOptions" 
--ob 1
-menuEditorMenuItem24;
+-ob 1;
 
 menuItem -itl 1 
 -l "Sculpt" 
 -c "SetMeshSculptTool" 
 -rp "E" 
--i "Sculpt.png" 
-menuEditorMenuItem25;
+-i "Sculpt.png";
 
 menuItem -itl 1 
 -c "ShowMeshSculptToolOptions" 
--ob 1
-menuEditorMenuItem27;
+-ob 1;
 
 menuItem -itl 1 
 -l "Grab" 
 -c "SetMeshGrabTool" 
 -rp "NW" 
--i "Grab.png" 
-menuEditorMenuItem1;
+-i "Grab.png";
 
 menuItem -itl 1 
 -c "ShowMeshGrabToolOptions" 
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem -itl 1 
 -l "Wireframe" 
 -c "da_ToggleSculptWireframe" 
--checkBox (1 == $wireframeCheck)
--rp "W" 
-menuEditorMenuItem6;
+-cb (1 == $wireframeCheck)
+-rp "W";
 
 menuItem -itl 1 
 -l "Flood" 
 -c "da_SculptFlood" 
--i "polySmoothProxy.png" 
-menuEditorMenuItem29;
+-i "polySmoothProxy.png";
 
 menuItem -itl 1 
 -c "ToolSettingsWindow" 
@@ -64,169 +56,139 @@ menuItem -itl 1
 -l "Smooth" 
 -c "SetMeshSmoothTool" 
 -rp "S" 
--i "Smooth.png" 
-menuEditorMenuItem5;
+-i "Smooth.png";
 
 menuItem -itl 1 
 -c "ShowMeshSmoothToolOptions" 
--ob 1
-menuEditorMenuItem4;
+-ob 1;
 
 menuItem -itl 1 
 -l "Relax" 
 -c "SetMeshRelaxTool" 
--i "Relax.png" 
-menuEditorMenuItem8;
+-i "Relax.png";
 
 menuItem -itl 1 
 -c "ShowMeshRelaxToolOptions" 
--ob 1
-menuEditorMenuItem7;
+-ob 1;
 
 menuItem -itl 1 
 -l "Pinch" 
 -rp "SE" 
 -c "SetMeshPinchTool" 
--i "Pinch.png" 
-menuEditorMenuItem10;
+-i "Pinch.png" ;
 
 menuItem -itl 1 
 -c "ShowMeshPinchToolOptions" 
--ob 1
-menuEditorMenuItem9;
+-ob 1;
 
 menuItem -itl 1 
 -l "Flatten" 
 -rp "SW" 
 -c "SetMeshFlattenTool" 
--i "Flatten.png" 
-menuEditorMenuItem12;
+-i "Flatten.png";
 
 menuItem -itl 1 
 -c "ShowMeshFlattenToolOptions" 
--ob 1
-menuEditorMenuItem11;
+-ob 1;
 
 menuItem -itl 1 
 -l "Foamy" 
 -c "SetMeshFoamyTool" 
--i "Foamy.png" 
-menuEditorMenuItem18;
+-i "Foamy.png";
 
 menuItem -itl 1 
 -c "ShowMeshFoamyToolOptions" 
--ob 1
-menuEditorMenuItem17;
+-ob 1;
 
 menuItem -itl 1 
 -l "Spray" 
 -c "SetMeshSprayTool" 
--i "Spray.png" 
-menuEditorMenuItem21;
+-i "Spray.png";
 
 menuItem -itl 1 
 -c "ShowMeshSprayToolOptions" 
--ob 1
-menuEditorMenuItem19;
+-ob 1;
 
 menuItem -itl 1 
 -l "Repeat" 
 -c "SetMeshRepeatTool" 
--i "Repeat.png" 
-menuEditorMenuItem40;
+-i "Repeat.png";
 
 menuItem -itl 1 
 -c "ShowMeshRepeatToolOptions" 
--ob 1
-menuEditorMenuItem22;
+-ob 1;
 
 menuItem -itl 1 
 -l "Imprint" 
 -c "SetMeshImprintTool" 
--i "Imprint.png" 
-menuEditorMenuItem16;
+-i "Imprint.png";
 
 menuItem -itl 1 
 -c "ShowMeshImprintToolOptions" 
--ob 1
-menuEditorMenuItem26;
+-ob 1;
 
 menuItem -itl 1 
 -l "Wax" 
 -c "SetMeshWaxTool" 
--i "Wax.png" 
-menuEditorMenuItem28;
+-i "Wax.png";
 
 menuItem -itl 1 
 -c "ShowMeshWaxToolOptions" 
--ob 1
-menuEditorMenuItem35;
+-ob 1;
 
 menuItem -itl 1 
 -l "Scrape" 
 -c "SetMeshScrapeTool" 
--i "Scrape.png" 
-menuEditorMenuItem30;
+-i "Scrape.png";
 
 menuItem -itl 1 
 -c "ShowMeshScrapeToolOptions" 
--ob 1
-menuEditorMenuItem37;
+-ob 1;
 
 menuItem -itl 1 
 -l "Fill" 
 -c "SetMeshFillTool" 
--i "Fill.png" 
-menuEditorMenuItem32;
+-i "Fill.png";
 
 menuItem -itl 1 
 -c "ShowMeshFillToolOptions" 
--ob 1
-menuEditorMenuItem41;
+-ob 1;
 
 menuItem -itl 1 
 -l "Knife" 
 -c "SetMeshKnifeTool" 
--i "Knife.png" 
-menuEditorMenuItem43;
+-i "Knife.png";
 
 menuItem -itl 1 
 -c "ShowMeshKnifeToolOptions" 
--ob 1
-menuEditorMenuItem42;
+-ob 1;
 
 menuItem -itl 1 
 -l "Smear" 
 -c "SetMeshSmearTool" 
--i "Smear.png" 
-menuEditorMenuItem34;
+-i "Smear.png";
 
 menuItem -itl 1 
 -c "ShowMeshSmearToolOptions" 
--ob 1
-menuEditorMenuItem44;
+-ob 1;
 
 menuItem -itl 1 
 -l "Bulge" 
 -c "SetMeshBulgeTool" 
--i "Bulge.png" 
-menuEditorMenuItem36;
+-i "Bulge.png";
 
 menuItem -itl 1 
 -c "ShowMeshBulgeToolOptions" 
--ob 1
-menuEditorMenuItem45;
+-ob 1;
 
 menuItem -itl 1 
 -l "Amplify" 
 -c "SetMeshAmplifyTool" 
--i "Amplify.png" 
-menuEditorMenuItem38;
+-i "Amplify.png";
 
 menuItem -itl 1 
 -c "ShowMeshAmplifyToolOptions" 
--ob 1
-menuEditorMenuItem46;
+-ob 1;
 
 menuItem -itl 1 
 -l "separator" 
@@ -235,46 +197,38 @@ menuItem -itl 1
 menuItem -itl 1 
 -l "Smooth Target" 
 -c "SetMeshSmoothTargetTool" 
--i "SmoothTarget.png" 
-menuEditorMenuItem48;
+-i "SmoothTarget.png";
 
 menuItem -itl 1 
 -c "ShowMeshSmoothTargetToolOptions" 
--ob 1
-menuEditorMenuItem49;
+-ob 1;
 
 menuItem -itl 1 
 -l "Clone Target" 
 -c "SetMeshCloneTargetTool" 
--i "CloneTarget.png" 
-menuEditorMenuItem50;
+-i "CloneTarget.png";
 
 menuItem -itl 1 
 -c "ShowMeshCloneTargetToolOptions" 
--ob 1
-menuEditorMenuItem51;
+-ob 1;
 
 menuItem -itl 1 
 -l "Mask Target" 
 -c "SetMeshMaskTool" 
--i "Mask.png" 
-menuEditorMenuItem52;
+-i "Mask.png";
 
 menuItem -itl 1 
 -c "ShowMeshMaskToolOptions" 
--ob 1
-menuEditorMenuItem53;
+-ob 1;
 
 menuItem -itl 1 
 -l "Erase Target" 
 -c "SetMeshEraseTool" 
--i "Erase.png" 
-menuEditorMenuItem54;
+-i "Erase.png";
 
 menuItem -itl 1 
 -c "ShowMeshEraseToolOptions" 
--ob 1
-menuEditorMenuItem55;
+-ob 1;
 
 menuItem -itl 1 
 -l "separator" 
@@ -283,13 +237,11 @@ menuItem -itl 1
 menuItem -itl 1 
 -l "3D Grab UV" 
 -c "SetMeshGrabUVTool" 
--i "UV_3D_Grab_Brush.png" 
-menuEditorMenuItem57;
+-i "UV_3D_Grab_Brush.png";
 
 menuItem -itl 1 
 -c "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
--ob 1
-menuEditorMenuItem158;
+-ob 1;
 
 
 setParent -m ..;

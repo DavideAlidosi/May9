@@ -1,56 +1,56 @@
 da_commonObjectOptionsPopup();
 
 menuItem
-    -l "Front View" 
-    -c "dR_DoCmd(\"viewFront\");" 
-    -rp "E" 
-    -i "da_z.png";
+-l "Front View" 
+-c "dR_DoCmd(\"viewFront\");" 
+-rp "E" 
+-i "da_z.png";
 
 menuItem
-    -l "Side View" 
-    -c "dR_DoCmd(\"viewRight\");" 
-    -rp "W" 
-    -i "da_x.png";
+-l "Side View" 
+-c "dR_DoCmd(\"viewRight\");" 
+-rp "W" 
+-i "da_x.png";
 
 menuItem
-    -l "Persp View" 
-    -c "dR_DoCmd(\"viewPersp\");" 
-    -rp "S" 
-    -i "singlePerspLayout.png";
+-l "Persp View" 
+-c "dR_DoCmd(\"viewPersp\");" 
+-rp "S" 
+-i "singlePerspLayout.png";
 
 menuItem
-    -l "Top View" 
-    -c "dR_DoCmd(\"viewTop\");" 
-    -rp "N" 
-    -i "da_y.png";
+-l "Top View" 
+-c "dR_DoCmd(\"viewTop\");" 
+-rp "N" 
+-i "da_y.png";
 
 menuItem
-    -l "Select Camera" 
-    -c "da_SelectCamera" 
-    -i "Camera.png";
+-l "Select Camera" 
+-c "da_SelectCamera" 
+-i "Camera.png";
 
 menuItem
-    -c "da_SelectCamera;\nAttributeEditor\n" 
-    -ob 1;
+-c "da_SelectCamera;\nAttributeEditor\n" 
+-ob 1;
 
 menuItem
-    -l "Wheel Zoom" 
-    -c "da_ToggleMouseWheel" 
-    -cb (`optionVar -q "useScrollWheel"`);
+-l "Wheel Zoom" 
+-c "da_ToggleMouseWheel" 
+-cb (`optionVar -q "useScrollWheel"`);
 
 menuItem
-    -l "separator" 
-    -d 1;
+-l "separator" 
+-d 1;
 
 menuItem
-    -l "Add Image Plane" 
-    -c "da_ImagePlane" 
-    -i "out_imagePlane.png";
+-l "Add Image Plane" 
+-c "da_ImagePlane" 
+-i "out_imagePlane.png";
 
 menuItem
-    -l "Add Movie Plane" 
-    -c "da_VideoPlane" 
-    -i "da_video_plane.png";
+-l "Add Movie Plane" 
+-c "da_VideoPlane" 
+-i "da_video_plane.png";
 
 setParent -m ..;
 

@@ -1,53 +1,45 @@
 
-    menuItem
-        -l "Edit Attributes" 
-        -c "AttributeEditor" 
-        -rp "S" 
-        -i "attributes.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Edit Attributes" 
+-c "AttributeEditor" 
+-rp "S" 
+-i "attributes.png";
 
-    menuItem
-        -l "Show Manips" 
-        -c "setToolTo ShowManips" 
-        -rp "N" 
-        -i "showManip.png" 
-        menuEditorMenuItem4;
+menuItem
+-l "Show Manips" 
+-c "setToolTo ShowManips" 
+-rp "N" 
+-i "showManip.png";
 
-    menuItem
-        -l "Extrude" 
-        -c "PolyExtrude" 
-        -rp "E" 
-        -i "polyExtrudeFacet.png" 
-        menuEditorMenuItem5;
+menuItem
+-l "Extrude" 
+-c "PolyExtrude" 
+-rp "E" 
+-i "polyExtrudeFacet.png";
 
-    menuItem
-        -c "PolyExtrudeOptions" 
-        -ob 1
-        menuEditorMenuItem6;
+menuItem
+-c "PolyExtrudeOptions" 
+-ob 1;
 
-    menuItem
-        -l "Bevel" 
-        -c "BevelPolygon;" 
-        -rp "NW" 
-        -i "polyBevel.png" 
-        menuEditorMenuItem7;
+menuItem
+-l "Bevel" 
+-c "BevelPolygon;" 
+-rp "NW" 
+-i "polyBevel.png";
 
-    menuItem
-        -c "BevelPolygonOptions;" 
-        -ob 1
-        menuEditorMenuItem8;
+menuItem
+-c "BevelPolygonOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Keep Faces Together On" 
-        -c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 1;" 
-        -i "rvViewingPipelineOn.png" 
-        menuEditorMenuItem2;
+menuItem
+-l "Keep Faces Together On" 
+-c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 1;" 
+-i "rvViewingPipelineOn.png";
 
-    menuItem
-        -l "Keep Faces Together Off" 
-        -c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 0;" 
-        -i "rvViewingPipelineOff.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Keep Faces Together Off" 
+-c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 0;" 
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 

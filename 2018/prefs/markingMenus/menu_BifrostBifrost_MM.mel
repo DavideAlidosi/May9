@@ -1,54 +1,46 @@
 int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
 
-    menuItem
-        -l "Stop Processing" 
-        -c "bifrost -edit -stopProcessing;" 
-        -rp "N" 
-        -i "kAlertStopIcon.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Stop Processing" 
+-c "bifrost -edit -stopProcessing;" 
+-rp "N" 
+-i "kAlertStopIcon.png";
 
-    menuItem
-        -l "Bifrost Options" 
-        -c "performBifrostOptionsChange" 
-        -rp "S" 
-        menuEditorMenuItem7;
+menuItem
+-l "Bifrost Options" 
+-c "performBifrostOptionsChange" 
+-rp "S";
 
-    menuItem
-        -l "Add Foam" 
-        -c "AddBifrostFoam" 
-        -rp "E" 
-        menuEditorMenuItem9;
+menuItem
+-l "Add Foam" 
+-c "AddBifrostFoam" 
+-rp "E";
 
-    menuItem
-        -l "Remove Foam" 
-        -c "RemoveBifrostFoam" 
-        -rp "W" 
-        menuEditorMenuItem14;
+menuItem
+-l "Remove Foam" 
+-c "RemoveBifrostFoam" 
+-rp "W";
 
-    menuItem
-        -l "Create Cache" 
-        -c "performCreateBifrostCache 0 0;" 
-        menuEditorMenuItem2;
+menuItem
+-l "Create Cache" 
+-c "performCreateBifrostCache 0 0";
 
-    menuItem
-        -c "performCreateBifrostCache 1 0;\n" 
-        -ob 1
-        menuEditorMenuItem6;
+menuItem
+-c "performCreateBifrostCache 1 0" 
+-ob 1;
 
-    menuItem
-        -l "Delete Cache" 
-        -c "bifrost -edit -flushScratchCache;" 
-        menuEditorMenuItem4;
+menuItem
+-l "Delete Cache" 
+-c "bifrost -edit -flushScratchCache";
 
-    menuItem
-        -l "separator" 
-        -d 1;
+menuItem
+-l "separator" 
+-d 1;
 
-    menuItem
-        -l "HUD Info" 
-        -c "ToggleBifrostHUD" 
-        -checkBox (1 == $bifrostHUDCheck)
-        menuEditorMenuItem12;
+menuItem
+-l "HUD Info" 
+-c "ToggleBifrostHUD" 
+-cb (1 == $bifrostHUDCheck);
 
 setParent -m ..;
 

@@ -3,80 +3,67 @@ menuItem
 -l "PaintFX to Polygon" 
 -c "PaintEffectsToPoly;" 
 -rp "N" 
--i "paintFXtoPoly.png" 
-menuEditorMenuItem1;
+-i "paintFXtoPoly.png";
 
 menuItem
 -c "PaintEffectsToPolyOptions;" 
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem
 -l "PaintFX To Curve" 
 -c "PaintEffectsToCurve;" 
 -rp "E" 
--i "paintFXtoCurve.png" 
-menuEditorMenuItem3;
+-i "paintFXtoCurve.png";
 
 menuItem
 -l "Simplify Stroke Curves" 
 -c "SimplifyStrokePathCurves;" 
 -rp "W" 
--i "out_stroke.png" 
-menuEditorMenuItem4;
+-i "out_stroke.png";
 
 menuItem
 -l "Create Modifier" 
 -c "createLineModifier;" 
 -rp "S" 
--i "toonLineModifier.png" 
-menuEditorMenuItem5;
+-i "toonLineModifier.png";
 
 menuItem
 -l "Get Brush" 
 -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
 -rp "NE" 
--i "paintEffectsBrushesLarge.png" 
-menuEditorMenuItem15;
+-i "paintEffectsBrushesLarge.png";
 
 menuItem
 -l "Surface Snap" 
--sm 1
-menuEditorMenuItem10;
+-sm 1;
 
 menuItem
 -l "On" 
 -c "da_BrushSurfaceSnap" 
--i "rvViewingPipelineOn.png" 
-menuEditorMenuItem1;
+-i "rvViewingPipelineOn.png";
 
 menuItem
 -l "Off" 
 -c "da_BrushNoSurfaceSnap" 
--i "rvViewingPipelineOff.png" 
-menuEditorMenuItem2;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
 menuItem
 -l "Surface Collide" 
--sm 1
-menuEditorMenuItem11;
+-sm 1;
 
 menuItem
 -l "Outside" 
--c "da_BrushSurfaceCollideOutside" 
-menuEditorMenuItem1;
+-c "da_BrushSurfaceCollideOutside";
 
 menuItem
 -l "Inside" 
--c "da_BrushSurfaceCollideInside" 
-menuEditorMenuItem2;
+-c "da_BrushSurfaceCollideInside";
 
 menuItem
 -l "Both" 
--c "da_BrushSurfaceCollideBoth" 
-menuEditorMenuItem3;
+-c "da_BrushSurfaceCollideBoth";
 
 menuItem
 -l "separator" 
@@ -85,27 +72,23 @@ menuItem
 menuItem
 -l "Off" 
 -c "da_BrushNoSurfaceCollide" 
--i "rvViewingPipelineOff.png" 
-menuEditorMenuItem5;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
 menuItem
 -l "Occupy Attraction" 
--sm 1
-menuEditorMenuItem13;
+-sm 1;
 
 menuItem
 -l "On" 
 -c "da_BrushOccupyAttraction" 
--i "rvViewingPipelineOn.png" 
-menuEditorMenuItem1;
+-i "rvViewingPipelineOn.png";
 
 menuItem
 -l "Off" 
 -c "da_BrushNoOccupyAttraction" 
--i "rvViewingPipelineOff.png" 
-menuEditorMenuItem2;
+-i "rvViewingPipelineOff.png";
 
 setParent -m ..;
 
@@ -116,14 +99,12 @@ menuItem
 menuItem
 -l "Get Settings from Selected" 
 -c "setTemplateToCurrentBrush" 
--i "RS_isolate.png" 
-menuEditorMenuItem6;
+-i "RS_isolate.png";
 
 menuItem
 -l "Apply Settings to Selected" 
 -c "copyTemplateBrushToSelected" 
--i "RS_import_layer.png" 
-menuEditorMenuItem7;
+-i "RS_import_layer.png";
 
 menuItem
 -l "separator" 
@@ -132,8 +113,7 @@ menuItem
 menuItem
 -l "Reset Brush" 
 -c "resetBrush" 
--i "RS_disable.png" 
-menuEditorMenuItem9;
+-i "RS_disable.png";
 
 setParent -m ..;
 

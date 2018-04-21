@@ -3,77 +3,66 @@ menuItem
 -l "Delete Unused Nodes" 
 -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
 -rp "S" 
--i "deleteActive.png" 
-menuEditorMenuItem1;
+-i "deleteActive.png";
 
 menuItem
 -l "Select Object With Material" 
 -c "da_SelectObjectMaterial" 
 -rp "E" 
--i "aselect.png" 
-menuEditorMenuItem6;
+-i "aselect.png";
 
 menuItem
 -l "Duplicate Network" 
 -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
 -rp "NE" 
--i "duplicateReference.png" 
-menuEditorMenuItem2;
+-i "duplicateReference.png";
 
 menuItem
 -l "Import Network" 
 -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
 -rp "NW" 
--i "greasePencilImport.png" 
-menuEditorMenuItem3;
+-i "greasePencilImport.png";
 
 menuItem
 -l "Select All Nodes" 
 -c "select `listHistory -ac`" 
 -rp "W" 
--i "createBinFromSelectedNodes.png" 
-menuEditorMenuItem16;
+-i "createBinFromSelectedNodes.png";
 
 menuItem
 -l "Export Network" 
 -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
 -rp "SW" 
--i "greasePencilExport.png" 
-menuEditorMenuItem4;
+-i "greasePencilExport.png";
 
 menuItem
 -l "Texture Link" 
 -c "TextureCentricUVLinkingEditor" 
--i "textureEditor.png" 
-menuEditorMenuItem7;
+-i "textureEditor.png";
 
 menuItem
 -l "TX Manager" 
 -c "da_TxManager" 
--i "TXManagerShelf.png" 
-menuEditorMenuItem12;
+-i "TXManagerShelf.png";
 
 if (`pluginInfo -q -l contextConnector` == 1){
 menuItem
 -l "Context Connector"
 -c "da_ContextConnector"
 -i "out_geoConnectable.png"
--stp "mel"
-menuEditorMenuItem9;
+-stp "mel";
 }else{
 menuItem
 -l "Connection Editor"
 -c "ConnectionEditor"
 -i "out_list.png"
--stp "mel"
-menuEditorMenuItem9;
+-stp "mel";
 }
 
 menuItem
 -l "Expression Editor" 
 -c "ExpressionEditor" 
--i "out_expression.png" 
-menuEditorMenuItem13;
+-i "out_expression.png";
 
 menuItem
 -l "separator" 
@@ -82,32 +71,27 @@ menuItem
 menuItem
 -l "Create Common Nodes" 
 -sm 1
--i "nodeGrapherAddNodes.png" 
-menuEditorMenuItem15;
+-i "nodeGrapherAddNodes.png";
 
 menuItem
 -l "file" 
 -c "createRenderNodeCB -as2DTexture \"\" file \"\"" 
--i "out_file.png" 
-menuEditorMenuItem4;
+-i "out_file.png";
 
 menuItem
 -l "ramp" 
 -c "createNode ramp" 
--i "out_ramp.png" 
-menuEditorMenuItem1;
+-i "out_ramp.png";
 
 menuItem
 -l "layeredTexture" 
 -c "createNode layeredTexture" 
--i "out_layeredTexture.png" 
-menuEditorMenuItem2;
+-i "out_layeredTexture.png";
 
 menuItem
 -l "samplerInfo" 
 -c "createNode samplerInfo" 
--i "out_samplerInfo.png" 
-menuEditorMenuItem3;
+-i "out_samplerInfo.png";
 
 setParent -m ..;
 
@@ -115,8 +99,7 @@ menuItem
 -l "Create Node" 
 -c "createNodeWindow" 
 -rp "SE" 
--i "createNode.png" 
-menuEditorMenuItem8;
+-i "createNode.png";
 
 setParent -m ..;
 

@@ -1,82 +1,69 @@
 
-    menuItem
-        -l "Parent Constraint" 
-        -c "ParentConstraint;" 
-        -rp "N" 
-        -i "parentConstraint.png" 
-        menuEditorMenuItem3;
+menuItem
+-l "Parent Constraint" 
+-c "ParentConstraint;" 
+-rp "N" 
+-i "parentConstraint.png";
 
-    menuItem
-        -c "ParentConstraintOptions;" 
-        -ob 1
-        menuEditorMenuItem4;
+menuItem
+-c "ParentConstraintOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Scale Constraint" 
-        -c "scaleConstraint;" 
-        -rp "E" 
-        -i "scaleConstraint.png" 
-        menuEditorMenuItem5;
+menuItem
+-l "Scale Constraint" 
+-c "scaleConstraint;" 
+-rp "E" 
+-i "scaleConstraint.png";
 
-    menuItem
-        -c "ScaleConstraintOptions;" 
-        -ob 1
-        menuEditorMenuItem6;
+menuItem
+-c "ScaleConstraintOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Aim Constraint" 
-        -c "AimConstraint;" 
-        -rp "S" 
-        -i "aimConstraint.png" 
-        menuEditorMenuItem7;
+menuItem
+-l "Aim Constraint" 
+-c "AimConstraint;" 
+-rp "S" 
+-i "aimConstraint.png";
 
-    menuItem
-        -c "AimConstraintOptions;" 
-        -ob 1
-        menuEditorMenuItem8;
+menuItem
+-c "AimConstraintOptions;" 
+-ob 1;
 
-    menuItem
-        -l "Shape Visibility" 
-        -sm 1
-        menuEditorMenuItem9;
+menuItem
+-l "Shape Visibility" 
+-sm 1;
 
-        menuItem
-            -l "On" 
-            -c "da_LocatorVisibility" 
-            -i "rvViewingPipelineOn.png" 
-            menuEditorMenuItem1;
+menuItem
+-l "On" 
+-c "da_LocatorVisibility" 
+-i "rvViewingPipelineOn.png";
 
-        menuItem
-            -l "Off" 
-            -c "da_LocatorNoVisibility" 
-            -i "rvViewingPipelineOff.png" 
-            menuEditorMenuItem2;
+menuItem
+-l "Off" 
+-c "da_LocatorNoVisibility" 
+-i "rvViewingPipelineOff.png";
 
-    setParent -m ..;
+setParent -m ..;
 
-    menuItem
-        -l "Orient Constraint" 
-        -c "OrientConstraint" 
-        -rp "NW" 
-        -i "orientConstraint.png" 
-        menuEditorMenuItem1;
+menuItem
+-l "Orient Constraint" 
+-c "OrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
 
-    menuItem
-        -c "OrientConstraintOptions" 
-        -ob 1
-        menuEditorMenuItem2;
+menuItem
+-c "OrientConstraintOptions" 
+-ob 1;
 
-    menuItem
-        -l "Point Constraint" 
-        -c "PointConstraint" 
-        -rp "NE" 
-        -i "posConstraint.png" 
-        menuEditorMenuItem10;
+menuItem
+-l "Point Constraint" 
+-c "PointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
 
-    menuItem
-        -c "PointConstraintOptions" 
-        -ob 1
-        menuEditorMenuItem11;
+menuItem
+-c "PointConstraintOptions" 
+-ob 1;
 
 setParent -m ..;
 

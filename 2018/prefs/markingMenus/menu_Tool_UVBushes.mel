@@ -3,108 +3,90 @@ menuItem -itl 1
 -l "Cut" 
 -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
 -rp "NE" 
--i "cutUVTool.png" 
-menuEditorMenuItem1;
+-i "cutUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
--ob 1
-menuEditorMenuItem2;
+-ob 1;
 
 menuItem -itl 1 
 -l "Sew" 
 -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext" 
 -rp "E" 
--i "sewUVTool.png" 
-menuEditorMenuItem5;
+-i "sewUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;\ntoolPropertyWindow" 
--ob 1
-menuEditorMenuItem6;
+-ob 1;
 
 menuItem -itl 1 
 -l "Grab" 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj" 
 -rp "SE" 
--i "grabUVTool.png" 
-menuEditorMenuItem7;
+-i "grabUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;\ntoolPropertyWindow;" 
--ob 1
-menuEditorMenuItem8;
+-ob 1;
 
 menuItem -itl 1 
 -l "Pin" 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj" 
 -rp "S" 
--i "pinUVTool.png" 
-menuEditorMenuItem9;
+-i "pinUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;\ntoolPropertyWindow" 
--ob 1
-menuEditorMenuItem10;
+-ob 1;
 
 menuItem -itl 1 
 -l "Smear" 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj" 
 -rp "SW" 
--i "smearUVTool.png" 
-menuEditorMenuItem11;
+-i "smearUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;\ntoolPropertyWindow" 
--ob 1
-menuEditorMenuItem12;
+-ob 1;
 
 menuItem -itl 1 
 -l "Optimize" 
 -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
 -rp "NW" 
--i "optimizeUVTool.png" 
-menuEditorMenuItem16;
+-i "optimizeUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
--ob 1
-menuEditorMenuItem17;
+-ob 1;
 
 menuItem -itl 1 
 -l "Symmetrize" 
 -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
--i "symmetrizeUVTool.png" 
-menuEditorMenuItem3;
+-i "symmetrizeUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
--ob 1
-menuEditorMenuItem15;
+-ob 1;
 
 menuItem -itl 1 
 -l "Unfold" 
 -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext" 
 -rp "N" 
--i "unfoldUVTool.png" 
-menuEditorMenuItem18;
+-i "unfoldUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;\ntoolPropertyWindow" 
--ob 1
-menuEditorMenuItem20;
+-ob 1;
 
 menuItem -itl 1 
 -l "Pinch" 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj" 
 -rp "W" 
--i "pinchUVTool.png" 
-menuEditorMenuItem13;
+-i "pinchUVTool.png";
 
 menuItem -itl 1 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj\ntoolPropertyWindow;" 
--ob 1
-menuEditorMenuItem21;
+-ob 1;
 
 setParent -m ..;
 
