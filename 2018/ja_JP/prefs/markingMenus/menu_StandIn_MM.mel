@@ -1,0 +1,24 @@
+
+menuItem
+-l "Create MASH Network" 
+-c "MASHcreateOptions" 
+-rp "N" 
+-i "MASH_CreateNetwork.png";
+
+menuItem
+-l "Display as Boundry Box" 
+-c "da_aiStandInBoundryBox" 
+-rp "NE";
+
+menuItem
+-l "Display as Polywire" 
+-c "da_aiStandinPolyWire" 
+-rp "SE";
+
+menuItem
+-l "display as Point Cloud" 
+-c "da_aiStandinPointCloud" 
+-rp "E";
+
+setParent -m ..;
+

@@ -1,0 +1,103 @@
+
+menuItem
+-l "Simulation Method" 
+-sm 1
+-rp "E" 
+-i "out_nucleus.png";
+
+menuItem
+-l "Static" 
+-c "da_HairStatic" 
+-rp "NE";
+
+menuItem
+-l "Passive" 
+-c "da_HairPassive" 
+-rp "E";
+
+menuItem
+-l "Dynamic" 
+-c "da_HairDynamic" 
+-rp "SE";
+
+setParent -m ..;
+
+menuItem
+-l "Point Lock" 
+-sm 1
+-rp "W" 
+-i "pinned.png";
+
+menuItem
+-l "No Attach" 
+-c "da_HairNoLock" 
+-rp "W";
+
+menuItem
+-l "Base" 
+-c "da_HairLockBase" 
+-rp "NW";
+
+menuItem
+-l "Both Ends" 
+-c "da_HairLockBothEnds" 
+-rp "SW";
+
+menuItem
+-l "Tip" 
+-c "da_nHairLockTip" 
+-rp "N";
+
+setParent -m ..;
+
+menuItem
+-l "Self Collide" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_nHairSelfCollideOn" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_nHairSelfCollideOff" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Collide" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_nHairCollideOn" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_nHairColllideOff" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Braid" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_FollicleBraid" 
+-rp "N" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_FollicleNoBraid" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+setParent -m ..;
+

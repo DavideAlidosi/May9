@@ -1,0 +1,57 @@
+
+menuItem
+-l "Light Editor" 
+-c "da_LightList" 
+-rp "NW" 
+-i "light_manager.png";
+
+menuItem
+-l "Light Linking" 
+-c "LightCentricLightLinkingEditor;" 
+-rp "W" 
+-i "out_defaultLightList.png";
+
+menuItem
+-l "Normalize" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On" 
+-c "da_AiLightNormalize" 
+-rp "N" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_AiNoLightNormalize" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Edit Light" 
+-c "AttributeEditor" 
+-rp "SW" 
+-i "attributes.png";
+
+menuItem
+-l "Visible" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On" 
+-c "da_MeshLightVisible" 
+-rp "N" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_MeshLightNoVisible" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+setParent -m ..;
+

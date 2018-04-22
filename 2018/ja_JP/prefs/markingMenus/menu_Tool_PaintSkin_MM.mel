@@ -1,0 +1,47 @@
+
+menuItem -itl 1 
+-l "Add" 
+-c "artAttrPaintOperation artAttrSkinPaintCtx Add;" 
+-rp "NE";
+
+menuItem -itl 1 
+-l "Replace" 
+-c "artAttrPaintOperation artAttrSkinPaintCtx Replace;" 
+-rp "N";
+
+menuItem -itl 1 
+-l "Scale" 
+-c "artAttrPaintOperation artAttrSkinPaintCtx Scale;" 
+-rp "NW";
+
+menuItem -itl 1 
+-l "XRay Joints" 
+-c "da_ToggleXRayJointsSkin" 
+-rp "E" 
+-cb (`artAttrSkinPaintCtx -q -xrayJoints artAttrSkinContext`);
+
+menuItem -itl 1 
+-l "Color Ramp" 
+-c "da_ToggleRampSkin;artAttrCtx -e -colorRamp \" 1,0,0,0.5,1,1,1,0,0.986,1,0.12,0,0.12,0.014,1,1,1,0.86,1,1,0.004,0,0.004,0,1 \" artAttrSkinContext" 
+-rp "S" 
+-cb (`artAttrSkinPaintCtx -q -useColorRamp artAttrSkinContext`);
+
+menuItem -itl 1 
+-l "Flood Smooth" 
+-c "artAttrPaintOperation artAttrSkinPaintCtx Smooth;\nartAttrSkinPaintCtx -e -clear `currentCtx`;" 
+-rp "W";
+
+menuItem -itl 1 
+-l "Wireframe" 
+-c "da_ToggleSkinWireframe" 
+-rp "SE" 
+-cb (`artAttrSkinPaintCtx -q -showactive artAttrSkinContext`);
+
+menuItem -itl 1 
+-l "Anti-Aliasing" 
+-c "da_AntiAliasToggle" 
+-rp "SW" 
+-cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
+
+setParent -m ..;
+
