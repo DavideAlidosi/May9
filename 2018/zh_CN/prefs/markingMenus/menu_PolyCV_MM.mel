@@ -1,0 +1,53 @@
+
+menuItem
+-l "Component to Component" 
+-c "doCreateNConstraint pointToPoint 0" 
+-rp "W" 
+-i "nConstraintComponent.png";
+
+menuItem
+-c "performCreateComponentNConstraint 1" 
+-ob 1;
+
+menuItem
+-l "Force Field" 
+-c "doCreateNConstraint force 0" 
+-rp "SW" 
+-i "nConstraintForceField.png";
+
+menuItem
+-c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
+-ob 1;
+
+menuItem
+-l "Transform Constraint" 
+-c "doCreateNConstraint transform 0" 
+-rp "S" 
+-i "nConstraintTransform.png";
+
+menuItem
+-c "performCreateDynamicConstraint 1 \"force\"" 
+-ob 1;
+
+menuItem
+-l "Point to Surface" 
+-c "doCreateNConstraint pointToSurface 0" 
+-rp "SE" 
+-i "nConstraintPointoSurface.png";
+
+menuItem
+-c "performCreateDynamicConstraint 1 \"pointToSurface\"" 
+-ob 1;
+
+menuItem
+-l "Slide on Surface" 
+-c "doCreateNConstraint slideOnSurface 0" 
+-rp "E" 
+-i "nConstraintSlideonSurface.png";
+
+menuItem
+-c "performCreateDynamicConstraint 1 \"slideOnSurface\"" 
+-ob 1;
+
+setParent -m ..;
+

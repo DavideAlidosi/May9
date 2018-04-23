@@ -1,0 +1,46 @@
+
+menuItem -itl 1 
+-l "3D Falloff On" 
+-c "xgmGuideSculptContext -e -volumetricSel 1 xgmGuideSculptTool;" 
+-rp "NE";
+
+menuItem -itl 1 
+-l "3D Falloff Off" 
+-c "xgmGuideSculptContext -e -volumetricSel 0 xgmGuideSculptTool;" 
+-rp "NW";
+
+menuItem -itl 1 
+-l "Highlight On" 
+-c "xgmGuideSculptContext -e -selHilight 1 xgmGuideSculptTool;" 
+-rp "SE";
+
+menuItem -itl 1 
+-l "Highlight Off" 
+-c "xgmGuideSculptContext -e -selHilight 0 xgmGuideSculptTool;" 
+-rp "SW";
+
+menuItem -itl 1 
+-l "Lock Length Off" 
+-c "xgmGuideSculptContext -e -lockLength 0 `currentCtx`;" 
+-rp "W" 
+-i "unlockLength.png";
+
+menuItem -itl 1 
+-l "Lock Length On" 
+-c "xgmGuideSculptContext -e -lockLength 1 `currentCtx`;" 
+-rp "E" 
+-i "lockLength.png";
+
+menuItem -itl 1 
+-l "Guides Tool" 
+-c "XgGuideTool" 
+-rp "N" 
+-i "xgGuideContext.png";
+
+menuItem -itl 1 
+-l "XGen Editor" 
+-c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
+-i "xgDEditor.png";
+
+setParent -m ..;
+

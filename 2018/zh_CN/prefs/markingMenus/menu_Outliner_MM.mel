@@ -1,0 +1,115 @@
+string $UnderPointerPanel = `getPanel -underPointer`;
+int $DAGCheck = `outlinerEditor -q -dag $UnderPointerPanel`;
+int $ShapesCheck = `outlinerEditor -q -shp $UnderPointerPanel`;
+int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
+
+menuItem
+-l "Duplicate" 
+-c "DuplicateWithTransform" 
+-rp "N" 
+-i "da_duplicate.png" ;
+
+menuItem
+-c "DuplicateSpecialOptions" 
+-ob 1;
+
+menuItem
+-l "Select Hierarchy" 
+-c "SelectHierarchy" 
+-rp "NE" 
+-i "selectByHierarchy.png";
+
+menuItem
+-l "Create Set" 
+-c "CreateSet" 
+-rp "S" 
+-i "out_objectSet.png";
+
+menuItem
+-c "CreateSetOptions" 
+-ob 1;
+
+menuItem
+-l "Show Local Axes" 
+-c "ToggleLocalRotationAxes;" 
+-rp "SE" 
+-i "polyNormalSetToFace.png";
+
+menuItem
+-l "Select by Shader" 
+-c "da_SelectObjectMaterial" 
+-rp "E" 
+-i "out_phongE.png";
+
+menuItem
+-l "Reference" 
+-sm 1
+-i "selectByObject.png";
+
+menuItem
+-l "On" 
+-c "da_EnableReference" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_DisableReference" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Shading" 
+-sm 1
+-i "bevel.png";
+
+menuItem
+-l "On" 
+-c "da_PolyShade" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_PolyNoShade" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "X-Ray" 
+-sm 1
+-i "da_Xray.png";
+
+menuItem
+-l "On" 
+-c "displaySurface -x 1" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "displaySurface -x 0" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "DAG Only" 
+-c "da_ToggleDagNode" 
+-cb (1 == $DAGCheck);
+
+menuItem
+-l "Shapes" 
+-c "da_ToggleShapes" 
+-cb (1 == $ShapesCheck);
+
+menuItem
+-l "Materials" 
+-c "da_ToggleMaterial" 
+-cb (1 == $MaterialCheck);
+
+setParent -m ..;
+

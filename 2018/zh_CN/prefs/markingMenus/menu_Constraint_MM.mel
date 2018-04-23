@@ -1,0 +1,112 @@
+menuItem 
+-l "Match Pivots"
+-c "MatchPivots"
+-rp "S"
+-i "pickPivotComp.png"
+-stp "mel";
+
+menuItem
+-l "Bind Skin" 
+-c "SmoothBindSkin;" 
+-i "smoothSkin.png";
+
+menuItem
+-l "menuItem1958" 
+-c "SmoothBindSkinOptions;" 
+-ob 1;
+
+menuItem
+-l "Aim Constraint" 
+-c "AimConstraint;" 
+-rp "SW" 
+-i "aimConstraint.png";
+
+menuItem
+-c "AimConstraintOptions;" 
+-ob 1;
+
+menuItem
+-l "Parent Constraint" 
+-c "ParentConstraint;" 
+-rp "N" 
+-i "parentConstraint.png";
+
+menuItem
+-c "ParentConstraintOptions;" 
+-ob 1;
+
+menuItem
+-l "Scale Constraint" 
+-c "scaleConstraint;" 
+-rp "E" 
+-i "scaleConstraint.png";
+
+menuItem
+-c "ScaleConstraintOptions;" 
+-ob 1;
+
+menuItem
+-l "Pole Vector Constraint" 
+-c "PoleVectorConstraint;" 
+-rp "SE" 
+-i "poleVectorConstraint.png";
+
+menuItem
+-c "PoleVectorConstraintOptions;" 
+-ob 1;
+
+menuItem
+-l "Add Influence" 
+-c "AddInfluence" 
+-i "addWrapInfluence.png";
+
+menuItem
+-c "AddInfluenceOptions" 
+-ob 1;
+
+menuItem
+-l "Remove Influence" 
+-c "RemoveInfluence" 
+-i "removeWrapInfluence.png";
+
+menuItem
+-l "IK Spline Handle" 
+-c "IKSplineHandleTool;" 
+-rp "W" 
+-i "kinSplineHandle.png";
+
+menuItem
+-c "IKSplineHandleToolOptions;" 
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Connect selected Muscle" 
+-c "cMuscle_connectToSystem(); " 
+-i "cMuscle_skin_connMus.png";
+
+menuItem
+-l "Point Constraint" 
+-c "PointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-c "PointConstraintOptions" 
+-ob 1;
+
+menuItem
+-l "Orient Constraint" 
+-c "OrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
+
+menuItem
+-c "OrientConstraintOptions" 
+-ob 1;
+
+setParent -m ..;
+

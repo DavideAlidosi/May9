@@ -1,0 +1,25 @@
+
+menuItem -itl 1 
+-l "Get Brush" 
+-c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
+-rp "N" 
+-i "paintEffectsBrushesLarge.png";
+
+menuItem -itl 1 
+-l "Reset Template Brush" 
+-c "ResetTemplateBrush" 
+-rp "S" 
+-i "resetTemplateBrush.png";
+
+menuItem -itl 1 
+-l "Get Settings from Selected Stroke" 
+-c "GetSettingsFromSelectedStroke" 
+-rp "W";
+
+menuItem -itl 1 
+-l "Apply Settings to Selected Strokes" 
+-c "ApplySettingsToSelectedStroke" 
+-rp "E";
+
+setParent -m ..;
+

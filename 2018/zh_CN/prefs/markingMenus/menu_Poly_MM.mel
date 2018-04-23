@@ -1,0 +1,1288 @@
+menuItem
+-l "Multi Cut Tool"
+-c "dR_multiCutTool;"
+-rp "W"
+-i "multiCut_NEX32.png";
+
+menuItem
+-l "Brushes"
+-sm 1
+-rp "N"
+-i "out_brush.png";
+
+menuItem
+-l "Paint Attributes"
+-c "ArtPaintAttrTool"
+-rp "SE"
+-i "artAttr.png";
+
+menuItem
+-c "ArtPaintAttrToolOptions"
+-ob 1;
+
+menuItem
+-l "Paint Hair Follicle"
+-c "paintHairTool 0;"
+-rp "E"
+-i "hairPaint.png";
+
+menuItem
+-c "paintHairTool 1;"
+-ob 1;
+
+menuItem
+-l "Paint Skin Weights"
+-c "ArtPaintSkinWeightsTool"
+-rp "NW"
+-i "paintSkinWeights.png";
+
+menuItem
+-c "ArtPaintSkinWeightsToolOptions"
+-ob 1;
+
+menuItem
+-l "Legacy Sculpt"
+-c "SculptGeometryTool"
+-rp "W"
+-i "sculptPull.png";
+
+menuItem
+-c "SculptGeometryToolOptions"
+-ob 1;
+
+menuItem
+-l "Paint Effects"
+-c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-rp "SW"
+-i "paintEffectsTool.png";
+
+menuItem
+-c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
+-ob 1;
+
+menuItem
+-l "Sculpt Geometry"
+-c "SetMeshSculptTool" 
+-rp "N"
+-i "Sculpt.png";
+
+menuItem
+-c "ShowMeshSculptToolOptions"
+-ob 1;
+
+menuItem
+-l "3D Paint Tool"
+-c "Art3dPaintToolOptions;\nDisplayShadedAndTextured"
+-rp "NE"
+-i "art3dPaint.png";
+
+setParent -m ..;
+
+menuItem
+-l "Smooth"
+-c "da_Subdivision"
+-rp "S"
+-i "polySmooth.png";
+
+menuItem
+-l "Quad Draw"
+-c "dR_quadDrawTool;"
+-rp "SW"
+-i "quadDraw_NEX32.png";
+
+menuItem
+-l "Extrude"
+-c "PolyExtrude"
+-rp "E"
+-i "polyExtrudeFacet.png";
+
+menuItem
+-c "PolyExtrudeOptions"
+-ob 1;
+
+menuItem
+-l "Auto Bevel"
+-c "da_AutoBevel"
+-rp "NW"
+-i "polyBevel.png";
+
+menuItem
+-l "Select Edges"
+-sm 1
+-rp "SE"
+-i "edges_NEX.png";
+
+menuItem
+-l "By Right Angle\n"
+-c "da_EdgeRightAngle"
+-rp "SE"
+-i "da_rightAngle.png";
+
+menuItem
+-l "By Straight Angle"
+-c "da_EdgeStraightAngle"
+-rp "E"
+-i "da_sraightAngle.png";
+
+menuItem
+-l "By Acute Angle"
+-c "da_EdgeAcuteAngle"
+-rp "S"
+-i "da_acuteAngle.png";
+
+menuItem
+-l "Inside"
+-c "da_EdgeInside"
+-rp "NE"
+-i "da_insideEdge.png";
+
+menuItem
+-l "On Border"
+-c "da_EdgeBorder"
+-rp "N"
+-i "da_borderEdge.png";
+
+menuItem
+-l "Hard"
+-c "da_EdgeHard"
+-rp "SW"
+-i "da_hardEdge.png";
+
+menuItem
+-l "Soft"
+-c "da_EdgeSoft"
+-rp "W"
+-i "da_softEdge.png";
+
+setParent -m ..;
+
+menuItem
+-l "Create MASH Network"
+-c "MASHcreateOptions"
+-i "MASH_CreateNetwork.png";
+
+if (`pluginInfo -q -loaded proSets` == 1){
+menuItem
+-l "Create ProSets"
+-c "import proSetsAPI;proSetsAPI.createProSet();mel.eval('AttributeEditor;OutlinerWindow')"
+-i "out_proSet.png"
+-stp "python";
+}
+
+if (`pluginInfo -q -loaded ngSkinTools` == 1){
+menuItem
+-l "ngSkin Tools"
+-c "from ngSkinTools.ui.mainwindow import MainWindow\nMainWindow.open()"
+-i "ngSkinTools.ico"
+-stp "python";
+}
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Fill Hole"
+-c "FillHole"
+-i "polyCloseBorder.png";
+
+menuItem
+-c "da_PolyDivision;\nReducePolygon"
+-ob 1;
+
+menuItem
+-l "Mirror"
+-c "MirrorPolygonGeometry"
+-i "polyMirrorGeometry.png";
+
+menuItem
+-c "MirrorPolygonGeometryOptions"
+-ob 1;
+
+menuItem
+-l "Mirror Cut"
+-sm 1
+-i "polyMirrorCut.png";
+
+menuItem
+-l "YZ Plane"
+-c "da_MirrorCutX";
+
+menuItem
+-l "XZ Plane"
+-c "da_MirrorCutY";
+
+menuItem
+-l "XY Plane"
+-c "da_MirrorCutZ";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "-YZ Plane"
+-c "da_MirrorCutXNeg";
+
+menuItem
+-l "-XZ Plane"
+-c "da_MirrorCutYNeg";
+
+menuItem
+-l "-XY Plane"
+-c "da_MirrorCutZNeg";
+
+setParent -m ..;
+
+menuItem
+-l "Shell Proxy"
+-c "da_shell"
+-i "da_ShellProxy.png";
+
+if (`pluginInfo -q -loaded SOuP` == 1){
+
+menuItem
+-l "Edit Component List"
+-c "editComponentsList_SOuP().main()"
+-i "out_group.xpm"
+-stp "Python";
+
+menuItem
+-l "Shatter Mesh"
+-c "da_ShatterMesh"
+-i "out_shatter.xpm";
+}
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Split nGons"
+-c "da_PolyDivision"
+-i "polyCleanup.png";
+
+menuItem
+-l "Remesh"
+-c "polyRemesh"
+-i "out_mesh.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Component Display"
+-sm 1
+-i "RS_visible.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Vertex Normals"
+-c "ToggleVertexNormalDisplay"
+-i "da_edgeNormals.png";
+
+menuItem
+-l "Vertex IDs"
+-c "ToggleVertIDs"
+-i "reorderIDs.png";
+
+menuItem
+-l "Face Normals"
+-c "ToggleFaceNormalDisplay"
+-i "polyNormalsConform.png";
+
+menuItem
+-l "Border Edges"
+-c "ToggleBorderEdges;"
+-i "da_borderEdge.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Normals Size"
+-c "ChangeNormalSize"
+-i "resizeWindow.png";
+
+setParent -m ..;
+
+menuItem
+-l "Convert"
+-sm 1
+-i "da_PolygonsToNurbs.png";
+
+menuItem
+-l "Poly to NURBS"
+-c "da_PolyToNurbs"
+-i "da_PolygonsToNurbs.png";
+
+menuItem
+-l "Instance to Object"
+-c "ConvertInstanceToObject"
+-i "instanceToObject.png";
+
+setParent -m ..;
+
+menuItem
+-l "OpenSubdiv"
+-sm 1
+-i "out_subdiv.png";
+
+menuItem
+-l "Adaptive"
+-sm 1
+-i "polyToggleProxySubdiv.png" ;
+
+menuItem
+-l "On"
+-c "da_OpenSubdAdapt"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_OpenSubdNoAdapt"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Displacement"
+-sm 1
+-i "displaceToPolygons.png" ;
+
+menuItem
+-l "On"
+-c "da_OpenSubdDisplace"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_OpenSubdNoDisplace"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Display Subdivision"
+-sm 1
+-i "polySubdFacet.png" ;
+
+menuItem
+-l "On"
+-c "da_OpenSubdSudivision"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_OpenSubdNoSubdivision"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "OpenCL"
+-sm 1
+-i "channelBoxUnknownSpeed.png" ;
+
+menuItem
+-l "On"
+-c "da_OpenSubdCL"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_OpenSubdNoCL"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-l "Deformers"
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Edit Relationship"
+-sm 1
+-i "passSetRelationEditor.png" ;
+
+menuItem
+-l "Deformer Set Editor"
+-c "DeformerSetEditor"
+-i "da_deformerSetEditor.png";
+
+menuItem
+-l "Set Membership"
+-c "PaintSetMembershipToolOptions"
+-i "paintSetMembership.png";
+
+menuItem
+-l "Edit Membership Tool"
+-c "EditMembershipTool"
+-i "setEdit.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Nonlinear"
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png";
+
+menuItem
+-c "BendOptions;"
+-ob 1;
+
+menuItem
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png";
+
+menuItem
+-c "FlareOptions;"
+-ob 1;
+
+menuItem
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png";
+
+menuItem
+-c "SineOptions;"
+-ob 1;
+
+menuItem
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png";
+
+menuItem
+-c "SquashOptions;"
+-ob 1;
+
+menuItem
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png";
+
+menuItem
+-c "TwistOptions"
+-ob 1;
+
+menuItem
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png";
+
+menuItem
+-c "WaveOptions;"
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Cluster"
+-c "CreateCluster"
+-i "cluster.png";
+
+menuItem
+-c "CreateClusterOptions"
+-ob 1;
+
+menuItem
+-l "Lattice"
+-c "CreateLattice"
+-i "lattice.png";
+
+menuItem
+-c "CreateLatticeOptions;"
+-ob 1;
+
+menuItem
+-l "Delta Mush"
+-c "DeltaMush"
+-i "da_deltaMush.png";
+
+menuItem
+-c "DeltaMushOptions"
+-ob 1;
+
+menuItem
+-l "Tension"
+-c "Tension"
+-i "da_tensionDef.png";
+
+menuItem
+-c "TensionOptions"
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Jiggle"
+-c "MASHaddJiggleDeformer"
+-i "MASH_CreateJiggleDeformer.png";
+
+menuItem
+-l "Blend"
+-c "MASHaddBlendDeformer"
+-i "MASH_CreateBlendDeformer.png";
+
+menuItem
+-l "Membrane"
+-c "createMembrane"
+-i "da_membrane.png";
+
+menuItem
+-l "Texture"
+-sm 1
+-i "Textured.png";
+
+menuItem
+-l "Create Texture Deformer"
+-c "CreateTextureDeformer;"
+-rp "N"
+-i "textureDeformer.png";
+
+menuItem
+-c "CreateTextureDeformerOptions;"
+-ob 1;
+
+menuItem
+-l "Paint Texture"
+-c "artAttrToolScript 4 \"textureDeformer\""
+-i "paintTextureDeformer.png";
+
+menuItem
+-c "artAttrToolScript 3 \"textureDeformer\""
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "nCloth as Deformer"
+-sm 1
+-i "nCloth.svg";
+
+menuItem
+-l "Create nCloth as Deformer"
+-c "da_ClothAsDeformer"
+-i "nClothCreate.png";
+
+menuItem
+-l "Paint nCloth Input Attract"
+-c "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 4 inputAttract"
+-i "nClothPaintPerVertex.png";
+
+menuItem
+-c "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 3 inputAttract;"
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Apply Muscle System to Skin"
+-c "cMuscle_makeMuscleSystem(1)"
+-i "cMuscle_skin_apply.png";
+
+menuItem
+-l "Default Muscle Weights"
+-c "cMuscleWeightDefaultUI()"
+-i "cMuscle_skin_applyDefault.png";
+
+menuItem
+-l "Paint Muscle Weights"
+-c "cMusclePaint()"
+-i "cMuscle_skin_paint.png";
+
+menuItem
+-l "Smooth Skin to Muscle System"
+-c "cMuscleConvertSkin()"
+-i "cMuscle_skin_convert.png";
+
+menuItem
+-l "Unbind Skin"
+-c "DetachSkinOptions"
+-i "detachSkin.png";
+
+setParent -m ..;
+
+menuItem
+-l "UV Mapping"
+-sm 1
+-i "polyUnfoldUVs.png";
+
+if (`pluginInfo -q -loaded SOuP` == 1){
+menuItem
+-l "Viewport UV"
+-c "da_ViewportUV"
+-i "out_mapToMesh.xpm";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+}
+
+menuItem
+-l "Select All"
+-c "da_SelectUV"
+-i "polyGridUV.png";
+
+menuItem
+-l "3D Cut and Sew"
+-c "SetCutSewUVTool"
+-i "CutSewUVTool.png";
+
+menuItem
+-c "SetCutSewUVTool;toolPropertyWindow;"
+-ob 1;
+
+menuItem
+-l "3D Grab UV"
+-c "SetMeshGrabUVTool"
+-i "UV_3D_Grab_Brush.png";
+
+menuItem
+-c "ShowMeshGrabUVToolOptions;toolPropertyWindow;"
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Automatic"
+-c "performPolyAutoProj 0;"
+-i "polyAutoProj.png";
+
+menuItem
+-c "performPolyAutoProj 1;"
+-ob 1;
+
+menuItem
+-l "Planar"
+-c "performPolyProjectionArgList \"1\" {\"0\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
+-i "polyPlanProj.png";
+
+menuItem
+-c "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
+-ob 1;
+
+menuItem
+-l "Cylindrical"
+-c "performPolyProjectionArgList \"1\" {\"0\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
+-i "polyCylProj.png";
+
+menuItem
+-c "performPolyProjectionArgList \"1\" {\"1\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
+-ob 1;
+
+menuItem
+-l "Spherical"
+-c "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";"
+-i "polySphereProj.png";
+
+menuItem
+-c "performPolyProjectionArgList \"1\" {\"1\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Auto Seams"
+-c "performPolyAutoSeamUV 0"
+-i "polyAutoSeams.png";
+
+menuItem
+-c "performPolyAutoSeamUV 1"
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Normals"
+-sm 1
+-i "polyNormalsPropagate.png";
+
+menuItem
+-l "Conform"
+-c "ConformPolygonNormals;"
+-i "polyNormalsConform.png";
+
+menuItem
+-l "Reverse"
+-c "ReversePolygonNormals"
+-i "polyNormal.png";
+
+menuItem
+-c "ReversePolygonNormalsOptions"
+-ob 1;
+
+menuItem
+-l "Unlock and Fix"
+-c "da_UnlockAndFixNormals"
+-i "polyNormalUnlock.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Set Soften Edge"
+-c "SoftPolyEdgeElements 1"
+-i "polySoftEdge.png";
+
+menuItem
+-c "polySoftEdgeWin"
+-ob 1;
+
+menuItem
+-l "Set Harden Edge"
+-c "SoftPolyEdgeElements 0;"
+-i "polyHardEdge.png";
+
+menuItem
+-l "Set Harden on UV Borders"
+-c "polyUVBorderHard"
+-i "polyHardEdge.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Double Side On"
+-c "da_DoubleSideOn"
+-i "polyToggleProxy.png";
+
+menuItem
+-l "Double Side Off"
+-c "da_DoubleSideOff"
+-i "da_polyToggleProxy.png";
+
+setParent -m ..;
+
+menuItem
+-l "Shading"
+-sm 1
+-i "render_adskMaterial.png";
+
+$item = "";
+
+$menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
+menuItem 
+	-edit 
+	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+setParent -menu ..;
+
+menuItem
+-l "Assign New Material"
+-c "createAssignNewMaterialTreeLister \"\""
+-i "render_adskMaterial.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Assign Toon Shader"
+-c "assignToonShader \"threeToneBrightness\""
+-i "toonBrightness3.png";
+
+menuItem
+-l "Add Toon Outline"
+-c "assignNewPfxToon"
+-i "toonAddOutline.png";
+
+menuItem
+-l "Remove Toon Outlines"
+-c "removePfxToonOutlines"
+-i "toonRemoveOutline.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Mesh Light"
+-c "da_AiMeshLight"
+-i "MeshLightShelf.png";
+
+menuItem
+-l "Opaque Mesh"
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On"
+-c "da_AiOpaque"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_AiNoOpaque"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-l "Dynamics"
+-sm 1
+-i "out_nucleus.png";
+
+menuItem
+-l "Create nCloth"
+-c "nClothCreate"
+-i "nClothCreate.png";
+
+menuItem
+-c "nClothCreateOptions"
+-ob 1;
+
+menuItem
+-l "Create nHair"
+-c "CreateHairOptions"
+-i "hairCreate.png";
+
+menuItem
+-l "Create Passive Collider"
+-c "nClothMakeCollide"
+-i "nClothCreatePassive.png";
+
+menuItem
+-c "nClothMakeCollideOptions"
+-ob 1;
+
+menuItem
+-l "Emit nParticle"
+-c "NEmitFromObject"
+-i "posEmitter.png";
+
+menuItem
+-c "NEmitFromObjectOptions"
+-ob 1;
+
+menuItem
+-l "Fill Object With Particle"
+-c "ParticleFill"
+-i "nPartfillObject.png";
+
+menuItem
+-c "ParticleFillOptions"
+-ob 1;
+
+menuItem
+-l "Set Initial State"
+-c "setNClothStartState;"
+-i "fluidInitialStateSet.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Create Soft Body"
+-c "soft -c"
+-i "soft.png";
+
+menuItem
+-c "CreateSoftBodyOptions"
+-ob 1;
+
+menuItem
+-l "Emit Particle"
+-c "EmitFromObject"
+-i "emitter.png";
+
+menuItem
+-c "EmitFromObjectOptions"
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Create Active Rigid Body"
+-c "CreateActiveRigidBody"
+-i "rigid.png";
+
+menuItem
+-c "CreateActiveRigidBodyOptions"
+-ob 1;
+
+menuItem
+-l "Create Passive Rigid Body"
+-c "CreatePassiveRigidBody"
+-i "rigidPassive.png";
+
+menuItem
+-c "CreatePassiveRigidBodyOptions"
+-ob 1;
+
+menuItem
+-l "Constrain"
+-sm 1
+-i "constraint.png";
+
+menuItem
+-l "Nail"
+-c "constrain -nail "
+-rp "N"
+-i "constraint.png";
+
+menuItem
+-l "Hinge"
+-c "constrain -hinge -o 0 0 0 "
+-i "constraint.png";
+
+menuItem
+-l "Spring"
+-c "constrain -spring -st 5 -d 0.1 "
+-i "constraint.png";
+
+menuItem
+-l "Barrier"
+-c "constrain -barrier -o 0 0 0 "
+-i "constraint.png";
+
+setParent -m ..;
+
+menuItem
+-l "Set Initial State"
+-c "setDynStartState;"
+-i "fluidInitialStateSet.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Emit Fluid From Object"
+-c "EmitFluidFromObject"
+-i "fluidObjectEmit.png";
+
+menuItem
+-c "EmitFluidFromObjectOptions"
+-ob 1;
+
+menuItem
+-l "Make Fluid Collide"
+-c "MakeFluidCollide"
+-i "fluidCollide.png";
+
+menuItem
+-c "MakeFluidCollideOptions;"
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Add Fields"
+-sm 1
+-i "posRadial.png";
+
+menuItem
+-l "Air"
+-c "dynExecuteFieldCommands 1 \"air\""
+-i "posAir.png";
+
+menuItem
+-l "Drag"
+-c "dynExecuteFieldCommands 1 \"drag\""
+-i "posDrag.png";
+
+menuItem
+-l "Gravity"
+-c "dynExecuteFieldCommands 1 \"gravity\""
+-i "posGravity.png";
+
+menuItem
+-l "Newton"
+-c "dynExecuteFieldCommands 1 \"newton\""
+-i "posNewton.png";
+
+menuItem
+-l "Radial"
+-c "dynExecuteFieldCommands 1 \"radial\""
+-i "posRadial.png";
+
+menuItem
+-l "Turbulence"
+-c "dynExecuteFieldCommands 1 \"turbulence\""
+-i "posTurbulence.png";
+
+menuItem
+-l "Uniform"
+-c "dynExecuteFieldCommands 1 \"uniform\""
+-i "posUniform.png";
+
+menuItem
+-l "Vortex"
+-c "dynExecuteFieldCommands 1 \"vortex\""
+-i "posVortex.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Volume Axis"
+-c "dynExecuteFieldCommands 1 \"volumeAxis\""
+-i "posVolumeAxis.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Create Bifrost Liquid"
+-c "CreateBifrostLiquid;"
+-i "out_bifrostShape.png";
+
+menuItem
+-l "Create Bifrost Aero"
+-c "CreateBifrostAero"
+-i "out_bifrostShape.png";
+
+menuItem
+-l "Bifrost Ocean"
+-c "da_OpenBossEditor"
+-i "fluidCreate2D.png";
+
+setParent -m ..;
+
+menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create nCache"
+-c "nClothCacheOpt"
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Create Geometry Cache"
+-c "geometryCacheOpt"
+-i "createCache.png";
+
+menuItem
+-l "Delete Geometry Cache"
+-c "geometryDeleteCacheOpt"
+-i "deleteCache.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Export Selection to GPU Cache"
+-c "GpuCacheExportSelectionOptions"
+-i "greasePencilExport.png";
+
+menuItem
+-l "Import GPU Cache"
+-c "doGpuCacheImportArgList 1 {\"0\",\"0\"};"
+-i "greasePencilImport.png";
+
+menuItem
+-l "Refresh GPU Cache"
+-c "GpuCacheRefreshAll"
+-i "QR_refresh.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Export Selection to Alembic"
+-c "AlembicExportSelectionOptions"
+-i "greasePencilExport.png";
+
+menuItem
+-l "Import Alembic"
+-c "AlembicImportOptions"
+-i "greasePencilImport.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Export Selection To BIF"
+-c "BifMeshExport"
+-i "greasePencilExport.png";
+
+menuItem
+-l "Import BIF"
+-c "BifMeshImport"
+-i "greasePencilImport.png";
+
+setParent -m ..;
+
+menuItem
+-l "XGen"
+-sm 1
+-i "xgDEditor.png";
+
+menuItem
+-l "Create Interactive Groom"
+-c "XgmCreateInteractiveGroomSplines"
+-i "xgIG_creation.png";
+
+menuItem
+-c "XgmCreateInteractiveGroomSplinesOption"
+-ob 1;
+
+menuItem
+-l "Interactive Brush"
+-c "XgmSetCombBrushTool"
+-i "xgIG_comb.png";
+
+menuItem
+-c "XgmSetCombBrushToolOption"
+-ob 1;
+
+menuItem
+-l "Interactive Groom Editor"
+-c "XgCreateIgSplineEditor"
+-i "xgIG_editor.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Create Description"
+-c "XgCreateDescription"
+-i "xgCreateDescription.png";
+
+menuItem
+-l "Guides Tool"
+-c "XgGuideTool"
+-i "xgGuideContext.png";
+
+menuItem
+-l "Sculpt Guides"
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");"
+-i "xgGuideSculptTool.png";
+
+menuItem
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;"
+-ob 1;
+
+menuItem
+-l "Primitives to Poly"
+-c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")"
+-i "da_xgPolyConvert.png";
+
+menuItem
+-c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")"
+-ob 1;
+
+menuItem
+-l "XGen Editor"
+-c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor"
+-i "xgDEditor.png";
+
+menuItem
+-l "XGen Library"
+-c "XGenLibraryWindow"
+-i "xgLibrary.png";
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "HUD Info"
+-c "ToggleXGenDisplayHUD"
+-cb (`optionVar -q xgenHUDVisibility`);
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1
+-dl "separator";
+
+menuItem
+-l "Select All Vertices"
+-c "ConvertSelectionToVertices"
+-i "vertex_NEX.png";
+
+menuItem
+-l "Separate" 
+-c "SeparatePolygon" 
+-rp "NE" 
+-i "polySeparate.png";
+
+setParent -m ..;
+

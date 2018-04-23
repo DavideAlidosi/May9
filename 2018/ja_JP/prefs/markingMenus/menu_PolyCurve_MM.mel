@@ -1,0 +1,57 @@
+
+menuItem
+-l "Project Curve On Mesh" 
+-c "ProjectCurveOnMesh;" 
+-rp "N" 
+-i "projectCurve_Poly.png";
+
+menuItem
+-c "ProjectCurveOnMeshOptions;" 
+-ob 1;
+
+menuItem
+-l "Split Mesh With Projected Curve" 
+-c "SplitMeshWithProjectedCurve" 
+-rp "S" 
+-i "projectCurveSplit_Poly.png";
+
+menuItem
+-c "SplitMeshWithProjectedCurveOptions;" 
+-ob 1;
+
+menuItem
+-l "Instance Along Curve" 
+-c "da_CurveDistributionMash" 
+-rp "E" 
+-i "da_instanceAlongCurve.png";
+
+menuItem
+-l "Wire Deformer" 
+-c "WireTool;" 
+-rp "NE" 
+-i "addWire.png";
+
+menuItem
+-c "WireToolOptions;" 
+-ob 1;
+
+menuItem
+-l "Make Curves Dynamic" 
+-c "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
+-rp "W" 
+-i "hairDynamicCurves.png";
+
+menuItem
+-l "Curve Warp Deformer" 
+-c "createCurveWarp;" 
+-rp "SE" 
+-i "CurveWarp.png";
+
+menuItem
+-l "Curves to nHair" 
+-c "da_CurveToNHair" 
+-rp "NW" 
+-i "out_pfxHair.png";
+
+setParent -m ..;
+

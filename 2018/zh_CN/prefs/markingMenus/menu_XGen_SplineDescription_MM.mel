@@ -1,0 +1,171 @@
+
+menuItem 
+-l "Mirror Off" 
+-c "da_XGenBrushMangement_MirrorOff" 
+-rp "E";
+
+menuItem 
+-l "Mirror Z" 
+-c "da_XGenBrushMangement_MirrorZ" 
+-rp "SE";
+
+menuItem 
+-l "Mirror Y" 
+-c "da_XGenBrushMangement_MirrorY" 
+-rp "S";
+
+menuItem 
+-l "Mirror X" 
+-c "da_XGenBrushMangement_MirrorX" 
+-rp "SW";
+
+menuItem 
+-l "Length" 
+-c "XgmSetLengthBrushTool" 
+-rp "N" 
+-i "xgIG_length.png";
+
+menuItem 
+-c "XgmSetLengthBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Comb" 
+-c "XgmSetCombBrushTool" 
+-rp "W" 
+-i "xgIG_comb.png";
+
+menuItem 
+-c "XgmSetCombBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Freeze" 
+-c "XgmSetFreezeBrushTool" 
+-rp "NE" 
+-i "xgIG_freeze.png";
+
+menuItem 
+-c "XgmSetFreezeBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Grab" 
+-c "XgmSetGrabBrushTool" 
+-rp "NW" 
+-i "xgIG_grab.png";
+
+menuItem 
+-c "XgmSetGrabBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Groom Editor" 
+-c "XgCreateIgSplineEditor" 
+-i "xgIG_editor.png";
+
+menuItem 
+-l "Groom to Polygons" 
+-c "import xgenm.xmaya.xgmSplineToGeometryConvert as convert;convert.convertPrimToPolygon(True)" 
+-i "xgConvertToPoly.png" 
+-sourceType "python";
+
+menuItem 
+-l "separator" 
+-d 1;
+
+menuItem 
+-l "Density" 
+-c "XgmSetDensityBrushTool" 
+-i "xgIG_density.png";
+
+menuItem 
+-c "XgmSetDensityBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Place" 
+-c "XgmSetPlaceBrushTool" 
+-i "xgIG_place.png";
+
+menuItem 
+-c "XgmSetPlaceBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Cut" 
+-c "XgmSetCutBrushTool" 
+-i "xgIG_cut.png";
+
+menuItem 
+-c "XgmSetCutBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Width" 
+-c "XgmSetWidthBrushTool" 
+-i "xgIG_width.png";
+
+menuItem 
+-c "XgmSetWidthBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Twist" 
+-c "XgmSetDirectionBrushTool" 
+-i "xgIG_twist.png";
+
+menuItem 
+-c "XgmSetDirectionBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Smooth" 
+-c "XgmSetSmoothBrushTool" 
+-i "xgIG_smooth.png";
+
+menuItem 
+-c "XgmSetSmoothBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Noise" 
+-c "XgmSetNoiseBrushTool" 
+-i "xgIG_noise.png";
+
+menuItem 
+-c "XgmSetNoiseBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Clump" 
+-c "XgmSetClumpBrushTool" 
+-i "xgIG_clump.png";
+
+menuItem 
+-c "XgmSetClumpBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "Part" 
+-c "XgmSetPartBrushTool" 
+-i "xgIG_part.png";
+
+menuItem 
+-c "XgmSetPartBrushToolOption" 
+-ob 1;
+
+menuItem 
+-l "separator" 
+-d 1;
+
+menuItem 
+-l "Select" 
+-c "XgmSetSelectBrushTool" 
+-i "xgIG_select.png";
+
+menuItem 
+-c "XgmSetSelectBrushToolOption" 
+-ob 1;
+
+setParent -m ..;
