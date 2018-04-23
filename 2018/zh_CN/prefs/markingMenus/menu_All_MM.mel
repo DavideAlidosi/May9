@@ -412,7 +412,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Paint Effects"
 -c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
--rp "S"
+-rp "W"
 -i "userPaint.png";
 
 menuItem
@@ -428,30 +428,8 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "nParticle Emitter"
 -c "NCreateEmitter;"
--rp "W"
+-rp "S"
 -i "posEmitter.png";
-
-menuItem -bld 1 
--l "Lock Nodes"
--sm 1
--i "lockGeneric.png";
-
-menuItem -bld 1 
--l "On" 
--c "da_Lock"
--i "lockGeneric.png";
-
-menuItem -bld 1 
--l "Off" 
--c "da_UnLock" 
--i "unlockGeneric.png";
-
-setParent -m ..;
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
 
 menuItem -bld 1 
 -l "nParticle Tool"
