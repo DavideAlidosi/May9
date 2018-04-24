@@ -61,10 +61,8 @@ menuItem -bld 1
 -c "CreateTextOptions"
 -i "text.png";
 
-menuItem
--l "separator" 
--d 1
--dl "separator";
+menuItem 
+-d 1;
 
 menuItem -bld 1 
 -l "Poly Interactive Creation"
@@ -147,10 +145,8 @@ menuItem -bld 1
 
 setParent -m ..;
 
-menuItem
--l "separator" 
--d 1
--dl "separator";
+menuItem 
+-d 1;
 
 menuItem -bld 1 
 -l "Camera Bookmark"
@@ -263,6 +259,14 @@ menuItem -bld 1
 }
 
 menuItem -bld 1 
+-l "Expression Editor"
+-c "ExpressionEditor"
+-i "out_expression.png";
+
+menuItem 
+-d 1;
+
+menuItem -bld 1 
 -l "Controllers"
 -sm 1
 -i "teLockUnchecked.png";
@@ -277,10 +281,8 @@ menuItem -bld 1
 -c "TagAsControllerParent"
 -i "parent.png";
 
-menuItem 
--l "separator" 
--d 1
--dl "separator";
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Prossimity On"
@@ -294,28 +296,35 @@ menuItem -bld 1
 
 setParent -m ..;
 
+menuItem -bld 1 
+-l "Attributes"
+-sm 1
+-i "attributes.png";
+
+menuItem -bld 1 
+-l "Channel Control"
+-c "ChannelControlEditor"
+-i "channelBox.png";
+
 menuItem
--l "separator" 
--d 1
--dl "separator";
-
-/*
-if (`pluginInfo -q -l weightsServer` == 1){
-menuItem -bld 1 
--l "Weights Server"
--c "weightsServerEditInfluences"
--i "move_M.png";
-}*/
+-d 1;
 
 menuItem -bld 1 
--l "Bake Deformer"
--c "BakeDeformerTool"
--i "out_baked.png";
+-l "Add"
+-c "AddAttribute"
+-i "publishAttributes.png";
 
 menuItem -bld 1 
--l "Quick Rig"
--c "QuickRigEditor"
--i "QR_QuickRigTool.png";
+-l "Edit"
+-c "RenameAttribute"
+-i "setEdEditMode.png";
+
+menuItem -bld 1 
+-l "Delete"
+-c "DeleteAttribute"
+-i "unpublishAttributes.png";
+
+setParent -m ..;
 
 setParent -m ..;
 
@@ -532,9 +541,7 @@ menuItem -bld 1
 -cb (`playbackOptions -q -maxPlaybackSpeed`);
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem -bld 1 
 -l "Create Turntable"
@@ -547,9 +554,9 @@ menuItem -bld 1
 -i "setDrivenKeyframe.png";
 
 menuItem -bld 1 
--l "Expression Editor"
--c "ExpressionEditor"
--i "out_expression.png";
+-l "Make Pivot Keyable"
+-c "da_pivotKeyable"
+-i "teSetKeyframe.png";
 
 menuItem -bld 1 
 -l "MASH Editor"
@@ -686,46 +693,6 @@ menuItem -bld 1
 -c "DuplicateSpecialOptions" 
 -i "da_duplicate.png";
 
-menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem -bld 1 
--l "Make Pivot Keyable"
--c "da_pivotKeyable"
--i "teSetKeyframe.png";
-
-menuItem -bld 1 
--l "Channel Control"
--c "ChannelControlEditor"
--i "channelBox.png";
-
-menuItem -bld 1 
--l "Attributes"
--sm 1
--i "attributes.png";
-
-menuItem
--l "separator" 
--d 1
--dl "separator";
-
-menuItem -bld 1 
--l "Add"
--c "AddAttribute"
--i "publishAttributes.png";
-
-menuItem -bld 1 
--l "Edit"
--c "RenameAttribute"
--i "setEdEditMode.png";
-
-menuItem -bld 1 
--l "Delete"
--c "DeleteAttribute"
--i "unpublishAttributes.png";
-
 setParent -m ..;
 
 setParent -m ..;
@@ -737,9 +704,7 @@ menuItem -bld 1
 -cb (`isolateSelect -q -state $currentPanel`);
 
 menuItem 
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 }
 
 menuItem -bld 1 
