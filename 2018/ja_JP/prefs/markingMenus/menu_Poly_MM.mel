@@ -177,10 +177,8 @@ menuItem
 -stp "python";
 }
 
-menuItem
--l "separator" 
--d 1
--dl "separator";
+menuItem 
+-d 1;
 
 menuItem
 -l "Fill Hole"
@@ -218,9 +216,7 @@ menuItem
 -c "da_MirrorCutZ";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "-YZ Plane"
@@ -256,9 +252,7 @@ menuItem
 }
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Split nGons"
@@ -271,9 +265,7 @@ menuItem
 -i "out_mesh.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Component Display"
@@ -281,9 +273,7 @@ menuItem
 -i "RS_visible.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Vertex Normals"
@@ -306,9 +296,7 @@ menuItem
 -i "da_borderEdge.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Normals Size"
@@ -417,7 +405,7 @@ menuItem
 menuItem
 -l "Edit Relationship"
 -sm 1
--i "passSetRelationEditor.png" ;
+-i "passSetRelationEditor.png";
 
 menuItem
 -l "Deformer Set Editor"
@@ -437,9 +425,12 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-l "Bake Deformers to Skin"
+-c "BakeDeformerTool"
+-i "out_baked.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Nonlinear"
@@ -539,9 +530,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Jiggle"
@@ -606,9 +595,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Apply Muscle System to Skin"
@@ -649,9 +636,7 @@ menuItem
 -i "out_mapToMesh.xpm";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 }
 
 menuItem
@@ -678,9 +663,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Automatic"
@@ -719,9 +702,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Auto Seams"
@@ -758,10 +739,8 @@ menuItem
 -c "da_UnlockAndFixNormals"
 -i "polyNormalUnlock.png";
 
-menuItem
--l "separator" 
--d 1
--dl "separator";
+menuItem 
+-d 1;
 
 menuItem
 -l "Set Soften Edge"
@@ -783,9 +762,7 @@ menuItem
 -i "polyHardEdge.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Double Side On"
@@ -818,9 +795,7 @@ menuItem
 -i "render_adskMaterial.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Assign Toon Shader"
@@ -838,9 +813,7 @@ menuItem
 -i "toonRemoveOutline.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Mesh Light"
@@ -918,9 +891,7 @@ menuItem
 -i "fluidInitialStateSet.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Create Soft Body"
@@ -941,9 +912,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Create Active Rigid Body"
@@ -997,9 +966,7 @@ menuItem
 -i "fluidInitialStateSet.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Emit Fluid From Object"
@@ -1020,9 +987,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Add Fields"
@@ -1070,9 +1035,7 @@ menuItem
 -i "posVortex.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Volume Axis"
@@ -1082,9 +1045,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Create Bifrost Liquid"
@@ -1119,9 +1080,7 @@ menuItem
 -i "nClothCacheDelete.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Create Geometry Cache"
@@ -1134,9 +1093,7 @@ menuItem
 -i "deleteCache.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Export Selection to GPU Cache"
@@ -1154,9 +1111,7 @@ menuItem
 -i "QR_refresh.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Export Selection to Alembic"
@@ -1168,10 +1123,8 @@ menuItem
 -c "AlembicImportOptions"
 -i "greasePencilImport.png";
 
-menuItem
--l "separator" 
--d 1
--dl "separator";
+menuItem 
+-d 1;
 
 menuItem
 -l "Export Selection To BIF"
@@ -1214,9 +1167,7 @@ menuItem
 -i "xgIG_editor.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Create Description"
@@ -1257,9 +1208,7 @@ menuItem
 -i "xgLibrary.png";
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "HUD Info"
@@ -1269,9 +1218,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "separator" 
--d 1
--dl "separator";
+-d 1;
 
 menuItem
 -l "Select All Vertices"
