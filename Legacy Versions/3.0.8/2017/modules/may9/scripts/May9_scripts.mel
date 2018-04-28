@@ -1,0 +1,1419 @@
+// da_commonObjectOptionsPopup
+
+global proc da_commonObjectOptionsPopup(){
+
+string $panel = `getPanel -wf`;
+
+menuItem
+    -label "Visibility" 
+    -subMenu 1
+    -radialPosition "NE" 
+	-image "RS_visible.png"
+    -sourceType "mel";
+
+    menuItem
+        -label "Curves" 
+        -command "da_ToggleNurbsCurvesVis" 
+		-checkBox (`modelEditor -q -nurbsCurves $panel`)
+        -radialPosition "NE" 
+        -sourceType "mel";
+
+    menuItem
+        -label "Polygons" 
+        -command "da_TogglePolyVis" 
+		-checkBox (`modelEditor -q -polymeshes $panel`)
+        -radialPosition "N" 
+        -sourceType "mel";
+
+    menuItem
+        -label "Light" 
+        -command "da_ToggleLightVis" 
+		-checkBox (`modelEditor -q -lights $panel`)
+        -radialPosition "NW" 
+        -sourceType "mel";
+
+    menuItem
+        -label "Joint" 
+        -command "da_ToggleJointVis" 
+		-checkBox (`modelEditor -q -joints $panel`)
+        -radialPosition "SE" 
+        -sourceType "mel";
+
+    menuItem
+        -label "IK Handle" 
+        -command "da_ToggleIkVis" 
+		-checkBox (`modelEditor -q -ikHandles $panel`)
+        -radialPosition "S" 
+        -sourceType "mel";
+
+    menuItem
+        -label "Locator" 
+        -command "da_ToggleLocVis" 
+		-checkBox (`modelEditor -q -locators $panel`)
+        -sourceType "mel";
+
+    menuItem
+        -label "Deformers" 
+        -command "da_ToggleDefVis" 
+		-checkBox (`modelEditor -q -deformers $panel`)
+        -radialPosition "W" 
+        -sourceType "mel";
+
+    menuItem
+        -label "Nurbs" 
+        -command "da_ToggleNurbsVis" 
+		-checkBox (`modelEditor -q -nurbsSurfaces $panel`)
+        -radialPosition "E" 
+        -sourceType "mel";
+
+setParent -m ..;
+
+menuItem
+    -label "UI Elements" 
+    -subMenu 1
+    -radialPosition "NW" 
+	-image "out_displayLayer.png"
+    -sourceType "mel";
+
+	menuItem
+	    -label "Shelf" 
+	    -command "ToggleShelf" 
+	    -sourceType "mel" 
+	    -radialPosition "SW" 
+	    -cb (`workspaceControl -q -vis Shelf`);
+
+	menuItem
+	    -label "Shelf Tabs" 
+	    -command "toggleShelfTabs" 
+	    -sourceType "mel" 
+	    -radialPosition "W" 
+	    -cb (`optionVar -q shelfTabsVisible`);
+
+	menuItem
+	    -label "Menu Bars" 
+	    -command "TogglePanelMenubar" 
+	    -sourceType "mel" 
+	    -radialPosition "NE" 
+	    -cb (`optionVar -q allowMenusInPanels`);
+
+	menuItem
+	    -label "Icon Bars" 
+	    -command "ToggleModelEditorBars" 
+	    -sourceType "mel" 
+	    -radialPosition "NW" 
+	    -cb (false == `optionVar -q collapseIconBarsInPanels`);
+
+	menuItem
+	    -label "Main Menu Bars" 
+	    -command "ToggleMainMenubar" 
+	    -sourceType "mel" 
+	    -radialPosition "E" 
+	    -cb (`optionVar -q mainWindowMenubarVis`);
+
+	menuItem
+	    -label "Title Bar" 
+	    -command "da_TitleBarToggle" 
+	    -sourceType "mel" 
+	    -radialPosition "N" 
+	    -cb (`window -q -titleBar MayaWindow`);
+
+	menuItem
+	    -label "Save Workspace" 
+	    -command "workspaceLayoutManager -s" 
+	    -sourceType "mel" 
+	    -image "fileSave.png"
+	    -radialPosition "S";
+
+	menuItem
+		-command "SaveCurrentWorkspace" 
+		-optionBox 1
+		-sourceType "mel";
+
+setParent -m ..;
+
+menuItem
+    -label "Shading" 
+    -subMenu 1
+    -radialPosition "SE" 
+	-image "WireFrameOnShaded.png"
+    -sourceType "mel";
+
+    menuItem
+	    -label "Wireframe on Shaded" 
+	    -command "da_ToggleWireOnShade" 
+	    -radialPosition "SE" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -wos $panel`);
+
+    menuItem
+	    -label "Two Sided Lighting" 
+	    -command "da_ToggleTwoSidedLighting" 
+	    -radialPosition "S" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -tsl $panel`);
+
+    menuItem
+	    -label "X-Ray Active Components" 
+	    -command "da_ToggleActiveComponentsXray" 
+	    -radialPosition "E" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -acx $panel`);
+
+    menuItem
+	    -label "X-Ray Joints" 
+	    -command "da_ToggleJointXray" 
+	    -radialPosition "NE" 
+	    -sourceType "mel" 
+	    -cb (`modelEditor -q -jx $panel`);
+
+setParent -m ..;
+
+menuItem
+    -label "Viewport" 
+    -subMenu 1
+    -radialPosition "SW" 
+	-image "MultisampleAA.png"
+    -sourceType "mel";
+
+	menuItem
+	    -label "Anti-Aliasing" 
+	    -command "da_AntiAliasToggle" 
+	    -radialPosition "SW" 
+	    -sourceType "mel" 
+	    -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
+
+	menuItem
+	    -label "Motion Blur" 
+	    -command "da_motionBlurEnableToggle" 
+	    -radialPosition "S" 
+	    -sourceType "mel" 
+	    -cb (`getAttr "hardwareRenderingGlobals.motionBlurEnable"`);
+
+	menuItem
+	    -label "Grid" 
+	    -command "ToggleGrid" 
+	    -radialPosition "NW" 
+	    -sourceType "mel" 
+	    -cb (`optionVar -q showGrid`);
+
+	menuItem
+		-command "GridOptions" 
+		-optionBox 1
+		-sourceType "mel";
+
+	menuItem
+	    -label "Ambient Occlusion" 
+	    -command "da_ToggleAO" 
+	    -radialPosition "W" 
+	    -sourceType "mel" 
+	    -cb (`getAttr "hardwareRenderingGlobals.ssaoEnable"`);
+
+setParent -m ..;
+
+}
+
+
+// da_curveToPoly
+
+global proc da_curveToPoly(){
+	//Main Procedure
+	string $renderCurve[] = `ls -sl`;
+	ResetTemplateBrush;
+	select $renderCurve;
+	AttachBrushToCurves;
+	string $renderCurveRelatives[] = `listRelatives $renderCurve`;
+	string $renderStroke[] = `listConnections -t stroke -sh 1 -d 1 -s 0 $renderCurveRelatives`;
+	select $renderStroke;
+	doPaintEffectsToPoly( 1,0,1,1,100000);
+	hyperShade -assign initialShadingGroup;
+
+	//CTRL Procedure
+	string $renderBrush[] = `listConnections -t brush $renderStroke`;
+	string $locatorCTRL[] = `CreateLocator`;
+	rename $locatorCTRL polyCurveCTRL1;
+	string $showCTLR[] = `ls -sl`;
+	addAttr -ln "Radius"  -at double  -min 0.001 -dv 0.5 $showCTLR;
+	addAttr -ln "Clipping"  -at double  -min 0 -max 1 -dv 1 $showCTLR;
+	addAttr -ln "Section"  -at long  -min 3 -max 12 -dv 4 $showCTLR;
+	addAttr -ln "Density"  -at double -min 0.001 -max 20 -dv 1 $showCTLR;
+	addAttr -ln "PolyLimit"  -at long  -min 1000 -max 1000000 -dv 100000 $showCTLR;
+	addAttr -ln "HardEdges"  -at bool;
+	setAttr -e-keyable true ($showCTLR[0] + ".Radius");
+	setAttr -e-keyable true ($showCTLR[0] + ".Clipping");
+	setAttr -e-keyable true ($showCTLR[0] + ".Section");
+	setAttr -e-keyable true ($showCTLR[0] + ".Density");
+	setAttr -e-keyable true ($showCTLR[0] + ".PolyLimit");
+	setAttr -e-keyable true ($showCTLR[0] + ".HardEdges");
+	int $numObj = size($renderBrush);
+	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".Radius", $renderBrush[$i] + ".brushWidth");
+	for($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + ".Section", $renderBrush[$i] + ".tubeSections");
+	int $numObj2 = size($renderStroke);
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".Clipping", $renderStroke[$i] + ".maxClip");
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".Density", $renderStroke[$i] + ".sampleDensity");
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".PolyLimit", $renderStroke[$i] + ".meshPolyLimit");
+	for($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + ".HardEdges", $renderStroke[$i] + ".meshHardEdges");
+
+	//Rig Procedure
+	string $renderMesh[] = `listConnections -t mesh $renderStroke`;
+	select $renderMesh;
+	pickWalk -d up;
+	string $groupMesh[] = `ls -sl`;
+	parent $groupMesh $showCTLR;
+	parent $renderStroke $showCTLR;
+	select $showCTLR;
+
+	//Clean Rig
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".tx");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".ty");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".tz");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".rx");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".ry");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".rz");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".sx");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".sy");
+	setAttr -e-keyable false -l true ($showCTLR[0] + ".sz");
+}
+
+
+// da_interactiveBooleans
+
+global proc da_wireframeTemplate(){
+	string $myBoolOperators[] = `ls -sl`;
+	string $myBool[] = `listConnections -s 1 -d 0 -sh 1`;
+	select $myBool;
+	for ($i=0; $i<size($myBool); $i++) {
+		setAttr ($myBool[$i] + ".intermediateObject") 0;
+		setAttr ($myBool[$i] + ".primaryVisibility") 0;
+		setAttr ($myBool[$i] + ".overrideEnabled") 1;
+		setAttr ($myBool[$i] + ".overrideShading") 0;
+		setAttr ($myBool[$i] + ".visibility") 1;
+		setAttr ($myBool[$i] + ".castsShadows") 0;
+		setAttr ($myBool[$i] + ".receiveShadows") 0;
+		setAttr ($myBool[$i] + ".motionBlur") 0;
+		setAttr ($myBool[$i] + ".smoothShading") 0;
+		setAttr ($myBool[$i] + ".visibleInReflections") 0;
+		setAttr ($myBool[$i] + ".visibleInRefractions") 0;
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInVolume") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiSelfShadows") 0`);
+	}
+
+	showHidden -a;
+	select $myBoolOperators;
+}
+
+global proc da_wireframeTemplateA(){
+	string $myBoolOperators[] = `ls -sl`;
+	string $myBool[] = `listConnections -s 1 -d 0 -sh 1`;
+	select $myBool;
+	for ($i=0; $i<size($myBool); $i++) {
+		setAttr ($myBool[1] + ".intermediateObject") 0;
+		setAttr ($myBool[1] + ".primaryVisibility") 0;
+		setAttr ($myBool[1] + ".overrideEnabled") 1;
+		setAttr ($myBool[1] + ".overrideShading") 0;
+		setAttr ($myBool[1] + ".visibility") 1;
+		setAttr ($myBool[1] + ".castsShadows") 0;
+		setAttr ($myBool[1] + ".receiveShadows") 0;
+		setAttr ($myBool[1] + ".motionBlur") 0;
+		setAttr ($myBool[1] + ".smoothShading") 0;
+		setAttr ($myBool[1] + ".visibleInReflections") 0;
+		setAttr ($myBool[1] + ".visibleInRefractions") 0;
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInVolume") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiSelfShadows") 0`);
+	}
+
+	showHidden -a;
+	select $myBoolOperators;
+}
+
+global proc da_wireframeTemplateB(){
+	string $myBoolOperators[] = `ls -sl`;
+	string $myBool[] = `listConnections -s 1 -d 0 -sh 1`;
+	select $myBool;
+	for ($i=0; $i<size($myBool); $i++) {
+		setAttr ($myBool[0] + ".intermediateObject") 0;
+		setAttr ($myBool[0] + ".primaryVisibility") 0;
+		setAttr ($myBool[0] + ".overrideEnabled") 1;
+		setAttr ($myBool[0] + ".overrideShading") 0;
+		setAttr ($myBool[0] + ".visibility") 1;
+		setAttr ($myBool[0] + ".castsShadows") 0;
+		setAttr ($myBool[0] + ".receiveShadows") 0;
+		setAttr ($myBool[0] + ".motionBlur") 0;
+		setAttr ($myBool[0] + ".smoothShading") 0;
+		setAttr ($myBool[0] + ".visibleInReflections") 0;
+		setAttr ($myBool[0] + ".visibleInRefractions") 0;
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularReflection") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInDiffuseTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInSpecularTransmission") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiVisibleInVolume") 0`);
+		catchQuiet (`setAttr ($myBool[0] + ".aiSelfShadows") 0`);
+	}
+
+	showHidden -a;
+	select $myBoolOperators;
+}
+
+global proc da_interactiveUnion(){
+	string $myBoolOp[] = `polyCBoolOp -op 1 -ch 1 -pcr 0 -cls 1`;
+	polyMergeVertex  -d 0.001 -am 1 -ch 1 polySurface1;
+	select $myBoolOp[1];
+	da_wireframeTemplate;
+	ShowManipulators;
+}
+
+global proc da_interactiveDifference(){
+	string $myBoolOp[] = `polyCBoolOp -op 2 -ch 1 -pcr 0 -cls 1`;
+	polyMergeVertex  -d 0.001 -am 1 -ch 1 polySurface1;
+	select $myBoolOp[1];
+	da_wireframeTemplate;
+	ShowManipulators;
+}
+
+global proc da_interactiveIntersection(){
+	string $myBoolOp[] = `polyCBoolOp -op 3 -ch 1 -pcr 0 -cls 1`;
+	polyMergeVertex  -d 0.001 -am 1 -ch 1 polySurface1;
+	select $myBoolOp[1];
+	da_wireframeTemplate;
+	ShowManipulators;
+}
+
+
+// da_nParticleConverter
+
+global proc da_convertToThickCloud(){
+    pickWalkDown;
+    string $mySel[] = `ls -sl`;
+    for($i=0;$i<size($mySel);$i++){
+    applyPresetToNode $mySel[$i] "" "" "da_ThickCloud" 1;
+	pickWalkUp;
+    }
+}
+
+global proc da_convertToWater(){
+    pickWalkDown;
+    string $mySel[] = `ls -sl`;
+    for($i=0;$i<size($mySel);$i++){
+    applyPresetToNode $mySel[$i] "" "" "da_Water" 1;
+	pickWalkUp;
+    }
+}
+
+global proc da_convertToCloud(){
+    pickWalkDown;
+    string $mySel[] = `ls -sl`;
+    for($i=0;$i<size($mySel);$i++){
+    applyPresetToNode $mySel[$i] "" "" "da_Cloud" 1;
+	pickWalkUp;
+    }
+}
+
+global proc da_convertToBalls(){
+    pickWalkDown;
+    string $mySel[] = `ls -sl`;
+    for($i=0;$i<size($mySel);$i++){
+    applyPresetToNode $mySel[$i] "" "" "da_Balls" 1;
+	pickWalkUp;
+    }
+}
+
+global proc da_convertToPoint(){
+    pickWalkDown;
+    string $mySel[] = `ls -sl`;
+    for($i=0;$i<size($mySel);$i++){
+    applyPresetToNode $mySel[$i] "" "" "da_Point" 1;
+	pickWalkUp;
+    }
+}
+
+
+// da_perspToggle
+
+global proc da_perspToggle(){
+	string $curPanel;
+	string $curCam;
+	int $orthoValue;
+	float $camRot[];
+	float $camRotTemp;
+	int $intOfTemp;
+	float $rotOver;
+	float $camRotFixed[2];
+
+	$curPanel = `getPanel -wf`;
+	$curCam = `modelPanel -q -cam $curPanel`;
+	$orthoValue = `camera -q -o $curCam`;
+
+	if ($orthoValue == 1){
+		setAttr ($curCam +".orthographic") 0;
+		da_PasteCameraPosition;
+		viewFit -f 0.5;
+
+		inViewMessage -pos topCenter -msg "Perspective View" -fade;
+		
+	} else {
+
+		da_CopyCameraPosition;
+	
+		$camRot = `camera -q -rot $curCam`;
+
+		for ($i=0; $i < 2; $i++){
+		
+			$camRotTemp = $camRot[$i] / 360;
+			$intOfTemp = (int)$camRotTemp;
+			$rotOver = 360 * $intOfTemp;
+			$camRotFixed[$i] = $camRot[$i] - $rotOver;
+		}
+
+		for ($i=0; $i < 2; $i++){
+			if ($camRotFixed[$i] < 0)
+				$camRotFixed[$i] += 360;
+		}
+
+		if ($camRotFixed[0] >= 45 && $camRotFixed[0] < 135){
+			viewSet -bo;
+			viewFit -f 0.5;
+			inViewMessage -pos topCenter -msg "Bottom position - Orthographic View" -fade;
+		}
+
+		else if ($camRotFixed[0] >= 225 && $camRotFixed[0] < 315){
+			viewSet -t;
+			viewFit -f 0.5;
+			inViewMessage -pos topCenter -msg "Top position - Orthographic View" -fade;
+		}
+
+		else if ($camRotFixed[1] < 45){
+			viewSet -f;
+			viewFit -f 0.5;
+			inViewMessage -pos topCenter -msg "Front position - Orthographic View" -fade;
+		}
+
+		else if ($camRotFixed[1] >= 315 ){
+			viewSet -f;
+			viewFit -f 0.5;
+			inViewMessage -pos topCenter -msg "Front position - Orthographic View" -fade;
+		}
+
+		else if ($camRotFixed[1] >= 45 && $camRotFixed[1] < 135)
+		{
+			viewSet -rs;
+			viewFit -f 0.5;
+			inViewMessage -pos topCenter -msg "Right position - Orthographic View" -fade;
+		}
+
+		else if ($camRotFixed[1] >= 135 && $camRotFixed[1] < 225)
+		{
+			viewSet -b;
+			viewFit -f 0.5;
+			inViewMessage -pos topCenter -msg "Back position - Orthographic View" -fade;
+		}
+
+		else if ($camRotFixed[1] >= 225 && $camRotFixed[1] < 315)
+		{
+			viewSet -ls;
+			viewFit -f 0.5;
+			inViewMessage -pos topCenter -msg "Left position - Orthographic View" -fade;
+		}
+	}
+}
+
+
+// da_shell
+
+global proc da_shell(){
+	string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myShape[] = `listRelatives -s`;
+	catchQuiet (`duplicate`);
+	string $myShell[] = `listRelatives -s`;
+	connectAttr -f ($myShape[0] + ".outMesh") ($myShell[0] + ".inMesh");
+	
+	string $myShellTransform[] = `listRelatives -p $myShell`;
+	select $myShellTransform;
+	da_ResetTweakPoint;
+	
+	polyNormal -normalMode 0 -userNormalMode 0 -ch 1 $myShell;
+	polyExtrudeFacet -tk 1;
+	select $myShell;
+	string $myPolyExtrudeFace[] = `listConnections -s 1 -d 0 -t "polyExtrudeFace"`;
+	polyBevel3 -f 0.1 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 1 -ws 1 -sa 30 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;
+	string $myPolyBevel[] = `listConnections -s 1 -d 0 -t "polyBevel3"`;
+
+	setAttr ($myShell[0] +".overrideEnabled") 1;
+	setAttr ($myShell[0] +".overrideDisplayType") 2;
+
+	setAttr ($myShape[0] + ".primaryVisibility") 0;
+	setAttr ($myShape[0] + ".overrideEnabled") 1;
+	setAttr ($myShape[0] + ".overrideShading") 0;
+	setAttr ($myShape[0] + ".visibility") 1;
+	setAttr ($myShape[0] + ".castsShadows") 0;
+	setAttr ($myShape[0] + ".receiveShadows") 0;
+	setAttr ($myShape[0] + ".motionBlur") 0;
+	setAttr ($myShape[0] + ".smoothShading") 0;
+	setAttr ($myShape[0] + ".visibleInReflections") 0;
+	setAttr ($myShape[0] + ".visibleInRefractions") 0;
+
+	addAttr -ln "Thickness"  -at double  -min 0.001 -dv 1 $myTransform;
+	addAttr -ln "Bevel"  -at "enum" -en "On:Off:" $myTransform;
+	addAttr -ln "Chamfer"  -at bool $myTransform;
+	addAttr -ln "Offset"  -at double  -min 0.001 -dv 0.1 $myTransform;
+	addAttr -ln "Segments"  -at long  -min 1 -dv 1 $myTransform;
+	setAttr -e-keyable true ($myTransform[0] + ".Thickness");
+	setAttr -e-keyable true ($myTransform[0] + ".Bevel");
+	setAttr -e-keyable true ($myTransform[0] + ".Chamfer") 1;
+	setAttr -e-keyable true ($myTransform[0] + ".Offset");
+	setAttr -e-keyable true ($myTransform[0] + ".Segments");
+
+	connectAttr -f ($myTransform[0] + ".Thickness") ($myPolyExtrudeFace[0] + ".thickness");
+	connectAttr -f ($myTransform[0] + ".Offset") ($myPolyBevel[0] + ".offset");
+	connectAttr -f ($myTransform[0] + ".Segments") ($myPolyBevel[0] + ".segments");
+	connectAttr -f ($myTransform[0] + ".Chamfer") ($myPolyBevel[0] + ".chamfer");
+	connectAttr -f ($myTransform[0] + ".Bevel") ($myPolyBevel[0] + ".nodeState");
+	
+	select $myShell;
+	pickWalk -d up;
+	rename da_shell1;
+
+	select $myTransform;
+	rename da_shellBase1;
+}
+
+global proc da_shellDetach(){
+	da_BackToObjectMode;
+
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myShape[] = `listRelatives -s`;
+
+	setAttr ($myShape[0] + ".primaryVisibility") 1;
+	setAttr ($myShape[0] + ".overrideEnabled") 0;
+	setAttr ($myShape[0] + ".overrideShading") 1;
+	setAttr ($myShape[0] + ".visibility") 1;
+	setAttr ($myShape[0] + ".castsShadows") 1;
+	setAttr ($myShape[0] + ".receiveShadows") 1;
+	setAttr ($myShape[0] + ".motionBlur") 1;
+	setAttr ($myShape[0] + ".smoothShading") 1;
+	setAttr ($myShape[0] + ".visibleInReflections") 1;
+	setAttr ($myShape[0] + ".visibleInRefractions") 1;
+
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+
+	setAttr ($myShell[0] +".overrideEnabled") 1;
+	setAttr ($myShell[0] +".overrideDisplayType") 0;
+	
+	deleteAttr ($myTransform[0] + ".Thickness");
+	deleteAttr ($myTransform[0] + ".Bevel");
+	deleteAttr ($myTransform[0] + ".Chamfer");
+	deleteAttr ($myTransform[0] + ".Offset");
+	deleteAttr ($myTransform[0] + ".Segments");
+
+	select $myShape;
+	pickWalk -d up;
+	rename da_exShellBase1;
+
+	select $myShell;
+	pickWalk -d up;
+	rename da_extractShell1;
+	da_ClearFreeze;
+}
+
+global proc da_shellSubdiv(){
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+	
+	select $myShell;
+    HighQualityDisplay;
+    
+    select $myTransform;
+}
+
+global proc da_shellNoSubdiv(){
+    string $myTransform[] = `ls -sl -typ "transform"`;
+	string $myPolyBevel[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel[0];
+	string $myShell[] = `listConnections -sh 1 -s 0 -d 1`;
+	
+	select $myShell;
+    LowQualityDisplay;
+    
+    select $myTransform;
+}
+
+
+// da_XGenBrushMangement
+
+global proc da_XGenBrushMangement_MirrorOff(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 0 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 0 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_MirrorX(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 1 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 1 `currentCtx`;
+
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 1 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_MirrorY(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 2 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 2 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 2 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_MirrorZ(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -bst 3 `currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -bst 3 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -bst 3 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_CollisionOn(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -ec 1`currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -ec 1 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -ec 1 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+global proc da_XGenBrushMangement_CollisionOff(){
+
+	string $CheckTool = `currentCtx`;
+
+	if ($CheckTool == "xgmDensityBrushTool")
+		xgmDensityBrushContext -e -ec 0`currentCtx`;
+
+	else if ($CheckTool == "xgmPlaceBrushTool")
+		xgmPlaceBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmLengthBrushTool")
+		xgmLengthBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCutBrushTool")
+		xgmCutBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmWidthBrushTool")
+		xgmWidthBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmDirectionBrushTool")
+		xgmDirectionBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmCombBrushTool")
+		xgmCombBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmGrabBrushTool")
+		xgmGrabBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSmoothBrushTool")
+		xgmSmoothBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmNoiseBrushTool")
+		xgmNoiseBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmClumpBrushTool")
+		xgmClumpBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmPartBrushTool")
+		xgmPartBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmFreezeBrushTool")
+		xgmFreezeBrushContext -e -ec 0 `currentCtx`;
+		
+	else if ($CheckTool == "xgmSelectBrushTool")
+		xgmSelectBrushContext -e -ec 0 `currentCtx`;
+		
+	else
+		print "Brush not supported";
+}
+
+
+// da_FacesFollicles
+
+global proc da_FacesFollicles()
+{
+    createHair 8 8 3 0 0 0 0 5 0 2 1 2;
+	string $startSelect[] = `ls -sl`;
+	convertHairSelection( "hairSystems" );
+	string $hsys[] = `ls -sl`;
+	if( size( $hsys ) < 1 ){
+		warning( (uiRes("m_deleteEntireHairSystem.kNoHairSystemForDelete")) );
+		select -r $startSelect;
+		return;
+	}
+
+    convertHairSelection( "follicles" );
+    string $follicles[] = `ls -sl`;
+    Unparent;
+    Group;
+    rename "FacesFollicles1";
+	convertHairSelection( "startCurves" );
+	string $startCurves[] = `ls -sl`;
+	select -r $follicles;
+	convertHairSelection( "restCurves" );
+	string $restCurves[] = `ls -sl`;
+	select -r $follicles;
+	convertHairSelection( "current" );
+	string $current[] = `ls -sl`;
+	select -r $follicles;
+	convertHairSelection( "constraints" );
+	string $constraints[] = `ls -sl`;
+	clear $follicles;
+	string $hsysGroups[];
+	int $i, $j = 0;
+	for( $i = 0; $i < size( $hsys ); $i++ ){
+		string $tforms[] = listTransforms( $hsys[$i] );
+		if( size( $tforms ) > 0 ){
+			$hsysGroups[$j] = $tforms[0];
+			$j++;
+		}
+		string $groups[] = getHairSystemGroups( $hsys[$i], false );
+		if( $groups[0] != "" ){
+			$hsysGroups[$j] = $groups[0];
+			$j++;
+		}
+		if( $groups[1] != "" ){
+			$hsysGroups[$j] = $groups[1];
+			$j++;
+		}
+	}
+	
+	if(`pluginInfo -q -l Fur`) {	
+		for( $i = 0; $i < size( $hsys ); $i++ ){
+			string $curveAttractorSet[] = `listConnections -shapes true -type "FurCurveAttractors" $hsys[$i]`;
+			if(size($curveAttractorSet) == 1)
+				HfDeleteCAS $curveAttractorSet[0];
+		}
+	}
+
+	string $all[];
+	appendStringArray( $all, $hsys, size($hsys));
+	appendStringArray( $all, $startCurves, size($startCurves));
+	appendStringArray( $all, $restCurves, size($restCurves));
+	appendStringArray( $all, $current, size($current));
+	appendStringArray( $all, $constraints, size($constraints));
+	appendStringArray( $all, $hsysGroups, size($hsysGroups));
+	delete $all;
+	select -r;
+}
+
+
+// da_Compass
+
+global proc da_Compass(){
+	circle  -c 0 0 0 -nr 0 1 0 -sw 180 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
+	string $myVectorDir1[] = `ls -sl`;
+	setAttr ($myVectorDir1[0] + ".sx") -2;
+	setAttr ($myVectorDir1[0] + ".sz") 0.02;
+	da_ClearFreeze;
+
+	duplicate;
+	string $myVectorDir2[] = `ls -sl`;
+	setAttr ($myVectorDir2[0] + ".rx") 90;
+	da_ClearFreeze;
+
+	circle  -c 0 0 0 -nr 0 1 0 -sw 360 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
+	string $myVectorDir3[] = `ls -sl`;
+	setAttr ($myVectorDir3[0] + ".rz") 90;
+	setAttr ($myVectorDir3[0] + ".sx") 0.02;
+	setAttr ($myVectorDir3[0] + ".sy") 0.02;
+	setAttr ($myVectorDir3[0] + ".sz") 0.02;
+	da_ClearFreeze;
+
+	select $myVectorDir1[0] $myVectorDir2[0] $myVectorDir3[0];
+	da_CombineCurves;
+	xform -ws -a -rp 0 0 0;
+	rename CompassVector1;
+	string $myCompassVector[] = `ls -sl`;
+	setAttr ($myCompassVector[0] + ".overrideEnabled") 1;
+	setAttr ($myCompassVector[0] + ".overrideColor") 4;
+
+	string $myVectorProduct = `createNode vectorProduct`;
+	setAttr ($myVectorProduct + ".operation") 3;
+	setAttr ($myVectorProduct + ".input1X") 1;
+
+	connectAttr ($myCompassVector[0] + ".worldMatrix[0]", $myVectorProduct + ".matrix");
+
+	addAttr -ln "VectorX" -at double $myCompassVector[0];
+	addAttr -ln "VectorY" -at double $myCompassVector[0];
+	addAttr -ln "VectorZ" -at double $myCompassVector[0];
+	setAttr -e -k 1 ($myCompassVector[0] + ".VectorX");
+	setAttr -e -k 1 ($myCompassVector[0] + ".VectorY");
+	setAttr -e -k 1 ($myCompassVector[0] + ".VectorZ");
+	setAttr -l 1 ($myCompassVector[0] + ".sx");
+	setAttr -l 1 ($myCompassVector[0] + ".sy");
+	setAttr -l 1 ($myCompassVector[0] + ".sz");
+	connectAttr($myVectorProduct + ".output.outputX", $myCompassVector[0] + ".VectorX");
+	connectAttr($myVectorProduct + ".output.outputY", $myCompassVector[0] + ".VectorY");
+	connectAttr($myVectorProduct + ".output.outputZ", $myCompassVector[0] + ".VectorZ");
+
+	select $myCompassVector[0];
+}
+
+
+// da_AntiAlias
+
+global proc da_AntiAliasToggle(){
+	if(`getAttr "hardwareRenderingGlobals.multiSampleEnable"`){
+    	setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
+	}else{
+	    setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
+	}
+}
+
+// da_JointMode
+
+global proc da_JointMode(){
+	if(`selectMode -q -component`){
+    	changeSelectMode -object;
+	}else{
+	    changeSelectMode -component;
+    	setComponentPickMask "Other" 1;
+	}
+}
+
+// da_motionBlurEnable
+
+global proc da_motionBlurEnableToggle(){
+	if(`getAttr "hardwareRenderingGlobals.motionBlurEnable"`){
+    	setAttr "hardwareRenderingGlobals.motionBlurEnable" 0;
+	}else{
+	    setAttr "hardwareRenderingGlobals.motionBlurEnable" 1;
+	}
+}
+
+// da_ToggleAO
+
+global proc da_ToggleAO(){
+	if(`getAttr "hardwareRenderingGlobals.ssaoEnable"`){
+    	setAttr "hardwareRenderingGlobals.ssaoEnable" 0;
+	}else{
+	    setAttr "hardwareRenderingGlobals.ssaoEnable" 1;
+	}
+}
+
+// da_maxPlaybackSpeed
+
+global proc da_maxPlaybackSpeedToggle(){
+	if(`playbackOptions -q -maxPlaybackSpeed`){
+    	playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 0;
+	}else{
+	    playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 1;
+	}
+}
+
+// da_vertexAnimationCache
+
+global proc da_vertexAnimationCache(){
+	if(`getAttr "hardwareRenderingGlobals.vertexAnimationCache"`){
+    	setAttr "hardwareRenderingGlobals.vertexAnimationCache" 0;
+	}else{
+	    setAttr "hardwareRenderingGlobals.vertexAnimationCache" 2;
+	}
+}
+
+// da_TitleBarToggle
+
+global proc da_TitleBarToggle(){
+	if(`window -q -titleBar MayaWindow`){
+    	window -e -titleBar 0 MayaWindow;
+	}else{
+	    window -e -titleBar 1 MayaWindow;
+	}
+}
+
+// buildSelectAllMM
+
+global proc buildSelectAllMM(){
+    if( `popupMenu -exists tempMM` )
+    {
+        deleteUI tempMM;
+    }
+
+	global string $MMcmd;
+
+	$MMcmd = "";
+	
+    popupMenu -mm 1 -b 1 -aob 1 -p `findPanelPopupParent` -pmc ("$MMcmd = \"Posted\"") tempMM;
+
+	menuItem -radialPosition "W" -label (uiRes("m_buildSelectAllMM.kSelectAllInputs"))  
+		-c "$MMcmd = \"selectHistory\"";
+	menuItem -radialPosition "E" -label (uiRes("m_buildSelectAllMM.kSelectAllOutputs"))  
+		-c "$MMcmd = \"selectFuture\"";
+
+	menuItem -radialPosition "N" -label (uiRes("m_buildSelectAllMM.kEnableAllOutputs"))  
+		-c "$MMcmd = \"enableFuture\"";
+	menuItem -radialPosition "S" -label (uiRes("m_buildSelectAllMM.kDisableAllOutputs"))  
+		-c "$MMcmd = \"disableFuture\"";
+
+	menuItem -radialPosition "NW" -label (uiRes("m_buildSelectAllMM.kDeleteHistory"))  
+		-c "$MMcmd = \"deleteHistory\"" -version "2015";
+	menuItem -radialPosition "NE" -label (uiRes("m_buildSelectAllMM.kDeleteNonDeformerHistory"))  
+		-c "$MMcmd = \"deleteNDHistory\"" -version "2015";
+
+
+	if (`pluginInfo -q -loaded SOuP` == 1){
+		python("smartConnect_SOuP().main()") ;
+	}
+
+	setParent -m ..;
+}
+
+global proc buildSelectAllMM_release(){
+	global string $MMcmd;
+
+	if ($MMcmd != "") {
+		//	Process Marking menu selection
+		switch ($MMcmd) {
+			case "selectHistory" :
+				selectAllInputOutput false;
+				break;
+			case "selectFuture" :
+				selectAllInputOutput true;
+				break;
+			case "enableFuture" :
+				disableOfSelected 1 0;
+				break;
+			case "disableFuture" :
+				disableOfSelected 1 1;
+				break;
+			case "deleteHistory" :
+				DeleteHistory;
+				break;
+			case "deleteNDHistory" :
+				BakeNonDefHistory;
+				break;
+		}
+		$MMcmd = "Processed";
+	} 
+	
+	if( `popupMenu -exists tempMM` ) {
+		deleteUI tempMM;
+	} 
+	
+	if ($MMcmd == "") {
+		FrameAll;
+	}
+}
+
+
+// da_pivotKeyable
+
+global proc da_pivotKeyable(){
+	string $myTransform[] = `ls -sl -type "transform"`;
+
+	for ($each in $myTransform){
+	    setAttr -k on ($each + ".rotatePivotX");
+	    setAttr -k on ($each + ".rotatePivotY");
+	    setAttr -k on ($each + ".rotatePivotZ");
+	    
+	    setAttr -k on ($each + ".rotatePivotTranslateX");
+	    setAttr -k on ($each + ".rotatePivotTranslateY");
+	    setAttr -k on ($each + ".rotatePivotTranslateZ");    
+	}
+}
+
+
+// da_MatchNormals
+
+global proc da_MatchNormals(){
+    string $myRefNormals[] = `ls -sl -tail 1`;
+    string $myTargets[] = stringArrayRemove(`ls -sl -tail 1`, `ls -sl -fl`);
+    int $numObj = size($myTargets);
+    for($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 1 -uvs 0 -col 0 -spa 0 -sm 3 -clb 1 $myRefNormals[0] $myTargets[$i];
+}
+
+
+// da_MatchUV
+
+global proc da_MatchUV(){
+    string $myRefUV[] = `ls -sl -tail 1`;
+    string $myTargets[] = stringArrayRemove(`ls -sl -tail 1`, `ls -sl -fl`);
+    int $numObj = size($myTargets);
+    for($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 0 -uvs 1 -col 0 -spa 0 -sm 3 -clb 1 $myRefUV[0] $myTargets[$i];
+}
+
+
+// da_ShowLocalAxis
+
+global proc da_ShowLocalAxis(){
+	string $mySel[] = `ls -sl`;
+	int $numObj = size($mySel);
+    for($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + ".displayLocalAxis") 1;
+}
+
+// da_HideLocalAxis
+
+global proc da_HideLocalAxis(){
+	string $mySel[] = `ls -sl`;
+	int $numObj = size($mySel);
+    for($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + ".displayLocalAxis") 0;
+}
+
+// da_FreezeDelNonDef
+
+global proc da_FreezeDelNonDef(){
+	FreezeTransformations;
+	BakeNonDefHistory;
+}
+
+//da_proceduralBevel, required SOuP
+
+global proc da_proceduralBevel(){
+    string $mySel[] = `ls -sl`;
+    hide;
+    select $mySel[0];
+    duplicate;
+    showHidden;
+    rename "PBevelMesh";
+
+    string $mySource[] = `ls -sl -typ "transform"`;
+    string $mySourceShape[] = `listRelatives -s`;
+    ResetTransformations;
+    
+    duplicate;
+    rename ($mySource[0] + "_BevelIn");
+    
+    string $myInTransform[] = `ls -sl -typ "transform"`;
+    string $myInShape[] = `listRelatives -s`;
+    
+    connectAttr -f ($mySourceShape[0] + ".outMesh") ($myInShape[0] + ".inMesh");
+    
+    python("soup().create('group');");
+    string $myGroupNode[] = `ls -sl`;
+    
+    select $myInTransform[0];
+    duplicate;
+    rename ($mySource[0] + "_BevelOut");
+    string $myOutTransform[] = `ls -sl -typ "transform"`;
+    string $myOutShape[] = `listRelatives -s`;
+    da_EnableReference;
+    
+    createNode polyBevel3;
+    string $myPolyBevelNode[] = `ls -sl`;
+    connectAttr -f ($myGroupNode[0] + ".outComponents") ($myPolyBevelNode[0] + ".inputComponents");
+    connectAttr -f ($myGroupNode[0] + ".outGeometry") ($myPolyBevelNode[0] + ".inputPolymesh");
+    connectAttr -f ($myPolyBevelNode[0] + ".output") ($myOutShape[0] + ".inMesh");
+    
+    setAttr ($myGroupNode[0] + ".componentType") 1;
+    setAttr ($myGroupNode[0] + ".operation") 3;
+    
+    setAttr ($myPolyBevelNode[0] + ".subdivideNgons") 1;
+    setAttr ($myPolyBevelNode[0] + ".mergeVertices") 1;
+    setAttr ($myPolyBevelNode[0] + ".segments") 2;
+    setAttr ($myPolyBevelNode[0] + ".offsetAsFraction") 1;
+    setAttr ($myPolyBevelNode[0] + ".fraction") 0.1;
+   
+    setAttr ($myInShape[0] + ".intermediateObject") 1;
+    
+    select $mySource[0];
+    hide;
+
+    python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
+    select $myOutTransform[0];
+    print " ";
+    inViewMessage -pos midCenterTop -msg "To complete Procedural Bevel operation click select button" -f;
+}
+
+global proc da_retrievePBGroupNode(){
+	changeSelectMode -object;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	python("editGroup_SOuP().main('"+$myGroupNode[0]+".initialComponents')");
+	inViewMessage -pos midCenterTop -msg "To complete Procedural Bevel operation click select button" -fade;
+}
+
+global proc da_retrievePBSourceMesh(){
+	changeSelectMode -object;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $mySourceObj[] = `listConnections -s 1 -d 0`;
+	select $mySourceObj[0];
+	ShowSelectedObjects;
+	inViewMessage -pos midCenterTop -msg "Move original mesh for continue modeling" -fade;
+}
+
+global proc da_unlockPBFinalMesh(){
+	changeSelectMode -object;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	string $myPolyBevel3[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel3[0];
+	string $myFinalObj[] = `listConnections -s 0 -d 1`;
+	select $myFinalObj[0];
+	da_DisableReference;
+	inViewMessage -pos midCenterTop -msg "Final mesh is unlocked" -fade;
+}
+
+global proc da_lockPBFinalMesh(){
+	changeSelectMode -object;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	string $myPolyBevel3[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel3[0];
+	string $myFinalObj[] = `listConnections -s 0 -d 1`;
+	select $myFinalObj[0];
+	da_EnableReference;
+	inViewMessage -pos midCenterTop -msg "Final mesh is locked" -fade;
+	select -d;
+}
+
+global proc da_retrievePBBevelNode(){
+	changeSelectMode -object;
+	string $myShape[] = `listRelatives -s`;
+	select $myShape[0];
+	string $myBevelObj[] = `listConnections -s 1 -d 0`;
+	select $myBevelObj[0];
+	string $myBevelObjShape[] = `listRelatives -s`;
+	select $myBevelObjShape[0];
+	string $myGroupNode[] = `listConnections -s 0 -d 1 -t "group"`;
+	select $myGroupNode[0];
+	string $myPolyBevel3[] = `listConnections -s 0 -d 1 -t "polyBevel3"`;
+	select $myPolyBevel3[0];
+	ShowManipulators;
+}
