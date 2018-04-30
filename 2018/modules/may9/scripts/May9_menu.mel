@@ -1,0 +1,40 @@
+global proc da_May9Menu()
+{
+    global string $menuMain;
+        if (`menu -exists $menuMain`)
+           deleteUI $menuMain;
+    string $menuName = "May9 Pro";
+ 
+    global string $gMainWindow;
+    $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
+ 
+    menuItem -p $menuMain -l "Toggle Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
+    menuItem -p $menuMain -l "Toggle Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
+    menuItem -p $menuMain -l "Lock Selected" -c "da_Lock" -i "lockGeneric.png";
+    menuItem -p $menuMain -l "Unlock Selected" -c "da_UnLock" -i "unlockGeneric.png";
+    menuItem -d 1 -l "Layouts";
+    menuItem -p $menuMain -l "Perspective/Four View" -c "da_LayoutPersp" -i "fourViewLayout.png";
+    menuItem -p $menuMain -l "Node Editor" -c "da_LayoutNodeEditor" -i "perspHypergraphLayout.png";
+    menuItem -p $menuMain -l "UV Texture Editor" -c "da_LayoutUvTextureEditor" -i "da_UV_Layout.png";
+    menuItem -p $menuMain -l "Graph Editor" -c "da_LayoutGraphEditor" -i "perspGraphLayout.png";
+    menuItem -p $menuMain -l "Shape/Pose Editor" -c "da_LayoutShapeEditor" -i "da_ShapeEditor_Layout.png";
+    menuItem -p $menuMain -l "Reference Editor" -c "da_LayoutReferenceEditor" -i "da_ReferenceEditor_Layout.png";
+    menuItem -p $menuMain -l "Component Editor" -c "da_LayoutComponentEditor" -i "da_ComponentEditor_Layout.png";
+    menuItem -p $menuMain -l "Relationship Editor" -c "da_LayoutRelationshipEditor" -i "perspRelationshipEditorLayout.png";
+    menuItem -p $menuMain -l "Dynamic Relationship" -c "da_LayoutDynamicRelationshipEditor" -i "da_DynamicRelationship_Layout.png";
+    menuItem -p $menuMain -l "Hypershade" -c "da_LayoutHypershade" -i "da_Hypershade_Layout.png";
+    menuItem -p $menuMain -l "Edit Layouts..." -c "PanelPreferencesWindow" -i "editLayout.png";
+    menuItem -d 1 -l "Reset";
+    menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "out_camera.png";
+    menuItem -p $menuMain -l "Render Settings" -c "da_ResetUI;\nunifiedRenderGlobalsWindow" -i "rvRenderGlobals.png";
+    menuItem -p $menuMain -l "Viewport" -c "ogs -r -rlt" -i "singlePerspLayout.png";
+    menuItem -p $menuMain -l "Context MM" -c "da_MMtoKey_clean" -i "deleteClip.png";
+    menuItem -p $menuMain -l "Scene to Last Save" -c "da_RevertToSave" -i "loadPreset.png";
+    menuItem -d 1 -l "Built in Plug-ins";
+    menuItem -p $menuMain -l "Context Connector" -c "if (`pluginInfo -q -l contextConnector`){unloadPlugin contextConnector;pluginInfo -edit -autoload false contextConnector;} else {loadPlugin contextConnector;pluginInfo -edit -autoload true contextConnector;}" -cb (`pluginInfo -q -l contextConnector`);
+    menuItem -p $menuMain -l "Massive Attribute Modifier" -c "if (`pluginInfo -q -l mass_attr`){unloadPlugin mass_attr;pluginInfo -edit -autoload false mass_attr;} else {loadPlugin mass_attr;pluginInfo -edit -autoload true mass_attr;}" -cb (`pluginInfo -q -l mass_attr`);
+    menuItem -d 1 -l "May9 Pro";
+    menuItem -p $menuMain -l "About" -c "da_AboutMay9" -i "menuIconHelp.png";
+    menuItem -p $menuMain -l "Home Page" -c "showHelp -absolute \"https://www.highend3d.com/maya/plugin/may9-pro-3-0-alternative-user-experience-for-maya\";" -i "menuIconHelp.png";
+    menuItem -p $menuMain -l "User Guide" -c "showHelp -absolute \"https://github.com/DavideAlidosi/May9/raw/Plug-in_release/May9%20Pro%20User%20Guide.pdf\";" -i "menuIconHelp.png";
+}

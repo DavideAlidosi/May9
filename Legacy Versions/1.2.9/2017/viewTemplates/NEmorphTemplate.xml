@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<using package='std'/>
+	<template name='NEmorph'>
+		<attribute name='outputGeometry' type='maya.geometry'>
+			<label>Output Geometry</label>
+		</attribute>
+		<attribute name='input' type='maya.TdataCompound'>
+			<label>Input</label>
+		</attribute>
+		<attribute name='weightList' type='maya.TdataCompound'>
+			<label>Weight List</label>
+		</attribute>
+		<attribute name='controlWeight' type='maya.float'>
+			<label>Control Weight</label>
+		</attribute>
+		<attribute name='targets' type='maya.TdataCompound'>
+			<label>Targets</label>
+		</attribute>
+		<attribute name='modifiers' type='maya.TdataCompound'>
+			<label>Modifiers</label>
+		</attribute>
+		<attribute name='textures' type='maya.TdataCompound'>
+			<label>Textures</label>
+		</attribute>
+		<attribute name='inTime' type='maya.double'>
+			<label>In Time</label>
+		</attribute>
+	</template>
+	<view name='NEDefault' template='NEmorph'>
+		<property name='outputGeometry'/>
+		<property name='input'/>
+		<property name='weightList'/>
+		<property name='controlWeight'/>
+		<property name='targets'/>
+		<property name='modifiers'/>
+		<property name='textures'/>
+		<property name='inTime'/>
+	</view>
+</templates>

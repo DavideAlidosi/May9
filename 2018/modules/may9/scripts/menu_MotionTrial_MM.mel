@@ -1,0 +1,51 @@
+menuItem
+-l "Pinned"
+-c "setAttr \"motionTrail1HandleShape.pinned\" (!`getAttr \"motionTrail1HandleShape.pinned\"`);"
+-cb (`getAttr "motionTrail1HandleShape.pinned"`)
+-rp "N"
+-stp "mel";
+
+menuItem
+-l "Timing Beads Out"
+-c "setAttr \"motionTrail1HandleShape.showOutBead\" (!`getAttr \"motionTrail1HandleShape.showOutBead\"`);"
+-cb (`getAttr "motionTrail1HandleShape.showOutBead"`)
+-rp "NE"
+-stp "mel";
+
+menuItem
+-l "Timing Beads In"
+-c "setAttr \"motionTrail1HandleShape.showInBead\" (!`getAttr \"motionTrail1HandleShape.showInBead\"`);"
+-cb (`getAttr "motionTrail1HandleShape.showInBead"`)
+-rp "NW"
+-stp "mel";
+
+menuItem
+-l "Modify Keys"
+-c "setAttr \"motionTrail1HandleShape.modifyKeys\" (!`getAttr \"motionTrail1HandleShape.modifyKeys\"`);"
+-cb (`getAttr "motionTrail1HandleShape.modifyKeys"`)
+-rp "W"
+-stp "mel";
+
+menuItem
+-l "Show Frame #s"
+-c "setAttr \"motionTrail1HandleShape.showFrames\" (!`getAttr \"motionTrail1HandleShape.showFrames\"`);"
+-cb (`getAttr "motionTrail1HandleShape.showFrames"`)
+-rp "E"
+-stp "mel";
+
+menuItem
+-l "Show Out Tangent"
+-c "setAttr \"motionTrail1HandleShape.showOutTangent\" (!`getAttr \"motionTrail1HandleShape.showOutTangent\"`);"
+-cb (`getAttr "motionTrail1HandleShape.showOutTangent"`)
+-rp "SE"
+-stp "mel";
+
+menuItem
+-l "Show In Tangent"
+-c "setAttr \"motionTrail1HandleShape.showInTangent\" (!`getAttr \"motionTrail1HandleShape.showInTangent\"`);"
+-cb (`getAttr "motionTrail1HandleShape.showInTangent"`)
+-rp "SW"
+-stp "mel";
+
+setParent -m ..;
+

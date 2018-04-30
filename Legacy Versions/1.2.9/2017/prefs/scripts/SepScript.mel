@@ -1,0 +1,52 @@
+// Poly Separate
+// Copyright (C) 2012 Basenji Games
+// Licensed under the MIT license
+
+global proc sepMat(string $object){
+string $shadingGroups[] = getSGsFromShape($object);
+string $ParentName = ($object + "_lightMap_Group");
+group -empty -n $ParentName;
+
+	for ($i = 0; $i < size($shadingGroups) ; $i = $i + 1)
+	{
+		string $theMaterial[] = `listConnections -d off -s on $shadingGroups[$i]`;
+		string $clone = ($object + "_" + $theMaterial[0]);
+		duplicate -n $clone  $object;
+		parent $clone $ParentName;
+		
+			string $material[] = `listConnections -d off -s on $shadingGroups[$i]`;
+			select $clone; ConvertSelectionToFaces;
+			string $tempset = `sets`;
+			string $tempgrps[] = `listConnections -type shadingEngine $material[0]`;
+			select `sets -int $tempset $tempgrps[0]`;
+			
+			
+			InvertSelection;
+			delete;
+	}
+	delete $object;
+}
+
+
+
+global proc string[] getSGsFromShape( string $shape )
+{
+string $myShapeNode[] = `listRelatives -children -shapes $shape`;
+  string $shadingEngines[];
+
+  if ( `objExists $shape` )
+  {
+    string $dest[] = `listConnections -destination true -source false
+      -plugs false -type "shadingEngine" $myShapeNode[0]`;
+
+    if ( size( $dest ) )
+    {
+      string $select[] = `ls -sl`;
+      select -r -ne $dest;
+      $shadingEngines = `ls -sl`;
+      select -r $select;
+    }
+  }
+
+  return $shadingEngines;
+}

@@ -1,4 +1,4 @@
-May9 Pro 2.0.7 - A new user experience for Autodesk Maya 2017 and 2018
+May9 Pro 3.1.0 - A new user experience for Autodesk Maya 2018
 
 
 General info
@@ -12,8 +12,9 @@ For more information about installation please read the included user guide
 
 
 Release Note
-- Tested and develop on Maya 2018 and Maya 2017 Update 4 plus MtoA 2.1.0
-- May9 Workspaces do not autosave, so is needed manually save the workspace changes
+- May9 Pro 3.0 and up are relase only as plug-in
+- May9 Pro 3.0 is tested and develop on Maya 2018.3
+- May9 Pro Workspaces do not autosave, so manually save of the workspace is needed
 
 
 Exclusive script
@@ -23,7 +24,6 @@ Exclusive script
 - da_BooleanFullIntersect: this script make a full intersect, so this execute a mesh subtraction but maintain subtracted part as separate object
 - da_PlaneCutter: this script cut a mesh by using a flat mesh, this can be useful for simulate surface cracks
 - da_AutoBevel: this script analyse the angle between faces and try to add a Bevel node only on needed edges
-- da_SoftSelectionRig: this script create a rig on a soft selection deformer, to make it animable
 - da_ClothAsDeformer: this script set up the current mesh to be deformed by nCloth solver, this can be useful for simulate character selfcollision skin or muscle dynamics
 - da_nParticleConverter: this script add the ability to convert particle to a specific type after their creation
 - da_perspToggle: this script convert the current persp view to the closest ortho, and vice versa
@@ -39,14 +39,14 @@ Exclusive script
 - da_FacesFollicles: this script creates a follicle in the centre of selected faces
 - da_Compass: this script converts Euler angle into a XYZ vector, for drive wind direction in Nucleus and Air Filed
 - da_CombineCurves: this script combines curves in a single transform
+- da_SepareCurves: this script separate combined curves
 
 
-Version 2.0 highlight
-- Modular structure, work over existing configuration
-- Support to Maya 2018
-- New Auto Bevel script
-- General polish and performance improvement
-- Comprehensive user guide
+Version 3.0 highlight
+- Plugin structure, work over existing configuration
+- Removed almost all custom preferences
+- Improved documentation
+- Overral improvements
 
 
 Useful links
@@ -68,3 +68,15 @@ Adaptaded as plug-in and ported to Pyside2 by Davide Alidosi
 Massive Attribute Editor is licensed under Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)
 Originally Copyright (c) by Mehdi Louala (https://www.highend3d.com/maya/script/context-connector-for-maya)
 Adaptaded as plug-in by Davide Alidosi
+
+Bool is licensed under custom EULA (https://www.mainframe.co.uk/s/Bool-EULA.pdf)
+Copyright (c) Mainframe North
+
+ProSets is licensed under custom EULA (https://www.mainframe.co.uk/s/ProSets-EULA.pdf)
+Copyright (c) Mainframe North
+
+ngSkinTools is licensed under custom license (https://www.ngskintools.com/license/)
+Copyright (c) Viktoras Makauskas
+
+SOuP is licensed under custom license
+Copyright (c) Peter Shipkov

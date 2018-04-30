@@ -1,0 +1,45 @@
+
+menuItem
+-l "MASH Editor" 
+-c "MASHOutliner;" 
+-rp "N" 
+-i "MASH_Editor.png";
+
+menuItem
+-ob 1;
+
+menuItem
+-l "Gravity" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_MashBulletGravity" 
+-rp "N" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_MashBulletNoGravity" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Use Ground" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_MashBulletGround" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_MashBulletNoGround" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+setParent -m ..;
+

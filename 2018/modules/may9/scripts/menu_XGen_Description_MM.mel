@@ -1,0 +1,14 @@
+
+menuItem
+-l "Convert to Interactive Groom" 
+-c "python(\"xgui.createXgIgConvertToInteractiveGroomWindow()\")" 
+-rp "E" 
+-i "xgConvertToIG.png";
+
+menuItem
+-l "XGen Editor" 
+-c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
+-i "xgDEditor.png";
+
+setParent -m ..;
+

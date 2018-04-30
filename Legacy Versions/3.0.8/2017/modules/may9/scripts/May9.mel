@@ -1,0 +1,15 @@
+// Load main Plug-ins
+loadPlugin May9_Pro;
+loadPlugin MMtoKey;
+
+// Auto load main Plug-ins
+pluginInfo -edit -autoload true May9_Pro;
+pluginInfo -edit -autoload true MMtoKey;
+
+// Set May9 Pro workspace if un-installer is used
+if (`optionVar -ex May9ActivationCheck` == 1){
+	workspaceLayoutManager -setCurrent "May9 Pro";
+}
+
+// Install confimation
+inViewMessage -pos midCenterTop -msg "May9 Pro is installed and ready" -fade;

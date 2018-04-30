@@ -1,0 +1,14 @@
+commonReflectionOptionsPopup();
+
+commonSelectOptionsPopup();
+
+menuItem -itl 1 
+-label "Auto Unwrap"
+-command "da_AutoUnwrap"
+-radialPosition "E"
+-image "polyAutoUnwrap.png"
+-sourceType "mel"
+menuEditorMenuItem1;
+
+setParent -m ..;
+

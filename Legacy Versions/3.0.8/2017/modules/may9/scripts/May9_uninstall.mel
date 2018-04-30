@@ -1,0 +1,13 @@
+// Un-load main Plug-ins
+unloadPlugin May9_Pro;
+unloadPlugin MMtoKey;
+
+// Remove auto load main Plug-ins
+pluginInfo -edit -autoload false May9_Pro;
+pluginInfo -edit -autoload false MMtoKey;
+
+// Set Maya Classic Workspace
+workspaceLayoutManager -setCurrent "Maya Classic";
+
+// Un-install confirmation
+inViewMessage -pos midCenterTop -msg "May9 Pro un-installed" -fade;

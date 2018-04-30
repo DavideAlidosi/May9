@@ -1,0 +1,44 @@
+string $currentCtx = `currentCtx`;
+int $reflectionCheck = `artPuttyCtx -q -rn $currentCtx`;
+int $wfCheck = `artPuttyCtx -q -showactive $currentCtx`;
+int $autoSmoothCheck = `artPuttyCtx -q -autosmooth $currentCtx`;
+string $reflectionDirection = `artPuttyCtx -q -ra $currentCtx`;
+
+menuItem -itl 1 
+-l "X Axis" 
+-c "artPuttyCtx -e -reflection  true `currentCtx`;\nartPuttyCtx -e -ra \"x\" `currentCtx`;" 
+-cb ($reflectionDirection == "x") 
+-rp "SW";
+
+menuItem -itl 1 
+-l "Y Axis" 
+-c "artPuttyCtx -e -reflection  true `currentCtx`;\nartPuttyCtx -e -ra \"y\" `currentCtx`;" 
+-cb ($reflectionDirection == "y") 
+-rp "S";
+
+menuItem -itl 1 
+-l "Z Axis" 
+-c "artPuttyCtx -e -reflection  true `currentCtx`;\nartPuttyCtx -e -ra \"z\" `currentCtx`;" 
+-cb ($reflectionDirection == "z") 
+-rp "SE";
+
+menuItem -itl 1 
+-l "Symmetry" 
+-c "if ($reflectionCheck == 1) artPuttyCtx -e -reflection  false `currentCtx`; else artPuttyCtx -e -reflection  true `currentCtx`;" 
+-cb $reflectionCheck 
+-rp "E";
+
+menuItem -itl 1 
+-l "Wireframe" 
+-c "if ($wfCheck == 1) artPuttyCtx -e -showactive false `currentCtx`; else artPuttyCtx -e -showactive true `currentCtx`;" 
+-cb $wfCheck 
+-rp "W";
+
+menuItem -itl 1 
+-l "Auto Smooth" 
+-c "if ($autoSmoothCheck == 1) artPuttyCtx -e -autosmooth false `currentCtx`; else artPuttyCtx -e -autosmooth true `currentCtx`;" 
+-cb $autoSmoothCheck 
+-rp "N";
+
+setParent -m ..;
+

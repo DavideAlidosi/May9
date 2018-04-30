@@ -1,3 +1,113 @@
+3.1.0
+- Add May9 Pro drop-down menu
+- Add support to Isolate Select
+- Add nHair support to NURBS MMs
+- Exposed legacy curves based text
+- Exposed History icons in Status line
+- General refactoring
+- Improved modularity structure
+- Improved Hypershade layout
+- Improved Cache support
+- Improved design of All_MM
+- Improved UV workflow
+- Improved contextual Marking Menus performace
+- Improved Dynamic Fields support
+- Update MMtoKey to 1.2.2
+- Removed Maya 2017 support
+- Minor improve to some Marking Menu
+
+3.0.8 (2018/03/23)
+- Add support to Maya 2018 new primitive
+- Assign Reset Context MM to CTRL + SHIFT + ALT + Q
+- Fix wrong Reset Transformation command in All_MM
+- Minor improve to some Marking Menu
+
+3.0.7 (2018/03/19)
+- Fix MM suck on unsupported windows that use Null_MM (thanks to Andrey Menshikov)
+- Assig Select Hierarchy on End and SHIFT + ALT + H
+- Improved Reset Transform script
+- Minor improve to some Marking Menu
+
+3.0.6 (2018/03/18)
+- Add support to Japanese and Simplified Chinese languages
+- Add support to Namespace editor
+- Update MMtoKey to 1.2.1
+- Improved UV mapping support
+- Now Reset Transformations in mapped on Home button too
+- Fix bug that prevent load of Outline_MM if more that one outliner are opened
+- Fix critical bug that make Maya crash if Lock or Unlock command is selected under All_MM
+- Remove Smooth Wireframe when Anti-alias is enable by MayaWindow_MM
+- Minor improve to some Marking Menu
+
+3.0.5 (2018/03/05)
+- Add Flood support to Sculpt Mesh MM (Maya 2018 Only)
+- Add custom color gradient when the function is enable by Paint Skin Weight MM
+- Add support to Edit Component List (required SOuP)
+- Add support to Mesh Fitting (required SOuP)
+- Assign Match Pivot to CTRL + SHIFT + Return
+- Assign Tag as Controller to CTRL + SHIFT + T
+- Assign Parent Controller to CTRL + SHIFT + P
+- Exposed da_Compass under All_MM
+- Improved da_Compass, now is based on ProductVerctor node and have a clean design
+- Now CTRL + Return preserve deformable history
+- Update SOuP support to 2018-03-03
+- Remove Procedural Bevel script, due to new Edit Components List tool
+- Fix rare bug on contextual MM when toggle NURBS in component mode
+
+3.0.4 (2018/02/21)
+- Add Match UV script
+- Add Match Normal script
+- Improved UV workflow
+- Improved Joint support
+- Fix Maya 2017 critical bug that prevent installation
+- Minor improve to some Marking Menu
+
+3.0.3 (2018/02/18)
+- Add support to Vertex Animation Cache
+- Add Delete Non-Deformer History to All_MM
+- Add Shelf Tabs to MayaWindow_MM
+- Add support to ProSets (sold separately for Maya 2018 only)
+- Remove Anti-Alias multisample preference
+- Fix local space on da_ProcedutalBevel
+
+3.0.2 (2018/02/08)
+- Use font style to define MM type:
+	- Normal, contextual MMs
+	- Bold, ALL MM
+	- Italic, Tools MMs
+- Improve skin support
+- Clean MM code to match Maya 2018 command-line flags 
+
+3.0.1 (2018/02/05)
+- Add Pivot Keyable script
+- Add support for Channel Control
+- Add Procedural Bevel script (required SOuP)
+- Improved muscle support
+- Assign Interactive playback to CTRL + ALT + Space
+- Remove Interactive playback from Time Slider
+- Now Anti-Alias multisample is set to 4
+- Now Shelf is visible by default in May9 Pro workspace
+- Fix All_MM HUD support
+- Minor fixes and improvements
+
+3.0.0 (2018/01/25)
+- First plug-in release
+- Add Separate curves script
+- Add toggle to maximize the under pointer modelPanel when the same layout hotkey is pressed for two or more times
+- Add support to Hypershade and assigned to hotkey ALT + 0
+- Add support to Motion Trial
+- Add support to SOuP (sold separately)
+- Edit and Graph Shader Based on Selection is now on CTRL + ALT + 0
+- Now Shape editor and Pose editor are vertically stacked into a single layout
+- Now Reference layout is mappend on ALT + 6
+- Removed Soft Modification Rig due to local space issues
+- Removed settings customization
+- Expose Combine Curves command
+- Minor change to May9 Pro workspace
+- Minor improve to some Marking Menu
+- Minor fixies
+- Improved documentation
+
 2.0.7 (2017/12/23)
 - Add support to Massive Attribute (Need to be activate it under Windows > Settings/Preferences > Plug-in Manager > mass_attr) and mapped on CTRL + K
 - Add support to Use Existing Material under meshes MMs
@@ -104,7 +214,7 @@
 - Now Channel Box settings are set to slow to improve modeling precision (Maya 2018 only)
 - Now Hypershade is no more support as layout editor
 - Now CTRL + ALT + R start IPR or Arnold Render View
-- Now SHIFT + T assing shader if an object is selected or open create node window if not
+- Now SHIFT + T Assign shader if an object is selected or open create node window if not
 - Now Panel tool bar is hidden
 - Now Status line is fully expanded
 - Now Highlight connection on selected is activated on Maya 2018

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<templates>
+	<using package='maya'/>
+	<using package='std'/>
+	<template name='NEpolyExtrudeEdge'>
+		<attribute name='output' type='maya.mesh'>
+			<label>Output</label>
+		</attribute>
+		<attribute name='inputPolymesh' type='maya.mesh'>
+			<label>Input Polymesh</label>
+		</attribute>
+		<attribute name='inputComponents' type='maya.componentList'>
+			<label>Input Components</label>
+		</attribute>
+		<attribute name='manipMatrix' type='maya.matrix'>
+			<label>Manip Matrix</label>
+		</attribute>
+		<attribute name='translate' type='maya.double3'>
+			<label>Translate</label>
+		</attribute>
+		<attribute name='rotate' type='maya.double3'>
+			<label>Rotate</label>
+		</attribute>
+		<attribute name='scale' type='maya.double3'>
+			<label>Scale</label>
+		</attribute>
+		<attribute name='localTranslate' type='maya.double3'>
+			<label>Local Translate</label>
+		</attribute>
+		<attribute name='localRotate' type='maya.double3'>
+			<label>Local Rotate</label>
+		</attribute>
+		<attribute name='localScale' type='maya.double3'>
+			<label>Local Scale</label>
+		</attribute>
+	</template>
+	<view name='NEDefault' template='NEpolyExtrudeEdge'>
+		<property name='output'/>
+		<property name='inputPolymesh'/>
+		<property name='inputComponents'/>
+		<property name='manipMatrix'/>
+		<property name='translate'/>
+		<property name='rotate'/>
+		<property name='scale'/>
+		<property name='localTranslate'/>
+		<property name='localRotate'/>
+		<property name='localScale'/>
+	</view>
+</templates>

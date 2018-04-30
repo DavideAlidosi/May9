@@ -1,0 +1,182 @@
+
+menuItem -itl 1 
+-l "Mirror Off" 
+-c "da_XGenBrushMangement_MirrorOff" 
+-rp "E";
+
+menuItem -itl 1 
+-l "Mirror Z" 
+-c "da_XGenBrushMangement_MirrorZ" 
+-rp "SE";
+
+menuItem -itl 1 
+-l "Mirror Y" 
+-c "da_XGenBrushMangement_MirrorY" 
+-rp "S";
+
+menuItem -itl 1 
+-l "Mirror X" 
+-c "da_XGenBrushMangement_MirrorX" 
+-rp "SW";
+
+menuItem -itl 1 
+-l "Length" 
+-c "XgmSetLengthBrushTool" 
+-rp "N" 
+-i "xgIG_length.png";
+
+menuItem -itl 1 
+-c "XgmSetLengthBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Comb" 
+-c "XgmSetCombBrushTool" 
+-rp "W" 
+-i "xgIG_comb.png";
+
+menuItem -itl 1 
+-c "XgmSetCombBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Freeze" 
+-c "XgmSetFreezeBrushTool" 
+-rp "NE" 
+-i "xgIG_freeze.png";
+
+menuItem -itl 1 
+-c "XgmSetFreezeBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Grab" 
+-c "XgmSetGrabBrushTool" 
+-rp "NW" 
+-i "xgIG_grab.png";
+
+menuItem -itl 1 
+-c "XgmSetGrabBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Mesh Collide" 
+-sm 1;
+
+menuItem -itl 1 
+-l "On" 
+-c "da_XGenBrushMangement_CollisionOn" 
+-i "rvViewingPipelineOn.png";
+
+menuItem -itl 1 
+-l "Off" 
+-c "da_XGenBrushMangement_CollisionOff" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem -itl 1 
+-l "Groom Editor" 
+-c "XgCreateIgSplineEditor" 
+-i "xgIG_editor.png";
+
+menuItem -itl 1 
+-l "separator" 
+-d 1;
+
+menuItem -itl 1 
+-l "Density" 
+-c "XgmSetDensityBrushTool" 
+-i "xgIG_density.png";
+
+menuItem -itl 1 
+-c "XgmSetDensityBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Place" 
+-c "XgmSetPlaceBrushTool" 
+-i "xgIG_place.png";
+
+menuItem -itl 1 
+-c "XgmSetPlaceBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Cut" 
+-c "XgmSetCutBrushTool" 
+-i "xgIG_cut.png";
+
+menuItem -itl 1 
+-c "XgmSetCutBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Width" 
+-c "XgmSetWidthBrushTool" 
+-i "xgIG_width.png";
+
+menuItem -itl 1 
+-c "XgmSetWidthBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Twist" 
+-c "XgmSetDirectionBrushTool" 
+-i "xgIG_twist.png";
+
+menuItem -itl 1 
+-c "XgmSetDirectionBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Smooth" 
+-c "XgmSetSmoothBrushTool" 
+-i "xgIG_smooth.png";
+
+menuItem -itl 1 
+-c "XgmSetSmoothBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Noise" 
+-c "XgmSetNoiseBrushTool" 
+-i "xgIG_noise.png";
+
+menuItem -itl 1 
+-c "XgmSetNoiseBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Clump" 
+-c "XgmSetClumpBrushTool" 
+-i "xgIG_clump.png";
+
+menuItem -itl 1 
+-c "XgmSetClumpBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "Part" 
+-c "XgmSetPartBrushTool" 
+-i "xgIG_part.png";
+
+menuItem -itl 1 
+-c "XgmSetPartBrushToolOption" 
+-ob 1;
+
+menuItem -itl 1 
+-l "separator" 
+-d 1;
+
+menuItem -itl 1 
+-l "Select" 
+-c "XgmSetSelectBrushTool" 
+-i "xgIG_select.png";
+
+menuItem -itl 1 
+-c "XgmSetSelectBrushToolOption" 
+-ob 1;
+
+setParent -m ..;
+

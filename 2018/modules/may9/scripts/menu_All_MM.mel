@@ -1,0 +1,726 @@
+int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
+    && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
+
+string $currentPanel = `getPanel -withFocus`;
+
+menuItem -bld 1 
+-l "Poly/NURBS"
+-sm 1
+-rp "N"
+-i "da_PolyCurve.png";
+
+menuItem -bld 1 
+-l "Cube"
+-c "CreatePolygonCube;"
+-rp "W"
+-i "polyCube.png";
+
+menuItem -bld 1 
+-l "Plane"
+-c "CreatePolygonPlane"
+-rp "SW"
+-i "polyMesh.png";
+
+menuItem -bld 1 
+-l "CV Curve"
+-c "CVCurveTool"
+-rp "NE"
+-i "curveCV.png";
+
+menuItem -bld 1 
+-l "Circle"
+-c "CreateNURBSCircle;"
+-rp "E"
+-i "circle.png";
+
+menuItem -bld 1 
+-l "Quad Draw"
+-c "dR_quadDrawTool;"
+-rp "N"
+-i "quadDraw_NEX32.png";
+
+menuItem -bld 1 
+-l "Create"
+-c "CreatePolygonTool;"
+-rp "NW"
+-i "polyCreateFacet.png";
+
+menuItem -bld 1 
+-l "Plane"
+-c "CreateNURBSPlane"
+-rp "SE"
+-i "plane.png";
+
+menuItem -bld 1 
+-l "Import Illustrator Curves"
+-c "CreateIllustratorCurves"
+-i "aiObject.png";
+
+menuItem -bld 1 
+-l "Curves Based Text"
+-c "CreateTextOptions"
+-i "text.png";
+
+menuItem 
+-d 1;
+
+menuItem -bld 1 
+-l "Poly Interactive Creation"
+-c "toggleCreatePolyPrimitiveAsTool"
+-cb (`optionVar -q createPolyPrimitiveAsTool`);
+
+menuItem -bld 1 
+-l "Curve Interactive Creation"
+-c "toggleCreateNurbsPrimitiveAsTool;"
+-cb (`optionVar -q createNurbsPrimitiveAsTool`);
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Rendering"
+-sm 1
+-rp "W"
+-i "render.png";
+
+menuItem -bld 1 
+-l "Batch Render"
+-c "BatchRender"
+-rp "NW"
+-i "batchRender.png";
+
+menuItem -bld 1 
+-l "Render Sequence"
+-c "RenderSequence"
+-rp "NE"
+-i "rvSequenceRender.png";
+
+menuItem -bld 1 
+-l "Color Management"
+-c "da_ToggleColorManagement" 
+-rp "S"
+-cb (`colorManagementPrefs -q -cme`) ;
+
+menuItem -bld 1 
+-l "Edit Shaders"
+-c "da_EditAndFrameShaders"
+-rp "W"
+-i "hsGraphMaterial.png";
+
+menuItem -bld 1 
+-l "Render View"
+-c "da_AiRenderView"
+-rp "SE"
+-i "RenderShelf.png";
+
+menuItem -bld 1 
+-l "Resolution Gate"
+-c "da_ToggleResolutionGate"
+-rp "SW"
+-i "ResolutionGate.png";
+
+menuItem -bld 1 
+-l "Playblast"
+-c "PlayblastWindow"
+-rp "N"
+-i "playblast.png";
+
+menuItem
+-c "PlayblastOptions"
+-ob 1;
+
+menuItem -bld 1 
+-l "StandIn"
+-sm 1
+-i "ExportStandinShelf.png";
+
+menuItem -bld 1 
+-l "Export"
+-c "da_doExportStandIn"
+-i "ExportStandinShelf.png";
+
+menuItem -bld 1 
+-l "Import"
+-c "da_CreateStandInFile"
+-i "StandinShelf.png";
+
+setParent -m ..;
+
+menuItem 
+-d 1;
+
+menuItem -bld 1 
+-l "Camera Bookmark"
+-c "da_CameraBookmark"
+-i "Bookmark.png";
+
+menuItem -bld 1 
+-l "File Path Editor"
+-c "FilePathEditor;"
+-i "folder-open.png";
+
+menuItem -bld 1 
+-l "Transfer Maps"
+-c "performSurfaceSampling 1"
+-i "UseDefaultMaterial.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Rigging"
+-sm 1
+-rp "SW"
+-i "humanIK_CharCtrl.png";
+
+menuItem -bld 1 
+-l "Create Joint"
+-c "JointTool"
+-rp "SW"
+-i "kinJoint.png";
+
+menuItem -bld 1 
+-l "Parent Constraint"
+-c "ParentConstraint"
+-rp "S"
+-i "parentConstraint.png";
+
+menuItem
+-c "ParentConstraintOptions"
+-ob 1;
+
+menuItem -bld 1 
+-l "Orient Constraint"
+-c "OrientConstraint"
+-rp "E"
+-i "orientConstraint.png";
+
+menuItem
+-c "OrientConstraintOptions"
+-ob 1;
+
+menuItem -bld 1 
+-l "Aim Constraint"
+-c "AimConstraint"
+-rp "N"
+-i "aimConstraint.png";
+
+menuItem
+-c "AimConstraintOptions"
+-ob 1;
+
+menuItem -bld 1 
+-l "Point Constraint"
+-c "PointConstraint"
+-rp "SE"
+-i "posConstraint.png";
+
+menuItem 
+-c "PointConstraintOptions"
+-ob 1;
+
+menuItem -bld 1 
+-l "IK Handle"
+-c "IKHandleTool;"
+-rp "NW"
+-i "kinHandle.png";
+
+menuItem
+-c "IKHandleToolOptions;"
+-ob 1;
+
+menuItem -bld 1 
+-l "IK Spline Handle"
+-c "IKSplineHandleTool;"
+-rp "W"
+-i "kinSplineHandle.png"
+-stp "mel";
+
+menuItem -bld 1 
+-c "IKSplineHandleToolOptions;"
+-ob 1
+-stp "mel";
+
+if (`pluginInfo -q -l contextConnector` == 1){
+menuItem -bld 1 
+-l "Context Connector"
+-c "da_ContextConnector"
+-i "out_geoConnectable.png";
+}else{
+menuItem -bld 1 
+-l "Connection Editor"
+-c "ConnectionEditor"
+-i "out_list.png";
+}
+
+if (`pluginInfo -q -l mass_attr` == 1){
+menuItem -bld 1 
+-l "Massive Attribute Modifier"
+-c "da_MassAttr"
+-i "RS_multiple_filters.png";
+}
+
+menuItem -bld 1 
+-l "Expression Editor"
+-c "ExpressionEditor"
+-i "out_expression.png";
+
+menuItem 
+-d 1;
+
+menuItem -bld 1 
+-l "Controllers"
+-sm 1
+-i "teLockUnchecked.png";
+
+menuItem -bld 1 
+-l "Tag As Controller"
+-c "TagAsController"
+-i "checkboxOn.png";
+
+menuItem -bld 1 
+-l "Parent Controller"
+-c "TagAsControllerParent"
+-i "parent.png";
+
+menuItem
+-d 1;
+
+menuItem -bld 1 
+-l "Prossimity On"
+-c "da_ControllerProssimity"
+-i "rvViewingPipelineOn.png";
+
+menuItem -bld 1 
+-l "Prossimity Off"
+-c "da_ControllerNoProssimity"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Attributes"
+-sm 1
+-i "attributes.png";
+
+menuItem -bld 1 
+-l "Channel Control"
+-c "ChannelControlEditor"
+-i "channelBox.png";
+
+menuItem
+-d 1;
+
+menuItem -bld 1 
+-l "Add"
+-c "AddAttribute"
+-i "publishAttributes.png";
+
+menuItem -bld 1 
+-l "Edit"
+-c "RenameAttribute"
+-i "setEdEditMode.png";
+
+menuItem -bld 1 
+-l "Delete"
+-c "DeleteAttribute"
+-i "unpublishAttributes.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Lights"
+-sm 1
+-rp "E"
+-i "spotlight.png";
+
+menuItem -bld 1 
+-l "Directional"
+-c "CreateDirectionalLight;"
+-rp "E"
+-i "directionallight.png";
+
+menuItem -bld 1 
+-l "Spot"
+-c "CreateSpotLight;"
+-rp "SE"
+-i "spotlight.png";
+
+menuItem -bld 1 
+-l "Point"
+-c "CreatePointLight;"
+-rp "SW"
+-i "pointlight.png";
+
+menuItem -bld 1 
+-l "Area"
+-c "CreateAreaLight"
+-rp "NE"
+-i "AreaLightShelf.png";
+
+menuItem -bld 1 
+-l "SkyDome"
+-c "da_AiSkyDome;PickWalkUp"
+-rp "NW"
+-i "SkydomeLightShelf.png";
+
+menuItem -bld 1 
+-l "Photometric"
+-c "da_AiPhotometric;PickWalkUp"
+-rp "S"
+-i "PhotometricLightShelf.png";
+
+menuItem -bld 1 
+-l "Portal"
+-c "da_AiLightPortal"
+-rp "N"
+-i "LightPortalShelf.png";
+
+menuItem -bld 1 
+-l "Light Editor"
+-c "da_LightList"
+-i "light_manager.png";
+
+menuItem -bld 1 
+-l "Light Linking"
+-c "LightCentricLightLinkingEditor"
+-i "out_defaultLightList.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Objects"
+-sm 1
+-rp "NE"
+-i "posEmitter.png";
+
+menuItem -bld 1 
+-l "Camera"
+-c "CreateCameraOnly"
+-rp "N"
+-i "Camera.png";
+
+menuItem -bld 1 
+-l "Locator"
+-c "CreateLocator"
+-rp "NE"
+-i "out_locator.png";
+
+menuItem -bld 1 
+-l "Fluid Container"
+-c "Create3DContainer"
+-rp "E"
+-i "fluidCreate3D.png";
+
+menuItem -bld 1 
+-l "Arnold Volume"
+-c "da_AiVolume"
+-i "VolumeShelf.png"
+-rp "SE";
+
+menuItem -bld 1 
+-l "Paint Effects"
+-c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-rp "W"
+-i "userPaint.png";
+
+menuItem
+-c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
+-ob 1;
+
+menuItem -bld 1 
+-l "Compass"
+-c "da_Compass" 
+-rp "NW" 
+-i "out_implicitSphere.png";
+
+menuItem -bld 1 
+-l "nParticle Emitter"
+-c "NCreateEmitter;"
+-rp "S"
+-i "posEmitter.png";
+
+menuItem -bld 1 
+-l "nParticle Tool"
+-c "NParticleTool"
+-i "particle.png";
+
+menuItem
+-c "NParticleToolOptions"
+-ob 1;
+
+menuItem -bld 1 
+-l "Particle Style"
+-sm 1
+-i "out_particle.png";
+
+menuItem -bld 1 
+-l "Points"
+-c "optionVar -stringValue NParticleStyle \"Points\";"
+-i "nPartPoints.png";
+
+menuItem -bld 1 
+-l "Balls"
+-c "optionVar -stringValue NParticleStyle \"Balls\";"
+-i "nPartBalls.png";
+
+menuItem -bld 1 
+-l "Cloud"
+-c "optionVar -stringValue NParticleStyle \"Cloud\";"
+-i "nPartCloud.png";
+
+menuItem -bld 1 
+-l "ThickCloud"
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-i "nPartThickCloud.png";
+
+menuItem -bld 1 
+-l "Water"
+-c "optionVar -stringValue NParticleStyle \"Water\";"
+-i "nPartWater.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Animation"
+-sm 1
+-rp "NW"
+-i "out_animCurveTA.png";
+
+menuItem -bld 1 
+-l "Add Motion Trail"
+-c "CreateMotionTrail;"
+-rp "S"
+-i "motionTrail.png";
+
+menuItem
+-c "CreateMotionTrailOptions;"
+-ob 1;
+
+menuItem -bld 1 
+-l "Mouse Tracker"
+-c "da_MouseTrack"
+-rp "N"
+-i "aselect.png";
+
+menuItem -bld 1 
+-l "Flow Path Object"
+-c "FlowPathObjectOptions"
+-rp "SW"
+-i "flowPathObj.png";
+
+menuItem -bld 1 
+-l "Grease Pencil"
+-c "GreasePencilTool"
+-rp "NE"
+-i "GreasePencil.png";
+
+menuItem -bld 1 
+-l "Set Motion Path Key"
+-c "SetKeyPath"
+-rp "NW"
+-i "motionPathKey.png";
+
+menuItem -bld 1 
+-l "Attach To Motion Path"
+-c "AttachToPathOptions"
+-rp "W"
+-i "motionPath.png";
+
+menuItem -bld 1 
+-l "Bake Animation"
+-c "BakeSimulationOptions"
+-rp "E"
+-i "bakeAnimation.png";
+
+menuItem -bld 1 
+-l "Play Max Real-time"
+-c "da_maxPlaybackSpeedToggle"
+-cb (`playbackOptions -q -maxPlaybackSpeed`);
+
+menuItem
+-d 1;
+
+menuItem -bld 1 
+-l "Create Turntable"
+-c "AnimationTurntableOptions"
+-i "animTurntable.png";
+
+menuItem -bld 1 
+-l "Set Driven Key"
+-c "SetDrivenKeyOptions"
+-i "setDrivenKeyframe.png";
+
+menuItem -bld 1 
+-l "Make Pivot Keyable"
+-c "da_pivotKeyable"
+-i "teSetKeyframe.png";
+
+menuItem -bld 1 
+-l "MASH Editor"
+-c "MASHOutliner"
+-i "MASH_Editor.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Scene"
+-sm 1
+-rp "SE"
+-i "CameraAE.png";
+
+menuItem -bld 1 
+-l "HUD Info"
+-c "da_ToggleHUD"
+-rp "SE"
+-cb (true == $HUDCheck);
+
+menuItem -bld 1 
+-l "Optimize Scene Size" 
+-c "OptimizeSceneOptions"
+-i "sequenceCompress.png" 
+-rp "S";
+
+menuItem -bld 1 
+-l "Select Hierarchy"
+-c "SelectHierarchy"
+-rp "N"
+-i "selectByHierarchy.png";
+
+menuItem 
+-l "Reset Persp Camera"
+-c "da_ClearPersp;\nviewSet -h"
+-rp "N"
+-i "hyperShadeResetCameraView.png";
+
+menuItem -bld 1 
+-l "Select Camera"
+-c "da_SelectCamera"
+-rp "NE"
+-i "Camera.png";
+
+menuItem -bld 1 
+-l "Select None"
+-c "SelectNone" 
+-rp "W"
+-i "hotkeyFieldClear.png";
+
+menuItem -bld 1 
+-l "Select All"
+-c "SelectAll" 
+-rp "E"
+-i "aselect.png";
+
+menuItem -bld 1 
+-l "Distance Tool"
+-c "DistanceTool"
+-rp "SW"
+-i "distanceDim.png";
+
+menuItem -bld 1 
+-l "Profiler"
+-c "ProfilerTool"
+-i "out_timeEditorTrack.png";
+
+menuItem -bld 1 
+-l "Evaluation Toolkit"
+-c "EvaluationToolkit"
+-i "polyColorSetEditor.png";
+
+menuItem -bld 1 
+-l "Namespace Editor"
+-c "NamespaceEditor"
+-i "QR_rename.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Transform"
+-sm 1
+-rp "S"
+-i "HIKCustomRigToolTranslate.png";
+
+menuItem -bld 1 
+-l "Match Pivot"
+-c "MatchPivots"
+-rp "S"
+-i "pickPivotComp.png";
+
+menuItem -bld 1 
+-l "Match Transforms"
+-c "MatchTransform"
+-rp "SW"
+-i "move_M.png";
+
+menuItem -bld 1 
+-l "Align Tool"
+-c "setToolTo alignToolCtx"
+-rp "SE"
+-i "alignTool.png";
+
+menuItem -bld 1 
+-l "Snap Together Tool"
+-c "setToolTo snapTogetherToolCtx"
+-rp "E"
+-i "snapTogetherTool.png";
+
+menuItem -bld 1 
+-l "Freeze Transforms"
+-c "FreezeTransformations" 
+-rp "NW"
+-i "FreezeTransform.png";
+
+menuItem
+-c "FreezeTransformationsOptions"
+-ob 1;
+
+menuItem -bld 1 
+-l "Center Pivot"
+-c "CenterPivot" 
+-rp "NE"
+-i "CenterPivot.png";
+
+menuItem -bld 1 
+-l "Reset Transforms"
+-c "da_ResetTransform"
+-rp "W"
+-i "out_buttonManip.png";
+
+menuItem -bld 1 
+-l "Duplicate Special"
+-c "DuplicateSpecialOptions" 
+-i "da_duplicate.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+if (`gmatch $currentPanel "modelPanel*"`){
+menuItem -bld 1
+-l "Isolate Select" 
+-c "ToggleIsolateSelect" 
+-cb (`isolateSelect -q -state $currentPanel`);
+
+menuItem 
+-d 1;
+}
+
+menuItem -bld 1 
+-l "Set Project"
+-c "SetProject"
+-i "folder-closed.png";
+
+menuItem -bld 1 
+-l "Project Window"
+-c "ProjectWindow"
+-i "folder-new.png";
+
+menuItem -bld 1 
+-l "Content Browser"
+-c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");"
+-i "folder-open.png";
+
+setParent -m ..;
+

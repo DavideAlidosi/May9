@@ -1,0 +1,80 @@
+menuItem
+-l "Non-weighted Tangents" 
+-c "doKeyTangent \"-edit -weightedTangents false\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+-rp "W";
+
+menuItem
+-l "Weighted Tangents" 
+-c "doKeyTangent \"-edit -weightedTangents true\" graphEditor1GraphEd \"bufferCurve useSmoothness usePin\";" 
+-rp "E";
+
+menuItem
+-l "Insert Keyframe" 
+-c "da_InsertKeyFrame" 
+-rp "N" 
+-i "keyIntoclip.png";
+
+menuItem
+-l "Delete Static Channels" 
+-c "DeleteStaticChannels" 
+-rp "S" 
+-i "deleteGeneric.png";
+
+menuItem
+-c "DeleteStaticChannelsOptions" 
+-ob 1;
+
+menuItem
+-l "Lock Channel" 
+-c "GraphEditorLockChannel" 
+-rp "SE" 
+-i "nodeGrapherLocked.png";
+
+menuItem
+-l "Unlock Channel" 
+-c "GraphEditorUnlockChannel;" 
+-rp "SW" 
+-i "nodeGrapherUnlocked.png";
+
+menuItem
+-l "Mute Channel" 
+-c "doMuteChannel graphEditor1FromOutliner -true;" 
+-rp "NE" 
+-i "muted.png";
+
+menuItem
+-l "Unmute Channel" 
+-c "doMuteChannel graphEditor1FromOutliner -false;" 
+-rp "NW" 
+-i "teMuteOff.png";
+
+menuItem
+-l "Set Driven Key" 
+-c "SetDrivenKeyOptions" 
+-i "setDrivenKeyframe.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Simplify Curves" 
+-c "performSimplify 3 graphEditor1GraphEd;" 
+-i "da_simplifyCurve.png";
+
+menuItem
+-c "performSimplify 4 graphEditor1GraphEd;" 
+-ob 1;
+
+menuItem
+-l "Select Curve" 
+-c "selectType -animCurve (!`selectType -q -animCurve`)" 
+-cb (`selectType -q -animCurve`);
+
+menuItem
+-l "Pre-Select Highlight" 
+-c "animCurveEditor -e -psh (!`animCurveEditor -q -psh graphEditor1GraphEd`) graphEditor1GraphEd" 
+-cb (`animCurveEditor -q -psh graphEditor1GraphEd`);
+
+setParent -m ..;
+
