@@ -20,7 +20,7 @@ if ( catchQuiet( `python( "import boss.BossEditor as be" )` ) )
 	print "Please check Bifrost installation";
 
 // First run May9 procedure
-if (`optionVar -q "May9ActivationCheck"` == 0){
+if (`optionVar -q "May9ActivationCheck"` < 31){
     //Source userPrefs only at May9 initialization
     source May9_userPrefs.mel;
 
@@ -31,7 +31,7 @@ if (`optionVar -q "May9ActivationCheck"` == 0){
 	global int $myLayout = 0;
 
 	// Define May9 installation status 
-	optionVar -iv May9ActivationCheck 1;
+	optionVar -iv May9ActivationCheck 31;
 }
 
 // Preload userRuntime
