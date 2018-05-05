@@ -1,4 +1,4 @@
-May9 Pro 3.1.0 - A new user experience for Autodesk Maya 2018
+May9 Pro 3.1.1 - A new user experience for Autodesk Maya 2018
 
 
 General info

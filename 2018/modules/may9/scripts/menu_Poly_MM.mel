@@ -12,33 +12,21 @@ menuItem
 
 menuItem
 -l "Paint Attributes"
--c "ArtPaintAttrTool"
+-c "ArtPaintAttrToolOptions"
 -rp "SE"
 -i "artAttr.png";
 
 menuItem
--c "ArtPaintAttrToolOptions"
--ob 1;
-
-menuItem
 -l "Paint Hair Follicle"
--c "paintHairTool 0;"
+-c "paintHairTool 0"
 -rp "E"
 -i "hairPaint.png";
 
 menuItem
--c "paintHairTool 1;"
--ob 1;
-
-menuItem
 -l "Paint Skin Weights"
--c "ArtPaintSkinWeightsTool"
+-c "ArtPaintSkinWeightsToolOptions"
 -rp "NW"
 -i "paintSkinWeights.png";
-
-menuItem
--c "ArtPaintSkinWeightsToolOptions"
--ob 1;
 
 menuItem
 -l "Legacy Sculpt"
@@ -443,17 +431,9 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--c "BendOptions;"
--ob 1;
-
-menuItem
 -l "Flare"
 -c "Flare;"
 -i "flareNLD.png";
-
-menuItem
--c "FlareOptions;"
--ob 1;
 
 menuItem
 -l "Sine"
@@ -461,17 +441,9 @@ menuItem
 -i "sineNLD.png";
 
 menuItem
--c "SineOptions;"
--ob 1;
-
-menuItem
 -l "Squash"
 -c "Squash"
 -i "squashNLD.png";
-
-menuItem
--c "SquashOptions;"
--ob 1;
 
 menuItem
 -l "Twist"
@@ -479,17 +451,9 @@ menuItem
 -i "twistNLD.png";
 
 menuItem
--c "TwistOptions"
--ob 1;
-
-menuItem
 -l "Wave"
 -c "Wave"
 -i "waveNLD.png";
-
-menuItem
--c "WaveOptions;"
--ob 1;
 
 setParent -m ..;
 
@@ -499,17 +463,9 @@ menuItem
 -i "cluster.png";
 
 menuItem
--c "CreateClusterOptions"
--ob 1;
-
-menuItem
 -l "Lattice"
 -c "CreateLattice"
 -i "lattice.png";
-
-menuItem
--c "CreateLatticeOptions;"
--ob 1;
 
 menuItem
 -l "Delta Mush"
@@ -517,17 +473,9 @@ menuItem
 -i "da_deltaMush.png";
 
 menuItem
--c "DeltaMushOptions"
--ob 1;
-
-menuItem
 -l "Tension"
 -c "Tension"
 -i "da_tensionDef.png";
-
-menuItem
--c "TensionOptions"
--ob 1;
 
 menuItem
 -d 1;
@@ -559,17 +507,9 @@ menuItem
 -i "textureDeformer.png";
 
 menuItem
--c "CreateTextureDeformerOptions;"
--ob 1;
-
-menuItem
 -l "Paint Texture"
--c "artAttrToolScript 4 \"textureDeformer\""
--i "paintTextureDeformer.png";
-
-menuItem
 -c "artAttrToolScript 3 \"textureDeformer\""
--ob 1;
+-i "paintTextureDeformer.png";
 
 setParent -m ..;
 
