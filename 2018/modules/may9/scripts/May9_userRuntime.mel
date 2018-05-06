@@ -446,10 +446,24 @@ nameCommand
 	-command ("da_AntiAliasToggle")
 	da_AntiAliasToggleNameCommand;
 
+nameCommand
+	-annotation "da_TitleBarToggleNameCommand"
+	-sourceType "mel"
+	-command ("da_TitleBarToggle")
+	da_TitleBarToggleNameCommand;
+
 
 //
 // runTimeCommand set
 //
+
+runTimeCommand
+	-annotation "Convert Edges to Loops and to Curves"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("resetPolySelectConstraint;\nstring $myResult = `confirmDialog -title \"To Loops to Curves\" -message \"Before continue make sure to have seleted only one edge for loop. Continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n        string $edgeSel[] = `ls -sl -fl`;\n        \n        for ($i=0; $i<`size$edgeSel`; $i++)\n        {\n        \tselect $edgeSel[$i];\n        \tpolySelectConstraint -pp 4 -m2a 30 -m3a 90;\n        \tpolyToCurve -form 2 -degree 3;\n        }\n}")
+	da_EdgesToLoopToCurve;
 
 runTimeCommand
 	-annotation "Clean Sourced Marking Menus"
@@ -2314,14 +2328,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("SelectEdgeRingSp;\nSelectEdgeLoopSp")
 	da_EdgeRingAndLoop;
-
-runTimeCommand
-	-annotation "Convert Edges to Loops and to Curves"
-	-category "Custom Scripts.May9_Pro.Modeling"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $myResult = `confirmDialog -title \"To Loops to Curves\" -message \"Before continue make sure to have seleted only one edge for loop. Continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n        string $edgeSel[] = `ls -sl -fl`;\n        \n        for ($i=0; $i<`size$edgeSel`; $i++)\n        {\n        \tselect $edgeSel[$i];\n        \tpolySelectConstraint -pp 4 -m2a 30 -m3a 90;\n        \tpolyToCurve -form 2 -degree 3;\n        }\n}")
-	da_EdgeToLoopToCurve;
 
 runTimeCommand
 	-annotation "Select Current Component Shader"
