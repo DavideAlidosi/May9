@@ -496,22 +496,9 @@ menuItem
 -i "da_membrane.png";
 
 menuItem
--l "Texture"
--sm 1
--i "Textured.png";
-
-menuItem
--l "Create Texture Deformer"
--c "CreateTextureDeformer;"
--rp "N"
+-l "Texture Deformer"
+-c "CreateTextureDeformer"
 -i "textureDeformer.png";
-
-menuItem
--l "Paint Texture"
--c "artAttrToolScript 3 \"textureDeformer\""
--i "paintTextureDeformer.png";
-
-setParent -m ..;
 
 menuItem
 -l "nCloth as Deformer"

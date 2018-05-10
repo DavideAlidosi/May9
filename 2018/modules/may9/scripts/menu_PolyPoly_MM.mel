@@ -483,6 +483,11 @@ menuItem
 -c "da_DeformerUV"
 -i "polyUnfoldUVs.png";
 
+menuItem
+-l "Texture Deformer"
+-c "CreateTextureDeformer"
+-i "textureDeformer.png";
+
 if (`pluginInfo -q -loaded SOuP` == 1){
 
 menuItem
@@ -507,24 +512,6 @@ menuItem
 
 setParent -m ..;
 }
-
-
-menuItem
--l "Texture"
--sm 1
--i "Textured.png";
-
-menuItem
--l "Create Texture Deformer"
--c "CreateTextureDeformer;"
--i "textureDeformer.png";
-
-menuItem
--l "Paint Texture"
--c "artAttrToolScript 3 \"textureDeformer\""
--i "paintTextureDeformer.png";
-
-setParent -m ..;
 
 menuItem
 -d 1;
