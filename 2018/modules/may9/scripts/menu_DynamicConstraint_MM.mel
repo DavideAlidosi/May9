@@ -41,6 +41,23 @@ menuItem
 setParent -m ..;
 
 menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create nCache"
+-c "nClothCacheOpt"
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png";
+
+setParent -m ..;
+
+menuItem
 -l "separator" 
 -d 1;
 

@@ -1284,9 +1284,43 @@ global proc da_HideLocalAxis(){
     for($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + ".displayLocalAxis") 0;
 }
 
+
 // da_FreezeDelNonDef
 
 global proc da_FreezeDelNonDef(){
 	FreezeTransformations;
 	BakeNonDefHistory;
+}
+
+
+// da_Emitter
+
+global proc da_EmitterDirectional(){
+	string $mySel[] = `ls -sl`;
+	for ($each in $mySel)
+	setAttr ($each +".emitterType") 0;
+}
+
+global proc da_EmitterOmni(){
+	string $mySel[] = `ls -sl`;
+	for ($each in $mySel)
+	setAttr ($each +".emitterType") 1;
+}
+
+global proc da_EmitterVolume(){
+	string $mySel[] = `ls -sl`;
+	for ($each in $mySel)
+	setAttr ($each +".emitterType") 4;
+}
+
+global proc da_EmitterCompass(){
+	string $myEmitter[] = `ls -sl`;
+	da_Compass;
+	string $myDirection[] = `ls -sl`;
+
+	for ($each in $myEmitter){
+		connectAttr($myDirection[0] + ".VectorX", $each + ".directionX");
+		connectAttr($myDirection[0] + ".VectorY", $each + ".directionY");
+		connectAttr($myDirection[0] + ".VectorZ", $each + ".directionZ");
+	}
 }
