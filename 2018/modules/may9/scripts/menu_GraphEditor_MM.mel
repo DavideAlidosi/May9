@@ -76,5 +76,22 @@ menuItem
 -c "animCurveEditor -e -psh (!`animCurveEditor -q -psh graphEditor1GraphEd`) graphEditor1GraphEd" 
 -cb (`animCurveEditor -q -psh graphEditor1GraphEd`);
 
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Auto Frame" 
+-c "animCurveEditor -e -af (!`animCurveEditor -q -af graphEditor1GraphEd`) graphEditor1GraphEd;optionVar -intValue graphEditorAutoFit (!`animCurveEditor -q -af graphEditor1GraphEd`);menuItem -e -enable (`animCurveEditor -q -af graphEditor1GraphEd`) displayAutoFitTimeItem" 
+-cb (`animCurveEditor -q -af graphEditor1GraphEd`);
+
+if (`about -api` >= 20180300){
+menuItem
+-l "Auto Frame Time" 
+-c "animCurveEditor -e -aft (!`animCurveEditor -q -aft graphEditor1GraphEd`) graphEditor1GraphEd;optionVar -intValue graphEditorAutoFitTime (!`animCurveEditor -q -aft graphEditor1GraphEd`)" 
+-cb (`animCurveEditor -q -aft graphEditor1GraphEd`)
+-en (`animCurveEditor -q -af graphEditor1GraphEd`);
+}
+
 setParent -m ..;
 
