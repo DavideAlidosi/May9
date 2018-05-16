@@ -1324,3 +1324,29 @@ global proc da_EmitterCompass(){
 		connectAttr($myDirection[0] + ".VectorZ", $each + ".directionZ");
 	}
 }
+
+// da_MapFacesUV
+
+global proc da_MapFacesUV(){
+	string $myResult = `confirmDialog -title "Confirm" -message "This command create a per face UV shell and Freeze Transformation, continue?" 
+	-button "Yes" -button "No" -defaultButton "Yes" 
+	-cancelButton "No" -dismissString "No"`;
+	if ($myResult == "Yes"){
+	    string $mySel[] = `ls -sl`;
+	    $mySelSize = size($mySel);
+	    for($i=0; $i<$mySelSize; $i++){
+	        select $mySel[$i];
+	    	FreezeTransformations;
+	    	polyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;
+	    	dR_DoCmd("modeEdge");
+	    	SelectAll;
+	    	CutUVs;
+	    	u3dUnfold -ite 1 -p 0 -bi 1 -tf 1 -ms 1024 -rs 0;
+	    	ConvertSelectionToUVs;
+	    	uvTkDoSetTexelDensity;
+	    	UVOrientShells;
+	    	u3dLayout -res 256 -scl 1 -box 0 1 0 1;
+	    	dR_modeObject;
+	    }
+	}
+}
