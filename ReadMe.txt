@@ -1,4 +1,4 @@
-May9 Pro 3.1.1 - A new user experience for Autodesk Maya 2018
+May9 Pro 3.1.2 - A new user experience for Autodesk Maya 2018
 
 
 General info
@@ -12,7 +12,7 @@ For more information about installation please read the included user guide
 
 
 Release Note
-- May9 Pro 3.1 is tested and develop on Maya 2018.3
+- May9 Pro 3.1.2 is tested and develop on Maya 2018.3
 - May9 Pro Workspaces do not autosave, so manually save of the workspace is needed
 
 
@@ -39,6 +39,7 @@ Exclusive script
 - da_Compass: this script converts Euler angle into a XYZ vector, for drive wind direction in Nucleus and Air Filed
 - da_CombineCurves: this script combines curves in a single transform
 - da_SepareCurves: this script separate combined curves
+- da_MapFacesUV: this script maps any single faces of a mesh as separate planar UV shell
 
 
 Version 3.1 highlight
