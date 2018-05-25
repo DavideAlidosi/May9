@@ -14,7 +14,7 @@ Version 2.0 currently handles :
         String
     Version 2 includes filtering options,
      improved attributes' values controllers,
-     deeper attribute search
+     deeper attribute search and control over children.
 
 More scripts at http://mehdilouala.com/scripts
 """

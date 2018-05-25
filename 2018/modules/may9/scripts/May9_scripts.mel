@@ -1001,7 +1001,7 @@ global proc da_FacesFollicles()
 // da_Compass
 
 global proc da_Compass(){
-	circle  -c 0 0 0 -nr 0 1 0 -sw 180 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
+	circle -c 0 0 0 -nr 0 1 0 -sw 180 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
 	string $myVectorDir1[] = `ls -sl`;
 	setAttr ($myVectorDir1[0] + ".sx") -2;
 	setAttr ($myVectorDir1[0] + ".sz") 0.02;
@@ -1012,7 +1012,7 @@ global proc da_Compass(){
 	setAttr ($myVectorDir2[0] + ".rx") 90;
 	da_ClearFreeze;
 
-	circle  -c 0 0 0 -nr 0 1 0 -sw 360 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
+	circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;
 	string $myVectorDir3[] = `ls -sl`;
 	setAttr ($myVectorDir3[0] + ".rz") 90;
 	setAttr ($myVectorDir3[0] + ".sx") 0.02;
@@ -1031,21 +1031,35 @@ global proc da_Compass(){
 	string $myVectorProduct = `createNode vectorProduct`;
 	setAttr ($myVectorProduct + ".operation") 3;
 	setAttr ($myVectorProduct + ".input1X") 1;
+		
+	string $myMultiplyDivide = `createNode multiplyDivide`;
 
 	connectAttr ($myCompassVector[0] + ".worldMatrix[0]", $myVectorProduct + ".matrix");
 
 	addAttr -ln "VectorX" -at double $myCompassVector[0];
 	addAttr -ln "VectorY" -at double $myCompassVector[0];
 	addAttr -ln "VectorZ" -at double $myCompassVector[0];
+	addAttr -ln "Magnitude" -at double $myCompassVector[0];
 	setAttr -e -k 1 ($myCompassVector[0] + ".VectorX");
 	setAttr -e -k 1 ($myCompassVector[0] + ".VectorY");
 	setAttr -e -k 1 ($myCompassVector[0] + ".VectorZ");
+	setAttr -e -k 1 ($myCompassVector[0] + ".Magnitude" ) 1;
 	setAttr -l 1 ($myCompassVector[0] + ".sx");
 	setAttr -l 1 ($myCompassVector[0] + ".sy");
 	setAttr -l 1 ($myCompassVector[0] + ".sz");
-	connectAttr($myVectorProduct + ".output.outputX", $myCompassVector[0] + ".VectorX");
-	connectAttr($myVectorProduct + ".output.outputY", $myCompassVector[0] + ".VectorY");
-	connectAttr($myVectorProduct + ".output.outputZ", $myCompassVector[0] + ".VectorZ");
+		
+		
+	connectAttr($myVectorProduct + ".output.outputX", $myMultiplyDivide + ".input1.input1X");
+	connectAttr($myVectorProduct + ".output.outputY", $myMultiplyDivide + ".input1.input1Y");
+	connectAttr($myVectorProduct + ".output.outputZ", $myMultiplyDivide + ".input1.input1Z");
+		
+	connectAttr($myMultiplyDivide + ".output.outputX", $myCompassVector[0] + ".VectorX");
+	connectAttr($myMultiplyDivide + ".output.outputY", $myCompassVector[0] + ".VectorY");
+	connectAttr($myMultiplyDivide + ".output.outputZ", $myCompassVector[0] + ".VectorZ");
+		
+	connectAttr($myCompassVector[0] + ".Magnitude", $myMultiplyDivide + ".input2.input2X");
+	connectAttr($myCompassVector[0] + ".Magnitude", $myMultiplyDivide + ".input2.input2Y");
+	connectAttr($myCompassVector[0] + ".Magnitude", $myMultiplyDivide + ".input2.input2Z");
 
 	select $myCompassVector[0];
 }
@@ -1324,6 +1338,36 @@ global proc da_EmitterCompass(){
 		connectAttr($myDirection[0] + ".VectorZ", $each + ".directionZ");
 	}
 }
+
+
+// da_nClothCompass
+
+global proc da_nClothForceCompass(){
+	string $myNcloth[] = `ls -sl`;
+
+	da_Compass;
+	string $myDirection[] = `ls -sl`;
+
+	for ($each in $myNcloth){
+		connectAttr($myDirection[0] + ".VectorX", $each + ".localForce.localForceX");
+		connectAttr($myDirection[0] + ".VectorY", $each + ".localForce.localForceY");
+		connectAttr($myDirection[0] + ".VectorZ", $each + ".localForce.localForceZ");
+	}
+}
+
+global proc da_nClothWindCompass(){
+	string $myNcloth[] = `ls -sl`;
+
+	da_Compass;
+	string $myDirection[] = `ls -sl`;
+
+	for ($each in $myNcloth){
+		connectAttr($myDirection[0] + ".VectorX", $each + ".localWind.localWindX");
+		connectAttr($myDirection[0] + ".VectorY", $each + ".localWind.localWindY");
+		connectAttr($myDirection[0] + ".VectorZ", $each + ".localWind.localWindZ");
+	}
+}
+
 
 // da_MapFacesUV
 
