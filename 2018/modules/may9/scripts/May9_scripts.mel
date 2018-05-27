@@ -1400,25 +1400,18 @@ global proc da_MapFacesFacesUV(){
 	-button "Yes" -button "No" -defaultButton "Yes" 
 	-cancelButton "No" -dismissString "No"`;
 	if ($myResult == "Yes"){
-	    string $myFaces[] = `ls -sl`;
-	    da_BackToObjectMode;
-	    string $mySel[] = `ls -sl`;
-	    $mySelSize = size($mySel);
-	    for($i=0; $i<$mySelSize; $i++){
-	        select $mySel[$i];
-	    	FreezeTransformations;
-	    	dR_DoCmd("modePoly");
-	    	select $myFaces;
-	    	polyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;
-	    	ConvertSelectionToEdges;
-	    	CutUVs;
-	    	select $myFaces;
-	    	u3dUnfold -ite 1 -p 0 -bi 1 -tf 1 -ms 1024 -rs 0;
-	    	SelectAll;
-	    	ConvertSelectionToUVs;
-	    	UVOrientShells;
-	    	polyMultiLayoutUV -lm 1 -sc 1 -rbf 1 -fr 1 -ps 0.2 -l 2 -gu 1 -gv 1 -psc 1 -su 1 -sv 1 -ou 0 -ov 0;
-	    	dR_modeObject;
-	    }
+		string $myFaces[] = `ls -sl`;
+		da_BackToObjectMode;
+		FreezeTransformations;
+		dR_DoCmd("modePoly");
+		select $myFaces;
+		polyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;
+		ConvertSelectionToEdges;
+		CutUVs;
+		select $myFaces;
+		u3dUnfold -ite 1 -p 0 -bi 1 -tf 1 -ms 1024 -rs 0;
+		UVOrientShells;
+		polyMultiLayoutUV -lm 1 -sc 1 -rbf 1 -fr 1 -ps 0.2 -l 2 -gu 1 -gv 1 -psc 1 -su 1 -sv 1 -ou 0 -ov 0;
+		dR_modeObject;
 	}
 }
