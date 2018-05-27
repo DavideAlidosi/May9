@@ -1417,7 +1417,7 @@ global proc da_MapFacesFacesUV(){
 	    	SelectAll;
 	    	ConvertSelectionToUVs;
 	    	UVOrientShells;
-	    	u3dLayout -res 256 -scl 1 -box 0 1 0 1;
+	    	polyMultiLayoutUV -lm 1 -sc 1 -rbf 1 -fr 1 -ps 0.2 -l 2 -gu 1 -gv 1 -psc 1 -su 1 -sv 1 -ou 0 -ov 0;
 	    	dR_modeObject;
 	    }
 	}

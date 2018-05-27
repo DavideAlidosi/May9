@@ -1,4 +1,4 @@
-May9 Pro 3.1.2 - A new user experience for Autodesk Maya 2018
+May9 Pro 3.1.3 - A new user experience for Autodesk Maya 2018
 
 
 General info
@@ -12,7 +12,7 @@ For more information about installation please read the included user guide
 
 
 Release Note
-- May9 Pro 3.1.2 is tested and develop on Maya 2018.3
+- May9 Pro 3.1.3 is tested and develop on Maya 2018.3
 - May9 Pro Workspaces do not autosave, so manually save of the workspace is needed
 
 
