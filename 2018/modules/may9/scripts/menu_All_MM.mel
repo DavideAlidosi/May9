@@ -540,6 +540,11 @@ menuItem -bld 1
 -c "da_maxPlaybackSpeedToggle"
 -cb (`playbackOptions -q -maxPlaybackSpeed`);
 
+menuItem -bld 1 
+-l "Stepped Preview"
+-c "da_steppedPreview"
+-cb (`playbackOptions -q -blockingAnim`);
+
 menuItem
 -d 1;
 
@@ -557,11 +562,6 @@ menuItem -bld 1
 -l "Make Pivot Keyable"
 -c "da_pivotKeyable"
 -i "teSetKeyframe.png";
-
-menuItem -bld 1 
--l "MASH Editor"
--c "MASHOutliner"
--i "MASH_Editor.png";
 
 setParent -m ..;
 
@@ -633,6 +633,11 @@ menuItem -bld 1
 -l "Namespace Editor"
 -c "NamespaceEditor"
 -i "QR_rename.png";
+
+menuItem -bld 1 
+-l "MASH Editor"
+-c "MASHOutliner"
+-i "MASH_Editor.png";
 
 setParent -m ..;
 

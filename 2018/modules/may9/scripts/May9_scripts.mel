@@ -1116,6 +1116,7 @@ global proc da_ToggleAO(){
 	}
 }
 
+
 // da_maxPlaybackSpeed
 
 global proc da_maxPlaybackSpeedToggle(){
@@ -1125,6 +1126,17 @@ global proc da_maxPlaybackSpeedToggle(){
 	    playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 1;
 	}
 }
+
+// da_steppedPreview
+
+global proc da_steppedPreview(){
+	if(`playbackOptions -q -blockingAnim`){
+    	playbackOptions -e -blockingAnim 0;
+	}else{
+	    playbackOptions -e -blockingAnim 1;
+	}
+}
+
 
 // da_vertexAnimationCache
 
@@ -1259,6 +1271,21 @@ global proc da_pivotKeyable(){
 	    setAttr -k on ($each + ".rotatePivotTranslateY");
 	    setAttr -k on ($each + ".rotatePivotTranslateZ");    
 	}
+}
+
+
+// da_moveKeyframe
+
+global proc da_moveKeyframeToNext(){
+	int $currentTime = `currentTime -q`;
+	keyframe -t `currentTime -q` -e -r -tc 1;
+	NextFrame;
+}
+
+global proc da_moveKeyframeToPrev(){
+	int $currentTime = `currentTime -q`;
+	keyframe -t `currentTime -q` -e -r -tc -1;
+	PreviousFrame;
 }
 
 
