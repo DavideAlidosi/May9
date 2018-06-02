@@ -1,3 +1,16 @@
+// da_round
+
+global proc int da_round(float $ANum){
+    float $n = $ANum % 1;
+    if ($n >= 0.5) {
+    $ANum = `ceil $ANum`;
+    } else {
+    $ANum = `floor $ANum`;
+    }
+    return $ANum;
+}
+
+
 // da_commonObjectOptionsPopup
 
 global proc da_commonObjectOptionsPopup(){
@@ -1288,6 +1301,22 @@ global proc da_moveKeyframeToPrev(){
 	PreviousFrame;
 }
 
+
+// da_roundKeyframe
+
+global proc da_roundKeyframe(){
+	string $animCurves[] = `keyframe -q -name`;
+	for ($animCurve in $animCurves){
+		float $thisKeys[] = `keyframe -q -sl $animCurve`;
+		if (!size($thisKeys))
+			$thisKeys = `keyframe -q $animCurve`;
+		for ($keys in $thisKeys)
+		{
+			if (`fmod $keys 1` != 0)
+				keyframe -e -t $keys -iub true -a -o over -timeChange (da_round($keys)) $animCurve;
+		}
+	}
+}
 
 // da_MatchNormals
 
