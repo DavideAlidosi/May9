@@ -1326,12 +1326,28 @@ global proc da_weightedTangents(){
     int $weightedTangentsSum = 0;
 
     for ($each in $weightedTangentsCheck)
-      $weightedTangentsSum += $each;
+		$weightedTangentsSum += $each;
     
     if($weightedTangentsSum){
     	keyTangent -e -weightedTangents 0;
 	}else{
 	    keyTangent -e -weightedTangents 1;
+	}
+}
+
+// da_breakTangents
+
+global proc da_breakTangents(){
+    int $breakTangentsCheck[] = `keyTangent -q -lock`;
+    int $breakTangentsSum = 0;
+
+    for ($each in $breakTangentsCheck)
+		$breakTangentsSum += $each;
+    
+    if($breakTangentsSum){
+    	keyTangent -e -lock 0;
+	}else{
+	    keyTangent -e -lock 1;
 	}
 }
 

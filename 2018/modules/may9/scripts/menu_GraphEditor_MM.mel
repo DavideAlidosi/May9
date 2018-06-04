@@ -3,11 +3,22 @@ int $weightedTangentsSum = 0;
 for ($each in $weightedTangentsCheck)
 	$weightedTangentsSum += $each;
 
+int $breakTangentsCheck[] = `keyTangent -q -lock`;
+int $breakTangentsSum = 0;
+for ($each in $breakTangentsCheck)
+	$breakTangentsSum += $each;
+
 menuItem
 -l "Weighted Tangents" 
 -c "da_weightedTangents" 
 -cb ($weightedTangentsSum) 
 -rp "E";
+
+menuItem
+-l "Break Tangents" 
+-c "da_breakTangents" 
+-cb (! $breakTangentsSum) 
+-rp "W";
 
 menuItem
 -l "Insert Keyframe" 
