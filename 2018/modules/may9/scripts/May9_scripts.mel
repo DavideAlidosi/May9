@@ -1504,3 +1504,23 @@ global proc da_MapFacesFacesUV(){
 		dR_modeObject;
 	}
 }
+
+
+// da_AiVolumes
+
+global proc da_AiVolumes(){
+	python("import mtoa.ui.arnoldmenu as arnoldmenu;arnoldmenu.createVolume()");
+	PickWalkUp;
+
+	string $mySelShape[] = `listRelatives -s`;
+	string $shadingEngine = `createNode shadingEngine -n aiVolumeShapeSG1`;
+	string $myStandardVolume = `createNode aiStandardVolume`;
+
+	connectAttr -f ($mySelShape[0] + ".instObjGroups[0]") ($shadingEngine + ".dagSetMembers[0]");
+
+	connectNodeToAttrOverride("$myStandardVolume", $shadingEngine + ".surfaceShader");
+	connectAttr -f ($myStandardVolume + ".outColor") ($shadingEngine + ".surfaceShader");
+
+	select $mySelShape[0];
+	PickWalkUp;
+}

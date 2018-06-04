@@ -2694,14 +2694,6 @@ runTimeCommand
 	da_MouseTrack;
 
 runTimeCommand
-	-annotation "Create aiVolume"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("python(\"import mtoa.ui.arnoldmenu as arnoldmenu;arnoldmenu.createVolume()\");\nPickWalkUp;\n\nstring $mySelShape[] = `listRelatives -s`;\nstring $shadingEngine = `createNode shadingEngine -n aiVolumeShapeSG1`;\nstring $myStandardVolume = `createNode aiStandardVolume`;\n\nconnectAttr -f ($mySelShape[0] + \".instObjGroups[0]\") ($shadingEngine + \".dagSetMembers[0]\");\nconnectAttr -f ($myStandardVolume + \".outColor\") ($shadingEngine + \".surfaceShader\");\n\nselect $mySelShape[0];\nPickWalkUp")
-	da_AiVolume;
-
-runTimeCommand
 	-annotation "Select aiStandardVolume Shader"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
