@@ -52,19 +52,6 @@ menuItem -bld 1
 -i "plane.png";
 
 menuItem -bld 1 
--l "Import Illustrator Curves"
--c "CreateIllustratorCurves"
--i "aiObject.png";
-
-menuItem -bld 1 
--l "Curves Based Text"
--c "CreateTextOptions"
--i "text.png";
-
-menuItem 
--d 1;
-
-menuItem -bld 1 
 -l "Poly Interactive Creation"
 -c "toggleCreatePolyPrimitiveAsTool"
 -cb (`optionVar -q createPolyPrimitiveAsTool`);
@@ -73,6 +60,19 @@ menuItem -bld 1
 -l "Curve Interactive Creation"
 -c "toggleCreateNurbsPrimitiveAsTool;"
 -cb (`optionVar -q createNurbsPrimitiveAsTool`);
+
+menuItem 
+-d 1;
+
+menuItem -bld 1 
+-l "Import Illustrator Curves"
+-c "CreateIllustratorCurves"
+-i "aiObject.png";
+
+menuItem -bld 1 
+-l "Curves Based Text"
+-c "CreateTextOptions"
+-i "text.png";
 
 setParent -m ..;
 
@@ -91,42 +91,54 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Render Sequence"
 -c "RenderSequence"
--rp "NE"
+-rp "N"
 -i "rvSequenceRender.png";
 
 menuItem -bld 1 
 -l "Color Management"
 -c "da_ToggleColorManagement" 
 -rp "S"
--cb (`colorManagementPrefs -q -cme`) ;
-
-menuItem -bld 1 
--l "Edit Shaders"
--c "da_EditAndFrameShaders"
--rp "W"
--i "hsGraphMaterial.png";
+-cb (`colorManagementPrefs -q -cme`);
 
 menuItem -bld 1 
 -l "Render View"
 -c "da_AiRenderView"
--rp "SE"
+-rp "SW"
 -i "RenderShelf.png";
 
 menuItem -bld 1 
 -l "Resolution Gate"
 -c "da_ToggleResolutionGate"
--rp "SW"
+-rp "W"
 -i "ResolutionGate.png";
 
 menuItem -bld 1 
 -l "Playblast"
 -c "PlayblastWindow"
--rp "N"
+-rp "NE"
 -i "playblast.png";
 
 menuItem
 -c "PlayblastOptions"
 -ob 1;
+
+menuItem -bld 1 
+-l "Camera Bookmark"
+-c "da_CameraBookmark"
+-i "Bookmark.png";
+
+menuItem -bld 1 
+-l "File Path Editor"
+-c "FilePathEditor;"
+-i "folder-open.png";
+
+menuItem -bld 1 
+-l "Transfer Maps"
+-c "performSurfaceSampling 1"
+-i "UseDefaultMaterial.png";
+
+menuItem 
+-d 1;
 
 menuItem -bld 1 
 -l "StandIn"
@@ -144,24 +156,6 @@ menuItem -bld 1
 -i "StandinShelf.png";
 
 setParent -m ..;
-
-menuItem 
--d 1;
-
-menuItem -bld 1 
--l "Camera Bookmark"
--c "da_CameraBookmark"
--i "Bookmark.png";
-
-menuItem -bld 1 
--l "File Path Editor"
--c "FilePathEditor;"
--i "folder-open.png";
-
-menuItem -bld 1 
--l "Transfer Maps"
--c "performSurfaceSampling 1"
--i "UseDefaultMaterial.png";
 
 setParent -m ..;
 
@@ -530,7 +524,7 @@ menuItem -bld 1
 -i "motionPath.png";
 
 menuItem -bld 1 
--l "Round Keyframe"
+-l "Round Keyframes"
 -c "da_roundKeyframe"
 -rp "E"
 -i "teSetKeyframe.png";

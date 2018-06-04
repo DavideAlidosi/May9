@@ -1318,6 +1318,23 @@ global proc da_roundKeyframe(){
 	}
 }
 
+
+// da_weightedTangents
+
+global proc da_weightedTangents(){
+    int $weightedTangentsCheck[] = `keyTangent -q -weightedTangents`;
+    int $weightedTangentsSum = 0;
+
+    for ($each in $weightedTangentsCheck)
+      $weightedTangentsSum += $each;
+    
+    if($weightedTangentsSum){
+    	keyTangent -e -weightedTangents 0;
+	}else{
+	    keyTangent -e -weightedTangents 1;
+	}
+}
+
 // da_MatchNormals
 
 global proc da_MatchNormals(){
