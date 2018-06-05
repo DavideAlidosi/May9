@@ -1538,3 +1538,12 @@ global proc da_AiVolumeShapes(){
 	select $mySelShape[0];
 	AttributeEditor;
 }
+
+
+// da_arnoldViewport
+
+global proc da_arnoldViewport(){
+	string $panel = `getPanel -wf`;
+	setRendererAndOverrideInModelPanel vp2Renderer arnoldViewOverride $panel;
+	arnoldViewOverrideOptionBox;
+}
