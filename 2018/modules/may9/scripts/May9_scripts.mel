@@ -1517,10 +1517,25 @@ global proc da_AiVolumes(){
 	string $myStandardVolume = `createNode aiStandardVolume`;
 
 	connectAttr -f ($mySelShape[0] + ".instObjGroups[0]") ($shadingEngine + ".dagSetMembers[0]");
-
-	connectNodeToAttrOverride("$myStandardVolume", $shadingEngine + ".surfaceShader");
-	connectAttr -f ($myStandardVolume + ".outColor") ($shadingEngine + ".surfaceShader");
+	connectAttr -f ($myStandardVolume + ".outColor") ($shadingEngine + ".volumeShader");
 
 	select $mySelShape[0];
 	PickWalkUp;
+}
+
+global proc da_AiVolumeShader(){
+	string $mySelShape[] = `listRelatives -s`;
+	select $mySelShape[0];
+	string $myShadingEngine[] = `listConnections -s 0 -d 1 -t "shadingEngine"`;
+	select -r -ne $myShadingEngine[0];
+	string $myAiStandardVolume[] = `listConnections -s 1 -d 0 -t "aiStandardVolume"`;
+	select -r -ne $myAiStandardVolume[0];
+	AttributeEditor;
+}
+
+global proc da_AiVolumeShapes(){
+	string $mySelShape[] = `listRelatives -s`;
+	select $mySelShape[0];
+	AttributeEditor;
+	PickWalkUp
 }

@@ -2694,22 +2694,6 @@ runTimeCommand
 	da_MouseTrack;
 
 runTimeCommand
-	-annotation "Select aiStandardVolume Shader"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySelShape[] = `listRelatives -s`;\nselect $mySelShape[0];\nstring $myShadingEngine[] = `listConnections -s 0 -d 1 -t \"shadingEngine\"`;\nselect -r -ne $myShadingEngine[0];\nAttributeEditor;")
-	da_AiStandardVolume;
-
-runTimeCommand
-	-annotation "Select aiVolumeShape Shader"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySelShape[] = `listRelatives -s`;\nselect $mySelShape[0];\nAttributeEditor;\nPickWalkUp")
-	da_AiVolumeShape;
-
-runTimeCommand
 	-annotation "Apply Curve Collector to Selected Curves"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
