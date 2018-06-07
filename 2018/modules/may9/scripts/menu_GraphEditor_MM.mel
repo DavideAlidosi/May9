@@ -27,6 +27,18 @@ menuItem
 -i "keyIntoclip.png";
 
 menuItem
+-l "Swap Buffer Curve" 
+-c "doBuffer swap graphEditor1GraphEd" 
+-rp "NE" 
+-i "bufferSwap.png";
+
+menuItem
+-l "Buffer Curves" 
+-c "animCurveEditor -edit -sb tgl graphEditor1GraphEd; doBuffer snapshot graphEditor1GraphEd" 
+-rp "NW" 
+-cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+
+menuItem
 -l "Delete Static Channels" 
 -c "DeleteStaticChannels" 
 -rp "S" 
@@ -37,38 +49,50 @@ menuItem
 -ob 1;
 
 menuItem
--l "Lock Channel" 
--c "GraphEditorLockChannel" 
--rp "SE" 
--i "nodeGrapherLocked.png";
-
-menuItem
--l "Unlock Channel" 
--c "GraphEditorUnlockChannel;" 
--rp "SW" 
--i "nodeGrapherUnlocked.png";
-
-menuItem
--l "Mute Channel" 
--c "doMuteChannel graphEditor1FromOutliner -true;" 
--rp "NE" 
--i "muted.png";
-
-menuItem
--l "Unmute Channel" 
--c "doMuteChannel graphEditor1FromOutliner -false;" 
--rp "NW" 
--i "teMuteOff.png";
-
-menuItem
 -l "Round Keyframes"
 -c "da_roundKeyframe"
+-rp "SE"
 -i "teSetKeyframe.png";
 
 menuItem
 -l "Simplify Curves" 
--c "performSimplify 3 graphEditor1GraphEd;" 
+-c "performSimplify 3 graphEditor1GraphEd" 
+-rp "SW"
 -i "da_simplifyCurve.png";
+
+menuItem 
+-l "Lock Channel"
+-sm 1
+-i "nodeGrapherLocked.png";
+
+menuItem
+-l "On" 
+-c "GraphEditorLockChannel" 
+-i "nodeGrapherLocked.png";
+
+menuItem
+-l "Off" 
+-c "GraphEditorUnlockChannel;" 
+-i "nodeGrapherUnlocked.png";
+
+setParent -m ..;
+
+menuItem 
+-l "Mute Channel"
+-sm 1
+-i "muted.png";
+
+menuItem
+-l "On" 
+-c "doMuteChannel graphEditor1FromOutliner -true;" 
+-i "muted.png";
+
+menuItem
+-l "Off" 
+-c "doMuteChannel graphEditor1FromOutliner -false;" 
+-i "teMuteOff.png";
+
+setParent -m ..;
 
 menuItem
 -l "separator" 
