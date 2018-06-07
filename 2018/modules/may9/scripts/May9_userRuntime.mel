@@ -63,10 +63,10 @@ nameCommand
 	da_FrameOnlySelectedNameCommand;
 
 nameCommand
-	-annotation "da_ProgressiveIPRNameCommand"
+	-annotation "da_RendereViewsNameCommand"
 	-sourceType "mel"
-	-command ("da_ProgressiveIPR")
-	da_ProgressiveIPRNameCommand;
+	-command ("da_RendereViews")
+	da_RendereViewsNameCommand;
 
 nameCommand
 	-annotation "da_ToggleGridNameCommand"
@@ -1094,14 +1094,6 @@ runTimeCommand
 	da_DeformerUV;
 
 runTimeCommand
-	-annotation "Auto IPR on all render region for all render engine"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\tda_AiRenderView;\n}\nelse{ \n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}\n\ninViewMessage -pos topCenter -msg \"Starting Render\" -fade;")
-	da_ProgressiveIPR;
-
-runTimeCommand
 	-annotation "Toggle Nurbs Curves Visibility"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
@@ -1684,14 +1676,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `listRelatives -s`;\nfor ($each in $mySel)\n    setAttr ($each +\".aiUserOptions\") -type \"string\" \"declare portal constant BOOL portal false\";\n\ninViewMessage -pos topCenter -msg \"Portal Light Off\" -fade;")
 	da_AiNoPortalLight;
-
-runTimeCommand
-	-annotation "Open Arnold Render View"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()")
-	da_AiRenderView;
 
 runTimeCommand
 	-annotation "Connect Selected Mesh as nCloth Input Mesh"
@@ -2404,14 +2388,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if (`renderManip -q -st` == 0)\n    ShowCameraManipulators;\nelse\n    HideCameraManipulators;")
 	da_ToggleCameraManipulators;
-
-runTimeCommand
-	-annotation "Insert Keyframe On the Line Graph"
-	-category "Custom Scripts.May9_Pro.Animate"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("setKeyframe -insert")
-	da_InsertKeyFrame;
 
 runTimeCommand
 	-annotation "Auto Bevel Mesh"

@@ -3911,7 +3911,7 @@ I00
 sg21
 I0
 sg22
-S'da_InsertKeyFrame'
+S'da_InseritKeyframe'
 p906
 sg24
 S'GraphEditor_MM'

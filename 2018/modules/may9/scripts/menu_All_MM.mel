@@ -83,21 +83,9 @@ menuItem -bld 1
 -i "render.png";
 
 menuItem -bld 1 
--l "Viewport Render"
--c "da_arnoldViewport"
--rp "SE"
--i "singlePerspLayout.png";
-
-menuItem -bld 1 
--l "Batch Render"
--c "BatchRender"
--rp "NW"
--i "batchRender.png";
-
-menuItem -bld 1 
 -l "Render Sequence"
 -c "RenderSequence"
--rp "N"
+-rp "NW"
 -i "rvSequenceRender.png";
 
 menuItem -bld 1 
@@ -108,9 +96,9 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Render View"
--c "da_AiRenderView"
+-c "da_RendereViews"
 -rp "SW"
--i "RenderShelf.png";
+-i "render.png";
 
 menuItem -bld 1 
 -l "Resolution Gate"
@@ -121,12 +109,29 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Playblast"
 -c "PlayblastWindow"
--rp "NE"
+-rp "N"
 -i "playblast.png";
 
 menuItem
 -c "PlayblastOptions"
 -ob 1;
+
+menuItem -bld 1 
+-l "Export StandIn"
+-c "da_doExportStandIn"
+-rp "SE" 
+-i "ExportStandinShelf.png";
+
+menuItem -bld 1 
+-l "Import StandIn"
+-c "da_CreateStandInFile"
+-rp "NE" 
+-i "StandinShelf.png";
+
+menuItem -bld 1 
+-l "Render Settings"
+-c "unifiedRenderGlobalsWindow"
+-i "rvRenderGlobals.png";
 
 menuItem -bld 1 
 -l "Camera Bookmark"
@@ -142,24 +147,6 @@ menuItem -bld 1
 -l "Transfer Maps"
 -c "performSurfaceSampling 1"
 -i "UseDefaultMaterial.png";
-
-menuItem 
--d 1;
-
-menuItem -bld 1 
--l "StandIn"
--sm 1
--i "ExportStandinShelf.png";
-
-menuItem -bld 1 
--l "Export"
--c "da_doExportStandIn"
--i "ExportStandinShelf.png";
-
-menuItem -bld 1 
--l "Import"
--c "da_CreateStandInFile"
--i "StandinShelf.png";
 
 setParent -m ..;
 

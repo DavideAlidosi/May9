@@ -1351,6 +1351,19 @@ global proc da_breakTangents(){
 	}
 }
 
+
+// da_InseritKeyframe
+
+global proc da_InseritKeyframe(){
+	string $curves[] = `keyframe -q -selected -name`;
+	int $i;
+	for ($i = 0; $i < size($curves); $i++){
+			float $curTime = `animCurveEditor -keyingTime $curves[$i] -q graphEditor1GraphEd`;
+			if ( size($curves) ) setKeyframe -time $curTime -insert $curves[$i];
+	}
+}
+
+
 // da_MatchNormals
 
 global proc da_MatchNormals(){
@@ -1540,10 +1553,19 @@ global proc da_AiVolumeShapes(){
 }
 
 
-// da_arnoldViewport
+// da_RendereViews
 
-global proc da_arnoldViewport(){
-	string $panel = `getPanel -wf`;
-	setRendererAndOverrideInModelPanel vp2Renderer arnoldViewOverride $panel;
-	arnoldViewOverrideOptionBox;
+global proc da_RendereViews(){
+	if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
+		python("import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()");
+	}
+	else if (`getAttr defaultRenderGlobals.currentRenderer` == "mayaSoftware"){
+		RenderViewWindow;
+		IPRRenderIntoNewWindow;
+		renderWindowCheckAndRenderRegion 1 0 0 1;
+	}else{ 
+		RenderViewWindow;
+	}
+
+	inViewMessage -pos topCenter -msg "Starting Render" -fade;
 }
