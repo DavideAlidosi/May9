@@ -2118,22 +2118,6 @@ runTimeCommand
 	da_CameraBookmark;
 
 runTimeCommand
-	-annotation "Add Image Plane on Curent Camera"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nstring $myCameraShape[] = `listRelatives -s`;\nimportImagePlane { $myCameraShape[0] };")
-	da_ImagePlane;
-
-runTimeCommand
-	-annotation "Add Video Plane on Curent Camera"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $camera;\nstring $panel = `getPanel -wf`;\nif ( \"modelPanel\" == `getPanel -to $panel` )\n  {\n    $camera = `modelEditor -q -camera $panel`;\n  }\nstring $myCameraShape[] = `listRelatives -s`;\nimportMovieImagePlane { $myCameraShape[0] };")
-	da_VideoPlane;
-
-runTimeCommand
 	-annotation "Reset Position and Orientation of Pivot"
 	-category "Custom Scripts.May9_Pro.Object"
 	-hotkeyCtx ""

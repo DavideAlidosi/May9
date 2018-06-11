@@ -1569,3 +1569,42 @@ global proc da_RendereViews(){
 
 	inViewMessage -pos topCenter -msg "Starting Render" -fade;
 }
+
+
+// da_ImagesPlane
+
+global proc da_ImagesPlane(){
+	string $myPanel = `getPanel -underPointer`;
+	string $myCamera = `modelPanel -q -cam $myPanel`;
+	select $myCamera;
+	string $myCameraShape[] = `listRelatives -s`;
+
+	importImagePlane { $myCameraShape[0] };
+}
+
+// da_VideoImagesPlane
+
+global proc da_VideoImagesPlane(){
+	string $myPanel = `getPanel -underPointer`;
+	string $myCamera = `modelPanel -q -cam $myPanel`;
+	select $myCamera;
+	string $myCameraShape[] = `listRelatives -s`;
+
+	importMovieImagePlane { $myCameraShape[0] };
+}
+
+// da_CameraImagesPlane
+
+global proc da_CameraImagesPlane(){
+	string $myCameraShape[] = `listRelatives -s`;
+
+	importImagePlane { $myCameraShape[0] };
+}
+
+// da_CameraVideoImagesPlane
+
+global proc da_CameraVideoImagesPlane(){
+	string $myCameraShape[] = `listRelatives -s`;
+
+	importMovieImagePlane { $myCameraShape[0] };
+}
