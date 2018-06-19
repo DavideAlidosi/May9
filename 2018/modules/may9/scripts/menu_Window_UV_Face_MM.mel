@@ -1,12 +1,18 @@
 
 menuItem
+-l "Flip U" 
+-c "polyFlipUV -flipType 0 -local on" 
+-rp "N" 
+-i "flipU.png";
+
+menuItem
 -l "Automatic Map" 
--c "performPolyAutoProj 0;" 
+-c "performPolyAutoProj 0" 
 -rp "SW" 
 -i "polyAutoProj.png";
 
 menuItem
--c "performPolyAutoProj 1;" 
+-c "performPolyAutoProj 1" 
 -ob 1;
 
 menuItem

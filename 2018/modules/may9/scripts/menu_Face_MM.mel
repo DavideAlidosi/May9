@@ -189,6 +189,15 @@ menuItem
 -i "polyUnfoldUVs.png";
 
 menuItem
+-l "Flip U" 
+-c "polyFlipUV -flipType 0 -local on" 
+-i "flipU.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
 -l "Automatic Mapping"
 -c "performPolyAutoProj 0;"
 -i "polyAutoProj.png";
@@ -196,11 +205,6 @@ menuItem
 menuItem
 -c "performPolyAutoProj 1;"
 -ob 1;
-
-menuItem
--l "Planar"
--c "performPolyProjectionArgList \"1\" {\"0\", \"Planar\", \"ls -selection\", \"0\"} \"\";"
--i "polyPlanProj.png";
 
 menuItem
 -l "Cylindrical"
