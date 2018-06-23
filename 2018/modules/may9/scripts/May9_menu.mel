@@ -12,6 +12,7 @@ global proc da_May9Menu()
     menuItem -p $menuMain -l "Toggle Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
     menuItem -p $menuMain -l "Lock Selected" -c "da_Lock" -i "lockGeneric.png";
     menuItem -p $menuMain -l "Unlock Selected" -c "da_UnLock" -i "unlockGeneric.png";
+    menuItem -p $menuMain -l "Delete Mental Ray Nodes" -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
     menuItem -d 1 -l "Layouts";
     menuItem -p $menuMain -l "Perspective/Four View" -c "da_LayoutPersp" -i "fourViewLayout.png";
     menuItem -p $menuMain -l "Node Editor" -c "da_LayoutNodeEditor" -i "perspHypergraphLayout.png";
