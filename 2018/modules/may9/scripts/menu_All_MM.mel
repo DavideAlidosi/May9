@@ -3,6 +3,9 @@ int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrame
 
 string $currentPanel = `getPanel -withFocus`;
 
+string $myPanel = `getPanel -wf`;
+string $myCamera = `modelPanel -q -cam $myPanel`;
+
 menuItem -bld 1 
 -l "Poly/NURBS"
 -sm 1
@@ -147,6 +150,14 @@ menuItem -bld 1
 -l "Transfer Maps"
 -c "performSurfaceSampling 1"
 -i "UseDefaultMaterial.png";
+
+menuItem
+-d 1;
+
+menuItem -bld 1 
+-l "Delete MR Nodes"
+-c "da_RemoveMrNodes"
+-i "createBinFromSelectedNodes.png";
 
 setParent -m ..;
 
@@ -694,6 +705,11 @@ menuItem -bld 1
 -l "Isolate Select" 
 -c "ToggleIsolateSelect" 
 -cb (`isolateSelect -q -state $currentPanel`);
+
+menuItem -bld 1
+-l "Lock Camera" 
+-c "changeCameraLockStatus $myPanel" 
+-cb (1 == `camera -q -lt $myCamera`);
 
 menuItem 
 -d 1;

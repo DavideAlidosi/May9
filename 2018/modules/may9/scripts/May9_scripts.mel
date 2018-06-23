@@ -1608,3 +1608,28 @@ global proc da_CameraVideoImagesPlane(){
 
 	importMovieImagePlane { $myCameraShape[0] };
 }
+
+
+// da_RemoveMrNodes
+
+global proc da_RemoveMrNodes(){
+	string $myResult = `confirmDialog -title "Confirm" -message "Delete all Mental Ray Nodes?" 
+	-button "Yes" -button "No" -defaultButton "Yes" 
+	-cancelButton "No" -dismissString "No"`;
+
+	if ($myResult == "Yes") {
+		string $mrNodes[] = `ls -typ "unknown"`;
+
+		for ($each in $mrNodes){
+			if (`objExists $each` && `unknownNode -q -p $each` == "Mayatomr"){
+				print($each + "\n");
+				delete $each;
+			}
+		}
+		if (`objExists mentalrayIblShape1`){
+			delete mentalrayIblShape1;
+		}
+		unknownPlugin -remove "Mayatomr";
+	}
+	else inViewMessage -pos topCenter -msg "Revert cancelled" -fade;
+}
