@@ -1,5 +1,4 @@
-global proc da_May9Menu()
-{
+global proc da_May9Menu(){
     global string $menuMain;
         if (`menu -exists $menuMain`)
            deleteUI $menuMain;
