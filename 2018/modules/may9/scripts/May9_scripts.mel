@@ -1383,6 +1383,14 @@ global proc da_MatchUV(){
     for($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 0 -uvs 1 -col 0 -spa 0 -sm 3 -clb 1 $myRefUV[0] $myTargets[$i];
 }
 
+// da_SelectShellFromFaces
+
+global proc da_SelectShellFromFaces(){
+	ConvertSelectionToUVs;
+	SelectUVShell;
+	ConvertSelectionToFaces;
+}
+
 
 // da_ShowLocalAxis
 

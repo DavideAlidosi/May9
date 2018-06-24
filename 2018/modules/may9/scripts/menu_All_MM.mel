@@ -1,10 +1,7 @@
 int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
     && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
 
-string $currentPanel = `getPanel -withFocus`;
-
-string $myPanel = `getPanel -wf`;
-string $myCamera = `modelPanel -q -cam $myPanel`;
+string $currentPanel = `getPanel -wf`;
 
 menuItem -bld 1 
 -l "Poly/NURBS"
@@ -693,6 +690,8 @@ setParent -m ..;
 setParent -m ..;
 
 if (`gmatch $currentPanel "modelPanel*"`){
+string $myCamera = `modelPanel -q -cam $currentPanel`;
+
 menuItem -bld 1
 -l "Isolate Select" 
 -c "ToggleIsolateSelect" 
@@ -700,7 +699,7 @@ menuItem -bld 1
 
 menuItem -bld 1
 -l "Lock Camera" 
--c "changeCameraLockStatus $myPanel" 
+-c "changeCameraLockStatus $currentPanel" 
 -cb (1 == `camera -q -lt $myCamera`);
 
 menuItem 
