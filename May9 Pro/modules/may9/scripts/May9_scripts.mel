@@ -375,55 +375,6 @@ global proc da_interactiveIntersection(){
 	ShowManipulators;
 }
 
-
-// da_nParticleConverter
-
-global proc da_convertToThickCloud(){
-    pickWalkDown;
-    string $mySel[] = `ls -sl`;
-    for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "da_ThickCloud" 1;
-	pickWalkUp;
-    }
-}
-
-global proc da_convertToWater(){
-    pickWalkDown;
-    string $mySel[] = `ls -sl`;
-    for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "da_Water" 1;
-	pickWalkUp;
-    }
-}
-
-global proc da_convertToCloud(){
-    pickWalkDown;
-    string $mySel[] = `ls -sl`;
-    for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "da_Cloud" 1;
-	pickWalkUp;
-    }
-}
-
-global proc da_convertToBalls(){
-    pickWalkDown;
-    string $mySel[] = `ls -sl`;
-    for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "da_Balls" 1;
-	pickWalkUp;
-    }
-}
-
-global proc da_convertToPoint(){
-    pickWalkDown;
-    string $mySel[] = `ls -sl`;
-    for($i=0;$i<size($mySel);$i++){
-    applyPresetToNode $mySel[$i] "" "" "da_Point" 1;
-	pickWalkUp;
-    }
-}
-
-
 // da_perspToggle
 
 global proc da_perspToggle(){
