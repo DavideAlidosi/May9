@@ -442,6 +442,13 @@ menuItem
 -c "Tension"
 -i "da_tensionDef.png";
 
+if (`about -api` >= 20190000){
+menuItem
+-l "ProxWrap"
+-c "ProxWrap"
+-i "out_baseLattice.png";
+}
+
 menuItem
 -d 1;
 
