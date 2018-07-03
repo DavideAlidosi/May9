@@ -82,6 +82,13 @@ menuItem
 -l "separator" 
 -d 1;
 
+if (`pluginInfo -q -l bifrostBoard` == 1){
+menuItem 
+-l "Bifrost Board"
+-c "createNode bifrostBoard"
+-i "out_bifrostBoard.png";
+}
+
 menuItem
 -l "Create Common Nodes" 
 -sm 1

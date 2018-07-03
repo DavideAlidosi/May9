@@ -421,6 +421,16 @@ menuItem -bld 1
 -rp "NW" 
 -i "out_implicitSphere.png";
 
+if (`pluginInfo -q -l bifrostBoard` == 1){
+menuItem -bld 1 
+-l "Bifrost Board"
+-c "CreateNewBifrostBoard"
+-i "out_bifrostBoard.png";
+
+menuItem
+-d 1;
+}
+
 menuItem -bld 1 
 -l "nParticle Emitter"
 -c "NCreateEmitter;"
