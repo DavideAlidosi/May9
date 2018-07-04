@@ -1,4 +1,4 @@
-May9 Pro 3.1.3 - A new user experience for Autodesk Maya 2018
+May9 Pro 3.2 - A new user experience for Autodesk Maya 2018
 
 
 General info
@@ -12,7 +12,7 @@ For more information about installation please read the included user guide
 
 
 Release Note
-- May9 Pro 3.1.3 is tested and develop on Maya 2018.3
+- May9 Pro 3.2 is tested and develop on Maya 2019 and 2018.3
 - May9 Pro Workspaces do not autosave, so manually save of the workspace is needed
 
 
@@ -42,11 +42,11 @@ Exclusive script
 - da_MapFacesUV: this script maps any single faces of a mesh as separate planar UV shell
 
 
-Version 3.1 highlight
-- A new drop-down menu
-- Improved All_MM
-- General refactoring, including optimization of all contextual Marking Menus performace
-- Removed Maya 2017 support
+Version 3.2 highlight
+- Add support to Maya 2019
+- Add support to Bifrost Board
+- Unified Maya versions structure
+- Completion of modular structure
 
 
 Useful links

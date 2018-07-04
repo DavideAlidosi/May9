@@ -442,16 +442,6 @@ menuItem
 -c "Tension"
 -i "da_tensionDef.png";
 
-if (`about -api` >= 20190000){
-menuItem
--l "ProxWrap"
--c "ProxWrap"
--i "out_baseLattice.png";
-}
-
-menuItem
--d 1;
-
 menuItem
 -l "Jiggle"
 -c "MASHaddJiggleDeformer"
@@ -469,21 +459,20 @@ menuItem
 
 menuItem
 -l "Wrap"
--c "CreateWrap;"
+-c "CreateWrapOptions;"
 -i "wrap.png";
 
 menuItem
--c "CreateWrapOptions;"
--ob 1;
-
-menuItem
 -l "ShrinkWrap"
--c "CreateShrinkWrap;"
+-c "CreateShrinkWrapOptions;"
 -i "shrinkwrap.png";
 
+if (`about -api` >= 20190000){
 menuItem
--c "CreateShrinkWrapOptions;"
--ob 1;
+-l "ProxWrap"
+-c "ProxWrap"
+-i "out_baseLattice.png";
+}
 
 menuItem
 -l "UV Based"
