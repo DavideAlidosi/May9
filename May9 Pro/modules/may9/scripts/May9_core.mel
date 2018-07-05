@@ -24,9 +24,6 @@ if (`optionVar -q "May9ActivationCheck"` < 31){
     //Source userPrefs only at May9 initialization
     source May9_userPrefs.mel;
 
-    // Set May9 Pro workspace
-	workspaceLayoutManager -setCurrent "May9 Pro";
-
 	// Declare initial layout state
 	global int $myLayout = 0;
 
