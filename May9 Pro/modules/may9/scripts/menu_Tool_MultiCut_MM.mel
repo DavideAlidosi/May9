@@ -3,6 +3,7 @@ commonReflectionOptionsPopup();
 int $deleteFaceOn = `nexOpt -q useDeleteFaces`;
 int $extractFacesOn = `nexOpt -q useExtractFaces`;
 int $splitModeOn = ($deleteFaceOn == $extractFacesOn);
+string $currentPanel = `getPanel -wf`;
 
 menuItem -itl 1 
 -l "Quad Draw"
@@ -33,6 +34,16 @@ menuItem -itl 1
 -c "dr_polyCut(0);" 
 -rp "S" 
 -i "sketchPlane.png";
+
+if (`gmatch $currentPanel "modelPanel*"`){
+menuItem -itl 1
+-l "Construction History" 
+-c "if (`constructionHistory -q -tgl`) constructionHistory -tgl off; else constructionHistory -tgl on;" 
+-cb (`constructionHistory -q -tgl`);
+
+menuItem 
+-d 1;
+}
 
 menuItem -itl 1 
 -l "Reset Settings" 

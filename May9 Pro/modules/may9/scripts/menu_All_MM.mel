@@ -712,6 +712,11 @@ menuItem -bld 1
 -c "changeCameraLockStatus $currentPanel" 
 -cb (1 == `camera -q -lt $myCamera`);
 
+menuItem -bld 1
+-l "Construction History" 
+-c "if (`constructionHistory -q -tgl`) constructionHistory -tgl off; else constructionHistory -tgl on;" 
+-cb (`constructionHistory -q -tgl`);
+
 menuItem 
 -d 1;
 }

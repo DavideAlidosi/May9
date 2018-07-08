@@ -116,13 +116,9 @@ menuItem
 
 menuItem
     -l "Save Workspace" 
-    -c "workspaceLayoutManager -s" 
+    -c "SaveCurrentWorkspace" 
     -i "fileSave.png"
     -rp "S";
-
-menuItem
-	-c "SaveCurrentWorkspace" 
-	-ob 1;
 
 setParent -m ..;
 

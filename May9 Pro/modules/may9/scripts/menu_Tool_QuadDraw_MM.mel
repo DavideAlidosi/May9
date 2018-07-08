@@ -1,6 +1,7 @@
 commonReflectionOptionsPopup();
 
 int $extendMode = `nexOpt -q extendType`;
+string $currentPanel = `getPanel -wf`;
 
 menuItem -itl 1 
 -l "Clear Dots" 
@@ -37,6 +38,16 @@ menuItem -itl 1
 -c "nexOpt -e extendType 1;" 
 -cb (1 == $extendMode)
 -rp "S";
+
+if (`gmatch $currentPanel "modelPanel*"`){
+menuItem -itl 1
+-l "Construction History" 
+-c "if (`constructionHistory -q -tgl`) constructionHistory -tgl off; else constructionHistory -tgl on;" 
+-cb (`constructionHistory -q -tgl`);
+
+menuItem 
+-d 1;
+}
 
 menuItem -itl 1 
 -l "Reset Settings" 
