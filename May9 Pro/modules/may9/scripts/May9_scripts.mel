@@ -1605,3 +1605,27 @@ global proc da_RemoveMrNodes(){
 		inViewMessage -pos topCenter -msg "Mental Ray nodes deleted" -fade;
 	}
 }
+
+
+// da_OpenUvTool
+
+global proc da_OpenUvTool(){
+	int $ToolkitReady  = `isUVToolkitReady`;
+	if(! `workspaceControl -ex UVToolkitDockControl`){
+	    if(! $ToolkitReady)
+	        catchQuiet (`toggleUVToolkit`);
+	}else{
+	    if(`workspaceControl -q -vis UVToolkitDockControl` == 1){
+	        if(`workspaceControl -q -r UVToolkitDockControl` == 0)
+	        workspaceControl -e -clp 0 UVToolkitDockControl;
+	        else
+	            if(`workspaceControl -q -clp UVToolkitDockControl` == 0)
+	                workspaceControl -e -clp 1 UVToolkitDockControl;
+	            else
+	                workspaceControl -e -clp 0 UVToolkitDockControl;
+	    }else{
+	        if(! $ToolkitReady)
+	            catchQuiet (`toggleUVToolkit`);
+	    }
+	}
+}

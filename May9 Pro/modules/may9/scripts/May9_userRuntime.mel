@@ -29,7 +29,7 @@ hotkey -keyShortcut "t" -ctl -alt -name ("da_TitleBarToggleNameCommand");
 hotkey -keyShortcut "o" -alt -name ("da_LayoutOutlinerNameCommand");
 hotkey -keyShortcut "m" -ctl -alt -sht -name ("da_ToggleShelfNameCommand");
 hotkey -keyShortcut "r" -alt -sht -name ("da_ResetTransformNameCommand");
-hotkey -keyShortcut "u" -cmd -name ("da_ToggleUvToolkitNameCommand");
+hotkey -keyShortcut "u" -cmd -name ("da_OpenUvToolNameCommand");
 hotkey -keyShortcut "d" -ctl -alt -sht -name ("da_DeleteStaticChannelsNameCommand");
 hotkey -keyShortcut "Space" -ctl -alt -name ("InteractivePlaybackNameCommand");
 hotkey -keyShortcut "Space" -alt -sht -name ("da_TogglePlaybackNameCommand");
@@ -99,7 +99,7 @@ hotkey -keyShortcut "|" -name ("da_ManipToggleNameCommand");
 hotkey -keyShortcut "Space" -cmd -name ("da_toggleMainWindowFullScreenModeNameCommand");
 hotkey -keyShortcut "Return" -ctl -sht -name ("MatchPivotsNameCommand");
 hotkey -keyShortcut "\\" -ctl -alt -name ("SmoothingDisplayToggleNameCommand");
-hotkey -keyShortcut "u" -alt -name ("da_ToggleUvToolkitNameCommand");
+hotkey -keyShortcut "u" -alt -name ("da_OpenUvToolNameCommand");
 hotkey -keyShortcut "-" -alt -name ("da_ToggleColorFeedbackNameCommand");
 hotkey -keyShortcut "f" -ctl -name ("da_FrameOnlySelectedNameCommand");
 hotkeyCtx -type "Editor" -addClient "hyperGraphPanel";
@@ -356,10 +356,10 @@ nameCommand
 	da_TogglePlaybackNameCommand;
 
 nameCommand
-	-annotation "da_ToggleUvToolkitNameCommand"
+	-annotation "da_OpenUvToolNameCommand"
 	-sourceType "mel"
-	-command ("da_ToggleUvToolkit")
-	da_ToggleUvToolkitNameCommand;
+	-command ("da_OpenUvTool")
+	da_OpenUvToolNameCommand;
 
 nameCommand
 	-annotation "da_ToggleModelingToolNameCommand"
@@ -1931,22 +1931,6 @@ runTimeCommand
 	da_TogglePlayback;
 
 runTimeCommand
-	-annotation "Open the new UV Toolkit"
-	-category "Custom Scripts.May9_Pro.Render"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if(isUVToolkitReady())\n    workspaceControl -e -collapse false UVToolkitDockControl;\nelse\n    toggleUVToolkit;")
-	da_OpenUvToolkit;
-
-runTimeCommand
-	-annotation "Toggle UV Toolkit"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -r UVToolkitDockControl`){\n    if(!`isChannelBoxVisible`){\n        setChannelBoxVisible(1);\n    }else{\n        raiseChannelBox;\n    }\n    }else{\n        da_OpenUvToolkit;\n    }")
-	da_ToggleUvToolkit;
-
-runTimeCommand
 	-annotation "Toggle Modeling Toolkit"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
@@ -2081,14 +2065,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if(`workspaceControl -q -vis NEXDockControl` == 1){\n    if(`workspaceControl -q -r NEXDockControl` == 0)\n    workspaceControl -e -clp 0 NEXDockControl;\n    else\n        if(`workspaceControl -q -clp NEXDockControl` == 0)\n            workspaceControl -e -clp 1 NEXDockControl;\n        else\n            workspaceControl -e -clp 0 NEXDockControl;\n}else{\n    showModelingToolkit;\n}")
 	da_ToggleMTK;
-
-runTimeCommand
-	-annotation "UV Toolkit"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if(`workspaceControl -q -vis UVToolkitDockControl` == 1){\n    if(`workspaceControl -q -r UVToolkitDockControl` == 0)\n    workspaceControl -e -clp 0 UVToolkitDockControl;\n    else\n        if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n            workspaceControl -e -clp 1 UVToolkitDockControl;\n        else\n            workspaceControl -e -clp 0 UVToolkitDockControl;\n}else{\n    da_OpenUvToolkit;\n}")
-	da_UvToolkit;
 
 runTimeCommand
 	-annotation "Toggle Attribute Editor"
