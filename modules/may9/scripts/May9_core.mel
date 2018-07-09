@@ -27,8 +27,17 @@ if (`optionVar -q "May9ActivationCheck"` < 31){
 	// Declare initial layout state
 	global int $myLayout = 0;
 
-	// Define May9 installation status 
+	// Define May9 Pro 3.1 installation status 
 	optionVar -iv May9ActivationCheck 31;
+}
+
+if (`optionVar -q "May9ActivationCheck"` < 320){
+	
+	// Store inital hotkeySet
+	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
+
+	// Define May9 Pro 3.2 installation status 
+	optionVar -iv May9ActivationCheck 320;
 }
 
 // Preload userRuntime

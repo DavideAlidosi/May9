@@ -6,8 +6,8 @@ unloadPlugin MMtoKey;
 pluginInfo -edit -autoload false May9_Pro;
 pluginInfo -edit -autoload false MMtoKey;
 
-// Set back to Maya Default Hotkey Set
-hotkeySet -edit -current Maya_Default;
+// Set back to prior Hotkey Set
+hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 
 // Un-install confirmation
 inViewMessage -pos midCenterTop -msg "May9 Pro un-installed" -fade;
