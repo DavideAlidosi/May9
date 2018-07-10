@@ -7,6 +7,11 @@ catchQuiet(dagMenuProc("", ""));
 // Inizialize Break Connections
 channelBoxCommand -break;
 
+// Inizialize May9_userRuntime
+global proc May9_userRuntime(){
+    source May9_userRuntime.mel;
+}
+
 // Set new scene opened preferences
 string $myLayoutReset = "int $myLayout = 0";
 scriptJob -e "NewSceneOpened" $myLayoutReset;
@@ -43,9 +48,6 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 	source May9_hotkeys.mel;
 
 	// Preload userRuntime
-	global proc May9_userRuntime(){
-	    source May9_userRuntime.mel;
-	}
 	catchQuiet (`May9_userRuntime`);
 
 	// Define May9 Pro 3.2 installation status 
