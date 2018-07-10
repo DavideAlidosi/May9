@@ -1,4 +1,4 @@
-May9 Pro 3.2 - A new user experience for Autodesk Maya 2019 and 2018
+May9 Pro 3.2 - A new user experience for Autodesk Maya 2018
 
 
 General info
@@ -14,7 +14,7 @@ For more information about installation please read the included user guide
 Release Note
 - May9 Pro 3.2 work in any Workspace, anyway the use of Maya Classic is high suggested
 - May9 Pro 3.2 hotkeys add or substitute the actual Hotkey Set when installed
-- May9 Pro 3.2 is tested and develop on Autodesk Maya 2019 and 2018.3
+- May9 Pro 3.2 is tested and develop on Autodesk Maya 2018.3
 
 
 Exclusive script
@@ -44,11 +44,9 @@ Exclusive script
 
 
 Version 3.2 highlight
-- Add support to Maya 2019
-- Add support to Bifrost Board
 - Unified Maya versions structure
 - Completion of modular structure
-- Custom hotkeys are added to the ones in use
+- Custom hotkeys are added to the user ones
 
 
 Useful links
