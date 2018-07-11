@@ -34,7 +34,6 @@ hotkey -keyShortcut "Down" -sht -name ("da_GoToTopNameCommand");
 hotkey -keyShortcut "s" -ctl -alt -sht -name ("da_CreateSetNameCommand");
 hotkey -keyShortcut "x" -ctl -alt -name ("da_RevertToSaveNameCommand");
 hotkey -keyShortcut "Right" -sht -name ("da_GoToFrontNameCommand");
-hotkey -keyShortcut "0" -ctl -alt -name ("da_EditAndFrameShadersNameCommand");
 hotkey -keyShortcut "2" -alt -name ("da_ToggleNodeEditorNameCommand");
 hotkey -keyShortcut "p" -ctl -sht -name ("TagAsControllerParentNameCommand");
 hotkey -keyShortcut "Left" -sht -name ("da_GoToPerspNameCommand");
@@ -44,20 +43,16 @@ hotkey -keyShortcut "o" -cmd -name ("da_LayoutOutlinerNameCommand");
 hotkey -keyShortcut "m" -alt -name ("da_ToggleMTKNameCommand");
 hotkey -keyShortcut "t" -alt -name ("da_ToolSettingsNameCommand");
 hotkey -keyShortcut "\\" -alt -name ("da_CloseAllPanelNameCommand");
-hotkey -keyShortcut "`" -ctl -name ("da_LastOpInStackNameCommand");
 hotkey -keyShortcut "n" -sht -name ("da_FullHotboxDisplayNameCommand");
 hotkey -keyShortcut "t" -ctl -sht -name ("TagAsControllerNameCommand");
 hotkey -keyShortcut "c" -ctl -alt -sht -name ("da_CopySelectionNameCommand");
 hotkey -keyShortcut "r" -ctl -alt -name ("da_RendereViewsNameCommand");
 hotkey -keyShortcut "3" -alt -name ("da_ToggleUVTextureEditorNameCommand");
 hotkey -keyShortcut "z" -alt -sht -name ("da_ZeroTransfomationsNameCommand");
-hotkey -keyShortcut "l" -ctl -name ("da_ListInputOperationsNameCommand");
+hotkey -keyShortcut "l" -ctl -alt -name ("da_ListInputOperationsNameCommand");
 hotkey -keyShortcut "j" -ctl -name ("da_ConnectionEditorNameCommand");
 hotkey -keyShortcut "1" -alt -name ("da_TogglePerspNameCommand");
 hotkey -keyShortcut "v" -ctl -alt -sht -name ("da_PasteSelectionNameCommand");
-hotkey -keyShortcut "`" -ctl -alt -name ("SmoothingDisplayToggleNameCommand");
-hotkey -keyShortcut "`" -releaseName ("STRSTweakModeOffNameCommand");
-hotkey -keyShortcut "`" -name ("STRSTweakModeOnNameCommand");
 hotkey -keyShortcut "p" -ctl -name ("da_ParentAndPositionNameCommand");
 hotkey -keyShortcut "z" -releaseName ("da_MMtoKey_releaseNameCommand");
 hotkey -keyShortcut "9" -alt -name ("da_DynamicRelationshipEditorNameCommand");
@@ -71,7 +66,6 @@ hotkey -keyShortcut "Return" -ctl -alt -name ("TogglePanZoomPressNameCommand");
 hotkey -keyShortcut "Return" -ctl -alt -releaseName ("TogglePanZoomReleaseNameCommand");
 hotkey -keyShortcut "k" -ctl -name ("da_MassAttrNameCommand");
 hotkey -keyShortcut "t" -cmd -name ("da_ToolSettingsNameCommand");
-hotkey -keyShortcut "\\" -ctl -name ("da_LastOpInStackNameCommand");
 hotkey -keyShortcut "Home" -name ("da_ResetTransformNameCommand");
 hotkey -keyShortcut "Up" -sht -name ("da_GoToSideNameCommand");
 hotkey -keyShortcut "t" -sht -name ("da_CreateAssigNodeNameCommand");
@@ -122,12 +116,6 @@ nameCommand
 	-sourceType "mel"
 	-command ("da_FreezeDelNonDef")
 	da_FreezeDelNonDefNameCommand;
-
-nameCommand
-	-annotation "da_LastOpInStackNameCommand"
-	-sourceType "mel"
-	-command ("da_LastOpInStack")
-	da_LastOpInStackNameCommand;
 
 nameCommand
 	-annotation "da_RevertToSaveNameCommand"
@@ -446,12 +434,6 @@ nameCommand
 	-sourceType "mel"
 	-command ("if (`pluginInfo -q -l contextConnector` == 1){da_ContextConnector;}else{ConnectionEditor;}")
 	da_ConnectionEditorNameCommand;
-
-nameCommand
-	-annotation "da_EditAndFrameShadersNameCommand"
-	-sourceType "mel"
-	-command ("da_EditAndFrameShaders")
-	da_EditAndFrameShadersNameCommand;
 
 nameCommand
 	-annotation "da_CreateAssigNodeNameCommand"

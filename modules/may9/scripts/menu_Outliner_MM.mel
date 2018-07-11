@@ -5,13 +5,9 @@ int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
 
 menuItem
 -l "Duplicate" 
--c "DuplicateWithTransform" 
--rp "N" 
--i "da_duplicate.png" ;
-
-menuItem
 -c "DuplicateSpecialOptions" 
--ob 1;
+-rp "N" 
+-i "da_duplicate.png";
 
 menuItem
 -l "Select Hierarchy" 
@@ -21,13 +17,9 @@ menuItem
 
 menuItem
 -l "Create Set" 
--c "CreateSet" 
+-c "CreateSetOptions" 
 -rp "S" 
 -i "out_objectSet.png";
-
-menuItem
--c "CreateSetOptions" 
--ob 1;
 
 menuItem
 -l "Show Local Axes" 

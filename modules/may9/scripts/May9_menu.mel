@@ -7,11 +7,16 @@ global proc da_May9Menu(){
     global string $gMainWindow;
     $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
  
+    menuItem -p $menuMain -l "Revert to Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
     menuItem -p $menuMain -l "Toggle Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
     menuItem -p $menuMain -l "Toggle Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
-    menuItem -p $menuMain -l "Lock Selected" -c "da_Lock" -i "lockGeneric.png";
-    menuItem -p $menuMain -l "Unlock Selected" -c "da_UnLock" -i "unlockGeneric.png";
+    menuItem -p $menuMain -l "List of Input Operation" -c "da_ListInputOperations" -i "out_list.png";
     menuItem -p $menuMain -l "Delete Mental Ray Nodes" -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
+    menuItem -d 1 -l "Selection";
+    menuItem -p $menuMain -l "Lock" -c "da_Lock" -i "lockGeneric.png";
+    menuItem -p $menuMain -l "Unlock" -c "da_UnLock" -i "unlockGeneric.png";
+    menuItem -p $menuMain -l "Copy to Clipboard" -c "da_CopySelection" -i "polyCopyUV.png";
+    menuItem -p $menuMain -l "Paste to Clipboard" -c "da_PasteSelection" -i "polyPasteUV.png";
     menuItem -d 1 -l "Layouts";
     menuItem -p $menuMain -l "Perspective/Four View" -c "da_LayoutPersp" -i "fourViewLayout.png";
     menuItem -p $menuMain -l "Node Editor" -c "da_LayoutNodeEditor" -i "perspHypergraphLayout.png";
@@ -27,6 +32,7 @@ global proc da_May9Menu(){
     menuItem -d 1 -l "Reset";
     menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "out_camera.png";
     menuItem -p $menuMain -l "Render Settings" -c "da_ResetUI;\nunifiedRenderGlobalsWindow" -i "rvRenderGlobals.png";
+    menuItem -p $menuMain -l "Current Workspace" -c "da_CloseAllPanel" -i "RS_refresh_layer.png";
     menuItem -p $menuMain -l "Viewport" -c "ogs -r -rlt" -i "singlePerspLayout.png";
     menuItem -p $menuMain -l "Context MM" -c "da_MMtoKey_clean" -i "deleteClip.png";
     menuItem -p $menuMain -l "Scene to Last Save" -c "da_RevertToSave" -i "loadPreset.png";
