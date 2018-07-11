@@ -1,0 +1,55 @@
+da_commonObjectOptionsPopup();
+
+menuItem
+-l "Front View" 
+-c "dR_DoCmd(\"viewFront\");" 
+-rp "E" 
+-i "da_z.png";
+
+menuItem
+-l "Side View" 
+-c "dR_DoCmd(\"viewRight\");" 
+-rp "W" 
+-i "da_x.png";
+
+menuItem
+-l "Persp View" 
+-c "dR_DoCmd(\"viewPersp\");" 
+-rp "S" 
+-i "singlePerspLayout.png";
+
+menuItem
+-l "Top View" 
+-c "dR_DoCmd(\"viewTop\");" 
+-rp "N" 
+-i "da_y.png";
+
+menuItem
+-l "Select Camera" 
+-c "da_SelectCamera" 
+-i "Camera.png";
+
+menuItem
+-c "da_SelectCamera;\nAttributeEditor\n" 
+-ob 1;
+
+menuItem
+-l "Wheel Zoom" 
+-c "da_ToggleMouseWheel" 
+-cb (`optionVar -q "useScrollWheel"`);
+
+menuItem
+-d 1;
+
+menuItem
+-l "Add Image Plane" 
+-c "da_ImagesPlane" 
+-i "out_imagePlane.png";
+
+menuItem
+-l "Add Movie Plane" 
+-c "da_VideoImagesPlane" 
+-i "da_video_plane.png";
+
+setParent -m ..;
+

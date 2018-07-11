@@ -1,0 +1,147 @@
+int $weightedTangentsCheck[] = `keyTangent -q -weightedTangents`;
+int $weightedTangentsSum = 0;
+for ($each in $weightedTangentsCheck)
+	$weightedTangentsSum += $each;
+
+int $breakTangentsCheck[] = `keyTangent -q -lock`;
+int $breakTangentsSum = 0;
+for ($each in $breakTangentsCheck)
+	$breakTangentsSum += $each;
+
+menuItem
+-l "Weighted Tangents" 
+-c "da_weightedTangents" 
+-cb ($weightedTangentsSum) 
+-rp "E";
+
+menuItem
+-l "Break Tangents" 
+-c "da_breakTangents" 
+-cb (! $breakTangentsSum) 
+-rp "W";
+
+menuItem
+-l "Insert Keyframe" 
+-c "da_InseritKeyframe" 
+-rp "N" 
+-i "keyIntoclip.png";
+
+menuItem
+-l "Swap Buffer Curve" 
+-c "doBuffer swap graphEditor1GraphEd" 
+-rp "NE" 
+-i "bufferSwap.png";
+
+menuItem
+-l "Buffer Curves" 
+-c "animCurveEditor -edit -sb tgl graphEditor1GraphEd; doBuffer snapshot graphEditor1GraphEd" 
+-rp "NW" 
+-cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+
+menuItem
+-l "Delete Static Channels" 
+-c "DeleteStaticChannels" 
+-rp "S" 
+-i "deleteGeneric.png";
+
+menuItem
+-c "DeleteStaticChannelsOptions" 
+-ob 1;
+
+menuItem
+-l "Round Keyframes"
+-c "da_roundKeyframe"
+-rp "SE"
+-i "teSetKeyframe.png";
+
+menuItem
+-l "Simplify Curves" 
+-c "performSimplify 3 graphEditor1GraphEd" 
+-rp "SW"
+-i "da_simplifyCurve.png";
+
+menuItem 
+-l "Lock Channel"
+-sm 1
+-i "nodeGrapherLocked.png";
+
+menuItem
+-l "On" 
+-c "GraphEditorLockChannel" 
+-i "nodeGrapherLocked.png";
+
+menuItem
+-l "Off" 
+-c "GraphEditorUnlockChannel;" 
+-i "nodeGrapherUnlocked.png";
+
+setParent -m ..;
+
+menuItem 
+-l "Mute Channel"
+-sm 1
+-i "muted.png";
+
+menuItem
+-l "On" 
+-c "doMuteChannel graphEditor1FromOutliner -true;" 
+-i "muted.png";
+
+menuItem
+-l "Off" 
+-c "doMuteChannel graphEditor1FromOutliner -false;" 
+-i "teMuteOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Play Max Real-time"
+-c "da_maxPlaybackSpeedToggle"
+-cb (`playbackOptions -q -maxPlaybackSpeed`);
+
+menuItem
+-l "Stepped Preview"
+-c "da_steppedPreview"
+-cb (`playbackOptions -q -blockingAnim`);
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-c "performSimplify 4 graphEditor1GraphEd;" 
+-ob 1;
+
+menuItem
+-l "Select Curve" 
+-c "selectType -animCurve (!`selectType -q -animCurve`)" 
+-cb (`selectType -q -animCurve`);
+
+menuItem
+-l "Pre-Select Highlight" 
+-c "animCurveEditor -e -psh (!`animCurveEditor -q -psh graphEditor1GraphEd`) graphEditor1GraphEd" 
+-cb (`animCurveEditor -q -psh graphEditor1GraphEd`);
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Auto Frame" 
+-c "animCurveEditor -e -af (!`animCurveEditor -q -af graphEditor1GraphEd`) graphEditor1GraphEd;optionVar -intValue graphEditorAutoFit (!`animCurveEditor -q -af graphEditor1GraphEd`);menuItem -e -enable (`animCurveEditor -q -af graphEditor1GraphEd`) displayAutoFitTimeItem" 
+-cb (`animCurveEditor -q -af graphEditor1GraphEd`);
+
+if (`about -api` >= 20180300){
+menuItem
+-l "Auto Frame Time" 
+-c "animCurveEditor -e -aft (!`animCurveEditor -q -aft graphEditor1GraphEd`) graphEditor1GraphEd;optionVar -intValue graphEditorAutoFitTime (!`animCurveEditor -q -aft graphEditor1GraphEd`)" 
+-cb (`animCurveEditor -q -aft graphEditor1GraphEd`)
+-en (`animCurveEditor -q -af graphEditor1GraphEd`);
+}
+
+setParent -m ..;
+

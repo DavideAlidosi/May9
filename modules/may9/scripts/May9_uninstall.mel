@@ -6,8 +6,17 @@ unloadPlugin MMtoKey;
 pluginInfo -edit -autoload false May9_Pro;
 pluginInfo -edit -autoload false MMtoKey;
 
-// Set back to prior Hotkey Set
+// Set back to prior Hotkeyset
 hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
+
+// Delete May9_Pro hotkeySet
+catchQuiet (`hotkeySet -e -delete May9_Pro`);
+
+// Put May9 Intallation in idle mode
+optionVar -iv May9ActivationCheck 32;
+
+// Store Preferences Changes
+savePrefsChanges;
 
 // Un-install confirmation
 inViewMessage -pos midCenterTop -msg "May9 Pro un-installed" -fade;

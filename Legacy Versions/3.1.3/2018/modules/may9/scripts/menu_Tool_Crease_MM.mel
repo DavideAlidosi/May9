@@ -1,0 +1,34 @@
+
+menuItem -itl 1 
+-l "No Crease" 
+-c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 0 -vertexValue 0 $each;\n}" 
+-rp "S";
+
+menuItem -itl 1 
+-l "10 Crease" 
+-c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 10 -vertexValue 10 $each;\n}" 
+-rp "N";
+
+menuItem -itl 1 
+-l "0.5 Crease" 
+-c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value .5 -vertexValue .5 $each;\n}" 
+-rp "SE";
+
+menuItem -itl 1 
+-l "2 Crease" 
+-c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 2 -vertexValue 2 $each;\n}" 
+-rp "E";
+
+menuItem -itl 1 
+-l "4 Crease" 
+-c "string $mySel[] = `ls -sl -fl`;\nfor ($each in $mySel)\n{\n    polyCrease -ch true -value 4 -vertexValue 4 $each;\n}" 
+-rp "NE";
+
+menuItem -itl 1 
+-l "Crease Set Editor" 
+-c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
+-rp "W" 
+-i "polyCrease.png";
+
+setParent -m ..;
+

@@ -1,0 +1,44 @@
+
+menuItem
+-l "Cut/Sew" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+-rp "NE" 
+-i "CutSewUVTool.png";
+
+menuItem
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+-ob 1;
+
+menuItem
+-l "Optimize" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+-rp "NW" 
+-i "optimizeUVTool.png";
+
+menuItem
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+-ob 1;
+
+menuItem
+-l "Select Nsided"
+-rp "S" 
+-c "polyCleanupArgList 4 { \"0\",\"2\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"-1\",\"0\",\"0\" }"
+-i "polyCreateFacet.png";
+
+menuItem
+-l "UV Toolkit" 
+-c "da_OpenUvToolkit" 
+-i "UVTk.png";
+
+menuItem
+-l "UV Set Editor" 
+-c "UVSetEditor" 
+-i "polyUVSetEditor.png";
+
+menuItem
+-l "UV Link Editor" 
+-c "UVCentricUVLinkingEditor" 
+-i "da_uvLinkEditor.png";
+
+setParent -m ..;
+
