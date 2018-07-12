@@ -86,33 +86,14 @@ hotkey -keyShortcut "-" -alt -name ("da_ToggleColorFeedbackNameCommand");
 hotkey -keyShortcut "i" -alt -name ("da_ToggleWireframeInArtisanNameCommand");
 hotkey -keyShortcut "n" -sht -name ("da_FullHotboxDisplayNameCommand");
 hotkey -keyShortcut "~" -ctl -alt -name ("SmoothingDisplayShowBothNameCommand");hotkey -keyShortcut "|" -ctl -alt -name ("SmoothingDisplayShowBothNameCommand");//Italian layout
-hotkey -keyShortcut "Return" -ctl -alt -name ("TogglePanZoomPressNameCommand");
-hotkey -keyShortcut "Return" -ctl -alt -releaseName ("TogglePanZoomReleaseNameCommand");
+hotkey -keyShortcut "Return" -ctl -alt -name ("TogglePanZoomPressNameCommand");//Italian layout fix
+hotkey -keyShortcut "Return" -ctl -alt -releaseName ("TogglePanZoomReleaseNameCommand");//Italian layout fix
 
 // Italian keyboard layot hotkey
 hotkey -keyShortcut "|" -ctl -name ("SmoothProxyNameCommand");
 hotkey -keyShortcut "\\" -ctl -name ("SmoothingDisplayToggleNameCommand");
 hotkey -keyShortcut "\\" -name ("STRSTweakModeOnNameCommand");
 hotkey -keyShortcut "\\" -releaseName ("STRSTweakModeOffNameCommand");
-
-
-// Hotkey panels
-hotkeyCtx -type "Editor" -addClient "nodeEditorPanel";
-hotkeyCtx -type "Editor" -addClient "outlinerPanel";
-hotkeyCtx -type "Editor" -addClient "shapePanel";
-hotkeyCtx -type "Editor" -addClient "polyTexturePlacementPanel";
-hotkeyCtx -type "Editor" -addClient "hyperGraphPanel";
-hotkeyCtx -type "Editor" -addClient "graphEditor";
-hotkeyCtx -type "Editor" -addClient "posePanel";
-hotkeyCtx -type "Editor" -addClient "timeEditorPanel";
-hotkeyCtx -type "Editor" -addClient "hyperShadePanel";
-hotkeyCtx -type "Editor" -addClient "profilerPanel";
-hotkeyCtx -type "Tool" -addClient "texCutContext";
-hotkeyCtx -type "Tool" -addClient "xgmIGBrush";
-hotkeyCtx -type "Tool" -addClient "polyCutUV";
-hotkeyCtx -type "Tool" -addClient "texSculptCacheContext";
-hotkeyCtx -type "Tool" -addClient "SymmetrizeUVBrush";
-hotkeyCtx -type "Tool" -addClient "Unfold3DBrush";
 
 
 //
