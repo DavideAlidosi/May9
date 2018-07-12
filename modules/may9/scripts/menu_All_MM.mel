@@ -711,6 +711,7 @@ menuItem -bld 1
 -l "Lock Camera" 
 -c "changeCameraLockStatus $currentPanel" 
 -cb (1 == `camera -q -lt $myCamera`);
+}
 
 menuItem -bld 1
 -l "Construction History" 
@@ -719,7 +720,6 @@ menuItem -bld 1
 
 menuItem 
 -d 1;
-}
 
 menuItem -bld 1 
 -l "Set Project"
