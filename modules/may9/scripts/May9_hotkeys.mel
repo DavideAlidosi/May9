@@ -28,9 +28,10 @@ hotkey -keyShortcut "Space" -ctl -alt -name ("InteractivePlaybackNameCommand");
 // CTRL Shift Alt Hotkeys
 hotkey -keyShortcut "c" -ctl -alt -sht -name ("da_CopySelectionNameCommand");
 hotkey -keyShortcut "v" -ctl -alt -sht -name ("da_PasteSelectionNameCommand");
-hotkey -keyShortcut "s" -ctl -alt -sht -name ("da_CreateSetNameCommand");
+hotkey -keyShortcut "g" -ctl -alt -sht -name ("da_CreateSetNameCommand");
 hotkey -keyShortcut "m" -ctl -alt -sht -name ("da_ToggleShelfNameCommand");
 hotkey -keyShortcut "r" -ctl -alt -sht -name ("da_ToggleResolutionGateNameCommand");
+hotkey -keyShortcut "s" -ctl -alt -sht -name ("da_KeyKeyedOnlyNameCommand");
 
 // Rigging hotkeys
 hotkey -keyShortcut "Return" -ctl -alt -sht -name ("MatchPivotsNameCommand");
@@ -507,3 +508,9 @@ nameCommand
 	-sourceType "mel"
 	-command ("da_moveKeyframeToPrev")
 	da_moveKeyframeToPrevNameCommand;
+
+nameCommand
+	-annotation "da_KeyKeyedOnlyNameCommand"
+	-sourceType "mel"
+	-command ("da_KeyKeyedOnly")
+	da_KeyKeyedOnlyNameCommand;

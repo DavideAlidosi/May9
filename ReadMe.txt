@@ -44,9 +44,10 @@ Exclusive script
 
 
 Version 3.2 highlight
-- Unified Maya versions structure
+- Unified Maya versions installer
 - Completion of modular structure
-- Custom hotkeys are added to the user ones
+- Polish hotkeys scheme, see userguide for more information
+- Custom hotkeys are added to the current hotkeySet during installation
 
 
 Useful links
