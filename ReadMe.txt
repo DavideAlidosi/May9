@@ -41,6 +41,7 @@ Exclusive script
 - da_CombineCurves: this script combines curves in a single transform
 - da_SepareCurves: this script separate combined curves
 - da_MapFacesUV: this script maps any single faces of a mesh as separate planar UV shell
+- da_KeyKeyedOnly: this script creates animation keys only on already animated channels
 
 
 Version 3.2 highlight

@@ -6,11 +6,11 @@ global proc da_May9Menu(){
  
     global string $gMainWindow;
     $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
- 
-    menuItem -p $menuMain -l "Revert to Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
     menuItem -p $menuMain -l "Toggle Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
     menuItem -p $menuMain -l "Toggle Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
     menuItem -p $menuMain -l "List of Input Operation" -c "da_ListInputOperations" -i "out_list.png";
+    menuItem -d 1 -l "File";
+    menuItem -p $menuMain -l "Revert to Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
     menuItem -p $menuMain -l "Delete Mental Ray Nodes" -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
     menuItem -d 1 -l "Selection";
     menuItem -p $menuMain -l "Lock" -c "da_Lock" -i "lockGeneric.png";
