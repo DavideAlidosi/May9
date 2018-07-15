@@ -5,9 +5,13 @@ int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
 
 menuItem
 -l "Duplicate" 
--c "DuplicateSpecialOptions" 
+-c "duplicatePreset(1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1)" 
 -rp "N" 
 -i "da_duplicate.png";
+
+menuItem
+-c "DuplicateSpecialOptions"
+-ob 1;
 
 menuItem
 -l "Select Hierarchy" 

@@ -1638,3 +1638,12 @@ global proc da_KeyKeyedOnly(){
 		}
 	}
 }
+
+
+// da_ExposeRotationOrder
+
+global proc da_ExposeRotationOrder(){
+	string $myTransform[] = `ls -sl -tr`;
+	for ($each in $myTransform)
+	    setAttr -k on  ($each + ".rotateOrder");
+}
