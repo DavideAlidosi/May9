@@ -436,8 +436,12 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "nParticle Tool"
--c "NParticleToolOptions"
+-c "NParticleTool"
 -i "particle.png";
+
+menuItem
+-c "NParticleToolOptions"
+-ob 1;
 
 setParent -m ..;
 
@@ -454,12 +458,6 @@ menuItem -bld 1
 -i "aselect.png";
 
 menuItem -bld 1 
--l "Key Animated/Selected"
--c "da_KeyKeyedOnly"
--rp "NW"
--i "keyIntoclip.png";
-
-menuItem -bld 1 
 -l "Flow Path Object"
 -c "FlowPathObjectOptions"
 -rp "SW"
@@ -474,20 +472,38 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Set Motion Path Key"
 -c "SetKeyPath"
--rp "S"
+-rp "NW"
 -i "motionPathKey.png";
 
 menuItem -bld 1 
 -l "Attach To Motion Path"
--c "AttachToPathOptions"
+-c "AttachToPath"
 -rp "W"
 -i "motionPath.png";
 
+menuItem
+-c "AttachToPathOptions" 
+-ob 1;
+
 menuItem -bld 1 
--l "Round Keyframes"
--c "da_roundKeyframe"
--rp "E"
--i "teSetKeyframe.png";
+-l "Editable Motion Trail"
+-c "CreateMotionTrail"
+-rp "S"
+-i "motionTrail.png";
+
+menuItem
+-c "CreateMotionTrailOptions" 
+-ob 1;
+
+menuItem -bld 1 
+-l "Delete Static Channels" 
+-c "DeleteStaticChannels" 
+-rp "E" 
+-i "deleteGeneric.png";
+
+menuItem
+-c "DeleteStaticChannelsOptions" 
+-ob 1;
 
 menuItem -bld 1 
 -l "Play Max Real-time"
@@ -501,11 +517,6 @@ menuItem -bld 1
 
 menuItem
 -d 1;
-
-menuItem -bld 1 
--l "Create Motion Trail"
--c "CreateMotionTrailOptions"
--i "motionTrail.png";
 
 menuItem -bld 1 
 -l "Create Turntable"
