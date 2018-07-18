@@ -436,12 +436,8 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "nParticle Tool"
--c "NParticleTool"
--i "particle.png";
-
-menuItem
 -c "NParticleToolOptions"
--ob 1;
+-i "particle.png";
 
 setParent -m ..;
 
@@ -452,20 +448,16 @@ menuItem -bld 1
 -i "out_animCurveTA.png";
 
 menuItem -bld 1 
--l "Add Motion Trail"
--c "CreateMotionTrail;"
--rp "S"
--i "motionTrail.png";
-
-menuItem
--c "CreateMotionTrailOptions;"
--ob 1;
-
-menuItem -bld 1 
 -l "Mouse Tracker"
 -c "da_MouseTrack"
 -rp "N"
 -i "aselect.png";
+
+menuItem -bld 1 
+-l "Key Animated/Selected"
+-c "da_KeyKeyedOnly"
+-rp "NW"
+-i "keyIntoclip.png";
 
 menuItem -bld 1 
 -l "Flow Path Object"
@@ -482,7 +474,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Set Motion Path Key"
 -c "SetKeyPath"
--rp "NW"
+-rp "S"
 -i "motionPathKey.png";
 
 menuItem -bld 1 
@@ -509,6 +501,11 @@ menuItem -bld 1
 
 menuItem
 -d 1;
+
+menuItem -bld 1 
+-l "Create Motion Trail"
+-c "CreateMotionTrailOptions"
+-i "motionTrail.png";
 
 menuItem -bld 1 
 -l "Create Turntable"
