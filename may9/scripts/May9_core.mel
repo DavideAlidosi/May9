@@ -37,9 +37,6 @@ if (`optionVar -q "May9ActivationCheck"` < 31){
 }
 
 if (`optionVar -q "May9ActivationCheck"` < 320){
-	
-	// If Exist delete May9_Pro hotkeySet
-	catchQuiet (`hotkeySet -e -delete May9_Pro`);
 
 	// Store inital hotkeySet
 	optionVar -sv da_initialHotekey `hotkeySet -q -current`;

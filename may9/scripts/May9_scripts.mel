@@ -1648,3 +1648,16 @@ global proc da_ExposeRotationOrder(){
 	for ($each in $myTransform)
 	    setAttr -k on  ($each + ".rotateOrder");
 }
+
+
+// da_hotkeySetToggle
+
+global proc da_hotkeySetToggle(){
+	if (`hotkeySet -q -current` == "May9_Core"){
+	    hotkeySet -edit -current May9_Pro;
+	    inViewMessage -pos topCenter -msg "May9 Pro hotkeys enabled" -fade;
+	}else{
+	    hotkeySet -edit -current May9_Core;
+	    inViewMessage -pos topCenter -msg "May9 Pro hotkeys disabled" -fade;
+	}
+}

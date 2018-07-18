@@ -34,14 +34,6 @@ menuItem
 -ob 1;
 
 menuItem
--l "Wheel Zoom" 
--c "da_ToggleMouseWheel" 
--cb (`optionVar -q "useScrollWheel"`);
-
-menuItem
--d 1;
-
-menuItem
 -l "Add Image Plane" 
 -c "da_ImagesPlane" 
 -i "out_imagePlane.png";
@@ -50,6 +42,19 @@ menuItem
 -l "Add Movie Plane" 
 -c "da_VideoImagesPlane" 
 -i "da_video_plane.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Wheel Zoom" 
+-c "da_ToggleMouseWheel" 
+-cb (`optionVar -q "useScrollWheel"`);
+
+menuItem
+-l "May9 Pro Hotkeys" 
+-c "da_hotkeySetToggle" 
+-cb (`hotkeySet -q -current` == "May9_Pro");
 
 setParent -m ..;
 

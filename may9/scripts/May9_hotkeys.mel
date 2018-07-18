@@ -1,14 +1,15 @@
-//
-// hotkey set
-//
-
-hotkeySet -source `optionVar -q "da_initialHotekey"` -current May9_Pro;
+// Core hotkey set
+hotkeySet -source `optionVar -q "da_initialHotekey"` -current May9_Core;
 
 // MMtoKey hotkeys
 hotkey -keyShortcut "q" -ctl -alt -sht -name ("da_MMtoKey_cleanNameCommand");
 hotkey -keyShortcut "z" -ctl -alt -sht -name ("da_MMtoKeyManagerNameCommand");
 hotkey -keyShortcut "z" -name ("da_MMtoKey_pressNameCommand");
 hotkey -keyShortcut "z" -releaseName ("da_MMtoKey_releaseNameCommand");
+
+
+// Pro hotkey set
+hotkeySet -source May9_Core -current May9_Pro;
 
 // Shift Alt Hotkeys
 hotkey -keyShortcut "z" -alt -sht -name ("da_ZeroTransfomationsNameCommand");
@@ -96,9 +97,7 @@ hotkey -keyShortcut "\\" -name ("STRSTweakModeOnNameCommand");
 hotkey -keyShortcut "\\" -releaseName ("STRSTweakModeOffNameCommand");
 
 
-//
 // nameCommand set
-//
 
 nameCommand
 	-annotation "da_MMtoKeyManagerNameCommand"
