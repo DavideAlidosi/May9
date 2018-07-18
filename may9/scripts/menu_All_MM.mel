@@ -250,6 +250,11 @@ menuItem -bld 1
 -c "ExpressionEditor"
 -i "out_expression.png";
 
+menuItem -bld 1 
+-l "Channel Control"
+-c "ChannelControlEditor"
+-i "channelBox.png";
+
 menuItem 
 -d 1;
 
@@ -287,14 +292,6 @@ menuItem -bld 1
 -l "Attributes"
 -sm 1
 -i "attributes.png";
-
-menuItem -bld 1 
--l "Channel Control"
--c "ChannelControlEditor"
--i "channelBox.png";
-
-menuItem
--d 1;
 
 menuItem -bld 1 
 -l "Add"
@@ -446,38 +443,6 @@ menuItem
 -c "NParticleToolOptions"
 -ob 1;
 
-menuItem -bld 1 
--l "Particle Style"
--sm 1
--i "out_particle.png";
-
-menuItem -bld 1 
--l "Points"
--c "optionVar -stringValue NParticleStyle \"Points\";"
--i "nPartPoints.png";
-
-menuItem -bld 1 
--l "Balls"
--c "optionVar -stringValue NParticleStyle \"Balls\";"
--i "nPartBalls.png";
-
-menuItem -bld 1 
--l "Cloud"
--c "optionVar -stringValue NParticleStyle \"Cloud\";"
--i "nPartCloud.png";
-
-menuItem -bld 1 
--l "ThickCloud"
--c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
--i "nPartThickCloud.png";
-
-menuItem -bld 1 
--l "Water"
--c "optionVar -stringValue NParticleStyle \"Water\";"
--i "nPartWater.png";
-
-setParent -m ..;
-
 setParent -m ..;
 
 menuItem -bld 1 
@@ -555,11 +520,6 @@ menuItem -bld 1
 -c "SetDrivenKeyOptions"
 -i "setDrivenKeyframe.png";
 
-menuItem -bld 1 
--l "Make Pivot Keyable"
--c "da_pivotKeyable"
--i "pickPivotComp.png";
-
 setParent -m ..;
 
 menuItem -bld 1 
@@ -594,14 +554,14 @@ menuItem
 
 menuItem -bld 1 
 -l "Select Camera"
--c "da_SelectCamera"
--rp "NE"
+-c "da_SelectCamera;AttributeEditor"
+-rp "W"
 -i "Camera.png";
 
 menuItem -bld 1 
 -l "Select None"
 -c "SelectNone" 
--rp "W"
+-rp "NE"
 -i "hotkeyFieldClear.png";
 
 menuItem -bld 1 
@@ -691,14 +651,22 @@ menuItem -bld 1
 -i "out_buttonManip.png";
 
 menuItem -bld 1 
+-l "Duplicate with Transform"
+-c "DuplicateWithTransform" 
+-i "da_duplicate.png";
+
+menuItem 
+-d 1;
+
+menuItem -bld 1 
 -l "Expose Rotate Order"
 -c "da_ExposeRotationOrder" 
 -i "rotateUVccw.png";
 
 menuItem -bld 1 
--l "Duplicate with Transform"
--c "DuplicateWithTransform" 
--i "da_duplicate.png";
+-l "Expose Pivot Channels"
+-c "da_pivotKeyable"
+-i "pickPivotComp.png";
 
 setParent -m ..;
 
