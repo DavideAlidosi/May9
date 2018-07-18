@@ -37,9 +37,11 @@ if (`optionVar -q "May9ActivationCheck"` < 31){
 }
 
 if (`optionVar -q "May9ActivationCheck"` < 320){
-
 	// Store inital hotkeySet
 	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
+
+	// Delete old May9_Pro HotkeySet if present
+	catchQuiet (`hotkeySet -e -delete May9_Pro`);
 
 	// Preload hotkeys
 	source May9_hotkeys.mel;
@@ -47,8 +49,14 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 	// Preload userRuntime
 	catchQuiet (`May9_userRuntime`);
 
+	// Set May9 Core hotkeySet
+	hotkeySet -edit -current May9_Core;
+
 	// Define May9 Pro 3.2 installation status 
 	optionVar -iv May9ActivationCheck 320;
+
+	// Store Preferences Changes
+	savePrefsChanges;
 }
 
 // Preload May9Menu
