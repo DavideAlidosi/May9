@@ -89,6 +89,11 @@ menuItem -bld 1
 -i "rvSequenceRender.png";
 
 menuItem -bld 1 
+-c "unifiedRenderGlobalsWindow"
+-ob 1
+-stp "mel";
+
+menuItem -bld 1 
 -l "Color Management"
 -c "da_ToggleColorManagement" 
 -rp "S"
@@ -528,6 +533,11 @@ menuItem -bld 1
 -c "SetDrivenKeyOptions"
 -i "setDrivenKeyframe.png";
 
+menuItem -bld 1 
+-l "MASH Editor"
+-c "MASHOutliner"
+-i "MASH_Editor.png";
+
 setParent -m ..;
 
 menuItem -bld 1 
@@ -543,10 +553,10 @@ menuItem -bld 1
 -cb (true == $HUDCheck);
 
 menuItem -bld 1 
--l "Optimize Scene Size" 
--c "OptimizeSceneOptions"
--i "sequenceCompress.png" 
--rp "S";
+-l "Select Inverse" 
+-c "InvertSelection"
+-i "selectCycle.png" 
+-rp "W";
 
 menuItem -bld 1 
 -l "Select Hierarchy"
@@ -563,26 +573,44 @@ menuItem
 menuItem -bld 1 
 -l "Select Camera"
 -c "da_SelectCamera;AttributeEditor"
--rp "W"
+-rp "SW"
 -i "Camera.png";
 
 menuItem -bld 1 
 -l "Select None"
 -c "SelectNone" 
--rp "NE"
+-rp "E"
 -i "hotkeyFieldClear.png";
 
 menuItem -bld 1 
 -l "Select All"
 -c "SelectAll" 
--rp "E"
+-rp "NE"
 -i "aselect.png";
 
 menuItem -bld 1 
 -l "Distance Tool"
 -c "DistanceTool"
--rp "SW"
+-rp "S"
 -i "distanceDim.png";
+
+menuItem -bld 1 
+-l "Content Browser"
+-c "ContentBrowserWindow"
+-i "folder-open.png";
+
+menuItem -bld 1 
+-l "Optimize Scene Size" 
+-c "OptimizeSceneOptions"
+-i "sequenceCompress.png";
+
+menuItem -bld 1 
+-l "Namespace Editor"
+-c "NamespaceEditor"
+-i "QR_rename.png";
+
+menuItem 
+-d 1;
 
 menuItem -bld 1 
 -l "Profiler"
@@ -593,16 +621,6 @@ menuItem -bld 1
 -l "Evaluation Toolkit"
 -c "EvaluationToolkit"
 -i "polyColorSetEditor.png";
-
-menuItem -bld 1 
--l "Namespace Editor"
--c "NamespaceEditor"
--i "QR_rename.png";
-
-menuItem -bld 1 
--l "MASH Editor"
--c "MASHOutliner"
--i "MASH_Editor.png";
 
 setParent -m ..;
 
@@ -698,24 +716,6 @@ menuItem -bld 1
 -l "Construction History" 
 -c "if (`constructionHistory -q -tgl`) constructionHistory -tgl off; else constructionHistory -tgl on;" 
 -cb (`constructionHistory -q -tgl`);
-
-menuItem 
--d 1;
-
-menuItem -bld 1 
--l "Set Project"
--c "SetProject"
--i "folder-closed.png";
-
-menuItem -bld 1 
--l "Project Window"
--c "ProjectWindow"
--i "folder-new.png";
-
-menuItem -bld 1 
--l "Content Browser"
--c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Modeling/Sculpting Base Meshes/Animals\");"
--i "folder-open.png";
 
 setParent -m ..;
 
