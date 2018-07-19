@@ -1627,20 +1627,6 @@ global proc da_OpenUvTool(){
 }
 
 
-// da_KeyKeyedOnly
-
-global proc da_KeyKeyedOnly(){
-	channelBoxCommand -key;
-	string $mySel[] = `ls -sl`;
-	for ($each in $mySel){
-	    string $mayAnimCurves[] = `listConnections -t animCurve -c 1 -scn 1 $each`;
-		for ($any in $mayAnimCurves){
-	    	    setKeyframe $any;
-		}
-	}
-}
-
-
 // da_ExposeRotationOrder
 
 global proc da_ExposeRotationOrder(){

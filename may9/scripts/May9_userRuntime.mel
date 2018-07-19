@@ -1,4 +1,11 @@
 // runTimeCommand set
+runTimeCommand
+	-annotation "Creates Animation Keys on Selected or Already Animated Channels"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("channelBoxCommand -key;\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n    string $mayAnimCurves[] = `listConnections -t animCurve -c 1 -scn 1 $each`;\n\tfor ($any in $mayAnimCurves){\n    \t    setKeyframe $any;\n\t}\n}")
+	da_KeyKeyedOnly;
 
 runTimeCommand
 	-annotation "Add Custom Fluid Kill Field"

@@ -49,7 +49,7 @@ Version 3.2 highlight
 - Completion of modular structure
 - Polish hotkeys scheme, see userguide for more information
 - May9 hotkeys sets are added over the current hotkeySet during installation
-- May9 Pro custom hokeys can be now enable or disable from MayaWindow_MM
+- May9 Pro custom hotkeys can be now enable or disable from May9 Pro drop-down menu
 
 
 Useful links
