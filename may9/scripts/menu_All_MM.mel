@@ -441,12 +441,8 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "nParticle Tool"
--c "NParticleTool"
--i "particle.png";
-
-menuItem
 -c "NParticleToolOptions"
--ob 1;
+-i "particle.png";
 
 setParent -m ..;
 
@@ -467,12 +463,6 @@ menuItem -bld 1
 -c "FlowPathObjectOptions"
 -rp "SW"
 -i "flowPathObj.png";
-
-menuItem -bld 1 
--l "Grease Pencil"
--c "GreasePencilTool"
--rp "NE"
--i "GreasePencil.png";
 
 menuItem -bld 1 
 -l "Set Motion Path Key"
@@ -501,6 +491,12 @@ menuItem
 -ob 1;
 
 menuItem -bld 1 
+-l "Round Keyframes"
+-c "da_roundKeyframe"
+-rp "NE"
+-i "teSetKeyframe.png";
+
+menuItem -bld 1 
 -l "Delete Static Channels" 
 -c "DeleteStaticChannels" 
 -rp "E" 
@@ -522,6 +518,11 @@ menuItem -bld 1
 
 menuItem
 -d 1;
+
+menuItem -bld 1 
+-l "Grease Pencil Tool"
+-c "GreasePencilTool"
+-i "GreasePencil.png";
 
 menuItem -bld 1 
 -l "Create Turntable"
