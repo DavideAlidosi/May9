@@ -1,9 +1,7 @@
 // Core hotkey set
 hotkeySet -source `optionVar -q "da_initialHotekey"` -current May9_Core;
 
-// MMtoKey hotkeys
-hotkey -keyShortcut "q" -ctl -alt -sht -name ("da_MMtoKey_cleanNameCommand");
-hotkey -keyShortcut "z" -ctl -alt -sht -name ("da_MMtoKeyManagerNameCommand");
+// MMtoKey Contextual Workflow hotkeys
 hotkey -keyShortcut "z" -name ("da_MMtoKey_pressNameCommand");
 hotkey -keyShortcut "z" -releaseName ("da_MMtoKey_releaseNameCommand");
 
@@ -32,6 +30,8 @@ hotkey -keyShortcut "v" -ctl -alt -sht -name ("da_PasteSelectionNameCommand");
 hotkey -keyShortcut "g" -ctl -alt -sht -name ("da_CreateSetNameCommand");
 hotkey -keyShortcut "m" -ctl -alt -sht -name ("da_ToggleShelfNameCommand");
 hotkey -keyShortcut "r" -ctl -alt -sht -name ("da_ToggleResolutionGateNameCommand");
+hotkey -keyShortcut "q" -ctl -alt -sht -name ("da_MMtoKey_cleanNameCommand");
+hotkey -keyShortcut "z" -ctl -alt -sht -name ("da_MMtoKeyManagerNameCommand");
 hotkey -keyShortcut "s" -ctl -alt -sht -name ("da_KeyKeyedOnlyNameCommand");
 
 // Rigging hotkeys
