@@ -1,5 +1,509 @@
 // runTimeCommand set
 runTimeCommand
+	-annotation "Add Scene Option to MayaWindow_MM"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $panel = `getPanel -wf`;\n\nmenuItem\n    -l \"Visibility\" \n    -subMenu 1\n    -rp \"NE\" \n\t-i \"RS_visible.png\";\n\nmenuItem\n    -l \"Curves\" \n    -c \"da_ToggleNurbsCurvesVis\" \n\t-cb (`modelEditor -q -nurbsCurves $panel`)\n    -rp \"NE\";\n\nmenuItem\n    -l \"Polygons\" \n    -c \"da_TogglePolyVis\" \n\t-cb (`modelEditor -q -polymeshes $panel`)\n    -rp \"N\";\n\nmenuItem\n    -l \"Light\" \n    -c \"da_ToggleLightVis\" \n\t-cb (`modelEditor -q -lights $panel`)\n    -rp \"NW\";\n\nmenuItem\n    -l \"Joint\" \n    -c \"da_ToggleJointVis\" \n\t-cb (`modelEditor -q -joints $panel`)\n    -rp \"SE\";\n\nmenuItem\n    -l \"IK Handle\" \n    -c \"da_ToggleIkVis\" \n\t-cb (`modelEditor -q -ikHandles $panel`)\n    -rp \"S\";\n\nmenuItem\n    -l \"Locator\" \n    -c \"da_ToggleLocVis\" \n\t-cb (`modelEditor -q -locators $panel`);\n\nmenuItem\n    -l \"Deformers\" \n    -c \"da_ToggleDefVis\" \n\t-cb (`modelEditor -q -deformers $panel`)\n    -rp \"W\";\n\nmenuItem\n    -l \"Nurbs\" \n    -c \"da_ToggleNurbsVis\" \n\t-cb (`modelEditor -q -nurbsSurfaces $panel`)\n    -rp \"E\";\n\nsetParent -m ..;\n\nmenuItem\n    -l \"UI Elements\" \n    -subMenu 1\n    -rp \"NW\" \n\t-i \"out_displayLayer.png\";\n\nmenuItem\n    -l \"Shelf\" \n    -c \"ToggleShelf\" \n    -rp \"SW\" \n    -cb (`workspaceControl -q -vis Shelf`);\n\nmenuItem\n    -l \"Shelf Tabs\" \n    -c \"toggleShelfTabs\" \n    -rp \"W\" \n    -cb (`optionVar -q shelfTabsVisible`);\n\nmenuItem\n    -l \"Menu Bars\" \n    -c \"TogglePanelMenubar\" \n    -rp \"NE\" \n    -cb (`optionVar -q allowMenusInPanels`);\n\nmenuItem\n    -l \"Icon Bars\" \n    -c \"ToggleModelEditorBars\" \n    -rp \"NW\" \n    -cb (false == `optionVar -q collapseIconBarsInPanels`);\n\nmenuItem\n    -l \"Main Menu Bars\" \n    -c \"ToggleMainMenubar\" \n    -rp \"E\" \n    -cb (`optionVar -q mainWindowMenubarVis`);\n\nmenuItem\n    -l \"Title Bar\" \n    -c \"da_TitleBarToggle\" \n    -rp \"N\" \n    -cb (`window -q -titleBar MayaWindow`);\n\nmenuItem\n    -l \"Save Workspace\" \n    -c \"SaveCurrentWorkspace\" \n    -i \"fileSave.png\"\n    -rp \"S\";\n\nsetParent -m ..;\n\nmenuItem\n    -l \"Shading\" \n    -subMenu 1\n    -rp \"SE\" \n\t-i \"WireFrameOnShaded.png\";\n\nmenuItem\n    -l \"Wireframe on Shaded\" \n    -c \"da_ToggleWireOnShade\" \n    -rp \"SE\"  \n    -cb (`modelEditor -q -wos $panel`);\n\nmenuItem\n    -l \"Two Sided Lighting\" \n    -c \"da_ToggleTwoSidedLighting\" \n    -rp \"S\" \n    -cb (`modelEditor -q -tsl $panel`);\n\nmenuItem\n    -l \"X-Ray Active Components\" \n    -c \"da_ToggleActiveComponentsXray\" \n    -rp \"E\" \n    -cb (`modelEditor -q -acx $panel`);\n\nmenuItem\n    -l \"X-Ray Joints\" \n    -c \"da_ToggleJointXray\" \n    -rp \"NE\" \n    -cb (`modelEditor -q -jx $panel`);\n\nsetParent -m ..;\n\nmenuItem\n    -l \"Viewport\" \n    -subMenu 1\n    -rp \"SW\" \n\t-i \"MultisampleAA.png\";\n\nmenuItem\n    -l \"Anti-Aliasing\" \n    -c \"da_AntiAliasToggle\" \n    -rp \"SW\" \n    -cb (`getAttr \"hardwareRenderingGlobals.multiSampleEnable\"`);\n\nmenuItem\n    -l \"Transparent Shadow\" \n    -c \"da_TransparentShadowsToggle\" \n    -rp \"SE\" \n    -cb (`getAttr \"hardwareRenderingGlobals.transparentShadow\"`);\n\nmenuItem\n    -l \"Motion Blur\" \n    -c \"da_motionBlurEnableToggle\" \n    -rp \"S\" \n    -cb (`getAttr \"hardwareRenderingGlobals.motionBlurEnable\"`);\n\nmenuItem\n    -l \"Grid\" \n    -c \"ToggleGrid\" \n    -rp \"NW\" \n    -cb (`optionVar -q showGrid`);\n\nmenuItem\n\t-c \"GridOptions\" \n\t-ob 1;\n\nmenuItem\n    -l \"Ambient Occlusion\" \n    -c \"da_ToggleAO\" \n    -rp \"W\" \n    -cb (`getAttr \"hardwareRenderingGlobals.ssaoEnable\"`);\n\nsetParent -m ..;")
+	da_commonObjectOptionsPopup;
+
+runTimeCommand
+	-annotation "Convert Curve to Poly Tubes"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("//Main Procedure\nstring $renderCurve[] = `ls -sl`;\nResetTemplateBrush;\nselect $renderCurve;\nAttachBrushToCurves;\nstring $renderCurveRelatives[] = `listRelatives $renderCurve`;\nstring $renderStroke[] = `listConnections -t stroke -sh 1 -d 1 -s 0 $renderCurveRelatives`;\nselect $renderStroke;\ndoPaintEffectsToPoly( 1,0,1,1,100000);\nhyperShade -assign initialShadingGroup;\n\n//CTRL Procedure\nstring $renderBrush[] = `listConnections -t brush $renderStroke`;\nstring $locatorCTRL[] = `CreateLocator`;\nrename $locatorCTRL polyCurveCTRL1;\nstring $showCTLR[] = `ls -sl`;\naddAttr -ln \"Radius\"  -at double  -min 0.001 -dv 0.5 $showCTLR;\naddAttr -ln \"Clipping\"  -at double  -min 0 -max 1 -dv 1 $showCTLR;\naddAttr -ln \"Section\"  -at long  -min 3 -max 12 -dv 4 $showCTLR;\naddAttr -ln \"Density\"  -at double -min 0.001 -max 20 -dv 1 $showCTLR;\naddAttr -ln \"PolyLimit\"  -at long  -min 1000 -max 1000000 -dv 100000 $showCTLR;\naddAttr -ln \"HardEdges\"  -at bool;\nsetAttr -e-keyable true ($showCTLR[0] + \".Radius\");\nsetAttr -e-keyable true ($showCTLR[0] + \".Clipping\");\nsetAttr -e-keyable true ($showCTLR[0] + \".Section\");\nsetAttr -e-keyable true ($showCTLR[0] + \".Density\");\nsetAttr -e-keyable true ($showCTLR[0] + \".PolyLimit\");\nsetAttr -e-keyable true ($showCTLR[0] + \".HardEdges\");\nint $numObj = size($renderBrush);\nfor($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + \".Radius\", $renderBrush[$i] + \".brushWidth\");\nfor($i=0; $i<$numObj; $i++) connectAttr($locatorCTRL[0] + \".Section\", $renderBrush[$i] + \".tubeSections\");\nint $numObj2 = size($renderStroke);\nfor($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + \".Clipping\", $renderStroke[$i] + \".maxClip\");\nfor($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + \".Density\", $renderStroke[$i] + \".sampleDensity\");\nfor($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + \".PolyLimit\", $renderStroke[$i] + \".meshPolyLimit\");\nfor($i=0; $i<$numObj2; $i++) connectAttr($locatorCTRL[0] + \".HardEdges\", $renderStroke[$i] + \".meshHardEdges\");\n\n//Rig Procedure\nstring $renderMesh[] = `listConnections -t mesh $renderStroke`;\nselect $renderMesh;\npickWalk -d up;\nstring $groupMesh[] = `ls -sl`;\nparent $groupMesh $showCTLR;\nparent $renderStroke $showCTLR;\nselect $showCTLR;\n\n//Clean Rig\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".tx\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".ty\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".tz\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".rx\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".ry\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".rz\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".sx\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".sy\");\nsetAttr -e-keyable false -l true ($showCTLR[0] + \".sz\");")
+	da_curveToPoly;
+
+runTimeCommand
+	-annotation "Part of Interactive Booleans"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myBoolOperators[] = `ls -sl`;\nstring $myBool[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myBool;\nfor ($i=0; $i<size($myBool); $i++) {\n\tsetAttr ($myBool[$i] + \".intermediateObject\") 0;\n\tsetAttr ($myBool[$i] + \".primaryVisibility\") 0;\n\tsetAttr ($myBool[$i] + \".overrideEnabled\") 1;\n\tsetAttr ($myBool[$i] + \".overrideShading\") 0;\n\tsetAttr ($myBool[$i] + \".visibility\") 1;\n\tsetAttr ($myBool[$i] + \".castsShadows\") 0;\n\tsetAttr ($myBool[$i] + \".receiveShadows\") 0;\n\tsetAttr ($myBool[$i] + \".motionBlur\") 0;\n\tsetAttr ($myBool[$i] + \".smoothShading\") 0;\n\tsetAttr ($myBool[$i] + \".visibleInReflections\") 0;\n\tsetAttr ($myBool[$i] + \".visibleInRefractions\") 0;\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInDiffuseReflection\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInSpecularReflection\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInDiffuseTransmission\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInSpecularTransmission\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInVolume\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiSelfShadows\") 0`);\n}\n\nshowHidden -a;\nselect $myBoolOperators;")
+	da_wireframeTemplate;
+
+runTimeCommand
+	-annotation "Part of Interactive Booleans"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myBoolOperators[] = `ls -sl`;\nstring $myBool[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myBool;\nfor ($i=0; $i<size($myBool); $i++) {\n\tsetAttr ($myBool[1] + \".intermediateObject\") 0;\n\tsetAttr ($myBool[1] + \".primaryVisibility\") 0;\n\tsetAttr ($myBool[1] + \".overrideEnabled\") 1;\n\tsetAttr ($myBool[1] + \".overrideShading\") 0;\n\tsetAttr ($myBool[1] + \".visibility\") 1;\n\tsetAttr ($myBool[1] + \".castsShadows\") 0;\n\tsetAttr ($myBool[1] + \".receiveShadows\") 0;\n\tsetAttr ($myBool[1] + \".motionBlur\") 0;\n\tsetAttr ($myBool[1] + \".smoothShading\") 0;\n\tsetAttr ($myBool[1] + \".visibleInReflections\") 0;\n\tsetAttr ($myBool[1] + \".visibleInRefractions\") 0;\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInDiffuseReflection\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInSpecularReflection\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInDiffuseTransmission\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInSpecularTransmission\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInVolume\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiSelfShadows\") 0`);\n}\n\nshowHidden -a;\nselect $myBoolOperators;")
+	da_wireframeTemplateA;
+
+runTimeCommand
+	-annotation "Part of Interactive Booleans"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myBoolOperators[] = `ls -sl`;\nstring $myBool[] = `listConnections -s 1 -d 0 -sh 1`;\nselect $myBool;\nfor ($i=0; $i<size($myBool); $i++) {\n\tsetAttr ($myBool[0] + \".intermediateObject\") 0;\n\tsetAttr ($myBool[0] + \".primaryVisibility\") 0;\n\tsetAttr ($myBool[0] + \".overrideEnabled\") 1;\n\tsetAttr ($myBool[0] + \".overrideShading\") 0;\n\tsetAttr ($myBool[0] + \".visibility\") 1;\n\tsetAttr ($myBool[0] + \".castsShadows\") 0;\n\tsetAttr ($myBool[0] + \".receiveShadows\") 0;\n\tsetAttr ($myBool[0] + \".motionBlur\") 0;\n\tsetAttr ($myBool[0] + \".smoothShading\") 0;\n\tsetAttr ($myBool[0] + \".visibleInReflections\") 0;\n\tsetAttr ($myBool[0] + \".visibleInRefractions\") 0;\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInDiffuseReflection\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInSpecularReflection\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInDiffuseTransmission\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInSpecularTransmission\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiVisibleInVolume\") 0`);\n\tcatchQuiet (`setAttr ($myBool[0] + \".aiSelfShadows\") 0`);\n}\n\nshowHidden -a;\nselect $myBoolOperators;")
+	da_wireframeTemplateB;
+
+runTimeCommand
+	-annotation "Interactive Bollean Union"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myBoolOp[] = `polyCBoolOp -op 1 -ch 1 -pcr 0 -cls 1`;\npolyMergeVertex  -d 0.001 -am 1 -ch 1 polySurface1;\nselect $myBoolOp[1];\nda_wireframeTemplate;\nShowManipulators;")
+	da_interactiveUnion;
+
+runTimeCommand
+	-annotation "Interactive Bollean Difference"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myBoolOp[] = `polyCBoolOp -op 2 -ch 1 -pcr 0 -cls 1`;\npolyMergeVertex  -d 0.001 -am 1 -ch 1 polySurface1;\nselect $myBoolOp[1];\nda_wireframeTemplate;\nShowManipulators;")
+	da_interactiveDifference;
+
+runTimeCommand
+	-annotation "Interactive Bollean Intersection"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myBoolOp[] = `polyCBoolOp -op 3 -ch 1 -pcr 0 -cls 1`;\npolyMergeVertex  -d 0.001 -am 1 -ch 1 polySurface1;\nselect $myBoolOp[1];\nda_wireframeTemplate;\nShowManipulators;")
+	da_interactiveIntersection;
+
+runTimeCommand
+	-annotation "Toggle Perps to Ortho"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $curPanel;\nstring $curCam;\nint $orthoValue;\nfloat $camRot[];\nfloat $camRotTemp;\nint $intOfTemp;\nfloat $rotOver;\nfloat $camRotFixed[2];\n\n$curPanel = `getPanel -wf`;\n$curCam = `modelPanel -q -cam $curPanel`;\n$orthoValue = `camera -q -o $curCam`;\n\nif ($orthoValue == 1){\n\tsetAttr ($curCam +\".orthographic\") 0;\n\tda_PasteCameraPosition;\n\tviewFit -f 0.5;\n\n\tinViewMessage -pos topCenter -msg \"Perspective View\" -fade;\n\t\n} else {\n\n\tda_CopyCameraPosition;\n\n\t$camRot = `camera -q -rot $curCam`;\n\n\tfor ($i=0; $i < 2; $i++){\n\t\n\t\t$camRotTemp = $camRot[$i] / 360;\n\t\t$intOfTemp = (int)$camRotTemp;\n\t\t$rotOver = 360 * $intOfTemp;\n\t\t$camRotFixed[$i] = $camRot[$i] - $rotOver;\n\t}\n\n\tfor ($i=0; $i < 2; $i++){\n\t\tif ($camRotFixed[$i] < 0)\n\t\t\t$camRotFixed[$i] += 360;\n\t}\n\n\tif ($camRotFixed[0] >= 45 && $camRotFixed[0] < 135){\n\t\tviewSet -bo;\n\t\tviewFit -f 0.5;\n\t\tinViewMessage -pos topCenter -msg \"Bottom position - Orthographic View\" -fade;\n\t}\n\n\telse if ($camRotFixed[0] >= 225 && $camRotFixed[0] < 315){\n\t\tviewSet -t;\n\t\tviewFit -f 0.5;\n\t\tinViewMessage -pos topCenter -msg \"Top position - Orthographic View\" -fade;\n\t}\n\n\telse if ($camRotFixed[1] < 45){\n\t\tviewSet -f;\n\t\tviewFit -f 0.5;\n\t\tinViewMessage -pos topCenter -msg \"Front position - Orthographic View\" -fade;\n\t}\n\n\telse if ($camRotFixed[1] >= 315 ){\n\t\tviewSet -f;\n\t\tviewFit -f 0.5;\n\t\tinViewMessage -pos topCenter -msg \"Front position - Orthographic View\" -fade;\n\t}\n\n\telse if ($camRotFixed[1] >= 45 && $camRotFixed[1] < 135)\n\t{\n\t\tviewSet -rs;\n\t\tviewFit -f 0.5;\n\t\tinViewMessage -pos topCenter -msg \"Right position - Orthographic View\" -fade;\n\t}\n\n\telse if ($camRotFixed[1] >= 135 && $camRotFixed[1] < 225)\n\t{\n\t\tviewSet -b;\n\t\tviewFit -f 0.5;\n\t\tinViewMessage -pos topCenter -msg \"Back position - Orthographic View\" -fade;\n\t}\n\n\telse if ($camRotFixed[1] >= 225 && $camRotFixed[1] < 315)\n\t{\n\t\tviewSet -ls;\n\t\tviewFit -f 0.5;\n\t\tinViewMessage -pos topCenter -msg \"Left position - Orthographic View\" -fade;\n\t}\n}")
+	da_perspToggle;
+
+runTimeCommand
+	-annotation "Shell Modifier"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myShape[] = `listRelatives -s`;\ncatchQuiet (`duplicate`);\nstring $myShell[] = `listRelatives -s`;\nconnectAttr -f ($myShape[0] + \".outMesh\") ($myShell[0] + \".inMesh\");\n\nstring $myShellTransform[] = `listRelatives -p $myShell`;\nselect $myShellTransform;\nda_ResetTweakPoint;\n\npolyNormal -normalMode 0 -userNormalMode 0 -ch 1 $myShell;\npolyExtrudeFacet -tk 1;\nselect $myShell;\nstring $myPolyExtrudeFace[] = `listConnections -s 1 -d 0 -t \"polyExtrudeFace\"`;\npolyBevel3 -f 0.1 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 1 -ws 1 -sa 30 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;\nstring $myPolyBevel[] = `listConnections -s 1 -d 0 -t \"polyBevel3\"`;\n\nsetAttr ($myShell[0] +\".overrideEnabled\") 1;\nsetAttr ($myShell[0] +\".overrideDisplayType\") 2;\n\nsetAttr ($myShape[0] + \".primaryVisibility\") 0;\nsetAttr ($myShape[0] + \".overrideEnabled\") 1;\nsetAttr ($myShape[0] + \".overrideShading\") 0;\nsetAttr ($myShape[0] + \".visibility\") 1;\nsetAttr ($myShape[0] + \".castsShadows\") 0;\nsetAttr ($myShape[0] + \".receiveShadows\") 0;\nsetAttr ($myShape[0] + \".motionBlur\") 0;\nsetAttr ($myShape[0] + \".smoothShading\") 0;\nsetAttr ($myShape[0] + \".visibleInReflections\") 0;\nsetAttr ($myShape[0] + \".visibleInRefractions\") 0;\n\naddAttr -ln \"Thickness\"  -at double  -min 0.001 -dv 1 $myTransform;\naddAttr -ln \"Bevel\"  -at \"enum\" -en \"On:Off:\" $myTransform;\naddAttr -ln \"Chamfer\"  -at bool $myTransform;\naddAttr -ln \"Offset\"  -at double  -min 0.001 -dv 0.1 $myTransform;\naddAttr -ln \"Segments\"  -at long  -min 1 -dv 1 $myTransform;\nsetAttr -e-keyable true ($myTransform[0] + \".Thickness\");\nsetAttr -e-keyable true ($myTransform[0] + \".Bevel\");\nsetAttr -e-keyable true ($myTransform[0] + \".Chamfer\") 1;\nsetAttr -e-keyable true ($myTransform[0] + \".Offset\");\nsetAttr -e-keyable true ($myTransform[0] + \".Segments\");\n\nconnectAttr -f ($myTransform[0] + \".Thickness\") ($myPolyExtrudeFace[0] + \".thickness\");\nconnectAttr -f ($myTransform[0] + \".Offset\") ($myPolyBevel[0] + \".offset\");\nconnectAttr -f ($myTransform[0] + \".Segments\") ($myPolyBevel[0] + \".segments\");\nconnectAttr -f ($myTransform[0] + \".Chamfer\") ($myPolyBevel[0] + \".chamfer\");\nconnectAttr -f ($myTransform[0] + \".Bevel\") ($myPolyBevel[0] + \".nodeState\");\n\nselect $myShell;\npickWalk -d up;\nrename da_shell1;\n\nselect $myTransform;\nrename da_shellBase1;")
+	da_shell;
+
+runTimeCommand
+	-annotation "Part of Shell Modifier"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("da_BackToObjectMode;\n\nstring $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myShape[] = `listRelatives -s`;\n\nsetAttr ($myShape[0] + \".primaryVisibility\") 1;\nsetAttr ($myShape[0] + \".overrideEnabled\") 0;\nsetAttr ($myShape[0] + \".overrideShading\") 1;\nsetAttr ($myShape[0] + \".visibility\") 1;\nsetAttr ($myShape[0] + \".castsShadows\") 1;\nsetAttr ($myShape[0] + \".receiveShadows\") 1;\nsetAttr ($myShape[0] + \".motionBlur\") 1;\nsetAttr ($myShape[0] + \".smoothShading\") 1;\nsetAttr ($myShape[0] + \".visibleInReflections\") 1;\nsetAttr ($myShape[0] + \".visibleInRefractions\") 1;\n\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -sh 1 -s 0 -d 1`;\n\nsetAttr ($myShell[0] +\".overrideEnabled\") 1;\nsetAttr ($myShell[0] +\".overrideDisplayType\") 0;\n\ndeleteAttr ($myTransform[0] + \".Thickness\");\ndeleteAttr ($myTransform[0] + \".Bevel\");\ndeleteAttr ($myTransform[0] + \".Chamfer\");\ndeleteAttr ($myTransform[0] + \".Offset\");\ndeleteAttr ($myTransform[0] + \".Segments\");\n\nselect $myShape;\npickWalk -d up;\nrename da_exShellBase1;\n\nselect $myShell;\npickWalk -d up;\nrename da_extractShell1;\nda_ClearFreeze;")
+	da_shellDetach;
+
+runTimeCommand
+	-annotation "Part of Shell Modifier"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -sh 1 -s 0 -d 1`;\n\nselect $myShell;\nHighQualityDisplay;\n\nselect $myTransform;")
+	da_shellSubdiv;
+
+runTimeCommand
+	-annotation "Part of Shell Modifier"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -sh 1 -s 0 -d 1`;\n\nselect $myShell;\nLowQualityDisplay;\n\nselect $myTransform;")
+	da_shellNoSubdiv;
+
+runTimeCommand
+	-annotation "XGen Tools Management"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $CheckTool = `currentCtx`;\n\nif ($CheckTool == \"xgmDensityBrushTool\")\n\txgmDensityBrushContext -e -bst 0 `currentCtx`;\n\nelse if ($CheckTool == \"xgmPlaceBrushTool\")\n\txgmPlaceBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmLengthBrushTool\")\n\txgmLengthBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCutBrushTool\")\n\txgmCutBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmWidthBrushTool\")\n\txgmWidthBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmDirectionBrushTool\")\n\txgmDirectionBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCombBrushTool\")\n\txgmCombBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmGrabBrushTool\")\n\txgmGrabBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSmoothBrushTool\")\n\txgmSmoothBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmNoiseBrushTool\")\n\txgmNoiseBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmClumpBrushTool\")\n\txgmClumpBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmPartBrushTool\")\n\txgmPartBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmFreezeBrushTool\")\n\txgmFreezeBrushContext -e -bst 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSelectBrushTool\")\n\txgmSelectBrushContext -e -bst 0 `currentCtx`;\n\t\nelse\n\tprint \"Brush not supported\";")
+	da_XGenBrushMangement_MirrorOff;
+
+runTimeCommand
+	-annotation "XGen Tools Management"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $CheckTool = `currentCtx`;\n\nif ($CheckTool == \"xgmDensityBrushTool\")\n\txgmDensityBrushContext -e -bst 1 `currentCtx`;\n\nelse if ($CheckTool == \"xgmPlaceBrushTool\")\n\txgmPlaceBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmLengthBrushTool\")\n\txgmLengthBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCutBrushTool\")\n\txgmCutBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmWidthBrushTool\")\n\txgmWidthBrushContext -e -bst 1 `currentCtx`;\n\nelse if ($CheckTool == \"xgmDirectionBrushTool\")\n\txgmDirectionBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCombBrushTool\")\n\txgmCombBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmGrabBrushTool\")\n\txgmGrabBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSmoothBrushTool\")\n\txgmSmoothBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmNoiseBrushTool\")\n\txgmNoiseBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmClumpBrushTool\")\n\txgmClumpBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmPartBrushTool\")\n\txgmPartBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmFreezeBrushTool\")\n\txgmFreezeBrushContext -e -bst 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSelectBrushTool\")\n\txgmSelectBrushContext -e -bst 1 `currentCtx`;\n\t\nelse\n\tprint \"Brush not supported\";")
+	da_XGenBrushMangement_MirrorX;
+
+runTimeCommand
+	-annotation "XGen Tools Management"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $CheckTool = `currentCtx`;\n\nif ($CheckTool == \"xgmDensityBrushTool\")\n\txgmDensityBrushContext -e -bst 2 `currentCtx`;\n\nelse if ($CheckTool == \"xgmPlaceBrushTool\")\n\txgmPlaceBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmLengthBrushTool\")\n\txgmLengthBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCutBrushTool\")\n\txgmCutBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmWidthBrushTool\")\n\txgmWidthBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmDirectionBrushTool\")\n\txgmDirectionBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCombBrushTool\")\n\txgmCombBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmGrabBrushTool\")\n\txgmGrabBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSmoothBrushTool\")\n\txgmSmoothBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmNoiseBrushTool\")\n\txgmNoiseBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmClumpBrushTool\")\n\txgmClumpBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmPartBrushTool\")\n\txgmPartBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmFreezeBrushTool\")\n\txgmFreezeBrushContext -e -bst 2 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSelectBrushTool\")\n\txgmSelectBrushContext -e -bst 2 `currentCtx`;\n\t\nelse\n\tprint \"Brush not supported\";")
+	da_XGenBrushMangement_MirrorY;
+
+runTimeCommand
+	-annotation "XGen Tools Management"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $CheckTool = `currentCtx`;\n\nif ($CheckTool == \"xgmDensityBrushTool\")\n\txgmDensityBrushContext -e -bst 3 `currentCtx`;\n\nelse if ($CheckTool == \"xgmPlaceBrushTool\")\n\txgmPlaceBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmLengthBrushTool\")\n\txgmLengthBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCutBrushTool\")\n\txgmCutBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmWidthBrushTool\")\n\txgmWidthBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmDirectionBrushTool\")\n\txgmDirectionBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCombBrushTool\")\n\txgmCombBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmGrabBrushTool\")\n\txgmGrabBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSmoothBrushTool\")\n\txgmSmoothBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmNoiseBrushTool\")\n\txgmNoiseBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmClumpBrushTool\")\n\txgmClumpBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmPartBrushTool\")\n\txgmPartBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmFreezeBrushTool\")\n\txgmFreezeBrushContext -e -bst 3 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSelectBrushTool\")\n\txgmSelectBrushContext -e -bst 3 `currentCtx`;\n\t\nelse\n\tprint \"Brush not supported\";")
+	da_XGenBrushMangement_MirrorZ;
+
+runTimeCommand
+	-annotation "XGen Tools Management"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $CheckTool = `currentCtx`;\n\nif ($CheckTool == \"xgmDensityBrushTool\")\n\txgmDensityBrushContext -e -ec 1`currentCtx`;\n\nelse if ($CheckTool == \"xgmPlaceBrushTool\")\n\txgmPlaceBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmLengthBrushTool\")\n\txgmLengthBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCutBrushTool\")\n\txgmCutBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmWidthBrushTool\")\n\txgmWidthBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmDirectionBrushTool\")\n\txgmDirectionBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCombBrushTool\")\n\txgmCombBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmGrabBrushTool\")\n\txgmGrabBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSmoothBrushTool\")\n\txgmSmoothBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmNoiseBrushTool\")\n\txgmNoiseBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmClumpBrushTool\")\n\txgmClumpBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmPartBrushTool\")\n\txgmPartBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmFreezeBrushTool\")\n\txgmFreezeBrushContext -e -ec 1 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSelectBrushTool\")\n\txgmSelectBrushContext -e -ec 1 `currentCtx`;\n\t\nelse\n\tprint \"Brush not supported\";")
+	da_XGenBrushMangement_CollisionOn;
+
+runTimeCommand
+	-annotation "XGen Tools Management"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $CheckTool = `currentCtx`;\n\nif ($CheckTool == \"xgmDensityBrushTool\")\n\txgmDensityBrushContext -e -ec 0`currentCtx`;\n\nelse if ($CheckTool == \"xgmPlaceBrushTool\")\n\txgmPlaceBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmLengthBrushTool\")\n\txgmLengthBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCutBrushTool\")\n\txgmCutBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmWidthBrushTool\")\n\txgmWidthBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmDirectionBrushTool\")\n\txgmDirectionBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmCombBrushTool\")\n\txgmCombBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmGrabBrushTool\")\n\txgmGrabBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSmoothBrushTool\")\n\txgmSmoothBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmNoiseBrushTool\")\n\txgmNoiseBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmClumpBrushTool\")\n\txgmClumpBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmPartBrushTool\")\n\txgmPartBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmFreezeBrushTool\")\n\txgmFreezeBrushContext -e -ec 0 `currentCtx`;\n\t\nelse if ($CheckTool == \"xgmSelectBrushTool\")\n\txgmSelectBrushContext -e -ec 0 `currentCtx`;\n\t\nelse\n\tprint \"Brush not supported\";")
+	da_XGenBrushMangement_CollisionOff;
+
+runTimeCommand
+	-annotation "Apply a Follicle to all Selected Faces"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("createHair 8 8 3 0 0 0 0 5 0 2 1 2;\nstring $startSelect[] = `ls -sl`;\nconvertHairSelection( \"hairSystems\" );\nstring $hsys[] = `ls -sl`;\n\nconvertHairSelection( \"follicles\" );\nstring $follicles[] = `ls -sl`;\nUnparent;\nGroup;\nrename \"FacesFollicles1\";\nconvertHairSelection( \"startCurves\" );\nstring $startCurves[] = `ls -sl`;\nselect -r $follicles;\nconvertHairSelection( \"restCurves\" );\nstring $restCurves[] = `ls -sl`;\nselect -r $follicles;\nconvertHairSelection( \"current\" );\nstring $current[] = `ls -sl`;\nselect -r $follicles;\nconvertHairSelection( \"constraints\" );\nstring $constraints[] = `ls -sl`;\nclear $follicles;\nstring $hsysGroups[];\nint $i, $j = 0;\nfor( $i = 0; $i < size( $hsys ); $i++ ){\n\tstring $tforms[] = listTransforms( $hsys[$i] );\n\tif( size( $tforms ) > 0 ){\n\t\t$hsysGroups[$j] = $tforms[0];\n\t\t$j++;\n\t}\n\tstring $groups[] = getHairSystemGroups( $hsys[$i], false );\n\tif( $groups[0] != \"\" ){\n\t\t$hsysGroups[$j] = $groups[0];\n\t\t$j++;\n\t}\n\tif( $groups[1] != \"\" ){\n\t\t$hsysGroups[$j] = $groups[1];\n\t\t$j++;\n\t}\n}\n\nif(`pluginInfo -q -l Fur`) {\t\n\tfor( $i = 0; $i < size( $hsys ); $i++ ){\n\t\tstring $curveAttractorSet[] = `listConnections -shapes true -type \"FurCurveAttractors\" $hsys[$i]`;\n\t\tif(size($curveAttractorSet) == 1)\n\t\t\tHfDeleteCAS $curveAttractorSet[0];\n\t}\n}\n\nstring $all[];\nappendStringArray( $all, $hsys, size($hsys));\nappendStringArray( $all, $startCurves, size($startCurves));\nappendStringArray( $all, $restCurves, size($restCurves));\nappendStringArray( $all, $current, size($current));\nappendStringArray( $all, $constraints, size($constraints));\nappendStringArray( $all, $hsysGroups, size($hsysGroups));\ndelete $all;\nselect -r;")
+	da_FacesFollicles;
+
+runTimeCommand
+	-annotation "Create a Compass"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("circle -c 0 0 0 -nr 0 1 0 -sw 180 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\nstring $myVectorDir1[] = `ls -sl`;\nsetAttr ($myVectorDir1[0] + \".sx\") -2;\nsetAttr ($myVectorDir1[0] + \".sz\") 0.02;\nda_ClearFreeze;\n\nduplicate;\nstring $myVectorDir2[] = `ls -sl`;\nsetAttr ($myVectorDir2[0] + \".rx\") 90;\nda_ClearFreeze;\n\ncircle -c 0 0 0 -nr 0 1 0 -sw 360 -r 0.5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\nstring $myVectorDir3[] = `ls -sl`;\nsetAttr ($myVectorDir3[0] + \".rz\") 90;\nsetAttr ($myVectorDir3[0] + \".sx\") 0.02;\nsetAttr ($myVectorDir3[0] + \".sy\") 0.02;\nsetAttr ($myVectorDir3[0] + \".sz\") 0.02;\nda_ClearFreeze;\n\nselect $myVectorDir1[0] $myVectorDir2[0] $myVectorDir3[0];\nda_CombineCurves;\nxform -ws -a -rp 0 0 0;\nrename CompassVector1;\nstring $myCompassVector[] = `ls -sl`;\nsetAttr ($myCompassVector[0] + \".overrideEnabled\") 1;\nsetAttr ($myCompassVector[0] + \".overrideColor\") 4;\n\nstring $myVectorProduct = `createNode vectorProduct`;\nsetAttr ($myVectorProduct + \".operation\") 3;\nsetAttr ($myVectorProduct + \".input1X\") 1;\n\t\nstring $myMultiplyDivide = `createNode multiplyDivide`;\n\nconnectAttr ($myCompassVector[0] + \".worldMatrix[0]\", $myVectorProduct + \".matrix\");\n\naddAttr -ln \"VectorX\" -at double $myCompassVector[0];\naddAttr -ln \"VectorY\" -at double $myCompassVector[0];\naddAttr -ln \"VectorZ\" -at double $myCompassVector[0];\naddAttr -ln \"Magnitude\" -at double $myCompassVector[0];\nsetAttr -e -k 1 ($myCompassVector[0] + \".VectorX\");\nsetAttr -e -k 1 ($myCompassVector[0] + \".VectorY\");\nsetAttr -e -k 1 ($myCompassVector[0] + \".VectorZ\");\nsetAttr -e -k 1 ($myCompassVector[0] + \".Magnitude\" ) 1;\nsetAttr -l 1 ($myCompassVector[0] + \".sx\");\nsetAttr -l 1 ($myCompassVector[0] + \".sy\");\nsetAttr -l 1 ($myCompassVector[0] + \".sz\");\n\t\n\t\nconnectAttr($myVectorProduct + \".output.outputX\", $myMultiplyDivide + \".input1.input1X\");\nconnectAttr($myVectorProduct + \".output.outputY\", $myMultiplyDivide + \".input1.input1Y\");\nconnectAttr($myVectorProduct + \".output.outputZ\", $myMultiplyDivide + \".input1.input1Z\");\n\t\nconnectAttr($myMultiplyDivide + \".output.outputX\", $myCompassVector[0] + \".VectorX\");\nconnectAttr($myMultiplyDivide + \".output.outputY\", $myCompassVector[0] + \".VectorY\");\nconnectAttr($myMultiplyDivide + \".output.outputZ\", $myCompassVector[0] + \".VectorZ\");\n\t\nconnectAttr($myCompassVector[0] + \".Magnitude\", $myMultiplyDivide + \".input2.input2X\");\nconnectAttr($myCompassVector[0] + \".Magnitude\", $myMultiplyDivide + \".input2.input2Y\");\nconnectAttr($myCompassVector[0] + \".Magnitude\", $myMultiplyDivide + \".input2.input2Z\");\n\nselect $myCompassVector[0];")
+	da_Compass;
+
+runTimeCommand
+	-annotation "Toggle Anti-Alias"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`getAttr \"hardwareRenderingGlobals.multiSampleEnable\"`){\n\tsetAttr \"hardwareRenderingGlobals.multiSampleEnable\" 0;\n}else{\n    setAttr \"hardwareRenderingGlobals.multiSampleEnable\" 1;\n}")
+	da_AntiAliasToggle;
+
+runTimeCommand
+	-annotation "Toggle Joint to Local Rotation Axies"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`selectMode -q -component`){\n\tchangeSelectMode -object;\n}else{\n    changeSelectMode -component;\n\tsetComponentPickMask \"Other\" 1;\n}")
+	da_JointMode;
+
+runTimeCommand
+	-annotation "Toggle Motion Blur"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`getAttr \"hardwareRenderingGlobals.motionBlurEnable\"`){\n\tsetAttr \"hardwareRenderingGlobals.motionBlurEnable\" 0;\n}else{\n    setAttr \"hardwareRenderingGlobals.motionBlurEnable\" 1;\n}")
+	da_motionBlurEnableToggle;
+
+runTimeCommand
+	-annotation "Toggle Ambient Occulison"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`getAttr \"hardwareRenderingGlobals.ssaoEnable\"`){\n\tsetAttr \"hardwareRenderingGlobals.ssaoEnable\" 0;\n}else{\n    setAttr \"hardwareRenderingGlobals.ssaoEnable\" 1;\n}")
+	da_ToggleAO;
+
+runTimeCommand
+	-annotation "Toggle Playback Mode"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`playbackOptions -q -maxPlaybackSpeed`){\n\tplaybackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 0;\n}else{\n    playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 1;\n}")
+	da_maxPlaybackSpeedToggle;
+
+runTimeCommand
+	-annotation "Toggle Stepped Preview"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`playbackOptions -q -blockingAnim`){\n\tplaybackOptions -e -blockingAnim 0;\n}else{\n    playbackOptions -e -blockingAnim 1;\n}")
+	da_steppedPreview;
+
+runTimeCommand
+	-annotation "Toggle Title Bar"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`window -q -titleBar MayaWindow`){\n\twindow -e -titleBar 0 MayaWindow;\n}else{\n    window -e -titleBar 1 MayaWindow;\n}")
+	da_TitleBarToggle;
+
+runTimeCommand
+	-annotation "Flood Current Sculpt Brush"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myCurrentTool = `currentCtx`;\nfloat $myStrengthValue = `sculptMeshCacheCtx -q -strength $myCurrentTool`;\nsculptMeshCacheCtx -e -flood $myStrengthValue $myCurrentTool;")
+	da_SculptFlood;
+
+runTimeCommand
+	-annotation "Make Pivot Keyable"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myTransform[] = `ls -sl -type \"transform\"`;\n\nfor ($each in $myTransform){\n    setAttr -k on ($each + \".rotatePivotX\");\n    setAttr -k on ($each + \".rotatePivotY\");\n    setAttr -k on ($each + \".rotatePivotZ\");\n    \n    setAttr -k on ($each + \".rotatePivotTranslateX\");\n    setAttr -k on ($each + \".rotatePivotTranslateY\");\n    setAttr -k on ($each + \".rotatePivotTranslateZ\");    \n}")
+	da_pivotKeyable;
+
+runTimeCommand
+	-annotation "Skip to Next Keyframe"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $currentTime = `currentTime -q`;\nkeyframe -t `currentTime -q` -e -r -tc 1;\nNextFrame;")
+	da_moveKeyframeToNext;
+
+runTimeCommand
+	-annotation "Skip to Previous Keyframe"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $currentTime = `currentTime -q`;\nkeyframe -t `currentTime -q` -e -r -tc -1;\nPreviousFrame;")
+	da_moveKeyframeToPrev;
+
+runTimeCommand
+	-annotation "Round Keyframe of the Actual Selection(s)"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $animCurves[] = `keyframe -q -name`;\nfor ($animCurve in $animCurves){\n\tfloat $thisKeys[] = `keyframe -q -sl $animCurve`;\n\tif (!size($thisKeys))\n\t\t$thisKeys = `keyframe -q $animCurve`;\n\tfor ($keys in $thisKeys)\n\t{\n\t\tif (`fmod $keys 1` != 0)\n\t\t\tkeyframe -e -t $keys -iub true -a -o over -timeChange (da_round($keys)) $animCurve;\n\t}\n}")
+	da_roundKeyframe;
+
+runTimeCommand
+	-annotation "Toggle Weighted Tangents"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $weightedTangentsCheck[] = `keyTangent -q -weightedTangents`;\nint $weightedTangentsSum = 0;\n\nfor ($each in $weightedTangentsCheck)\n\t$weightedTangentsSum += $each;\n\nif($weightedTangentsSum){\n\tkeyTangent -e -weightedTangents 0;\n}else{\n    keyTangent -e -weightedTangents 1;\n}")
+	da_weightedTangents;
+
+runTimeCommand
+	-annotation "Toggle Lock Tangents"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $breakTangentsCheck[] = `keyTangent -q -lock`;\nint $breakTangentsSum = 0;\n\nfor ($each in $breakTangentsCheck)\n\t$breakTangentsSum += $each;\n\nif($breakTangentsSum){\n\tkeyTangent -e -lock 0;\n}else{\n    keyTangent -e -lock 1;\n}")
+	da_breakTangents;
+
+runTimeCommand
+	-annotation "Insert a Keyframe at Current Frame"
+	-category "Custom Scripts.May9_Pro.Animate"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $curves[] = `keyframe -q -selected -name`;\nint $i;\nfor ($i = 0; $i < size($curves); $i++){\n\t\tfloat $curTime = `animCurveEditor -keyingTime $curves[$i] -q graphEditor1GraphEd`;\n\t\tif ( size($curves) ) setKeyframe -time $curTime -insert $curves[$i];\n}")
+	da_InseritKeyframe;
+
+runTimeCommand
+	-annotation "Match Normals Between Meshes"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myRefNormals[] = `ls -sl -tail 1`;\nstring $myTargets[] = stringArrayRemove(`ls -sl -tail 1`, `ls -sl -fl`);\nint $numObj = size($myTargets);\nfor($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 1 -uvs 0 -col 0 -spa 0 -sm 3 -clb 1 $myRefNormals[0] $myTargets[$i];")
+	da_MatchNormals;
+
+runTimeCommand
+	-annotation "Match UV Between Meshes"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myRefUV[] = `ls -sl -tail 1`;\nstring $myTargets[] = stringArrayRemove(`ls -sl -tail 1`, `ls -sl -fl`);\nint $numObj = size($myTargets);\nfor($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 0 -uvs 1 -col 0 -spa 0 -sm 3 -clb 1 $myRefUV[0] $myTargets[$i];")
+	da_MatchUV;
+
+runTimeCommand
+	-annotation "Select Current UV Shell form Face Selection"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("ConvertSelectionToUVs;\nSelectUVShell;\nConvertSelectionToFaces;")
+	da_SelectShellFromFaces;
+
+runTimeCommand
+	-annotation "Display Local Axis"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + \".displayLocalAxis\") 1;")
+	da_ShowLocalAxis;
+
+runTimeCommand
+	-annotation "Hide Local Axis"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nint $numObj = size($mySel);\nfor($i=0; $i<$numObj; $i++) setAttr ($mySel[$i] + \".displayLocalAxis\") 0;")
+	da_HideLocalAxis;
+
+runTimeCommand
+	-annotation "Freeze Transformations and Delete Non Deformable History"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("FreezeTransformations;\nBakeNonDefHistory;")
+	da_FreezeDelNonDef;
+
+runTimeCommand
+	-annotation "Make Current Emitter(s) Directional"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\nsetAttr ($each +\".emitterType\") 0;")
+	da_EmitterDirectional;
+
+runTimeCommand
+	-annotation "Make Current Emitter(s) Omni"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\nsetAttr ($each +\".emitterType\") 1;")
+	da_EmitterOmni;
+
+runTimeCommand
+	-annotation "Make Current Emitter(s) Volumetric"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel)\nsetAttr ($each +\".emitterType\") 4;")
+	da_EmitterVolume;
+
+runTimeCommand
+	-annotation "Apply Compass to Emitter"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myEmitter[] = `ls -sl`;\nda_Compass;\nstring $myDirection[] = `ls -sl`;\n\nfor ($each in $myEmitter){\n\tconnectAttr($myDirection[0] + \".VectorX\", $each + \".directionX\");\n\tconnectAttr($myDirection[0] + \".VectorY\", $each + \".directionY\");\n\tconnectAttr($myDirection[0] + \".VectorZ\", $each + \".directionZ\");\n}")
+	da_EmitterCompass;
+
+runTimeCommand
+	-annotation "Apply Compass to Nuclues Local Force"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myNcloth[] = `ls -sl`;\n\nda_Compass;\nstring $myDirection[] = `ls -sl`;\n\nfor ($each in $myNcloth){\n\tconnectAttr($myDirection[0] + \".VectorX\", $each + \".localForce.localForceX\");\n\tconnectAttr($myDirection[0] + \".VectorY\", $each + \".localForce.localForceY\");\n\tconnectAttr($myDirection[0] + \".VectorZ\", $each + \".localForce.localForceZ\");\n}")
+	da_nClothForceCompass;
+
+runTimeCommand
+	-annotation "Apply Compass to Nuclues Wind"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myNcloth[] = `ls -sl`;\n\nda_Compass;\nstring $myDirection[] = `ls -sl`;\n\nfor ($each in $myNcloth){\n\tconnectAttr($myDirection[0] + \".VectorX\", $each + \".localWind.localWindX\");\n\tconnectAttr($myDirection[0] + \".VectorY\", $each + \".localWind.localWindY\");\n\tconnectAttr($myDirection[0] + \".VectorZ\", $each + \".localWind.localWindZ\");\n}")
+	da_nClothWindCompass;
+
+runTimeCommand
+	-annotation "Map Per Face UV"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command create a per face UV shell and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n    string $mySel[] = `ls -sl`;\n    $mySelSize = size($mySel);\n    for($i=0; $i<$mySelSize; $i++){\n        select $mySel[$i];\n    \tFreezeTransformations;\n    \tpolyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;\n    \tdR_DoCmd(\"modeEdge\");\n    \tSelectAll;\n    \tCutUVs;\n    \tu3dUnfold -ite 1 -p 0 -bi 1 -tf 1 -ms 1024 -rs 0;\n    \tConvertSelectionToUVs;\n    \tuvTkDoSetTexelDensity;\n    \tUVOrientShells;\n    \tu3dLayout -res 256 -scl 1 -box 0 1 0 1;\n    \tdR_modeObject;\n    }\n}")
+	da_MapFacesUV;
+
+runTimeCommand
+	-annotation "Map Per Face UV on Selected Face(s)"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command create a per face UV shell and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n\tstring $myFaces[] = `ls -sl`;\n\tda_BackToObjectMode;\n\tFreezeTransformations;\n\tdR_DoCmd(\"modePoly\");\n\tselect $myFaces;\n\tpolyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;\n\tConvertSelectionToEdges;\n\tCutUVs;\n\tselect $myFaces;\n\tu3dUnfold -ite 1 -p 0 -bi 1 -tf 1 -ms 1024 -rs 0;\n\tUVOrientShells;\n\tpolyMultiLayoutUV -lm 1 -sc 1 -rbf 1 -fr 1 -ps 0.2 -l 2 -gu 1 -gv 1 -psc 1 -su 1 -sv 1 -ou 0 -ov 0;\n\tdR_modeObject;\n}")
+	da_MapFacesFacesUV;
+
+runTimeCommand
+	-annotation "Create AiVolumes"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("python(\"import mtoa.ui.arnoldmenu as arnoldmenu;arnoldmenu.createVolume()\");\nPickWalkUp;\n\nstring $mySelShape[] = `listRelatives -s`;\nstring $shadingEngine = `createNode shadingEngine -n aiVolumeShapeSG1`;\nstring $myStandardVolume = `createNode aiStandardVolume`;\n\nconnectAttr -f ($mySelShape[0] + \".instObjGroups[0]\") ($shadingEngine + \".dagSetMembers[0]\");\nconnectAttr -f ($myStandardVolume + \".outColor\") ($shadingEngine + \".volumeShader\");\n\nselect $mySelShape[0];\nPickWalkUp;")
+	da_AiVolumes;
+
+runTimeCommand
+	-annotation "Edit AiVolume Shader"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySelShape[] = `listRelatives -s`;\nselect $mySelShape[0];\nstring $myShadingEngine[] = `listConnections -s 0 -d 1 -t \"shadingEngine\"`;\nselect -r -ne $myShadingEngine[0];\nstring $myAiStandardVolume[] = `listConnections -s 1 -d 0 -t \"aiStandardVolume\"`;\nselect -r -ne $myAiStandardVolume[0];\nAttributeEditor;")
+	da_AiVolumeShader;
+
+runTimeCommand
+	-annotation "Edit AiVolume Shapes"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySelShape[] = `listRelatives -s`;\nselect $mySelShape[0];\nAttributeEditor;")
+	da_AiVolumeShapes;
+
+runTimeCommand
+	-annotation "Start IPR of Current Renderer"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\tpython(\"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()\");\n}\nelse if (`getAttr defaultRenderGlobals.currentRenderer` == \"mayaSoftware\"){\n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}else{ \n\tRenderViewWindow;\n}\n\ninViewMessage -pos topCenter -msg \"Starting Render\" -fade;")
+	da_RendereViews;
+
+runTimeCommand
+	-annotation "Add Image Plane"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myPanel = `getPanel -underPointer`;\nstring $myCamera = `modelPanel -q -cam $myPanel`;\nselect $myCamera;\nstring $myCameraShape[] = `listRelatives -s`;\n\nimportImagePlane { $myCameraShape[0] };")
+	da_ImagesPlane;
+
+runTimeCommand
+	-annotation "Add Video Plane"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myPanel = `getPanel -underPointer`;\nstring $myCamera = `modelPanel -q -cam $myPanel`;\nselect $myCamera;\nstring $myCameraShape[] = `listRelatives -s`;\n\nimportMovieImagePlane { $myCameraShape[0] };")
+	da_VideoImagesPlane;
+
+runTimeCommand
+	-annotation "Add Image Plane to Selected Camera"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myCameraShape[] = `listRelatives -s`;\n\nimportImagePlane { $myCameraShape[0] };")
+	da_CameraImagesPlane;
+
+runTimeCommand
+	-annotation "Add Video Plane to Selected Camera"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myCameraShape[] = `listRelatives -s`;\n\nimportMovieImagePlane { $myCameraShape[0] };")
+	da_CameraVideoImagesPlane;
+
+runTimeCommand
+	-annotation "Delete Mental Ray Nodes"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myResult = `confirmDialog -title \"Confirm\" -message \"Did you want delete all Mental Ray Nodes?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\n\nif ($myResult == \"Yes\") {\n\tcatchQuiet (`delete miDefaultOptions`);\n\tcatchQuiet (`delete miContourPreset`);\n\tcatchQuiet (`delete Draft`);\n\tcatchQuiet (`delete DraftMotionBlur`);\n\tcatchQuiet (`delete DraftRapidMotion`);\n\tcatchQuiet (`delete Preview`);\n\tcatchQuiet (`delete PreviewMotionblur`);\n\tcatchQuiet (`delete PreviewRapidMotion`);\n\tcatchQuiet (`delete PreviewCaustics`);\n\tcatchQuiet (`delete PreviewGlobalIllum`);\n\tcatchQuiet (`delete PreviewFinalGather`);\n\tcatchQuiet (`delete Production`);\n\tcatchQuiet (`delete ProductionMotionblur`);\n\tcatchQuiet (`delete ProductionRapidMotion`);\n\tcatchQuiet (`delete ProductionFineTrace`);\n\tcatchQuiet (`delete ProductionRapidFur`);\n\tcatchQuiet (`delete ProductionRapidHair`);\n\n\tcatchQuiet (`delete miDefaultFramebuffer`);\n\tcatchQuiet (`delete mentalrayItemsList`);\n\n\tcatchQuiet (`delete \"mapViz*\"`);\n\tcatchQuiet (`delete \"mentalrayIblShape*\"`);\n\n\tunknownPlugin -remove \"Mayatomr\";\n\tinViewMessage -pos topCenter -msg \"Mental Ray nodes deleted\" -fade;\n}")
+	da_RemoveMrNodes;
+
+runTimeCommand
+	-annotation "Toggle UV Toolkit"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("int $ToolkitReady  = `isUVToolkitReady`;\nif(! `workspaceControl -ex UVToolkitDockControl`){\n    if(! $ToolkitReady)\n        catchQuiet (`toggleUVToolkit`);\n}else{\n    if(`workspaceControl -q -vis UVToolkitDockControl` == 1){\n        if(`workspaceControl -q -r UVToolkitDockControl` == 0)\n        workspaceControl -e -clp 0 UVToolkitDockControl;\n        else\n            if(`workspaceControl -q -clp UVToolkitDockControl` == 0)\n                workspaceControl -e -clp 1 UVToolkitDockControl;\n            else\n                workspaceControl -e -clp 0 UVToolkitDockControl;\n    }else{\n        if(! $ToolkitReady)\n            catchQuiet (`toggleUVToolkit`);\n    }\n}")
+	da_OpenUvTool;
+
+runTimeCommand
+	-annotation "Expose Rotation Order"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myTransform[] = `ls -sl -tr`;\nfor ($each in $myTransform)\n    setAttr -k on  ($each + \".rotateOrder\");")
+	da_ExposeRotationOrder;
+
+runTimeCommand
+	-annotation "Toggle May9 Hotkeys Sets"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`hotkeySet -q -current` == \"May9_Core\"){\n    hotkeySet -edit -current May9_Pro;\n    inViewMessage -pos topCenter -msg \"May9 Pro hotkeys enabled\" -fade;\n}else{\n    hotkeySet -edit -current May9_Core;\n    inViewMessage -pos topCenter -msg \"May9 Pro hotkeys disabled\" -fade;\n}")
+	da_hotkeySetToggle;
+
+runTimeCommand
+	-annotation "Toggle Transparent Shadows"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`getAttr \"hardwareRenderingGlobals.transparentShadow\"`){\n\tsetAttr \"hardwareRenderingGlobals.transparentShadow\" 0;\n}else{\n    setAttr \"hardwareRenderingGlobals.transparentShadow\" 1;\n}")
+	da_TransparentShadowsToggle;
+
+runTimeCommand
 	-annotation "Creates Animation Keys on Selected or Already Animated Channels"
 	-category "Custom Scripts.May9_Pro.Animate"
 	-hotkeyCtx ""

@@ -61,3 +61,14 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 
 // Preload May9Menu
 evalDeferred ("da_May9Menu");
+
+// Define da_round
+global proc int da_round(float $da_value){
+    float $n = $da_value % 1;
+    if ($n >= 0.5) {
+    $da_value = `ceil $da_value`;
+    } else {
+    $da_value = `floor $da_value`;
+    }
+    return $da_value;
+}
