@@ -16,6 +16,1064 @@ catchQuiet (`hotkeySet -e -delete May9_Pro`);
 // Put May9 Intallation in idle mode
 optionVar -iv May9ActivationCheck 32;
 
+// Remove runtimeCommand
+
+runTimeCommand -e -del
+	da_commonObjectOptionsPopup;
+
+runTimeCommand -e -del
+	da_curveToPoly;
+
+runTimeCommand -e -del
+	da_wireframeTemplate;
+
+runTimeCommand -e -del
+	da_wireframeTemplateA;
+
+runTimeCommand -e -del
+	da_wireframeTemplateB;
+
+runTimeCommand -e -del
+	da_interactiveUnion;
+
+runTimeCommand -e -del
+	da_interactiveDifference;
+
+runTimeCommand -e -del
+	da_interactiveIntersection;
+
+runTimeCommand -e -del
+	da_perspToggle;
+
+runTimeCommand -e -del
+	da_shell;
+
+runTimeCommand -e -del
+	da_shellDetach;
+
+runTimeCommand -e -del
+	da_shellSubdiv;
+
+runTimeCommand -e -del
+	da_shellNoSubdiv;
+
+runTimeCommand -e -del
+	da_XGenBrushMangement_MirrorOff;
+
+runTimeCommand -e -del
+	da_XGenBrushMangement_MirrorX;
+
+runTimeCommand -e -del
+	da_XGenBrushMangement_MirrorY;
+
+runTimeCommand -e -del
+	da_XGenBrushMangement_MirrorZ;
+
+runTimeCommand -e -del
+	da_XGenBrushMangement_CollisionOn;
+
+runTimeCommand -e -del
+	da_XGenBrushMangement_CollisionOff;
+
+runTimeCommand -e -del
+	da_FacesFollicles;
+
+runTimeCommand -e -del
+	da_Compass;
+
+runTimeCommand -e -del
+	da_AntiAliasToggle;
+
+runTimeCommand -e -del
+	da_JointMode;
+
+runTimeCommand -e -del
+	da_motionBlurEnableToggle;
+
+runTimeCommand -e -del
+	da_ToggleAO;
+
+runTimeCommand -e -del
+	da_maxPlaybackSpeedToggle;
+
+runTimeCommand -e -del
+	da_steppedPreview;
+
+runTimeCommand -e -del
+	da_TitleBarToggle;
+
+runTimeCommand -e -del
+	da_SculptFlood;
+
+runTimeCommand -e -del
+	da_pivotKeyable;
+
+runTimeCommand -e -del
+	da_moveKeyframeToNext;
+
+runTimeCommand -e -del
+	da_moveKeyframeToPrev;
+
+runTimeCommand -e -del
+	da_roundKeyframe;
+
+runTimeCommand -e -del
+	da_weightedTangents;
+
+runTimeCommand -e -del
+	da_breakTangents;
+
+runTimeCommand -e -del
+	da_InseritKeyframe;
+
+runTimeCommand -e -del
+	da_MatchNormals;
+
+runTimeCommand -e -del
+	da_MatchUV;
+
+runTimeCommand -e -del
+	da_SelectShellFromFaces;
+
+runTimeCommand -e -del
+	da_ShowLocalAxis;
+
+runTimeCommand -e -del
+	da_HideLocalAxis;
+
+runTimeCommand -e -del
+	da_FreezeDelNonDef;
+
+runTimeCommand -e -del
+	da_EmitterDirectional;
+
+runTimeCommand -e -del
+	da_EmitterOmni;
+
+runTimeCommand -e -del
+	da_EmitterVolume;
+
+runTimeCommand -e -del
+	da_EmitterCompass;
+
+runTimeCommand -e -del
+	da_nClothForceCompass;
+
+runTimeCommand -e -del
+	da_nClothWindCompass;
+
+runTimeCommand -e -del
+	da_MapFacesUV;
+
+runTimeCommand -e -del
+	da_MapFacesFacesUV;
+
+runTimeCommand -e -del
+	da_AiVolumes;
+
+runTimeCommand -e -del
+	da_AiVolumeShader;
+
+runTimeCommand -e -del
+	da_AiVolumeShapes;
+
+runTimeCommand -e -del
+	da_RendereViews;
+
+runTimeCommand -e -del
+	da_ImagesPlane;
+
+runTimeCommand -e -del
+	da_VideoImagesPlane;
+
+runTimeCommand -e -del
+	da_CameraImagesPlane;
+
+runTimeCommand -e -del
+	da_CameraVideoImagesPlane;
+
+runTimeCommand -e -del
+	da_RemoveMrNodes;
+
+runTimeCommand -e -del
+	da_OpenUvTool;
+
+runTimeCommand -e -del
+	da_ExposeRotationOrder;
+
+runTimeCommand -e -del
+	da_hotkeySetToggle;
+
+runTimeCommand -e -del
+	da_TransparentShadowsToggle;
+
+runTimeCommand -e -del
+	da_KeyKeyedOnly;
+
+runTimeCommand -e -del
+	da_FluidKillFields;
+
+runTimeCommand -e -del
+	da_CurveToNHairs;
+
+runTimeCommand -e -del
+	da_MetaBalls;
+
+runTimeCommand -e -del
+	da_EdgesToLoopToCurve;
+
+runTimeCommand -e -del
+	da_MMtoKey_clean;
+
+runTimeCommand -e -del
+	da_ResetTransform;
+
+runTimeCommand -e -del
+	da_UnLock;
+
+runTimeCommand -e -del
+	da_Lock;
+
+runTimeCommand -e -del
+	da_GoToCvsMode;
+
+runTimeCommand -e -del
+	da_ClearFreeze;
+
+runTimeCommand -e -del
+	da_ColorManagementOn;
+
+runTimeCommand -e -del
+	da_ColorManagementOff;
+
+runTimeCommand -e -del
+	da_LayoutOutliner;
+
+runTimeCommand -e -del
+	da_LastOpInStack;
+
+runTimeCommand -e -del
+	da_SetObjectMode;
+
+runTimeCommand -e -del
+	da_ClearPersp;
+
+runTimeCommand -e -del
+	da_ResetUI;
+
+runTimeCommand -e -del
+	da_ToggleComponentMode;
+
+runTimeCommand -e -del
+	da_ToggleUV;
+
+runTimeCommand -e -del
+	da_ToggleColorManagement;
+
+runTimeCommand -e -del
+	da_ToggleRampSkin;
+
+runTimeCommand -e -del
+	da_ToggleXRayJointsSkin;
+
+runTimeCommand -e -del
+	da_ToggleWireOnShade;
+
+runTimeCommand -e -del
+	da_ToggleDagNode;
+
+runTimeCommand -e -del
+	da_ToggleMaterial;
+
+runTimeCommand -e -del
+	da_ToggleShapes;
+
+runTimeCommand -e -del
+	da_ExpandShade;
+
+runTimeCommand -e -del
+	da_FlattenSurface;
+
+runTimeCommand -e -del
+	da_RevertToSave;
+
+runTimeCommand -e -del
+	da_OpenSubdAdapt;
+
+runTimeCommand -e -del
+	da_OpenSubdNoAdapt;
+
+runTimeCommand -e -del
+	da_OpenSubdSudivision;
+
+runTimeCommand -e -del
+	da_OpenSubdNoSubdivision;
+
+runTimeCommand -e -del
+	da_OpenSubdCL;
+
+runTimeCommand -e -del
+	da_OpenSubdNoCL;
+
+runTimeCommand -e -del
+	da_OpenSubdDisplace;
+
+runTimeCommand -e -del
+	da_OpenSubdNoDisplace;
+
+runTimeCommand -e -del
+	da_MMtoKeyManager;
+
+runTimeCommand -e -del
+	da_PolyDivision;
+
+runTimeCommand -e -del
+	da_SelectObjectMaterial;
+
+runTimeCommand -e -del
+	da_SelectCamera;
+
+runTimeCommand -e -del
+	da_LookThruSelected;
+
+runTimeCommand -e -del
+	da_BifrostContinuousEmission;
+
+runTimeCommand -e -del
+	da_BifrostNoContinuousEmission;
+
+runTimeCommand -e -del
+	da_BifrostMesh;
+
+runTimeCommand -e -del
+	da_BifrostNoMesh;
+
+runTimeCommand -e -del
+	da_BifrostGravity;
+
+runTimeCommand -e -del
+	da_BifrostNoGravity;
+
+runTimeCommand -e -del
+	da_ListInputOperations;
+
+runTimeCommand -e -del
+	da_nParticleNoGravity;
+
+runTimeCommand -e -del
+	da_nParticleGravity;
+
+runTimeCommand -e -del
+	da_nParticleNoSelfCollide;
+
+runTimeCommand -e -del
+	da_nParticleSelfCollide;
+
+runTimeCommand -e -del
+	da_BrushSurfaceSnap;
+
+runTimeCommand -e -del
+	da_BrushNoSurfaceSnap;
+
+runTimeCommand -e -del
+	da_BrushSurfaceCollideOutside;
+
+runTimeCommand -e -del
+	da_BrushSurfaceCollideInside;
+
+runTimeCommand -e -del
+	da_BrushSurfaceCollideBoth;
+
+runTimeCommand -e -del
+	da_BrushNoSurfaceCollide;
+
+runTimeCommand -e -del
+	da_BrushOccupyAttraction;
+
+runTimeCommand -e -del
+	da_BrushNoOccupyAttraction;
+
+runTimeCommand -e -del
+	da_ModifierOccupyVolume;
+
+runTimeCommand -e -del
+	da_ModifierNoOccupyVolume;
+
+runTimeCommand -e -del
+	da_ParentAndPosition;
+
+runTimeCommand -e -del
+	da_ResetTweakPoint;
+
+runTimeCommand -e -del
+	da_FollicleBraid;
+
+runTimeCommand -e -del
+	da_FollicleNoBraid;
+
+runTimeCommand -e -del
+	da_ManipToggleComp;
+
+runTimeCommand -e -del
+	da_ManipToggleTrans;
+
+runTimeCommand -e -del
+	da_ManipToggle;
+
+runTimeCommand -e -del
+	da_SelectUV;
+
+runTimeCommand -e -del
+	da_SelectParticle;
+
+runTimeCommand -e -del
+	da_SelectMulti;
+
+runTimeCommand -e -del
+	da_SelectCV;
+
+runTimeCommand -e -del
+	da_SelectLattice;
+
+runTimeCommand -e -del
+	da_BackToObjectMode;
+
+runTimeCommand -e -del
+	da_BevelPlusForText;
+
+runTimeCommand -e -del
+	da_TimeDraggerSmooth;
+
+runTimeCommand -e -del
+	da_TimeDraggerNoSmooth;
+
+runTimeCommand -e -del
+	da_FrameOnlySelected;
+
+runTimeCommand -e -del
+	da_DeformerUV;
+
+runTimeCommand -e -del
+	da_ToggleNurbsCurvesVis;
+
+runTimeCommand -e -del
+	da_ToggleNurbsVis;
+
+runTimeCommand -e -del
+	da_ToggleSubVis;
+
+runTimeCommand -e -del
+	da_TogglePolyVis;
+
+runTimeCommand -e -del
+	da_ToggleLightVis;
+
+runTimeCommand -e -del
+	da_ToggleJointVis;
+
+runTimeCommand -e -del
+	da_ToggleIkVis;
+
+runTimeCommand -e -del
+	da_ToggleDefVis;
+
+runTimeCommand -e -del
+	da_ToggleLocVis;
+
+runTimeCommand -e -del
+	da_DoubleSideOn;
+
+runTimeCommand -e -del
+	da_DoubleSideOff;
+
+runTimeCommand -e -del
+	da_LightList;
+
+runTimeCommand -e -del
+	da_MMtoKey_press;
+
+runTimeCommand -e -del
+	da_MMtoKey_release;
+
+runTimeCommand -e -del
+	da_HgConnectionLevel;
+
+runTimeCommand -e -del
+	da_SaveRenderImage;
+
+runTimeCommand -e -del
+	da_NconstraintTransform;
+
+runTimeCommand -e -del
+	da_EditDeformer;
+
+runTimeCommand -e -del
+	da_LegacySubdivPolyMode;
+
+runTimeCommand -e -del
+	da_LegacySubdivStandardMode;
+
+runTimeCommand -e -del
+	da_LegacySubdivToggle;
+
+runTimeCommand -e -del
+	da_NucleusPhysicallyBasedOn;
+
+runTimeCommand -e -del
+	da_NucleusPhysicallyBasedOff;
+
+runTimeCommand -e -del
+	da_GoToMesh;
+
+runTimeCommand -e -del
+	da_TxManager;
+
+runTimeCommand -e -del
+	da_AiLightNormalize;
+
+runTimeCommand -e -del
+	da_AiNoLightNormalize;
+
+runTimeCommand -e -del
+	da_AiPhotometric;
+
+runTimeCommand -e -del
+	da_AiSkyDome;
+
+runTimeCommand -e -del
+	da_AiMeshLight;
+
+runTimeCommand -e -del
+	da_MashVoxelizer;
+
+runTimeCommand -e -del
+	da_ToolSettings;
+
+runTimeCommand -e -del
+	da_OpenBossEditor;
+
+runTimeCommand -e -del
+	da_ModelingToolkit;
+
+runTimeCommand -e -del
+	da_OpenColorEditor;
+
+runTimeCommand -e -del
+	da_JointsAsBone;
+
+runTimeCommand -e -del
+	da_JointsAsNone;
+
+runTimeCommand -e -del
+	da_GoToFront;
+
+runTimeCommand -e -del
+	da_GoToSide;
+
+runTimeCommand -e -del
+	da_GoToTop;
+
+runTimeCommand -e -del
+	da_GoToPersp;
+
+runTimeCommand -e -del
+	da_ToolProperty;
+
+runTimeCommand -e -del
+	da_PolyToNurbs;
+
+runTimeCommand -e -del
+	da_MembraneCollider;
+
+runTimeCommand -e -del
+	da_HairLockBase;
+
+runTimeCommand -e -del
+	da_HairLockBothEnds;
+
+runTimeCommand -e -del
+	da_HairNoLock;
+
+runTimeCommand -e -del
+	da_HairDynamic;
+
+runTimeCommand -e -del
+	da_HairPassive;
+
+runTimeCommand -e -del
+	da_HairStatic;
+
+runTimeCommand -e -del
+	da_LocatorVisibility;
+
+runTimeCommand -e -del
+	da_LocatorNoVisibility;
+
+runTimeCommand -e -del
+	da_SetIKPerfAngle;
+
+runTimeCommand -e -del
+	da_AssumeIKPrefAngle;
+
+runTimeCommand -e -del
+	da_BoneAsFat;
+
+runTimeCommand -e -del
+	da_BoneAsOff;
+
+runTimeCommand -e -del
+	da_EdgeRightAngle;
+
+runTimeCommand -e -del
+	da_EdgeStraightAngle;
+
+runTimeCommand -e -del
+	da_EdgeAcuteAngle;
+
+runTimeCommand -e -del
+	da_EdgeBorder;
+
+runTimeCommand -e -del
+	da_EdgeInside;
+
+runTimeCommand -e -del
+	da_EdgeHard;
+
+runTimeCommand -e -del
+	da_EdgeSoft;
+
+runTimeCommand -e -del
+	da_ZeroTransfomations;
+
+runTimeCommand -e -del
+	da_ConnectShapes;
+
+runTimeCommand -e -del
+	da_Auto_MembraneCollider;
+
+runTimeCommand -e -del
+	da_SelectAssignedShader;
+
+runTimeCommand -e -del
+	da_EnableReference;
+
+runTimeCommand -e -del
+	da_DisableReference;
+
+runTimeCommand -e -del
+	da_ToggleSculptWireframe;
+
+runTimeCommand -e -del
+	da_AiPortalLight;
+
+runTimeCommand -e -del
+	da_AiNoPortalLight;
+
+runTimeCommand -e -del
+	da_ClothInputMesh;
+
+runTimeCommand -e -del
+	da_ClothAsDeformer;
+
+runTimeCommand -e -del
+	da_CopySelection;
+
+runTimeCommand -e -del
+	da_PasteSelection;
+
+runTimeCommand -e -del
+	da_ToggleSkinWireframe;
+
+runTimeCommand -e -del
+	da_NucleusPlaneOn;
+
+runTimeCommand -e -del
+	da_NucleusPlaneOff;
+
+runTimeCommand -e -del
+	da_NucleusHqOn;
+
+runTimeCommand -e -del
+	da_NucleusHqOff;
+
+runTimeCommand -e -del
+	da_NucleusGravityOn;
+
+runTimeCommand -e -del
+	da_NucleusGravityOff;
+
+runTimeCommand -e -del
+	da_ConnectCereation;
+
+runTimeCommand -e -del
+	da_AiLightPortal;
+
+runTimeCommand -e -del
+	da_TogglePlayback;
+
+runTimeCommand -e -del
+	da_ToggleModelingTool;
+
+runTimeCommand -e -del
+	da_MirrorCutX;
+
+runTimeCommand -e -del
+	da_MirrorCutY;
+
+runTimeCommand -e -del
+	da_MirrorCutZ;
+
+runTimeCommand -e -del
+	da_MirrorCutXNeg;
+
+runTimeCommand -e -del
+	da_MirrorCutYNeg;
+
+runTimeCommand -e -del
+	da_MirrorCutZNeg;
+
+runTimeCommand -e -del
+	da_BooleanFullIntersect;
+
+runTimeCommand -e -del
+	da_PlaneCutter;
+
+runTimeCommand -e -del
+	da_NurbsToMesh;
+
+runTimeCommand -e -del
+	da_FluidAutoResizeOn;
+
+runTimeCommand -e -del
+	da_FluidAutoResizeOff;
+
+runTimeCommand -e -del
+	da_NurbsConnectCreation;
+
+runTimeCommand -e -del
+	da_CurveConnectCreation;
+
+runTimeCommand -e -del
+	da_ConnectNurbsShapes;
+
+runTimeCommand -e -del
+	da_ToggleChannelLayer;
+
+runTimeCommand -e -del
+	da_ToggleMTK;
+
+runTimeCommand -e -del
+	da_ToggleAttribute;
+
+runTimeCommand -e -del
+	da_ToggleOutline;
+
+runTimeCommand -e -del
+	da_ToggleToolSetting;
+
+runTimeCommand -e -del
+	da_SlideConstraintOff;
+
+runTimeCommand -e -del
+	da_SlideConstraintOn;
+
+runTimeCommand -e -del
+	da_nHairSelfCollideOn;
+
+runTimeCommand -e -del
+	da_nHairSelfCollideOff;
+
+runTimeCommand -e -del
+	da_nHairColllideOff;
+
+runTimeCommand -e -del
+	da_nHairCollideOn;
+
+runTimeCommand -e -del
+	da_nHairLockTip;
+
+runTimeCommand -e -del
+	da_BatchSkinTransfertUV;
+
+runTimeCommand -e -del
+	da_BatchSkinTransfertCP;
+
+runTimeCommand -e -del
+	da_BatchSkinTransfertRC;
+
+runTimeCommand -e -del
+	da_BatchSkinTransfertCC;
+
+runTimeCommand -e -del
+	da_PolyShade;
+
+runTimeCommand -e -del
+	da_PolyNoShade;
+
+runTimeCommand -e -del
+	da_ToggleUVBorders;
+
+runTimeCommand -e -del
+	da_ToggleResolutionGate;
+
+runTimeCommand -e -del
+	da_CameraBookmark;
+
+runTimeCommand -e -del
+	da_ResetPivot;
+
+runTimeCommand -e -del
+	da_NucleusMedium;
+
+runTimeCommand -e -del
+	da_NucleusParallelOn;
+
+runTimeCommand -e -del
+	da_NucleusParallelOff;
+
+runTimeCommand -e -del
+	da_CurveDistributionMash;
+
+runTimeCommand -e -del
+	da_LayoutPersp;
+
+runTimeCommand -e -del
+	da_LayoutNodeEditor;
+
+runTimeCommand -e -del
+	da_LayoutUvTextureEditor;
+
+runTimeCommand -e -del
+	da_LayoutGraphEditor;
+
+runTimeCommand -e -del
+	da_LayoutShapeEditor;
+
+runTimeCommand -e -del
+	da_LayoutReferenceEditor;
+
+runTimeCommand -e -del
+	da_LayoutComponentEditor;
+
+runTimeCommand -e -del
+	da_LayoutRelationshipEditor;
+
+runTimeCommand -e -del
+	da_LayoutDynamicRelationshipEditor;
+
+runTimeCommand -e -del
+	da_LayoutHypershade;
+
+runTimeCommand -e -del
+	da_AiOpaque;
+
+runTimeCommand -e -del
+	da_AiNoOpaque;
+
+runTimeCommand -e -del
+	da_CloseAllPanel;
+
+runTimeCommand -e -del
+	da_MashBlendDeformer;
+
+runTimeCommand -e -del
+	da_AboutMay9;
+
+runTimeCommand -e -del
+	da_ControllerProssimity;
+
+runTimeCommand -e -del
+	da_ControllerNoProssimity;
+
+runTimeCommand -e -del
+	da_ConvertUvEdgeToCurve;
+
+runTimeCommand -e -del
+	da_EdgeRingAndLoop;
+
+runTimeCommand -e -del
+	da_SelectComponentShader;
+
+runTimeCommand -e -del
+	da_CreateAssigNode;
+
+runTimeCommand -e -del
+	da_EditAndFrameShaderOutliner;
+
+runTimeCommand -e -del
+	da_UnlockAndFixNormals;
+
+runTimeCommand -e -del
+	da_AiStandardHairToPfxHair;
+
+runTimeCommand -e -del
+	da_ToggleLightManipulators;
+
+runTimeCommand -e -del
+	da_ToggleCameraManipulators;
+
+runTimeCommand -e -del
+	da_AutoBevel;
+
+runTimeCommand -e -del
+	da_MashBulletGravity;
+
+runTimeCommand -e -del
+	da_MashBulletNoGravity;
+
+runTimeCommand -e -del
+	da_MashBulletGround;
+
+runTimeCommand -e -del
+	da_MashBulletNoGround;
+
+runTimeCommand -e -del
+	da_CopyCameraPosition;
+
+runTimeCommand -e -del
+	da_PasteCameraPosition;
+
+runTimeCommand -e -del
+	da_SelectVertexJoint;
+
+runTimeCommand -e -del
+	da_MeshLightVisible;
+
+runTimeCommand -e -del
+	da_MeshLightNoVisible;
+
+runTimeCommand -e -del
+	da_FileAlphaLuminance;
+
+runTimeCommand -e -del
+	da_FileNoAlphaLuminance;
+
+runTimeCommand -e -del
+	da_FileColorSpaceSrgb;
+
+runTimeCommand -e -del
+	da_FileColorSpaceRaw;
+
+runTimeCommand -e -del
+	da_FileFilterQuadratic;
+
+runTimeCommand -e -del
+	da_FileFilterOff;
+
+runTimeCommand -e -del
+	da_MashParticle;
+
+runTimeCommand -e -del
+	da_TweakToMesh;
+
+runTimeCommand -e -del
+	da_Subdivision;
+
+runTimeCommand -e -del
+	da_RivetMashFace;
+
+runTimeCommand -e -del
+	da_RivetMashVertex;
+
+runTimeCommand -e -del
+	da_RivetMashEdge;
+
+runTimeCommand -e -del
+	da_CreateStandInFile;
+
+runTimeCommand -e -del
+	da_doExportStandIn;
+
+runTimeCommand -e -del
+	da_aiStandInBoundryBox;
+
+runTimeCommand -e -del
+	da_aiStandinPolyWire;
+
+runTimeCommand -e -del
+	da_aiStandinPointCloud;
+
+runTimeCommand -e -del
+	da_SurfaceScatterMash;
+
+runTimeCommand -e -del
+	da_CurveLength;
+
+runTimeCommand -e -del
+	da_CleanHUD;
+
+runTimeCommand -e -del
+	da_EnableHUD;
+
+runTimeCommand -e -del
+	da_ToggleHUD;
+
+runTimeCommand -e -del
+	da_ParticleToMesh;
+
+runTimeCommand -e -del
+	da_FluidToMesh;
+
+runTimeCommand -e -del
+	da_MouseTrack;
+
+runTimeCommand -e -del
+	da_aiCurveCollector;
+
+runTimeCommand -e -del
+	da_ToggleMouseWheel;
+
+runTimeCommand -e -del
+	da_ContextConnector;
+
+runTimeCommand -e -del
+	da_CombineCurves;
+
+runTimeCommand -e -del
+	da_NucleusWindController;
+
+runTimeCommand -e -del
+	da_AirWindController;
+
+runTimeCommand -e -del
+	da_AddPhysicalSky;
+
+runTimeCommand -e -del
+	da_MassAttr;
+
+runTimeCommand -e -del
+	da_ToggleTwoSidedLighting;
+
+runTimeCommand -e -del
+	da_ToggleActiveComponentsXray;
+
+runTimeCommand -e -del
+	da_ToggleJointXray;
+
+runTimeCommand -e -del
+	da_ToggleMotionTrialHandles;
+
+runTimeCommand -e -del
+	da_ExtractCurveShape;
+
+runTimeCommand -e -del
+	da_SepareCurves;
+
+runTimeCommand -e -del
+	da_ViewportUV;
+
+runTimeCommand -e -del
+	da_ShatterMesh;
+
+runTimeCommand -e -del
+	da_CollideOutward;
+
+runTimeCommand -e -del
+	da_CollideInward;
+
+runTimeCommand -e -del
+	da_TensionBlendShape;
+
 // Store Preferences Changes
 savePrefsChanges;
 

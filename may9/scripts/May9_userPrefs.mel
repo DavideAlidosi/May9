@@ -1,16 +1,8 @@
-// Connection Editor prefs
-optionVar
- -iv "connectWindowLeftSHD" 1
- -iv "connectWindowRightSHD" 1;
-
 // Enable Membrane Paintable Attributes
 makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
 
 // Define Status Line prefs
 toggleInputField(1);
-
-// Set HotBox transparency to 0%
-hotBox -tr 0;
 
 // Disable Duplicate Variable Warnings
 melOptions -duplicateVariableWarnings off;

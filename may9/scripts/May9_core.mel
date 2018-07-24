@@ -29,14 +29,15 @@ if (`optionVar -q "May9ActivationCheck"` < 31){
     //Source userPrefs only at May9 initialization
     source May9_userPrefs.mel;
 
-	// Declare initial layout state
-	global int $myLayout = 0;
-
 	// Define May9 Pro 3.1 installation status 
 	optionVar -iv May9ActivationCheck 31;
 }
 
 if (`optionVar -q "May9ActivationCheck"` < 320){
+
+	// Declare initial layout state
+	global int $myLayout = 0;
+
 	// Store inital hotkeySet
 	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
 
