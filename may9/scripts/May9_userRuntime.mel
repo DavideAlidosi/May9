@@ -429,7 +429,7 @@ runTimeCommand
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\tpython(\"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()\");\n}\nelse if (`getAttr defaultRenderGlobals.currentRenderer` == \"mayaSoftware\"){\n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}else{ \n\tRenderViewWindow;\n}\n\ninViewMessage -pos topCenter -msg \"Starting Render\" -fade;")
-	da_RendereViews;
+	da_RenderViews;
 
 runTimeCommand
 	-annotation "Add Image Plane"

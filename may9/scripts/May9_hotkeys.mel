@@ -14,7 +14,7 @@ hotkey -keyShortcut "z" -alt -sht -name ("da_ZeroTransfomationsNameCommand");
 hotkey -keyShortcut "Space" -alt -sht -name ("da_TogglePlaybackNameCommand");
 
 // CTRL Alt Hotkeys
-hotkey -keyShortcut "r" -ctl -alt -name ("da_RendereViewsNameCommand");
+hotkey -keyShortcut "r" -ctl -alt -name ("da_RenderViewsNameCommand");
 hotkey -keyShortcut "8" -ctl -alt -name ("da_PaintEffectsPanelNameCommand");
 hotkey -keyShortcut "x" -ctl -alt -name ("da_RevertToSaveNameCommand");
 hotkey -keyShortcut "m" -ctl -alt -name ("toggleShelfTabsNameCommand");
@@ -154,10 +154,10 @@ nameCommand
 	da_FrameOnlySelectedNameCommand;
 
 nameCommand
-	-annotation "da_RendereViewsNameCommand"
+	-annotation "da_RenderViewsNameCommand"
 	-sourceType "mel"
-	-command ("da_RendereViews")
-	da_RendereViewsNameCommand;
+	-command ("da_RenderViews")
+	da_RenderViewsNameCommand;
 
 nameCommand
 	-annotation "da_MMtoKey_press"
