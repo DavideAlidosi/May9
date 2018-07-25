@@ -33,6 +33,10 @@ hotkey -keyShortcut "r" -ctl -alt -sht -name ("da_ToggleResolutionGateNameComman
 hotkey -keyShortcut "q" -ctl -alt -sht -name ("da_MMtoKey_cleanNameCommand");
 hotkey -keyShortcut "z" -ctl -alt -sht -name ("da_MMtoKeyManagerNameCommand");
 hotkey -keyShortcut "s" -ctl -alt -sht -name ("da_KeyKeyedOnlyNameCommand");
+hotkey -keyShortcut "p" -ctl -alt -sht -name ("da_CtrlParentConstraintNameCommand");
+hotkey -keyShortcut "t" -ctl -alt -sht -name ("da_CtrlPointConstraintNameCommand");
+hotkey -keyShortcut "o" -ctl -alt -sht -name ("da_CtrlOrientConstraintNameCommand");
+hotkey -keyShortcut "a" -ctl -alt -sht -name ("da_CtrlAimConstraintNameCommand");
 
 // Rigging hotkeys
 hotkey -keyShortcut "Return" -ctl -alt -sht -name ("MatchPivotsNameCommand");
@@ -98,6 +102,30 @@ hotkey -keyShortcut "\\" -releaseName ("STRSTweakModeOffNameCommand");
 
 
 // nameCommand set
+
+nameCommand
+	-annotation "da_CtrlPointConstraintNameCommand"
+	-sourceType "mel"
+	-command ("da_CtrlPointConstraint")
+	da_CtrlPointConstraintNameCommand;
+
+nameCommand
+	-annotation "da_CtrlOrientConstraintNameCommand"
+	-sourceType "mel"
+	-command ("da_CtrlOrientConstraint")
+	da_CtrlOrientConstraintNameCommand;
+
+nameCommand
+	-annotation "da_CtrlParentConstraintNameCommand"
+	-sourceType "mel"
+	-command ("da_CtrlParentConstraint")
+	da_CtrlParentConstraintNameCommand;
+
+nameCommand
+	-annotation "da_CtrlAimConstraintNameCommand"
+	-sourceType "mel"
+	-command ("da_CtrlAimConstraint")
+	da_CtrlAimConstraintNameCommand;
 
 nameCommand
 	-annotation "da_MMtoKeyManagerNameCommand"
