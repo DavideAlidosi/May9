@@ -17,6 +17,17 @@ catchQuiet (`hotkeySet -e -delete May9_Pro`);
 optionVar -iv May9ActivationCheck 32;
 
 // Remove runtimeCommand
+catchQuiet (`runTimeCommand -e -del
+	da_CtrlPointConstraint`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_CtrlOrientConstraint`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_CtrlParentConstraint`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_CtrlAimConstraint`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_GoToCVsNURBS`);

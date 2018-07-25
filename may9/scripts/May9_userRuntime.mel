@@ -1,4 +1,35 @@
 // runTimeCommand set
+runTimeCommand
+	-annotation "Auto Point Constraint For Controller"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -o`;\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[0] $mySel[$i];\n    doCreatePointConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n}\nselect $mySel[0];\nda_FreezeDelNonDef;\nTagAsController;")
+	da_CtrlPointConstraint;
+
+runTimeCommand
+	-annotation "Auto Orient Constraint For Controller"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -o`;\nif ( `size($mySel)` == 2 ){\n    MatchPivots;\n}\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[0] $mySel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n}\nselect $mySel[0];\nda_FreezeDelNonDef;\nTagAsController;")
+	da_CtrlOrientConstraint;
+
+runTimeCommand
+	-annotation "Auto Parent Constraint For Controller"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -o`;\nif ( `size($mySel)` == 2 ){\n    MatchPivots;\n}\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[0] $mySel[$i];\n    doCreateParentConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n}\nselect $mySel[0];\nda_FreezeDelNonDef;\nTagAsController;")
+	da_CtrlParentConstraint;
+
+runTimeCommand
+	-annotation "Auto Aim Constraint For Controller"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -o`;\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[0] $mySel[$i];\n    doCreateAimConstraintArgList 1 { \"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"0\",\"1\",\"0\",\"0\",\"1\",\"0\",\"1\",\"vector\",\"\",\"0\",\"0\",\"0\",\"\",\"1\" };\n}\nselect $mySel[0];\nda_FreezeDelNonDef;\nTagAsController;")
+	da_CtrlAimConstraint;
 
 runTimeCommand
 	-annotation "Enter in CVs mode for NURBS"
