@@ -1,13 +1,26 @@
+menuItem
+-l "Controller Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
 
 menuItem
--l "Parent Constraint" 
--c "ParentConstraint;" 
+-l "Controller Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Controler Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "SW" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Controller Parent" 
+-c "da_CtrlParentConstraint" 
 -rp "N" 
 -i "parentConstraint.png";
-
-menuItem
--c "ParentConstraintOptions;" 
--ob 1;
 
 menuItem
 -l "Scale Constraint" 
@@ -17,16 +30,6 @@ menuItem
 
 menuItem
 -c "ScaleConstraintOptions;" 
--ob 1;
-
-menuItem
--l "Aim Constraint" 
--c "AimConstraint;" 
--rp "S" 
--i "aimConstraint.png";
-
-menuItem
--c "AimConstraintOptions;" 
 -ob 1;
 
 menuItem
@@ -44,26 +47,6 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
-
-menuItem
--l "Orient Constraint" 
--c "OrientConstraint" 
--rp "NW" 
--i "orientConstraint.png";
-
-menuItem
--c "OrientConstraintOptions" 
--ob 1;
-
-menuItem
--l "Point Constraint" 
--c "PointConstraint" 
--rp "NE" 
--i "posConstraint.png";
-
-menuItem
--c "PointConstraintOptions" 
--ob 1;
 
 setParent -m ..;
 

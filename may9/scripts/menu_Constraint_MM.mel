@@ -16,28 +16,20 @@ menuItem
 -ob 1;
 
 menuItem
--l "Aim Constraint" 
--c "AimConstraint;" 
+-l "Controler Aim" 
+-c "da_CtrlAimConstraint" 
 -rp "SW" 
 -i "aimConstraint.png";
 
 menuItem
--c "AimConstraintOptions;" 
--ob 1;
-
-menuItem
--l "Parent Constraint" 
--c "ParentConstraint;" 
+-l "Controller Parent" 
+-c "da_CtrlParentConstraint" 
 -rp "N" 
 -i "parentConstraint.png";
 
 menuItem
--c "ParentConstraintOptions;" 
--ob 1;
-
-menuItem
 -l "Scale Constraint" 
--c "scaleConstraint;" 
+-c "scaleConstraint" 
 -rp "E" 
 -i "scaleConstraint.png";
 
@@ -47,7 +39,7 @@ menuItem
 
 menuItem
 -l "Pole Vector Constraint" 
--c "PoleVectorConstraint;" 
+-c "PoleVectorConstraint" 
 -rp "SE" 
 -i "poleVectorConstraint.png";
 
@@ -85,28 +77,20 @@ menuItem
 
 menuItem
 -l "Connect selected Muscle" 
--c "cMuscle_connectToSystem(); " 
+-c "cMuscle_connectToSystem()" 
 -i "cMuscle_skin_connMus.png";
 
 menuItem
--l "Point Constraint" 
--c "PointConstraint" 
+-l "Controller Point" 
+-c "da_CtrlPointConstraint" 
 -rp "NE" 
 -i "posConstraint.png";
 
 menuItem
--c "PointConstraintOptions" 
--ob 1;
-
-menuItem
--l "Orient Constraint" 
--c "OrientConstraint" 
+-l "Controller Orient" 
+-c "da_CtrlOrientConstraint" 
 -rp "NW" 
 -i "orientConstraint.png";
-
-menuItem
--c "OrientConstraintOptions" 
--ob 1;
 
 setParent -m ..;
 

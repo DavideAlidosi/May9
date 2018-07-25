@@ -1,8 +1,31 @@
+menuItem
+-l "Controller Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
+
+menuItem
+-l "Controller Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Controler Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "SW" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Controller Parent" 
+-c "da_CtrlParentConstraint" 
+-rp "N" 
+-i "parentConstraint.png";
 
 menuItem
 -l "Project Curve On Mesh" 
 -c "ProjectCurveOnMesh;" 
--rp "N" 
+-rp "E" 
 -i "projectCurve_Poly.png";
 
 menuItem
@@ -22,18 +45,7 @@ menuItem
 menuItem
 -l "Instance Along Curve" 
 -c "da_CurveDistributionMash" 
--rp "E" 
 -i "da_instanceAlongCurve.png";
-
-menuItem
--l "Wire Deformer" 
--c "WireTool;" 
--rp "NE" 
--i "addWire.png";
-
-menuItem
--c "WireToolOptions;" 
--ob 1;
 
 menuItem
 -l "Make Curves Dynamic" 
@@ -42,15 +54,27 @@ menuItem
 -i "hairDynamicCurves.png";
 
 menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Wire Deformer" 
+-c "WireTool" 
+-i "addWire.png";
+
+menuItem
+-c "WireToolOptions;" 
+-ob 1;
+
+menuItem
 -l "Curve Warp Deformer" 
 -c "createCurveWarp;" 
--rp "SE" 
 -i "CurveWarp.png";
 
 menuItem
 -l "Curves to nHair" 
 -c "da_CurveToNHairs" 
--rp "NW" 
+-rp "SE" 
 -i "out_pfxHair.png";
 
 setParent -m ..;
