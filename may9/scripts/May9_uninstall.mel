@@ -19,6 +19,9 @@ optionVar -iv May9ActivationCheck 32;
 // Remove runtimeCommand
 
 catchQuiet (`runTimeCommand -e -del
+	da_GoToCVsNURBS`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_commonObjectOptionsPopup`);
 
 catchQuiet (`runTimeCommand -e -del

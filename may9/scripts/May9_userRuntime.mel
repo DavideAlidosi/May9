@@ -1,4 +1,13 @@
 // runTimeCommand set
+
+runTimeCommand
+	-annotation "Enter in CVs mode for NURBS"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel)\n\tdoMenuNURBComponentSelection($allMySel, \"controlVertex\");")
+	da_GoToCVsNURBS;
+
 runTimeCommand
 	-annotation "Add Scene Option to MayaWindow_MM"
 	-category "Custom Scripts.May9_Pro.Scene"
@@ -332,7 +341,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("FreezeTransformations;\nBakeNonDefHistory;")
+	-command ("string $mySel[] = `listRelatives -s`;\nstring $mySelType = `objectType $mySel[0]`;\nif($mySelType == \"locator\"){\n    FreezeTransformations;\n}else{\n    FreezeTransformations;\n    BakeNonDefHistory;\n}")
 	da_FreezeDelNonDef;
 
 runTimeCommand
