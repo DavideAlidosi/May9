@@ -32,6 +32,14 @@ runTimeCommand
 	da_CtrlAimConstraint;
 
 runTimeCommand
+	-annotation "Auto Pole Vector Constraint For Controller"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl -o`;\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[0] $mySel[$i];\n    poleVectorConstraint -weight 1;\n}\nselect $mySel[0];\nda_FreezeDelNonDef;\nTagAsController;")
+	da_CtrlPoleVectorConstraint;
+
+runTimeCommand
 	-annotation "Enter in CVs mode for NURBS"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""

@@ -37,6 +37,7 @@ hotkey -keyShortcut "p" -ctl -alt -sht -name ("da_CtrlParentConstraintNameComman
 hotkey -keyShortcut "t" -ctl -alt -sht -name ("da_CtrlPointConstraintNameCommand");
 hotkey -keyShortcut "o" -ctl -alt -sht -name ("da_CtrlOrientConstraintNameCommand");
 hotkey -keyShortcut "a" -ctl -alt -sht -name ("da_CtrlAimConstraintNameCommand");
+hotkey -keyShortcut "i" -ctl -alt -sht -name ("da_CtrlPoleVectorConstraintNameCommand");
 
 // Rigging hotkeys
 hotkey -keyShortcut "Return" -ctl -alt -sht -name ("MatchPivotsNameCommand");
@@ -126,6 +127,12 @@ nameCommand
 	-sourceType "mel"
 	-command ("da_CtrlAimConstraint")
 	da_CtrlAimConstraintNameCommand;
+
+nameCommand
+	-annotation "da_CtrlPoleVectorConstraintNameCommand"
+	-sourceType "mel"
+	-command ("da_CtrlPoleVectorConstraint")
+	da_CtrlPoleVectorConstraintNameCommand;
 
 nameCommand
 	-annotation "da_MMtoKeyManagerNameCommand"
