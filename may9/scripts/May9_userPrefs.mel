@@ -4,6 +4,9 @@ makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
 // Define Status Line prefs
 toggleInputField(1);
 
+//Store initial melDuplicateVariableWarnings
+optionVar -iv da_DuplicateVariableWarnings `optionVar -q melDuplicateVariableWarnings`;
+
 // Disable Duplicate Variable Warnings
 melOptions -duplicateVariableWarnings off;
 

@@ -48,7 +48,7 @@ class MainWindow(QMainWindow):
         # build menu
         ctrl = self.ui.chb_ctrl.isChecked()
         alt = self.ui.chb_alt.isChecked()
-        shift = self.ui.chb_alt.isChecked()
+        shift = self.ui.chb_shift.isChecked()
         if self.COMMANDS[self.ui.cmb_method.currentIndex()][0] == "custom":
             press = "MMtoKey.pressCustom(ctl=%s, alt=%s, sh=%s, menu_type=%i, menu_name='%s')"
             press %= ctrl, alt, shift, self.ui.cmb_menu.currentIndex(), self.ui.line_menu.text()

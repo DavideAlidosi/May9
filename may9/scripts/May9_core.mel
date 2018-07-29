@@ -41,9 +41,6 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 	// Store inital hotkeySet
 	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
 
-	// Delete old May9_Pro HotkeySet if present
-	catchQuiet (`hotkeySet -e -delete May9_Pro`);
-
 	// Preload hotkeys
 	source May9_hotkeys.mel;
 

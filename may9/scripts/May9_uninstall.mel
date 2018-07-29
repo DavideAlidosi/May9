@@ -9,6 +9,13 @@ pluginInfo -edit -autoload false MMtoKey;
 // Set back to prior Hotkeyset
 hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 
+// Set back to prior melDuplicateVariableWarnings
+if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
+	melOptions -duplicateVariableWarnings on;
+}
+
+// optionVar -iv da_DuplicateVariableWarnings `optionVar -q "da_DuplicateVariableWarnings"`;
+
 // Delete May9_Pro hotkeySet
 catchQuiet (`hotkeySet -e -delete May9_Core`);
 catchQuiet (`hotkeySet -e -delete May9_Pro`);
