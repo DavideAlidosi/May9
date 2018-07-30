@@ -2340,7 +2340,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $myResult = `confirmDialog -title \"About\" -message (\"Davide Alidosi's \" +$may9Version +\"       \") \n    -button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;")
+	-command ("string $myResult = `confirmDialog -title \"About\" -message (\"\\nDavide Alidosi's \" +$may9Version+\"        \\n\"+$may9CodeName+\"\") \n    -button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;")
 	da_AboutMay9;
 
 runTimeCommand
