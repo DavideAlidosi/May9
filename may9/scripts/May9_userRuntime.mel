@@ -540,7 +540,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if (`hotkeySet -q -current` == \"May9_Core\"){\n    hotkeySet -edit -current May9_Pro;\n    inViewMessage -pos topCenter -msg \"May9 Pro hotkeys enabled\" -fade;\n}else{\n    hotkeySet -edit -current May9_Core;\n    inViewMessage -pos topCenter -msg \"May9 Pro hotkeys disabled\" -fade;\n}")
+	-command ("if (`hotkeySet -q -current` == \"May9_Core\"){\n    hotkeySet -edit -current May9_Full;\n    inViewMessage -pos topCenter -msg \"May9 Pro optional hotkeys enabled\" -fade;\n}else{\n    hotkeySet -edit -current May9_Core;\n    inViewMessage -pos topCenter -msg \"May9 Pro optional hotkeys disabled\" -fade;\n}")
 	da_hotkeySetToggle;
 
 runTimeCommand

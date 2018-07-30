@@ -16,9 +16,9 @@ if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 
 // optionVar -iv da_DuplicateVariableWarnings `optionVar -q "da_DuplicateVariableWarnings"`;
 
-// Delete May9_Pro hotkeySet
+// Delete May9_Full and Core hotkeySets
 catchQuiet (`hotkeySet -e -delete May9_Core`);
-catchQuiet (`hotkeySet -e -delete May9_Pro`);
+catchQuiet (`hotkeySet -e -delete May9_Full`);
 
 // Put May9 Intallation in idle mode
 optionVar -iv May9ActivationCheck 32;
