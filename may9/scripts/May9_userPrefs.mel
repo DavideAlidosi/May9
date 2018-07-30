@@ -1,7 +1,9 @@
-// Connection Editor prefs
-optionVar
- -iv "connectWindowLeftSHD" 1
- -iv "connectWindowRightSHD" 1;
+// Store initial Connection Editor prefs
+optionVar -iv da_connectWindowLeftSHD `optionVar -q connectWindowLeftSHD`;
+optionVar -iv da_connectWindowRightSHD `optionVar -q connectWindowRightSHD`;
+
+// Set Connection Editor visibility prefs
+optionVar -iv "connectWindowLeftSHD" 1 -iv "connectWindowRightSHD" 1;
 
 // Enable Membrane Paintable Attributes
 makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
