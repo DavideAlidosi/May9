@@ -1,6 +1,7 @@
 // Store May9 Version
-$may9Version = "May9 Pro Version 3.2";
-$may9CodeName = " for the 20th \"Unlimited\" Anniversary";
+string $may9Version = "May9 Pro Version 3.2";
+string $may9CodeName = " for the 20th \"Unlimited\" Anniversary";
+int $may9Value = "320";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -25,17 +26,36 @@ python( "from maya.app.general import creaseSetEditor");
 if ( catchQuiet( `python( "import boss.BossEditor as be" )` ) )
 	print "Please check Bifrost installation";
 
-// First run May9 procedure
+// First run May9 procedures
 if (`optionVar -q "May9ActivationCheck"` < 31){
 
     //Source userPrefs only at May9 initialization
-    source May9_userPrefs.mel;
+    source May9_layouts.mel;
+
+    // Enable Membrane Paintable Attributes
+	makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
+
+	// Define Status Line prefs
+	toggleInputField(1);
 
 	// Define May9 Pro 3.1 installation status 
 	optionVar -iv May9ActivationCheck 31;
 }
 
 if (`optionVar -q "May9ActivationCheck"` < 320){
+	
+	// Store initial Connection Editor prefs
+	optionVar -iv da_connectWindowLeftSHD `optionVar -q connectWindowLeftSHD`;
+	optionVar -iv da_connectWindowRightSHD `optionVar -q connectWindowRightSHD`;
+
+	// Set Connection Editor visibility prefs
+	optionVar -iv "connectWindowLeftSHD" 1 -iv "connectWindowRightSHD" 1;
+
+	//Store initial melDuplicateVariableWarnings
+	optionVar -iv da_DuplicateVariableWarnings `optionVar -q melDuplicateVariableWarnings`;
+
+	// Disable Duplicate Variable Warnings
+	melOptions -duplicateVariableWarnings off;
 
 	// Declare initial layout state
 	global int $myLayout = 0;
