@@ -455,7 +455,7 @@ nameCommand
 nameCommand
 	-annotation "da_ConnectionEditorNameCommand"
 	-sourceType "mel"
-	-command ("if (`pluginInfo -q -l contextConnector` == 1){da_ContextConnector;}else{ConnectionEditor;}")
+	-command ("da_ConnectionEditor")
 	da_ConnectionEditorNameCommand;
 
 nameCommand

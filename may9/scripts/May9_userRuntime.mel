@@ -1,4 +1,13 @@
 // runTimeCommand set
+
+runTimeCommand
+	-annotation "Open Connection Editor or if Avaiable Context Connector"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`pluginInfo -q -l contextConnector` == 1){\n\tda_ContextConnector;\n}else{\n\tConnectionEditor;\n}")
+	da_ConnectionEditor;
+
 runTimeCommand
 	-annotation "Auto Point Constraint For Controller"
 	-category "Custom Scripts.May9_Pro.Rigging"
@@ -2772,7 +2781,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("import maya.cmds as cmds\n\ntry:\n    mass_attr.mass_attr.Display_Massive_Toggle()\nexcept Exception: \n    cmds.warning( \"To use this command please load \\\"mass_attr\\\" from Plug-in Manager\" )")
+	-command ("import maya.cmds as cmds\n\ntry:\n    mass_attr.mass_attr.Display_Massive_Toggle()\nexcept Exception: \n    cmds.warning( \"To use this command enable \\\"Massive Attribute Modifier\\\" from May9 Pro menu\" )")
 	da_MassAttr;
 
 runTimeCommand
