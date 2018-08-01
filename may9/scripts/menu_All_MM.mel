@@ -275,6 +275,7 @@ menuItem -bld 1
 -c "TagAsControllerParent"
 -i "parent.png";
 
+if (`about -api` >= 20180000){
 menuItem
 -d 1;
 
@@ -287,6 +288,7 @@ menuItem -bld 1
 -l "Prossimity Off"
 -c "da_ControllerNoProssimity"
 -i "rvViewingPipelineOff.png";
+}
 
 setParent -m ..;
 
@@ -362,10 +364,17 @@ menuItem -bld 1
 -rp "N"
 -i "LightPortalShelf.png";
 
+if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Light Editor"
 -c "da_LightList"
 -i "light_manager.png";
+}else{
+menuItem -bld 1 
+-l "Light Editor"
+-c "da_LightList"
+-i "lightEditor.png";
+}
 
 menuItem -bld 1 
 -l "Light Linking"
@@ -652,21 +661,36 @@ menuItem -bld 1
 -rp "E"
 -i "snapTogetherTool.png";
 
+if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Freeze Transforms"
 -c "FreezeTransformations" 
 -rp "NW"
 -i "FreezeTransform.png";
+}else{
+menuItem -bld 1 
+-l "Freeze Transforms"
+-c "FreezeTransformations" 
+-rp "NW"
+-i "UV_Freeze_Tool.png";
+}
 
 menuItem
 -c "FreezeTransformationsOptions"
 -ob 1;
 
+if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Center Pivot"
 -c "CenterPivot" 
 -rp "NE"
 -i "CenterPivot.png";
+}else{
+-l "Center Pivot"
+-c "CenterPivot" 
+-rp "NE"
+-i "menuIconModify.png";
+}
 
 menuItem -bld 1 
 -l "Reset Transforms"

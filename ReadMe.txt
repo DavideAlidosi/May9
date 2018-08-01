@@ -51,6 +51,7 @@ Version 3.2 highlight
 - Polish hotkeys scheme, see userguide for more information
 - May9 hotkeys sets are added over the current hotkeySet during installation
 - May9 Pro custom hotkeys can be now enable or disable from May9 Pro drop-down menu
+- Add back Maya 2017 support
 
 
 Useful links

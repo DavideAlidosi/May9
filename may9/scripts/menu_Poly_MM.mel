@@ -671,10 +671,12 @@ menuItem
 -c "SoftPolyEdgeElements 0;"
 -i "polyHardEdge.png";
 
+if (`about -api` >= 20180000){
 menuItem
 -l "Set Harden on UV Borders"
 -c "polyUVBorderHard"
 -i "polyHardEdge.png";
+}
 
 menuItem
 -d 1;

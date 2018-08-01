@@ -97,6 +97,7 @@ menuItem
 -c "da_EdgeRingAndLoop"
 -i "polyDuplicateEdgeLoop.png";
 
+if (`about -api` >= 20180000){
 menuItem
 -l "Contiguous"
 -c "SelectContiguousEdges"
@@ -105,6 +106,7 @@ menuItem
 menuItem
 -c "SelectContiguousEdgesOptions"
 -ob 1;
+}
 
 setParent -m ..;
 
@@ -140,6 +142,7 @@ menuItem
 -c "PolyEditEdgeFlowOptions"
 -ob 1;
 
+if (`about -api` >= 20180000){
 menuItem
 -l "Circularize"
 -c "performPolyCircularize 0"
@@ -148,6 +151,7 @@ menuItem
 menuItem
 -c "PolyCircularizeOptions"
 -ob 1;
+}
 
 menuItem
 -l "Detach"

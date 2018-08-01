@@ -1,4 +1,6 @@
+if (`about -api` >= 20180000){
 commonReflectionOptionsPopup();
+}
 string $currentCtx = `currentCtx`;
 int $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentCtx`;
 int $axisDirection = `sculptMeshCacheCtx -q -mirror $currentCtx`;

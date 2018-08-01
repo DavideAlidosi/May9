@@ -83,6 +83,7 @@ menuItem
 -c "MovePolygonComponentOptions"
 -ob 1;
 
+if (`about -api` >= 20180000){
 menuItem
 -l "Circularize"
 -c "performPolyCircularize 0"
@@ -91,6 +92,7 @@ menuItem
 menuItem
 -c "PolyCircularizeOptions"
 -ob 1;
+}
 
 menuItem
 -l "Extract"

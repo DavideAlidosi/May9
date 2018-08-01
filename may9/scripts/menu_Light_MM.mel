@@ -24,11 +24,18 @@ menuItem
 -rp "S" 
 -i "singlePerspLayout.png";
 
+if (`about -api` >= 20180000){
 menuItem
 -l "Light Editor" 
 -c "da_LightList" 
 -rp "NW" 
 -i "light_manager.png";
+}else{
+-l "Light Editor" 
+-c "da_LightList" 
+-rp "NW" 
+-i "lightEditor.png";
+}
 
 menuItem
 -l "Edit Light" 
