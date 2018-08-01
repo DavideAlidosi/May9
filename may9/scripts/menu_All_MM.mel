@@ -83,7 +83,7 @@ menuItem -bld 1
 -l "Render Sequence"
 -c "RenderSequence"
 -rp "NW"
--i "rvSequenceRender.png";
+-i "batchRender.png";
 
 menuItem -bld 1 
 -c "unifiedRenderGlobalsWindow"
@@ -559,11 +559,19 @@ menuItem -bld 1
 -rp "SE"
 -cb ($HUDCheck);
 
+if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Select Inverse" 
 -c "InvertSelection"
 -i "selectCycle.png" 
 -rp "W";
+}else{
+menuItem -bld 1 
+-l "Select Inverse" 
+-c "InvertSelection"
+-i "invertUVpinning.png" 
+-rp "W";
+}
 
 menuItem -bld 1 
 -l "Select Hierarchy"
@@ -686,6 +694,7 @@ menuItem -bld 1
 -rp "NE"
 -i "CenterPivot.png";
 }else{
+menuItem -bld 1 
 -l "Center Pivot"
 -c "CenterPivot" 
 -rp "NE"

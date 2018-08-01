@@ -41,6 +41,7 @@ menuItem -itl 1
 -cb (1 == $wireframeCheck)
 -rp "W";
 
+if (`about -api` >= 20180000){
 menuItem -itl 1 
 -l "Flood" 
 -c "da_SculptFlood" 
@@ -49,6 +50,7 @@ menuItem -itl 1
 menuItem -itl 1 
 -c "ToolSettingsWindow" 
 -ob 1;
+}
 
 menuItem -itl 1 
 -l "separator" 
