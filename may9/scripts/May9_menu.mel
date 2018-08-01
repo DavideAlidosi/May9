@@ -38,17 +38,16 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Viewport" -c "ogs -r -rlt" -i "singlePerspLayout.png";
     menuItem -p $menuMain -l "Context MM" -c "da_MMtoKey_clean" -i "deleteClip.png";
     
-    menuItem -d 1 -l "Built in Plug-ins";
+    menuItem -d 1 -l "Options";
     menuItem -p $menuMain -l "Context Connector" -c "if (`pluginInfo -q -l contextConnector`){unloadPlugin contextConnector;pluginInfo -edit -autoload false contextConnector;} else {loadPlugin contextConnector;pluginInfo -edit -autoload true contextConnector;}" -cb (`pluginInfo -q -l contextConnector`);
     menuItem -p $menuMain -l "Massive Attribute Modifier" -c "if (`pluginInfo -q -l mass_attr`){unloadPlugin mass_attr;pluginInfo -edit -autoload false mass_attr;} else {loadPlugin mass_attr;pluginInfo -edit -autoload true mass_attr;}" -cb (`pluginInfo -q -l mass_attr`);
-    
-    menuItem -d 1 -l "Options";
     menuItem -p $menuMain -l "Wheel Zoom" -c "da_ToggleMouseWheel" -cb (`optionVar -q "useScrollWheel"`);
     menuItem -p $menuMain -l "May9 Pro Hotkeys" -c "da_hotkeySetToggle" -cb (`hotkeySet -q -current` == "May9_Full");
     
     menuItem -d 1 -l "May9 Pro";
     menuItem -p $menuMain -l "About" -c "da_AboutMay9" -i "menuIconHelp.png";
     menuItem -p $menuMain -l "Home Page" -c "showHelp -absolute \"https://www.highend3d.com/maya/plugin/may9-pro-3-0-alternative-user-experience-for-maya\";" -i "menuIconHelp.png";
+    menuItem -p $menuMain -l "User Guide" -c "showHelp -absolute \"https://github.com/DavideAlidosi/May9/raw/Plug-in_release/May9%20Pro%20User%20Guide.pdf\";" -i "menuIconHelp.png";
 }
 
 global proc da_May9MenuRemover(){

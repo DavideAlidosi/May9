@@ -1,3 +1,28 @@
+
+runTimeCommand
+	-annotation "Enable Primitive as Tool"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`optionVar -q createPolyPrimitiveAsTool`)\ntoggleCreatePolyPrimitiveAsTool;\nif(`optionVar -q createNurbsPrimitiveAsTool`)\ntoggleCreateNurbsPrimitiveAsTool;\n\ntoggleCreatePolyPrimitiveAsTool;\ntoggleCreateNurbsPrimitiveAsTool;")
+	da_PrimitiveAsTool;
+
+runTimeCommand
+	-annotation "Enable Primitive as Tool"
+	-category "Custom Scripts.May9_Pro.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`optionVar -q createPolyPrimitiveAsTool`)\ntoggleCreatePolyPrimitiveAsTool;\nif(`optionVar -q createNurbsPrimitiveAsTool`)\ntoggleCreateNurbsPrimitiveAsTool;")
+	da_NoPrimitiveAsTool;
+
+runTimeCommand
+	-annotation "Toggle Primitive as Tool"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`optionVar -q createPolyPrimitiveAsTool` && `optionVar -q createNurbsPrimitiveAsTool`){\n    da_NoPrimitiveAsTool;\n}else{\n    da_PrimitiveAsTool;\n}\n")
+	da_TogglePrimitiveAsTool;
+
 runTimeCommand
 	-annotation "Open Connection Editor or if Avaiable Context Connector"
 	-category "Custom Scripts.May9_Pro.Rigging"

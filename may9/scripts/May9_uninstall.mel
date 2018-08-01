@@ -27,6 +27,15 @@ da_May9MenuRemover;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_PrimitiveAsTool`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_NoPrimitiveAsTool`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_TogglePrimitiveAsTool`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ConnectionEditor`);
 
 catchQuiet (`runTimeCommand -e -del

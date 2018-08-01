@@ -1,6 +1,8 @@
 int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility`
     && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
 
+int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -q createNurbsPrimitiveAsTool`;
+
 string $currentPanel = `getPanel -wf`;
 
 menuItem -bld 1 
@@ -52,20 +54,15 @@ menuItem -bld 1
 -i "plane.png";
 
 menuItem -bld 1 
--l "Poly Interactive Creation"
--c "toggleCreatePolyPrimitiveAsTool"
--cb (`optionVar -q createPolyPrimitiveAsTool`);
-
-menuItem -bld 1 
--l "Curve Interactive Creation"
--c "toggleCreateNurbsPrimitiveAsTool;"
--cb (`optionVar -q createNurbsPrimitiveAsTool`);
+-l "Interactive Creation"
+-c "da_TogglePrimitiveAsTool"
+-cb ($IntCreationCheck);
 
 menuItem 
 -d 1;
 
 menuItem -bld 1 
--l "Import Illustrator Curves"
+-l "Import AI Curves"
 -c "CreateIllustratorCurves"
 -i "aiObject.png";
 
@@ -551,7 +548,7 @@ menuItem -bld 1
 -l "HUD Info"
 -c "da_ToggleHUD"
 -rp "SE"
--cb (true == $HUDCheck);
+-cb ($HUDCheck);
 
 menuItem -bld 1 
 -l "Select Inverse" 
