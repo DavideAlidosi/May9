@@ -828,7 +828,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 6;\nsetAttr ($each +\".showDisplacements\") 1;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace enable on selected object(s)\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 7;\nsetAttr ($each +\".showDisplacements\") 1;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace enable on selected object(s)\" -fade;")
 	da_OpenSubdDisplace;
 
 runTimeCommand
