@@ -150,6 +150,19 @@ menuItem
 -ob 1;
 
 menuItem
+-l "Connect Shapes"
+-c "da_ConnectShapes"
+-i "da_OneToMany.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "MASH"
+-sm 1
+-i "MASH_CreateNetwork.png";
+
+menuItem
 -l "Create MASH Network"
 -c "MASHcreateOptions"
 -i "MASH_CreateNetwork.png";
@@ -164,6 +177,13 @@ menuItem
 -c "da_SurfaceScatterMash"
 -i "out_MASH_Points.png";
 
+setParent -m ..;
+
+menuItem
+-l "Mesh Edit"
+-sm 1
+-i "polyMesh.png";
+
 if (`pluginInfo -q -loaded SOuP` == 1){
 menuItem
 -l "Mesh Fitting"
@@ -171,9 +191,6 @@ menuItem
 -i "out_rayProject.xpm" 
 -stp "python";
 }
-
-menuItem
--d 1;
 
 menuItem
 -l "Fill Hole"
@@ -189,13 +206,7 @@ menuItem
 -c "MirrorPolygonGeometryOptions;"
 -ob 1;
 
-menuItem
--l "Connect Shapes"
--c "da_ConnectShapes"
--i "da_OneToMany.png";
-
-menuItem
--d 1;
+setParent -m ..;
 
 menuItem
 -l "Component Display"
@@ -608,11 +619,6 @@ menuItem
 menuItem
 -c "performPolyAutoProj 1;"
 -ob 1;
-
-menuItem
--l "Cylindrical"
--c "performPolyProjectionArgList \"1\" {\"0\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
--i "polyCylProj.png";
 
 menuItem
 -l "Spherical"
