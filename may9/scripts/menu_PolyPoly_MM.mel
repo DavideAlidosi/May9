@@ -206,6 +206,19 @@ menuItem
 -c "MirrorPolygonGeometryOptions;"
 -ob 1;
 
+menuItem
+-d 1;
+
+menuItem
+-l "Displacement On"
+-c "da_OpenSubdDisplace"
+-i "out_displacementShader.png";
+
+menuItem
+-l "Displacement Off"
+-c "da_OpenSubdNoDisplace"
+-i "out_mesh.png";
+
 setParent -m ..;
 
 menuItem
@@ -257,81 +270,6 @@ menuItem
 -l "Instance to Object"
 -c "ConvertInstanceToObject"
 -i "instanceToObject.png";
-
-setParent -m ..;
-
-menuItem
--l "OpenSubdiv"
--sm 1
--i "out_subdiv.png";
-
-menuItem
--l "Adaptive"
--sm 1
--i "polyToggleProxySubdiv.png" ;
-
-menuItem
--l "On"
--c "da_OpenSubdAdapt"
--i "rvViewingPipelineOn.png";
-
-menuItem
--l "Off"
--c "da_OpenSubdNoAdapt"
--i "rvViewingPipelineOff.png";
-
-setParent -m ..;
-
-menuItem
--l "Displacement"
--sm 1
--i "displaceToPolygons.png" ;
-
-menuItem
--l "On"
--c "da_OpenSubdDisplace"
--i "rvViewingPipelineOn.png";
-
-menuItem
--l "Off"
--c "da_OpenSubdNoDisplace"
--i "rvViewingPipelineOff.png";
-
-setParent -m ..;
-
-menuItem
--l "Display Subdivision"
--sm 1
--i "polySubdFacet.png" ;
-
-menuItem
--l "On"
--c "da_OpenSubdSudivision"
--i "rvViewingPipelineOn.png";
-
-menuItem
--l "Off"
--c "da_OpenSubdNoSubdivision"
--i "rvViewingPipelineOff.png";
-
-setParent -m ..;
-
-menuItem
--l "OpenCL"
--sm 1
--i "channelBoxUnknownSpeed.png" ;
-
-menuItem
--l "On"
--c "da_OpenSubdCL"
--i "rvViewingPipelineOn.png";
-
-menuItem
--l "Off"
--c "da_OpenSubdNoCL"
--i "rvViewingPipelineOff.png";
-
-setParent -m ..;
 
 setParent -m ..;
 
@@ -1019,7 +957,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Export Selection To BIF"
+-l "Export Selection to BIF"
 -c "BifMeshExport"
 -i "greasePencilExport.png";
 

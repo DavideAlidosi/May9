@@ -824,56 +824,8 @@ runTimeCommand
 	da_RevertToSave;
 
 runTimeCommand
-	-annotation "Set Adaptive OpenSubdiv as Subdivision"
-	-category "Custom Scripts.May9_Pro.Subdivision"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 6;\nsetAttr ($each +\".showDisplacements\") 0;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"Adaptive OpenSubdiv enable on selectet object(s)\" -fade;")
-	da_OpenSubdAdapt;
-
-runTimeCommand
-	-annotation "Set OpenSubdiv as Subdivision"
-	-category "Custom Scripts.May9_Pro.Subdivision"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\n}\ninViewMessage -pos topCenter -msg \"Adaptive OpenSubdiv disable on selectet object(s)\" -fade;")
-	da_OpenSubdNoAdapt;
-
-runTimeCommand
-	-annotation "Enable Open Subdiv Display Subdivision"
-	-category "Custom Scripts.May9_Pro.Subdivision"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 1;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions enable on selectet object(s)\" -fade;")
-	da_OpenSubdSudivision;
-
-runTimeCommand
-	-annotation "Disable Open Subdiv Display Subdivision"
-	-category "Custom Scripts.May9_Pro.Subdivision"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".displaySubdComps\") 0;\n}\ninViewMessage -pos topCenter -msg \"Display Subdivisions disable on selectet object(s)\" -fade;")
-	da_OpenSubdNoSubdivision;
-
-runTimeCommand
-	-annotation "Enable OpenCL on OpenSubd"
-	-category "Custom Scripts.May9_Pro.Subdivision"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".enableOpenCL\") 1;\n}\ninViewMessage -pos topCenter -msg \"OpenCL enable on selectet object(s)\" -fade;")
-	da_OpenSubdCL;
-
-runTimeCommand
-	-annotation "Disable OpenCL on OpenSubd"
-	-category "Custom Scripts.May9_Pro.Subdivision"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".enableOpenCL\") 0;\n}\ninViewMessage -pos topCenter -msg \"OpenCL disable on selectet object(s)\" -fade;")
-	da_OpenSubdNoCL;
-
-runTimeCommand
 	-annotation "Enable OpenSubd Displace"
-	-category "Custom Scripts.May9_Pro.Subdivision"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 6;\nsetAttr ($each +\".showDisplacements\") 1;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace enable on selected object(s)\" -fade;")
@@ -881,7 +833,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable OpenSubd Displace"
-	-category "Custom Scripts.May9_Pro.Subdivision"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\nsetAttr ($each +\".showDisplacements\") 0;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace disable on selected object(s)\" -fade;")
@@ -2609,7 +2561,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Subdivide by Using Subdivs Preview"
-	-category "Custom Scripts.May9_Pro.Subdivision"
+	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("SmoothPolygon;\ndR_modeObject;\ndR_modeObject;\nShowManipulators")
