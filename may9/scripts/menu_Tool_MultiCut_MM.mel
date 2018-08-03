@@ -35,15 +35,13 @@ menuItem -itl 1
 -rp "S" 
 -i "sketchPlane.png";
 
-if (`gmatch $currentPanel "modelPanel*"`){
 menuItem -itl 1
 -l "Construction History" 
--c "if (`constructionHistory -q -tgl`) constructionHistory -tgl off; else constructionHistory -tgl on;" 
+-c "if (`constructionHistory -q -tgl`) constructionHistory -tgl off; else constructionHistory -tgl on" 
 -cb (`constructionHistory -q -tgl`);
 
 menuItem 
 -d 1;
-}
 
 menuItem -itl 1 
 -l "Reset Settings" 
