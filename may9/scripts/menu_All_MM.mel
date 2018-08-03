@@ -86,11 +86,6 @@ menuItem -bld 1
 -i "batchRender.png";
 
 menuItem -bld 1 
--c "unifiedRenderGlobalsWindow"
--ob 1
--stp "mel";
-
-menuItem -bld 1 
 -l "Color Management"
 -c "da_ToggleColorManagement" 
 -rp "S"
@@ -613,6 +608,11 @@ menuItem -bld 1
 -l "Content Browser"
 -c "ContentBrowserWindow"
 -i "folder-open.png";
+
+menuItem -bld 1 
+-l "Import GPU Cache"
+-c "doGpuCacheImportArgList 1 {\"0\",\"0\"}"
+-i "greasePencilImport.png";
 
 menuItem -bld 1 
 -l "Optimize Scene Size" 

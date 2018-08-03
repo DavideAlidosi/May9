@@ -481,9 +481,6 @@ menuItem
 -c "cMuscleConvertSkin()"
 -i "cMuscle_skin_convert.png";
 
-menuItem
--d 1;
-
 if (`pluginInfo -q -loaded ngSkinTools` == 1){
 menuItem
 -l "ngSkin Tools"
@@ -891,9 +888,6 @@ menuItem
 -i "posVortex.png";
 
 menuItem
--d 1;
-
-menuItem
 -l "Volume Axis"
 -c "dynExecuteFieldCommands 1 \"volumeAxis\""
 -i "posVolumeAxis.png";
@@ -952,45 +946,9 @@ menuItem
 -d 1;
 
 menuItem
--l "Export Selection to GPU Cache"
+-l "Export to GPU Cache"
 -c "GpuCacheExportSelectionOptions"
 -i "greasePencilExport.png";
-
-menuItem
--l "Import GPU Cache"
--c "doGpuCacheImportArgList 1 {\"0\",\"0\"};"
--i "greasePencilImport.png";
-
-menuItem
--l "Refresh GPU Cache"
--c "GpuCacheRefreshAll"
--i "QR_refresh.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Export Selection to Alembic"
--c "AlembicExportSelectionOptions"
--i "greasePencilExport.png";
-
-menuItem
--l "Import Alembic"
--c "AlembicImportOptions"
--i "greasePencilImport.png";
-
-menuItem 
--d 1;
-
-menuItem
--l "Export Selection To BIF"
--c "BifMeshExport"
--i "greasePencilExport.png";
-
-menuItem
--l "Import BIF"
--c "BifMeshImport"
--i "greasePencilImport.png";
 
 setParent -m ..;
 
