@@ -149,6 +149,13 @@ menuItem
 -c "MASHcreateOptions"
 -i "MASH_CreateNetwork.png";
 
+if (`pluginInfo -q -loaded SOuP` == 1){
+menuItem
+-l "Shatter Mesh"
+-c "da_ShatterMesh"
+-i "out_shatter.xpm";
+}
+
 menuItem 
 -d 1;
 
@@ -167,8 +174,8 @@ menuItem
 
 if (`pluginInfo -q -loaded SOuP` == 1){
 menuItem
--l "Edit Component List"
--c "editComponentsList_SOuP().main()"
+-l "Component Manager"
+-c "componentsManager_SOuP().main()"
 -i "out_group.xpm"
 -stp "Python";
 }
@@ -185,13 +192,6 @@ menuItem
 -l "Shell Proxy"
 -c "da_shell"
 -i "da_ShellProxy.png";
-
-if (`pluginInfo -q -loaded SOuP` == 1){
-menuItem
--l "Shatter Mesh"
--c "da_ShatterMesh"
--i "out_shatter.xpm";
-}
 
 menuItem
 -d 1;
