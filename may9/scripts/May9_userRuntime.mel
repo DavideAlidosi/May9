@@ -1,5 +1,37 @@
 
 runTimeCommand
+	-annotation "Enable Air Push to nRigids"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tsetAttr ($each +\".airPushDistance\") 100;\n\tsetAttr ($each +\".airPushVorticity\") 1;\n}")
+	da_nRigidsAirPush;
+
+runTimeCommand
+	-annotation "Disable Air Push to nRigids"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tsetAttr ($each +\".airPushDistance\") 0;\n\tsetAttr ($each +\".airPushVorticity\") 0;\n}")
+	da_nRigidsNoAirPush;
+
+runTimeCommand
+	-annotation "Enable Wind Shadow to nRigids"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tsetAttr ($each +\".windShadowDistance\") 100;\n}")
+	da_nRigidsWindShadow;
+
+runTimeCommand
+	-annotation "Disable Wind Shadow to nRigids"
+	-category "Custom Scripts.May9_Pro.Dynamics"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tsetAttr ($each +\".windShadowDistance\") 0;\n}")
+	da_nRigidsNoWindShadow;
+
+runTimeCommand
 	-annotation "Enable Primitive as Tool"
 	-category "Custom Scripts.May9_Pro.Modeling"
 	-hotkeyCtx ""
