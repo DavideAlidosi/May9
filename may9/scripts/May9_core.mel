@@ -35,15 +35,26 @@ if (`optionVar -q "May9ActivationCheck"` < 31){
     // Enable Membrane Paintable Attributes
 	makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
 
-	// Define Status Line prefs
-	toggleInputField(1);
-
 	// Define May9 Pro 3.1 installation status 
 	optionVar -iv May9ActivationCheck 31;
 }
 
 if (`optionVar -q "May9ActivationCheck"` < 320){
-	
+
+	// Store initial hyperShadeDockingLayout
+	optionVar -sv da_hyperShadeDockingLayout `optionVar -q hyperShadeDockingLayout`;
+
+	// Set initial hyperShadeDockingLayout
+	optionVar -sv "hyperShadeDockingLayout" "000000ff00000000fd0000000200000001000001bd00000372fc0200000002fc0000000000000163000000a501000011fa000000000100000003fb00000024004c006f006f006b00640065007600430072006500610074006500500061006e0065006c0100000000ffffffff000000b500fffffffb00000020004c006f006f006b00640065007600420069006e007300500061006e0065006c0100000000ffffffff0000005600fffffffb0000002c004c006f006f006b00640065007600530068006100640065007200620061006c006c00500061006e0065006c010000042c000001940000004600fffffffb00000028004c006f006f006b00640065007600500072006f0070006500720074007900500061006e0065006c010000016900000209000000f100ffffff000000020000043800000110fc0100000001fb00000026004c006f006f006b00640065007600420072006f007700730065007200500061006e0065006c0100000000000004380000008700ffffff000004380000025c00000004000000020000000800000002fc00000000";
+
+
+	// Store initial hotBoxTransparencyLevel
+	optionVar -iv da_hotBoxTransparencyLevel `optionVar -q hotBoxTransparencyLevel`;
+
+	// Set HotBox transparency to 0%
+	hotBox -tr 0;
+
+
 	// Store initial Connection Editor prefs
 	optionVar -iv da_connectWindowLeftSHD `optionVar -q connectWindowLeftSHD`;
 	optionVar -iv da_connectWindowRightSHD `optionVar -q connectWindowRightSHD`;
@@ -67,6 +78,13 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 
 	// Set May9 Core hotkeySet
 	hotkeySet -edit -current May9_Core;
+
+
+	// Store initial showStatusInputField
+	optionVar -iv da_showStatusInputField `optionVar -q showStatusInputField`;
+
+	// Display Input Field
+	toggleInputField(1);
 
 
 	// Declare initial layout state

@@ -6,6 +6,13 @@ unloadPlugin MMtoKey;
 pluginInfo -edit -autoload false May9_Pro;
 pluginInfo -edit -autoload false MMtoKey;
 
+
+// Set back to initial hyperShadeDockingLayout
+optionVar -sv hyperShadeDockingLayout `optionVar -q "da_hyperShadeDockingLayout"`;
+
+// Set back to initial hotBoxTransparencyLevel
+hotBox -tr `optionVar -q "da_hotBoxTransparencyLevel"`;
+
 // Set back to initial Connection Editor prefs
 optionVar -iv connectWindowLeftSHD `optionVar -q "da_connectWindowLeftSHD"`;
 optionVar -iv connectWindowRightSHD `optionVar -q "da_connectWindowRightSHD"`;
@@ -15,12 +22,18 @@ if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 	melOptions -duplicateVariableWarnings on;
 }
 
+
 // Set back to prior Hotkeyset
 hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 
 // Delete May9_Full and Core hotkeySets
 catchQuiet (`hotkeySet -e -delete May9_Core`);
 catchQuiet (`hotkeySet -e -delete May9_Full`);
+
+
+// Set back to initial InputField
+toggleInputField(`optionVar -q "da_showStatusInputField"`);
+
 
 // Remove May9 Pro main menu
 da_May9MenuRemover;
@@ -1107,10 +1120,13 @@ catchQuiet (`runTimeCommand -e -del
 	da_TensionBlendShape`);
 
 // Remove optionVars
-optionVar -rm da_DuplicateVariableWarnings;
-optionVar -rm da_initialHotekey;
+optionVar -rm da_hyperShadeDockingLayout;
+optionVar -rm da_hotBoxTransparencyLevel;
 optionVar -rm da_connectWindowLeftSHD;
 optionVar -rm da_connectWindowRightSHD;
+optionVar -rm da_DuplicateVariableWarnings;
+optionVar -rm da_initialHotekey;
+optionVar -rm da_showStatusInputField;
 
 // Set May9 Intallation in idle mode
 optionVar -iv May9ActivationCheck 32;
