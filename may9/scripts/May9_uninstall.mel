@@ -6,17 +6,17 @@ unloadPlugin MMtoKey;
 pluginInfo -edit -autoload false May9_Pro;
 pluginInfo -edit -autoload false MMtoKey;
 
-// Set back to prior Hotkeyset
-hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
-
 // Set back to initial Connection Editor prefs
 optionVar -iv connectWindowLeftSHD `optionVar -q "da_connectWindowLeftSHD"`;
 optionVar -iv connectWindowRightSHD `optionVar -q "da_connectWindowRightSHD"`;
 
-// Set back to prior melDuplicateVariableWarnings
+// Set back to initial melDuplicateVariableWarnings
 if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 	melOptions -duplicateVariableWarnings on;
 }
+
+// Set back to prior Hotkeyset
+hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 
 // Delete May9_Full and Core hotkeySets
 catchQuiet (`hotkeySet -e -delete May9_Core`);

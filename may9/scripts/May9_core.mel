@@ -48,17 +48,16 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 	optionVar -iv da_connectWindowLeftSHD `optionVar -q connectWindowLeftSHD`;
 	optionVar -iv da_connectWindowRightSHD `optionVar -q connectWindowRightSHD`;
 
-	// Set Connection Editor visibility prefs
+	// Set Connection Editor prefs
 	optionVar -iv "connectWindowLeftSHD" 1 -iv "connectWindowRightSHD" 1;
 
-	//Store initial melDuplicateVariableWarnings
+
+	// Store initial melDuplicateVariableWarnings
 	optionVar -iv da_DuplicateVariableWarnings `optionVar -q melDuplicateVariableWarnings`;
 
-	// Disable Duplicate Variable Warnings
+	// Disable melDuplicateVariableWarnings
 	melOptions -duplicateVariableWarnings off;
 
-	// Declare initial layout state
-	global int $myLayout = 0;
 
 	// Store inital hotkeySet
 	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
@@ -66,11 +65,15 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 	// Preload hotkeys
 	source May9_hotkeys.mel;
 
-	// Preload userRuntime
-	catchQuiet (`May9_userRuntime`);
-
 	// Set May9 Core hotkeySet
 	hotkeySet -edit -current May9_Core;
+
+
+	// Declare initial layout state
+	global int $myLayout = 0;
+
+	// Preload userRuntime
+	catchQuiet (`May9_userRuntime`);
 
 	// Define May9 Pro 3.2 installation status 
 	optionVar -iv May9ActivationCheck 320;
