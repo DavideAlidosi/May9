@@ -6,7 +6,6 @@ unloadPlugin MMtoKey;
 pluginInfo -edit -autoload false May9_Pro;
 pluginInfo -edit -autoload false MMtoKey;
 
-
 // Set back to initial hyperShadeDockingLayout
 optionVar -sv hyperShadeDockingLayout `optionVar -q "da_hyperShadeDockingLayout"`;
 
@@ -22,7 +21,6 @@ if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 	melOptions -duplicateVariableWarnings on;
 }
 
-
 // Set back to prior Hotkeyset
 hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 
@@ -30,13 +28,26 @@ hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 catchQuiet (`hotkeySet -e -delete May9_Core`);
 catchQuiet (`hotkeySet -e -delete May9_Full`);
 
-
 // Set back to initial InputField
 toggleInputField(`optionVar -q "da_showStatusInputField"`);
 
-
 // Remove May9 Pro main menu
 da_May9MenuRemover;
+
+// Remove optionVars
+optionVar -rm da_hyperShadeDockingLayout;
+optionVar -rm da_hotBoxTransparencyLevel;
+optionVar -rm da_connectWindowLeftSHD;
+optionVar -rm da_connectWindowRightSHD;
+optionVar -rm da_DuplicateVariableWarnings;
+optionVar -rm da_initialHotekey;
+optionVar -rm da_showStatusInputField;
+
+// Set May9 Intallation in idle mode
+optionVar -iv May9ActivationCheck 32;
+
+// Store Preferences Changes
+savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
@@ -1118,21 +1129,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_TensionBlendShape`);
-
-// Remove optionVars
-optionVar -rm da_hyperShadeDockingLayout;
-optionVar -rm da_hotBoxTransparencyLevel;
-optionVar -rm da_connectWindowLeftSHD;
-optionVar -rm da_connectWindowRightSHD;
-optionVar -rm da_DuplicateVariableWarnings;
-optionVar -rm da_initialHotekey;
-optionVar -rm da_showStatusInputField;
-
-// Set May9 Intallation in idle mode
-optionVar -iv May9ActivationCheck 32;
-
-// Store Preferences Changes
-savePrefsChanges;
 
 // Un-install confirmation
 inViewMessage -pos midCenterTop -msg "May9 Pro un-installed" -fade;
