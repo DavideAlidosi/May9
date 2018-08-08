@@ -1,3 +1,18 @@
+runTimeCommand
+	-annotation "Enable Arnold Render Viewport"
+	-category "Custom Scripts.May9_Pro.Render"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if(`modelEditor -q -rom $currentPanel` == \"arnoldViewOverride\"){\n    ActivateViewport20;\n}else{\n    setRendererAndOverrideInModelPanel $gViewport2 arnoldViewOverride $currentPanel;\n    arnoldViewOverrideOptionBox;\n}")
+	da_ArnoldRenderViewport;
+
+runTimeCommand
+	-annotation "Reset Hypershade Layout"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("HypershadeWindow;\n\nstring $hyperShadePanelName = `hyperShadePanelName`;\nevalDeferred -lp (\"deleteUI -wnd ($hyperShadePanelName + \\\"Window\\\")\");\n\nif (`optionVar -ex da_hyperShadeDockingLayout`){\n    optionVar -sv hyperShadeDockingLayout `optionVar -q \"da_hyperShadeDockingLayout\"`;\n}else{\n    optionVar -rm hyperShadeDockingLayout;\n}")
+	da_ResetHypershade;
 
 runTimeCommand
 	-annotation "Enable Air Push to nRigids"

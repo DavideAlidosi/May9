@@ -731,6 +731,8 @@ setParent -m ..;
 
 if (`gmatch $currentPanel "modelPanel*"`){
 string $myCamera = `modelPanel -q -cam $currentPanel`;
+int $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
 
 menuItem -bld 1
 -l "Isolate Select" 
@@ -740,7 +742,17 @@ menuItem -bld 1
 menuItem -bld 1
 -l "Lock Camera" 
 -c "changeCameraLockStatus $currentPanel" 
--cb (1 == `camera -q -lt $myCamera`);
+-cb (`camera -q -lt $myCamera`);
+
+if (`about -api` >= 20180000 && $myArnoldVersion >= 3011){
+menuItem -bld 1
+-l "Arnold Viewport" 
+-c "da_ArnoldRenderViewport" 
+-cb ($myOverrideCheck == "arnoldViewOverride");
+}
+
+menuItem 
+-d 1;
 }
 
 menuItem -bld 1
