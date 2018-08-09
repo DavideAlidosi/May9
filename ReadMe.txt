@@ -2,20 +2,24 @@ May9 Pro 3.2 - A new user experience for Autodesk Maya 2017 and 2018
 
 
 General info
-May9 Pro is an alternative user experience for Autodesk Maya, is designed to improve the daily workflow and minimize the needed to learn the native position of commands.
-The main concept of May9 Pro is streamline useful commands into a single keyboard button (Z), by predicting them from the context.
-May9 Pro is targeted to anyone, from beginner to expert, from schools to studios.
+May9 Pro is a plug-in aim to offer an alternative user experience for Autodesk Maya designed to improve the speed of daily workflow and maximize new tools learning.
+May9 Pro streamline the most common commands into a single keyboard button (Z), by predicting them from the context.
 
 
 Installation
-For more information about installation please read the included user guide
+1) If is open close Autodesk Maya
+2) Copy may9 folder and may9.mod present in this archive in:
+	Windows: \Users\<username>\Documents\maya\modules
+	Mac OS: /Users/<username>/Library/Preferences/Autodesk/maya/modules
+	Linux: ~<username>/maya/modules
+3) Open Autodesk Maya and run source May9.mel as MEL command
 
 
 Release Note
 - May9 Pro 3.2 have a new unified installation process, so is highly recommended a new installation instead update it
 - May9 Pro 3.2 work in any Workspace, anyway the use of Maya Classic is high suggested
 - May9 Pro 3.2 hotkeys add or substitute the actual Hotkey Set when installed
-- May9 Pro 3.2 is tested and develop on Autodesk Maya 2018.3 and Autodesk Maya 2017 Update 5 with MtoA 3.0.0 installed
+- May9 Pro 3.2 is tested and develop on Autodesk Maya 2018.3 and Autodesk Maya 2017.5 with MtoA 3.0.1.1 installed
 
 
 Exclusive script
@@ -43,6 +47,7 @@ Exclusive script
 - da_SepareCurves: this script separate combined curves
 - da_MapFacesUV: this script maps any single faces of a mesh as separate planar UV shell
 - da_KeyKeyedOnly: this script creates animation keys only on already animated channels
+- Control Constraint: this set of scripts constraint a controller to a single or multiple controlled object(s)
 
 
 Version 3.2 highlight
@@ -50,7 +55,6 @@ Version 3.2 highlight
 - Completion of modular structure
 - Polish hotkeys scheme, see userguide for more information
 - May9 hotkeys sets are added over the current hotkeySet during installation
-- May9 Pro custom hotkeys can be now enable or disable from May9 Pro drop-down menu
 - Add back Maya 2017 support
 
 

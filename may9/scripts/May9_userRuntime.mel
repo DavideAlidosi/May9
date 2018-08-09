@@ -1,4 +1,12 @@
 runTimeCommand
+	-annotation "Toggle Local Tumble"
+	-category "Custom Scripts.May9_Pro.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("if (`tumbleCtx -q -asp tumbleContext`)\n    tumbleCtx -e -lt 1 -asp 0 tumbleContext;\nelse\n    tumbleCtx -e -lt 0 -asp 1 tumbleContext;")
+	da_ToggleLocalTumble;
+
+runTimeCommand
 	-annotation "Parent a Shape to a Joint(s)"
 	-category "Custom Scripts.May9_Pro.Rigging"
 	-hotkeyCtx ""

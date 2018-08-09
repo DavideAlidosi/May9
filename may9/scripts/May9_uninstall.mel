@@ -51,6 +51,9 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_ToggleLocalTumble`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_shapeParentJoints`);
 
 catchQuiet (`runTimeCommand -e -del

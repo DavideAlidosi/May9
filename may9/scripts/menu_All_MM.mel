@@ -744,6 +744,11 @@ menuItem -bld 1
 -c "changeCameraLockStatus $currentPanel" 
 -cb (`camera -q -lt $myCamera`);
 
+menuItem -bld 1
+-l "Local Tumble" 
+-c "da_ToggleLocalTumble" 
+-cb (`tumbleCtx -q -asp tumbleContext`);
+
 if (`about -api` >= 20180000/* && $myArnoldVersion >= 3011*/){
 menuItem -bld 1
 -l "Arnold Viewport" 
