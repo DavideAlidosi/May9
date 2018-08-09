@@ -335,11 +335,20 @@ menuItem -bld 1
 -rp "SW"
 -i "pointlight.png";
 
+if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
+menuItem -bld 1 
+-l "Area"
+-c "import mtoa.utils as mutils;mutils.createLocator(\"aiAreaLight\", asLight=True)"
+-rp "NE"
+-i "AreaLightShelf.png"
+-stp "python";
+}else{
 menuItem -bld 1 
 -l "Area"
 -c "CreateAreaLight"
 -rp "NE"
--i "AreaLightShelf.png";
+-i "out_areaLight.png";
+}
 
 menuItem -bld 1 
 -l "SkyDome"
