@@ -51,6 +51,9 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_shapeParentJoints`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ArnoldRenderViewport`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -97,9 +100,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_GoToCVsNURBS`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_commonObjectOptionsPopup`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_curveToPoly`);

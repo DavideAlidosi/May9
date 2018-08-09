@@ -1,4 +1,12 @@
 runTimeCommand
+	-annotation "Parent a Shape to a Joint(s)"
+	-category "Custom Scripts.May9_Pro.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myJnt[] = `ls -sl -typ \"joint\"`;\nstring $myShape[] = `listRelatives -s`;\n\nfor ($i=0; $i < size($myJnt); $i++ ){ \n    parent -add -s $myShape[0] $myJnt[$i];\n}")
+	da_shapeParentJoints;
+
+runTimeCommand
 	-annotation "Enable Arnold Render Viewport"
 	-category "Custom Scripts.May9_Pro.Render"
 	-hotkeyCtx ""
@@ -125,14 +133,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySel[] = `ls -sl`;\nfor ($allMySel in $mySel)\n\tdoMenuNURBComponentSelection($allMySel, \"controlVertex\");")
 	da_GoToCVsNURBS;
-
-runTimeCommand
-	-annotation "Add Scene Option to MayaWindow_MM"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $panel = `getPanel -wf`;\n\nmenuItem\n    -l \"Visibility\" \n    -subMenu 1\n    -rp \"NE\" \n\t-i \"RS_visible.png\";\n\nmenuItem\n    -l \"Curves\" \n    -c \"da_ToggleNurbsCurvesVis\" \n\t-cb (`modelEditor -q -nurbsCurves $panel`)\n    -rp \"NE\";\n\nmenuItem\n    -l \"Polygons\" \n    -c \"da_TogglePolyVis\" \n\t-cb (`modelEditor -q -polymeshes $panel`)\n    -rp \"N\";\n\nmenuItem\n    -l \"Light\" \n    -c \"da_ToggleLightVis\" \n\t-cb (`modelEditor -q -lights $panel`)\n    -rp \"NW\";\n\nmenuItem\n    -l \"Joint\" \n    -c \"da_ToggleJointVis\" \n\t-cb (`modelEditor -q -joints $panel`)\n    -rp \"SE\";\n\nmenuItem\n    -l \"IK Handle\" \n    -c \"da_ToggleIkVis\" \n\t-cb (`modelEditor -q -ikHandles $panel`)\n    -rp \"S\";\n\nmenuItem\n    -l \"Locator\" \n    -c \"da_ToggleLocVis\" \n\t-cb (`modelEditor -q -locators $panel`);\n\nmenuItem\n    -l \"Deformers\" \n    -c \"da_ToggleDefVis\" \n\t-cb (`modelEditor -q -deformers $panel`)\n    -rp \"W\";\n\nmenuItem\n    -l \"Nurbs\" \n    -c \"da_ToggleNurbsVis\" \n\t-cb (`modelEditor -q -nurbsSurfaces $panel`)\n    -rp \"E\";\n\nsetParent -m ..;\n\nmenuItem\n    -l \"UI Elements\" \n    -subMenu 1\n    -rp \"NW\" \n\t-i \"out_displayLayer.png\";\n\nmenuItem\n    -l \"Shelf\" \n    -c \"ToggleShelf\" \n    -rp \"SW\" \n    -cb (`workspaceControl -q -vis Shelf`);\n\nmenuItem\n    -l \"Shelf Tabs\" \n    -c \"toggleShelfTabs\" \n    -rp \"W\" \n    -cb (`optionVar -q shelfTabsVisible`);\n\nmenuItem\n    -l \"Menu Bars\" \n    -c \"TogglePanelMenubar\" \n    -rp \"NE\" \n    -cb (`optionVar -q allowMenusInPanels`);\n\nmenuItem\n    -l \"Icon Bars\" \n    -c \"ToggleModelEditorBars\" \n    -rp \"NW\" \n    -cb (false == `optionVar -q collapseIconBarsInPanels`);\n\nmenuItem\n    -l \"Main Menu Bars\" \n    -c \"ToggleMainMenubar\" \n    -rp \"E\" \n    -cb (`optionVar -q mainWindowMenubarVis`);\n\nmenuItem\n    -l \"Title Bar\" \n    -c \"da_TitleBarToggle\" \n    -rp \"N\" \n    -cb (`window -q -titleBar MayaWindow`);\n\nmenuItem\n    -l \"Save Workspace\" \n    -c \"SaveCurrentWorkspace\" \n    -i \"fileSave.png\"\n    -rp \"S\";\n\nsetParent -m ..;\n\nmenuItem\n    -l \"Shading\" \n    -subMenu 1\n    -rp \"SE\" \n\t-i \"WireFrameOnShaded.png\";\n\nmenuItem\n    -l \"Wireframe on Shaded\" \n    -c \"da_ToggleWireOnShade\" \n    -rp \"SE\"  \n    -cb (`modelEditor -q -wos $panel`);\n\nmenuItem\n    -l \"Two Sided Lighting\" \n    -c \"da_ToggleTwoSidedLighting\" \n    -rp \"S\" \n    -cb (`modelEditor -q -tsl $panel`);\n\nmenuItem\n    -l \"X-Ray Active Components\" \n    -c \"da_ToggleActiveComponentsXray\" \n    -rp \"E\" \n    -cb (`modelEditor -q -acx $panel`);\n\nmenuItem\n    -l \"X-Ray Joints\" \n    -c \"da_ToggleJointXray\" \n    -rp \"NE\" \n    -cb (`modelEditor -q -jx $panel`);\n\nsetParent -m ..;\n\nmenuItem\n    -l \"Viewport\" \n    -subMenu 1\n    -rp \"SW\" \n\t-i \"MultisampleAA.png\";\n\nmenuItem\n    -l \"Anti-Aliasing\" \n    -c \"da_AntiAliasToggle\" \n    -rp \"SW\" \n    -cb (`getAttr \"hardwareRenderingGlobals.multiSampleEnable\"`);\n\nif (`about -api` >= 20180000){\nmenuItem\n    -l \"Transparent Shadow\" \n    -c \"da_TransparentShadowsToggle\" \n    -rp \"SE\" \n    -cb (`getAttr \"hardwareRenderingGlobals.transparentShadow\"`);\n}\n\nmenuItem\n    -l \"Motion Blur\" \n    -c \"da_motionBlurEnableToggle\" \n    -rp \"S\" \n    -cb (`getAttr \"hardwareRenderingGlobals.motionBlurEnable\"`);\n\nmenuItem\n    -l \"Grid\" \n    -c \"ToggleGrid\" \n    -rp \"NW\" \n    -cb (`optionVar -q showGrid`);\n\nmenuItem\n\t-c \"GridOptions\" \n\t-ob 1;\n\nmenuItem\n    -l \"Ambient Occlusion\" \n    -c \"da_ToggleAO\" \n    -rp \"W\" \n    -cb (`getAttr \"hardwareRenderingGlobals.ssaoEnable\"`);\n\nsetParent -m ..;")
-	da_commonObjectOptionsPopup;
 
 runTimeCommand
 	-annotation "Convert Curve to Poly Tubes"
