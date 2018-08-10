@@ -740,8 +740,11 @@ setParent -m ..;
 
 if (`gmatch $currentPanel "modelPanel*"`){
 string $myCamera = `modelPanel -q -cam $currentPanel`;
-//int $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
+
+string $myArnoldStringVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldShortVersion = `substring $myArnoldStringVersion 1 3`;
 
 menuItem -bld 1
 -l "Isolate Select" 
@@ -758,7 +761,7 @@ menuItem -bld 1
 -c "da_ToggleLocalTumble" 
 -cb (`tumbleCtx -q -asp tumbleContext`);
 
-if (`about -api` >= 20180000/* && $myArnoldVersion >= 3011*/){
+if (`about -api` >= 20180000 && ($myArnoldVersion == 3011 || $myArnoldShortVersion >= 310)){
 menuItem -bld 1
 -l "Arnold Viewport" 
 -c "da_ArnoldRenderViewport" 
