@@ -766,6 +766,12 @@ menuItem -bld 1
 -l "Arnold Viewport" 
 -c "da_ArnoldRenderViewport" 
 -cb ($myOverrideCheck == "arnoldViewOverride");
+
+if ($myOverrideCheck == "arnoldViewOverride"){
+menuItem
+-c "arnoldViewOverrideOptionBox" 
+-ob 1;
+}
 }
 
 menuItem 
