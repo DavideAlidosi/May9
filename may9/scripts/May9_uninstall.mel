@@ -51,6 +51,12 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_ImagesPlane`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_VideoImagesPlane`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ToggleLocalTumble`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -262,12 +268,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_RenderViews`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_ImagesPlane`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_VideoImagesPlane`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_CameraImagesPlane`);

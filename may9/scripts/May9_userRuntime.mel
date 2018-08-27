@@ -1,4 +1,20 @@
 runTimeCommand
+	-annotation "Add Image Plane"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myPanel = `getPanel -underPointer`;\nstring $myCamera = `modelPanel -q -cam $myPanel`;\nselect $myCamera;\nstring $myCameraShape[] = `listRelatives -s`;\n\nimportImagePlane { $myCameraShape[0] };")
+	da_ImagesPlane;
+
+runTimeCommand
+	-annotation "Add Video Plane"
+	-category "Custom Scripts.May9_Pro.Scene"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myPanel = `getPanel -underPointer`;\nstring $myCamera = `modelPanel -q -cam $myPanel`;\nselect $myCamera;\nstring $myCameraShape[] = `listRelatives -s`;\n\nimportMovieImagePlane { $myCameraShape[0] };")
+	da_VideoImagesPlane;
+
+runTimeCommand
 	-annotation "Toggle Local Tumble"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
@@ -565,22 +581,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if (`getAttr defaultRenderGlobals.currentRenderer` == \"arnold\"){\n\tpython(\"import mtoa.ui.arnoldmenu as arnoldmenu; arnoldmenu.arnoldMtoARenderView()\");\n}\nelse if (`getAttr defaultRenderGlobals.currentRenderer` == \"mayaSoftware\"){\n\tRenderViewWindow;\n\tIPRRenderIntoNewWindow;\n\trenderWindowCheckAndRenderRegion 1 0 0 1;\n}else{ \n\tRenderViewWindow;\n}\n\ninViewMessage -pos topCenter -msg \"Starting Render\" -fade;")
 	da_RenderViews;
-
-runTimeCommand
-	-annotation "Add Image Plane"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $myPanel = `getPanel -underPointer`;\nstring $myCamera = `modelPanel -q -cam $myPanel`;\nselect $myCamera;\nstring $myCameraShape[] = `listRelatives -s`;\n\nimportImagePlane { $myCameraShape[0] };")
-	da_ImagesPlane;
-
-runTimeCommand
-	-annotation "Add Video Plane"
-	-category "Custom Scripts.May9_Pro.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $myPanel = `getPanel -underPointer`;\nstring $myCamera = `modelPanel -q -cam $myPanel`;\nselect $myCamera;\nstring $myCameraShape[] = `listRelatives -s`;\n\nimportMovieImagePlane { $myCameraShape[0] };")
-	da_VideoImagesPlane;
 
 runTimeCommand
 	-annotation "Add Image Plane to Selected Camera"

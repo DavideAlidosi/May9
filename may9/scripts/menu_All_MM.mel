@@ -61,10 +61,17 @@ menuItem -bld 1
 menuItem 
 -d 1;
 
+if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Import AI Curves"
 -c "CreateIllustratorCurves"
 -i "aiObject.png";
+}else{
+menuItem -bld 1 
+-l "Import AI Curves"
+-c "CreateIllustratorCurves"
+-i "ai.png";
+}
 
 menuItem -bld 1 
 -l "Curves Based Text"
