@@ -230,7 +230,7 @@ menuItem -bld 1
 -ob 1
 -stp "mel";
 
-if (`pluginInfo -q -l contextConnector` == 1){
+if (`pluginInfo -q -l contextConnector`){
 menuItem -bld 1 
 -l "Context Connector"
 -c "da_ContextConnector"
@@ -242,7 +242,7 @@ menuItem -bld 1
 -i "out_list.png";
 }
 
-if (`pluginInfo -q -l mass_attr` == 1){
+if (`pluginInfo -q -l mass_attr`){
 menuItem -bld 1 
 -l "Massive Attribute Modifier"
 -c "da_MassAttr"
@@ -440,7 +440,7 @@ menuItem -bld 1
 -rp "NW" 
 -i "out_implicitSphere.png";
 
-if (`pluginInfo -q -l bifrostBoard` == 1){
+if (`pluginInfo -q -l bifrostBoard`){
 menuItem -bld 1 
 -l "Bifrost Board"
 -c "CreateNewBifrostBoard"
@@ -749,10 +749,6 @@ if (`gmatch $currentPanel "modelPanel*"`){
 string $myCamera = `modelPanel -q -cam $currentPanel`;
 string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
 
-string $myArnoldStringVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldShortVersion = `substring $myArnoldStringVersion 1 3`;
-
 menuItem -bld 1
 -l "Isolate Select" 
 -c "ToggleIsolateSelect" 
@@ -768,6 +764,11 @@ menuItem -bld 1
 -c "da_ToggleLocalTumble" 
 -cb (`tumbleCtx -q -asp tumbleContext`);
 
+if (`pluginInfo -q -l mtoa`){
+string $myArnoldStringVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldShortVersion = `substring $myArnoldStringVersion 1 3`;
+
 if (`about -api` >= 20180000 && ($myArnoldVersion == 3011 || $myArnoldShortVersion >= 310)){
 menuItem -bld 1
 -l "Arnold Viewport" 
@@ -778,6 +779,7 @@ if ($myOverrideCheck == "arnoldViewOverride"){
 menuItem
 -c "arnoldViewOverrideOptionBox" 
 -ob 1;
+}
 }
 }
 
