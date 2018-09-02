@@ -51,6 +51,15 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_PivotToCurvesOrigin`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_SnapCurveToMesh`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_SnapCurveToNurbs`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ImagesPlane`);
 
 catchQuiet (`runTimeCommand -e -del

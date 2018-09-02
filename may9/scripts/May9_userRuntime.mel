@@ -1,4 +1,28 @@
 runTimeCommand
+	-annotation "Pivot to Curve(s) Origin"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("for($node in `ls -sl`){\n\tfloat $p[] = `getAttr ($node + \".cv[0]\")`;\n\txform -piv $p[0] $p[1] $p[2] $node;\n}")
+	da_PivotToCurvesOrigin;
+
+runTimeCommand
+	-annotation "Snap Curve to Mesh"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myPoly[] = `filterExpand -sm 12`;\nstring $myCurve[] = `filterExpand -sm 9`;\n\nfor ($i=0; $i < size($myCurve); $i++){ \n    select $myPoly[0];\n    select -add $myCurve[$i];\n    geometryConstraint -weight 1;\n    select $myCurve[$i];\n    select `listConnections -s 0 -d 1 -t \"geometryConstraint\"`;\n    delete;\n}\n")
+	da_SnapCurveToMesh;
+
+runTimeCommand
+	-annotation "Snap Curve to NURBS"
+	-category "Custom Scripts.May9_Pro.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myNURBS[] = `filterExpand -sm 10`;\nstring $myCurve[] = `filterExpand -sm 9`;\n\nfor ($i=0; $i < size($myCurve); $i++){ \n    select $myNURBS[0];\n    select -add $myCurve[$i];\n    geometryConstraint -weight 1;\n    select $myCurve[$i];\n    select `listConnections -s 0 -d 1 -t \"geometryConstraint\"`;\n    delete;\n}\n")
+	da_SnapCurveToNurbs;
+
+runTimeCommand
 	-annotation "Add Image Plane"
 	-category "Custom Scripts.May9_Pro.Scene"
 	-hotkeyCtx ""
