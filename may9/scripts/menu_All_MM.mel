@@ -425,20 +425,16 @@ menuItem -bld 1
 -rp "SE";
 
 menuItem -bld 1 
--l "Paint Effects"
--c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
--rp "W"
--i "userPaint.png";
-
-menuItem
--c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
--ob 1;
-
-menuItem -bld 1 
 -l "Compass"
 -c "da_Compass" 
 -rp "NW" 
 -i "out_implicitSphere.png";
+
+menuItem -bld 1 
+-l "Constuct Plane"
+-c "CreateConstructionPlane" 
+-rp "W" 
+-i "sketchPlane.png";
 
 if (`pluginInfo -q -l bifrostBoard`){
 menuItem -bld 1 
@@ -457,7 +453,12 @@ menuItem -bld 1
 -i "posEmitter.png";
 
 menuItem -bld 1 
--l "nParticle Tool"
+-l "Paint Effects"
+-c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
+-i "userPaint.png";
+
+menuItem -bld 1 
+-l "Paint nParticles"
 -c "NParticleToolOptions"
 -i "particle.png";
 
