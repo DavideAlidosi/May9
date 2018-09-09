@@ -8,6 +8,7 @@ global proc da_May9Menu(){
     $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
     menuItem -p $menuMain -l "Toggle Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
     menuItem -p $menuMain -l "Toggle Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
+    menuItem -p $menuMain -l "Freeze/Delete Non-Deform" -c "da_FreezeDelNonDef" -i "UV_Freeze_Tool.png";
     menuItem -p $menuMain -l "List of Input Operation" -c "da_ListInputOperations" -i "out_list.png";
     menuItem -p $menuMain -l "Revert to Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
     menuItem -p $menuMain -l "Delete Mental Ray Nodes" -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
@@ -35,7 +36,6 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "out_camera.png";
     menuItem -p $menuMain -l "Render Settings" -c "da_ResetUI;\nunifiedRenderGlobalsWindow" -i "rvRenderGlobals.png";
     menuItem -p $menuMain -l "Current Workspace" -c "da_CloseAllPanel" -i "RS_refresh_layer.png";
-    menuItem -p $menuMain -l "Viewport" -c "ogs -r -rlt" -i "singlePerspLayout.png";
     
     menuItem -d 1 -l "Built in Plug-ins";
     menuItem -p $menuMain -l "Context Connector" -c "if (`pluginInfo -q -l contextConnector`){unloadPlugin contextConnector;pluginInfo -edit -autoload false contextConnector;} else {loadPlugin contextConnector;pluginInfo -edit -autoload true contextConnector;}" -cb (`pluginInfo -q -l contextConnector`);
