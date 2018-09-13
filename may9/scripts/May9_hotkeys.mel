@@ -40,8 +40,10 @@ hotkey -keyShortcut "a" -ctl -alt -sht -name ("da_CtrlAimConstraintNameCommand")
 hotkey -keyShortcut "i" -ctl -alt -sht -name ("da_CtrlPoleVectorConstraintNameCommand");
 
 // Rigging hotkeys
-hotkey -keyShortcut "Return" -ctl -alt -sht -name ("MatchPivotsNameCommand");
-hotkey -keyShortcut "Return" -ctl -alt -name ("da_ResetPivotNameCommand");
+hotkey -keyShortcut "d" -ctl -alt -sht -name ("MatchPivotsNameCommand");
+hotkey -keyShortcut "d" -ctl -alt -name ("da_ResetPivotNameCommand");
+hotkey -keyShortcut "o" -ctl -alt -name ("TagAsControllerNameCommand");
+hotkey -keyShortcut "p" -ctl -alt -name ("TagAsControllerParentNameCommand");
 hotkey -keyShortcut "Return" -ctl -name ("da_FreezeDelNonDefNameCommand");
 
 // CTRL hotkeys
@@ -145,6 +147,18 @@ nameCommand
 	-sourceType "mel"
 	-command ("da_FreezeDelNonDef")
 	da_FreezeDelNonDefNameCommand;
+
+nameCommand
+	-annotation "TagAsControllerNameCommand"
+	-sourceType "mel"
+	-command ("TagAsController")
+	TagAsControllerNameCommand;
+
+nameCommand
+	-annotation "TagAsControllerParentNameCommand"
+	-sourceType "mel"
+	-command ("TagAsControllerParent")
+	TagAsControllerParentNameCommand;
 
 nameCommand
 	-annotation "da_RevertToSaveNameCommand"
