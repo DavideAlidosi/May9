@@ -16,10 +16,11 @@ Installation
 
 
 Release Note
-- May9 Pro 3.2 have a new unified installation process, so is highly recommended a new installation instead update it
-- May9 Pro 3.2 work in any Workspace, anyway the use of Maya Classic is high suggested
-- May9 Pro 3.2 hotkeys add or substitute the actual Hotkey Set when installed
-- May9 Pro 3.2 is tested and develop on Autodesk Maya 2018.3 and Autodesk Maya 2017.5 with MtoA 3.0.1.1 installed
+- Unified installation process, is highly recommended a new installation instead update it.
+- Compatibility to any Workspace, anyway the use of Maya Classic is high suggested.
+- Included hotkeys are added and do not substitute the user Hotkey Set.
+- Tested and develop on Autodesk Maya 2018.4 and Autodesk Maya 2017.5.
+- Is high recommended to update Autodesk Arnold (MtoA) to 3.1.0.1 or later.
 
 
 Exclusive script
