@@ -32,7 +32,7 @@ catchQuiet (`hotkeySet -e -delete May9_Next`);
 // Set back to initial InputField
 toggleInputField(`optionVar -q "da_showStatusInputField"`);
 
-// Remove May9 Pro main menu
+// Remove May9 Next main menu
 da_May9MenuRemover;
 
 // Remove optionVars
@@ -1150,4 +1150,4 @@ catchQuiet (`runTimeCommand -e -del
 	da_TensionBlendShape`);
 
 // Un-install confirmation
-inViewMessage -pos midCenterTop -msg "May9 Pro un-installed" -fade;
+inViewMessage -pos midCenterTop -msg "May9 Next un-installed" -fade;

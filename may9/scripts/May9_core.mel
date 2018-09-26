@@ -34,9 +34,6 @@ if (`optionVar -q "May9ActivationCheck"` < 31){
 
     // Enable Membrane Paintable Attributes
 	makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
-
-	// Define May9 Pro 3.1 installation status 
-	optionVar -iv May9ActivationCheck 31;
 }
 
 if (`optionVar -q "May9ActivationCheck"` < 320){
@@ -90,7 +87,7 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 	// Set May9 Next hotkeySet
 	hotkeySet -edit -current May9_Next;
 
-	// Define May9 Pro 3.2 installation status 
+	// Define May9 Next 10.0 installation status 
 	optionVar -iv May9ActivationCheck 10000;
 
 	// Store Preferences Changes
