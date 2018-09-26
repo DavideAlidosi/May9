@@ -1,7 +1,7 @@
 // Store May9 Version
-string $may9Version = "May9 Pro Version 3.2.1";
+string $may9Version = "May9 Next Version 10.0.0";
 string $may9CodeName = " for the 20th \"Unlimited\" Anniversary";
-int $may9Value = "321";
+int $may9Value = "10000";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -66,15 +66,6 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 	// Disable melDuplicateVariableWarnings
 	melOptions -duplicateVariableWarnings off;
 
-	// Store inital hotkeySet
-	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
-
-	// Preload hotkeys
-	source May9_hotkeys.mel;
-
-	// Set May9 Core hotkeySet
-	hotkeySet -edit -current May9_Core;
-
 	// Store initial showStatusInputField
 	optionVar -iv da_showStatusInputField `optionVar -q showStatusInputField`;
 
@@ -86,9 +77,21 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 
 	// Preload userRuntime
 	catchQuiet (`May9_userRuntime`);
+}
+
+if (`optionVar -q "May9ActivationCheck"` < 10000){
+
+	// Store inital hotkeySet
+	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
+
+	// Preload hotkeys
+	source May9_hotkeys.mel;
+
+	// Set May9 Next hotkeySet
+	hotkeySet -edit -current May9_Next;
 
 	// Define May9 Pro 3.2 installation status 
-	optionVar -iv May9ActivationCheck 320;
+	optionVar -iv May9ActivationCheck 10000;
 
 	// Store Preferences Changes
 	savePrefsChanges;

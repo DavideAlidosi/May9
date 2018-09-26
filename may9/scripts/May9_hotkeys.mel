@@ -1,13 +1,9 @@
 // Core hotkey set
-hotkeySet -source `optionVar -q "da_initialHotekey"` -current May9_Core;
+hotkeySet -source `optionVar -q "da_initialHotekey"` -current May9_Next;
 
 // MMtoKey Contextual Workflow hotkeys
 hotkey -keyShortcut "z" -name ("da_MMtoKey_pressNameCommand");
 hotkey -keyShortcut "z" -releaseName ("da_MMtoKey_releaseNameCommand");
-
-
-// Pro hotkey set
-hotkeySet -source May9_Core -current May9_Full;
 
 // Shift Alt Hotkeys
 hotkey -keyShortcut "z" -alt -sht -name ("da_ZeroTransfomationsNameCommand");

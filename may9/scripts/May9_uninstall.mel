@@ -27,6 +27,7 @@ hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 // Delete May9_Full and Core hotkeySets
 catchQuiet (`hotkeySet -e -delete May9_Core`);
 catchQuiet (`hotkeySet -e -delete May9_Full`);
+catchQuiet (`hotkeySet -e -delete May9_Next`);
 
 // Set back to initial InputField
 toggleInputField(`optionVar -q "da_showStatusInputField"`);

@@ -647,14 +647,6 @@ runTimeCommand
 	da_ExposeRotationOrder;
 
 runTimeCommand
-	-annotation "Toggle May9 Hotkeys Sets"
-	-category "Custom Scripts.May9_Pro.Toggle"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`hotkeySet -q -current` == \"May9_Core\"){\n    hotkeySet -edit -current May9_Full;\n    inViewMessage -pos topCenter -msg \"May9 Pro optional hotkeys enabled\" -fade;\n}else{\n    hotkeySet -edit -current May9_Core;\n    inViewMessage -pos topCenter -msg \"May9 Pro optional hotkeys disabled\" -fade;\n}")
-	da_hotkeySetToggle;
-
-runTimeCommand
 	-annotation "Toggle Transparent Shadows"
 	-category "Custom Scripts.May9_Pro.Toggle"
 	-hotkeyCtx ""
