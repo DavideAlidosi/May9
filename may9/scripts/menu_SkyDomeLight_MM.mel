@@ -5,18 +5,6 @@ menuItem
 -rp "W" 
 -i "out_defaultLightList.png";
 
-menuItem
--l "Look Through" 
--c "da_LookThruSelected" 
--rp "N" 
--i "snapshot.svg";
-
-menuItem
--l "Persp View" 
--c "dR_DoCmd(\"viewPersp\");" 
--rp "S" 
--i "singlePerspLayout.png";
-
 if (`about -api` >= 20180000){
 menuItem
 -l "Light Editor" 
@@ -36,40 +24,6 @@ menuItem
 -c "AttributeEditor" 
 -rp "SW" 
 -i "attributes.png";
-
-menuItem
--l "Normalize" 
--sm 1
--i "MtoA_Logo.png";
-
-menuItem
--l "On" 
--c "da_AiLightNormalize" 
--i "rvViewingPipelineOn.png";
-
-menuItem
--l "Off" 
--c "da_AiNoLightNormalize" 
--i "rvViewingPipelineOff.png";
-
-setParent -m ..;
-
-menuItem
--l "Area to Portal Light" 
--sm 1
--i "MtoA_Logo.png";
-
-menuItem
--l "On" 
--c "da_AiPortalLight" 
--i "rvViewingPipelineOn.png";
-
-menuItem
--l "Off" 
--c "da_AiNoPortalLight" 
--i "rvViewingPipelineOff.png";
-
-setParent -m ..;
 
 menuItem
 -l "Add Physical Sky" 
