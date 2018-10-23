@@ -54,17 +54,7 @@ menuItem
 -rp "SE"
 -i "teSetKeyframe.png";
 
-if (`about -api` >= 20190000){
-menuItem
--l "Key Reducer" 
--c "performKeyReducer 3 graphEditor1GraphEd" 
--rp "SW"
--i "da_simplifyCurve.png";
-
-menuItem
--c "performKeyReducer 4 graphEditor1GraphEd" 
--ob 1;
-}else{
+if (`about -api` < 20190000){
 menuItem
 -l "Simplify Curves" 
 -c "performSimplify 3 graphEditor1GraphEd" 
@@ -109,6 +99,22 @@ setParent -m ..;
 menuItem
 -l "separator" 
 -d 1;
+
+if (`about -api` >= 20190000){
+menuItem
+-l "Butterworth Filter" 
+-c "performButterworth 4 graphEditor1GraphEd" 
+-i "da_smoothCurve.png";
+
+menuItem
+-l "Key Reducer Filter" 
+-c "performKeyReducer 4 graphEditor1GraphEd" 
+-i "da_simplifyCurve.png";
+
+menuItem
+-l "separator" 
+-d 1;
+}
 
 menuItem
 -l "Play Max Real-time"
