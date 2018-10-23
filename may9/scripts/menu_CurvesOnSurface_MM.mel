@@ -100,37 +100,43 @@ menuItem
 -ob 1;
 
 menuItem
--l "Select All CVs"
--c "SelectCurveCVsAll" 
--i "selectCVs.png";
-
-menuItem
--l "Select First CV"
--c "SelectCurveCVsFirst" 
--i "selectFirstCV.png";
-
-menuItem
--l "Select Last CV"
--c "SelectCurveCVsLast" 
--i "selectLastCV.png";
-
-menuItem
--l "separator" 
--d 1;
-
-menuItem
--l "Paint FX to Curves" 
--c "AttachBrushToCurves;" 
--i "paintFXtoCurve.png";
-
-menuItem
--l "Curves to Polygons" 
--c "da_curveToPoly" 
+-l "Shape" 
+-sm 1
 -i "da_curveToPoly.png";
 
 menuItem
--l "separator" 
--d 1;
+-l "Paint FX to Curve"
+-c "AttachBrushToCurves"
+-i "paintFXtoCurve.png";
+
+menuItem
+-l "Convert to Polygons"
+-c "da_curveToPoly"
+-i "da_curveToPoly.png";
+
+setParent -m ..;
+
+menuItem
+-l "Surface" 
+-sm 1
+-i "da_flatPoly.png";
+
+menuItem
+-l "Flat Surface"
+-c "da_FlattenSurface"
+-i "da_flatPoly.png";
+
+menuItem
+-l "Bevel Plus for Text"
+-c "da_BevelPlusForText"
+-i "polyBevel.png";
+
+setParent -m ..;
+
+menuItem
+-l "Dynamics"
+-sm 1
+-i "out_nucleus.png";
 
 menuItem
 -l "Emit Particle From CV" 
@@ -176,3 +182,24 @@ setParent -m ..;
 
 setParent -m ..;
 
+menuItem
+-l "Select" 
+-sm 1
+-i "selectCVs.png";
+
+menuItem
+-l "All CVs"
+-c "SelectCurveCVsAll" 
+-i "selectCVs.png";
+
+menuItem
+-l "First CV"
+-c "SelectCurveCVsFirst" 
+-i "selectFirstCV.png";
+
+menuItem
+-l "Last CV"
+-c "SelectCurveCVsLast" 
+-i "selectLastCV.png";
+
+setParent -m ..;
