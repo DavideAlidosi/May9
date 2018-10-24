@@ -26,42 +26,14 @@ menuItem
 -ob 1;
 
 menuItem
--l "Surface from Curves" 
--sm 1
--rp "W" 
--i "skin.png";
-
-menuItem
 -l "Loft" 
 -c "Loft" 
--rp "NW" 
+-rp "W" 
 -i "skin.png";
 
 menuItem
 -c "LoftOptions" 
 -ob 1;
-
-menuItem
--l "Freeform Fillet" 
--c "freeFormFilletPreset(1,0,0.5,0,0.01,0.1)" 
--rp "W" 
--i "filletFreeform_S.png";
-
-menuItem
--c "FreeformFilletOptions" 
--ob 1;
-
-menuItem
--l "Fillet Blend Tool" 
--c "doFilletBlendArgList 2 {\"1\", \"1\", \"1\", \"0\", \"0\", \"0\", \"0.1\", \"0.1\", \"0\", \"1\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"1\", \"0\" }" 
--rp "SW" 
--i "blendSurface.png";
-
-menuItem
--c "FilletBlendToolOptions" 
--ob 1;
-
-setParent -m ..;
 
 menuItem
 -l "Reverse" 
