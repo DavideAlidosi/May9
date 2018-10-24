@@ -40,5 +40,16 @@ menuItem
 -c "UVCentricUVLinkingEditor" 
 -i "da_uvLinkEditor.png";
 
+if (`about -api` >= 20190000){
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Reset UI" 
+-c "UVEditorResetAllToDefault" 
+-i "deletePreset.png";
+}
+
 setParent -m ..;
 
