@@ -84,7 +84,7 @@ hotkey -keyShortcut "k" -name ("da_TimeDraggerSmoothNameCommand");
 hotkey -keyShortcut "k" -releaseName ("da_TimeDraggerNoSmoothNameCommand");
 hotkey -keyShortcut "Space" -cmd -name ("da_toggleMainWindowFullScreenModeNameCommand");
 
-// Changed hotkey
+// Changed hotkeys
 hotkey -keyShortcut "3" -ctl -alt -name ("da_ToggleDisplacementNameCommand");
 hotkey -keyShortcut "-" -alt -name ("da_ToggleColorFeedbackNameCommand");
 hotkey -keyShortcut "i" -alt -name ("da_ToggleWireframeInArtisanNameCommand");
@@ -93,11 +93,18 @@ hotkey -keyShortcut "~" -ctl -alt -name ("SmoothingDisplayShowBothNameCommand");
 hotkey -keyShortcut "Return" -ctl -alt -name ("TogglePanZoomPressNameCommand");//Italian layout fix
 hotkey -keyShortcut "Return" -ctl -alt -releaseName ("TogglePanZoomReleaseNameCommand");//Italian layout fix
 
-// Italian keyboard layot hotkey
+// Italian keyboard layout hotkeys
 hotkey -keyShortcut "|" -ctl -name ("SmoothProxyNameCommand");
 hotkey -keyShortcut "\\" -ctl -name ("SmoothingDisplayToggleNameCommand");
 hotkey -keyShortcut "\\" -name ("STRSTweakModeOnNameCommand");
 hotkey -keyShortcut "\\" -releaseName ("STRSTweakModeOffNameCommand");
+
+// Maya 2019 TTF and resigned Help hotkeys
+if (`about -api` >= 20190000){
+hotkey -keyShortcut "F1" -name ("");
+hotkey -keyShortcut "F1" -releaseName ("TypeToFindNameCommand");
+hotkey -keyShortcut "F1" -sht -name ("HelpNameCommand");
+}
 
 
 // nameCommand set
@@ -539,3 +546,12 @@ nameCommand
 	-sourceType "mel"
 	-command ("da_KeyKeyedOnly")
 	da_KeyKeyedOnlyNameCommand;
+
+
+if (`about -api` >= 20190000){
+nameCommand
+	-annotation "HelpNameCommand"
+	-sourceType "mel"
+	-command ("Help")
+	HelpNameCommand;
+}
