@@ -6,9 +6,15 @@ menuItem
 
 menuItem
 -l "Add CV"
--c "AddPointsTool;"
--rp "S"
+-c "AddPointsTool"
+-rp "SE"
 -i "curveAddPt.png";
+
+menuItem
+-l "Extrude"
+-c "extrude -ch true -rn false -po 0 -et 0 -upn 1 -length 1 -rotation 0 -scale 1 -dl 3"
+-rp "S"
+-i "extrude.png";
 
 menuItem
 -l "Bevel Plus"
@@ -19,12 +25,6 @@ menuItem
 menuItem
 -c "BevelPlusOptions;"
 -ob 1;
-
-menuItem
--l "Curve Length"
--c "da_CurveLength"
--rp "SE"
--i "out_curveInfo.png";
 
 menuItem
 -l "Revolve"
@@ -67,28 +67,28 @@ menuItem
 -ob 1;
 
 menuItem
--l "Select Hierarchy" 
--c "SelectHierarchy" 
--i "selectByHierarchy.png";
+-l "Separate"
+-c "da_SepareCurves"
+-i "da_separateCurves.png";
 
 menuItem
--l "Select All CVs"
--c "SelectCurveCVsAll" 
--i "selectCVs.png";
-
-menuItem
--l "Select First CV"
--c "SelectCurveCVsFirst" 
+-l "Pivot to Origin"
+-c "da_PivotToCurvesOrigin"
 -i "selectFirstCV.png";
 
 menuItem
--l "Select Last CV"
--c "SelectCurveCVsLast" 
--i "selectLastCV.png";
+-l "Curve Length"
+-c "da_CurveLength"
+-i "out_curveInfo.png";
 
 menuItem
 -l "separator" 
 -d 1;
+
+menuItem
+-l "Shape" 
+-sm 1
+-i "da_curveToPoly.png";
 
 menuItem
 -l "Paint FX to Curve"
@@ -105,23 +105,12 @@ menuItem
 -c "da_aiCurveCollector"
 -i "CurveCollectorShelf.png";
 
-menuItem
--l "Separate"
--c "da_SepareCurves"
--i "da_separateCurves.png";
+setParent -m ..;
 
 menuItem
--l "separator" 
--d 1;
-
-menuItem
--l "Planar"
--c "planarSrf -ch 1 -d 3 -ko 0 -tol 0.01 -rn 0 -po 0"
--i "planarTrim.png";
-
-menuItem
--c "PlanarOptions"
--ob 1;
+-l "Surface" 
+-sm 1
+-i "da_flatPoly.png";
 
 menuItem
 -l "Flat Surface"
@@ -129,17 +118,11 @@ menuItem
 -i "da_flatPoly.png";
 
 menuItem
--l "Bevel Plus for Text"
+-l "Bevel Plus Mesh"
 -c "da_BevelPlusForText"
 -i "polyBevel.png";
 
-menuItem
--c "BevelPlusOptions"
--ob 1;
-
-menuItem
--l "separator" 
--d 1;
+setParent -m ..;
 
 menuItem
 -l "Component Display" 
@@ -372,3 +355,24 @@ menuItem
 
 setParent -m ..;
 
+menuItem
+-l "Select" 
+-sm 1
+-i "selectCVs.png";
+
+menuItem
+-l "All CVs"
+-c "SelectCurveCVsAll" 
+-i "selectCVs.png";
+
+menuItem
+-l "First CV"
+-c "SelectCurveCVsFirst" 
+-i "selectFirstCV.png";
+
+menuItem
+-l "Last CV"
+-c "SelectCurveCVsLast" 
+-i "selectLastCV.png";
+
+setParent -m ..;
