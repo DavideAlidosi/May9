@@ -1,4 +1,12 @@
 runTimeCommand
+	-annotation "Progessive High Quality Smooth Mesh"
+	-category "Custom Scripts.May9_Next.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySelShape[] = `listRelatives -s`;\nint $myDispSetting = `getAttr ($mySelShape[0] + \".showDisplacements\")`;\nint $mySubdivMode = `getAttr ($mySelShape[0] + \".smoothDrawType\")`;\nint $myPolyCounts[] =  `polyEvaluate -f`;\n\nif ($myDispSetting || $mySubdivMode == 3){\n    setAttr ($mySelShape[0] + \".useGlobalSmoothDrawType\") 1;\n    setAttr ($mySelShape[0] + \".smoothLevel\") 2;\n    setAttr ($mySelShape[0] + \".showDisplacements\") 0;\n    setAttr ($mySelShape[0] + \".smoothDrawType\") 2;\n}else{\n    setDisplaySmoothness 3;\n    setAttr ($mySelShape[0] + \".useGlobalSmoothDrawType\") 0;\n    setAttr ($mySelShape[0] + \".showDisplacements\") 1;\n    setAttr ($mySelShape[0] + \".smoothDrawType\") 3;\n\n    if ($myPolyCounts[0] <= 24) {\n    \tsetAttr ($mySelShape[0] + \".smoothLevel\") 6;\n    } else if ($myPolyCounts[0] <= 96) {\n    \tsetAttr ($mySelShape[0] + \".smoothLevel\") 5;\n    } else if ($myPolyCounts[0] <= 384) {\n    \tsetAttr ($mySelShape[0] + \".smoothLevel\") 4;\n    } else if ($myPolyCounts[0] <= 1536) {\n    \tsetAttr ($mySelShape[0] + \".smoothLevel\") 3;\n    } else if ($myPolyCounts[0] <= 6144) {\n    \tsetAttr ($mySelShape[0] + \".smoothLevel\") 2;\n    } else if ($myPolyCounts[0] <= 24576) {\n    \tsetAttr ($mySelShape[0] + \".smoothLevel\") 1;\n    } else {\n    \tsetAttr ($mySelShape[0] + \".smoothLevel\") 0;\n    }\n}")
+	da_HighQualitySmoothMesh;
+
+runTimeCommand
 	-annotation "Pivot to Curve(s) Origin"
 	-category "Custom Scripts.May9_Next.Object"
 	-hotkeyCtx ""

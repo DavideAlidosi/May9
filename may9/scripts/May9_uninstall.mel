@@ -52,6 +52,9 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_HighQualitySmoothMesh`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_PivotToCurvesOrigin`);
 
 catchQuiet (`runTimeCommand -e -del
