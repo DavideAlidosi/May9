@@ -316,6 +316,11 @@ menuItem -bld 1
 
 setParent -m ..;
 
+menuItem -bld 1
+-l "Highlight Affected" 
+-c "if(`displayAffected -q`){displayPref -displayAffected false;}else{displayPref -displayAffected true;}" 
+-cb (`displayAffected -q`);
+
 setParent -m ..;
 
 menuItem -bld 1 
