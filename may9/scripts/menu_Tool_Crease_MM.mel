@@ -3,53 +3,60 @@ string $mySelShape[] = `listRelatives -s`;
 menuItem -itl 1 
 -l "No Crease" 
 -c "for ($each in $mySel){polyCrease -ch true -value 0 -vertexValue 0 $each;}" 
--rp "SW";
+-rp "NW";
 
 menuItem -itl 1 
 -l "Infinite Crease" 
 -c "for ($each in $mySel){polyCrease -ch true -value 10 -vertexValue 10 $each;}" 
--rp "NW";
+-rp "N";
 
 menuItem -itl 1 
 -l "1 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value .5 -vertexValue .5 $each;}" 
--rp "S";
+-c "for ($each in $mySel){polyCrease -ch true -value 1 -vertexValue 1 $each;}" 
+-rp "W";
 
 menuItem -itl 1 
 -l "2 Crease" 
 -c "for ($each in $mySel){polyCrease -ch true -value 2 -vertexValue 2 $each;}" 
--rp "SE";
+-rp "SW";
+
+menuItem -itl 1 
+-l "3 Crease" 
+-c "for ($each in $mySel){polyCrease -ch true -value 3 -vertexValue 3 $each;}" 
+-rp "S";
 
 menuItem -itl 1 
 -l "4 Crease" 
 -c "for ($each in $mySel){polyCrease -ch true -value 4 -vertexValue 4 $each;}" 
--rp "E";
+-rp "SE";
 
 menuItem -itl 1 
 -l "5 Crease" 
 -c "for ($each in $mySel){polyCrease -ch true -value 5 -vertexValue 5 $each;}" 
+-rp "E";
+
+menuItem -itl 1 
+-l "6 Crease" 
+-c "for ($each in $mySel){polyCrease -ch true -value 6 -vertexValue 6 $each;}" 
 -rp "NE";
-
-menuItem -itl 1 
--l "7 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 7 -vertexValue 7 $each;}" 
--rp "N";
-
-if (size($mySel[0]) || 0){
-int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
-int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
-
-menuItem -itl 1 
--l "High Quality Smooth" 
--c "da_HighQualitySmoothMesh"
--cb ($myDispSetting || $mySubdivMode == 3)
--rp "W";
-}
 
 menuItem -itl 1 
 -l "Crease Set Editor" 
 -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
 -i "polyCrease.png";
+
+if (size($mySel[0]) || 0){
+int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
+int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+
+menuItem  -itl 1 
+-d 1;
+
+menuItem -itl 1 
+-l "High Quality Smooth" 
+-c "da_HighQualitySmoothMesh"
+-cb ($myDispSetting || $mySubdivMode == 3);
+}
 
 setParent -m ..;
 

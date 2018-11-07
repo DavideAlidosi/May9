@@ -5,6 +5,12 @@ menuItem
 -i "multiCut_NEX32.png";
 
 menuItem
+-l "Target Weld Tool"
+-c "MergeVertexTool;da_BackToObjectMode;da_SelectMulti"
+-rp "S"
+-i "weld_NEX32.png";
+
+menuItem
 -l "Brushes"
 -sm 1
 -rp "N"
@@ -65,12 +71,6 @@ menuItem
 -i "art3dPaint.png";
 
 setParent -m ..;
-
-menuItem
--l "Smooth"
--c "da_Subdivision"
--rp "S"
--i "polySmooth.png";
 
 menuItem
 -l "Quad Draw"
@@ -163,6 +163,14 @@ menuItem
 -l "Mesh Edit"
 -sm 1
 -i "polyMesh.png";
+
+menuItem
+-l "Smooth"
+-c "da_Subdivision"
+-i "polySmooth.png";
+
+menuItem 
+-d 1;
 
 if (`pluginInfo -q -loaded proSets` == 1){
 menuItem

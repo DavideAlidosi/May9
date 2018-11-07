@@ -50,10 +50,10 @@ menuItem
 -ob 1;
 
 menuItem
--l "Smooth"
--c "da_Subdivision"
+-l "Target Weld Tool"
+-c "MergeVertexTool;da_SelectMulti"
 -rp "S"
--i "polySmooth.png";
+-i "weld_NEX32.png";
 
 menuItem
 -l "Brushes"
@@ -183,6 +183,15 @@ menuItem
 -l "Mesh Edit"
 -sm 1
 -i "polyMesh.png";
+
+menuItem
+-l "Smooth"
+-c "da_Subdivision"
+-rp "S"
+-i "polySmooth.png";
+
+menuItem
+-d 1;
 
 if (`pluginInfo -q -loaded SOuP` == 1){
 menuItem
