@@ -1,3 +1,7 @@
+string $mySelShape[] = `listRelatives -s`;
+int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
+int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+
 menuItem
 -l "Booleans"
 -sm 1
@@ -996,6 +1000,17 @@ setParent -m ..;
 
 menuItem
 -d 1;
+
+menuItem 
+-l "High Quality Smooth" 
+-c "da_HighQualitySmoothMeshToggle"
+-cb ($mySubdivMode == 3)
+-en ($myDispSetting == 0);
+
+menuItem 
+-l "Displacement Preview" 
+-c "da_HighQualityDispMeshToggle"
+-cb ($myDispSetting);
 
 menuItem
 -l "Select All Vertices"
