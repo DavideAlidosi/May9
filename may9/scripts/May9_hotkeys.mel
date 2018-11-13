@@ -85,7 +85,8 @@ hotkey -keyShortcut "k" -releaseName ("da_TimeDraggerNoSmoothNameCommand");
 hotkey -keyShortcut "Space" -cmd -name ("da_toggleMainWindowFullScreenModeNameCommand");
 
 // Changed hotkeys
-hotkey -keyShortcut "3" -ctl -alt -name ("da_HighQualitySmoothMeshNameCommand");
+hotkey -keyShortcut "3" -ctl -alt -name ("da_HighQualityDispMeshNameCommand");
+hotkey -keyShortcut "2" -ctl -alt -name ("da_HighQualitySmoothMeshNameCommand");
 hotkey -keyShortcut "-" -alt -name ("da_ToggleColorFeedbackNameCommand");
 hotkey -keyShortcut "i" -alt -name ("da_ToggleWireframeInArtisanNameCommand");
 hotkey -keyShortcut "n" -sht -name ("da_FullHotboxDisplayNameCommand");
@@ -555,6 +556,12 @@ nameCommand
 	-command ("Help")
 	HelpNameCommand;
 }
+
+nameCommand
+	-annotation "da_HighQualityDispMeshNameCommand"
+	-sourceType "mel"
+	-command ("da_HighQualityDispMesh")
+	da_HighQualityDispMeshNameCommand;
 
 nameCommand
 	-annotation "da_HighQualitySmoothMeshNameCommand"

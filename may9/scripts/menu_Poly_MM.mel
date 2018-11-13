@@ -1,8 +1,18 @@
+string $mySelShape[] = `listRelatives -s`;
+int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
+int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+
 menuItem
 -l "Multi Cut Tool"
 -c "dR_multiCutTool;"
 -rp "W"
 -i "multiCut_NEX32.png";
+
+menuItem
+-l "Separate" 
+-c "SeparatePolygon" 
+-rp "NE" 
+-i "polySeparate.png";
 
 menuItem
 -l "Target Weld Tool"
@@ -327,6 +337,11 @@ menuItem
 -l "Instance to Object"
 -c "ConvertInstanceToObject"
 -i "instanceToObject.png";
+
+menuItem
+-l "Disp to Poly with History"
+-c "CreatePolyFromPreview;SetupAnimatedDisplacement"
+-i "displaceToPolygonsHistory.png";
 
 setParent -m ..;
 
@@ -1019,16 +1034,21 @@ setParent -m ..;
 menuItem
 -d 1;
 
+menuItem 
+-l "High Quality Smooth" 
+-c "da_HighQualitySmoothMesh"
+-cb ($mySubdivMode == 3)
+-en ($myDispSetting == 0);
+
+menuItem 
+-l "Displacement Preview" 
+-c "da_HighQualityDispMesh"
+-cb ($myDispSetting);
+
 menuItem
 -l "Select All Vertices"
 -c "ConvertSelectionToVertices"
 -i "vertex_NEX.png";
-
-menuItem
--l "Separate" 
--c "SeparatePolygon" 
--rp "NE" 
--i "polySeparate.png";
 
 setParent -m ..;
 
