@@ -1,4 +1,12 @@
 runTimeCommand
+	-annotation "Disable Smooth Preview"
+	-category "Custom Scripts.May9_Next.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySelShape[] = `ls -sl -o`;\nint $myPolyCounts[] =  `polyEvaluate -f`;\n\nfor ($i=0; $i<size($mySelShape); $i++) {\n    setDisplaySmoothness 1;\n    setAttr ($mySelShape[$i] + \".useGlobalSmoothDrawType\") 1;\n    setAttr ($mySelShape[$i] + \".smoothDrawType\") 2;\n    setAttr ($mySelShape[$i] + \".showDisplacements\") 0;\n    \n    if ($myPolyCounts[$i] <= 6144) {\n    \tsetAttr ($mySelShape[$i] + \".smoothLevel\") 2;\n    } else if ($myPolyCounts[$i] <= 24576) {\n    \tsetAttr ($mySelShape[$i] + \".smoothLevel\") 1;\n    } else {\n    \tsetAttr ($mySelShape[$i] + \".smoothLevel\") 0;\n    }\n    inViewMessage -pos topCenter -msg \"Smooth Preview Off\" -fade;\n}")
+	da_SmoothPreviewOff;
+
+runTimeCommand
 	-annotation "Toggle High Quality Displacement"
 	-category "Custom Scripts.May9_Next.Modeling"
 	-hotkeyCtx ""

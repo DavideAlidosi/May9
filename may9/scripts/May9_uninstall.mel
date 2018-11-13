@@ -52,6 +52,9 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_SmoothPreviewOff`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_HighQualityDispMeshToggle`);
 
 catchQuiet (`runTimeCommand -e -del
