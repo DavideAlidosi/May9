@@ -339,7 +339,7 @@ menuItem
 -i "instanceToObject.png";
 
 menuItem
--l "Disp to Poly with History"
+-l "Disp to Poly with Hystory"
 -c "CreatePolyFromPreview;SetupAnimatedDisplacement"
 -i "displaceToPolygonsHistory.png";
 
@@ -1036,13 +1036,13 @@ menuItem
 
 menuItem 
 -l "High Quality Smooth" 
--c "da_HighQualitySmoothMesh"
+-c "da_HighQualitySmoothMeshToggle"
 -cb ($mySubdivMode == 3)
 -en ($myDispSetting == 0);
 
 menuItem 
 -l "Displacement Preview" 
--c "da_HighQualityDispMesh"
+-c "da_HighQualityDispMeshToggle"
 -cb ($myDispSetting);
 
 menuItem
