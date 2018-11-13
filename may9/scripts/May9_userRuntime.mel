@@ -935,22 +935,6 @@ runTimeCommand
 	da_RevertToSave;
 
 runTimeCommand
-	-annotation "Enable OpenSubd Displace"
-	-category "Custom Scripts.May9_Next.Modeling"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 3;\nsetAttr ($each +\".smoothTessLevel\") 7;\nsetAttr ($each +\".showDisplacements\") 1;\nsetDisplaySmoothness 3;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace enable on selected object(s)\" -fade;")
-	da_OpenSubdDisplace;
-
-runTimeCommand
-	-annotation "Disable OpenSubd Displace"
-	-category "Custom Scripts.May9_Next.Modeling"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".useGlobalSmoothDrawType\") 0;\nsetAttr ($each +\".smoothDrawType\") 2;\nsetAttr ($each +\".showDisplacements\") 0;\n}\ninViewMessage -pos topCenter -msg \"OpenSubdiv displace disable on selected object(s)\" -fade;")
-	da_OpenSubdNoDisplace;
-
-runTimeCommand
 	-annotation "Set MM based on cursor position"
 	-category "Custom Scripts.May9_Next.MMtoKey"
 	-hotkeyCtx ""
