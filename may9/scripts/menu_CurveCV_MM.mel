@@ -15,21 +15,6 @@ menuItem
 -i "unlockLength.png";
 
 menuItem
--l "Select All CVs"
--c "SelectCurveCVsAll" 
--i "selectCVs.png";
-
-menuItem
--l "Select First CV"
--c "SelectCurveCVsFirst" 
--i "selectFirstCV.png";
-
-menuItem
--l "Select Last CV"
--c "SelectCurveCVsLast" 
--i "selectLastCV.png";
-
-menuItem
 -l "separator" 
 -d 1;
 
@@ -167,6 +152,28 @@ menuItem
 menuItem
 -c "performCreateDynamicConstraint 1 \"force\"" 
 -ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Select" 
+-sm 1
+-i "selectCVs.png";
+
+menuItem
+-l "All CVs"
+-c "SelectCurveCVsAll" 
+-i "selectCVs.png";
+
+menuItem
+-l "First CV"
+-c "SelectCurveCVsFirst" 
+-i "selectFirstCV.png";
+
+menuItem
+-l "Last CV"
+-c "SelectCurveCVsLast" 
+-i "selectLastCV.png";
 
 setParent -m ..;
 

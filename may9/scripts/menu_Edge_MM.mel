@@ -111,18 +111,9 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Selection Constraints"
--c "PolygonSelectionConstraints"
--i "polySelectUsingConstraints.png";
-
-menuItem
--l "Select All"
--c "SelectAll" 
--i "aselect.png";
-
-menuItem
--l "separator" 
--d 1;
+-l "Edge Edit"
+-sm 1
+-i "edges_NEX.png";
 
 menuItem
 -l "Transform"
@@ -181,9 +172,12 @@ menuItem
 -c "dR_performSymmetrize;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
 -i "symmetrize.png";
 
+setParent -m ..;
+
 menuItem
--l "separator" 
--d 1;
+-l "Convert"
+-sm 1
+-i "polyEdgeToCurves.png";
 
 menuItem
 -l "Edges to Curves"
@@ -195,9 +189,7 @@ menuItem
 -c "da_EdgesToLoopToCurve"
 -i "da_EdgeToLoopToCurve.png";
 
-menuItem
--l "separator" 
--d 1;
+setParent -m ..;
 
 menuItem
 -l "Deformers"
@@ -485,7 +477,17 @@ menuItem
 -d 1;
 
 menuItem
--l "Convert to Vertices"
+-l "Select All"
+-c "SelectAll" 
+-i "aselect.png";
+
+menuItem
+-l "Selection Constraints"
+-c "PolygonSelectionConstraints"
+-i "polySelectUsingConstraints.png";
+
+menuItem
+-l "Selection to Vertices"
 -c "ConvertSelectionToVertices"
 -i "vertex_NEX.png";
 

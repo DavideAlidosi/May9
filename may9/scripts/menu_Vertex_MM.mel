@@ -55,19 +55,9 @@ menuItem
 -ob 1;
 
 menuItem
--l "Selection Constraints"
--c "PolygonSelectionConstraints"
--i "polySelectUsingConstraints.png";
-
-menuItem
--l "Select All"
--c "SelectAll" 
--i "aselect.png"
--stp "mel";
-
-menuItem
--l "separator" 
--d 1;
+-l "Vertex Edit"
+-sm 1
+-i "vertex_NEX.png";
 
 menuItem
 -l "Transform"
@@ -113,12 +103,10 @@ menuItem
 
 menuItem
 -l "Set CVs to Zero"
--c "da_ResetTweakPoint"
+-c "da_ResetSelTweakPoint"
 -i "polyCollapseEdge.png";
 
-menuItem
--l "separator" 
--d 1;
+setParent -m ..;
 
 menuItem
 -l "Deformers"
@@ -388,7 +376,18 @@ menuItem
 -d 1;
 
 menuItem
--l "Convert to UVs"
+-l "Select All"
+-c "SelectAll" 
+-i "aselect.png"
+-stp "mel";
+
+menuItem
+-l "Selection Constraints"
+-c "PolygonSelectionConstraints"
+-i "polySelectUsingConstraints.png";
+
+menuItem
+-l "Selection to UVs"
 -c "ConvertSelectionToUVs"
 -i "UVEditorVertex.png";
 

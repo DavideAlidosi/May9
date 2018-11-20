@@ -1,4 +1,12 @@
 runTimeCommand
+	-annotation "Reset Tweak Point for selected CVs"
+	-category "Custom Scripts.May9_Next.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i<size($mySel); $i++) {\n    setAttr ($mySel[$i] + \".pntx\") 0;\n    setAttr ($mySel[$i] + \".pnty\") 0;\n    setAttr ($mySel[$i] + \".pntz\") 0;\n}")
+	da_ResetSelTweakPoint;
+
+runTimeCommand
 	-annotation "Disable Smooth Preview"
 	-category "Custom Scripts.May9_Next.Modeling"
 	-hotkeyCtx ""
