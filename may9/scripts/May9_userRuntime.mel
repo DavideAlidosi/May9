@@ -1,4 +1,28 @@
 runTimeCommand
+	-annotation "Transform Mirror on Negative YZ plane"
+	-category "Custom Scripts.May9_Next.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleX\") -1;\n\nstring $myParent[] = `pickWalk -d up`;\n\nselect $mySel;\n\nUnparent;\n\nif ($myParent[0] != $myBuffer[0])\n    for ($each in $mySel)\n        parent -r -s $each $myParent[0];\n\ndelete $myBuffer[0];")
+	da_TransformMirrorNegX;
+
+runTimeCommand
+	-annotation "Transform Mirror on Negative XZ plane"
+	-category "Custom Scripts.May9_Next.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleY\") -1;\n\nstring $myParent[] = `pickWalk -d up`;\n\nselect $mySel;\n\nUnparent;\n\nif ($myParent[0] != $myBuffer[0])\n    for ($each in $mySel)\n        parent -r -s $each $myParent[0];\n\ndelete $myBuffer[0];")
+	da_TransformMirrorNegY;
+
+runTimeCommand
+	-annotation "Transform Mirror on Negative XY plane"
+	-category "Custom Scripts.May9_Next.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleZ\") -1;\n\nstring $myParent[] = `pickWalk -d up`;\n\nselect $mySel;\n\nUnparent;\n\nif ($myParent[0] != $myBuffer[0])\n    for ($each in $mySel)\n        parent -r -s $each $myParent[0];\n\ndelete $myBuffer[0];")
+	da_TransformMirrorNegZ;
+
+runTimeCommand
 	-annotation "Reset Tweak Point for selected CVs"
 	-category "Custom Scripts.May9_Next.Modeling"
 	-hotkeyCtx ""

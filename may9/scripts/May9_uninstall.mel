@@ -52,6 +52,15 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_TransformMirrorNegX`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_TransformMirrorNegY`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_TransformMirrorNegZ`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ResetSelTweakPoint`);
 
 catchQuiet (`runTimeCommand -e -del
