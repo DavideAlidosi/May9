@@ -1,9 +1,25 @@
 runTimeCommand
+	-annotation "UI Designed to Choose the Mirror Plane Cut"
+	-category "Custom Scripts.May9_Next.Modeling"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myResult = `confirmDialog -title \"Mirror Cut Plane\" -message \"On which plane did you want mirror your mesh?\" \n-button \"YZ\" -button \"XZ\" -button \"XY\" -button \"-YZ\" -button \"-XZ\" -button \"-XY\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"YZ\")\n    da_MirrorCutX;\n    \nelse if ($myResult == \"XZ\")\n    da_MirrorCutY;\n    \nelse if ($myResult == \"XY\")\n    da_MirrorCutZ;\n    \nelse if ($myResult == \"-YZ\")\n    da_MirrorCutXNeg;\n    \nelse if ($myResult == \"-XZ\")\n    da_MirrorCutYNeg;\n    \nelse if ($myResult == \"-XY\")\n    da_MirrorCutZNeg;")
+	da_MirrorCutSelector;
+
+runTimeCommand
+	-annotation "UI Designed to Choose the Duplicate Mirror Aixis"
+	-category "Custom Scripts.May9_Next.Rigging"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $myResult = `confirmDialog -title \"Mirror Transform\" -message \"On which axis did you want mirror your transform(s)?\" \n-button \"X\" -button \"Y\" -button \"Z\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"X\")\n    da_TransformMirrorNegX;\n    \nelse if ($myResult == \"Y\")\n    da_TransformMirrorNegY;\n    \nelse if ($myResult == \"Z\")\n    da_TransformMirrorNegZ;")
+	da_TransformMirrorSelector;
+
+runTimeCommand
 	-annotation "Transform Mirror on Negative YZ plane"
 	-category "Custom Scripts.May9_Next.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleX\") -1;\n\nstring $myParent[] = `pickWalk -d up`;\n\nselect $mySel;\n\nUnparent;\n\nif ($myParent[0] != $myBuffer[0])\n    for ($each in $mySel)\n        parent -r -s $each $myParent[0];\n\ndelete $myBuffer[0];")
+	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleX\") -1;\n\nselect $mySel;\nUnparent;\nGroup;\nrename \"MirroredTransform1\";\n\ndelete $myBuffer[0];\n")
 	da_TransformMirrorNegX;
 
 runTimeCommand
@@ -11,7 +27,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleY\") -1;\n\nstring $myParent[] = `pickWalk -d up`;\n\nselect $mySel;\n\nUnparent;\n\nif ($myParent[0] != $myBuffer[0])\n    for ($each in $mySel)\n        parent -r -s $each $myParent[0];\n\ndelete $myBuffer[0];")
+	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleY\") -1;\n\nselect $mySel;\nUnparent;\nGroup;\nrename \"MirroredTransform1\";\n\ndelete $myBuffer[0];\n")
 	da_TransformMirrorNegY;
 
 runTimeCommand
@@ -19,7 +35,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Rigging"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleZ\") -1;\n\nstring $myParent[] = `pickWalk -d up`;\n\nselect $mySel;\n\nUnparent;\n\nif ($myParent[0] != $myBuffer[0])\n    for ($each in $mySel)\n        parent -r -s $each $myParent[0];\n\ndelete $myBuffer[0];")
+	-command ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleZ\") -1;\n\nselect $mySel;\nUnparent;\nGroup;\nrename \"MirroredTransform1\";\n\ndelete $myBuffer[0];\n")
 	da_TransformMirrorNegZ;
 
 runTimeCommand
