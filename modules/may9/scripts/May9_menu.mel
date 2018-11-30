@@ -6,13 +6,15 @@ global proc da_May9Menu(){
  
     global string $gMainWindow;
     $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
-    menuItem -p $menuMain -l "Toggle Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
-    menuItem -p $menuMain -l "Toggle Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
+	menuItem -p $menuMain -l "Interactive Playback" -c "InteractivePlayback" -i "interactivePlayback.png";
     menuItem -p $menuMain -l "Freeze/Delete Non-Deform" -c "da_FreezeDelNonDef" -i "UV_Freeze_Tool.png";
     menuItem -p $menuMain -l "List of Input Operation" -c "da_ListInputOperations" -i "out_list.png";
-    menuItem -p $menuMain -l "Revert to Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
     menuItem -p $menuMain -l "Delete Mental Ray Nodes" -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
     menuItem -p $menuMain -l "Wheel Zoom" -c "da_ToggleMouseWheel" -cb (`optionVar -q "useScrollWheel"`);
+
+    menuItem -d 1 -l "Toggle";
+    menuItem -p $menuMain -l "Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
+    menuItem -p $menuMain -l "Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
     
     menuItem -d 1 -l "Selection";
     menuItem -p $menuMain -l "Lock" -c "da_Lock" -i "lockGeneric.png";
@@ -31,11 +33,10 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Relationship Editor" -c "da_LayoutRelationshipEditor" -i "perspRelationshipEditorLayout.png";
     menuItem -p $menuMain -l "Dynamic Relationship" -c "da_LayoutDynamicRelationshipEditor" -i "da_DynamicRelationship_Layout.png";
     menuItem -p $menuMain -l "Hypershade" -c "da_LayoutHypershade" -i "da_Hypershade_Layout.png";
-    menuItem -p $menuMain -l "Edit Layouts..." -c "PanelPreferencesWindow" -i "editLayout.png";
     
     menuItem -d 1 -l "Reset";
+    menuItem -p $menuMain -l "To Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
     menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "out_camera.png";
-    menuItem -p $menuMain -l "Render Settings" -c "da_ResetUI;\nunifiedRenderGlobalsWindow" -i "rvRenderGlobals.png";
     menuItem -p $menuMain -l "Current Workspace" -c "da_CloseAllPanel" -i "RS_refresh_layer.png";
     
     menuItem -d 1 -l "Built in Plug-ins";

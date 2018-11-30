@@ -879,14 +879,6 @@ runTimeCommand
 	da_ClearPersp;
 
 runTimeCommand
-	-annotation "Reset UI in case of failure"
-	-category "Custom Scripts.May9_Next.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if(`window -exists unifiedRenderGlobalsWindow`)\n\t{deleteUI unifiedRenderGlobalsWindow;}\nelse\n\t{print \"\";};\nbuildNewSceneUI;")
-	da_ResetUI;
-
-runTimeCommand
 	-annotation "Toggle Component Object Mode"
 	-category "Custom Scripts.May9_Next.Toggle"
 	-hotkeyCtx ""
@@ -979,7 +971,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Scene"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $test = `file -q -sn`;\n\nif (size($test)){\n\tstring $myResult = `confirmDialog -title \"Confirm\" -message \"Revert to Saved?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n\tstring $currentScenePath = `file -q -sn`;\n\tfile -f -open $currentScenePath;\n\tinViewMessage -pos topCenter -msg \"Revert to Saved\" -fade;\n\t}\n\telse inViewMessage -pos topCenter -msg \"Revert cancelled\" -fade;\n}\n\nelse{\n\tconfirmDialog -title \"Untitled scene\" -message \"Is not possible revert untitled scene.\"\n\t-button \"OK\" -defaultButton \"OK\";\n}")
+	-command ("string $test = `file -q -sn`;\n\nif (size($test)){\n\tstring $myResult = `confirmDialog -title \"Confirm\" -message \"Reset to Saved?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n\tstring $currentScenePath = `file -q -sn`;\n\tfile -f -open $currentScenePath;\n\tinViewMessage -pos topCenter -msg \"Revert to Saved\" -fade;\n\t}\n\telse inViewMessage -pos topCenter -msg \"Revert cancelled\" -fade;\n}\n\nelse{\n\tconfirmDialog -title \"Untitled scene\" -message \"Is not possible revert untitled scene.\"\n\t-button \"OK\" -defaultButton \"OK\";\n}")
 	da_RevertToSave;
 
 runTimeCommand
