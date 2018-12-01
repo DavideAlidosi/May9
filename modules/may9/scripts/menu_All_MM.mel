@@ -112,13 +112,9 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Playblast"
--c "PlayblastWindow"
+-c "PlayblastOptions"
 -rp "SE"
 -i "playblast.png";
-
-menuItem
--c "PlayblastOptions"
--ob 1;
 
 menuItem -bld 1 
 -l "Export StandIn"
@@ -446,9 +442,6 @@ menuItem -bld 1
 -l "Bifrost Board"
 -c "CreateNewBifrostBoard"
 -i "out_bifrostBoard.png";
-
-menuItem
--d 1;
 }
 
 menuItem -bld 1 
@@ -456,6 +449,14 @@ menuItem -bld 1
 -c "NCreateEmitter;"
 -rp "S"
 -i "posEmitter.png";
+
+menuItem -bld 1 
+-l "Annotation"
+-c "CreateAnnotateNode"
+-i "annotation.png";
+
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Paint Effects"
@@ -495,23 +496,15 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Attach To Motion Path"
--c "AttachToPath"
+-c "AttachToPathOptions"
 -rp "W"
 -i "motionPath.png";
-
-menuItem
--c "AttachToPathOptions" 
--ob 1;
 
 menuItem -bld 1 
 -l "Editable Motion Trail"
 -c "CreateMotionTrail"
 -rp "S"
 -i "motionTrail.png";
-
-menuItem
--c "CreateMotionTrailOptions" 
--ob 1;
 
 menuItem -bld 1 
 -l "Round Keyframes"
@@ -524,10 +517,6 @@ menuItem -bld 1
 -c "DeleteStaticChannels" 
 -rp "E" 
 -i "deleteGeneric.png";
-
-menuItem
--c "DeleteStaticChannelsOptions" 
--ob 1;
 
 menuItem -bld 1 
 -l "Play Max Real-time"
@@ -704,10 +693,6 @@ menuItem -bld 1
 -rp "NW"
 -i "UV_Freeze_Tool.png";
 }
-
-menuItem
--c "FreezeTransformationsOptions"
--ob 1;
 
 if (`about -api` >= 20180000){
 menuItem -bld 1 
