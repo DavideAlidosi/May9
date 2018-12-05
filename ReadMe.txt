@@ -1,9 +1,9 @@
-May9 Pro 3.2 - A new user experience for Autodesk Maya 2017 and 2018
+May9 Next 10 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
-May9 Pro is a plug-in aim to offer an alternative user experience for Autodesk Maya designed to improve the speed of daily workflow and maximize new tools learning.
-May9 Pro streamline the most common commands into a single keyboard button (Z), by predicting them from the context.
+May9 Next is a plug-in aim to offer an alternative user experience for Autodesk Maya designed to improve the speed of daily workflow and maximize new tools learning.
+May9 Next streamline the most common commands into a single keyboard button (Z), by predicting them from the context.
 
 
 Installation
@@ -65,7 +65,7 @@ youtube.com/c/May9
 
 
 Licenses
-May9 Pro is licensed under MIT License (https://opensource.org/licenses/MIT)
+May9 Next is licensed under MIT License (https://opensource.org/licenses/MIT)
 Copyright (c) Davide Alidosi (https://www.highend3d.com/maya/script/may9-pro-a-new-user-experience-for-maya)
 
 MMtoKey is under custom license: you can free modify source code of script, include to your preferences pack and redistribute, but you're not allowed to sell this script

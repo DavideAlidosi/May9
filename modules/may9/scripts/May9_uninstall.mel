@@ -1,10 +1,15 @@
 // Un-load main Plug-ins
-unloadPlugin May9_Pro;
+catchQuiet (`unloadPlugin May9_Pro`);
+unloadPlugin May9_Next;
 unloadPlugin MMtoKey;
 
 // Remove auto load main Plug-ins
-pluginInfo -edit -autoload false May9_Pro;
-pluginInfo -edit -autoload false MMtoKey;
+catchQuiet (`pluginInfo -e -a 0 May9_Pro`);
+catchQuiet (`pluginInfo -e -a 0 MMtoKey`);
+pluginInfo -e -a 0 May9_Next;
+
+// Save Plug-ins auto load prefs
+pluginInfo -spp;
 
 // Set back to initial hyperShadeDockingLayout
 optionVar -sv hyperShadeDockingLayout `optionVar -q "da_hyperShadeDockingLayout"`;
@@ -21,7 +26,7 @@ if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 // Set back to prior Hotkeyset
 hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
 
-// Delete May9_Full and Core hotkeySets
+// Delete May9_Full, Core and Next hotkeySets
 catchQuiet (`hotkeySet -e -delete May9_Core`);
 catchQuiet (`hotkeySet -e -delete May9_Full`);
 catchQuiet (`hotkeySet -e -delete May9_Next`);
