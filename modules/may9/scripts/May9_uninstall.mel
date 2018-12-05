@@ -4,9 +4,9 @@ unloadPlugin May9_Next;
 unloadPlugin MMtoKey;
 
 // Remove auto load main Plug-ins
+catchQuiet (`pluginInfo -e -a 0 May9_Next`);
 catchQuiet (`pluginInfo -e -a 0 May9_Pro`);
 catchQuiet (`pluginInfo -e -a 0 MMtoKey`);
-pluginInfo -e -a 0 May9_Next;
 
 // Save Plug-ins auto load prefs
 pluginInfo -spp;
