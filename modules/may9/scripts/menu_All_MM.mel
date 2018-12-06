@@ -166,65 +166,39 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Parent Constraint"
--c "ParentConstraint"
+-c "ParentConstraintOptions"
 -rp "S"
 -i "parentConstraint.png";
 
-menuItem
--c "ParentConstraintOptions"
--ob 1;
-
 menuItem -bld 1 
 -l "Orient Constraint"
--c "OrientConstraint"
+-c "OrientConstraintOptions"
 -rp "E"
 -i "orientConstraint.png";
 
-menuItem
--c "OrientConstraintOptions"
--ob 1;
-
 menuItem -bld 1 
 -l "Aim Constraint"
--c "AimConstraint"
+-c "AimConstraintOptions"
 -rp "N"
 -i "aimConstraint.png";
 
-menuItem
--c "AimConstraintOptions"
--ob 1;
-
 menuItem -bld 1 
 -l "Point Constraint"
--c "PointConstraint"
+-c "PointConstraintOptions"
 -rp "SE"
 -i "posConstraint.png";
 
-menuItem 
--c "PointConstraintOptions"
--ob 1;
-
 menuItem -bld 1 
 -l "IK Handle"
--c "IKHandleTool;"
+-c "IKHandleTool"
 -rp "NW"
 -i "kinHandle.png";
 
-menuItem
--c "IKHandleToolOptions;"
--ob 1;
-
 menuItem -bld 1 
 -l "IK Spline Handle"
--c "IKSplineHandleTool;"
+-c "IKSplineHandleTool"
 -rp "W"
--i "kinSplineHandle.png"
--stp "mel";
-
-menuItem -bld 1 
--c "IKSplineHandleToolOptions;"
--ob 1
--stp "mel";
+-i "kinSplineHandle.png";
 
 if (`pluginInfo -q -l contextConnector`){
 menuItem -bld 1 
@@ -422,8 +396,8 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Arnold Volume"
 -c "da_AiVolumes"
--i "VolumeShelf.png"
--rp "SE";
+-rp "W"
+-i "VolumeShelf.png";
 
 menuItem -bld 1 
 -l "Compass"
@@ -432,10 +406,16 @@ menuItem -bld 1
 -i "out_implicitSphere.png";
 
 menuItem -bld 1 
--l "Constuct Plane"
--c "CreateConstructionPlane" 
--rp "W" 
--i "sketchPlane.png";
+-l "nParticle Emitter"
+-c "NCreateEmitter"
+-rp "S"
+-i "posEmitter.png";
+
+menuItem -bld 1 
+-l "Paint nParticles"
+-c "NParticleTool"
+-rp "SE"
+-i "particle.png";
 
 if (`pluginInfo -q -l bifrostBoard`){
 menuItem -bld 1 
@@ -445,10 +425,9 @@ menuItem -bld 1
 }
 
 menuItem -bld 1 
--l "nParticle Emitter"
--c "NCreateEmitter;"
--rp "S"
--i "posEmitter.png";
+-l "Constuct Plane"
+-c "CreateConstructionPlaneOptions" 
+-i "sketchPlane.png";
 
 menuItem -bld 1 
 -l "Annotation"
@@ -462,11 +441,6 @@ menuItem -bld 1
 -l "Paint Effects"
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -i "userPaint.png";
-
-menuItem -bld 1 
--l "Paint nParticles"
--c "NParticleToolOptions"
--i "particle.png";
 
 setParent -m ..;
 
