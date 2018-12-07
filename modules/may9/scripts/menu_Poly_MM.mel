@@ -225,12 +225,8 @@ menuItem
 
 menuItem
 -l "Mirror"
--c "MirrorPolygonGeometry"
--i "polyMirrorGeometry.png";
-
-menuItem
 -c "MirrorPolygonGeometryOptions"
--ob 1;
+-i "polyMirrorGeometry.png";
 
 menuItem
 -l "Mirror Cut"
@@ -494,10 +490,6 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--c "SetCutSewUVTool;toolPropertyWindow;"
--ob 1;
-
-menuItem
 -l "3D Grab UV"
 -c "SetMeshGrabUVTool"
 -i "UV_3D_Grab_Brush.png";
@@ -533,12 +525,8 @@ menuItem
 
 menuItem
 -l "Auto Seams"
--c "performPolyAutoSeamUV 0"
--i "polyAutoSeams.png";
-
-menuItem
 -c "performPolyAutoSeamUV 1"
--ob 1;
+-i "polyAutoSeams.png";
 
 setParent -m ..;
 
@@ -556,10 +544,6 @@ menuItem
 -l "Reverse"
 -c "ReversePolygonNormals"
 -i "polyNormal.png";
-
-menuItem
--c "ReversePolygonNormalsOptions"
--ob 1;
 
 menuItem
 -l "Unlock and Fix"
@@ -679,10 +663,6 @@ menuItem
 -i "nClothCreate.png";
 
 menuItem
--c "nClothCreateOptions"
--ob 1;
-
-menuItem
 -l "Create nHair"
 -c "CreateHairOptions"
 -i "hairCreate.png";
@@ -693,17 +673,9 @@ menuItem
 -i "nClothCreatePassive.png";
 
 menuItem
--c "nClothMakeCollideOptions"
--ob 1;
-
-menuItem
 -l "Emit nParticle"
--c "NEmitFromObject"
--i "posEmitter.png";
-
-menuItem
 -c "NEmitFromObjectOptions"
--ob 1;
+-i "posEmitter.png";
 
 menuItem
 -l "Fill Object With Particle"
@@ -720,42 +692,18 @@ menuItem
 
 menuItem
 -l "Create Soft Body"
--c "soft -c"
+-c "CreateSoftBodyOptions"
 -i "soft.png";
 
 menuItem
--c "CreateSoftBodyOptions"
--ob 1;
-
-menuItem
--l "Emit Particle"
--c "EmitFromObject"
--i "emitter.png";
-
-menuItem
--c "EmitFromObjectOptions"
--ob 1;
-
-menuItem
--d 1;
-
-menuItem
 -l "Create Active Rigid Body"
--c "CreateActiveRigidBody"
+-c "CreateActiveRigidBodyOptions"
 -i "rigid.png";
 
 menuItem
--c "CreateActiveRigidBodyOptions"
--ob 1;
-
-menuItem
 -l "Create Passive Rigid Body"
--c "CreatePassiveRigidBody"
--i "rigidPassive.png";
-
-menuItem
 -c "CreatePassiveRigidBodyOptions"
--ob 1;
+-i "rigidPassive.png";
 
 menuItem
 -l "Constrain"
@@ -795,21 +743,13 @@ menuItem
 
 menuItem
 -l "Emit Fluid From Object"
--c "EmitFluidFromObject"
--i "fluidObjectEmit.png";
-
-menuItem
 -c "EmitFluidFromObjectOptions"
--ob 1;
+-i "fluidObjectEmit.png";
 
 menuItem
 -l "Make Fluid Collide"
 -c "MakeFluidCollide"
 -i "fluidCollide.png";
-
-menuItem
--c "MakeFluidCollideOptions;"
--ob 1;
 
 menuItem
 -d 1;
@@ -931,12 +871,8 @@ menuItem
 
 menuItem
 -l "Create Interactive Groom"
--c "XgmCreateInteractiveGroomSplines"
--i "xgIG_creation.png";
-
-menuItem
 -c "XgmCreateInteractiveGroomSplinesOption"
--ob 1;
+-i "xgIG_creation.png";
 
 menuItem
 -l "Interactive Brush"

@@ -208,12 +208,8 @@ menuItem
 
 menuItem
 -l "Mirror"
--c "MirrorPolygonGeometry;"
+-c "MirrorPolygonGeometryOptions"
 -i "polyMirrorGeometry.png";
-
-menuItem
--c "MirrorPolygonGeometryOptions;"
--ob 1;
 
 setParent -m ..;
 
@@ -587,10 +583,6 @@ menuItem
 -i "polyNormal.png";
 
 menuItem
--c "ReversePolygonNormalsOptions"
--ob 1;
-
-menuItem
 -d 1;
 
 menuItem
@@ -691,10 +683,6 @@ menuItem
 -i "nClothCreate.png";
 
 menuItem
--c "nClothCreateOptions"
--ob 1;
-
-menuItem
 -l "Create nHair"
 -c "CreateHairOptions"
 -i "hairCreate.png";
@@ -705,17 +693,9 @@ menuItem
 -i "nClothCreatePassive.png";
 
 menuItem
--c "nClothMakeCollideOptions"
--ob 1;
-
-menuItem
 -l "Emit Particle"
--c "NEmitFromObject"
--i "posEmitter.png";
-
-menuItem
 -c "NEmitFromObjectOptions"
--ob 1;
+-i "posEmitter.png";
 
 menuItem
 -l "Fill Object With Particle"
@@ -732,42 +712,18 @@ menuItem
 
 menuItem
 -l "Create Soft Body"
--c "soft -c"
+-c "CreateSoftBodyOptions"
 -i "soft.png";
 
 menuItem
--c "CreateSoftBodyOptions"
--ob 1;
-
-menuItem
--l "Emit Particle"
--c "EmitFromObject"
--i "emitter.png";
-
-menuItem
--c "EmitFromObjectOptions"
--ob 1;
-
-menuItem
--d 1;
-
-menuItem
 -l "Create Active Rigid Body"
--c "CreateActiveRigidBody"
+-c "CreateActiveRigidBodyOptions"
 -i "rigid.png";
 
 menuItem
--c "CreateActiveRigidBodyOptions"
--ob 1;
-
-menuItem
 -l "Create Passive Rigid Body"
--c "CreatePassiveRigidBody"
--i "rigidPassive.png";
-
-menuItem
 -c "CreatePassiveRigidBodyOptions"
--ob 1;
+-i "rigidPassive.png";
 
 menuItem
 -l "Constrain"
@@ -801,21 +757,13 @@ menuItem
 
 menuItem
 -l "Emit Fluid From Object"
--c "EmitFluidFromObject"
--i "fluidObjectEmit.png";
-
-menuItem
 -c "EmitFluidFromObjectOptions"
--ob 1;
+-i "fluidObjectEmit.png";
 
 menuItem
 -l "Make Fluid Collide"
 -c "MakeFluidCollide"
 -i "fluidCollide.png";
-
-menuItem
--c "MakeFluidCollideOptions;"
--ob 1;
 
 menuItem 
 -d 1;
@@ -932,12 +880,8 @@ menuItem
 
 menuItem
 -l "Create Interactive Groom"
--c "XgmCreateInteractiveGroomSplines"
--i "xgIG_creation.png";
-
-menuItem
 -c "XgmCreateInteractiveGroomSplinesOption"
--ob 1;
+-i "xgIG_creation.png";
 
 menuItem
 -l "Interactive Brush"

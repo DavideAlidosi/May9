@@ -316,12 +316,8 @@ menuItem
 
 menuItem
 -l "Emit Particle From CV" 
--c "NEmitFromObject;" 
+-c "NEmitFromObjectOptions" 
 -i "emitter.png";
-
-menuItem
--c "NEmitFromObjectOptions;" 
--ob 1;
 
 menuItem
 -l "Particle Style" 
@@ -379,21 +375,13 @@ menuItem
 
 menuItem
 -l "Create Active Rigid Body" 
--c "CreateActiveRigidBody" 
+-c "CreateActiveRigidBodyOptions" 
 -i "rigid.png";
 
 menuItem
--c "CreateActiveRigidBodyOptions" 
--ob 1;
-
-menuItem
 -l "Create Passive Rigid Body" 
--c "CreatePassiveRigidBody" 
--i "rigidPassive.png";
-
-menuItem
 -c "CreatePassiveRigidBodyOptions" 
--ob 1;
+-i "rigidPassive.png";
 
 menuItem
 -l "Constrain" 
