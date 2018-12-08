@@ -8,22 +8,24 @@ menuItem -itl 1
 -cb $reflectionCheck 
 -rp "E";
 
+radioMenuItemCollection;
+
 menuItem -itl 1 
 -l "Z Axis" 
 -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"z\" `currentCtx`;" 
--cb ($reflectionDirection == "z") 
+-rb ($reflectionDirection == "z") 
 -rp "SE";
 
 menuItem -itl 1 
 -l "Y Axis" 
 -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"y\" `currentCtx`;" 
--cb ($reflectionDirection == "y") 
+-rb ($reflectionDirection == "y") 
 -rp "S";
 
 menuItem -itl 1 
 -l "X Axis" 
 -c "art3dPaintCtx -e -reflection  true `currentCtx`;\nart3dPaintCtx -e -ra \"x\" `currentCtx`;" 
--cb ($reflectionDirection == "x") 
+-rb ($reflectionDirection == "x") 
 -rp "SW";
 
 menuItem -itl 1 

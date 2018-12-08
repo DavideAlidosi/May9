@@ -1,20 +1,22 @@
+radioMenuItemCollection;
+
 menuItem -itl 1 
 -l "Slide" 
 -rp "S" 
 -c "nexOpt -e connectCurLmbMap slide; refresh -f; dR_updateCommandPanel" 
--cb (`nexOpt -q connectCurLmbMap` == "slide");
+-rb (`nexOpt -q connectCurLmbMap` == "slide");
 
 menuItem -itl 1 
 -l "Segments" 
 -rp "N" 
 -c "nexOpt -e connectCurLmbMap segments; refresh -f; dR_updateCommandPanel" 
--cb (`nexOpt -q connectCurLmbMap` == "segments");
+-rb (`nexOpt -q connectCurLmbMap` == "segments");
 
 menuItem -itl 1 
 -l "Pinch" 
 -rp "W" 
 -c "nexOpt -e connectCurLmbMap pinch; refresh -f; dR_updateCommandPanel" 
--cb (`nexOpt -q connectCurLmbMap` == "pinch");
+-rb (`nexOpt -q connectCurLmbMap` == "pinch");
 
 menuItem -itl 1 
 -l "Complete Tool" 

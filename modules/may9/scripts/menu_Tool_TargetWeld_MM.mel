@@ -6,16 +6,18 @@ menuItem -itl 1
 -rp "E" 
 -i "aselect.png";
 
+radioMenuItemCollection;
+
 menuItem -itl 1 
 -l "Merge to Target" 
 -c "targetWeldCtx -e -mergeToCenter 0 polyMergeVertexContext; refresh -f" 
--cb (`targetWeldCtx -q -mergeToCenter polyMergeVertexContext` == 0)
+-rb (`targetWeldCtx -q -mergeToCenter polyMergeVertexContext` == 0)
 -rp "SW";
 
 menuItem -itl 1 
 -l "Merge to Center" 
 -c "targetWeldCtx -e -mergeToCenter 1 polyMergeVertexContext; refresh -f" 
--cb (`targetWeldCtx -q -mergeToCenter polyMergeVertexContext`)
+-rb (`targetWeldCtx -q -mergeToCenter polyMergeVertexContext`)
 -rp "S";
 
 menuItem -itl 1
