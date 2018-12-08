@@ -9,10 +9,6 @@ menuItem
 -i "polyBridge.png";
 
 menuItem
--c "BridgeEdgeOptions;"
--ob 1;
-
-menuItem
 -l "Poke"
 -c "PokePolygon;"
 -rp "SE"
@@ -41,10 +37,6 @@ menuItem
 -i "polyBevel.png";
 
 menuItem
--c "BevelPolygonOptions;"
--ob 1;
-
-menuItem
 -l "Extrude"
 -c "PolyExtrude"
 -rp "E"
@@ -60,19 +52,11 @@ menuItem
 -c "performPolyMove \"\" 0"
 -i "polyMoveVertex.png";
 
-menuItem
--c "MovePolygonComponentOptions"
--ob 1;
-
 if (`about -api` >= 20180000){
 menuItem
 -l "Circularize"
 -c "performPolyCircularize 0"
 -i "polyCircularize.png";
-
-menuItem
--c "PolyCircularizeOptions"
--ob 1;
 }
 
 menuItem
@@ -414,17 +398,9 @@ menuItem
 -i "nConstraintTransform.png";
 
 menuItem
--c "performCreateDynamicConstraint 1 \"transform\";"
--ob 1;
-
-menuItem
 -l "Component to Component"
 -c "performCreateDynamicConstraint 0 \"pointToPoint\";"
 -i "nConstraintComponent.png";
-
-menuItem
--c "performCreateDynamicConstraint 1 \"pointToPoint\";"
--ob 1;
 
 menuItem
 -l "Self Component"
@@ -441,17 +417,9 @@ menuItem
 -i "nConstraintTearable.png";
 
 menuItem
--c "performCreateDynamicConstraint 1 \"tearableSurface\";"
--ob 1;
-
-menuItem
 -l "Force Field"
 -c "doCreateNConstraint force 0"
 -i "nConstraintForceField.png";
-
-menuItem
--c "performCreateDynamicConstraint 1 \"force\";"
--ob 1;
 
 menuItem
 -l "separator" 

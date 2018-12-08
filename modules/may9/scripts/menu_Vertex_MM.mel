@@ -61,10 +61,6 @@ menuItem
 -i "polyMoveVertex.png";
 
 menuItem
--c "MovePolygonComponentOptions"
--ob 1;
-
-menuItem
 -l "Detach"
 -c "DetachVertexComponent;"
 -i "polySplitVertex.png";
@@ -298,10 +294,6 @@ menuItem
 -i "nConstraintTransform.png";
 
 menuItem
--c "performCreateDynamicConstraint 1 \"transform\";"
--ob 1;
-
-menuItem
 -l "Self Component"
 -c "performCreateComponentNConstraint 0;"
 -i "nConstraintComponent.png";
@@ -316,26 +308,14 @@ menuItem
 -i "nConstraintComponent.png";
 
 menuItem
--c "performCreateDynamicConstraint 1 \"pointToPoint\";"
--ob 1;
-
-menuItem
 -l "Tearable Surface"
 -c "performCreateDynamicConstraint 0 \"tearableSurface\";"
 -i "nConstraintTearable.png";
 
 menuItem
--c "performCreateDynamicConstraint 1 \"tearableSurface\";"
--ob 1;
-
-menuItem
 -l "Force Field"
 -c "doCreateNConstraint force 0"
 -i "nConstraintForceField.png";
-
-menuItem
--c "performCreateDynamicConstraint 1 \"force\";"
--ob 1;
 
 menuItem
 -l "separator" 

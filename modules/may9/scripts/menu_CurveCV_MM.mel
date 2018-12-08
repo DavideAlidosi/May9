@@ -137,17 +137,9 @@ menuItem
 -i "nConstraintForceField.png" ;
 
 menuItem
--c "performCreateDynamicConstraint 1 \"pointToPoint\"" 
--ob 1;
-
-menuItem
 -l "Transform Constraint" 
 -c "doCreateNConstraint transform 0" 
 -i "nConstraintTransform.png";
-
-menuItem
--c "performCreateDynamicConstraint 1 \"force\"" 
--ob 1;
 
 setParent -m ..;
 

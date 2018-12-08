@@ -96,10 +96,6 @@ menuItem
 -rp "NW" 
 -i "polyBevel.png";
 
-menuItem
--c "BevelPolygonOptions;" 
--ob 1;
-
 if (`size($polyCheck)` != 0){
 menuItem
 -l "Sudivide Shell" 
@@ -130,10 +126,6 @@ menuItem
 -c "BridgeEdge;" 
 -rp "NE" 
 -i "polyBridge.png";
-
-menuItem
--c "BridgeEdgeOptions;" 
--ob 1;
 
 menuItem
 -l "Delete Edge" 

@@ -24,10 +24,6 @@ menuItem
 -i "polyBevel.png";
 
 menuItem
--c "BevelPolygonOptions;" 
--ob 1;
-
-menuItem
 -l "Keep Faces Together On" 
 -c "string $myExtrudeFace[] = `ls -sl-typ \"polyExtrudeFace\" -tl 1`; setAttr ($myExtrudeFace[0] + \".keepFacesTogether\") 1;" 
 -i "rvViewingPipelineOn.png";
