@@ -9,14 +9,10 @@ menuItem
 -i "polyBridge.png";
 
 menuItem
--l "Poke"
--c "PokePolygon;"
+-l "Connect"
+-c "EnterConnectTool"
 -rp "SE"
--i "polyPoke.png";
-
-menuItem
--c "PokePolygonOptions;"
--ob 1;
+-i "connect_NEX32.png";
 
 menuItem
 -l "Multi Cut Tool"
@@ -65,17 +61,9 @@ menuItem
 -i "polyChipOff.png";
 
 menuItem
--c "ExtractFaceOptions"
--ob 1;
-
-menuItem
 -l "Duplicate"
 -c "performPolyChipOff 0 1"
 -i "polyDuplicateFacet.png";
-
-menuItem
--c "DuplicateFaceOptions"
--ob 1;
 
 menuItem
 -l "separator" 
@@ -284,12 +272,8 @@ menuItem
 
 menuItem
 -l "Create Hair"
--c "createHair 8 8 10 0 0 0 0 5 0 1 1 2"
--i "hairCreate.png";
-
-menuItem
 -c "CreateHairOptions"
--ob 1;
+-i "hairCreate.png";
 
 menuItem
 -l "separator" 
