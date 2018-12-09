@@ -31,16 +31,6 @@ menuItem
 -ob 1;
 
 menuItem
--l "Select All"
--c "SelectAll" 
--i "aselect.png"
--stp "mel";
-
-menuItem
--l "separator" 
--d 1;
-
-menuItem
 -l "UV Toolkit" 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
@@ -73,6 +63,11 @@ menuItem
 -d 1;
 
 menuItem
+-l "Select All"
+-c "SelectAll" 
+-i "aselect.png";
+
+menuItem
 -l "Selection to Edges" 
 -c "ConvertSelectionToContainedEdges" 
 -i "edges_NEX.png";
@@ -86,22 +81,6 @@ menuItem
 -l "Selection to Vertices" 
 -c "PolySelectConvert 3" 
 -i "vertex_NEX.png";
-
-menuItem
--l "Symmetrize" 
--c "SymmetrizeUV" 
--rp "SE" 
--i "polySymmetrizeUV.png";
-
-menuItem
--c "SymmetrizeUVOptions" 
--ob 1;
-
-menuItem
--l "Match Shells Scale" 
--c "uvTkDoSetTexelDensity" 
--rp "SW" 
--i "polyScaleUV.png";
 
 setParent -m ..;
 
