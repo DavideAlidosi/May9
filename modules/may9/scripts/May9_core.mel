@@ -70,7 +70,7 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 if (`optionVar -q "May9ActivationCheck"` < 10000){
 
 	// Store inital hotkeySet
-	optionVar -sv da_initialHotekey `hotkeySet -q -current`;
+	optionVar -sv da_initialHotkey `hotkeySet -q -current`;
 
 	// Preload hotkeys
 	source May9_hotkeys.mel;

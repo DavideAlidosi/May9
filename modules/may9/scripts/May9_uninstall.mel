@@ -24,7 +24,7 @@ if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 }
 
 // Set back to prior Hotkeyset
-hotkeySet -edit -current `optionVar -q "da_initialHotekey"`;
+hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
 
 // Delete May9_Full, Core and Next hotkeySets
 catchQuiet (`hotkeySet -e -delete May9_Core`);
@@ -39,7 +39,7 @@ optionVar -rm da_hyperShadeDockingLayout;
 optionVar -rm da_connectWindowLeftSHD;
 optionVar -rm da_connectWindowRightSHD;
 optionVar -rm da_DuplicateVariableWarnings;
-optionVar -rm da_initialHotekey;
+optionVar -rm da_initialHotkey;
 
 // Set May9 Intallation in idle mode
 optionVar -iv May9ActivationCheck 32;
