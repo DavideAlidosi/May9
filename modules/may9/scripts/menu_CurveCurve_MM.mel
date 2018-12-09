@@ -299,7 +299,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Emit Particle From CV"
+-l "Emit nParticle From CV"
 -c "NEmitFromObjectOptions"
 -i "emitter.png";
 
@@ -337,17 +337,9 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "separator" 
--d 1;
-
-menuItem
--l "Create Soft Body"
--c "soft -c"
+-l "Create nSoft Body"
+-c "CreateNSoftBodyOptions"
 -i "soft.png";
-
-menuItem
--c "CreateSoftBodyOptions"
--ob 1;
 
 menuItem
 -l "separator" 
