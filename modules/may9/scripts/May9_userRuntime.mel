@@ -247,14 +247,6 @@ runTimeCommand
 	da_TogglePrimitiveAsTool;
 
 runTimeCommand
-	-annotation "Open Connection Editor or if Avaiable Context Connector"
-	-category "Custom Scripts.May9_Next.Rigging"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("if (`pluginInfo -q -l contextConnector` == 1){\n\tda_ContextConnector;\n}else{\n\tConnectionEditor;\n}")
-	da_ConnectionEditor;
-
-runTimeCommand
 	-annotation "Auto Point Constraint For Controller"
 	-category "Custom Scripts.May9_Next.Rigging"
 	-hotkeyCtx ""
@@ -2879,14 +2871,6 @@ runTimeCommand
 	da_ToggleMouseWheel;
 
 runTimeCommand
-	-annotation "Open ContextConnector Window"
-	-category "Custom Scripts.May9_Next.Rigging"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("global contextConnector_win\ntry:\n\tcontextConnector_win.close()\n\tcontextConnector_win.deleteLater()\nexcept: pass\n\ncontextConnector_win = contextConnector.main.MainWindow() \ncontextConnector_win.show()\n\ncontextConnector_win.updateSelection() ")
-	da_ContextConnector;
-
-runTimeCommand
 	-annotation "Combine Curves"
 	-category "Custom Scripts.May9_Next.Object"
 	-hotkeyCtx ""
@@ -2917,14 +2901,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $mySkyDomeLight[] = `listRelatives -s`;\nstring $myColorCheck[] = `listConnections ($mySkyDomeLight[0] + \".color\")`;\nif($myColorCheck[0] == \"\"){\n    createNode aiPhysicalSky;\n    string $myPhysicalSky[] = `ls -sl`;\n    connectAttr ($myPhysicalSky[0] + \".outColor\") ($mySkyDomeLight[0] + \".color\");\n}else{\n    warning \"A color node is already connected to the current Sky Dome\";\n}")
 	da_AddPhysicalSky;
-
-runTimeCommand
-	-annotation "Open Massive UI"
-	-category "Custom Scripts.May9_Next.Rigging"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("import maya.cmds as cmds\n\ntry:\n    mass_attr.mass_attr.Display_Massive_Toggle()\nexcept Exception: \n    cmds.warning( \"To use this command enable \\\"Massive Attribute Modifier\\\" from May9 Next menu\" )")
-	da_MassAttr;
 
 runTimeCommand
 	-annotation "Toggle Two Sided Lighting"

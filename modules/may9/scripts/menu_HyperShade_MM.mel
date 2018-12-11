@@ -45,19 +45,10 @@ menuItem
 -c "da_TxManager" 
 -i "TXManagerShelf.png";
 
-if (`pluginInfo -q -l contextConnector` == 1){
-menuItem
--l "Context Connector"
--c "da_ContextConnector"
--i "out_geoConnectable.png"
--stp "mel";
-}else{
 menuItem
 -l "Connection Editor"
 -c "ConnectionEditor"
--i "out_list.png"
--stp "mel";
-}
+-i "out_list.png";
 
 menuItem
 -l "Expression Editor" 

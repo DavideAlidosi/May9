@@ -61,17 +61,10 @@ menuItem
 -rp "SW" 
 -i "greasePencilExport.png";
 
-if (`pluginInfo -q -l contextConnector` == 1){
-menuItem
--l "Context Connector"
--c "da_ContextConnector"
--i "out_geoConnectable.png";
-}else{
 menuItem
 -l "Connection Editor"
 -c "ConnectionEditor"
 -i "out_list.png";
-}
 
 menuItem
 -l "Expression Editor" 

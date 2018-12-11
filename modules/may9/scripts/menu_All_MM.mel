@@ -200,24 +200,10 @@ menuItem -bld 1
 -rp "W"
 -i "kinSplineHandle.png";
 
-if (`pluginInfo -q -l contextConnector`){
-menuItem -bld 1 
--l "Context Connector"
--c "da_ContextConnector"
--i "out_geoConnectable.png";
-}else{
 menuItem -bld 1 
 -l "Connection Editor"
 -c "ConnectionEditor"
 -i "out_list.png";
-}
-
-if (`pluginInfo -q -l mass_attr`){
-menuItem -bld 1 
--l "Massive Attribute Modifier"
--c "da_MassAttr"
--i "RS_multiple_filters.png";
-}
 
 menuItem -bld 1 
 -l "Expression Editor"
