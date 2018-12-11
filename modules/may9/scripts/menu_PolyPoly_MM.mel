@@ -32,15 +32,6 @@ menuItem
 -rp "N"
 -i "da_booleanFullIntersect.png";
 
-if (`pluginInfo -q -loaded bool` == 1){
-menuItem
--l "Bool Tool"
--c "import booltoolUtils; booltoolUtils.createBoolTool()"
--i "Bool_Logo_Shelf.png"
--rp "S"
--stp "python";
-}
-
 setParent -m ..;
 
 menuItem
@@ -192,14 +183,6 @@ menuItem
 
 menuItem
 -d 1;
-
-if (`pluginInfo -q -loaded SOuP` == 1){
-menuItem
--l "Mesh Fitting"
--c "meshFitting_SOuP().gui()"
--i "out_rayProject.xpm" 
--stp "python";
-}
 
 menuItem
 -l "Fill Hole"
@@ -424,31 +407,6 @@ menuItem
 -l "Texture Deformer"
 -c "CreateTextureDeformer"
 -i "textureDeformer.png";
-
-if (`pluginInfo -q -loaded SOuP` == 1){
-
-menuItem
--l "Tension Blend Shape"
--c "da_TensionBlendShape"
--i "out_tensionBlendShape.xpm";
-
-menuItem
--l "Collide"
--sm 1
--i "out_collide.xpm";
-
-menuItem
--l "Outward"
--c "da_CollideOutward"
--i "polyBooleansDifference.png";
-
-menuItem
--l "Inward"
--c "da_CollideInward"
--i "polyBooleansUnion.png";
-
-setParent -m ..;
-}
 
 menuItem
 -d 1;

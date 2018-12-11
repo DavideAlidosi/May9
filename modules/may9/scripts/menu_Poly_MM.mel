@@ -155,13 +155,6 @@ menuItem
 -c "MASHcreateOptions"
 -i "MASH_CreateNetwork.png";
 
-if (`pluginInfo -q -loaded SOuP` == 1){
-menuItem
--l "Shatter Mesh"
--c "da_ShatterMesh"
--i "out_shatter.xpm";
-}
-
 menuItem 
 -d 1;
 
@@ -174,25 +167,6 @@ menuItem
 -l "Smooth"
 -c "da_Subdivision"
 -i "polySmooth.png";
-
-menuItem 
--d 1;
-
-if (`pluginInfo -q -loaded proSets` == 1){
-menuItem
--l "Create ProSets"
--c "import proSetsAPI;proSetsAPI.createProSet();mel.eval('AttributeEditor;OutlinerWindow')"
--i "out_proSet.png"
--stp "python";
-}
-
-if (`pluginInfo -q -loaded SOuP` == 1){
-menuItem
--l "Component Manager"
--c "componentsManager_SOuP().main()"
--i "out_group.xpm"
--stp "Python";
-}
 
 menuItem
 -d 1;
@@ -449,14 +423,6 @@ menuItem
 -c "cMuscleConvertSkin()"
 -i "cMuscle_skin_convert.png";
 
-if (`pluginInfo -q -loaded ngSkinTools` == 1){
-menuItem
--l "ngSkin Tools"
--c "from ngSkinTools.ui.mainwindow import MainWindow\nMainWindow.open()"
--i "ngSkinTools.ico"
--stp "python";
-}
-
 menuItem
 -l "Unbind Skin"
 -c "DetachSkinOptions"
@@ -468,16 +434,6 @@ menuItem
 -l "UV Mapping"
 -sm 1
 -i "polyUnfoldUVs.png";
-
-if (`pluginInfo -q -loaded SOuP` == 1){
-menuItem
--l "Viewport UV"
--c "da_ViewportUV"
--i "out_mapToMesh.xpm";
-
-menuItem
--d 1;
-}
 
 menuItem
 -l "Select All"
