@@ -36,19 +36,25 @@ setParent -m ..;
 
 menuItem
 -l "Combine"
--c "CombinePolygons;"
+-c "CombinePolygons"
 -rp "NE"
 -i "polyUnite.png";
 
 menuItem
--c "CombinePolygonsOptions;"
+-c "CombinePolygonsOptions"
 -ob 1;
 
 menuItem
 -l "Target Weld"
--c "MergeVertexTool;da_SelectMulti"
--rp "S"
+-c "MergeVertexTool;da_BackToObjectMode;da_SelectMulti"
+-rp "SE"
 -i "weld_NEX32.png";
+
+menuItem
+-l "Smooth"
+-c "da_Subdivision"
+-rp "S"
+-i "polySmooth.png";
 
 menuItem
 -l "Brushes"
@@ -119,16 +125,6 @@ menuItem
 -i "polyBooleansDifference.png";
 
 menuItem
--l "Trans Attr"
--c "performTransferAttributes 0"
--rp "SE"
--i "polyTransferAttributes.png";
-
-menuItem
--c "performTransferAttributes 1"
--ob 1;
-
-menuItem
 -l "Auto Bevel"
 -c "da_AutoBevel"
 -rp "NW"
@@ -139,14 +135,6 @@ menuItem
 -c "PolyExtrude"
 -rp "E"
 -i "polyExtrudeFacet.png";
-
-menuItem
--l "Connect Shapes"
--c "da_ConnectShapes"
--i "da_OneToMany.png";
-
-menuItem
--d 1;
 
 menuItem
 -l "MASH"
@@ -176,23 +164,22 @@ menuItem
 -i "polyMesh.png";
 
 menuItem
--l "Smooth"
--c "da_Subdivision"
--rp "S"
--i "polySmooth.png";
+-l "Fill Hole"
+-c "FillHole"
+-i "polyCloseBorder.png";
 
 menuItem
 -d 1;
 
 menuItem
--l "Fill Hole"
--c "FillHole"
--i "polyCloseBorder.png";	
+-l "Transfer Attributes"
+-c "performTransferAttributes 1"
+-i "polyTransferAttributes.png";
 
 menuItem
--l "Mirror"
--c "MirrorPolygonGeometryOptions"
--i "polyMirrorGeometry.png";
+-l "Connect Shapes"
+-c "da_ConnectShapes"
+-i "da_OneToMany.png";
 
 setParent -m ..;
 

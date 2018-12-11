@@ -17,7 +17,7 @@ menuItem
 menuItem
 -l "Target Weld"
 -c "MergeVertexTool;da_BackToObjectMode;da_SelectMulti"
--rp "S"
+-rp "SE"
 -i "weld_NEX32.png";
 
 menuItem
@@ -101,54 +101,10 @@ menuItem
 -i "polyBevel.png";
 
 menuItem
--l "Select Edges"
--sm 1
--rp "SE"
--i "edges_NEX.png";
-
-menuItem
--l "By Right Angle"
--c "da_EdgeRightAngle"
--rp "SE"
--i "da_rightAngle.png";
-
-menuItem
--l "By Straight Angle"
--c "da_EdgeStraightAngle"
--rp "E"
--i "da_sraightAngle.png";
-
-menuItem
--l "By Acute Angle"
--c "da_EdgeAcuteAngle"
+-l "Smooth"
+-c "da_Subdivision"
 -rp "S"
--i "da_acuteAngle.png";
-
-menuItem
--l "Inside"
--c "da_EdgeInside"
--rp "NE"
--i "da_insideEdge.png";
-
-menuItem
--l "On Border"
--c "da_EdgeBorder"
--rp "N"
--i "da_borderEdge.png";
-
-menuItem
--l "Hard"
--c "da_EdgeHard"
--rp "SW"
--i "da_hardEdge.png";
-
-menuItem
--l "Soft"
--c "da_EdgeSoft"
--rp "W"
--i "da_softEdge.png";
-
-setParent -m ..;
+-i "polySmooth.png";
 
 menuItem
 -l "Create MASH Network"
@@ -162,14 +118,6 @@ menuItem
 -l "Mesh Edit"
 -sm 1
 -i "polyMesh.png";
-
-menuItem
--l "Smooth"
--c "da_Subdivision"
--i "polySmooth.png";
-
-menuItem
--d 1;
 
 menuItem
 -l "Fill Hole"
