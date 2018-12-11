@@ -45,8 +45,8 @@ hotkey -keyShortcut "Return" -ctl -name ("da_FreezeDelNonDefNameCommand");
 // CTRL hotkeys
 hotkey -keyShortcut "f" -ctl -name ("da_FrameOnlySelectedNameCommand");
 hotkey -keyShortcut "p" -ctl -name ("da_ParentAndPositionNameCommand");
-hotkey -keyShortcut "j" -ctl -name ("da_ConnectionEditorNameCommand");
-hotkey -keyShortcut "k" -ctl -name ("da_MassAttrNameCommand");
+hotkey -keyShortcut "j" -ctl -name ("ConnectionEditorNameCommand");
+hotkey -keyShortcut "k" -ctl -name ("ChannelControlEditorNameCommand");
 
 // Alt hotkeys
 hotkey -keyShortcut "1" -alt -name ("da_TogglePerspNameCommand");
@@ -575,3 +575,15 @@ nameCommand
 	-sourceType "mel"
 	-command ("da_HighQualityDispMesh")
 	da_HighQualityDispMeshNameCommand;
+
+nameCommand
+	-annotation "ChannelControlEditorNameCommand"
+	-sourceType "mel"
+	-command ("ChannelControlEditor")
+	ChannelControlEditorNameCommand;
+
+nameCommand
+	-annotation "ConnectionEditorNameCommand"
+	-sourceType "mel"
+	-command ("ConnectionEditor")
+	ConnectionEditorNameCommand;

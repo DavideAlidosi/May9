@@ -5,7 +5,7 @@ int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
 
 menuItem
 -l "Duplicate" 
--c "duplicatePreset(1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1)" 
+-c "duplicate -smartTransform" 
 -rp "N" 
 -i "da_duplicate.png";
 
@@ -50,6 +50,23 @@ menuItem
 menuItem
 -l "Off" 
 -c "da_DisableReference" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Bounding Box" 
+-sm 1
+-i "blackbox.png";
+
+menuItem
+-l "On" 
+-c "da_EnableBoundingBox" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_DisableBoundingBox" 
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;

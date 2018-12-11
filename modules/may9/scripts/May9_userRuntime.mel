@@ -1,4 +1,20 @@
 runTimeCommand
+	-annotation "Enable Bounding Box"
+	-category "Custom Scripts.May9_Next.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideLevelOfDetail\") 1;\n}")
+	da_EnableBoundingBox;
+
+runTimeCommand
+	-annotation "Disable Bounding Box"
+	-category "Custom Scripts.May9_Next.Object"
+	-hotkeyCtx ""
+	-commandLanguage "mel"
+	-command ("string $objectTransform[] = `ls -sl -tr`;\nfor ($each in $objectTransform){\n    setAttr ($each +\".overrideEnabled\") 0;\n    setAttr ($each +\".overrideLevelOfDetail\") 0;\n}")
+	da_DisableBoundingBox;
+
+runTimeCommand
 	-annotation "Create IK for selected curve"
 	-category "Custom Scripts.May9_Next.Rigging"
 	-hotkeyCtx ""

@@ -49,6 +49,12 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_EnableBoundingBox`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_DisableBoundingBox`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_IkOnCurve`);
 
 catchQuiet (`runTimeCommand -e -del

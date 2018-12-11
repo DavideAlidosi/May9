@@ -38,10 +38,6 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "To Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
     menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "out_camera.png";
     menuItem -p $menuMain -l "Current Workspace" -c "da_CloseAllPanel" -i "RS_refresh_layer.png";
-    
-    menuItem -d 1 -l "Built in Plug-ins";
-    menuItem -p $menuMain -l "Context Connector" -c "if (`pluginInfo -q -l contextConnector`){unloadPlugin contextConnector;pluginInfo -edit -autoload false contextConnector;} else {loadPlugin contextConnector;pluginInfo -edit -autoload true contextConnector;}" -cb (`pluginInfo -q -l contextConnector`);
-    menuItem -p $menuMain -l "Massive Attribute Modifier" -c "if (`pluginInfo -q -l mass_attr`){unloadPlugin mass_attr;pluginInfo -edit -autoload false mass_attr;} else {loadPlugin mass_attr;pluginInfo -edit -autoload true mass_attr;}" -cb (`pluginInfo -q -l mass_attr`);
 
     menuItem -d 1 -l "May9 Next";
     menuItem -p $menuMain -l "About" -c "da_AboutMay9" -i "menuIconHelp.png";
