@@ -453,8 +453,9 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "separator" 
--d 1;
+-l "Select"
+-sm 1
+-i "aselect.png";
 
 menuItem
 -l "Select All"
@@ -481,6 +482,18 @@ menuItem
 -l "Selection to Edges"
 -c "ConvertSelectionToEdgePerimeter"
 -i "UVTkEdge.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Create Quick Set"
+-c "CreateQuickSelectSet" 
+-i "out_objectSet.png"
+-stp "mel";
+
+setParent -m ..;
 
 setParent -m ..;
 

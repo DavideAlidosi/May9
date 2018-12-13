@@ -20,8 +20,8 @@ menuItem
 -i "selectByHierarchy.png";
 
 menuItem
--l "Create Set" 
--c "CreateSetOptions" 
+-l "Create Quick Set" 
+-c "CreateQuickSelectSet" 
 -rp "S" 
 -i "out_objectSet.png";
 
@@ -36,6 +36,20 @@ menuItem
 -c "da_SelectObjectMaterial" 
 -rp "E" 
 -i "out_phongE.png";
+
+menuItem
+-l "Show Selection" 
+-c "ShowSelectedObjects" 
+-i "RS_visible.png";
+
+menuItem
+-l "Hide Selection" 
+-c "HideSelectedObjects" 
+-i "RS_disable.png";
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Reference" 
