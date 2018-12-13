@@ -1,7 +1,7 @@
 // Un-load main Plug-ins
+catchQuiet (`unloadPlugin May9_Next`);
 catchQuiet (`unloadPlugin May9_Pro`);
-unloadPlugin May9_Next;
-unloadPlugin MMtoKey;
+catchQuiet (`unloadPlugin MMtoKey`);
 
 // Remove auto load main Plug-ins
 catchQuiet (`pluginInfo -e -a 0 May9_Next`);
