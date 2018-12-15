@@ -9,6 +9,9 @@ catchQuiet(dagMenuProc("", ""));
 // Inizialize Break Connections
 channelBoxCommand -break;
 
+// Inizialize Main Create Menu
+ModCreateMenu mainCreateMenu;
+
 // Inizialize May9_userRuntime
 global proc May9_userRuntime(){
     source May9_userRuntime.mel;
