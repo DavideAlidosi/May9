@@ -33,6 +33,7 @@ menuItem
 -rp "S"
 -i "out_objectSet.png";
 
+if ($MaterialCheck || $DAGCheck == 0){
 menuItem
 -l "Select by Shader" 
 -c "da_SelectObjectMaterial" 
@@ -41,6 +42,7 @@ menuItem
 menuItem
 -l "separator" 
 -d 1;
+}
 
 menuItem
 -l "Display" 
@@ -86,7 +88,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Bounding Box" 
+-l "Bounding Box    " 
 -sm 1
 -i "blackbox.png";
 
