@@ -4,38 +4,57 @@ int $ShapesCheck = `outlinerEditor -q -shp $UnderPointerPanel`;
 int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
 
 menuItem
--l "Duplicate" 
--c "duplicate -smartTransform" 
--rp "N" 
--i "da_duplicate.png";
-
-menuItem
--c "DuplicateSpecialOptions"
--ob 1;
-
-menuItem
 -l "Select Hierarchy" 
 -c "SelectHierarchy" 
--rp "NE" 
+-rp "N" 
 -i "selectByHierarchy.png";
 
 menuItem
--l "Create Quick Set" 
--c "CreateQuickSelectSet" 
--rp "S" 
--i "out_objectSet.png";
+-l "DAG Only" 
+-c "da_ToggleDagNode" 
+-rp "NE" 
+-cb (1 == $DAGCheck);
 
 menuItem
--l "Show Local Axes" 
--c "ToggleLocalRotationAxes;" 
+-l "Shapes" 
+-c "da_ToggleShapes" 
+-rp "E" 
+-cb (1 == $ShapesCheck);
+
+menuItem
+-l "Materials" 
+-c "da_ToggleMaterial" 
 -rp "SE" 
--i "polyNormalSetToFace.png";
+-cb (1 == $MaterialCheck);
+
+menuItem
+-l "Create Quick Set" 
+-c "CreateQuickSelectSet"
+-rp "S"
+-i "out_objectSet.png";
 
 menuItem
 -l "Select by Shader" 
 -c "da_SelectObjectMaterial" 
--rp "E" 
--i "out_phongE.png";
+-i "out_layeredShader.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Display" 
+-sm 1
+-i "RS_visible.png";
+
+menuItem
+-l "Toggle Visibility" 
+-c "ToggleVisibilityAndKeepSelection" 
+-i "out_blendColors.png";
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Show Selection" 
@@ -47,9 +66,7 @@ menuItem
 -c "HideSelectedObjects" 
 -i "RS_disable.png";
 
-menuItem
--l "separator" 
--d 1;
+setParent -m ..;
 
 menuItem
 -l "Reference" 
@@ -118,25 +135,6 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
-
-menuItem
--l "separator" 
--d 1;
-
-menuItem
--l "DAG Only" 
--c "da_ToggleDagNode" 
--cb (1 == $DAGCheck);
-
-menuItem
--l "Shapes" 
--c "da_ToggleShapes" 
--cb (1 == $ShapesCheck);
-
-menuItem
--l "Materials" 
--c "da_ToggleMaterial" 
--cb (1 == $MaterialCheck);
 
 setParent -m ..;
 
