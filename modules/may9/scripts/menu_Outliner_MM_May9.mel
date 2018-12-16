@@ -13,19 +13,19 @@ menuItem
 -l "DAG Only" 
 -c "da_ToggleDagNode" 
 -rp "NE" 
--cb (1 == $DAGCheck);
+-cb ($DAGCheck);
 
 menuItem
 -l "Shapes" 
 -c "da_ToggleShapes" 
 -rp "E" 
--cb (1 == $ShapesCheck);
+-cb ($ShapesCheck);
 
 menuItem
 -l "Materials" 
 -c "da_ToggleMaterial" 
 -rp "SE" 
--cb (1 == $MaterialCheck);
+-cb ($MaterialCheck);
 
 menuItem
 -l "Create Quick Set" 
