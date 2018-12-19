@@ -49,6 +49,21 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_AiHighSample`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiLowSample`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiWarmLight`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiNeutralLight`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiColdLight`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_EnableBoundingBox`);
 
 catchQuiet (`runTimeCommand -e -del
