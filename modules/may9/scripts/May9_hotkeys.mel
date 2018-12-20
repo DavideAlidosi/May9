@@ -26,8 +26,6 @@ hotkey -keyShortcut "v" -ctl -alt -sht -name ("da_PasteSelectionNameCommand");
 hotkey -keyShortcut "g" -ctl -alt -sht -name ("da_CreateSetNameCommand");
 hotkey -keyShortcut "m" -ctl -alt -sht -name ("da_ToggleShelfNameCommand");
 hotkey -keyShortcut "r" -ctl -alt -sht -name ("da_ToggleResolutionGateNameCommand");
-hotkey -keyShortcut "q" -ctl -alt -sht -name ("da_MMtoKey_cleanNameCommand");
-//hotkey -keyShortcut "z" -ctl -alt -sht -name ("da_MMtoKeyManagerNameCommand");
 hotkey -keyShortcut "s" -ctl -alt -sht -name ("da_KeyKeyedOnlyNameCommand");
 hotkey -keyShortcut "p" -ctl -alt -sht -name ("da_CtrlParentConstraintNameCommand");
 hotkey -keyShortcut "t" -ctl -alt -sht -name ("da_CtrlPointConstraintNameCommand");
@@ -102,11 +100,11 @@ hotkey -keyShortcut "\\" -name ("STRSTweakModeOnNameCommand");
 hotkey -keyShortcut "\\" -releaseName ("STRSTweakModeOffNameCommand");
 
 // Maya 2019 TTF and resigned Help hotkeys
-if (`about -api` >= 20190000){
+/*if (`about -api` >= 20190000){
 hotkey -keyShortcut "F1" -name ("");
 hotkey -keyShortcut "F1" -releaseName ("TypeToFindNameCommand");
 hotkey -keyShortcut "F1" -sht -name ("HelpNameCommand");
-}
+}*/
 
 
 // nameCommand set
@@ -502,12 +500,6 @@ nameCommand
 	SelectHierarchyNameCommand;
 
 nameCommand
-	-annotation "da_MMtoKey_cleanNameCommand"
-	-sourceType "mel"
-	-command ("da_MMtoKey_clean")
-	da_MMtoKey_cleanNameCommand;
-
-nameCommand
 	-annotation "toggleShelfTabsNameCommand"
 	-sourceType "mel"
 	-command ("toggleShelfTabs")
@@ -538,13 +530,13 @@ nameCommand
 	da_KeyKeyedOnlyNameCommand;
 
 
-if (`about -api` >= 20190000){
+/*if (`about -api` >= 20190000){
 nameCommand
 	-annotation "HelpNameCommand"
 	-sourceType "mel"
 	-command ("Help")
 	HelpNameCommand;
-}
+}*/
 
 nameCommand
 	-annotation "da_SmoothPreviewOffNameCommand"

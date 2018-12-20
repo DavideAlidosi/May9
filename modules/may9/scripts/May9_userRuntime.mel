@@ -847,14 +847,6 @@ runTimeCommand
 	da_EdgesToLoopToCurve;
 
 runTimeCommand
-	-annotation "Clean Sourced Marking Menus"
-	-category "Custom Scripts.May9_Next.MMtoKey"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("while cmds.popupMenu(\"mm_1\", q=True, ex=True): cmds.deleteUI(\"mm_1\")\nwhile cmds.popupMenu(\"mm_2\", q=True, ex=True): cmds.deleteUI(\"mm_2\")")
-	da_MMtoKey_clean;
-
-runTimeCommand
 	-annotation "Reset All Transformations"
 	-category "Custom Scripts.May9_Next.Object"
 	-hotkeyCtx ""
@@ -1037,14 +1029,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("string $test = `file -q -sn`;\n\nif (size($test)){\n\tstring $myResult = `confirmDialog -title \"Confirm\" -message \"Reset to Saved?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n\tstring $currentScenePath = `file -q -sn`;\n\tfile -f -open $currentScenePath;\n\tinViewMessage -pos topCenter -msg \"Revert to Saved\" -fade;\n\t}\n\telse inViewMessage -pos topCenter -msg \"Revert cancelled\" -fade;\n}\n\nelse{\n\tconfirmDialog -title \"Untitled scene\" -message \"Is not possible revert untitled scene.\"\n\t-button \"OK\" -defaultButton \"OK\";\n}")
 	da_RevertToSave;
-
-runTimeCommand
-	-annotation "Set MM based on cursor position"
-	-category "Custom Scripts.May9_Next.MMtoKey"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("MMtoKey.ui()")
-	da_MMtoKeyManager;
 
 runTimeCommand
 	-annotation "Add Divisions to Polygonal Object"
@@ -1491,7 +1475,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("try:\n    MMtoKey.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
+	-command ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
 	da_MMtoKey_press;
 
 runTimeCommand
@@ -1499,7 +1483,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.MMtoKey"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("MMtoKey.releaseSelected()")
+	-command ("May9_Next.releaseSelected()")
 	da_MMtoKey_release;
 
 runTimeCommand

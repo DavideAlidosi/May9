@@ -49,10 +49,10 @@ class Menu(object):
         i = 0
         for item in item_list:
             if preferences["preset_radial"] and i < len(cls.POSITIONS):
-                cmds.menuItem(stp="python", c="MMtoKey.engine.setPreset('%s')" % item, rp=cls.POSITIONS[i], label=item)
+                cmds.menuItem(stp="python", c="May9_Next.engine.setPreset('%s')" % item, rp=cls.POSITIONS[i], label=item)
                 i += 1
             else:
-                cmds.menuItem(stp="python", c="MMtoKey.engine.setPreset('%s')" % item, label=item)
+                cmds.menuItem(stp="python", c="May9_Next.engine.setPreset('%s')" % item, label=item)
 
     @staticmethod
     def _mel(file_name, **kwargs):
@@ -63,7 +63,7 @@ class Menu(object):
     @staticmethod
     def _python(module_name, **kwargs):
         """show python generated temp menu"""
-        importlib.import_module("MMtoKey.menus." + module_name).run(cmds.popupMenu("mm_%i" % kwargs["b"], **kwargs))
+        importlib.import_module("May9_Next.menus." + module_name).run(cmds.popupMenu("mm_%i" % kwargs["b"], **kwargs))
 
 
 class Command(object):
@@ -80,7 +80,7 @@ class Command(object):
         elif language == cls.PYTHON:
             exec command
         else:
-            importlib.import_module("MMtoKey.commands." + command).run()
+            importlib.import_module("May9_Next.commands." + command).run()
 
 
 class DefaultData(object):
@@ -413,19 +413,6 @@ class Engine(object):
         Menu.hide()
         if not self._preset_changed and (not self._is_menu_open or self._last_preset["command_always"]):
             Command.run(self._last_preset["command"], self._last_preset["command_type"])
-
-    def setPreset(self, preset):
-        """change current preset. do not call marking menu"""
-        self._preset_changed = True     # do not call no-click command this release
-        self._last_preset = self.cluster["preset"][preset]
-        if cmds.headsUpDisplay('MMtoKeyHUD', ex=True):
-            cmds.headsUpDisplay('MMtoKeyHUD', remove=True)
-        Menu.show(self._last_preset["menu_type"], self._last_preset["menu"], self.preferences, b=Menu.LMB,
-                  pmc=self._postMenu, **self._preset_modifiers)
-        if self.preferences["preset_hud"]:
-            cmds.headsUpDisplay('MMtoKeyHUD', s=self.preferences["preset_hud_s"], b=self.preferences["preset_hud_b"],
-                                label='MMtoKey preset', ba='center', lfs='large', dfs='large', c=lambda: preset,
-                                ev='NewSceneOpened')
 
     def pressCustom(self, **kwargs):
         self._is_menu_open = False

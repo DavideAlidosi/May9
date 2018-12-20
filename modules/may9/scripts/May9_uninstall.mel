@@ -371,9 +371,6 @@ catchQuiet (`runTimeCommand -e -del
 	da_EdgesToLoopToCurve`);
 
 catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_clean`);
-
-catchQuiet (`runTimeCommand -e -del
 	da_ResetTransform`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -441,9 +438,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_RevertToSave`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKeyManager`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_PolyDivision`);
@@ -1175,6 +1169,12 @@ catchQuiet (`runTimeCommand -e -del
 	da_SepareCurves`);
 
 // Remove May9 Pro runtime commands
+
+catchQuiet (`runTimeCommand -e -del
+	da_MMtoKeyManager`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_MMtoKey_clean`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_ConnectionEditor`);
