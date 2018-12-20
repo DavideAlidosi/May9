@@ -3,7 +3,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiSamples\") 3;\n\ninViewMessage -pos topCenter -msg \"High Quality Samples On\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n\tsetAttr ($each +\".aiSamples\") 3;\n}\n\ninViewMessage -pos topCenter -msg \"High Quality Samples On\" -fade;")
 	da_AiHighSample;
 
 runTimeCommand
@@ -11,7 +11,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n\tsetAttr ($each +\".aiSamples\") 1;\n\ninViewMessage -pos topCenter -msg \"High Quality Samples Off\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n\tsetAttr ($each +\".aiSamples\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"High Quality Samples Off\" -fade;")
 	da_AiLowSample;
 
 runTimeCommand
@@ -19,7 +19,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n    setAttr ($each +\".aiUseColorTemperature\") 1;\n\tsetAttr ($each +\".aiColorTemperature\") 5500;\n\ninViewMessage -pos topCenter -msg \"Warm Light Enable\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    setAttr ($each +\".aiUseColorTemperature\") 1;\n\tsetAttr ($each +\".aiColorTemperature\") 5500;\n}\n\ninViewMessage -pos topCenter -msg \"Warm Light Enable\" -fade;")
 	da_AiWarmLight;
 
 runTimeCommand
@@ -27,7 +27,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n    setAttr ($each +\".aiUseColorTemperature\") 1;\n\tsetAttr ($each +\".aiColorTemperature\") 6500;\n\ninViewMessage -pos topCenter -msg \"Neutral Light Enable\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    setAttr ($each +\".aiUseColorTemperature\") 1;\n\tsetAttr ($each +\".aiColorTemperature\") 6500;\n}\n\ninViewMessage -pos topCenter -msg \"Neutral Light Enable\" -fade;")
 	da_AiNeutralLight;
 
 runTimeCommand
@@ -35,7 +35,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Render"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n    setAttr ($each +\".aiUseColorTemperature\") 1;\n\tsetAttr ($each +\".aiColorTemperature\") 7500;\n\ninViewMessage -pos topCenter -msg \"Cold Light Enable\" -fade;")
+	-command ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    setAttr ($each +\".aiUseColorTemperature\") 1;\n\tsetAttr ($each +\".aiColorTemperature\") 7500;\n}\n\ninViewMessage -pos topCenter -msg \"Cold Light Enable\" -fade;")
 	da_AiColdLight;
 
 runTimeCommand

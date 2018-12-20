@@ -12,6 +12,31 @@ menuItem
 -i "out_defaultLightList.png";
 
 menuItem
+-l "Edit Light" 
+-c "AttributeEditor" 
+-rp "SW" 
+-i "attributes.png";
+
+menuItem
+-l "Temperature" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "Cold" 
+-c "da_AiColdLight";
+
+menuItem
+-l "Neutral" 
+-c "da_AiNeutralLight";
+
+menuItem
+-l "Warm" 
+-c "da_AiWarmLight";
+
+setParent -m ..;
+
+menuItem
 -l "Normalize" 
 -sm 1
 -i "MtoA_Logo.png";
@@ -19,7 +44,6 @@ menuItem
 menuItem
 -l "On" 
 -c "da_AiLightNormalize" 
--rp "N" 
 -i "rvViewingPipelineOn.png";
 
 menuItem
@@ -29,11 +53,23 @@ menuItem
 
 setParent -m ..;
 
+menuItem 
+-d 1;
+
 menuItem
--l "Edit Light" 
--c "AttributeEditor" 
--rp "SW" 
--i "attributes.png";
+-l "Samples" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "Low" 
+-c "da_AiLowSample";
+
+menuItem
+-l "High" 
+-c "da_AiHighSample";
+
+setParent -m ..;
 
 menuItem
 -l "Visible" 
