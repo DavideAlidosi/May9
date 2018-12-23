@@ -53,6 +53,12 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_MMtoKey_press`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_AiMehsesLight`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -610,12 +616,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_LightList`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_press`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_HgConnectionLevel`);

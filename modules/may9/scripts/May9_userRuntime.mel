@@ -1,4 +1,20 @@
 runTimeCommand
+	-annotation "Enable MMtoKey"
+	-category "Custom Scripts.May9_Next.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
+	da_MMtoKey_press;
+
+runTimeCommand
+	-annotation "Disable MMtoKey"
+	-category "Custom Scripts.May9_Next.Toggle"
+	-hotkeyCtx ""
+	-commandLanguage "python"
+	-command ("May9_Next.releaseSelected()")
+	da_MMtoKey_release;
+
+runTimeCommand
 	-annotation "Enable AiMesh Light on multiple mesh"
 	-category "Custom Scripts.May9_Next.Render"
 	-hotkeyCtx ""
@@ -819,7 +835,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Animate"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("channelBoxCommand -key;\nstring $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n    string $mayAnimCurves[] = `listConnections -t animCurve -c 1 -scn 1 $each`;\n\tfor ($any in $mayAnimCurves){\n    \t    setKeyframe $any;\n\t}\n}")
+	-command ("channelBoxCommand -key;\n\nstring $myAnimCurves[] = `listConnections -t animCurve -c 1 -scn 1`;\n\nif (size($myAnimCurves) == 0){\n    setKeyframe;    \n}else{\n\tfor ($any in $myAnimCurves){\n    \t    setKeyframe $any;\n\t}\n}")
 	da_KeyKeyedOnly;
 
 runTimeCommand
@@ -1477,22 +1493,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if (`about -api` >= 20180000){\n\tcallPython \"maya.app.renderSetup.lightEditor.views.editorUI\" \"createLightEditorWindow\" {};\n}else{\n\tcallPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};\n}")
 	da_LightList;
-
-runTimeCommand
-	-annotation "Enable MMtoKey"
-	-category "Custom Scripts.May9_Next.MMtoKey"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
-	da_MMtoKey_press;
-
-runTimeCommand
-	-annotation "Disable MMtoKey"
-	-category "Custom Scripts.May9_Next.MMtoKey"
-	-hotkeyCtx ""
-	-commandLanguage "python"
-	-command ("May9_Next.releaseSelected()")
-	da_MMtoKey_release;
 
 runTimeCommand
 	-annotation "Show HG Connection of a node(s)"
