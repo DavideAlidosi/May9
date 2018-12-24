@@ -8,7 +8,7 @@ May9 Next streamline the most common commands into a single keyboard button (Z),
 
 Installation
 1) If is open close Autodesk Maya
-2) Copy may9 folder and may9.mod present in this archive in:
+2) Copy modules folder present in this archive in:
 	Windows: \Users\<username>\Documents\maya\modules
 	Mac OS: /Users/<username>/Library/Preferences/Autodesk/maya/modules
 	Linux: ~<username>/maya/modules
@@ -16,11 +16,10 @@ Installation
 
 
 Release Note
-- Unified installation process, is highly recommended a new installation instead update it.
-- Compatibility to any Workspace, anyway the use of Maya Classic is high suggested.
-- Included hotkeys are added and do not substitute the user Hotkey Set.
-- Tested and develop on Autodesk Maya 2018.4 and Autodesk Maya 2017.5.
-- Is high recommended to update Autodesk Arnold (MtoA) to 3.1.0.1 or later.
+- Unified installation process, is highly recommended a new installation instead update it
+- Compatibility to any Workspace, anyway the use of Maya Classic is high suggested
+- May9 Next Hotkey Set are added over standards ones and do not substitute the user hotkeys
+- Tested and develop on Autodesk Maya 2019, Autodesk Maya 2018.5 and Autodesk Maya 2017.5
 
 
 Exclusive script
@@ -51,12 +50,14 @@ Exclusive script
 - Control Constraint: this set of scripts constraint a controller to a single or multiple controlled object(s)
 
 
-Version 3.2 highlight
-- Unified Maya versions installer
-- Completion of modular structure
-- Polish hotkeys scheme, see userguide for more information
-- May9 hotkeys sets are added over the current hotkeySet during installation
-- Add back Maya 2017 support
+Version 10 highlight
+- Add support to Maya 2019
+- May9 Next Hotkey Sets are added over standard ones without overwrite the user ones
+- Incorporate MMtoKey into May9 Next Plug-in, so is possible use an indipendent MMtoKey aside
+- Imporved usability of objects and components contextual MMs
+- Complete the support of Modeling Toolkit
+- Removed support to third party plug-ins
+- Global polish and optimization
 
 
 Useful links
@@ -70,23 +71,3 @@ Copyright (c) Davide Alidosi (https://www.highend3d.com/maya/script/may9-pro-a-n
 
 MMtoKey is under custom license: you can free modify source code of script, include to your preferences pack and redistribute, but you're not allowed to sell this script
 Copyright (c) Andrey Menshikov (https://www.highend3d.com/maya/script/free-mmtokey-for-maya)
-
-contextConnector is licensed under MIT license (https://opensource.org/licenses/MIT)
-Originally Copyright (c) by Pavel Korolyov (https://www.highend3d.com/maya/script/context-connector-for-maya)
-Adaptaded as plug-in and ported to Pyside2 by Davide Alidosi
-
-Massive Attribute Editor is licensed under Creative Commons Attribution 4.0 (https://creativecommons.org/licenses/by/4.0/)
-Originally Copyright (c) by Mehdi Louala (https://www.highend3d.com/maya/script/context-connector-for-maya)
-Adaptaded as plug-in by Davide Alidosi
-
-Bool is licensed under custom EULA (https://www.mainframe.co.uk/s/Bool-EULA.pdf)
-Copyright (c) Mainframe North
-
-ProSets is licensed under custom EULA (https://www.mainframe.co.uk/s/ProSets-EULA.pdf)
-Copyright (c) Mainframe North
-
-ngSkinTools is licensed under custom license (https://www.ngskintools.com/license/)
-Copyright (c) Viktoras Makauskas
-
-SOuP is licensed under custom license
-Copyright (c) Peter Shipkov

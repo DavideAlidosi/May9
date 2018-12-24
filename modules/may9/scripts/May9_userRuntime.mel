@@ -1,6 +1,6 @@
 runTimeCommand
 	-annotation "Enable MMtoKey"
-	-category "Custom Scripts.May9_Next.Toggle"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "python"
 	-command ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
@@ -8,10 +8,10 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Disable MMtoKey"
-	-category "Custom Scripts.May9_Next.Toggle"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "python"
-	-command ("May9_Next.releaseSelected()")
+	-command ("May9_Next.releaseSelected()\nwhile cmds.popupMenu(\"mm_1\", q=True, ex=True): cmds.deleteUI(\"mm_1\")\nwhile cmds.popupMenu(\"mm_2\", q=True, ex=True): cmds.deleteUI(\"mm_2\")")
 	da_MMtoKey_release;
 
 runTimeCommand
@@ -245,14 +245,6 @@ runTimeCommand
 	-commandLanguage "mel"
 	-command ("if(`modelEditor -q -rom $currentPanel` == \"arnoldViewOverride\"){\n    ActivateViewport20;\n}else{\n    setRendererAndOverrideInModelPanel $gViewport2 arnoldViewOverride $currentPanel;\n    arnoldViewOverrideOptionBox;\n}")
 	da_ArnoldRenderViewport;
-
-runTimeCommand
-	-annotation "Reset Hypershade Layout"
-	-category "Custom Scripts.May9_Next.Scene"
-	-hotkeyCtx ""
-	-commandLanguage "mel"
-	-command ("HypershadeWindow;\n\nstring $hyperShadePanelName = `hyperShadePanelName`;\nevalDeferred -lp (\"deleteUI -wnd ($hyperShadePanelName + \\\"Window\\\")\");\n\nif (`optionVar -ex da_hyperShadeDockingLayout`){\n    optionVar -sv hyperShadeDockingLayout `optionVar -q \"da_hyperShadeDockingLayout\"`;\n}else{\n    optionVar -rm hyperShadeDockingLayout;\n}")
-	da_ResetHypershade;
 
 runTimeCommand
 	-annotation "Enable Air Push to nRigids"
@@ -952,7 +944,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Recreate the persp camera if needed"
-	-category "Custom Scripts.May9_Next.Scene"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $camera = findStartUpCamera( \"persp\" );\nstring $camera2[] = `camera -n persp -hc \"viewSet -p %camera\"`;\n\ncamera -e -sc 0 $camera; delete \"persp\";\nrename $camera2[0] \"persp\";\ncamera -e -sc 1 \"persp\";")
@@ -1048,7 +1040,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Revert the current scene at last save"
-	-category "Custom Scripts.May9_Next.Scene"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $test = `file -q -sn`;\n\nif (size($test)){\n\tstring $myResult = `confirmDialog -title \"Confirm\" -message \"Reset to Saved?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n\tstring $currentScenePath = `file -q -sn`;\n\tfile -f -open $currentScenePath;\n\tinViewMessage -pos topCenter -msg \"Revert to Saved\" -fade;\n\t}\n\telse inViewMessage -pos topCenter -msg \"Revert cancelled\" -fade;\n}\n\nelse{\n\tconfirmDialog -title \"Untitled scene\" -message \"Is not possible revert untitled scene.\"\n\t-button \"OK\" -defaultButton \"OK\";\n}")
@@ -2400,7 +2392,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Single Perspective/Four View"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 1){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daFourView\";\n    doSwitchPanes(1, {\"single\", $myCurPane});\n    inViewMessage -pos topCenter -msg \"Perspective/Four View layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 1\n")
@@ -2408,7 +2400,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Node Editor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 2){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daNodeEditor\";\n    inViewMessage -pos topCenter -msg \"Node Editor layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 2")
@@ -2416,7 +2408,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout UV TextureEditor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 3){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daUvEditor\";\n    \n    //Hide Texture\n    string $texWinName[] = `getPanel -sty polyTexturePlacementPanel`;\n    textureWindowToggleTextureImageOff( $texWinName[0], \"textureWindow\" );\n    txtWndUpdateEditor( $texWinName[0], \"textureWindow\", \"null\", 101 );\n    \n    inViewMessage -pos topCenter -msg \"UV Texture layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 3")
@@ -2424,7 +2416,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Graph Editor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 4){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daGraphEditor\";\n    inViewMessage -pos topCenter -msg \"Graph Editor\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 4")
@@ -2432,7 +2424,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Shape Editor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 5){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daShapeEditor\";\n    inViewMessage -pos topCenter -msg \"Shape/Pose layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 5")
@@ -2440,7 +2432,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Reference Editor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 6){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daReferenceEditor\";\n    inViewMessage -pos topCenter -msg \"Reference layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 6")
@@ -2448,7 +2440,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Component Editor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 7){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daComponentEditor\";\n    inViewMessage -pos topCenter -msg \"Component layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 7")
@@ -2456,7 +2448,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Relationship Editor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 8){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daRelationshipEditor\";\n    inViewMessage -pos topCenter -msg \"Relationship layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 8")
@@ -2464,7 +2456,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Dynamic Relationship Editor"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 9){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daDynamicRelationshipEditor\";\n    inViewMessage -pos topCenter -msg \"Dynamic Relationship layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 9")
@@ -2472,7 +2464,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Layout Hypershade"
-	-category "Custom Scripts.May9_Next.Layout"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daHyperShade\";\n    inViewMessage -pos topCenter -msg \"Hypershade layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 10")
@@ -2496,7 +2488,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "Close All Opened Panel"
-	-category "Custom Scripts.May9_Next.Scene"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("updateWorkspacesList;\nworkspaceLayoutManager -reset;\n\ninViewMessage -pos topCenter -msg \"Current Workspace Resetted\" -fade;")
@@ -2512,7 +2504,7 @@ runTimeCommand
 
 runTimeCommand
 	-annotation "About May9 Next Window"
-	-category "Custom Scripts.May9_Next.Scene"
+	-category "Custom Scripts.May9_Next.System"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
 	-command ("string $myResult = `confirmDialog -title \"About\" -message (\"\\nDavide Alidosi's \" +$may9Version+\"        \\n\"+$may9CodeName+\"\") \n    -button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;")

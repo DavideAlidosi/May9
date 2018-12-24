@@ -147,9 +147,6 @@ catchQuiet (`runTimeCommand -e -del
 	da_ArnoldRenderViewport`);
 
 catchQuiet (`runTimeCommand -e -del
-	da_ResetHypershade`);
-
-catchQuiet (`runTimeCommand -e -del
 	da_nRigidsAirPush`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -1182,6 +1179,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_clean`);
+	
+catchQuiet (`runTimeCommand -e -del
+	da_ResetHypershade`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_ConnectionEditor`);
