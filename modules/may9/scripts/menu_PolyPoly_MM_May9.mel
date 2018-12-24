@@ -51,10 +51,10 @@ menuItem
 -i "weld_NEX32.png";
 
 menuItem
--l "Smooth"
--c "da_Subdivision"
+-l "Fill Hole"
+-c "FillHole"
 -rp "S"
--i "polySmooth.png";
+-i "polyCloseBorder.png";
 
 menuItem
 -l "Brushes"
@@ -122,7 +122,7 @@ menuItem
 -l "Cut by Plane"
 -c "da_PlaneCutter"
 -rp "SW"
--i "polyBooleansDifference.png";
+-i "polyCut.png";
 
 menuItem
 -l "Auto Bevel"
@@ -135,6 +135,19 @@ menuItem
 -c "PolyExtrude"
 -rp "E"
 -i "polyExtrudeFacet.png";
+
+menuItem
+-l "Transfer Attributes"
+-c "performTransferAttributes 1"
+-i "polyTransferAttributes.png";
+
+menuItem
+-l "Connect Shapes"
+-c "da_ConnectShapes"
+-i "da_OneToMany.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "MASH"
@@ -155,31 +168,6 @@ menuItem
 -l "Scatter on a Surface"
 -c "da_SurfaceScatterMash"
 -i "out_MASH_Points.png";
-
-setParent -m ..;
-
-menuItem
--l "Mesh Edit"
--sm 1
--i "polyMesh.png";
-
-menuItem
--l "Fill Hole"
--c "FillHole"
--i "polyCloseBorder.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Transfer Attributes"
--c "performTransferAttributes 1"
--i "polyTransferAttributes.png";
-
-menuItem
--l "Connect Shapes"
--c "da_ConnectShapes"
--i "da_OneToMany.png";
 
 setParent -m ..;
 
