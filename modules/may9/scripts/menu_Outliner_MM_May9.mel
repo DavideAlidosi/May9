@@ -45,6 +45,32 @@ menuItem
 }
 
 menuItem
+-l "Wire Color" 
+-sm 1
+-i "da_blue.png";
+
+menuItem
+-l "Default" 
+-c "da_NoColorOverrides" 
+-i "da_blue.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Red" 
+-c "da_RedOverrides" 
+-i "da_red.png";
+
+menuItem
+-l "Green" 
+-c "da_GreenOverrides" 
+-i "da_green.png";
+
+setParent -m ..;
+
+menuItem
 -l "Display" 
 -sm 1
 -i "RS_visible.png";
@@ -69,6 +95,10 @@ menuItem
 -i "RS_disable.png";
 
 setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Reference" 

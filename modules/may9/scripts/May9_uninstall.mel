@@ -53,6 +53,15 @@ savePrefsChanges;
 
 // Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
+	da_RedOverrides`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_GreenOverrides`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_NoColorOverrides`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del

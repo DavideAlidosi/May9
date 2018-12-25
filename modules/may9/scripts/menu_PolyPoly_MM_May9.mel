@@ -32,6 +32,12 @@ menuItem
 -rp "N"
 -i "da_booleanFullIntersect.png";
 
+menuItem
+-l "Cut by Plane"
+-c "da_PlaneCutter"
+-rp "S"
+-i "polyCut.png";
+
 setParent -m ..;
 
 menuItem
@@ -117,12 +123,6 @@ menuItem
 -i "artAttr.png";
 
 setParent -m ..;
-
-menuItem
--l "Cut by Plane"
--c "da_PlaneCutter"
--rp "SW"
--i "polyCut.png";
 
 menuItem
 -l "Auto Bevel"
