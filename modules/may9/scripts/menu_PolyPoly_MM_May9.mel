@@ -3,9 +3,15 @@ int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
 menuItem
+-l "Multi Cut Tool"
+-c "dR_multiCutTool;"
+-rp "W"
+-i "multiCut_NEX32.png";
+
+menuItem
 -l "Booleans"
 -sm 1
--rp "W"
+-rp "SW"
 -i "polyBooleansIntersection.png";
 
 menuItem
@@ -29,7 +35,7 @@ menuItem
 menuItem
 -l "Original and Intersect"
 -c "da_BooleanFullIntersect"
--rp "N"
+-rp "SE"
 -i "da_booleanFullIntersect.png";
 
 menuItem
