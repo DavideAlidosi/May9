@@ -1,16 +1,8 @@
 // Un-load main Plug-ins
-catchQuiet (`unloadPlugin May9_Next`);
+unloadPlugin May9_Next;
 
 // Remove auto load main Plug-ins
-catchQuiet (`pluginInfo -e -a 0 May9_Next`);
-
-// Un-load legacy Plug-ins
-catchQuiet (`unloadPlugin May9_Pro`);
-catchQuiet (`unloadPlugin MMtoKey`);
-
-// Remove auto load legacy Plug-ins
-catchQuiet (`pluginInfo -e -a 0 May9_Pro`);
-catchQuiet (`pluginInfo -e -a 0 MMtoKey`);
+pluginInfo -e -a 0 May9_Next;
 
 // Save Plug-ins auto load prefs
 pluginInfo -spp;
@@ -31,9 +23,7 @@ if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
 
 // Delete May9_Full, Core and Next hotkeySets
-catchQuiet (`hotkeySet -e -delete May9_Core`);
-catchQuiet (`hotkeySet -e -delete May9_Full`);
-catchQuiet (`hotkeySet -e -delete May9_Next`);
+hotkeySet -e -delete May9_Next;
 
 // Remove May9 Next main menu
 da_May9MenuRemover;
@@ -127,7 +117,6 @@ catchQuiet (`runTimeCommand -e -del
 catchQuiet (`runTimeCommand -e -del
 	da_HighQualitySmoothMesh`);
 
-// Remove runtimeCommand
 catchQuiet (`runTimeCommand -e -del
 	da_HighQualityDispMesh`);
 
@@ -1180,50 +1169,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_SepareCurves`);
-
-// Remove May9 Pro runtime commands
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKeyManager`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_clean`);
-	
-catchQuiet (`runTimeCommand -e -del
-	da_ResetHypershade`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_ConnectionEditor`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_ResetUI`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_OpenSubdDisplace`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_OpenSubdNoDisplace`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_ContextConnector`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MassAttr`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_ViewportUV`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_ShatterMesh`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_CollideOutward`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_CollideInward`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_TensionBlendShape`);
 
 // Un-install confirmation
 inViewMessage -pos midCenterTop -msg "May9 Next un-installed" -fade;
