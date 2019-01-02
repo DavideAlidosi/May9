@@ -1,0 +1,175 @@
+global proc Outliner_MM_May9(){
+
+string $UnderPointerPanel = `getPanel -underPointer`;
+int $DAGCheck = `outlinerEditor -q -dag $UnderPointerPanel`;
+int $ShapesCheck = `outlinerEditor -q -shp $UnderPointerPanel`;
+int $MaterialCheck = `outlinerEditor -q -sam $UnderPointerPanel`;
+
+menuItem
+-l "Select Hierarchy" 
+-c "SelectHierarchy" 
+-rp "N" 
+-i "selectByHierarchy.png";
+
+menuItem
+-l "DAG Only" 
+-c "da_ToggleDagNode" 
+-rp "NE" 
+-cb ($DAGCheck);
+
+menuItem
+-l "Shapes" 
+-c "da_ToggleShapes" 
+-rp "E" 
+-cb ($ShapesCheck);
+
+menuItem
+-l "Materials" 
+-c "da_ToggleMaterial" 
+-rp "SE" 
+-cb ($MaterialCheck);
+
+menuItem
+-l "Create Quick Set" 
+-c "CreateQuickSelectSet"
+-rp "S"
+-i "out_objectSet.png";
+
+if ($MaterialCheck || $DAGCheck == 0){
+menuItem
+-l "Select by Shader" 
+-c "da_SelectObjectMaterial" 
+-i "out_layeredShader.png";
+
+menuItem
+-l "separator" 
+-d 1;
+}
+
+menuItem
+-l "Wire Color" 
+-sm 1
+-i "da_blue.png";
+
+menuItem
+-l "Default" 
+-c "da_NoColorOverrides" 
+-i "da_blue.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Red" 
+-c "da_RedOverrides" 
+-i "da_red.png";
+
+menuItem
+-l "Green" 
+-c "da_GreenOverrides" 
+-i "da_green.png";
+
+setParent -m ..;
+
+menuItem
+-l "Display" 
+-sm 1
+-i "RS_visible.png";
+
+menuItem
+-l "Toggle Visibility" 
+-c "ToggleVisibilityAndKeepSelection" 
+-i "out_blendColors.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Show Selection" 
+-c "ShowSelectedObjects" 
+-i "RS_visible.png";
+
+menuItem
+-l "Hide Selection" 
+-c "HideSelectedObjects" 
+-i "RS_disable.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Reference" 
+-sm 1
+-i "selectByObject.png";
+
+menuItem
+-l "On" 
+-c "da_EnableReference" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_DisableReference" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Bounding Box    " 
+-sm 1
+-i "blackbox.png";
+
+menuItem
+-l "On" 
+-c "da_EnableBoundingBox" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_DisableBoundingBox" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Shading" 
+-sm 1
+-i "bevel.png";
+
+menuItem
+-l "On" 
+-c "da_PolyShade" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_PolyNoShade" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "X-Ray" 
+-sm 1
+-i "da_Xray.png";
+
+menuItem
+-l "On" 
+-c "displaySurface -x 1" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "displaySurface -x 0" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+}

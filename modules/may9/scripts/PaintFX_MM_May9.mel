@@ -1,0 +1,121 @@
+global proc PaintFX_MM_May9(){
+
+menuItem
+-l "PaintFX to Polygon" 
+-c "PaintEffectsToPoly;" 
+-rp "N" 
+-i "paintFXtoPoly.png";
+
+menuItem
+-c "PaintEffectsToPolyOptions;" 
+-ob 1;
+
+menuItem
+-l "PaintFX To Curve" 
+-c "PaintEffectsToCurve;" 
+-rp "E" 
+-i "paintFXtoCurve.png";
+
+menuItem
+-l "Simplify Stroke Curves" 
+-c "SimplifyStrokePathCurves;" 
+-rp "W" 
+-i "out_stroke.png";
+
+menuItem
+-l "Create Modifier" 
+-c "createLineModifier;" 
+-rp "S" 
+-i "toonLineModifier.png";
+
+menuItem
+-l "Get Brush" 
+-c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
+-rp "NE" 
+-i "paintEffectsBrushesLarge.png";
+
+menuItem
+-l "Surface Snap" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_BrushSurfaceSnap" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_BrushNoSurfaceSnap" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Surface Collide" 
+-sm 1;
+
+menuItem
+-l "Outside" 
+-c "da_BrushSurfaceCollideOutside";
+
+menuItem
+-l "Inside" 
+-c "da_BrushSurfaceCollideInside";
+
+menuItem
+-l "Both" 
+-c "da_BrushSurfaceCollideBoth";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Off" 
+-c "da_BrushNoSurfaceCollide" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Occupy Attraction" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_BrushOccupyAttraction" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_BrushNoOccupyAttraction" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Get Settings from Selected" 
+-c "setTemplateToCurrentBrush" 
+-i "RS_isolate.png";
+
+menuItem
+-l "Apply Settings to Selected" 
+-c "copyTemplateBrushToSelected" 
+-i "RS_import_layer.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Reset Brush" 
+-c "resetBrush" 
+-i "RS_disable.png";
+
+setParent -m ..;
+
+}

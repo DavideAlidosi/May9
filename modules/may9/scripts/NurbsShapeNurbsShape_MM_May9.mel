@@ -1,0 +1,53 @@
+global proc NurbsShapeNurbsShape_MM_May9(){
+
+menuItem
+-l "Connect Shapes" 
+-c "da_ConnectNurbsShapes" 
+-rp "N" 
+-i "da_OneToMany.png";
+
+menuItem
+-l "Component to Component" 
+-c "doCreateNConstraint pointToPoint 0" 
+-rp "W" 
+-i "nConstraintComponent.png";
+
+menuItem
+-l "Force Field" 
+-c "doCreateNConstraint force 0" 
+-rp "SW" 
+-i "nConstraintForceField.png";
+
+menuItem
+-l "Transform Constraint" 
+-c "doCreateNConstraint transform 0" 
+-rp "S" 
+-i "nConstraintTransform.png";
+
+menuItem
+-l "Point to Surface" 
+-c "doCreateNConstraint pointToSurface 0" 
+-rp "SE" 
+-i "nConstraintPointoSurface.png";
+
+menuItem
+-l "Slide on Surface" 
+-c "doCreateNConstraint slideOnSurface 0" 
+-rp "E" 
+-i "nConstraintSlideonSurface.png";
+
+setParent -m ..;
+
+menuItem
+-l "Lock Length" 
+-rp "NE" 
+-c "LockCurveLength" 
+-i "lockLength.png";
+
+menuItem
+-l "Unlock Length" 
+-rp "NW" 
+-c "UnlockCurveLength"  
+-i "unlockLength.png";
+
+}

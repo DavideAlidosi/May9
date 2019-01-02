@@ -1,0 +1,141 @@
+global proc Name_shellBase_MM_May9(){
+
+string $polyCheck[] = `filterExpand -ex true -selectionMask 12`;
+string $edgeCheck[] = `filterExpand -ex true -selectionMask 32`;
+
+menuItem
+-l "Extrude" 
+-c "PolyExtrude" 
+-rp "E" 
+-i "polyExtrudeFacet.png";
+
+menuItem
+-l "Select Edges" 
+-sm 1
+-rp "SE" 
+-i "edges_NEX.png";
+
+menuItem
+-l "On Border" 
+-c "da_EdgeBorder" 
+-rp "N" 
+-i "da_borderEdge.png";
+
+menuItem
+-l "Inside" 
+-c "da_EdgeInside" 
+-rp "NE" 
+-i "da_insideEdge.png";
+
+menuItem
+-l "By Straight Angle" 
+-c "da_EdgeStraightAngle" 
+-rp "E" 
+-i "da_sraightAngle.png" ;
+
+menuItem
+-l "By Right Angle" 
+-c "da_EdgeRightAngle" 
+-rp "SE" 
+-i "da_rightAngle.png";
+
+menuItem
+-l "By Acute Angle" 
+-c "da_EdgeAcuteAngle" 
+-rp "S" 
+-i "da_acuteAngle.png";
+
+menuItem
+-l "Hard" 
+-c "da_EdgeHard" 
+-rp "SW" 
+-i "da_hardEdge.png";
+
+menuItem
+-l "Soft" 
+-c "da_EdgeSoft" 
+-rp "W" 
+-i "da_softEdge.png";
+
+setParent -m ..;
+
+menuItem
+-l "Multi Cut Tool" 
+-c "dR_multiCutTool;" 
+-rp "W" 
+-i "multiCut_NEX32.png";
+if (`size($edgeCheck)` > 1){
+menuItem
+-l "Fill Hole" 
+-c "FillHole" 
+-rp "N" 
+-i "polyCloseBorder.png";
+}
+if (`size($polyCheck)` != 0){
+menuItem
+-l "Sculpt Geometry" 
+-c "SetMeshSculptTool" 
+-rp "N" 
+-i "Sculpt.png";
+}
+menuItem
+-c "ShowMeshSculptToolOptions" 
+-ob 1;
+
+menuItem
+-l "Smooth" 
+-c "SmoothPolygon" 
+-rp "S" 
+-i "polySmooth.png";
+
+menuItem
+-c "SmoothPolygonOptions;" 
+-ob 1;
+
+menuItem
+-l "Bevel" 
+-c "BevelPolygon;" 
+-rp "NW" 
+-i "polyBevel.png";
+
+if (`size($polyCheck)` != 0){
+menuItem
+-l "Sudivide Shell" 
+-sm 1
+-i "out_subdiv.png";
+
+menuItem
+-l "On" 
+-c "da_shellSubdiv" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_shellNoSubdiv" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+}
+
+menuItem
+-l "Detach Shell" 
+-c "da_shellDetach" 
+-i "error.png";
+
+if (`size($edgeCheck)` != 0){
+menuItem
+-l "Bridge" 
+-c "BridgeEdge;" 
+-rp "NE" 
+-i "polyBridge.png";
+
+menuItem
+-l "Delete Edge" 
+-c "DeletePolyElements;" 
+-rp "SW" 
+-i "polyDelEdgeVertex.png";
+}
+
+setParent -m ..;
+
+}
