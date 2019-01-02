@@ -1,4 +1,4 @@
-May9 Next 10 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next 10 RC1 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
@@ -53,7 +53,7 @@ Exclusive script
 Version 10 highlight
 - Add support to Maya 2019
 - May9 Next Hotkey Sets are added over standard ones without overwrite the user ones
-- Incorporate MMtoKey into May9 Next Plug-in, so is possible use an indipendent MMtoKey aside
+- Incorporate MMtoKey into May9 Next Plug-in
 - Imporved usability of objects and components contextual MMs
 - Complete the support of Modeling Toolkit
 - Removed support to third party plug-ins
