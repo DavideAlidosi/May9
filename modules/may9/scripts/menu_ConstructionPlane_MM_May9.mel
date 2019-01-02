@@ -1,0 +1,37 @@
+menuItem
+-l "Make Live" 
+-c "string $mySel[] = `ls -sl`;\nMakeLive;\nselect $mySel" 
+-rp "N" 
+-i "makeLive.png";
+
+menuItem
+-l "Unmake Live" 
+-c "makeLive -n" 
+-rp "NE" 
+-i "setEdRemoveCmd.png";
+
+menuItem
+-l "Pole Axis YX"
+-c "xform -a -ro 0 0 90"
+-rp "S"
+-i "da_z.png";
+
+menuItem
+-l "Pole Axis YZ"
+-c "xform -a -ro 0 90 0"
+-rp "E"
+-i "da_x.png";
+
+menuItem
+-l "Pole Axis XZ"
+-c "xform -a -ro 90 0 0"
+-rp "W"
+-i "da_y.png";
+
+menuItem
+-l "Quad Draw" 
+-c "dR_quadDrawTool" 
+-i "quadDraw_NEX32.png";
+
+setParent -m ..;
+

@@ -1,0 +1,168 @@
+int $particleCountCheck = `optionVar -q particleCountVisibility`;
+
+menuItem
+-l "Lattice" 
+-c "CreateLattice" 
+-rp "NE" 
+-i "lattice.png";
+
+menuItem
+-c "CreateLatticeOptions;" 
+-ob 1;
+
+menuItem
+-l "Cluster" 
+-c "CreateCluster" 
+-rp "E" 
+-i "cluster.png";
+
+menuItem
+-c "CreateClusterOptions" 
+-ob 1;
+
+menuItem
+-l "Add Deformer"
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png";
+
+menuItem
+-c "BendOptions;"
+-ob 1;
+
+menuItem
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png";
+
+menuItem
+-c "FlareOptions;"
+-ob 1;
+
+menuItem
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png";
+
+menuItem
+-c "SineOptions;"
+-ob 1;
+
+menuItem
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png";
+
+menuItem
+-c "SquashOptions;"
+-ob 1;
+
+menuItem
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png";
+
+menuItem
+-c "TwistOptions"
+-ob 1;
+
+menuItem
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png";
+
+menuItem
+-c "WaveOptions;"
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Add Fields" 
+-sm 1
+-i "posRadial.png";
+
+menuItem
+-l "Air" 
+-c "dynExecuteFieldCommands 1 \"air\"" 
+-i "posAir.png";
+
+menuItem
+-l "Drag" 
+-c "dynExecuteFieldCommands 1 \"drag\"" 
+-i "posDrag.png";
+
+menuItem
+-l "Gravity" 
+-c "dynExecuteFieldCommands 1 \"gravity\"" 
+-i "posGravity.png";
+
+menuItem
+-l "Newton" 
+-c "dynExecuteFieldCommands 1 \"newton\"" 
+-i "posNewton.png";
+
+menuItem
+-l "Radial" 
+-c "dynExecuteFieldCommands 1 \"radial\"" 
+-i "posRadial.png";
+
+menuItem
+-l "Turbulence" 
+-c "dynExecuteFieldCommands 1 \"turbulence\"" 
+-i "posTurbulence.png";
+
+menuItem
+-l "Uniform" 
+-c "dynExecuteFieldCommands 1 \"uniform\"" 
+-i "posUniform.png";
+
+menuItem
+-l "Vortex" 
+-c "dynExecuteFieldCommands 1 \"vortex\"" 
+-i "posVortex.png";
+
+menuItem
+-l "Volume Axis" 
+-c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
+-i "posVolumeAxis.png";
+
+setParent -m ..;
+
+menuItem
+-l "nConstraint" 
+-sm 1
+-i "menuIconConstraints.png";
+
+menuItem
+-l "Component to Component" 
+-c "doCreateNConstraint pointToPoint 0" 
+-i "nConstraintComponent.png";
+
+menuItem
+-l "Force Field" 
+-c "doCreateNConstraint force 0" 
+-i "nConstraintForceField.png";
+
+menuItem
+-l "Transform Constraint" 
+-c "doCreateNConstraint transform 0" 
+-i "nConstraintTransform.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "HUD Info" 
+-c "ToggleParticleCount" 
+-cb (1 == $particleCountCheck);
+
+setParent -m ..;
+

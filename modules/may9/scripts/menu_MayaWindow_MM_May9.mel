@@ -1,0 +1,219 @@
+string $panel = `getPanel -wf`;
+
+menuItem
+    -l "Visibility" 
+    -subMenu 1
+    -rp "NE" 
+	-i "RS_visible.png";
+
+menuItem
+    -l "Curves" 
+    -c "da_ToggleNurbsCurvesVis" 
+	-cb (`modelEditor -q -nurbsCurves $panel`)
+    -rp "NE";
+
+menuItem
+    -l "Polygons" 
+    -c "da_TogglePolyVis" 
+	-cb (`modelEditor -q -polymeshes $panel`)
+    -rp "N";
+
+menuItem
+    -l "Light" 
+    -c "da_ToggleLightVis" 
+	-cb (`modelEditor -q -lights $panel`)
+    -rp "NW";
+
+menuItem
+    -l "Joint" 
+    -c "da_ToggleJointVis" 
+	-cb (`modelEditor -q -joints $panel`)
+    -rp "SE";
+
+menuItem
+    -l "IK Handle" 
+    -c "da_ToggleIkVis" 
+	-cb (`modelEditor -q -ikHandles $panel`)
+    -rp "S";
+
+menuItem
+    -l "Locator" 
+    -c "da_ToggleLocVis" 
+	-cb (`modelEditor -q -locators $panel`);
+
+menuItem
+    -l "Deformers" 
+    -c "da_ToggleDefVis" 
+	-cb (`modelEditor -q -deformers $panel`)
+    -rp "W";
+
+menuItem
+    -l "Nurbs" 
+    -c "da_ToggleNurbsVis" 
+	-cb (`modelEditor -q -nurbsSurfaces $panel`)
+    -rp "E";
+
+setParent -m ..;
+
+menuItem
+    -l "UI Elements" 
+    -subMenu 1
+    -rp "NW" 
+	-i "out_displayLayer.png";
+
+menuItem
+    -l "Shelf" 
+    -c "ToggleShelf" 
+    -rp "SW" 
+    -cb (`workspaceControl -q -vis Shelf`);
+
+menuItem
+    -l "Shelf Tabs" 
+    -c "toggleShelfTabs" 
+    -rp "W" 
+    -cb (`optionVar -q shelfTabsVisible`);
+
+menuItem
+    -l "Menu Bars" 
+    -c "TogglePanelMenubar" 
+    -rp "NE" 
+    -cb (`optionVar -q allowMenusInPanels`);
+
+menuItem
+    -l "Icon Bars" 
+    -c "ToggleModelEditorBars" 
+    -rp "NW" 
+    -cb (false == `optionVar -q collapseIconBarsInPanels`);
+
+menuItem
+    -l "Main Menu Bars" 
+    -c "ToggleMainMenubar" 
+    -rp "E" 
+    -cb (`optionVar -q mainWindowMenubarVis`);
+
+menuItem
+    -l "Title Bar" 
+    -c "da_TitleBarToggle" 
+    -rp "N" 
+    -cb (`window -q -titleBar MayaWindow`);
+
+menuItem
+    -l "Save Workspace" 
+    -c "SaveCurrentWorkspace" 
+    -i "fileSave.png"
+    -rp "S";
+
+setParent -m ..;
+
+menuItem
+    -l "Shading" 
+    -subMenu 1
+    -rp "SE" 
+	-i "WireFrameOnShaded.png";
+
+menuItem
+    -l "Wireframe on Shaded" 
+    -c "da_ToggleWireOnShade" 
+    -rp "SE"  
+    -cb (`modelEditor -q -wos $panel`);
+
+menuItem
+    -l "Two Sided Lighting" 
+    -c "da_ToggleTwoSidedLighting" 
+    -rp "S" 
+    -cb (`modelEditor -q -tsl $panel`);
+
+menuItem
+    -l "X-Ray Active Components" 
+    -c "da_ToggleActiveComponentsXray" 
+    -rp "E" 
+    -cb (`modelEditor -q -acx $panel`);
+
+menuItem
+    -l "X-Ray Joints" 
+    -c "da_ToggleJointXray" 
+    -rp "NE" 
+    -cb (`modelEditor -q -jx $panel`);
+
+setParent -m ..;
+
+menuItem
+    -l "Viewport" 
+    -subMenu 1
+    -rp "SW" 
+	-i "MultisampleAA.png";
+
+menuItem
+    -l "Anti-Aliasing" 
+    -c "da_AntiAliasToggle" 
+    -rp "SW" 
+    -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
+
+if (`about -api` >= 20180000){
+menuItem
+    -l "Transparent Shadow" 
+    -c "da_TransparentShadowsToggle" 
+    -rp "SE" 
+    -cb (`getAttr "hardwareRenderingGlobals.transparentShadow"`);
+}
+
+menuItem
+    -l "Motion Blur" 
+    -c "da_motionBlurEnableToggle" 
+    -rp "S" 
+    -cb (`getAttr "hardwareRenderingGlobals.motionBlurEnable"`);
+
+menuItem
+    -l "Grid" 
+    -c "ToggleGrid" 
+    -rp "NW" 
+    -cb (`optionVar -q showGrid`);
+
+menuItem
+	-c "GridOptions" 
+	-ob 1;
+
+menuItem
+    -l "Ambient Occlusion" 
+    -c "da_ToggleAO" 
+    -rp "W" 
+    -cb (`getAttr "hardwareRenderingGlobals.ssaoEnable"`);
+
+setParent -m ..;
+
+menuItem
+-l "Front View" 
+-c "dR_DoCmd(\"viewFront\");" 
+-rp "S" 
+-i "da_z.png";
+
+menuItem
+-l "Side View" 
+-c "dR_DoCmd(\"viewRight\");" 
+-rp "E" 
+-i "da_x.png";
+
+menuItem
+-l "Perspective View" 
+-c "dR_DoCmd(\"viewPersp\");" 
+-rp "N" 
+-i "singlePerspLayout.png";
+
+menuItem
+-l "Top View" 
+-c "dR_DoCmd(\"viewTop\");" 
+-rp "W" 
+-i "da_y.png";
+
+menuItem
+-l "Add Image Plane" 
+-c "da_ImagesPlane" 
+-i "out_imagePlane.png";
+
+menuItem
+-l "Add Movie Plane" 
+-c "da_VideoImagesPlane" 
+-i "da_video_plane.png";
+
+setParent -m ..;
+

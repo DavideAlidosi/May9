@@ -1,0 +1,96 @@
+
+menuItem
+-l "Delete Unused Nodes" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
+-rp "S" 
+-i "deleteActive.png";
+
+menuItem
+-l "Select Object With Material" 
+-c "da_SelectObjectMaterial" 
+-rp "E" 
+-i "aselect.png";
+
+menuItem
+-l "Duplicate Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
+-rp "NE" 
+-i "duplicateReference.png";
+
+menuItem
+-l "Import Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
+-rp "NW" 
+-i "greasePencilImport.png";
+
+menuItem
+-l "Select All Nodes" 
+-c "select `listHistory -ac`" 
+-rp "W" 
+-i "createBinFromSelectedNodes.png";
+
+menuItem
+-l "Export Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
+-rp "SW" 
+-i "greasePencilExport.png";
+
+menuItem
+-l "Texture Link" 
+-c "TextureCentricUVLinkingEditor" 
+-i "textureEditor.png";
+
+menuItem
+-l "TX Manager" 
+-c "da_TxManager" 
+-i "TXManagerShelf.png";
+
+menuItem
+-l "Connection Editor"
+-c "ConnectionEditor"
+-i "out_list.png";
+
+menuItem
+-l "Expression Editor" 
+-c "ExpressionEditor" 
+-i "out_expression.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Create Common Nodes" 
+-sm 1
+-i "nodeGrapherAddNodes.png";
+
+menuItem
+-l "file" 
+-c "createRenderNodeCB -as2DTexture \"\" file \"\"" 
+-i "out_file.png";
+
+menuItem
+-l "ramp" 
+-c "createNode ramp" 
+-i "out_ramp.png";
+
+menuItem
+-l "layeredTexture" 
+-c "createNode layeredTexture" 
+-i "out_layeredTexture.png";
+
+menuItem
+-l "samplerInfo" 
+-c "createNode samplerInfo" 
+-i "out_samplerInfo.png";
+
+setParent -m ..;
+
+menuItem
+-l "Create Node" 
+-c "createNodeWindow" 
+-rp "SE" 
+-i "createNode.png";
+
+setParent -m ..;
+

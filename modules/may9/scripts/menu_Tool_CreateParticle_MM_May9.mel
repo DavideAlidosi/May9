@@ -1,0 +1,45 @@
+menuItem -itl 1
+-l "Tool Settings" 
+-c "toolPropertyWindow -inMainWindow true" 
+-rp "N" 
+-i "toolSettings.png";
+
+menuItem -itl 1 
+-l "Reset Settings" 
+-c "resetTool dynParticleContext" 
+-rp "S" 
+-i "CN_refresh.png";
+
+menuItem -itl 1 
+-l "Complete Tool" 
+-c "buildSelectMM;MarkingMenuPopDown;" 
+-rp "E" 
+-i "aselect.png";
+
+menuItem -itl 1 
+-l "Points Style" 
+-c "optionVar -stringValue NParticleStyle \"Points\";" 
+-i "nPartPoints.png";
+
+menuItem -itl 1 
+-l "Balls Style" 
+-c "optionVar -stringValue NParticleStyle \"Balls\";" 
+-i "nPartBalls.png";
+
+menuItem -itl 1 
+-l "Cloud Style" 
+-c "optionVar -stringValue NParticleStyle \"Cloud\";" 
+-i "nPartCloud.png";
+
+menuItem -itl 1 
+-l "ThickCloud Style" 
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
+-i "nPartThickCloud.png";
+
+menuItem -itl 1 
+-l "Water Style" 
+-c "optionVar -stringValue NParticleStyle \"Water\";" 
+-i "nPartWater.png";
+
+setParent -m ..;
+

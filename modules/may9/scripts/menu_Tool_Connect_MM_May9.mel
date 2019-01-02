@@ -1,0 +1,33 @@
+radioMenuItemCollection;
+
+menuItem -itl 1 
+-l "Slide" 
+-rp "S" 
+-c "nexOpt -e connectCurLmbMap slide; refresh -f; dR_updateCommandPanel" 
+-rb (`nexOpt -q connectCurLmbMap` == "slide");
+
+menuItem -itl 1 
+-l "Segments" 
+-rp "N" 
+-c "nexOpt -e connectCurLmbMap segments; refresh -f; dR_updateCommandPanel" 
+-rb (`nexOpt -q connectCurLmbMap` == "segments");
+
+menuItem -itl 1 
+-l "Pinch" 
+-rp "W" 
+-c "nexOpt -e connectCurLmbMap pinch; refresh -f; dR_updateCommandPanel" 
+-rb (`nexOpt -q connectCurLmbMap` == "pinch");
+
+menuItem -itl 1 
+-l "Complete Tool" 
+-c "buildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode" 
+-rp "E" 
+-i "aselect.png";
+
+menuItem -itl 1 
+-l "Reset Settings" 
+-c "mtk_initToolOptions(1, \"connect\"); nexCtx -resetManip; dR_updateCommandPanel" 
+-i "CN_refresh.png";
+
+setParent -m ..;
+

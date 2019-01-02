@@ -1,0 +1,52 @@
+string $currentCtx = `currentCtx`;
+int $reflectionCheck = `artAttrCtx -q -rn $currentCtx`;
+string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
+
+radioMenuItemCollection;
+
+menuItem -itl 1 
+-l "Z Axis" 
+-c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"z\" `currentCtx`;" 
+-rb ($reflectionDirection == "z") 
+-rp "SE";
+
+menuItem -itl 1 
+-l "Y Axis" 
+-c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"y\" `currentCtx`;" 
+-rb ($reflectionDirection == "y") 
+-rp "S";
+
+menuItem -itl 1 
+-l "X Axis" 
+-c "artAttrCtx -e -reflection  true `currentCtx`;\nartAttrCtx -e -ra \"x\" `currentCtx`;" 
+-rb ($reflectionDirection == "x") 
+-rp "SW";
+
+menuItem -itl 1 
+-l "Symmetry" 
+-c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
+-cb $reflectionCheck
+-rp "E";
+
+menuItem -itl 1 
+-l "Replace" 
+-c "artAttrPaintOperation artAttrCtx Replace;" 
+-rp "N";
+
+menuItem -itl 1 
+-l "Add" 
+-c "artAttrPaintOperation artAttrCtx Add;" 
+-rp "NE";
+
+menuItem -itl 1 
+-l "Scale" 
+-c "artAttrPaintOperation artAttrCtx Scale;" 
+-rp "NW";
+
+menuItem -itl 1 
+-l "Flood Smooth" 
+-c "artAttrPaintOperation artAttrCtx Smooth;\nartAttrCtx -e -clear `currentCtx`;" 
+-rp "W";
+
+setParent -m ..;
+
