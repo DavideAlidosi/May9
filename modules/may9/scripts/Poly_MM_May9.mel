@@ -144,6 +144,13 @@ menuItem
 -c "polyRemesh"
 -i "out_mesh.png";
 
+if (`about -api` >= 20180000){
+menuItem
+-l "Retopo"
+-c "polyRetopo"
+-i "out_polyCube.png";
+}
+
 menuItem
 -d 1;
 
