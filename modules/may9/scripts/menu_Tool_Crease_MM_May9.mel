@@ -1,5 +1,6 @@
 string $mySel[] = `ls -sl`;
 string $mySelShape[] = `listRelatives -s`;
+string $currentPanel = `getPanel -wf`;
 
 menuItem -itl 1 
 -l "No Crease" 
