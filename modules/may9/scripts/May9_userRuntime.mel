@@ -2875,7 +2875,7 @@ runTimeCommand
 	-category "Custom Scripts.May9_Next.Toggle"
 	-hotkeyCtx ""
 	-commandLanguage "mel"
-	-command ("if ($HUDCheck == false)\n    da_EnableHUD;\n    \nif ($HUDCheck == true)\n    da_CleanHUD;")
+	-command ("int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility` && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;\n\nif ($HUDCheck == false)\n    da_EnableHUD;\n    \nif ($HUDCheck == true)\n    da_CleanHUD;")
 	da_ToggleHUD;
 
 runTimeCommand

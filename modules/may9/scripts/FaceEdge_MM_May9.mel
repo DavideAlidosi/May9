@@ -1,0 +1,21 @@
+global proc FaceEdge_MM_May9(){
+
+menuItem
+-l "Wedge" 
+-c "WedgePolygon" 
+-rp "N" 
+-i "polyWedgeFace.png";
+
+menuItem
+-c "WedgePolygonOptions" 
+-ob 1;
+
+menuItem
+-l "Bevel" 
+-c "BevelPolygon" 
+-rp "NW" 
+-i "polyBevel.png";
+
+setParent -m ..;
+
+}

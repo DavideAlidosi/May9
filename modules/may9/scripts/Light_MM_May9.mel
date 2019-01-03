@@ -1,0 +1,51 @@
+global proc Light_MM_May9(){
+
+int $lightCheck = `renderManip -q -st`;
+
+menuItem
+-l "Light Linking" 
+-c "LightCentricLightLinkingEditor;" 
+-rp "W" 
+-i "out_defaultLightList.png";
+
+menuItem
+-l "Light Manipulators" 
+-c "da_ToggleLightManipulators" 
+-rp "E" 
+-cb (1 == $lightCheck);
+
+menuItem
+-l "Look Through" 
+-c "da_LookThruSelected" 
+-rp "N" 
+-i "snapshot.svg";
+
+menuItem
+-l "Persp View" 
+-c "dR_DoCmd(\"viewPersp\");" 
+-rp "S" 
+-i "singlePerspLayout.png";
+
+if (`about -api` >= 20180000){
+menuItem
+-l "Light Editor" 
+-c "da_LightList" 
+-rp "NW" 
+-i "light_manager.png";
+}else{
+menuItem
+-l "Light Editor" 
+-c "da_LightList" 
+-rp "NW" 
+-i "lightEditor.png";
+}
+
+menuItem
+-l "Edit Light" 
+-c "AttributeEditor" 
+-rp "SW" 
+-i "attributes.png";
+
+setParent -m ..;
+
+}

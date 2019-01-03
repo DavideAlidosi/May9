@@ -1,0 +1,27 @@
+global proc PolyBevel_MM_May9(){
+
+menuItem
+-l "Show Manips" 
+-c "setToolTo ShowManips" 
+-rp "N" 
+-i "showManip.png";
+
+menuItem
+-l "Edit Attributes" 
+-c "AttributeEditor" 
+-rp "S" 
+-i "attributes.png";
+
+menuItem
+-l "Chamfer On" 
+-c "string $myBevel[] = `ls -sl-typ \"polyBevel3\" -tl 1`; setAttr ($myBevel[0] + \".chamfer\") 1;" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Chamfer Off" 
+-c "string $myBevel[] = `ls -sl-typ \"polyBevel3\" -tl 1`; setAttr ($myBevel[0] + \".chamfer\") 0;" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+}

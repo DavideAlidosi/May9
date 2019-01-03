@@ -1,0 +1,103 @@
+global proc DynamicConstraint_MM_May9(){
+
+menuItem
+-l "nComponent Attribute" 
+-c "da_LastOpInStack" 
+-rp "S" 
+-i "attributes.png" ;
+
+menuItem
+-l "Remove nConstraint" 
+-c "dynamicConstraintRemove;" 
+-rp "N" 
+-i "nConstraintRemoveMembers.png";
+
+menuItem
+-l "Select Members" 
+-c "dynamicConstraintMembership \"select\";" 
+-rp "NW" 
+-i "nConstraintSelectMembers.png";
+
+menuItem
+-l "Membership Tool" 
+-c "nConstraintMembershipTool;" 
+-rp "NE" 
+-i "nConstraintMembership.png";
+
+menuItem
+-l "Slide Constraint" 
+-sm 1
+-i "nConstraintSlideonSurface.png";
+
+menuItem
+-l "On" 
+-c "da_SlideConstraintOn" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_SlideConstraintOff" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create nCache"
+-c "nClothCacheOpt"
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Parent Constraint" 
+-c "ParentConstraint" 
+-i "parentConstraint.png";
+
+menuItem
+-c "ParentConstraintOptions" 
+-ob 1;
+
+menuItem
+-l "Point Constraint" 
+-c "PointConstraint" 
+-i "posConstraint.png";
+
+menuItem
+-c "PointConstraintOptions" 
+-ob 1;
+
+menuItem
+-l "Orient Constraint" 
+-c "performOrientConstraint 0" 
+-i "orientConstraint.png";
+
+menuItem
+-c "OrientConstraintOptions;" 
+-ob 1;
+
+menuItem
+-l "Aim Constraint" 
+-c "AimConstraint" 
+-i "aimConstraint.png";
+
+menuItem
+-c "AimConstraintOptions" 
+-ob 1;
+
+setParent -m ..;
+
+}

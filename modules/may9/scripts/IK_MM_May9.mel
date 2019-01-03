@@ -1,0 +1,36 @@
+global proc IK_MM_May9(){
+
+menuItem
+-l "Create Locator" 
+-c "CreateLocator;" 
+-rp "N" 
+-i "locator.png";
+
+menuItem
+-l "Create Circle" 
+-c "CreateNURBSCircle;" 
+-rp "S" 
+-i "circle.png";
+
+menuItem
+-c "CreateNURBSCircleOptions;" 
+-ob 1;
+
+menuItem
+-l "Set Preferred Angle" 
+-c "da_SetIKPerfAngle" 
+-rp "W";
+
+menuItem
+-l "Assume Preferred Angle" 
+-c "da_AssumeIKPrefAngle" 
+-rp "E";
+
+menuItem
+-l "IK Handle Size" 
+-i "resizeWindow.png" 
+-c "ikHdsWin";
+
+setParent -m ..;
+
+}

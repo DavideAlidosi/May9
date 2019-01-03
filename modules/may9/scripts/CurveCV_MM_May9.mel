@@ -1,0 +1,177 @@
+global proc CurveCV_MM_May9(){
+
+commonReflectionOptionsPopup();
+
+commonSelectOptionsPopup();
+
+menuItem
+-l "Lock Length" 
+-c "LockCurveLength;" 
+-rp "E" 
+-i "lockLength.png" ;
+
+menuItem
+-l "Unlock Length" 
+-c "UnlockCurveLength" 
+-rp "W" 
+-i "unlockLength.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Deformers" 
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Nonlinear" 
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Bend" 
+-c "Bend;" 
+-rp "N" 
+-i "bendNLD.png";
+
+menuItem
+-l "Flare" 
+-c "Flare;" 
+-i "flareNLD.png";
+
+menuItem
+-l "Sine" 
+-c "Sine" 
+-i "sineNLD.png";
+
+menuItem
+-l "Squash" 
+-c "Squash" 
+-i "squashNLD.png";
+
+menuItem
+-l "Twist" 
+-c "Twist" 
+-i "twistNLD.png";
+
+menuItem
+-l "Wave" 
+-c "Wave" 
+-i "waveNLD.png";
+
+setParent -m ..;
+
+menuItem
+-l "Cluster" 
+-c "CreateCluster" 
+-i "cluster.png";
+
+menuItem
+-l "Lattice" 
+-c "CreateLattice" 
+-i "lattice.png";
+
+setParent -m ..;
+
+menuItem
+-l "Dynamics" 
+-sm 1
+-i "out_nucleus.png";
+
+menuItem
+-l "Emit nParticle From CV" 
+-c "NEmitFromObjectOptions" 
+-i "emitter.png";
+
+menuItem
+-l "Particle Style" 
+-sm 1
+-i "out_particle.png";
+
+menuItem
+-l "Points" 
+-c "optionVar -stringValue NParticleStyle \"Points\";" 
+-i "nPartPoints.png";
+
+menuItem
+-l "Balls" 
+-c "optionVar -stringValue NParticleStyle \"Balls\";" 
+-i "nPartBalls.png";
+
+menuItem
+-l "Cloud" 
+-c "optionVar -stringValue NParticleStyle \"Cloud\";" 
+-i "nPartCloud.png";
+
+menuItem
+-l "ThickCloud" 
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
+-i "nPartThickCloud.png";
+
+menuItem
+-l "Water" 
+-c "optionVar -stringValue NParticleStyle \"Water\";" 
+-i "nPartWater.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-l "nConstraint" 
+-sm 1
+-i "menuIconConstraints.png";
+
+menuItem
+-l "Component to Component" 
+-c "doCreateNConstraint pointToPoint 0" 
+-i "nConstraintComponent.png";
+
+menuItem
+-l "Force Field" 
+-c "doCreateNConstraint force 0" 
+-i "nConstraintForceField.png" ;
+
+menuItem
+-l "Transform Constraint" 
+-c "doCreateNConstraint transform 0" 
+-i "nConstraintTransform.png";
+
+setParent -m ..;
+
+menuItem
+-l "Select" 
+-sm 1
+-i "selectCVs.png";
+
+menuItem
+-l "All CVs"
+-c "SelectCurveCVsAll" 
+-i "selectCVs.png";
+
+menuItem
+-l "First CV"
+-c "SelectCurveCVsFirst" 
+-i "selectFirstCV.png";
+
+menuItem
+-l "Last CV"
+-c "SelectCurveCVsLast" 
+-i "selectLastCV.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Create Quick Set"
+-c "CreateQuickSelectSet" 
+-i "out_objectSet.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+}

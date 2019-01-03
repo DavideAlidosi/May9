@@ -58,7 +58,7 @@ class Menu(object):
     def _mel(file_name, **kwargs):
         """show static marking menu"""
         cmds.popupMenu("mm_%i" % kwargs["b"], **kwargs)
-        mel.eval("source menu_%s.mel" % file_name)
+        mel.eval("%s" % file_name)
 
     @staticmethod
     def _python(module_name, **kwargs):

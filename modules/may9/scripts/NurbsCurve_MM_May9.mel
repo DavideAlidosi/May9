@@ -1,0 +1,21 @@
+global proc NurbsCurve_MM_May9(){
+
+menuItem
+-l "Project Curve on Surface" 
+-c "ProjectCurveOnSurface" 
+-rp "N" 
+-i "projectCurve.png";
+
+menuItem
+-c "ProjectCurveOnSurfaceOptions" 
+-ob 1;
+
+menuItem
+-l "Snap Curve to NURBS" 
+-c "da_SnapCurveToNurbs" 
+-rp "S" 
+-i "snapPlane.png";
+
+setParent -m ..;
+
+}

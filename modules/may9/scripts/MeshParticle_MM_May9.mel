@@ -1,0 +1,31 @@
+global proc MeshParticle_MM_May9(){
+
+menuItem
+-l "Instancer" 
+-c "ParticleInstancer" 
+-rp "NE" 
+-i "instancer.png";
+
+menuItem
+-c "ParticleInstancerOptions" 
+-ob 1;
+
+menuItem
+-l "Set Initial State" 
+-c "setNClothStartState;" 
+-rp "N" 
+-i "fluidInitialStateSet.png";
+
+menuItem
+-l "Make Collide" 
+-c "dynExecuteCollisionCommand \"collision -r 1 -f 0 -o 0.01 \"" 
+-rp "W" 
+-i "collision.png";
+
+menuItem
+-c "MakeCollideOptions" 
+-ob 1;
+
+setParent -m ..;
+
+}

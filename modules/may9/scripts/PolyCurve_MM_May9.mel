@@ -1,0 +1,89 @@
+global proc PolyCurve_MM_May9(){
+
+menuItem
+-l "Controller Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
+
+menuItem
+-l "Controller Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Controler Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "SW" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Controller Parent" 
+-c "da_CtrlParentConstraint" 
+-rp "N" 
+-i "parentConstraint.png";
+
+menuItem
+-l "Project Curve On Mesh" 
+-c "ProjectCurveOnMesh;" 
+-rp "E" 
+-i "projectCurve_Poly.png";
+
+menuItem
+-c "ProjectCurveOnMeshOptions;" 
+-ob 1;
+
+menuItem
+-l "Split Mesh With Projected Curve" 
+-c "SplitMeshWithProjectedCurve" 
+-rp "S" 
+-i "projectCurveSplit_Poly.png";
+
+menuItem
+-c "SplitMeshWithProjectedCurveOptions;" 
+-ob 1;
+
+menuItem
+-l "Instance Along Curve" 
+-c "da_CurveDistributionMash" 
+-i "da_instanceAlongCurve.png";
+
+menuItem
+-l "Snap Curve to Mesh" 
+-c "da_SnapCurveToMesh" 
+-i "snapPlane.png";
+
+menuItem
+-l "Make Curves Dynamic" 
+-c "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
+-rp "W" 
+-i "hairDynamicCurves.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Wire Deformer" 
+-c "WireTool" 
+-i "addWire.png";
+
+menuItem
+-c "WireToolOptions;" 
+-ob 1;
+
+menuItem
+-l "Curve Warp Deformer" 
+-c "createCurveWarp;" 
+-i "CurveWarp.png";
+
+menuItem
+-l "Curves to nHair" 
+-c "da_CurveToNHairs" 
+-rp "SE" 
+-i "out_pfxHair.png";
+
+setParent -m ..;
+
+}

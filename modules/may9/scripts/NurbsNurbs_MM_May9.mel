@@ -1,0 +1,483 @@
+global proc NurbsNurbs_MM_May9(){
+
+menuItem
+-l "Intersect Surfaces" 
+-c "IntersectSurfaces" 
+-rp "SE" 
+-i "srfIntersect.png";
+
+menuItem
+-c "IntersectSurfacesOptions" 
+-ob 1;
+
+menuItem
+-l "Booleans" 
+-sm 1
+-rp "W" 
+-i "nurbsShellIntersect.png";
+
+menuItem
+-l "Union Tool" 
+-c "nurbsBooleanPreset 1 {\"1\", \"2\", \"0\", \"1\" }" 
+-rp "NW" 
+-i "nurbsShellUnion.png";
+
+menuItem
+-c "SurfaceBooleanUnionToolOptions" 
+-ob 1;
+
+menuItem
+-l "Difference Tool" 
+-c "nurbsBooleanPreset 1 {\"1\", \"2\", \"1\", \"1\" }" 
+-rp "W" 
+-i "nurbsShellSubtract.png";
+
+menuItem
+-c "SurfaceBooleanSubtractToolOptions" 
+-ob 1;
+
+menuItem
+-l "Intersection Tool" 
+-c "nurbsBooleanPreset 1 {\"1\", \"2\", \"2\", \"1\" }" 
+-rp "SW" 
+-i "nurbsShellIntersect.png";
+
+menuItem
+-c "SurfaceBooleanIntersectToolOptions" 
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Circular Fillet" 
+-c "circularFilletPreset(1,0,1,0,0,0.01,0.1,0)" 
+-rp "E" 
+-i "surfaceFillet.png";
+
+menuItem
+-c "CircularFilletOptions" 
+-ob 1;
+
+menuItem
+-l "Open/Close" 
+-c "doCloseSurfaceArgList 2 { \"1\", \"1\", \"1\", \"1\", \"0.5\", \"0\", \"0.1\" }" 
+-rp "SW" 
+-i "openCloseSurface.png";
+
+menuItem
+-c "OpenCloseSurfacesOptions" 
+-ob 1;
+
+menuItem
+-l "Sculpt Geometry" 
+-c "SculptGeometryTool;\nartPuttyCtx -e -showactive false `currentCtx`;" 
+-rp "N" 
+-i "putty.png";
+
+menuItem
+-c "SculptGeometryToolOptions;\nartPuttyCtx -e -showactive true `currentCtx`;" 
+-ob 1;
+
+menuItem
+-l "Attach" 
+-c "doAttachSurfaceArgList 2 { \"1\", \"0\", \"1\", \"1\", \"0.5\", \"0\", \"0.1\" }" 
+-rp "NW" 
+-i "align.png";
+
+menuItem
+-c "AttachSurfacesOptions" 
+-ob 1;
+
+menuItem
+-l "Round Tool" 
+-c "RoundTool" 
+-rp "NE" 
+-i "roundSrf.png";
+
+menuItem
+-c "RoundToolOptions" 
+-ob 1;
+
+menuItem
+-l "Surface Editing" 
+-c "SurfaceEditingTool" 
+-rp "S" 
+-i "surfaceEditor.png";
+
+menuItem
+-c "SurfaceEditingToolOptions" 
+-ob 1;
+
+menuItem
+-l "Align" 
+-c "AlignSurfaces" 
+-i "alignSurface.png";
+
+menuItem
+-c "AlignSurfacesOptions" 
+-ob 1;
+
+menuItem
+-l "Connect Shapes" 
+-c "da_ConnectNurbsShapes" 
+-i "da_OneToMany.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Component Display" 
+-sm 1
+-i "RS_visible.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "CVs" 
+-c "ToggleCVs" 
+-i "selectCVboundary.png";
+
+menuItem
+-l "Normals" 
+-c "ToggleNormals" 
+-i "polyNormalsPropagate.png";
+
+menuItem
+-l "Surface Origins" 
+-c "ToggleSurfaceOrigin" 
+-i "channelBoxUseManips.png";
+
+setParent -m ..;
+
+menuItem
+-l "Convert" 
+-sm 1
+-i "da_PolygonsToNurbs.png";
+
+menuItem
+-l "NURBS to Polygons" 
+-c "da_NurbsToMesh" 
+-i "nurbsToPolygons.png";
+
+menuItem
+-c "NURBSToPolygonsOptions;" 
+-ob 1;
+
+menuItem
+-l "NURBS to Legacy Subdiv" 
+-c "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )" 
+-i "nurbsToSubdivs.png";
+
+menuItem
+-c "CreateSubdivSurfaceOptions;" 
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Deformers" 
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Blend Shape"
+-sm 1
+-i "blendShape.png";
+
+menuItem
+-l "Create Blend Shape"
+-c "CreateBlendShape;"
+-rp "N"
+-i "blendShape.png";
+
+menuItem
+-c "CreateBlendShapeOptions;"
+-ob 1;
+
+menuItem
+-l "Add Shape"
+-c "AddBlendShape;"
+-i "ts-add.png";
+
+menuItem
+-c "AddBlendShapeOptions;"
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Nonlinear"
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png";
+
+menuItem
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png";
+
+menuItem
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png";
+
+menuItem
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png";
+
+menuItem
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png";
+
+menuItem
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png";
+
+setParent -m ..;
+
+menuItem
+-l "Cluster" 
+-c "CreateCluster" 
+-i "cluster.png";
+
+menuItem
+-l "Lattice" 
+-c "CreateLattice" 
+-i "lattice.png";
+
+setParent -m ..;
+
+menuItem
+-l "Shading" 
+-sm 1
+-i "render_adskMaterial.png";
+
+$item = "";
+
+$menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
+menuItem 
+	-edit 
+	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+setParent -menu ..;
+
+menuItem
+-l "Assign New Material" 
+-c "createAssignNewMaterialTreeLister \"\";" 
+-i "render_adskMaterial.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Shaded Brightness Two Tone" 
+-c "assignToonShader \"shadedBrightness\"" 
+-i "toonBrightness2.png";
+
+menuItem
+-l "Shaded Brightness Three Tone" 
+-c "assignToonShader \"threeToneBrightness\"" 
+-i "toonBrightness3.png";
+
+menuItem
+-l "Circle Highlight" 
+-c "assignToonShader \"circleHighlight\"" 
+-i "toonCircleHigh.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Add Toon Outline" 
+-c "assignNewPfxToon" 
+-i "toonAddOutline.png";
+
+menuItem
+-l "Remove Toon Outlines" 
+-c "removePfxToonOutlines" 
+-i "toonRemoveOutline.png";
+
+setParent -m ..;
+
+menuItem
+-l "Dynamics" 
+-sm 1
+-i "out_nucleus.png";
+
+menuItem
+-l "Emit Particle From CV" 
+-c "NEmitFromObjectOptions" 
+-i "emitter.png";
+
+menuItem
+-l "Particle Style" 
+-sm 1
+-i "out_particle.png";
+
+menuItem
+-l "Points" 
+-c "optionVar -stringValue NParticleStyle \"Points\";" 
+-i "nPartPoints.png";
+
+menuItem
+-l "Balls" 
+-c "optionVar -stringValue NParticleStyle \"Balls\";" 
+-i "nPartBalls.png";
+
+menuItem
+-l "Cloud" 
+-c "optionVar -stringValue NParticleStyle \"Cloud\";" 
+-i "nPartCloud.png";
+
+menuItem
+-l "ThickCloud" 
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";" 
+-i "nPartThickCloud.png";
+
+menuItem
+-l "Water" 
+-c "optionVar -stringValue NParticleStyle \"Water\";" 
+-i "nPartWater.png";
+
+setParent -m ..;
+
+menuItem
+-l "Create nSoft Body" 
+-c "CreateNSoftBodyOptions" 
+-i "soft.png";
+
+menuItem
+-l "Create nHair" 
+-c "CreateHairOptions" 
+-i "hairCreate.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Create Active Rigid Body" 
+-c "CreateActiveRigidBodyOptions" 
+-i "rigid.png";
+
+menuItem
+-l "Create Passive Rigid Body" 
+-c "CreatePassiveRigidBodyOptions" 
+-i "rigidPassive.png";
+
+menuItem
+-l "Constrain" 
+-sm 1
+-i "constraint.png";
+
+menuItem
+-l "Pin" 
+-c "constrain -pin -i 0 " 
+-i "constraint.png";
+
+menuItem
+-l "Hinge" 
+-c "constrain -hinge -o 0 0 0 " 
+-i "constraint.png";
+
+menuItem
+-l "Spring" 
+-c "constrain -spring -st 5 -d 0.1 " 
+-i "constraint.png";
+
+setParent -m ..;
+
+menuItem
+-l "Set Initial State" 
+-c "setDynStartState;" 
+-i "fluidInitialStateSet.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Add Fields" 
+-sm 1
+-i "posRadial.png";
+
+menuItem
+-l "Air" 
+-c "dynExecuteFieldCommands 1 \"air\"" 
+-i "posAir.png";
+
+menuItem
+-l "Drag" 
+-c "dynExecuteFieldCommands 1 \"drag\"" 
+-i "posDrag.png";
+
+menuItem
+-l "Gravity" 
+-c "dynExecuteFieldCommands 1 \"gravity\"" 
+-i "posGravity.png";
+
+menuItem
+-l "Newton" 
+-c "dynExecuteFieldCommands 1 \"newton\"" 
+-i "posNewton.png";
+
+menuItem
+-l "Radial" 
+-c "dynExecuteFieldCommands 1 \"radial\"" 
+-i "posRadial.png";
+
+menuItem
+-l "Turbulence" 
+-c "dynExecuteFieldCommands 1 \"turbulence\"" 
+-i "posTurbulence.png";
+
+menuItem
+-l "Uniform" 
+-c "dynExecuteFieldCommands 1 \"uniform\"" 
+-i "posUniform.png";
+
+menuItem
+-l "Vortex" 
+-c "dynExecuteFieldCommands 1 \"vortex\"" 
+-i "posVortex.png";
+
+menuItem
+-l "Volume Axis" 
+-c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
+-i "posVolumeAxis.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create Muscle Cache"
+-c "cMuscle_makeCacheUI(); "
+-i "cMuscle_skin_cacheCreate.png";
+
+menuItem
+-l "Delete Muscle Node Cache"
+-c "cMuscle_deleteNodeCacheUI(); "
+-i "cMuscle_skin_cacheDelete.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+}
