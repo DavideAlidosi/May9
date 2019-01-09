@@ -1,4 +1,4 @@
-May9 Next 10 RC1 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next 10 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
@@ -16,6 +16,7 @@ Installation
 
 
 Release Note
+- Contextual Marking menus are now loaded as command instead of source it
 - Unified installation process, is highly recommended a new installation instead update it
 - Compatibility to any Workspace, anyway the use of Maya Classic is high suggested
 - May9 Next Hotkey Set are added over standards ones and do not substitute the user hotkeys
@@ -53,6 +54,7 @@ Exclusive script
 Version 10 highlight
 - Add support to Maya 2019
 - May9 Next Hotkey Sets are added over standard ones without overwrite the user ones
+- Contextual Marking menus are now loaded as command
 - Incorporate MMtoKey into May9 Next Plug-in
 - Imporved usability of objects and components contextual MMs
 - Complete the support of Modeling Toolkit
