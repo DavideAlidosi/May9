@@ -9237,13 +9237,9 @@ menuItem
 
 menuItem
 -l "Paint Effects"
--c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -rp "SW"
 -i "paintEffectsTool.png";
-
-menuItem
--c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
--ob 1;
 
 menuItem
 -l "Paint Skin Weights"
@@ -9253,23 +9249,15 @@ menuItem
 
 menuItem
 -l "Legacy Sculpt"
--c "SculptGeometryTool"
+-c "SculptGeometryToolOptions"
 -rp "W"
 -i "sculptPull.png";
 
 menuItem
--c "SculptGeometryToolOptions"
--ob 1;
-
-menuItem
 -l "Sculpt Geometry"
--c "SetMeshSculptTool" 
+-c "ShowMeshSculptToolOptions" 
 -rp "N"
 -i "Sculpt.png";
-
-menuItem
--c "ShowMeshSculptToolOptions"
--ob 1;
 
 menuItem
 -l "3D Paint Tool"
@@ -9982,12 +9970,8 @@ menuItem
 
 menuItem
 -l "Interactive Brush"
--c "XgmSetCombBrushTool"
--i "xgIG_comb.png";
-
-menuItem
 -c "XgmSetCombBrushToolOption"
--ob 1;
+-i "xgIG_comb.png";
 
 menuItem
 -l "Interactive Groom Editor"
@@ -10143,33 +10127,21 @@ menuItem
 
 menuItem
 -l "Legacy Sculpt"
--c "SculptGeometryTool"
+-c "SculptGeometryToolOptions"
 -rp "W"
 -i "sculptPull.png";
 
 menuItem
--c "SculptGeometryToolOptions"
--ob 1;
-
-menuItem
 -l "Paint Effects"
--c "PaintOnPaintableObjects;\nMakePaintable;\nPaintEffectsTool;"
+-c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -rp "SW"
 -i "paintEffectsTool.png";
 
 menuItem
--c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");"
--ob 1;
-
-menuItem
 -l "Sculpt Geometry"
--c "SetMeshSculptTool" 
+-c "ShowMeshSculptToolOptions" 
 -rp "N"
 -i "Sculpt.png";
-
-menuItem
--c "ShowMeshSculptToolOptions"
--ob 1;
 
 menuItem
 -l "3D Paint Tool"
@@ -10880,12 +10852,8 @@ menuItem
 
 menuItem
 -l "Interactive Brush"
--c "XgmSetCombBrushTool"
--i "xgIG_comb.png";
-
-menuItem
 -c "XgmSetCombBrushToolOption"
--ob 1;
+-i "xgIG_comb.png";
 
 menuItem
 -l "Interactive Groom Editor"
