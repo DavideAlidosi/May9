@@ -3076,21 +3076,13 @@ menuItem
 -i "polyNormalUnlock.png";
 
 menuItem
--l "separator" 
--d 1;
-
-menuItem
 -l "Set Soften Edge"
--c "SoftPolyEdgeElements 1"
+-c "PolygonSoftenEdge"
 -i "polySoftEdge.png";
 
 menuItem
--c "polySoftEdgeWin"
--ob 1;
-
-menuItem
 -l "Set Harden Edge"
--c "SoftPolyEdgeElements 0"
+-c "PolygonHardenEdge"
 -i "polyHardEdge.png";
 
 setParent -m ..;
@@ -3507,21 +3499,13 @@ menuItem
 -i "polyNormal.png";
 
 menuItem
--l "separator" 
--d 1;
-
-menuItem
 -l "Set Soften Edge"
--c "SoftPolyEdgeElements 1"
+-c "PolygonSoftenEdge"
 -i "polySoftEdge.png";
 
 menuItem
--c "polySoftEdgeWin"
--ob 1;
-
-menuItem
 -l "Set Harden Edge"
--c "SoftPolyEdgeElements 0"
+-c "PolygonHardenEdge"
 -i "polyHardEdge.png";
 
 setParent -m ..;
@@ -9663,21 +9647,9 @@ menuItem
 -i "polyNormal.png";
 
 menuItem
--d 1;
-
-menuItem
--l "Set Soften Edge"
--c "SoftPolyEdgeElements 1"
+-l "Set Soften Edge Angle"
+-c "PolygonSoftenHardenOptions"
 -i "polySoftEdge.png";
-
-menuItem
--c "polySoftEdgeWin"
--ob 1;
-
-menuItem
--l "Set Harden Edge"
--c "SoftPolyEdgeElements 0;"
--i "polyHardEdge.png";
 
 menuItem
 -d 1;
@@ -10208,7 +10180,7 @@ menuItem
 
 menuItem
 -l "Remesh"
--c "polyRemesh"
+-c "polyRemesh -rdt 0 -ipt 0"
 -i "out_mesh.png";
 
 if (`about -api` >= 20180000){
@@ -10526,22 +10498,10 @@ menuItem
 -c "da_UnlockAndFixNormals"
 -i "polyNormalUnlock.png";
 
-menuItem 
--d 1;
-
 menuItem
--l "Set Soften Edge"
--c "SoftPolyEdgeElements 1"
+-l "Set Soften Edge Angle"
+-c "PolygonSoftenHardenOptions"
 -i "polySoftEdge.png";
-
-menuItem
--c "polySoftEdgeWin"
--ob 1;
-
-menuItem
--l "Set Harden Edge"
--c "SoftPolyEdgeElements 0;"
--i "polyHardEdge.png";
 
 if (`about -api` >= 20180000){
 menuItem
