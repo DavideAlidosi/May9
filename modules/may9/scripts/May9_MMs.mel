@@ -9949,6 +9949,23 @@ menuItem
 setParent -m ..;
 
 menuItem
+-l "Select"
+-sm 1
+-i "aselect.png";
+
+menuItem
+-l "Hard Edges"
+-c "da_EdgeHard"
+-i "da_hardEdge.png";
+
+menuItem
+-l "All Vertices"
+-c "ConvertSelectionToVertices"
+-i "vertex_NEX.png";
+
+setParent -m ..;
+
+menuItem
 -d 1;
 
 menuItem 
@@ -9961,11 +9978,6 @@ menuItem
 -l "Displacement Preview" 
 -c "da_HighQualityDispMeshToggle"
 -cb ($myDispSetting);
-
-menuItem
--l "Select All Vertices"
--c "ConvertSelectionToVertices"
--i "vertex_NEX.png";
 
 setParent -m ..;
 
@@ -10819,6 +10831,23 @@ menuItem
 setParent -m ..;
 
 menuItem
+-l "Select"
+-sm 1
+-i "aselect.png";
+
+menuItem
+-l "Hard Edges"
+-c "da_EdgeHard"
+-i "da_hardEdge.png";
+
+menuItem
+-l "All Vertices"
+-c "ConvertSelectionToVertices"
+-i "vertex_NEX.png";
+
+setParent -m ..;
+
+menuItem
 -d 1;
 
 menuItem 
@@ -10831,11 +10860,6 @@ menuItem
 -l "Displacement Preview" 
 -c "da_HighQualityDispMeshToggle"
 -cb ($myDispSetting);
-
-menuItem
--l "Select All Vertices"
--c "ConvertSelectionToVertices"
--i "vertex_NEX.png";
 
 setParent -m ..;
 
