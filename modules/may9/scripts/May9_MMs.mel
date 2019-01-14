@@ -833,6 +833,11 @@ menuItem -bld 1
 -c "da_TransformMirrorSelector"
 -i "polyMirrorGeometry.png";
 
+menuItem -bld 1 
+-l "Connect Transform"
+-c "da_ConnectTransformUI"
+-i "da_OneToMany.png";
+
 menuItem 
 -d 1;
 
@@ -2358,6 +2363,11 @@ menuItem
 menuItem
 -c "OpenCloseCurveOptions"
 -ob 1;
+
+menuItem
+-l "Input Operations" 
+-c "da_ListInputOperations" 
+-i "out_list.png";
 
 menuItem
 -l "Separate"
@@ -7381,6 +7391,11 @@ menuItem
 -ob 1;
 
 menuItem
+-l "Input Operations" 
+-c "da_ListInputOperations" 
+-i "out_list.png";
+
+menuItem
 -l "NURBS to Polygons" 
 -c "da_NurbsToMesh" 
 -i "nurbsToPolygons.png";
@@ -10117,6 +10132,11 @@ menuItem
 -c "da_Subdivision"
 -rp "S"
 -i "polySmooth.png";
+
+menuItem
+-l "Input Operations" 
+-c "da_ListInputOperations" 
+-i "out_list.png";
 
 menuItem
 -l "Create MASH Network"

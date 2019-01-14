@@ -13,8 +13,14 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Connect Transform Attributes"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $myResult = `confirmDialog -title \"Transform Connector\" -message \"Before continue please check if you have select for first the parent geometry.\\nWhat attribute did you want to connect?\" \n-button \"Translate\" -button \"Rotate\" -button \"Scale\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Translate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".tx\") ($createConnect[$i] + \".tx\");\n        connectAttr -f ($createConnect[0] + \".ty\") ($createConnect[$i] + \".ty\");\n        connectAttr -f ($createConnect[0] + \".tz\") ($createConnect[$i] + \".tz\");\n    }\n}\n    \nelse if ($myResult == \"Rotate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".rx\") ($createConnect[$i] + \".rx\");\n        connectAttr -f ($createConnect[0] + \".ry\") ($createConnect[$i] + \".ry\");\n        connectAttr -f ($createConnect[0] + \".rz\") ($createConnect[$i] + \".rz\");\n    }\n}\n    \nelse if ($myResult == \"Scale\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".sx\") ($createConnect[$i] + \".sx\");\n        connectAttr -f ($createConnect[0] + \".sy\") ($createConnect[$i] + \".sy\");\n        connectAttr -f ($createConnect[0] + \".sz\") ($createConnect[$i] + \".sz\");\n    }\n}")
+	da_ConnectTransformUI;
+
+runTimeCommand
 	-ann "Connect Shapes UI"
-	-cat "Custom Scripts.May9_Next.Modeling"
+	-cat "Custom Scripts.May9_Next.Object"
 	-c ("string $myResult = `confirmDialog -title \"Select the Plane Cut operation\" -message \"Before continue please check if you have select for first the parent geometry.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n    }\n}")
 	da_ConnectShapeUI;
 
