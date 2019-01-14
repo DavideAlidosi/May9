@@ -6897,13 +6897,18 @@ menuItem
 -ob 1;
 
 menuItem
--l "Align" 
+-l "Align Surfaces" 
 -c "AlignSurfaces" 
 -i "alignSurface.png";
 
 menuItem
 -c "AlignSurfacesOptions" 
 -ob 1;
+
+menuItem
+-l "NURBS to Polygons" 
+-c "NURBSToPolygonsOptions" 
+-i "nurbsToPolygons.png";
 
 menuItem
 -l "Connect Shapes" 
@@ -6937,22 +6942,6 @@ menuItem
 -l "Surface Origins" 
 -c "ToggleSurfaceOrigin" 
 -i "channelBoxUseManips.png";
-
-setParent -m ..;
-
-menuItem
--l "Convert" 
--sm 1
--i "da_PolygonsToNurbs.png";
-
-menuItem
--l "NURBS to Polygons" 
--c "da_NurbsToMesh" 
--i "nurbsToPolygons.png";
-
-menuItem
--c "NURBSToPolygonsOptions;" 
--ob 1;
 
 setParent -m ..;
 
@@ -7388,6 +7377,15 @@ menuItem
 -ob 1;
 
 menuItem
+-l "NURBS to Polygons" 
+-c "NURBSToPolygonsOptions" 
+-i "nurbsToPolygons.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
 -l "Component Display" 
 -sm 1
 -i "RS_visible.png";
@@ -7410,23 +7408,6 @@ menuItem
 -l "Surface Origins" 
 -c "ToggleSurfaceOrigin" 
 -i "channelBoxUseManips.png";
-
-setParent -m ..;
-
-menuItem
--l "Convert" 
--sm 1
--i "da_PolygonsToNurbs.png";
-
-menuItem
--l "NURBS to Polygons" 
--c "da_NurbsToMesh" 
--rp "N" 
--i "nurbsToPolygons.png";
-
-menuItem
--c "NURBSToPolygonsOptions;" 
--ob 1;
 
 setParent -m ..;
 
