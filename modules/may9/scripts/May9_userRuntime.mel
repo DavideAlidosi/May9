@@ -13,6 +13,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Connect Shapes UI"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("string $myResult = `confirmDialog -title \"Select the Plane Cut operation\" -message \"Before continue please check if you have select for first the parent geometry.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n    }\n}")
+	da_ConnectShapeUI;
+
+runTimeCommand
 	-ann "Enable Red Overrides on Selected Shape"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $myShape[] = `listRelatives -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 13;\n}\n")
@@ -1970,7 +1976,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Auto Bevel Mesh"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $mySel[] = `ls -sl`;\nstring $mySelShape[] = `listRelatives -s`;\nselect -cl;\n\nfor ($i=0; $i<`size$mySelShape`; $i++){\n    //Cycle mesh selection\n    select $mySelShape[$i];\n    //Select edge by angle\n    polySelectConstraint -m 3 -t 0x8000 -a on -ab 40 140;\n    string $bevelAngleSel[] = `ls -sl`;\n    polySelectConstraint -a off;\n    select $bevelAngleSel;\n    //Bevel edge selection\n\tpolyBevel3 -f 0.05 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 2 -ws 1 -sa 47 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;\n}\n\nselect $mySel;\nsetToolTo ShowManips;")
+	-c ("polyPerformAction \"polySoftEdge -a 30\" e 0;\nda_EdgeHard;\npolyBevel3 -f 0.05 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 2 -ws 1 -sa 47 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;\nda_BackToObjectMode;\nShowManipulators;")
 	da_AutoBevel;
 
 runTimeCommand

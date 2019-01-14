@@ -42,6 +42,10 @@ optionVar -iv May9ActivationCheck 32;
 savePrefsChanges;
 
 // Remove runtimeCommand
+
+catchQuiet (`runTimeCommand -e -del
+	da_ConnectShapeUI);
+
 catchQuiet (`runTimeCommand -e -del
 	da_RedOverrides`);
 

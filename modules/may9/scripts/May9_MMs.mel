@@ -6954,15 +6954,6 @@ menuItem
 -c "NURBSToPolygonsOptions;" 
 -ob 1;
 
-menuItem
--l "NURBS to Legacy Subdiv" 
--c "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )" 
--i "nurbsToSubdivs.png";
-
-menuItem
--c "CreateSubdivSurfaceOptions;" 
--ob 1;
-
 setParent -m ..;
 
 menuItem
@@ -7435,15 +7426,6 @@ menuItem
 
 menuItem
 -c "NURBSToPolygonsOptions;" 
--ob 1;
-
-menuItem
--l "NURBS to Legacy Subdiv" 
--c "doSubdivCreate( \"2\", { \"1\",\"1\",\"1000\",\"32\"} )" 
--i "nurbsToSubdivs.png";
-
-menuItem
--c "CreateSubdivSurfaceOptions;" 
 -ob 1;
 
 setParent -m ..;
@@ -9180,16 +9162,16 @@ menuItem
 menuItem
 -l "Original and Intersect"
 -c "da_BooleanFullIntersect"
--rp "SE"
+-rp "S"
 -i "da_booleanFullIntersect.png";
+
+setParent -m ..;
 
 menuItem
 -l "Cut by Plane"
 -c "da_PlaneCutter"
 -rp "S"
 -i "polyCut.png";
-
-setParent -m ..;
 
 menuItem
 -l "Combine"
@@ -9206,12 +9188,6 @@ menuItem
 -c "MergeVertexTool;da_BackToObjectMode;da_SelectMulti"
 -rp "SE"
 -i "weld_NEX32.png";
-
-menuItem
--l "Fill Hole"
--c "FillHole"
--rp "S"
--i "polyCloseBorder.png";
 
 menuItem
 -l "Brushes"
@@ -9264,12 +9240,6 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Auto Bevel"
--c "da_AutoBevel"
--rp "NW"
--i "polyBevel.png";
-
-menuItem
 -l "Extrude"
 -c "PolyExtrude"
 -rp "E"
@@ -9282,7 +9252,7 @@ menuItem
 
 menuItem
 -l "Connect Shapes"
--c "da_ConnectShapes"
+-c "da_ConnectShapeUI"
 -i "da_OneToMany.png";
 
 menuItem
