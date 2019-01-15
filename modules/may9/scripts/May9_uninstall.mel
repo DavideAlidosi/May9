@@ -44,7 +44,19 @@ savePrefsChanges;
 // Remove runtimeCommand
 
 catchQuiet (`runTimeCommand -e -del
+	da_MMtoKey_press`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_ConnectTransformUI);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ConnectShapeUI);
+
+catchQuiet (`runTimeCommand -e -del
+	da_ConnectNurbsShapesUI);
 
 catchQuiet (`runTimeCommand -e -del
 	da_RedOverrides`);
@@ -54,12 +66,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_NoColorOverrides`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_press`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_AiMehsesLight`);

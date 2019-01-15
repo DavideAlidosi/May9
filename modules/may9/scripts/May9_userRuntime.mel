@@ -21,8 +21,14 @@ runTimeCommand
 runTimeCommand
 	-ann "Connect Shapes UI"
 	-cat "Custom Scripts.May9_Next.Object"
-	-c ("string $myResult = `confirmDialog -title \"Select the Plane Cut operation\" -message \"Before continue please check if you have select for first the parent geometry.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n    }\n}")
+	-c ("string $myResult = `confirmDialog -title \"Shape Connector\" -message \"Before continue please check if you have select for first the parent geometry.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n    }\n}")
 	da_ConnectShapeUI;
+
+runTimeCommand
+	-ann "Connect Nurbs Shapes UI"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $myResult = `confirmDialog -title \"Shape Connector\" -message \"Before continue please check if you have select for first the parent geometry.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".worldSpace\") ($createConnect[$i] + \".create\");\n    }\n}")
+	da_ConnectNurbsShapesUI;
 
 runTimeCommand
 	-ann "Enable Red Overrides on Selected Shape"
