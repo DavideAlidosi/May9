@@ -63,7 +63,7 @@ Version 10 highlight
 
 
 Useful links
-fb.com/May9Prefs
+fb.com/May9Next
 youtube.com/c/May9
 
 
