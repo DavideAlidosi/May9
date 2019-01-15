@@ -55,7 +55,7 @@ Version 10 highlight
 - Add support to Maya 2019
 - May9 Next Hotkey Sets are added over standard ones without overwrite the user ones
 - Contextual Marking menus are now loaded as command
-- Incorporate MMtoKey into May9 Next Plug-in
+- Incorporate MMtoKey into May9 Next Plug-in, now is possible configure a standalone MMtoKey aside May9 Next
 - Imporved usability of objects and components contextual MMs
 - Complete the support of Modeling Toolkit
 - Removed support to third party plug-ins
