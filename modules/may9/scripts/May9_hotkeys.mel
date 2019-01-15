@@ -99,12 +99,12 @@ hotkey -keyShortcut "\\" -ctl -name ("SmoothingDisplayToggleNameCommand");
 hotkey -keyShortcut "\\" -name ("STRSTweakModeOnNameCommand");
 hotkey -keyShortcut "\\" -releaseName ("STRSTweakModeOffNameCommand");
 
-// Maya 2019 TTF and resigned Help hotkeys
-/*if (`about -api` >= 20190000){
+// TTF and resigned Help hotkeys
+if (`about -api` >= 20200000){
 hotkey -keyShortcut "F1" -name ("");
 hotkey -keyShortcut "F1" -releaseName ("TypeToFindNameCommand");
 hotkey -keyShortcut "F1" -sht -name ("HelpNameCommand");
-}*/
+}
 
 
 // nameCommand set
@@ -530,13 +530,13 @@ nameCommand
 	da_KeyKeyedOnlyNameCommand;
 
 
-/*if (`about -api` >= 20190000){
+if (`about -api` >= 20200000){
 nameCommand
 	-annotation "HelpNameCommand"
 	-sourceType "mel"
 	-command ("Help")
 	HelpNameCommand;
-}*/
+}
 
 nameCommand
 	-annotation "da_SmoothPreviewOffNameCommand"

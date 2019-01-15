@@ -6921,10 +6921,6 @@ menuItem
 -i "nurbsToPolygons.png";
 
 menuItem
--c "NURBSToPolygonsOptions" 
--ob 1;
-
-menuItem
 -l "Connect Shapes" 
 -c "da_ConnectNurbsShapesUI" 
 -i "da_OneToMany.png";
@@ -7399,10 +7395,6 @@ menuItem
 -l "NURBS to Polygons" 
 -c "da_NurbsToMesh" 
 -i "nurbsToPolygons.png";
-
-menuItem
--c "NURBSToPolygonsOptions" 
--ob 1;
 
 menuItem
 -l "separator" 
@@ -9479,7 +9471,7 @@ menuItem
 -c "CreateShrinkWrapOptions;"
 -i "shrinkwrap.png";
 
-if (`about -api` >= 20190000){
+if (`about -api` >= 20200000){
 menuItem
 -l "ProxWrap"
 -c "ProxWrap"
@@ -10358,7 +10350,7 @@ menuItem
 -c "createMembrane"
 -i "da_membrane.png";
 
-if (`about -api` >= 20190000){
+if (`about -api` >= 20200000){
 menuItem
 -l "ProxWrap"
 -c "ProxWrap"
@@ -12633,10 +12625,6 @@ menuItem
 
 if (`about -api` >= 20190000){
 menuItem
--l "separator" 
--d 1;
-
-menuItem
 -l "Reset UI" 
 -c "UVEditorResetAllToDefault" 
 -i "deletePreset.png";
@@ -13371,12 +13359,19 @@ menuItem
 -c "UVCentricUVLinkingEditor" 
 -i "da_uvLinkEditor.png";
 
+if (`about -api` >= 20190000){
+menuItem
+-l "Reset UI" 
+-c "UVEditorResetAllToDefault" 
+-i "deletePreset.png";
+}
+
 menuItem
 -l "separator" 
 -d 1;
 
 menuItem
--l "Selection to UVs" 
+-l "Select UVs" 
 -c "ConvertSelectionToUVs" 
 -i "UVEditorVertex.png";
 
