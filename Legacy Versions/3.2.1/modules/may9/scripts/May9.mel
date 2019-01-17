@@ -1,0 +1,14 @@
+if (`about -api` < 201700){
+	warning "May9 Pro need Autodesk Maya 2017 and newer to run correctly, please update your Autodesk Maya before install it";
+}else{
+// Load main Plug-ins
+	loadPlugin May9_Pro;
+	loadPlugin MMtoKey;
+
+	// Auto load main Plug-ins
+	pluginInfo -edit -autoload true May9_Pro;
+	pluginInfo -edit -autoload true MMtoKey;
+
+	// Install confimation
+	inViewMessage -pos midCenterTop -msg "May9 Pro is installed and ready" -fade;
+}

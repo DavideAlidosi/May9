@@ -148,8 +148,6 @@ setParent -m ..;
 // Define All marking menu
 global proc All_MM_May9(){
 
-int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility` && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
-
 int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -q createNurbsPrimitiveAsTool`;
 
 string $currentPanel = `getPanel -wf`;
@@ -668,11 +666,21 @@ menuItem -bld 1
 -rp "SE"
 -i "CameraAE.png";
 
+if (`about -api` >= 20190000){
+int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility` && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility` && `optionVar -q cacheVisibility`;
 menuItem -bld 1 
 -l "HUD Info"
 -c "da_ToggleHUD"
 -rp "SE"
 -cb ($HUDCheck);
+}else{
+int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility` && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;
+menuItem -bld 1 
+-l "HUD Info"
+-c "da_ToggleHUD"
+-rp "SE"
+-cb ($HUDCheck);
+}
 
 if (`about -api` >= 20180000){
 menuItem -bld 1 

@@ -1,0 +1,379 @@
+menuItem
+-l "Rebuild"
+-c "RebuildCurveOptions"
+-rp "N"
+-i "rebuildCurve.png";
+
+menuItem
+-l "Add CV"
+-c "AddPointsTool;"
+-rp "S"
+-i "curveAddPt.png";
+
+menuItem
+-l "Bevel Plus"
+-c "BevelPlus;"
+-rp "E"
+-i "bevelPlus.png";
+
+menuItem
+-c "BevelPlusOptions;"
+-ob 1;
+
+menuItem
+-l "Curve Length"
+-c "da_CurveLength"
+-rp "SE"
+-i "out_curveInfo.png";
+
+menuItem
+-l "Revolve"
+-c "Revolve;"
+-rp "W"
+-i "revolve.png";
+
+menuItem
+-c "RevolveOptions;"
+-ob 1;
+
+menuItem
+-l "Reverse"
+-c "ReverseCurve;"
+-rp "NW"
+-i "reverse.png";
+
+menuItem
+-c "ReverseCurveOptions;"
+-ob 1;
+
+menuItem
+-l "Offset"
+-c "OffsetCurve;"
+-rp "NE"
+-i "offsetCurve.png";
+
+menuItem
+-c "OffsetCurveOptions;"
+-ob 1;
+
+menuItem
+-l "Open/Close"
+-c "OpenCloseCurve"
+-rp "SW"
+-i "closeGeom.png";
+
+menuItem
+-c "OpenCloseCurveOptions"
+-ob 1;
+
+menuItem
+-l "Select Hierarchy" 
+-c "SelectHierarchy" 
+-i "selectByHierarchy.png";
+
+menuItem
+-l "Select All CVs"
+-c "SelectCurveCVsAll" 
+-i "selectCVs.png";
+
+menuItem
+-l "Select First CV"
+-c "SelectCurveCVsFirst" 
+-i "selectFirstCV.png";
+
+menuItem
+-l "Select Last CV"
+-c "SelectCurveCVsLast" 
+-i "selectLastCV.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Move Pivot to Origin"
+-c "da_PivotToCurvesOrigin"
+-i "hairConvertStartEndCVs.png";
+
+menuItem
+-l "Paint FX to Curve"
+-c "AttachBrushToCurves"
+-i "paintFXtoCurve.png";
+
+menuItem
+-l "Convert to Polygons"
+-c "da_curveToPoly"
+-i "da_curveToPoly.png";
+
+menuItem
+-l "Create Curve Collector"
+-c "da_aiCurveCollector"
+-i "CurveCollectorShelf.png";
+
+menuItem
+-l "Separate"
+-c "da_SepareCurves"
+-i "da_separateCurves.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Planar"
+-c "planarSrf -ch 1 -d 3 -ko 0 -tol 0.01 -rn 0 -po 0"
+-i "planarTrim.png";
+
+menuItem
+-c "PlanarOptions"
+-ob 1;
+
+menuItem
+-l "Flat Surface"
+-c "da_FlattenSurface"
+-i "da_flatPoly.png";
+
+menuItem
+-l "Bevel Plus for Text"
+-c "da_BevelPlusForText"
+-i "polyBevel.png";
+
+menuItem
+-c "BevelPlusOptions"
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Component Display" 
+-sm 1
+-i "RS_visible.png" ;
+
+menuItem
+-l "CVs" 
+-c "ToggleCVs" 
+-i "selectCVs.png";
+
+menuItem
+-l "Hull" 
+-c "ToggleHulls" 
+-i "pickHullComp.png";
+
+setParent -m ..;
+
+menuItem
+-l "Deformers"
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Nonlinear"
+-sm 1
+-i "bendNLD.png";
+
+menuItem
+-l "Bend"
+-c "Bend;"
+-i "bendNLD.png";
+
+menuItem
+-l "Flare"
+-c "Flare;"
+-i "flareNLD.png";
+
+menuItem
+-l "Sine"
+-c "Sine"
+-i "sineNLD.png";
+
+menuItem
+-l "Squash"
+-c "Squash"
+-i "squashNLD.png";
+
+menuItem
+-l "Twist"
+-c "Twist"
+-i "twistNLD.png";
+
+menuItem
+-l "Wave"
+-c "Wave"
+-i "waveNLD.png";
+
+setParent -m ..;
+
+menuItem
+-l "Cluster"
+-c "CreateCluster"
+-i "cluster.png";
+
+menuItem
+-l "Lattice"
+-c "CreateLattice"
+-i "lattice.png";
+
+setParent -m ..;
+
+menuItem
+-l "Dynamics"
+-sm 1
+-i "out_nucleus.png";
+
+menuItem
+-l "Make Curves Dynamic"
+-c "makeCurvesDynamic 2 { \"1\", \"0\", \"1\", \"1\", \"0\"}"
+-i "hairDynamicCurves.png";
+
+menuItem
+-l "Curves to nHair" 
+-c "da_CurveToNHairs" 
+-i "out_pfxHair.png" ;
+
+menuItem
+-l "Simulation Method"
+-sm 1;
+
+menuItem
+-l "Static"
+-c "da_HairStatic";
+
+menuItem
+-l "Passive"
+-c "da_HairPassive";
+
+menuItem
+-l "Dynamic"
+-c "da_HairDynamic";
+
+setParent -m ..;
+
+menuItem
+-l "Point Lock"
+-sm 1;
+
+menuItem
+-l "No Attach"
+-c "da_HairNoLock";
+
+menuItem
+-l "Base"
+-c "da_HairLockBase";
+
+menuItem
+-l "Tip"
+-c "da_nHairLockTip";
+
+menuItem
+-l "Both Ends"
+-c "da_HairLockBothEnds";
+
+setParent -m ..;
+
+menuItem
+-l "Follicle Braid"
+-sm 1;
+
+menuItem
+-l "Enable"
+-c "da_FollicleBraid"
+-rp "N";
+
+menuItem
+-l "Disable"
+-c "da_FollicleNoBraid";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Emit Particle From CV"
+-c "NEmitFromObject;"
+-i "emitter.png";
+
+menuItem
+-c "NEmitFromObjectOptions;"
+-ob 1;
+
+menuItem
+-l "Particle Style"
+-sm 1
+-i "out_particle.png";
+
+menuItem
+-l "Points"
+-c "optionVar -stringValue NParticleStyle \"Points\";"
+-i "nPartPoints.png";
+
+menuItem
+-l "Balls"
+-c "optionVar -stringValue NParticleStyle \"Balls\";"
+-i "nPartBalls.png";
+
+menuItem
+-l "Cloud"
+-c "optionVar -stringValue NParticleStyle \"Cloud\";"
+-i "nPartCloud.png";
+
+menuItem
+-l "ThickCloud"
+-c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
+-i "nPartThickCloud.png";
+
+menuItem
+-l "Water"
+-c "optionVar -stringValue NParticleStyle \"Water\";"
+-i "nPartWater.png";
+
+setParent -m ..;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Create Soft Body"
+-c "soft -c"
+-i "soft.png";
+
+menuItem
+-c "CreateSoftBodyOptions"
+-ob 1;
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Set Fluid Contents"
+-c "SetFluidAttrFromCurve"
+-i "menuIconFluids.png";
+
+menuItem
+-c "SetFluidAttrFromCurveOptions"
+-ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Cache"
+-sm 1
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Create nCache"
+-c "nClothCacheOpt"
+-i "nClothCacheCreate.png";
+
+menuItem
+-l "Delete nCache"
+-c "deleteNclothCache"
+-i "nClothCacheDelete.png";
+
+setParent -m ..;
+

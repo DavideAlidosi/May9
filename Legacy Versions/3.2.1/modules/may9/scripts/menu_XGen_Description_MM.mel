@@ -1,0 +1,41 @@
+
+menuItem
+-l "Convert to Interactive Groom" 
+-c "python(\"xgui.createXgIgConvertToInteractiveGroomWindow()\")" 
+-rp "E" 
+-i "xgConvertToIG.png";
+
+menuItem
+-l "Guides Tool"
+-c "XgGuideTool"
+-rp "N" 
+-i "xgGuideContext.png";
+
+menuItem
+-l "Primitives to Poly"
+-c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")"
+-rp "S" 
+-i "da_xgPolyConvert.png";
+
+menuItem
+-l "Sculpt Guides"
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");"
+-rp "NE" 
+-i "xgGuideSculptTool.png";
+
+menuItem
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;"
+-ob 1;
+
+menuItem
+-l "XGen Editor" 
+-c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
+-i "xgDEditor.png";
+
+menuItem
+-l "XGen Library"
+-c "XGenLibraryWindow"
+-i "xgLibrary.png";
+
+setParent -m ..;
+

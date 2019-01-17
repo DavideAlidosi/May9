@@ -1,0 +1,175 @@
+panelConfiguration -label (localizedPanelLabel("daFourView")) 
+	-defaultImage "fourViewLayout.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"quad\" $gMainPane"
+	-ap true
+		(localizedPanelLabel("Top View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Top View\")) -cam `findStartUpCamera top`;}"
+		"modelPanel -e -label (localizedPanelLabel(\"Top View\")) -cam `findStartUpCamera top` $panelName"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Perspective\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -e -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp` $panelName"
+	-ap true
+		(localizedPanelLabel("Side View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Side View\")) -cam `findStartUpCamera side`;}"
+		"modelPanel -e -label (localizedPanelLabel(\"Side View\")) -cam `findStartUpCamera side` $panelName"
+	-ap true
+		(localizedPanelLabel("Front View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Front View\")) -cam `findStartUpCamera front`;}"
+		"modelPanel -e -label (localizedPanelLabel(\"Front View\")) -cam `findStartUpCamera front` $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daNodeEditor")) 
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Node Editor")) 
+		"scriptedPanel"
+		"$panelName = `scriptedPanel -unParent  -type \"nodeEditorPanel\" -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels `"
+		"scriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daUvEditor")) 
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"vertical2\" -ps 1 55 100 -ps 2 45 100 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("UV Editor")) 
+		"scriptedPanel"
+		"$panelName = `scriptedPanel -unParent  -type \"TextureViewWindow\" -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels `"
+		"scriptedPanel -edit -l (localizedPanelLabel(\"UV Editor\")) -mbv $menusOkayInPanels  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daGraphEditor")) 
+	-defaultImage "perspGraphLayout.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Graph Editor")) 
+		"scriptedPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t  scriptedPanel -mbv $gUseMenusInPanels -type graphEditor -unParent -label (localizedPanelLabel(\"Graph Editor\"));}"
+		"scriptedPanel -edit -label (localizedPanelLabel(\"Graph Editor\"))  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daShapeEditor")) 
+	-defaultImage "vacantCell.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"right3\" -ps 1 55 100 -ps 2 45 50 -ps 3 45 50 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Shape Editor")) 
+		"shapePanel"
+		"shapePanel -unParent -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels "
+		"shapePanel -edit -l (localizedPanelLabel(\"Shape Editor\")) -mbv $menusOkayInPanels  $panelName"
+	-ap false
+		(localizedPanelLabel("Pose Editor")) 
+		"posePanel"
+		"posePanel -unParent -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels "
+		"posePanel -edit -l (localizedPanelLabel(\"Pose Editor\")) -mbv $menusOkayInPanels  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daComponentEditor")) 
+	-defaultImage "vacantCell.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Component Editor")) 
+		"scriptedPanel"
+		"$panelName = `scriptedPanel -unParent  -type \"componentEditorPanel\" -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels `"
+		"scriptedPanel -edit -l (localizedPanelLabel(\"Component Editor\")) -mbv $menusOkayInPanels  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daRelationshipEditor")) 
+	-defaultImage "perspRelationshipEditorLayout.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Relationship Editor")) 
+		"scriptedPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t  scriptedPanel -mbv $gUseMenusInPanels -type relationshipPanel -unParent -label (localizedPanelLabel(\"Relationship Editor\"));}"
+		"scriptedPanel -edit -label (localizedPanelLabel(\"Relationship Editor\"))  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daDynamicRelationshipEditor")) 
+	-defaultImage "perspRelationshipEditorLayout.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Dynamic Relationship Editor")) 
+		"scriptedPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t  scriptedPanel -mbv $gUseMenusInPanels -type dynRelEdPanel -unParent -label (localizedPanelLabel(\"Dynamic Relationship Editor\"));}"
+		"scriptedPanel -edit -label (localizedPanelLabel(\"Dynamic Relationship Editor\"))  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daReferenceEditor")) 
+	-defaultImage "vacantCell.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"horizontal2\" -ps 1 100 55 -ps 2 100 45 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Reference Editor")) 
+		"scriptedPanel"
+		"$panelName = `scriptedPanel -unParent  -type \"referenceEditorPanel\" -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels `"
+		"scriptedPanel -edit -l (localizedPanelLabel(\"Reference Editor\")) -mbv $menusOkayInPanels  $panelName";
+
+panelConfiguration -label (localizedPanelLabel("daHyperShade")) 
+	-defaultImage "vacantCell.png"
+	-image ""
+	-sc false
+	-configString "global string $gMainPane; paneLayout -e -cn \"left3\" -ps 1 20 30 -ps 2 80 100 -ps 3 20 70 $gMainPane;"
+	-ap true
+		(localizedPanelLabel("Persp View")) 
+		"modelPanel"
+		"{global int $gUseMenusInPanels;\t\t\t\t   modelPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Persp View\")) -cam `findStartUpCamera persp`;}"
+		"modelPanel -edit -label (localizedPanelLabel(\"Persp View\"))  -cam `findStartUpCamera persp` $panelName"
+	-ap false
+		(localizedPanelLabel("Hypershade")) 
+		"scriptedPanel"
+		"$panelName = `scriptedPanel -unParent  -type \"hyperShadePanel\" -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels `"
+		"scriptedPanel -edit -l (localizedPanelLabel(\"Hypershade\")) -mbv $menusOkayInPanels  $panelName"
+	-ap false
+		(localizedPanelLabel("Outliner")) 
+		"outlinerPanel"
+		"{global int $gUseMenusInPanels; $panelName = `outlinerPanel -mbv $gUseMenusInPanels -unParent -label (localizedPanelLabel(\"Outliner\"))`;\t\t\t\t outlinerEditor -e -highlightActive true $panelName;}"
+		"outlinerPanel -edit -label (localizedPanelLabel(\"Outliner\"))  $panelName";
