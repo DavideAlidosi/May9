@@ -879,7 +879,7 @@ menuItem -bld 1
 
 menuItem -bld 1
 -l "Lock Camera" 
--c "changeCameraLockStatus $currentPanel" 
+-c "changeCameraLockStatus `getPanel -wf`" 
 -cb (`camera -q -lt $myCamera`);
 
 menuItem -bld 1

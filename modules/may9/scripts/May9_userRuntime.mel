@@ -15,7 +15,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Evaluation Cache HUD enable"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-cl "python
+	-cl "python"
 	-c ("from maya.plugin.evaluator.CacheUiHud import CachePreferenceHud; CachePreferenceHud().set_value( not 0 )")
 	da_EvalCacheHUD;
 
@@ -233,7 +233,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Enable Arnold Render Viewport"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("if(`modelEditor -q -rom $currentPanel` == \"arnoldViewOverride\"){\n    ActivateViewport20;\n}else{\n    setRendererAndOverrideInModelPanel $gViewport2 arnoldViewOverride $currentPanel;\n    arnoldViewOverrideOptionBox;\n}")
+	-c ("string $currentPanel = `getPanel -wf`;\n\nif(`modelEditor -q -rom $currentPanel` == \"arnoldViewOverride\"){\n    ActivateViewport20;\n}else{\n    setRendererAndOverrideInModelPanel $gViewport2 arnoldViewOverride $currentPanel;\n    arnoldViewOverrideOptionBox;\n}")
 	da_ArnoldRenderViewport;
 
 runTimeCommand
@@ -2178,13 +2178,13 @@ runTimeCommand
 runTimeCommand
 	-ann "Clean HUD"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("setFrameRateVisibility 0;\nsetCurrentFrameVisibility 0;\nsetObjectDetailsVisibility 0;\nsetSceneTimecodeVisibility 0;\nsetPolyCountVisibility 0;\nsetFocalLengthVisibility 0;\nSetEvaluationManagerHUDVisibility 0")
+	-c ("setFrameRateVisibility 0;\nsetCurrentFrameVisibility 0;\nsetObjectDetailsVisibility 0;\nsetSceneTimecodeVisibility 0;\nsetPolyCountVisibility 0;\nsetFocalLengthVisibility 0;\nSetEvaluationManagerHUDVisibility 0;\nif (`about -api` >= 20190000)da_NoEvalCacheHUD;")
 	da_CleanHUD;
 
 runTimeCommand
 	-ann "Enable HUD"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("setFrameRateVisibility 1;\nsetCurrentFrameVisibility 1;\nsetObjectDetailsVisibility 1;\nsetSceneTimecodeVisibility 1;\nsetPolyCountVisibility 1;\nsetFocalLengthVisibility 1;\nSetEvaluationManagerHUDVisibility 1")
+	-c ("setFrameRateVisibility 1;\nsetCurrentFrameVisibility 1;\nsetObjectDetailsVisibility 1;\nsetSceneTimecodeVisibility 1;\nsetPolyCountVisibility 1;\nsetFocalLengthVisibility 1;\nSetEvaluationManagerHUDVisibility 1;\nif (`about -api` >= 20190000)da_EvalCacheHUD;")
 	da_EnableHUD;
 
 runTimeCommand
