@@ -3337,12 +3337,6 @@ menuItem
 -i "polyBridge.png";
 
 menuItem
--l "Connect"
--c "EnterConnectTool"
--rp "SE"
--i "connect_NEX32.png";
-
-menuItem
 -l "Multi Cut Tool"
 -c "dR_multiCutTool;"
 -rp "W"
@@ -11148,7 +11142,7 @@ string $reflectionDirection = `art3dPaintCtx -q -ra $currentCtx`;
 
 menuItem -itl 1 
 -l "Symmetry" 
--c "if ($reflectionCheck == 1) art3dPaintCtx -e -reflection  false `currentCtx`; else art3dPaintCtx -e -reflection  true `currentCtx`;" 
+-c "if (`art3dPaintCtx -q -rn art3dPaintContext`) art3dPaintCtx -e -reflection  false `currentCtx`; else art3dPaintCtx -e -reflection  true `currentCtx`;" 
 -cb $reflectionCheck 
 -rp "E";
 
@@ -11465,7 +11459,7 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Symmetry" 
--c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
+-c "if (`artAttrCtx -q -rn hairPaintContext`) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
 -cb $reflectionCheck 
 -rp "E";
 
@@ -11629,7 +11623,7 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Symmetry" 
--c "if ($reflectionCheck == 1) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
+-c "if (`artAttrCtx -q -rn artAttrContext`) artAttrCtx -e -reflection  false `currentCtx`; else artAttrCtx -e -reflection  true `currentCtx`;" 
 -cb $reflectionCheck
 -rp "E";
 
@@ -11834,19 +11828,19 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Symmetry" 
--c "if ($reflectionCheck == 1) artPuttyCtx -e -reflection  false `currentCtx`; else artPuttyCtx -e -reflection  true `currentCtx`;" 
+-c "if (`artPuttyCtx -q -rn artPuttyContext`) artPuttyCtx -e -reflection  false `currentCtx`; else artPuttyCtx -e -reflection  true `currentCtx`;" 
 -cb $reflectionCheck 
 -rp "E";
 
 menuItem -itl 1 
 -l "Wireframe" 
--c "if ($wfCheck == 1) artPuttyCtx -e -showactive false `currentCtx`; else artPuttyCtx -e -showactive true `currentCtx`;" 
+-c "if (`artPuttyCtx -q -showactive artPuttyContext`) artPuttyCtx -e -showactive false `currentCtx`; else artPuttyCtx -e -showactive true `currentCtx`;" 
 -cb $wfCheck 
 -rp "W";
 
 menuItem -itl 1 
 -l "Auto Smooth" 
--c "if ($autoSmoothCheck == 1) artPuttyCtx -e -autosmooth false `currentCtx`; else artPuttyCtx -e -autosmooth true `currentCtx`;" 
+-c "if (`artPuttyCtx -q -autosmooth artPuttyContext`) artPuttyCtx -e -autosmooth false `currentCtx`; else artPuttyCtx -e -autosmooth true `currentCtx`;" 
 -cb $autoSmoothCheck 
 -rp "N";
 
