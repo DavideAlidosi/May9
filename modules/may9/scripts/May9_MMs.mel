@@ -1529,20 +1529,42 @@ menuItem
 -ob 1;
 
 menuItem
--l "Bevel Plus"
--c "BevelPlus;"
+-l "Controller"
+-sm 1
 -rp "E"
--i "bevelPlus.png";
+-i "humanIK_CharCtrl.png";
 
 menuItem
--c "BevelPlusOptions;"
--ob 1;
+-l "Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
 
 menuItem
--l "Rebuild"
--c "RebuildCurveOptions"
--rp "N"
--i "rebuildCurve.png";
+-l "Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "E" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Parent" 
+-c "da_CtrlParentConstraint" 
+-rp "N" 
+-i "parentConstraint.png";
+
+menuItem
+-l "Pole Vector" 
+-c "da_CtrlPoleVectorConstraint" 
+-rp "SE" 
+-i "poleVectorConstraint.png";
+
+setParent -m ..;
 
 menuItem
 -l "Attach"
@@ -1557,10 +1579,6 @@ menuItem
 -i "reverse.png";
 
 menuItem
--c "ReverseCurveOptions;"
--ob 1;
-
-menuItem
 -l "Open/Close"
 -c "OpenCloseCurve"
 -rp "SW"
@@ -1573,7 +1591,7 @@ menuItem
 menuItem
 -l "Offset"
 -c "OffsetCurve;"
--rp "NE"
+-rp "N"
 -i "offsetCurve.png";
 
 menuItem
@@ -1593,7 +1611,13 @@ menuItem
 menuItem
 -l "Combine" 
 -c "da_CombineCurves" 
+-rp "NE"
 -i "da_combineCurves.png";
+
+menuItem
+-l "Rebuild"
+-c "RebuildCurveOptions"
+-i "rebuildCurve.png";
 
 menuItem
 -l "Pivot to Origin"
@@ -1628,23 +1652,6 @@ menuItem
 -l "Create Curve Collector"
 -c "da_aiCurveCollector"
 -i "CurveCollectorShelf.png";
-
-setParent -m ..;
-
-menuItem
--l "Surface" 
--sm 1
--i "da_flatPoly.png";
-
-menuItem
--l "Flat Surface"
--c "da_FlattenSurface"
--i "da_flatPoly.png";
-
-menuItem
--l "Bevel Plus Mesh"
--c "da_BevelPlusForText"
--i "polyBevel.png";
 
 setParent -m ..;
 
@@ -2305,12 +2312,6 @@ setParent -m ..;
 global proc Curves_MM_May9(){
 
 menuItem
--l "Rebuild"
--c "RebuildCurveOptions"
--rp "N"
--i "rebuildCurve.png";
-
-menuItem
 -l "Add CV"
 -c "AddPointsTool;"
 -rp "S"
@@ -2349,13 +2350,9 @@ menuItem
 -i "reverse.png";
 
 menuItem
--c "ReverseCurveOptions;"
--ob 1;
-
-menuItem
 -l "Offset"
 -c "OffsetCurve;"
--rp "NE"
+-rp "N"
 -i "offsetCurve.png";
 
 menuItem
@@ -2377,8 +2374,15 @@ menuItem
 -c "da_ListInputOperations" 
 -i "out_list.png";
 
+
+menuItem
+-l "Rebuild"
+-c "RebuildCurveOptions"
+-i "rebuildCurve.png";
+
 menuItem
 -l "Separate"
+-rp "NE"
 -c "da_SepareCurves"
 -i "da_separateCurves.png";
 
