@@ -833,7 +833,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Add Divisions to Polygonal Object"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("Triangulate;\npolyQuad  -a 47 -kgb 0 -ktb 0 -khe 0 -ws 0 -ch 1")
+	-c ("string $mySel[] = `ls -sl`;\nTriangulate;\npolyQuad  -a 47 -kgb 0 -ktb 0 -khe 0 -ws 0 -ch 1;\nselect $mySel")
 	da_PolyDivision;
 
 runTimeCommand
