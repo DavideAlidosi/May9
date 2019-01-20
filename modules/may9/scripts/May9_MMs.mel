@@ -3759,11 +3759,6 @@ menuItem
 -c "XgGuideTool"
 -i "xgGuideContext.png";
 
-menuItem
--l "Bind Patches Menu"
--c "python(\"from PySide import QtGui\\nm = QtGui.QMenu()\\nm.addAction(u\\\"Add Selected Faces\\\",  lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Append\\\") )\\nm.addAction(u\\\"Replace with Selected Faces\\\", lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Replace\\\") )\\nm.addAction(u\\\"Remove Selected Faces\\\",  lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Remove\\\") )\\nm.addAction(u\\\"Bind Faces Based on Map...\\\",     lambda: xgui.createDescriptionEditor(False).modifyBinding(\\\"Map\\\") )\\nm.addSeparator()\\nm.addAction(u\\\"Select Bound Faces\\\",  lambda: xgui.createDescriptionEditor(False).selectBinding() )\\nm.popup(QtGui.QCursor.pos())\\n\")"
--i "xgBindFaces.png";
-
 setParent -m ..;
 
 menuItem
@@ -13731,7 +13726,7 @@ menuItem
 -l "Groom to Polygons" 
 -c "import xgenm.xmaya.xgmSplineToGeometryConvert as convert;convert.convertPrimToPolygon(True)" 
 -i "xgConvertToPoly.png" 
--sourceType "python";
+-stp "python";
 
 menuItem 
 -l "separator" 
