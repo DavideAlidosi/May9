@@ -1,18 +1,4 @@
 runTimeCommand
-	-ann "Enable MMtoKey"
-	-cat "Custom Scripts.May9_Next.System"
-	-cl "python"
-	-c ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
-	da_MMtoKey_press;
-
-runTimeCommand
-	-ann "Disable MMtoKey"
-	-cat "Custom Scripts.May9_Next.System"
-	-cl "python"
-	-c ("May9_Next.releaseSelected()\nwhile cmds.popupMenu(\"mm_1\", q=True, ex=True): cmds.deleteUI(\"mm_1\")\nwhile cmds.popupMenu(\"mm_2\", q=True, ex=True): cmds.deleteUI(\"mm_2\")")
-	da_MMtoKey_release;
-
-runTimeCommand
 	-ann "Evaluation Cache HUD enable"
 	-cat "Custom Scripts.May9_Next.Scene"
 	-cl "python"
@@ -25,6 +11,20 @@ runTimeCommand
 	-cl "python"
 	-c ("from maya.plugin.evaluator.CacheUiHud import CachePreferenceHud; CachePreferenceHud().set_value( not 1 )")
 	da_NoEvalCacheHUD;
+
+runTimeCommand
+	-ann "Enable MMtoKey"
+	-cat "Custom Scripts.May9_Next.System"
+	-cl "python"
+	-c ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
+	da_MMtoKey_press;
+
+runTimeCommand
+	-ann "Disable MMtoKey"
+	-cat "Custom Scripts.May9_Next.System"
+	-cl "python"
+	-c ("May9_Next.releaseSelected()\nwhile cmds.popupMenu(\"mm_1\", q=True, ex=True): cmds.deleteUI(\"mm_1\")\nwhile cmds.popupMenu(\"mm_2\", q=True, ex=True): cmds.deleteUI(\"mm_2\")")
+	da_MMtoKey_release;
 
 runTimeCommand
 	-ann "Connect Transform Attributes"
