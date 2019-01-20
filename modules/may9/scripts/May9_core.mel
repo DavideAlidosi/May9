@@ -1,7 +1,7 @@
 // Store May9 Version
-string $may9Version = "May9 Next 10.0.0";
+string $may9Version = "May9 Next 10.0.1";
 string $may9CodeName = "is powered by MMtoKey Engine";
-int $may9Value = "10000";
+int $may9Value = "10001";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -65,9 +65,6 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 
 	// Declare initial layout state
 	global int $myLayout = 0;
-
-	// Preload userRuntime
-	catchQuiet (`May9_userRuntime`);
 }
 
 if (`optionVar -q "May9ActivationCheck"` < 10000){
@@ -80,12 +77,18 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 
 	// Set May9 Next hotkeySet
 	hotkeySet -edit -current May9_Next;
+}
+
+if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 
 	// Define May9 Next 10.0 installation status 
-	optionVar -iv May9ActivationCheck 10000;
+	optionVar -iv May9ActivationCheck $may9Value;
 
 	// Store Preferences Changes
 	savePrefsChanges;
+
+	// Preload userRuntime
+	catchQuiet (`May9_userRuntime`);
 }
 
 // Preload May9Menu
