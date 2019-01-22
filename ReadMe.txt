@@ -24,7 +24,6 @@ Release Note
 
 
 Exclusive script
-- da_intPlay: this script add the interactive play button directly to Time Slider
 - da_curveToPoly: this script make possible the conversion of curves in polygons
 - da_interactiveBooleans: this script make the Polygonal Boolean process more interactive
 - da_BooleanFullIntersect: this script make a full intersect, so this execute a mesh subtraction but maintain subtracted part as separate object
