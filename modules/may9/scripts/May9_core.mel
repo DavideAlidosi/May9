@@ -84,11 +84,11 @@ if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 	// Define May9 Next 10.0 installation status 
 	optionVar -iv May9ActivationCheck $may9Value;
 
-	// Store Preferences Changes
-	savePrefsChanges;
-
 	// Preload userRuntime
 	catchQuiet (`May9_userRuntime`);
+
+	// Store Preferences Changes
+	savePrefs -g -hk;
 }
 
 // Preload May9Menu
