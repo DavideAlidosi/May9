@@ -1,7 +1,7 @@
 // Store May9 Version
-string $may9Version = "May9 Next 10.0.1";
+string $may9Version = "May9 Next 10.0.2";
 string $may9CodeName = "is powered by MMtoKey Engine";
-int $may9Value = "10001";
+int $may9Value = "10020";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -26,10 +26,15 @@ scriptJob -e "NewSceneOpened" $myLayoutReset;
 scriptJob -e "SceneOpened" $myLayoutReset;
 
 // Preload Crease Set Editor
-python( "from maya.app.general import creaseSetEditor");
+python "from maya.app.general import creaseSetEditor";
+
+// Preload Cache Playback Preferences
+if (`about -api` >= 20190000){
+	python "from maya.plugin.evaluator.cache_preferences import CachePreferenceEnabled";
+}
 
 // Preload Boss Editor
-if ( catchQuiet( `python( "import boss.BossEditor as be" )` ) )
+if ( catchQuiet( `python "import boss.BossEditor as be"` ) )
 	print "Please check Bifrost installation";
 
 // First run May9 procedures

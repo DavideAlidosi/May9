@@ -152,6 +152,8 @@ int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -
 
 string $currentPanel = `getPanel -wf`;
 
+int $cachePlaybackCheck = `python "CachePreferenceEnabled().get_value()"`;
+
 menuItem -bld 1 
 -l "Poly/NURBS"
 -sm 1
@@ -764,6 +766,14 @@ menuItem -bld 1
 -l "Evaluation Toolkit"
 -c "EvaluationToolkit"
 -i "polyColorSetEditor.png";
+
+
+if (`about -api` >= 20190000){
+menuItem -bld 1 
+-l "Cached Playback" 
+-c "da_ToggleCachePlayback"
+-cb $cachePlaybackCheck;
+}
 
 setParent -m ..;
 

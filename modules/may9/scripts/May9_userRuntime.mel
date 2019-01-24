@@ -1,4 +1,11 @@
 runTimeCommand
+	-ann "Toggle Cache Playback"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-cl "python"
+	-c ("from maya.plugin.evaluator.cache_preferences import CachePreferenceEnabled\n\nif CachePreferenceEnabled().get_value():\n    CachePreferenceEnabled().set_value( False )\nelse:\n    CachePreferenceEnabled().set_value( True )")
+	da_ToggleCachePlayback;
+
+runTimeCommand
 	-ann "Evaluation Cache HUD enable"
 	-cat "Custom Scripts.May9_Next.Scene"
 	-cl "python"

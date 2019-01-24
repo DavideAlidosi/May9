@@ -44,6 +44,9 @@ savePrefsChanges;
 // Remove runtimeCommand
 
 catchQuiet (`runTimeCommand -e -del
+	da_ToggleCachePlayback`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_EvalCacheHUD`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -1182,6 +1185,10 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_SepareCurves`);
+
+// Store Preferences Changes
+savePrefs -g -hk;
+pluginInfo -spp;
 
 // Un-install confirmation
 inViewMessage -pos midCenterTop -msg "May9 Next un-installed" -fade;
