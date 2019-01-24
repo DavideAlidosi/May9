@@ -152,8 +152,6 @@ int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -
 
 string $currentPanel = `getPanel -wf`;
 
-int $cachePlaybackCheck = `python "CachePreferenceEnabled().get_value()"`;
-
 menuItem -bld 1 
 -l "Poly/NURBS"
 -sm 1
@@ -757,22 +755,26 @@ menuItem -bld 1
 menuItem 
 -d 1;
 
-menuItem -bld 1 
--l "Profiler"
--c "ProfilerTool"
--i "out_timeEditorTrack.png";
-
-menuItem -bld 1 
--l "Evaluation Toolkit"
--c "EvaluationToolkit"
--i "polyColorSetEditor.png";
-
-
 if (`about -api` >= 20190000){
+string $evalMode[] = `evaluationManager -q -m`;
+
+menuItem -bld 1 
+-l "Parallel Evaluation" 
+-c "da_evalToggle"
+-cb ($evalMode[0] == "parallel");
+
 menuItem -bld 1 
 -l "Cached Playback" 
 -c "da_ToggleCachePlayback"
--cb $cachePlaybackCheck;
+-cb (`python "CachePreferenceEnabled().get_value()"`)
+-en ($evalMode[0] == "parallel");
+}else{
+string $evalMode[] = `evaluationManager -q -m`;
+
+menuItem -bld 1 
+-l "Parallel Evaluation" 
+-c "da_evalToggle"
+-cb ($evalMode[0] == "parallel");
 }
 
 setParent -m ..;

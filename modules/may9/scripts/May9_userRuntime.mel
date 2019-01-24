@@ -1,4 +1,10 @@
 runTimeCommand
+	-ann "Toggle Parallel Evalutaion"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $evalMode[] = `evaluationManager -q -m`;\n\nif ($evalMode[0] != \"parallel\"){\n    evaluationManager -m \"parallel\";\n    ogs -r;\n}else{\n    evaluationManager -m \"off\";\n    ogs -r;\n}")
+	da_evalToggle;
+
+runTimeCommand
 	-ann "Toggle Cache Playback"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-cl "python"
