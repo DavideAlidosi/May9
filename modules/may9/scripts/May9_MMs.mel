@@ -2866,7 +2866,7 @@ menuItem
 -i "polyBridge.png";
 
 menuItem
--l "Multi Cut Tool"
+-l "Multi Cut"
 -c "dR_multiCutTool;"
 -rp "W"
 -i "multiCut_NEX32.png";
@@ -2959,13 +2959,6 @@ menuItem
 -l "Edit Edge Flow"
 -c "PolyEditEdgeFlow"
 -i "polyEditEdgeFlow.png";
-
-if (`about -api` >= 20180000){
-menuItem
--l "Circularize"
--c "performPolyCircularize 0"
--i "polyCircularize.png";
-}
 
 menuItem
 -l "Detach"
@@ -3342,6 +3335,14 @@ commonReflectionOptionsPopup();
 
 commonSelectOptionsPopup();
 
+if (`about -api` >= 20180000){
+menuItem
+-l "Circularize"
+-c "performPolyCircularize 0"
+-rp "SW"
+-i "polyCircularize.png";
+}
+
 menuItem
 -l "Bridge"
 -c "BridgeEdge;"
@@ -3349,16 +3350,10 @@ menuItem
 -i "polyBridge.png";
 
 menuItem
--l "Multi Cut Tool"
+-l "Multi Cut"
 -c "dR_multiCutTool;"
 -rp "W"
 -i "multiCut_NEX32.png";
-
-menuItem
--l "Connect"
--c "dR_connectTool;"
--rp "SW"
--i "connect_NEX32.png";
 
 menuItem
 -l "Bevel"
@@ -3381,13 +3376,6 @@ menuItem
 -l "Transform"
 -c "performPolyMove \"\" 0"
 -i "polyMoveVertex.png";
-
-if (`about -api` >= 20180000){
-menuItem
--l "Circularize"
--c "performPolyCircularize 0"
--i "polyCircularize.png";
-}
 
 menuItem
 -l "Extract"
@@ -5443,7 +5431,7 @@ menuItem
 -i "polyBevel.png";
 
 menuItem
--l "Multi Cut Tool" 
+-l "Multi Cut" 
 -c "da_LegacySubdivPolyMode;\ndR_multiCutTool" 
 -rp "W" 
 -i "multiCut_NEX32.png";
@@ -6064,7 +6052,7 @@ menuItem
 -i "polyBevel.png";
 
 menuItem
--l "Multi Cut Tool" 
+-l "Multi Cut" 
 -c "dR_multiCutTool;" 
 -rp "W" 
 -i "multiCut_NEX32.png";
@@ -6285,7 +6273,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Multi Cut Tool" 
+-l "Multi Cut" 
 -c "dR_multiCutTool;" 
 -rp "W" 
 -i "multiCut_NEX32.png";
@@ -9139,7 +9127,7 @@ int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
 menuItem
--l "Multi Cut Tool"
+-l "Multi Cut"
 -c "dR_multiCutTool;"
 -rp "W"
 -i "multiCut_NEX32.png";
@@ -10052,7 +10040,7 @@ int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
 menuItem
--l "Multi Cut Tool"
+-l "Multi Cut"
 -c "dR_multiCutTool;"
 -rp "W"
 -i "multiCut_NEX32.png";
@@ -11215,6 +11203,12 @@ global proc Tool_Connect_MM_May9(){
 
 radioMenuItemCollection;
 
+menuItem -itl 1
+-l "Multi Cut"
+-c "dR_multiCutTool;"
+-rp "NW"
+-i "multiCut_NEX32.png";
+
 menuItem -itl 1 
 -l "Slide" 
 -rp "S" 
@@ -11566,6 +11560,12 @@ menuItem -itl 1
 -rp "NW"
 -i "quadDraw_NEX32.png";
 
+menuItem -itl 1 
+-l "Connect"
+-c "dR_connectTool;"
+-rp "SW"
+-i "connect_NEX32.png";
+
 radioMenuItemCollection;
 
 menuItem -itl 1 
@@ -11766,7 +11766,7 @@ menuItem -itl 1
 -i "aselect.png";
 
 menuItem -itl 1 
--l "Multi Cut Tool" 
+-l "Multi Cut" 
 -c "dR_multiCutTool;" 
 -rp "NW" 
 -i "multiCut_NEX32.png";
@@ -12754,7 +12754,7 @@ commonReflectionOptionsPopup();
 commonSelectOptionsPopup();
 
 menuItem
--l "Multi Cut Tool"
+-l "Multi Cut"
 -c "dR_multiCutTool;"
 -rp "W"
 -i "multiCut_NEX32.png";
