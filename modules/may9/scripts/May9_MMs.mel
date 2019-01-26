@@ -2951,6 +2951,11 @@ menuItem
 -i "edges_NEX.png";
 
 menuItem
+-l "Connect"
+-c "dR_connectTool;"
+-i "connect_NEX32.png";
+
+menuItem
 -l "Transform"
 -c "performPolyMove \"\" 0"
 -i "polyMoveVertex.png";
@@ -3371,6 +3376,11 @@ menuItem
 -l "Face Edit"
 -sm 1
 -i "faces_NEX.png";
+
+menuItem
+-l "Connect"
+-c "dR_connectTool;"
+-i "connect_NEX32.png";
 
 menuItem
 -l "Transform"
@@ -11203,12 +11213,6 @@ global proc Tool_Connect_MM_May9(){
 
 radioMenuItemCollection;
 
-menuItem -itl 1
--l "Multi Cut"
--c "dR_multiCutTool;"
--rp "NW"
--i "multiCut_NEX32.png";
-
 menuItem -itl 1 
 -l "Slide" 
 -rp "S" 
@@ -11559,12 +11563,6 @@ menuItem -itl 1
 -c "dR_quadDrawTool;"
 -rp "NW"
 -i "quadDraw_NEX32.png";
-
-menuItem -itl 1 
--l "Connect"
--c "dR_connectTool;"
--rp "SW"
--i "connect_NEX32.png";
 
 radioMenuItemCollection;
 
