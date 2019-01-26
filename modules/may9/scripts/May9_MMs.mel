@@ -12749,6 +12749,7 @@ Sup_Symmetry_MM_May9;
 
 Sup_SoftSelect_MM_May9;
 
+if (`about -api` >= 20180000){
 string $EdgeSlide = `xformConstraint -q -type`;
 
 menuItem
@@ -12756,6 +12757,7 @@ menuItem
 -c "da_EdgeSlideToggle"
 -rp "SE"
 -cb ($EdgeSlide == "edge");
+}
 
 menuItem
 -l "Multi Cut"

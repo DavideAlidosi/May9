@@ -4,13 +4,13 @@ runTimeCommand
 	-c ("if (`xformConstraint -q -t` != \"edge\"){\n\ttexTranConstSet \"edge\";\n}else{\n\ttexTranConstSet \"none\";\n}")
 	da_EdgeSlideToggle;
 
-if (`about -api` >= 20190000){
 runTimeCommand
 	-ann "Toggle Parallel Evalutaion"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("string $evalMode[] = `evaluationManager -q -m`;\n\nif ($evalMode[0] != \"parallel\"){\n    evaluationManager -m \"parallel\";\n    ogs -r;\n}else{\n    evaluationManager -m \"off\";\n    ogs -r;\n}")
 	da_evalToggle;
 
+if (`about -api` >= 20190000){
 runTimeCommand
 	-ann "Toggle Cache Playback"
 	-cat "Custom Scripts.May9_Next.Toggle"
