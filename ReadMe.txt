@@ -1,4 +1,4 @@
-May9 Next 10.0.1 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next 10.0.2 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
