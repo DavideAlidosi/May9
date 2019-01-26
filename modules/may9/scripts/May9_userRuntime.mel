@@ -1,4 +1,11 @@
 runTimeCommand
+	-ann "Edge Slide Toggle"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("if (`xformConstraint -q -t` != \"edge\"){\n\ttexTranConstSet \"edge\";\n}else{\n\ttexTranConstSet \"none\";\n}")
+	da_EdgeSlideToggle;
+
+if (`about -api` >= 20190000){
+runTimeCommand
 	-ann "Toggle Parallel Evalutaion"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("string $evalMode[] = `evaluationManager -q -m`;\n\nif ($evalMode[0] != \"parallel\"){\n    evaluationManager -m \"parallel\";\n    ogs -r;\n}else{\n    evaluationManager -m \"off\";\n    ogs -r;\n}")
@@ -8,7 +15,7 @@ runTimeCommand
 	-ann "Toggle Cache Playback"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-cl "python"
-	-c ("from maya.plugin.evaluator.cache_preferences import CachePreferenceEnabled\n\nif CachePreferenceEnabled().get_value():\n    CachePreferenceEnabled().set_value( False )\nelse:\n    CachePreferenceEnabled().set_value( True )")
+	-c ("if CachePreferenceEnabled().get_value():\n    CachePreferenceEnabled().set_value( False )\nelse:\n    CachePreferenceEnabled().set_value( True )")
 	da_ToggleCachePlayback;
 
 runTimeCommand
@@ -24,6 +31,7 @@ runTimeCommand
 	-cl "python"
 	-c ("from maya.plugin.evaluator.CacheUiHud import CachePreferenceHud; CachePreferenceHud().set_value( not 1 )")
 	da_NoEvalCacheHUD;
+}
 
 runTimeCommand
 	-ann "Enable MMtoKey"

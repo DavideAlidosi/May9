@@ -44,6 +44,12 @@ savePrefsChanges;
 // Remove runtimeCommand
 
 catchQuiet (`runTimeCommand -e -del
+	da_EdgeSlideToggle`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_evalToggle`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ToggleCachePlayback`);
 
 catchQuiet (`runTimeCommand -e -del

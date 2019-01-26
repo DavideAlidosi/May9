@@ -11550,7 +11550,7 @@ setParent -m ..;
 // Define Tool_MultiCut marking menu
 global proc Tool_MultiCut_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
 int $deleteFaceOn = `nexOpt -q useDeleteFaces`;
 int $extractFacesOn = `nexOpt -q useExtractFaces`;
@@ -11744,7 +11744,7 @@ setParent -m ..;
 // Define Tool_QuadDraw marking menu
 global proc Tool_QuadDraw_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
 int $extendMode = `nexOpt -q extendType`;
 string $currentPanel = `getPanel -wf`;
@@ -11864,7 +11864,7 @@ setParent -m ..;
 global proc Tool_SculptMesh_MM_May9(){
 
 if (`about -api` >= 20180000){
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 }
 string $currentCtx = `currentCtx`;
 int $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentCtx`;
@@ -12118,7 +12118,7 @@ setParent -m ..;
 // Define Tool_TargetWeld marking menu
 global proc Tool_TargetWeld_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
 menuItem -itl 1 
 -l "Complete Tool" 
@@ -12749,6 +12749,14 @@ Sup_Symmetry_MM_May9;
 
 Sup_SoftSelect_MM_May9;
 
+string $EdgeSlide = `xformConstraint -q -type`;
+
+menuItem
+-l "Edge Slide"
+-c "da_EdgeSlideToggle"
+-rp "SE"
+-cb ($EdgeSlide == "edge");
+
 menuItem
 -l "Multi Cut"
 -c "dR_multiCutTool;"
@@ -12768,15 +12776,9 @@ menuItem
 -i "polyAverageVertex.png";
 
 menuItem
--l "Chamfer"
--c "ChamferVertex"
--rp "NW"
--i "polyChamfer.png";
-
-menuItem
 -l "Merge to Center"
 -c "MergeToCenter"
--rp "SE"
+-rp "NW"
 -i "polyMergeToCenter.png";
 
 menuItem
