@@ -1938,9 +1938,7 @@ setParent -m ..;
 // Define CurveCV marking menu
 global proc CurveCV_MM_May9(){
 
-commonReflectionOptionsPopup();
-
-commonSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
 
 menuItem
 -l "Lock Length" 
@@ -2849,9 +2847,9 @@ setParent -m ..;
 // Define Edge marking menu
 global proc Edge_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
 
 menuItem
 -l "Bevel"
@@ -3336,9 +3334,9 @@ setParent -m ..;
 // Define Face marking menu
 global proc Face_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
 
 if (`about -api` >= 20180000){
 menuItem
@@ -12747,9 +12745,9 @@ setParent -m ..;
 // Define Vertex marking menu
 global proc Vertex_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
 
 menuItem
 -l "Multi Cut"
@@ -13849,3 +13847,134 @@ menuItem
 setParent -m ..;
 
 } 
+// Support MMs
+
+// Define Sup_SoftSelect marking menu
+global proc Sup_SoftSelect_MM_May9(){
+int $softSelectOn = `softSelect -q -softSelectEnabled`;
+int $fallofMode = `softSelect -q -softSelectFalloff`;
+int $softSelectColourOn = `softSelect -q -enableFalseColor`;
+
+menuItem 
+-l "Soft Selection"
+-i "customSoftSelectFalloffCurve.png"
+-sm 1
+-radialPosition	"S";
+
+menuItem 
+-l "Colour Feedback"
+-checkBox $softSelectColourOn
+-c ("softSelect -e -enableFalseColor #1");
+
+radioMenuItemCollection;
+
+menuItem 
+-l "Soft Select"
+-rp "S"
+-cb $softSelectOn
+-c ("softSelect -e -softSelectEnabled #1");
+
+menuItem 
+-l "Surface"
+-rp	"W"
+-rb (1 == $fallofMode)
+-c ("softSelect -e -softSelectFalloff 1");
+
+menuItem 
+-l "Volume"
+-rp	"SW"
+-rb (0 == $fallofMode)
+-c ("softSelect -e -softSelectFalloff 0");
+
+menuItem
+-l "Global"
+-rp "SE" 
+-rb (2 == $fallofMode)
+-c "softSelect -e -softSelectFalloff 2";
+
+menuItem
+-l "Object"
+-rp "E" 
+-rb (3 == $fallofMode)
+-c "softSelect -e -softSelectFalloff 3";
+
+setParent -m ..;
+
+}
+// Define Sup_SoftSelect marking menu
+global proc Sup_Symmetry_MM_May9(){
+int $reflectionOn = `symmetricModelling -q -symmetry`;
+
+int $reflectionAbout;
+string $val = `symmetricModelling -q -about` ;
+if ($val == "world")
+$reflectionAbout = 0;
+else if ($val == "object")
+$reflectionAbout = 1;
+else // topo
+$reflectionAbout = 2;
+
+int $reflectionAxis;
+$val = `symmetricModelling -q -axis` ;
+if ($val == "x")
+$reflectionAxis = 0;
+else if ($val == "y")
+$reflectionAxis = 1;
+else
+$reflectionAxis = 2;
+
+menuItem 
+-l "Symmetry"
+-i "polyMirrorCut.png"
+-sm 1
+-radialPosition	"N";
+
+menuItem 
+-l "Symmetry"
+-rp	"N"
+-cb	$reflectionOn
+-c	("symmetricModelling -e -symmetry #1; if (#1) SymmetrizeSelection;");
+
+radioMenuItemCollection;
+
+menuItem 
+-l "World"
+-rp	"SE"
+-rb	($reflectionAbout == 0)
+-c	("symmetricModelling -e -about \"world\"");
+
+menuItem 
+-l "Object"
+-rp	"E"
+-rb	($reflectionAbout == 1)
+-c	("symmetricModelling -e -about \"object\"");
+
+menuItem 
+-l "Topology"
+-rp	"NE"
+-rb	($reflectionAbout == 2)
+-c	("reflectionSetMode topo");
+
+radioMenuItemCollection;
+
+menuItem 
+-l "X Axis"
+-rp	"NW"
+-rb	($reflectionAxis == 0)
+-c ("symmetricModelling -e -axis \"x\"");
+
+menuItem 
+-l "Y Axis"
+-rp	"W"
+-rb	($reflectionAxis == 1)
+-c	("symmetricModelling -e -axis \"y\"");
+
+menuItem 
+-label "Z Axis"
+-rp	"SW"
+-rb	($reflectionAxis == 2)
+-c	("symmetricModelling -e -axis \"z\"");
+
+setParent -m ..;
+
+}
