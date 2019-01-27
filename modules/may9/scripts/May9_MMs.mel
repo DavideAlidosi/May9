@@ -4852,9 +4852,9 @@ setParent -m ..;
 // Define LatticePoint marking menu
 global proc LatticePoint_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
 
 menuItem
 -l "Lattice" 
@@ -11138,9 +11138,9 @@ setParent -m ..;
 // Define Tool_3DCutSew marking menu
 global proc Tool_3DCutSew_MM_May9(){
 
-commonReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
 
 menuItem -itl 1 
 -l "Complete Tool" 
@@ -13303,10 +13303,6 @@ setParent -m ..;
 } 
 // Define Window_UV_Mesh marking menu
 global proc Window_UV_Mesh_MM_May9(){
-
-commonTexReflectionOptionsPopup();
-
-commonTexSelectOptionsPopup();
 
 menuItem
 -l "Optimize" 
