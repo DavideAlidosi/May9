@@ -1,7 +1,13 @@
 runTimeCommand
+	-ann "Surface Slide Toggle"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("if (`xformConstraint -q -t` != \"surface\"){\n\tdR_slideSurface;\n}else{\n\tdR_slideOff;\n}")
+	da_SurfaceSlideToggle;
+
+runTimeCommand
 	-ann "Edge Slide Toggle"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("if (`xformConstraint -q -t` != \"edge\"){\n\ttexTranConstSet \"edge\";\n}else{\n\ttexTranConstSet \"none\";\n}")
+	-c ("if (`xformConstraint -q -t` != \"edge\"){\n\tdR_slideEdge;\n}else{\n\tdR_slideOff;\n}")
 	da_EdgeSlideToggle;
 
 runTimeCommand

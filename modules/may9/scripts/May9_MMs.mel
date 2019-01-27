@@ -2851,6 +2851,14 @@ Sup_Symmetry_MM_May9;
 
 Sup_SoftSelect_MM_May9;
 
+string $SurfaceSlide = `xformConstraint -q -type`;
+
+menuItem
+-l "Surface Slide"
+-c "da_SurfaceSlideToggle"
+-rp "SE"
+-cb ($SurfaceSlide == "surface");
+
 menuItem
 -l "Bevel"
 -c "BevelPolygon;"
@@ -2880,68 +2888,6 @@ menuItem
 -c "PolyExtrude"
 -rp "E"
 -i "polyExtrudeFacet.png";
-
-menuItem
--l "Select Edges"
--sm 1
--rp "SE"
--i "edges_NEX.png";
-
-menuItem
--l "By Straight Angle"
--c "da_EdgeStraightAngle"
--rp "E"
--i "da_sraightAngle.png";
-
-menuItem
--l "By Right Angle"
--c "da_EdgeRightAngle"
--rp "SE"
--i "da_rightAngle.png";
-
-menuItem
--l "By Acute Angle"
--c "da_EdgeAcuteAngle"
--rp "S"
--i "da_acuteAngle.png";
-
-menuItem
--l "Inside"
--c "da_EdgeInside"
--rp "NE"
--i "da_insideEdge.png";
-
-menuItem
--l "On Border"
--c "da_EdgeBorder"
--rp "N"
--i "da_borderEdge.png";
-
-menuItem
--l "Soft"
--c "da_EdgeSoft"
--rp "W"
--i "da_softEdge.png";
-
-menuItem
--l "Hard"
--c "da_EdgeHard"
--rp "SW"
--i "da_hardEdge.png";
-
-menuItem
--l "Ring and Loop"
--c "da_EdgeRingAndLoop"
--i "polyDuplicateEdgeLoop.png";
-
-if (`about -api` >= 20180000){
-menuItem
--l "Contiguous"
--c "SelectContiguousEdgesOptions"
--i "polySplitEdgeRing.png";
-}
-
-setParent -m ..;
 
 menuItem
 -l "Edge Edit"
@@ -3269,14 +3215,65 @@ menuItem
 -i "aselect.png";
 
 menuItem
--l "Select All"
+-l "All"
 -c "SelectAll" 
 -i "aselect.png";
+
+menuItem
+-l "By Straight Angle"
+-c "da_EdgeStraightAngle"
+-i "da_sraightAngle.png";
+
+menuItem
+-l "By Right Angle"
+-c "da_EdgeRightAngle"
+-i "da_rightAngle.png";
+
+menuItem
+-l "By Acute Angle"
+-c "da_EdgeAcuteAngle"
+-i "da_acuteAngle.png";
+
+menuItem
+-l "Inside"
+-c "da_EdgeInside"
+-i "da_insideEdge.png";
+
+menuItem
+-l "On Border"
+-c "da_EdgeBorder"
+-i "da_borderEdge.png";
+
+menuItem
+-l "Soft"
+-c "da_EdgeSoft"
+-i "da_softEdge.png";
+
+menuItem
+-l "Hard"
+-c "da_EdgeHard"
+-i "da_hardEdge.png";
 
 menuItem
 -l "Selection Constraints"
 -c "PolygonSelectionConstraints"
 -i "polySelectUsingConstraints.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Ring and Loop"
+-c "da_EdgeRingAndLoop"
+-i "polyDuplicateEdgeLoop.png";
+
+if (`about -api` >= 20180000){
+menuItem
+-l "Contiguous"
+-c "SelectContiguousEdgesOptions"
+-i "polySplitEdgeRing.png";
+}
 
 menuItem
 -l "Selection to Vertices"
@@ -3337,6 +3334,14 @@ global proc Face_MM_May9(){
 Sup_Symmetry_MM_May9;
 
 Sup_SoftSelect_MM_May9;
+
+string $SurfaceSlide = `xformConstraint -q -type`;
+
+menuItem
+-l "Surface Slide"
+-c "da_SurfaceSlideToggle"
+-rp "SE"
+-cb ($SurfaceSlide == "surface");
 
 if (`about -api` >= 20180000){
 menuItem
@@ -3775,7 +3780,7 @@ menuItem
 -i "aselect.png";
 
 menuItem
--l "Select All"
+-l "All"
 -c "SelectAll" 
 -i "aselect.png";
 
@@ -12655,9 +12660,17 @@ setParent -m ..;
 // Define UV marking menu
 global proc UV_MM_May9(){
 
-commonTexReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonTexSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
+
+string $EdgeSlide = `xformConstraint -q -type`;
+
+menuItem
+-l "Edge Slide"
+-c "da_EdgeSlideToggle"
+-rp "SE"
+-cb ($EdgeSlide == "edge");
 
 menuItem
 -l "Select Shell" 
@@ -12749,7 +12762,6 @@ Sup_Symmetry_MM_May9;
 
 Sup_SoftSelect_MM_May9;
 
-if (`about -api` >= 20180000){
 string $EdgeSlide = `xformConstraint -q -type`;
 
 menuItem
@@ -12757,7 +12769,6 @@ menuItem
 -c "da_EdgeSlideToggle"
 -rp "SE"
 -cb ($EdgeSlide == "edge");
-}
 
 menuItem
 -l "Multi Cut"
@@ -13088,7 +13099,7 @@ menuItem
 -i "aselect.png";
 
 menuItem
--l "Select All"
+-l "All"
 -c "SelectAll" 
 -i "aselect.png";
 
@@ -13119,9 +13130,17 @@ setParent -m ..;
 // Define Window_UV_Edge marking menu
 global proc Window_UV_Edge_MM_May9(){
 
-commonTexReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonTexSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
+
+string $EdgeSlide = `xformConstraint -q -type`;
+
+menuItem
+-l "Edge Slide"
+-c "da_EdgeSlideToggle"
+-rp "SE"
+-cb ($EdgeSlide == "edge");
 
 menuItem
 -l "Cut"
@@ -13404,9 +13423,17 @@ setParent -m ..;
 // Define Window_UV_UV marking menu
 global proc Window_UV_UV_MM_May9(){
 
-commonTexReflectionOptionsPopup();
+Sup_Symmetry_MM_May9;
 
-commonTexSelectOptionsPopup();
+Sup_SoftSelect_MM_May9;
+
+string $EdgeSlide = `xformConstraint -q -type`;
+
+menuItem
+-l "Edge Slide"
+-c "da_EdgeSlideToggle"
+-rp "SE"
+-cb ($EdgeSlide == "edge");
 
 menuItem
 -l "Optimize" 
@@ -13449,6 +13476,15 @@ menuItem
 menuItem
 -l "separator" 
 -d 1;
+
+menuItem
+-l "Symmetrize" 
+-c "SymmetrizeUV" 
+-i "polySymmetrizeUV.png";
+
+menuItem
+-c "SymmetrizeUVOptions" 
+-ob 1;
 
 menuItem
 -l "Auto Seams" 
@@ -13496,16 +13532,6 @@ menuItem
 -l "Selection to Vertices" 
 -c "ConvertSelectionToVertices" 
 -i "vertex_NEX.png";
-
-menuItem
--l "Symmetrize" 
--c "SymmetrizeUV" 
--rp "SE" 
--i "polySymmetrizeUV.png";
-
-menuItem
--c "SymmetrizeUVOptions" 
--ob 1;
 
 menuItem
 -l "Match Shells Scale" 
@@ -13929,7 +13955,7 @@ $reflectionAxis = 2;
 
 menuItem 
 -l "Symmetry"
--i "polyMirrorCut.png"
+-i "symmetryConstraint.svg"
 -sm 1
 -radialPosition	"N";
 
