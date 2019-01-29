@@ -92,7 +92,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Enable AiMesh Light on multiple mesh"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("string $mySel[] = `ls -sl`; \nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n\tda_AiMeshLight;\n}")
+	-c ("FreezeTransformations;\n\nstring $mySel[] = `ls -sl`; \nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n\tda_AiMeshLight;\n\tCenterPivot;\n}")
 	da_AiMeshesLight;
 
 runTimeCommand
