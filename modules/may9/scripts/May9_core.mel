@@ -15,11 +15,6 @@ ModCreateMenu mainCreateMenu;
 // Inizialize Marking Menues
 source May9_MMs.mel;
 
-// Inizialize May9_userRuntime
-global proc May9_userRuntime(){
-    source May9_userRuntime.mel;
-}
-
 // Set new scene opened preferences
 string $myLayoutReset = "int $myLayout = 0";
 scriptJob -e "NewSceneOpened" $myLayoutReset;
@@ -86,11 +81,17 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 
 if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 
-	// Define May9 Next 10.0 installation status 
+	// Define May9 Next installation status 
 	optionVar -iv May9ActivationCheck $may9Value;
 
 	// Preload userRuntime
-	catchQuiet (`May9_userRuntime`);
+	source May9_userRuntime.mel;
+
+	// Clean userRuntime
+	May9_runTimeCommandsRemover;
+
+	// Preload userRuntime
+	May9_runTimeCommands;
 
 	// Store Preferences Changes
 	savePrefs -g -hk;
