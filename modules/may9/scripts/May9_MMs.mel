@@ -9138,6 +9138,7 @@ global proc PolyPoly_MM_May9(){
 string $mySelShape[] = `listRelatives -s`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
 -l "Multi Cut"
@@ -9604,6 +9605,11 @@ menuItem
 -c "da_MapFacesUV"
 -i "polyNormalProj.png";
 
+menuItem
+-l "Mono Shell"
+-c "da_SingleShellMapping"
+-i "UVEditorShell.png";
+
 setParent -m ..;
 
 menuItem
@@ -9990,6 +9996,11 @@ menuItem
 -en ($myDispSetting == 0);
 
 menuItem 
+-l "Smooth UV" 
+-c "da_SmoothUV"
+-cb ($myUVSmoothMode == 2);
+
+menuItem 
 -l "Displacement Preview" 
 -c "da_HighQualityDispMeshToggle"
 -cb ($myDispSetting);
@@ -10051,6 +10062,7 @@ global proc Poly_MM_May9(){
 string $mySelShape[] = `listRelatives -s`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
 -l "Multi Cut"
@@ -10471,6 +10483,11 @@ menuItem
 -i "polyNormalProj.png";
 
 menuItem
+-l "Mono Shell"
+-c "da_SingleShellMapping"
+-i "UVEditorShell.png";
+
+menuItem
 -d 1;
 
 menuItem
@@ -10882,6 +10899,11 @@ menuItem
 -en ($myDispSetting == 0);
 
 menuItem 
+-l "Smooth UV" 
+-c "da_SmoothUV"
+-cb ($myUVSmoothMode == 2);
+
+menuItem 
 -l "Displacement Preview" 
 -c "da_HighQualityDispMeshToggle"
 -cb ($myDispSetting);
@@ -11254,6 +11276,7 @@ global proc Tool_Crease_MM_May9(){
 string $mySel[] = `ls -sl`;
 string $mySelShape[] = `listRelatives -s`;
 string $currentPanel = `getPanel -wf`;
+int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem -itl 1 
 -l "No Crease" 
@@ -11312,6 +11335,11 @@ menuItem -itl 1
 -c "da_HighQualitySmoothMesh"
 -cb ($mySubdivMode == 3)
 -en ($myDispSetting == 0);
+
+menuItem 
+-l "Smooth UV" -itl 1 
+-c "da_SmoothUV"
+-cb ($myUVSmoothMode == 2);
 
 menuItem -itl 1 
 -l "Displacement Preview" 
@@ -13339,6 +13367,12 @@ menuItem
 -i "polyNormalProj.png";
 
 menuItem
+-l "Mono Shell Map"
+-c "da_SingleShellMapping"
+-rp "W"
+-i "UVEditorShell.png";
+
+menuItem
 -l "UV Toolkit" 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
@@ -13490,6 +13524,24 @@ menuItem
 
 menuItem
 -c "performUnfold 1" 
+-ob 1;
+
+menuItem
+-l "Straighten" 
+-c "performPolyStraightenUVs 0" 
+-i "polyStraightenUV.png";
+
+menuItem
+-c "performPolyStraightenUVs 1" 
+-ob 1;
+
+menuItem
+-l "Rotate" 
+-c "performPolyRotateUVs 0" 
+-i "polyRotateUVCCW.png";
+
+menuItem
+-c "performPolyRotateUVs 1" 
 -ob 1;
 
 menuItem
