@@ -1202,6 +1202,12 @@ menuItem
 -i "aimConstraint.png";
 
 menuItem
+-l "Create Flexor" 
+-c "createFlexorWin" 
+-rp "W" 
+-i "lattice.png";
+
+menuItem
 -l "Controller Parent" 
 -c "da_CtrlParentConstraint" 
 -rp "N" 
@@ -4672,6 +4678,10 @@ menuItem
 -c "newBindSkin \"-byClosestPoint -toSkeleton\"" 
 -rp "W" 
 -i "rigidBind.png";
+
+menuItem
+-c "RigidBindSkinOptions;" 
+-ob 1;
 
 menuItem
 -l "Delta Skin" 
