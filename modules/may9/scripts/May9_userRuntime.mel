@@ -2,6 +2,12 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Define Rigid bind and Apply Delta Mush"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $polySel[] = `filterExpand -sm 12`;\nnewBindSkin \"-byClosestPoint -toSkeleton\";\nselect $polySel;\nDeltaMush;")
+	da_DeltaSkin;
+
+runTimeCommand
 	-ann "Set Smooth UV on Selected Meshes"
 	-cat "Custom Scripts.May9_Next.Render"
 	-c ("string $mySelShape[] = `ls -sl -o`;\nint $myUVSmoothMode = `getAttr ($mySelShape[0] + \".osdFvarBoundary\")`;\n\nfor ($i=0; $i<size($mySelShape); $i++) {\n    if ($myUVSmoothMode != 2){\n        setAttr ($mySelShape[$i] + \".osdFvarBoundary\") 2;\n    }else{\n        setAttr ($mySelShape[$i] + \".osdFvarBoundary\") 1;\n    }\n}")
@@ -2329,6 +2335,9 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_DeltaSkin`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_SmoothUV`);

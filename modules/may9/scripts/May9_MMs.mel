@@ -4669,9 +4669,15 @@ menuItem
 
 menuItem
 -l "Rigid Bind" 
--c "skinCluster -mi 1 -bm 0 -n rigidBind1" 
+-c "newBindSkin \"-byClosestPoint -toSkeleton\"" 
 -rp "W" 
 -i "rigidBind.png";
+
+menuItem
+-l "Delta Skin" 
+-c "da_DeltaSkin" 
+-rp "SW" 
+-i "smoothSkinWeights.png";
 
 menuItem
 -l "Shape to Joint(s)" 
@@ -11778,6 +11784,7 @@ setParent -m ..;
 global proc Tool_QuadDraw_MM_May9(){
 
 Sup_Symmetry_MM_May9;
+Sup_SoftSelect_MM_May9;
 
 int $extendMode = `nexOpt -q extendType`;
 string $currentPanel = `getPanel -wf`;
@@ -11818,7 +11825,7 @@ menuItem -itl 1
 -l "Extend Loop" 
 -c "nexOpt -e extendType 1;" 
 -rb (1 == $extendMode)
--rp "S";
+-rp "SE";
 
 if (`gmatch $currentPanel "modelPanel*"`){
 menuItem -itl 1
