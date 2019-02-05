@@ -13330,6 +13330,20 @@ setParent -m ..;
 } 
 // Define Window_UV_Mesh marking menu
 global proc Window_UV_Mesh_MM_May9(){
+string $mySelShape[] = `listRelatives -s`;
+int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
+
+menuItem 
+-l "Smooth UV Borders" 
+-c "da_SmoothUV"
+-rp "S" 
+-cb ($myUVSmoothMode == 2);
+
+menuItem
+-l "Auto Unfold" 
+-c "da_AutoUnfold" 
+-rp "N" 
+-i "UV_Unfold_Brush.png";
 
 menuItem
 -l "Optimize" 
