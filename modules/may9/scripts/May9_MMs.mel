@@ -4675,12 +4675,12 @@ menuItem
 
 menuItem
 -l "Rigid Bind" 
--c "newBindSkin \"-byClosestPoint -toSkeleton\"" 
+-c "bindSkin -cj" 
 -rp "W" 
 -i "rigidBind.png";
 
 menuItem
--c "RigidBindSkinOptions;" 
+-c "RigidBindSkinOptions" 
 -ob 1;
 
 menuItem
@@ -9223,6 +9223,11 @@ menuItem
 -i "out_brush.png";
 
 menuItem
+-l "Set Membership"
+-c "PaintSetMembershipToolOptions"
+-i "paintSetMembership.png";
+
+menuItem
 -l "Paint Effects"
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -rp "SW"
@@ -9365,31 +9370,14 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--l "Edit Relationship"
--sm 1
--i "passSetRelationEditor.png" ;
-
-menuItem
 -l "Deformer Set Editor"
 -c "DeformerSetEditor"
 -i "da_deformerSetEditor.png";
 
 menuItem
--l "Set Membership"
--c "PaintSetMembershipToolOptions"
--i "paintSetMembership.png";
-
-menuItem
 -l "Edit Membership Tool"
 -c "EditMembershipTool"
 -i "setEdit.png";
-
-setParent -m ..;
-
-menuItem
--l "Bake Deformers to Skin"
--c "BakeDeformerTool"
--i "out_baked.png";
 
 menuItem
 -d 1;
@@ -9571,6 +9559,11 @@ menuItem
 -c "da_BatchSkinTransfertUV";
 
 setParent -m ..;
+
+menuItem
+-l "Bake Deformers to Skin"
+-c "BakeDeformerTool"
+-i "out_baked.png";
 
 menuItem
 -l "Unbind Skin"
@@ -10105,6 +10098,11 @@ menuItem
 -i "out_brush.png";
 
 menuItem
+-l "Set Membership"
+-c "PaintSetMembershipToolOptions"
+-i "paintSetMembership.png";
+
+menuItem
 -l "Paint Attributes"
 -c "ArtPaintAttrToolOptions"
 -rp "SE"
@@ -10296,31 +10294,14 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--l "Edit Relationship"
--sm 1
--i "passSetRelationEditor.png";
-
-menuItem
 -l "Deformer Set Editor"
 -c "DeformerSetEditor"
 -i "da_deformerSetEditor.png";
 
 menuItem
--l "Set Membership"
--c "PaintSetMembershipToolOptions"
--i "paintSetMembership.png";
-
-menuItem
 -l "Edit Membership Tool"
 -c "EditMembershipTool"
 -i "setEdit.png";
-
-setParent -m ..;
-
-menuItem
--l "Bake Deformers to Skin"
--c "BakeDeformerTool"
--i "out_baked.png";
 
 menuItem
 -d 1;
@@ -10448,6 +10429,11 @@ menuItem
 -l "Smooth Skin to Muscle System"
 -c "cMuscleConvertSkin()"
 -i "cMuscle_skin_convert.png";
+
+menuItem
+-l "Bake Deformers to Skin"
+-c "BakeDeformerTool"
+-i "out_baked.png";
 
 menuItem
 -l "Unbind Skin"
