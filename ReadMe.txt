@@ -68,7 +68,7 @@ youtube.com/c/May9
 
 Licenses
 May9 Next is licensed under MIT License (https://opensource.org/licenses/MIT)
-Copyright (c) Davide Alidosi (https://www.highend3d.com/maya/script/may9-pro-a-new-user-experience-for-maya)
+Copyright (c) Davide Alidosi (https://www.highend3d.com/maya/plugin/may9-next-an-alternative-user-experience-for-maya)
 
 MMtoKey is under custom license: you can free modify source code of script, include to your preferences pack and redistribute, but you're not allowed to sell this script
 Copyright (c) Andrey Menshikov (https://www.highend3d.com/maya/script/free-mmtokey-for-maya)
