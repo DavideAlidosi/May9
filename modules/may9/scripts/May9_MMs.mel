@@ -11742,6 +11742,8 @@ setParent -m ..;
 } 
 // Define Tool_PaintSkin marking menu
 global proc Tool_PaintSkin_MM_May9(){
+string $currentTool = `currentCtx`;
+int $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;
 
 menuItem -itl 1 
 -l "Add" 
@@ -11754,8 +11756,9 @@ menuItem -itl 1
 -rp "N";
 
 menuItem -itl 1 
--l "Scale" 
--c "artAttrPaintOperation artAttrSkinPaintCtx Scale;" 
+-l "Select Vertex" 
+-c "da_SkinPaintMode" 
+-cb ($paintModeCheck == 2)
 -rp "NW";
 
 menuItem -itl 1 
@@ -11786,6 +11789,11 @@ menuItem -itl 1
 -c "da_AntiAliasToggle" 
 -rp "SW" 
 -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
+
+menuItem -itl 1 
+-l "Color Management"
+-c "da_ToggleColorManagement" 
+-cb (`colorManagementPrefs -q -cme`);
 
 setParent -m ..;
 

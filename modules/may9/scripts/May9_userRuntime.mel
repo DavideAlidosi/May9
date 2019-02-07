@@ -2,6 +2,12 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Toggle Skin Paint Mode"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $currentTool = `currentCtx`;\nint $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;\n\nif ($paintModeCheck != 2){\n\tartAttrSkinPaintCtx -e -skinPaintMode 2 $currentTool;\n\tDisplayWireframe;\n}else{\n\tartAttrSkinPaintCtx -e -skinPaintMode 1 $currentTool;\n\tDisplayShaded;\n}")
+	da_SkinPaintMode;
+
+runTimeCommand
 	-ann "Auto UV Unfolding"
 	-cat "Custom Scripts.May9_Next.Render"
 	-c ("string $mySel[] = `ls -sl`; \nda_SingleShellMapping;\nselect $mySel;\nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n    u3dAutoSeam -s 0 -p 1;\n    performUnfold 0;\n    LayoutUV;\n}")
@@ -2341,6 +2347,9 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_SkinPaintMode`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_AutoUnfold`);
