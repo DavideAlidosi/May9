@@ -2,6 +2,12 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Toggle Walk Tool"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("if(`currentCtx` == \"walkContext\"){\n    da_DisableWalkTool;\n}else{\n    da_EnableWalkTool;\n}\n")
+	da_ToggleWalkTool;
+
+runTimeCommand
 	-ann "Enable Walk Tool"
 	-cat "Custom Scripts.May9_Next.Scene"
 	-c ("WalkTool;\ninViewMessage -pos midCenter -amg \"Walk Tool is activated, press ESC to close it\" -fade;")
@@ -2371,6 +2377,9 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_ToggleWalkTool`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_EnableWalkTool`);
