@@ -11790,6 +11790,21 @@ menuItem -itl 1
 -rp "SW" 
 -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
 
+if ($paintModeCheck == 2){
+menuItem -itl 1 
+-l "Grow Selection"
+-c "GrowPolygonSelectionRegion" 
+-i "growCVselect.png";
+
+menuItem -itl 1 
+-l "Shrink Selection"
+-c "ShrinkPolygonSelectionRegion" 
+-i "shrinkCVselect.png";
+
+menuItem 
+-d 1;
+}
+
 menuItem -itl 1 
 -l "Color Management"
 -c "da_ToggleColorManagement" 
