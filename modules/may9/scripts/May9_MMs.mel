@@ -12308,6 +12308,30 @@ setParent -m ..;
 } 
 // Define Tool_Walk marking menu
 global proc Tool_Walk_MM_May9(){
+
+menuItem -itl 1 
+-l "Increase Speed" 
+-c "da_IncreaseWalkSpeed"
+-i "moveUVUp.png" 
+-rp "N";
+
+menuItem -itl 1 
+-l "Reduce Speed" 
+-c "da_ReduceWalkSpeed"
+-i "moveUVDown.png" 
+-rp "S";
+
+menuItem -itl 1 
+-l "Exit" 
+-c "da_DisableWalkTool"
+-i "RS_disable.png" 
+-rp "E";
+
+menuItem -itl 1 
+-l "Tool Property" 
+-c "toolPropertyWindow"
+-i "toolSettings.png" 
+-rp "W";
 	
 }
 // Define Tool_XGenBrush marking menu

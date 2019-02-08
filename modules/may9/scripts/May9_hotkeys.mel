@@ -66,6 +66,7 @@ hotkey -keyShortcut "t" -alt -name ("da_ToolSettingsNameCommand");
 hotkey -keyShortcut "\\" -alt -name ("da_CloseAllPanelNameCommand");
 hotkey -keyShortcut "l" -alt -name ("da_OpenColorEditorNameCommand");
 hotkey -keyShortcut "Return" -alt -name ("da_PerspToggleNameCommand");
+hotkey -keyShortcut "x" -alt -name ("da_EnableWalkToolNameCommand");
 
 // Shift hotkeys
 hotkey -keyShortcut "Up" -sht -name ("da_GoToSideNameCommand");
@@ -567,3 +568,9 @@ nameCommand
 	-sourceType "mel"
 	-command ("ConnectionEditor")
 	ConnectionEditorNameCommand;
+
+nameCommand
+	-annotation "da_EnableWalkToolNameCommand"
+	-sourceType "mel"
+	-command ("da_EnableWalkTool")
+	da_EnableWalkToolNameCommand;

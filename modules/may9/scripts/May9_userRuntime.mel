@@ -2,6 +2,30 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Enable Walk Tool"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("WalkTool;\ninViewMessage -pos midCenter -amg \"Walk Tool is activated, press ESC to close it\" -fade;")
+	da_EnableWalkTool;
+
+runTimeCommand
+	-ann "Disable Walk Tool"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("setToolTo selectSuperContext;\nsetWalkModeVisibility(0);")
+	da_DisableWalkTool;
+
+runTimeCommand
+	-ann "Increase Walk Speed"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("float $myWalkSpeed = `walkCtx -q -walkSpeed walkContext`;\n\nwalkCtx -e -walkSpeed ($myWalkSpeed*2) walkContext;\n\ninViewMessage -pos topCenter -msg (\"Walk Speed: \" + $myWalkSpeed) -fade -fit 100 -fot 100 -fst 400;")
+	da_IncreaseWalkSpeed;
+
+runTimeCommand
+	-ann "Reduce Walk Speed"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("float $myWalkSpeed = `walkCtx -q -walkSpeed walkContext`;\n\nwalkCtx -e -walkSpeed ($myWalkSpeed/2) walkContext;\n\ninViewMessage -pos topCenter -msg (\"Walk Speed: \" + $myWalkSpeed) -fade -fit 100 -fot 100 -fst 400;")
+	da_ReduceWalkSpeed;
+
+runTimeCommand
 	-ann "Toggle Skin Paint Mode"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("string $currentTool = `currentCtx`;\nint $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;\n\nif ($paintModeCheck != 2){\n\tartAttrSkinPaintCtx -e -skinPaintMode 2 $currentTool;\n\tDisplayWireframe;\n}else{\n\tartAttrSkinPaintCtx -e -skinPaintMode 1 $currentTool;\n\tDisplayShaded;\n}")
@@ -2347,6 +2371,18 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_EnableWalkTool`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_DisableWalkTool`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_IncreaseWalkSpeed`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_ReduceWalkSpeed`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_SkinPaintMode`);
