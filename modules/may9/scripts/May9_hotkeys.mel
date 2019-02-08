@@ -2,575 +2,498 @@
 hotkeySet -source `optionVar -q "da_initialHotkey"` -current May9_Next;
 
 // MMtoKey Contextual Workflow hotkeys
-hotkey -keyShortcut "z" -name ("da_MMtoKey_pressNameCommand");
-hotkey -keyShortcut "z" -releaseName ("da_MMtoKey_releaseNameCommand");
+hotkey -k "z" -n ("da_MMtoKey_pressNameCommand");
+hotkey -k "z" -rn ("da_MMtoKey_releaseNameCommand");
 
 // Shift Alt Hotkeys
-hotkey -keyShortcut "z" -alt -sht -name ("da_ZeroTransfomationsNameCommand");
-hotkey -keyShortcut "Space" -alt -sht -name ("da_TogglePlaybackNameCommand");
+hotkey -k "z" -alt -sht -n ("da_ZeroTransfomationsNameCommand");
+hotkey -k "Space" -alt -sht -n ("da_TogglePlaybackNameCommand");
 
 // CTRL Alt Hotkeys
-hotkey -keyShortcut "r" -ctl -alt -name ("da_RenderViewsNameCommand");
-hotkey -keyShortcut "8" -ctl -alt -name ("da_PaintEffectsPanelNameCommand");
-hotkey -keyShortcut "x" -ctl -alt -name ("da_RevertToSaveNameCommand");
-hotkey -keyShortcut "m" -ctl -alt -name ("toggleShelfTabsNameCommand");
-hotkey -keyShortcut "t" -ctl -alt -name ("da_TitleBarToggleNameCommand");
-hotkey -keyShortcut "l" -ctl -alt -name ("da_ListInputOperationsNameCommand");
-hotkey -keyShortcut "." -ctl -alt -name ("da_moveKeyframeToNextNameCommand");
-hotkey -keyShortcut "," -ctl -alt -name ("da_moveKeyframeToPrevNameCommand");
-hotkey -keyShortcut "Space" -ctl -alt -name ("InteractivePlaybackNameCommand");
+hotkey -k "r" -ctl -alt -n ("da_RenderViewsNameCommand");
+hotkey -k "8" -ctl -alt -n ("da_PaintEffectsPanelNameCommand");
+hotkey -k "x" -ctl -alt -n ("da_RevertToSaveNameCommand");
+hotkey -k "m" -ctl -alt -n ("toggleShelfTabsNameCommand");
+hotkey -k "t" -ctl -alt -n ("da_TitleBarToggleNameCommand");
+hotkey -k "l" -ctl -alt -n ("da_ListInputOperationsNameCommand");
+hotkey -k "." -ctl -alt -n ("da_moveKeyframeToNextNameCommand");
+hotkey -k "," -ctl -alt -n ("da_moveKeyframeToPrevNameCommand");
+hotkey -k "Space" -ctl -alt -n ("InteractivePlaybackNameCommand");
 
 // CTRL Shift Alt Hotkeys
-hotkey -keyShortcut "c" -ctl -alt -sht -name ("da_CopySelectionNameCommand");
-hotkey -keyShortcut "v" -ctl -alt -sht -name ("da_PasteSelectionNameCommand");
-hotkey -keyShortcut "g" -ctl -alt -sht -name ("da_CreateSetNameCommand");
-hotkey -keyShortcut "m" -ctl -alt -sht -name ("da_ToggleShelfNameCommand");
-hotkey -keyShortcut "r" -ctl -alt -sht -name ("da_ToggleResolutionGateNameCommand");
-hotkey -keyShortcut "s" -ctl -alt -sht -name ("da_KeyKeyedOnlyNameCommand");
-hotkey -keyShortcut "p" -ctl -alt -sht -name ("da_CtrlParentConstraintNameCommand");
-hotkey -keyShortcut "t" -ctl -alt -sht -name ("da_CtrlPointConstraintNameCommand");
-hotkey -keyShortcut "o" -ctl -alt -sht -name ("da_CtrlOrientConstraintNameCommand");
-hotkey -keyShortcut "a" -ctl -alt -sht -name ("da_CtrlAimConstraintNameCommand");
-hotkey -keyShortcut "i" -ctl -alt -sht -name ("da_CtrlPoleVectorConstraintNameCommand");
+hotkey -k "c" -ctl -alt -sht -n ("da_CopySelectionNameCommand");
+hotkey -k "v" -ctl -alt -sht -n ("da_PasteSelectionNameCommand");
+hotkey -k "g" -ctl -alt -sht -n ("da_CreateSetNameCommand");
+hotkey -k "m" -ctl -alt -sht -n ("da_ToggleShelfNameCommand");
+hotkey -k "r" -ctl -alt -sht -n ("da_ToggleResolutionGateNameCommand");
+hotkey -k "s" -ctl -alt -sht -n ("da_KeyKeyedOnlyNameCommand");
+hotkey -k "p" -ctl -alt -sht -n ("da_CtrlParentConstraintNameCommand");
+hotkey -k "t" -ctl -alt -sht -n ("da_CtrlPointConstraintNameCommand");
+hotkey -k "o" -ctl -alt -sht -n ("da_CtrlOrientConstraintNameCommand");
+hotkey -k "a" -ctl -alt -sht -n ("da_CtrlAimConstraintNameCommand");
+hotkey -k "i" -ctl -alt -sht -n ("da_CtrlPoleVectorConstraintNameCommand");
 
 // Rigging hotkeys
-hotkey -keyShortcut "d" -ctl -alt -sht -name ("MatchPivotsNameCommand");
-hotkey -keyShortcut "d" -ctl -alt -name ("da_ResetPivotNameCommand");
-hotkey -keyShortcut "o" -ctl -alt -name ("TagAsControllerNameCommand");
-hotkey -keyShortcut "p" -ctl -alt -name ("TagAsControllerParentNameCommand");
-hotkey -keyShortcut "Return" -ctl -name ("da_FreezeDelNonDefNameCommand");
+hotkey -k "d" -ctl -alt -sht -n ("MatchPivotsNameCommand");
+hotkey -k "d" -ctl -alt -n ("da_ResetPivotNameCommand");
+hotkey -k "o" -ctl -alt -n ("TagAsControllerNameCommand");
+hotkey -k "p" -ctl -alt -n ("TagAsControllerParentNameCommand");
+hotkey -k "Return" -ctl -n ("da_FreezeDelNonDefNameCommand");
 
 // CTRL hotkeys
-hotkey -keyShortcut "f" -ctl -name ("da_FrameOnlySelectedNameCommand");
-hotkey -keyShortcut "p" -ctl -name ("da_ParentAndPositionNameCommand");
-hotkey -keyShortcut "j" -ctl -name ("ConnectionEditorNameCommand");
-hotkey -keyShortcut "k" -ctl -name ("ChannelControlEditorNameCommand");
+hotkey -k "f" -ctl -n ("da_FrameOnlySelectedNameCommand");
+hotkey -k "p" -ctl -n ("da_ParentAndPositionNameCommand");
+hotkey -k "j" -ctl -n ("ConnectionEditorNameCommand");
+hotkey -k "k" -ctl -n ("ChannelControlEditorNameCommand");
 
 // Alt hotkeys
-hotkey -keyShortcut "1" -alt -name ("da_TogglePerspNameCommand");
-hotkey -keyShortcut "2" -alt -name ("da_ToggleNodeEditorNameCommand");
-hotkey -keyShortcut "3" -alt -name ("da_ToggleUVTextureEditorNameCommand");
-hotkey -keyShortcut "4" -alt -name ("da_GraphEditorNameCommand");
-hotkey -keyShortcut "5" -alt -name ("da_ShapeEditorNameCommand");
-hotkey -keyShortcut "6" -alt -name ("da_LayoutReferenceEditorNameCommand");
-hotkey -keyShortcut "7" -alt -name ("da_ComponentEditorNameCommand");
-hotkey -keyShortcut "8" -alt -name ("da_ToggleRelationshipEditorNameCommand");
-hotkey -keyShortcut "9" -alt -name ("da_DynamicRelationshipEditorNameCommand");
-hotkey -keyShortcut "0" -alt -name ("da_LayoutHypershadeNameCommand");
-hotkey -keyShortcut "c" -alt -name ("da_ToggleChannelLayerNameCommand");
-hotkey -keyShortcut "a" -alt -name ("da_ToggleAttributeNameCommand");
-hotkey -keyShortcut "m" -alt -name ("da_ToggleMTKNameCommand");
-hotkey -keyShortcut "u" -alt -name ("da_OpenUvToolNameCommand"); hotkey -keyShortcut "u" -cmd -name ("da_OpenUvToolNameCommand"); //OS X
-hotkey -keyShortcut "o" -alt -name ("da_LayoutOutlinerNameCommand");
-hotkey -keyShortcut "t" -alt -name ("da_ToolSettingsNameCommand");
-hotkey -keyShortcut "\\" -alt -name ("da_CloseAllPanelNameCommand");
-hotkey -keyShortcut "l" -alt -name ("da_OpenColorEditorNameCommand");
-hotkey -keyShortcut "Return" -alt -name ("da_PerspToggleNameCommand");
-hotkey -keyShortcut "x" -alt -name ("da_EnableWalkToolNameCommand");
+hotkey -k "1" -alt -n ("da_TogglePerspNameCommand");
+hotkey -k "2" -alt -n ("da_ToggleNodeEditorNameCommand");
+hotkey -k "3" -alt -n ("da_ToggleUVTextureEditorNameCommand");
+hotkey -k "4" -alt -n ("da_GraphEditorNameCommand");
+hotkey -k "5" -alt -n ("da_ShapeEditorNameCommand");
+hotkey -k "6" -alt -n ("da_LayoutReferenceEditorNameCommand");
+hotkey -k "7" -alt -n ("da_ComponentEditorNameCommand");
+hotkey -k "8" -alt -n ("da_ToggleRelationshipEditorNameCommand");
+hotkey -k "9" -alt -n ("da_DynamicRelationshipEditorNameCommand");
+hotkey -k "0" -alt -n ("da_LayoutHypershadeNameCommand");
+hotkey -k "c" -alt -n ("da_ToggleChannelLayerNameCommand");
+hotkey -k "a" -alt -n ("da_ToggleAttributeNameCommand");
+hotkey -k "m" -alt -n ("da_ToggleMTKNameCommand");
+hotkey -k "u" -alt -n ("da_OpenUvToolNameCommand"); hotkey -k "u" -cmd -n ("da_OpenUvToolNameCommand"); //OS X
+hotkey -k "o" -alt -n ("da_LayoutOutlinerNameCommand");
+hotkey -k "t" -alt -n ("da_ToolSettingsNameCommand");
+hotkey -k "\\" -alt -n ("da_CloseAllPanelNameCommand");
+hotkey -k "l" -alt -n ("da_OpenColorEditorNameCommand");
+hotkey -k "Return" -alt -n ("da_PerspToggleNameCommand");
+hotkey -k "x" -alt -n ("da_EnableWalkToolNameCommand");
 
 // Shift hotkeys
-hotkey -keyShortcut "Up" -sht -name ("da_GoToSideNameCommand");
-hotkey -keyShortcut "Right" -sht -name ("da_GoToFrontNameCommand");
-hotkey -keyShortcut "Down" -sht -name ("da_GoToTopNameCommand");
-hotkey -keyShortcut "Left" -sht -name ("da_GoToPerspNameCommand");
-hotkey -keyShortcut "t" -sht -name ("da_CreateAssigNodeNameCommand");
+hotkey -k "Up" -sht -n ("da_GoToSideNameCommand");
+hotkey -k "Right" -sht -n ("da_GoToFrontNameCommand");
+hotkey -k "Down" -sht -n ("da_GoToTopNameCommand");
+hotkey -k "Left" -sht -n ("da_GoToPerspNameCommand");
+hotkey -k "t" -sht -n ("da_CreateAssigNodeNameCommand");
 
 // Other hotkeys
-hotkey -keyShortcut "~" -name ("da_ManipToggleNameCommand"); hotkey -keyShortcut "|" -name ("da_ManipToggleNameCommand"); //Italian layout
-hotkey -keyShortcut "Home" -name ("da_ResetTransformNameCommand");
-hotkey -keyShortcut "End" -name ("SelectHierarchyNameCommand");
-hotkey -keyShortcut "k" -name ("da_TimeDraggerSmoothNameCommand");
-hotkey -keyShortcut "k" -releaseName ("da_TimeDraggerNoSmoothNameCommand");
-hotkey -keyShortcut "Space" -cmd -name ("da_toggleMainWindowFullScreenModeNameCommand");
+hotkey -k "~" -n ("da_ManipToggleNameCommand"); hotkey -k "|" -n ("da_ManipToggleNameCommand"); //Italian layout
+hotkey -k "Home" -n ("da_ResetTransformNameCommand");
+hotkey -k "End" -n ("SelectHierarchyNameCommand");
+hotkey -k "k" -n ("da_TimeDraggerSmoothNameCommand");
+hotkey -k "k" -rn ("da_TimeDraggerNoSmoothNameCommand");
+hotkey -k "Space" -cmd -n ("da_toggleMainWindowFullScreenModeNameCommand");
 
 // Changed hotkeys
-hotkey -keyShortcut "1" -ctl -alt -name ("da_SmoothPreviewOffNameCommand");
-hotkey -keyShortcut "2" -ctl -alt -name ("da_HighQualitySmoothMeshNameCommand");
-hotkey -keyShortcut "3" -ctl -alt -name ("da_HighQualityDispMeshNameCommand");
-hotkey -keyShortcut "-" -alt -name ("da_ToggleColorFeedbackNameCommand");
-hotkey -keyShortcut "i" -alt -name ("da_ToggleWireframeInArtisanNameCommand");
-hotkey -keyShortcut "n" -sht -name ("da_FullHotboxDisplayNameCommand");
-hotkey -keyShortcut "~" -ctl -alt -name ("SmoothingDisplayShowBothNameCommand");hotkey -keyShortcut "|" -ctl -alt -name ("SmoothingDisplayShowBothNameCommand");//Italian layout
-hotkey -keyShortcut "Return" -ctl -alt -name ("TogglePanZoomPressNameCommand");//Italian layout fix
-hotkey -keyShortcut "Return" -ctl -alt -releaseName ("TogglePanZoomReleaseNameCommand");//Italian layout fix
+hotkey -k "1" -ctl -alt -n ("da_SmoothPreviewOffNameCommand");
+hotkey -k "2" -ctl -alt -n ("da_HighQualitySmoothMeshNameCommand");
+hotkey -k "3" -ctl -alt -n ("da_HighQualityDispMeshNameCommand");
+hotkey -k "-" -alt -n ("da_ToggleColorFeedbackNameCommand");
+hotkey -k "i" -alt -n ("da_ToggleWireframeInArtisanNameCommand");
+hotkey -k "n" -sht -n ("da_FullHotboxDisplayNameCommand");
+hotkey -k "~" -ctl -alt -n ("SmoothingDisplayShowBothNameCommand");hotkey -k "|" -ctl -alt -n ("SmoothingDisplayShowBothNameCommand");//Italian layout
+hotkey -k "Return" -ctl -alt -n ("TogglePanZoomPressNameCommand");//Italian layout fix
+hotkey -k "Return" -ctl -alt -rn ("TogglePanZoomReleaseNameCommand");//Italian layout fix
 
 // Italian keyboard layout hotkeys
-hotkey -keyShortcut "|" -ctl -name ("SmoothProxyNameCommand");
-hotkey -keyShortcut "\\" -ctl -name ("SmoothingDisplayToggleNameCommand");
-hotkey -keyShortcut "\\" -name ("STRSTweakModeOnNameCommand");
-hotkey -keyShortcut "\\" -releaseName ("STRSTweakModeOffNameCommand");
+hotkey -k "|" -ctl -n ("SmoothProxyNameCommand");
+hotkey -k "\\" -ctl -n ("SmoothingDisplayToggleNameCommand");
+hotkey -k "\\" -n ("STRSTweakModeOnNameCommand");
+hotkey -k "\\" -rn ("STRSTweakModeOffNameCommand");
 
 // TTF and resigned Help hotkeys
 if (`about -api` >= 20200000){
-hotkey -keyShortcut "F1" -name ("");
-hotkey -keyShortcut "F1" -releaseName ("TypeToFindNameCommand");
-hotkey -keyShortcut "F1" -sht -name ("HelpNameCommand");
+hotkey -k "F1" -n ("");
+hotkey -k "F1" -rn ("TypeToFindNameCommand");
+hotkey -k "F1" -sht -n ("HelpNameCommand");
 }
 
 
 // nameCommand set
 
 nameCommand
-	-annotation "da_CtrlPointConstraintNameCommand"
-	-sourceType "mel"
-	-command ("da_CtrlPointConstraint")
+	-ann "da_CtrlPointConstraintNameCommand"
+	-c ("da_CtrlPointConstraint")
 	da_CtrlPointConstraintNameCommand;
 
 nameCommand
-	-annotation "da_CtrlOrientConstraintNameCommand"
-	-sourceType "mel"
-	-command ("da_CtrlOrientConstraint")
+	-ann "da_CtrlOrientConstraintNameCommand"
+	-c ("da_CtrlOrientConstraint")
 	da_CtrlOrientConstraintNameCommand;
 
 nameCommand
-	-annotation "da_CtrlParentConstraintNameCommand"
-	-sourceType "mel"
-	-command ("da_CtrlParentConstraint")
+	-ann "da_CtrlParentConstraintNameCommand"
+	-c ("da_CtrlParentConstraint")
 	da_CtrlParentConstraintNameCommand;
 
 nameCommand
-	-annotation "da_CtrlAimConstraintNameCommand"
-	-sourceType "mel"
-	-command ("da_CtrlAimConstraint")
+	-ann "da_CtrlAimConstraintNameCommand"
+	-c ("da_CtrlAimConstraint")
 	da_CtrlAimConstraintNameCommand;
 
 nameCommand
-	-annotation "da_CtrlPoleVectorConstraintNameCommand"
-	-sourceType "mel"
-	-command ("da_CtrlPoleVectorConstraint")
+	-ann "da_CtrlPoleVectorConstraintNameCommand"
+	-c ("da_CtrlPoleVectorConstraint")
 	da_CtrlPoleVectorConstraintNameCommand;
 
 nameCommand
-	-annotation "da_MMtoKeyManagerNameCommand"
-	-sourceType "mel"
-	-command ("da_MMtoKeyManager")
+	-ann "da_MMtoKeyManagerNameCommand"
+	-c ("da_MMtoKeyManager")
 	da_MMtoKeyManagerNameCommand;
 
 nameCommand
-	-annotation "da_FreezeDelNonDefNameCommand"
-	-sourceType "mel"
-	-command ("da_FreezeDelNonDef")
+	-ann "da_FreezeDelNonDefNameCommand"
+	-c ("da_FreezeDelNonDef")
 	da_FreezeDelNonDefNameCommand;
 
 nameCommand
-	-annotation "TagAsControllerNameCommand"
-	-sourceType "mel"
-	-command ("TagAsController")
+	-ann "TagAsControllerNameCommand"
+	-c ("TagAsController")
 	TagAsControllerNameCommand;
 
 nameCommand
-	-annotation "TagAsControllerParentNameCommand"
-	-sourceType "mel"
-	-command ("TagAsControllerParent")
+	-ann "TagAsControllerParentNameCommand"
+	-c ("TagAsControllerParent")
 	TagAsControllerParentNameCommand;
 
 nameCommand
-	-annotation "da_RevertToSaveNameCommand"
-	-sourceType "mel"
-	-command ("da_RevertToSave")
+	-ann "da_RevertToSaveNameCommand"
+	-c ("da_RevertToSave")
 	da_RevertToSaveNameCommand;
 
 nameCommand
-	-annotation "da_ManipToggleNameCommand"
-	-sourceType "mel"
-	-command ("da_ManipToggle")
+	-ann "da_ManipToggleNameCommand"
+	-c ("da_ManipToggle")
 	da_ManipToggleNameCommand;
 
 nameCommand
-	-annotation "da_PaintEffectsPanelNameCommand"
-	-sourceType "mel"
-	-command ("PaintEffectsPanel")
+	-ann "da_PaintEffectsPanelNameCommand"
+	-c ("PaintEffectsPanel")
 	da_PaintEffectsPanelNameCommand;
 
 nameCommand
-	-annotation "da_ParentAndPositionNameCommand"
-	-sourceType "mel"
-	-command ("da_ParentAndPosition")
+	-ann "da_ParentAndPositionNameCommand"
+	-c ("da_ParentAndPosition")
 	da_ParentAndPositionNameCommand;
 
 nameCommand
-	-annotation "da_TimeDraggerSmoothNameCommand"
-	-sourceType "mel"
-	-command ("da_TimeDraggerSmooth")
+	-ann "da_TimeDraggerSmoothNameCommand"
+	-c ("da_TimeDraggerSmooth")
 	da_TimeDraggerSmoothNameCommand;
 
 nameCommand
-	-annotation "da_TimeDraggerNoSmoothNameCommand"
-	-sourceType "mel"
-	-command ("da_TimeDraggerNoSmooth")
+	-ann "da_TimeDraggerNoSmoothNameCommand"
+	-c ("da_TimeDraggerNoSmooth")
 	da_TimeDraggerNoSmoothNameCommand;
 
 nameCommand
-	-annotation "da_FrameOnlySelectedNameCommand"
-	-sourceType "mel"
-	-command ("da_FrameOnlySelected")
+	-ann "da_FrameOnlySelectedNameCommand"
+	-c ("da_FrameOnlySelected")
 	da_FrameOnlySelectedNameCommand;
 
 nameCommand
-	-annotation "da_RenderViewsNameCommand"
-	-sourceType "mel"
-	-command ("da_RenderViews")
+	-ann "da_RenderViewsNameCommand"
+	-c ("da_RenderViews")
 	da_RenderViewsNameCommand;
 
 nameCommand
-	-annotation "da_MMtoKey_press"
-	-sourceType "mel"
-	-command ("da_MMtoKey_press")
+	-ann "da_MMtoKey_press"
+	-c ("da_MMtoKey_press")
 	da_MMtoKey_pressNameCommand;
 
 nameCommand
-	-annotation "da_MMtoKey_release"
-	-sourceType "mel"
-	-command ("da_MMtoKey_release")
+	-ann "da_MMtoKey_release"
+	-c ("da_MMtoKey_release")
 	da_MMtoKey_releaseNameCommand;
 
 nameCommand
-	-annotation "da_UniversalManipNameCommand"
-	-sourceType "mel"
-	-command ("UniversalManip")
+	-ann "da_UniversalManipNameCommand"
+	-c ("UniversalManip")
 	da_UniversalManipNameCommand;
 
 nameCommand
-	-annotation "da_LayoutOutlinerNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutOutliner")
+	-ann "da_LayoutOutlinerNameCommand"
+	-c ("da_LayoutOutliner")
 	da_LayoutOutlinerNameCommand;
 
 nameCommand
-	-annotation "da_ToolSettingsNameCommand"
-	-sourceType "mel"
-	-command ("da_ToolSettings")
+	-ann "da_ToolSettingsNameCommand"
+	-c ("da_ToolSettings")
 	da_ToolSettingsNameCommand;
 
 nameCommand
-	-annotation "da_ToggleShelfNameCommand"
-	-sourceType "mel"
-	-command ("ToggleShelf")
+	-ann "da_ToggleShelfNameCommand"
+	-c ("ToggleShelf")
 	da_ToggleShelfNameCommand;
 
 nameCommand
-	-annotation "da_OpenColorEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_OpenColorEditor")
+	-ann "da_OpenColorEditorNameCommand"
+	-c ("da_OpenColorEditor")
 	da_OpenColorEditorNameCommand;
 
 nameCommand
-	-annotation "da_PerspToggleNameCommand"
-	-sourceType "mel"
-	-command ("da_perspToggle")
+	-ann "da_PerspToggleNameCommand"
+	-c ("da_perspToggle")
 	da_PerspToggleNameCommand;
 
 nameCommand
-	-annotation "da_GoToFrontNameCommand"
-	-sourceType "mel"
-	-command ("da_GoToFront")
+	-ann "da_GoToFrontNameCommand"
+	-c ("da_GoToFront")
 	da_GoToFrontNameCommand;
 
 nameCommand
-	-annotation "da_GoToSideNameCommand"
-	-sourceType "mel"
-	-command ("da_GoToSide")
+	-ann "da_GoToSideNameCommand"
+	-c ("da_GoToSide")
 	da_GoToSideNameCommand;
 
 nameCommand
-	-annotation "da_GoToTopNameCommand"
-	-sourceType "mel"
-	-command ("da_GoToTop")
+	-ann "da_GoToTopNameCommand"
+	-c ("da_GoToTop")
 	da_GoToTopNameCommand;
 
 nameCommand
-	-annotation "da_GoToPerspNameCommand"
-	-sourceType "mel"
-	-command ("da_GoToPersp")
+	-ann "da_GoToPerspNameCommand"
+	-c ("da_GoToPersp")
 	da_GoToPerspNameCommand;
 
 nameCommand
-	-annotation "da_toggleMainWindowFullScreenModeNameCommand"
-	-sourceType "mel"
-	-command ("toggleMainWindowFullScreenMode")
+	-ann "da_toggleMainWindowFullScreenModeNameCommand"
+	-c ("toggleMainWindowFullScreenMode")
 	da_toggleMainWindowFullScreenModeNameCommand;
 
 nameCommand
-	-annotation "da_ZeroTransfomationsNameCommand"
-	-sourceType "mel"
-	-command ("da_ZeroTransfomations")
+	-ann "da_ZeroTransfomationsNameCommand"
+	-c ("da_ZeroTransfomations")
 	da_ZeroTransfomationsNameCommand;
 
 nameCommand
-	-annotation "da_ResetTransformNameCommand"
-	-sourceType "mel"
-	-command ("da_ResetTransform")
+	-ann "da_ResetTransformNameCommand"
+	-c ("da_ResetTransform")
 	da_ResetTransformNameCommand;
 
 nameCommand
-	-annotation "da_CopySelectionNameCommand"
-	-sourceType "mel"
-	-command ("da_CopySelection")
+	-ann "da_CopySelectionNameCommand"
+	-c ("da_CopySelection")
 	da_CopySelectionNameCommand;
 
 nameCommand
-	-annotation "da_PasteSelectionNameCommand"
-	-sourceType "mel"
-	-command ("da_PasteSelection")
+	-ann "da_PasteSelectionNameCommand"
+	-c ("da_PasteSelection")
 	da_PasteSelectionNameCommand;
 
 nameCommand
-	-annotation "da_CreateSetNameCommand"
-	-sourceType "mel"
-	-command ("CreateSet")
+	-ann "da_CreateSetNameCommand"
+	-c ("CreateSet")
 	da_CreateSetNameCommand;
 
 nameCommand
-	-annotation "da_ShapeEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutShapeEditor")
+	-ann "da_ShapeEditorNameCommand"
+	-c ("da_LayoutShapeEditor")
 	da_ShapeEditorNameCommand;
 
 nameCommand
-	-annotation "da_LayoutReferenceEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutReferenceEditor")
+	-ann "da_LayoutReferenceEditorNameCommand"
+	-c ("da_LayoutReferenceEditor")
 	da_LayoutReferenceEditorNameCommand;
 
 nameCommand
-	-annotation "da_TogglePlaybackNameCommand"
-	-sourceType "mel"
-	-command ("da_TogglePlayback")
+	-ann "da_TogglePlaybackNameCommand"
+	-c ("da_TogglePlayback")
 	da_TogglePlaybackNameCommand;
 
 nameCommand
-	-annotation "da_OpenUvToolNameCommand"
-	-sourceType "mel"
-	-command ("da_OpenUvTool")
+	-ann "da_OpenUvToolNameCommand"
+	-c ("da_OpenUvTool")
 	da_OpenUvToolNameCommand;
 
 nameCommand
-	-annotation "da_ToggleModelingToolNameCommand"
-	-sourceType "mel"
-	-command ("da_ToggleModelingTool")
+	-ann "da_ToggleModelingToolNameCommand"
+	-c ("da_ToggleModelingTool")
 	da_ToggleModelingToolNameCommand;
 
 nameCommand
-	-annotation "da_ToggleNodeEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutNodeEditor")
+	-ann "da_ToggleNodeEditorNameCommand"
+	-c ("da_LayoutNodeEditor")
 	da_ToggleNodeEditorNameCommand;
 
 nameCommand
-	-annotation "da_ToggleUVTextureEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutUvTextureEditor")
+	-ann "da_ToggleUVTextureEditorNameCommand"
+	-c ("da_LayoutUvTextureEditor")
 	da_ToggleUVTextureEditorNameCommand;
 
 nameCommand
-	-annotation "da_ComponentEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutComponentEditor")
+	-ann "da_ComponentEditorNameCommand"
+	-c ("da_LayoutComponentEditor")
 	da_ComponentEditorNameCommand;
 
 nameCommand
-	-annotation "da_ToggleRelationshipEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutRelationshipEditor")
+	-ann "da_ToggleRelationshipEditorNameCommand"
+	-c ("da_LayoutRelationshipEditor")
 	da_ToggleRelationshipEditorNameCommand;
 
 nameCommand
-	-annotation "da_DynamicRelationshipEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutDynamicRelationshipEditor")
+	-ann "da_DynamicRelationshipEditorNameCommand"
+	-c ("da_LayoutDynamicRelationshipEditor")
 	da_DynamicRelationshipEditorNameCommand;
 
 nameCommand
-	-annotation "da_LayoutHypershadeNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutHypershade")
+	-ann "da_LayoutHypershadeNameCommand"
+	-c ("da_LayoutHypershade")
 	da_LayoutHypershadeNameCommand;
 
 nameCommand
-	-annotation "da_GraphEditorNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutGraphEditor")
+	-ann "da_GraphEditorNameCommand"
+	-c ("da_LayoutGraphEditor")
 	da_GraphEditorNameCommand;
 
 nameCommand
-	-annotation "da_ToggleToolSettingNameCommand"
-	-sourceType "mel"
-	-command ("da_ToggleToolSetting")
+	-ann "da_ToggleToolSettingNameCommand"
+	-c ("da_ToggleToolSetting")
 	da_ToggleToolSettingNameCommand;
 
 nameCommand
-	-annotation "da_ToggleOutlineNameCommand"
-	-sourceType "mel"
-	-command ("da_ToggleOutline")
+	-ann "da_ToggleOutlineNameCommand"
+	-c ("da_ToggleOutline")
 	da_ToggleOutlineNameCommand;
 
 nameCommand
-	-annotation "da_ToggleChannelLayerNameCommand"
-	-sourceType "mel"
-	-command ("da_ToggleChannelLayer")
+	-ann "da_ToggleChannelLayerNameCommand"
+	-c ("da_ToggleChannelLayer")
 	da_ToggleChannelLayerNameCommand;
 
 nameCommand
-	-annotation "da_ToggleMTKNameCommand"
-	-sourceType "mel"
-	-command ("da_ToggleMTK")
+	-ann "da_ToggleMTKNameCommand"
+	-c ("da_ToggleMTK")
 	da_ToggleMTKNameCommand;
 
 nameCommand
-	-annotation "da_ToggleAttributeNameCommand"
-	-sourceType "mel"
-	-command ("da_ToggleAttribute")
+	-ann "da_ToggleAttributeNameCommand"
+	-c ("da_ToggleAttribute")
 	da_ToggleAttributeNameCommand;
 
 nameCommand
-	-annotation "da_ToggleWireframeInArtisanNameCommand"
-	-sourceType "mel"
-	-command ("ToggleWireframeInArtisan")
+	-ann "da_ToggleWireframeInArtisanNameCommand"
+	-c ("ToggleWireframeInArtisan")
 	da_ToggleWireframeInArtisanNameCommand;
 
 nameCommand
-	-annotation "da_ToggleColorFeedbackNameCommand"
-	-sourceType "mel"
-	-command ("ToggleColorFeedback")
+	-ann "da_ToggleColorFeedbackNameCommand"
+	-c ("ToggleColorFeedback")
 	da_ToggleColorFeedbackNameCommand;
 
 nameCommand
-	-annotation "da_FullHotboxDisplayNameCommand"
-	-sourceType "mel"
-	-command ("FullHotboxDisplay")
+	-ann "da_FullHotboxDisplayNameCommand"
+	-c ("FullHotboxDisplay")
 	da_FullHotboxDisplayNameCommand;
 
 nameCommand
-	-annotation "da_ListInputOperationsNameCommand"
-	-sourceType "mel"
-	-command ("da_ListInputOperations")
+	-ann "da_ListInputOperationsNameCommand"
+	-c ("da_ListInputOperations")
 	da_ListInputOperationsNameCommand;
 
 nameCommand
-	-annotation "da_ToggleDisplacementNameCommand"
-	-sourceType "mel"
-	-command ("ToggleDisplacement")
+	-ann "da_ToggleDisplacementNameCommand"
+	-c ("ToggleDisplacement")
 	da_ToggleDisplacementNameCommand;
 
 nameCommand
-	-annotation "da_ResetPivotNameCommand"
-	-sourceType "mel"
-	-command ("da_ResetPivot")
+	-ann "da_ResetPivotNameCommand"
+	-c ("da_ResetPivot")
 	da_ResetPivotNameCommand;
 
 nameCommand
-	-annotation "da_TogglePerspNameCommand"
-	-sourceType "mel"
-	-command ("da_LayoutPersp")
+	-ann "da_TogglePerspNameCommand"
+	-c ("da_LayoutPersp")
 	da_TogglePerspNameCommand;
 
 nameCommand
-	-annotation "da_CloseAllPanelNameCommand"
-	-sourceType "mel"
-	-command ("da_CloseAllPanel")
+	-ann "da_CloseAllPanelNameCommand"
+	-c ("da_CloseAllPanel")
 	da_CloseAllPanelNameCommand;
 
 nameCommand
-	-annotation "da_CreateAssigNodeNameCommand"
-	-sourceType "mel"
-	-command ("da_CreateAssigNode")
+	-ann "da_CreateAssigNodeNameCommand"
+	-c ("da_CreateAssigNode")
 	da_CreateAssigNodeNameCommand;
 
 nameCommand
-	-annotation "da_ToggleResolutionGateNameCommand"
-	-sourceType "mel"
-	-command ("da_ToggleResolutionGate")
+	-ann "da_ToggleResolutionGateNameCommand"
+	-c ("da_ToggleResolutionGate")
 	da_ToggleResolutionGateNameCommand;
 
 nameCommand
-	-annotation "InteractivePlaybackNameCommand"
-	-sourceType "mel"
-	-command ("InteractivePlayback")
+	-ann "InteractivePlaybackNameCommand"
+	-c ("InteractivePlayback")
 	InteractivePlaybackNameCommand;
 
 nameCommand
-	-annotation "MatchPivotsNameCommand"
-	-sourceType "mel"
-	-command ("MatchPivots")
+	-ann "MatchPivotsNameCommand"
+	-c ("MatchPivots")
 	MatchPivotsNameCommand;
 
 nameCommand
-	-annotation "SelectHierarchyNameCommand"
-	-sourceType "mel"
-	-command ("SelectHierarchy")
+	-ann "SelectHierarchyNameCommand"
+	-c ("SelectHierarchy")
 	SelectHierarchyNameCommand;
 
 nameCommand
-	-annotation "toggleShelfTabsNameCommand"
-	-sourceType "mel"
-	-command ("toggleShelfTabs")
+	-ann "toggleShelfTabsNameCommand"
+	-c ("toggleShelfTabs")
 	toggleShelfTabsNameCommand;
 
 nameCommand
-	-annotation "da_TitleBarToggleNameCommand"
-	-sourceType "mel"
-	-command ("da_TitleBarToggle")
+	-ann "da_TitleBarToggleNameCommand"
+	-c ("da_TitleBarToggle")
 	da_TitleBarToggleNameCommand;
 
 nameCommand
-	-annotation "da_moveKeyframeToNextNameCommand"
-	-sourceType "mel"
-	-command ("da_moveKeyframeToNext")
+	-ann "da_moveKeyframeToNextNameCommand"
+	-c ("da_moveKeyframeToNext")
 	da_moveKeyframeToNextNameCommand;
 
 nameCommand
-	-annotation "da_moveKeyframeToPrevNameCommand"
-	-sourceType "mel"
-	-command ("da_moveKeyframeToPrev")
+	-ann "da_moveKeyframeToPrevNameCommand"
+	-c ("da_moveKeyframeToPrev")
 	da_moveKeyframeToPrevNameCommand;
 
 nameCommand
-	-annotation "da_KeyKeyedOnlyNameCommand"
-	-sourceType "mel"
-	-command ("da_KeyKeyedOnly")
+	-ann "da_KeyKeyedOnlyNameCommand"
+	-c ("da_KeyKeyedOnly")
 	da_KeyKeyedOnlyNameCommand;
 
 
 if (`about -api` >= 20200000){
 nameCommand
-	-annotation "HelpNameCommand"
-	-sourceType "mel"
-	-command ("Help")
+	-ann "HelpNameCommand"
+	-c ("Help")
 	HelpNameCommand;
 }
 
 nameCommand
-	-annotation "da_SmoothPreviewOffNameCommand"
-	-sourceType "mel"
-	-command ("da_SmoothPreviewOff")
+	-ann "da_SmoothPreviewOffNameCommand"
+	-c ("da_SmoothPreviewOff")
 	da_SmoothPreviewOffNameCommand;
 
 nameCommand
-	-annotation "da_HighQualitySmoothMeshNameCommand"
-	-sourceType "mel"
-	-command ("da_HighQualitySmoothMesh")
+	-ann "da_HighQualitySmoothMeshNameCommand"
+	-c ("da_HighQualitySmoothMesh")
 	da_HighQualitySmoothMeshNameCommand;
 
 nameCommand
-	-annotation "da_HighQualityDispMeshNameCommand"
-	-sourceType "mel"
-	-command ("da_HighQualityDispMesh")
+	-ann "da_HighQualityDispMeshNameCommand"
+	-c ("da_HighQualityDispMesh")
 	da_HighQualityDispMeshNameCommand;
 
 nameCommand
-	-annotation "ChannelControlEditorNameCommand"
-	-sourceType "mel"
-	-command ("ChannelControlEditor")
+	-ann "ChannelControlEditorNameCommand"
+	-c ("ChannelControlEditor")
 	ChannelControlEditorNameCommand;
 
 nameCommand
-	-annotation "ConnectionEditorNameCommand"
-	-sourceType "mel"
-	-command ("ConnectionEditor")
+	-ann "ConnectionEditorNameCommand"
+	-c ("ConnectionEditor")
 	ConnectionEditorNameCommand;
 
 nameCommand
-	-annotation "da_EnableWalkToolNameCommand"
-	-sourceType "mel"
-	-command ("da_EnableWalkTool")
+	-ann "da_EnableWalkToolNameCommand"
+	-c ("da_EnableWalkTool")
 	da_EnableWalkToolNameCommand;
