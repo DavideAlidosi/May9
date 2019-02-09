@@ -34,7 +34,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Toggle Skin Paint Mode"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("string $currentTool = `currentCtx`;\nint $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;\n\nif ($paintModeCheck != 2){\n\tartAttrSkinPaintCtx -e -spm 2 -psm 3 $currentTool;\n\tDisplayWireframe;\n}else{\n\tartAttrSkinPaintCtx -e -spm 1 -psm 1 $currentTool;\n\tDisplayShaded;\n}")
+	-c ("string $currentTool = `currentCtx`;\nint $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nif ($paintModeCheck != 0){\n\tartAttrSkinPaintModePaintSelect 0 artAttrSkinPaintCtx;\n}else{\n\tartAttrSkinPaintModePaintSelect 1 artAttrSkinPaintCtx;\n}")
 	da_SkinPaintMode;
 
 runTimeCommand

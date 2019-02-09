@@ -11745,6 +11745,7 @@ global proc Tool_PaintSkin_MM_May9(){
 string $currentTool = `currentCtx`;
 int $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;
 
+if ($paintModeCheck == 1){
 menuItem -itl 1 
 -l "Add" 
 -c "artAttrPaintOperation artAttrSkinPaintCtx Add;" 
@@ -11756,18 +11757,6 @@ menuItem -itl 1
 -rp "N";
 
 menuItem -itl 1 
--l "Select Vertex" 
--c "da_SkinPaintMode" 
--cb ($paintModeCheck == 2)
--rp "NW";
-
-menuItem -itl 1 
--l "XRay Joints" 
--c "da_ToggleXRayJointsSkin" 
--rp "E" 
--cb (`artAttrSkinPaintCtx -q -xrayJoints artAttrSkinContext`);
-
-menuItem -itl 1 
 -l "Color Ramp" 
 -c "da_ToggleRampSkin;artAttrCtx -e -colorRamp \" 1,0,0,0.5,1,1,1,0,0.986,1,0.12,0,0.12,0.014,1,1,1,0.86,1,1,0.004,0,0.004,0,1 \" artAttrSkinContext" 
 -rp "S" 
@@ -11777,6 +11766,19 @@ menuItem -itl 1
 -l "Flood Smooth" 
 -c "artAttrPaintOperation artAttrSkinPaintCtx Smooth;\nartAttrSkinPaintCtx -e -clear `currentCtx`;" 
 -rp "W";
+}
+
+menuItem -itl 1 
+-l "Select Vertex" 
+-c "da_SkinPaintMode" 
+-cb ($paintModeCheck == 0)
+-rp "NW";
+
+menuItem -itl 1 
+-l "XRay Joints" 
+-c "da_ToggleXRayJointsSkin" 
+-rp "E" 
+-cb (`artAttrSkinPaintCtx -q -xrayJoints artAttrSkinContext`);
 
 menuItem -itl 1 
 -l "Wireframe" 
@@ -11790,19 +11792,18 @@ menuItem -itl 1
 -rp "SW" 
 -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
 
-if ($paintModeCheck == 2){
+if ($paintModeCheck == 0){
 menuItem -itl 1 
 -l "Grow Selection"
+-rp "N" 
 -c "GrowPolygonSelectionRegion" 
 -i "growCVselect.png";
 
 menuItem -itl 1 
 -l "Shrink Selection"
+-rp "S" 
 -c "ShrinkPolygonSelectionRegion" 
 -i "shrinkCVselect.png";
-
-menuItem 
--d 1;
 }
 
 menuItem -itl 1 
