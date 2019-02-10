@@ -9,12 +9,12 @@ global proc da_May9Menu(){
 	menuItem -p $menuMain -l "Interactive Playback" -c "InteractivePlayback" -i "interactivePlayback.png";
     menuItem -p $menuMain -l "Freeze/Delete Non-Deform" -c "da_FreezeDelNonDef" -i "UV_Freeze_Tool.png";
     menuItem -p $menuMain -l "Delete Mental Ray Nodes" -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
-    menuItem -p $menuMain -l "Walk Tool" -c "da_ToggleWalkTool" -cb (`currentCtx` == "walkContext");
     menuItem -p $menuMain -l "Wheel Zoom" -c "da_ToggleMouseWheel" -cb (`optionVar -q "useScrollWheel"`);
 
     menuItem -d 1 -l "Toggle";
     menuItem -p $menuMain -l "Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
     menuItem -p $menuMain -l "Manipulator Orient" -c "da_ManipToggle" -i "globalManip.png";
+    menuItem -p $menuMain -l "Walk Tool" -c "da_ToggleWalkTool" -i "walk.png";
     
     menuItem -d 1 -l "Selection";
     menuItem -p $menuMain -l "Lock" -c "da_Lock" -i "lockGeneric.png";
