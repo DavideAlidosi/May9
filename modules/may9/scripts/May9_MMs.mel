@@ -3805,8 +3805,8 @@ menuItem
 -i "aselect.png";
 
 menuItem
--l "Select Nsided"
--c "polyCleanupArgList 4 { \"0\",\"2\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"-1\",\"0\",\"0\" }"
+-l "Nsided"
+-c "da_SelectNsided"
 -i "polyCreateFacet.png";
 
 menuItem
@@ -10221,6 +10221,11 @@ menuItem
 -i "polyCleanup.png";
 
 menuItem
+-l "Clean Non Mainfold"
+-c "da_CleanNonmainfold"
+-i "polyDisc.png";
+
+menuItem
 -l "Remesh"
 -c "polyRemesh -rdt 0 -ipt 0"
 -i "out_mesh.png";
@@ -10887,6 +10892,11 @@ menuItem
 -l "Select"
 -sm 1
 -i "aselect.png";
+
+menuItem
+-l "Nsided"
+-c "da_SelectNsided"
+-i "polyCreateFacet.png";
 
 menuItem
 -l "Hard Edges"
@@ -12726,7 +12736,7 @@ menuItem
 menuItem
 -l "Select Nsided"
 -rp "S" 
--c "polyCleanupArgList 4 { \"0\",\"2\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"-1\",\"0\",\"0\" }"
+-c "da_SelectNsided"
 -i "polyCreateFacet.png";
 
 menuItem
@@ -13360,7 +13370,7 @@ menuItem
 
 menuItem
 -l "Select Nsided"
--c "polyCleanupArgList 4 { \"0\",\"2\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"-1\",\"0\",\"0\" }"
+-c "da_SelectNsided"
 -rp "S" 
 -i "polyCreateFacet.png";
 
@@ -13399,11 +13409,11 @@ global proc Window_UV_Mesh_MM_May9(){
 string $mySelShape[] = `listRelatives -s`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
-menuItem 
--l "Smooth UV Borders" 
--c "da_SmoothUV"
+menuItem
+-l "Select Nsided"
 -rp "S" 
--cb ($myUVSmoothMode == 2);
+-c "da_SelectNsided"
+-i "polyCreateFacet.png";
 
 menuItem
 -l "Auto Unfold" 
@@ -13525,6 +13535,11 @@ menuItem
 -l "Select UVs" 
 -c "ConvertSelectionToUVs" 
 -i "UVEditorVertex.png";
+
+menuItem 
+-l "Smooth UV Borders" 
+-c "da_SmoothUV"
+-cb ($myUVSmoothMode == 2);
 
 setParent -m ..;
 

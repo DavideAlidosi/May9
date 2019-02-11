@@ -2,6 +2,18 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Select Nsided Faces"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("polyCleanupArgList 4 {\n\t\"0\",\"2\",\"1\",\"0\",\"1\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"-1\",\"0\",\"0\"\n}")
+	da_SelectNsided;
+
+runTimeCommand
+	-ann "Clean Nonmainfold Geometry"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("polyCleanupArgList 4 {\n    \"0\",\"1\",\"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1e-05\",\"0\",\"1\",\"0\",\"0\"\n}")
+	da_CleanNonmainfold;
+
+runTimeCommand
 	-ann "Toggle Walk Tool"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("if(`currentCtx` == \"walkContext\"){\n    da_DisableWalkTool;\n}else{\n    da_EnableWalkTool;\n}\n")
@@ -2377,6 +2389,12 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_SelectNsided`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_CleanNonmainfold`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_ToggleWalkTool`);
