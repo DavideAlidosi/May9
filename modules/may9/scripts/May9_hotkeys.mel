@@ -1,4 +1,4 @@
-// Core hotkey set
+// Define hotkey set
 hotkeySet -source `optionVar -q "da_initialHotkey"` -current May9_Next;
 
 // MMtoKey Contextual Workflow hotkeys
@@ -82,6 +82,7 @@ hotkey -k "End" -n ("SelectHierarchyNameCommand");
 hotkey -k "k" -n ("da_TimeDraggerSmoothNameCommand");
 hotkey -k "k" -rn ("da_TimeDraggerNoSmoothNameCommand");
 hotkey -k "Space" -cmd -n ("da_toggleMainWindowFullScreenModeNameCommand");
+hotkey -k "i" -ctl -alt -n ("ToggleIsolateSelectNameCommand");
 
 // Changed hotkeys
 hotkey -k "1" -ctl -alt -n ("da_SmoothPreviewOffNameCommand");
@@ -460,14 +461,6 @@ nameCommand
 	-c ("da_KeyKeyedOnly")
 	da_KeyKeyedOnlyNameCommand;
 
-
-if (`about -api` >= 20200000){
-nameCommand
-	-ann "HelpNameCommand"
-	-c ("Help")
-	HelpNameCommand;
-}
-
 nameCommand
 	-ann "da_SmoothPreviewOffNameCommand"
 	-c ("da_SmoothPreviewOff")
@@ -497,3 +490,15 @@ nameCommand
 	-ann "da_EnableWalkToolNameCommand"
 	-c ("da_EnableWalkTool")
 	da_EnableWalkToolNameCommand;
+
+nameCommand
+	-ann "ToggleIsolateSelectNameCommand"
+	-c ("ToggleIsolateSelect")
+	ToggleIsolateSelectNameCommand;
+
+if (`about -api` >= 20200000){
+nameCommand
+	-ann "HelpNameCommand"
+	-c ("Help")
+	HelpNameCommand;
+}
