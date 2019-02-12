@@ -3240,17 +3240,21 @@ menuItem
 -i "aselect.png";
 
 menuItem
--l "By Straight Angle"
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Straight Angle"
 -c "da_EdgeStraightAngle"
 -i "da_sraightAngle.png";
 
 menuItem
--l "By Right Angle"
+-l "Right Angle"
 -c "da_EdgeRightAngle"
 -i "da_rightAngle.png";
 
 menuItem
--l "By Acute Angle"
+-l "Acute Angle"
 -c "da_EdgeAcuteAngle"
 -i "da_acuteAngle.png";
 
@@ -3273,11 +3277,6 @@ menuItem
 -l "Hard"
 -c "da_EdgeHard"
 -i "da_hardEdge.png";
-
-menuItem
--l "Selection Constraints"
--c "PolygonSelectionConstraints"
--i "polySelectUsingConstraints.png";
 
 menuItem
 -l "separator" 
@@ -3303,6 +3302,11 @@ menuItem
 menuItem
 -l "separator" 
 -d 1;
+
+menuItem
+-l "Selection Constraints"
+-c "PolygonSelectionConstraints"
+-i "polySelectUsingConstraints.png";
 
 menuItem
 -l "Create Quick Set"
@@ -3805,14 +3809,22 @@ menuItem
 -i "aselect.png";
 
 menuItem
+-l "separator" 
+-d 1;
+
+menuItem
+-l "Triangle"
+-c "da_SelectTriangle"
+-i "polyTriangulate.png";
+
+menuItem
 -l "Nsided"
 -c "da_SelectNsided"
 -i "polyCreateFacet.png";
 
 menuItem
--l "Selection Constraints"
--c "PolygonSelectionConstraints"
--i "polySelectUsingConstraints.png";
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Selection to Vertices"
@@ -3827,6 +3839,11 @@ menuItem
 menuItem
 -l "separator" 
 -d 1;
+
+menuItem
+-l "Selection Constraints"
+-c "PolygonSelectionConstraints"
+-i "polySelectUsingConstraints.png";
 
 menuItem
 -l "Create Quick Set"
@@ -6113,19 +6130,19 @@ menuItem
 -i "edges_NEX.png";
 
 menuItem
--l "By Right Angle\n" 
+-l "Right Angle" 
 -c "da_EdgeRightAngle" 
 -rp "SE" 
 -i "da_rightAngle.png";
 
 menuItem
--l "By Acute Angle" 
+-l "Acute Angle" 
 -c "da_EdgeAcuteAngle" 
 -rp "S" 
 -i "da_acuteAngle.png";
 
 menuItem
--l "By Straight Angle" 
+-l "Straight Angle" 
 -c "da_EdgeStraightAngle" 
 -rp "E" 
 -i "da_sraightAngle.png";
@@ -6284,19 +6301,19 @@ menuItem
 -i "da_insideEdge.png";
 
 menuItem
--l "By Straight Angle" 
+-l "Straight Angle" 
 -c "da_EdgeStraightAngle" 
 -rp "E" 
 -i "da_sraightAngle.png" ;
 
 menuItem
--l "By Right Angle" 
+-l "Right Angle" 
 -c "da_EdgeRightAngle" 
 -rp "SE" 
 -i "da_rightAngle.png";
 
 menuItem
--l "By Acute Angle" 
+-l "Acute Angle" 
 -c "da_EdgeAcuteAngle" 
 -rp "S" 
 -i "da_acuteAngle.png";
@@ -9168,7 +9185,6 @@ global proc PolyPoly_MM_May9(){
 string $mySelShape[] = `listRelatives -s`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
-int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
 -l "Multi Cut"
@@ -9993,6 +10009,20 @@ menuItem
 -i "aselect.png";
 
 menuItem
+-l "Triangle"
+-c "da_SelectTriangle"
+-i "polyTriangulate.png";
+
+menuItem
+-l "Nsided"
+-c "da_SelectNsided"
+-i "polyCreateFacet.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
 -l "Hard Edges"
 -c "da_EdgeHard"
 -i "da_hardEdge.png";
@@ -10017,11 +10047,6 @@ menuItem
 -c "da_HighQualitySmoothMeshToggle"
 -cb ($mySubdivMode == 3)
 -en ($myDispSetting == 0);
-
-menuItem 
--l "Smooth UV Borders" 
--c "da_SmoothUV"
--cb ($myUVSmoothMode == 2);
 
 menuItem 
 -l "Displacement Preview" 
@@ -10085,7 +10110,6 @@ global proc Poly_MM_May9(){
 string $mySelShape[] = `listRelatives -s`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
-int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
 -l "Multi Cut"
@@ -10894,9 +10918,18 @@ menuItem
 -i "aselect.png";
 
 menuItem
+-l "Triangle"
+-c "da_SelectTriangle"
+-i "polyTriangulate.png";
+
+menuItem
 -l "Nsided"
 -c "da_SelectNsided"
 -i "polyCreateFacet.png";
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Hard Edges"
@@ -10923,11 +10956,6 @@ menuItem
 -c "da_HighQualitySmoothMeshToggle"
 -cb ($mySubdivMode == 3)
 -en ($myDispSetting == 0);
-
-menuItem 
--l "Smooth UV Borders" 
--c "da_SmoothUV"
--cb ($myUVSmoothMode == 2);
 
 menuItem 
 -l "Displacement Preview" 
@@ -11302,46 +11330,45 @@ global proc Tool_Crease_MM_May9(){
 string $mySel[] = `ls -sl`;
 string $mySelShape[] = `listRelatives -s`;
 string $currentPanel = `getPanel -wf`;
-int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem -itl 1 
 -l "No Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 0 -vertexValue 0 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 0 -vertexValue 0 $each;}" 
 -rp "NW";
 
 menuItem -itl 1 
 -l "Infinite Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 10 -vertexValue 10 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 10 -vertexValue 10 $each;}" 
 -rp "N";
 
 menuItem -itl 1 
 -l "1 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 1 -vertexValue 1 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 1 -vertexValue 1 $each;}" 
 -rp "W";
 
 menuItem -itl 1 
 -l "2 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 2 -vertexValue 2 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 2 -vertexValue 2 $each;}" 
 -rp "SW";
 
 menuItem -itl 1 
 -l "3 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 3 -vertexValue 3 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 3 -vertexValue 3 $each;}" 
 -rp "S";
 
 menuItem -itl 1 
 -l "4 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 4 -vertexValue 4 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 4 -vertexValue 4 $each;}" 
 -rp "SE";
 
 menuItem -itl 1 
 -l "5 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 5 -vertexValue 5 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 5 -vertexValue 5 $each;}" 
 -rp "E";
 
 menuItem -itl 1 
 -l "6 Crease" 
--c "for ($each in $mySel){polyCrease -ch true -value 6 -vertexValue 6 $each;}" 
+-c "for ($each in `ls -sl`){polyCrease -ch true -value 6 -vertexValue 6 $each;}" 
 -rp "NE";
 
 menuItem -itl 1 
@@ -11349,23 +11376,18 @@ menuItem -itl 1
 -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
 -i "polyCrease.png";
 
+menuItem  -itl 1 
+-d 1;
+
 if (size($mySel[0]) || 0){
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
-
-menuItem  -itl 1 
--d 1;
 
 menuItem -itl 1 
 -l "High Quality Smooth" 
 -c "da_HighQualitySmoothMesh"
 -cb ($mySubdivMode == 3)
 -en ($myDispSetting == 0);
-
-menuItem -itl 1 
--l "Smooth UV Borders"
--c "da_SmoothUV"
--cb ($myUVSmoothMode == 2);
 
 menuItem -itl 1 
 -l "Displacement Preview" 
@@ -12734,12 +12756,6 @@ menuItem
 -ob 1;
 
 menuItem
--l "Select Nsided"
--rp "S" 
--c "da_SelectNsided"
--i "polyCreateFacet.png";
-
-menuItem
 -l "UV Toolkit" 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
@@ -13207,9 +13223,8 @@ menuItem
 -i "aselect.png";
 
 menuItem
--l "Selection Constraints"
--c "PolygonSelectionConstraints"
--i "polySelectUsingConstraints.png";
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Selection to UVs"
@@ -13219,6 +13234,11 @@ menuItem
 menuItem
 -l "separator" 
 -d 1;
+
+menuItem
+-l "Selection Constraints"
+-c "PolygonSelectionConstraints"
+-i "polySelectUsingConstraints.png";
 
 menuItem
 -l "Create Quick Set"
@@ -13369,12 +13389,6 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Select Nsided"
--c "da_SelectNsided"
--rp "S" 
--i "polyCreateFacet.png";
-
-menuItem
 -l "UV Toolkit" 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
@@ -13408,12 +13422,6 @@ setParent -m ..;
 global proc Window_UV_Mesh_MM_May9(){
 string $mySelShape[] = `listRelatives -s`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
-
-menuItem
--l "Select Nsided"
--rp "S" 
--c "da_SelectNsided"
--i "polyCreateFacet.png";
 
 menuItem
 -l "Auto Unfold" 
@@ -13458,6 +13466,12 @@ menuItem
 -c "da_MapFacesUV"
 -rp "E"
 -i "polyNormalProj.png";
+
+menuItem 
+-l "Smooth UV Borders" 
+-c "da_SmoothUV"
+-rp "S"
+-cb ($myUVSmoothMode == 2);
 
 menuItem
 -l "Mono Shell Map"
@@ -13535,11 +13549,6 @@ menuItem
 -l "Select UVs" 
 -c "ConvertSelectionToUVs" 
 -i "UVEditorVertex.png";
-
-menuItem 
--l "Smooth UV Borders" 
--c "da_SmoothUV"
--cb ($myUVSmoothMode == 2);
 
 setParent -m ..;
 
