@@ -10009,20 +10009,6 @@ menuItem
 -i "aselect.png";
 
 menuItem
--l "Triangle"
--c "da_SelectTriangle"
--i "polyTriangulate.png";
-
-menuItem
--l "Nsided"
--c "da_SelectNsided"
--i "polyCreateFacet.png";
-
-menuItem
--l "separator" 
--d 1;
-
-menuItem
 -l "Hard Edges"
 -c "da_EdgeHard"
 -i "da_hardEdge.png";
@@ -10244,10 +10230,17 @@ menuItem
 -c "da_PolyDivision"
 -i "polyCleanup.png";
 
+if (`about -api` >= 20180000){
 menuItem
 -l "Clean Non Mainfold"
 -c "da_CleanNonmainfold"
 -i "polyDisc.png";
+}else{
+menuItem
+-l "Clean Non Mainfold"
+-c "da_CleanNonmainfold"
+-i "polyPyramid.png";
+}
 
 menuItem
 -l "Remesh"
