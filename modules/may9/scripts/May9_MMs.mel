@@ -2142,7 +2142,7 @@ menuItem
 
 menuItem
 -l "Detach Curve" 
--c "DetachCurve;" 
+-c "DetachCurve" 
 -rp "S" 
 -i "detachCurve.png";
 
@@ -2931,7 +2931,7 @@ menuItem
 
 menuItem
 -l "Detach"
--c "DetachEdgeComponent"
+-c "da_DetachEdge"
 -i "polySplitVertex.png";
 
 menuItem
@@ -9308,11 +9308,6 @@ menuItem
 -i "polyExtrudeFacet.png";
 
 menuItem
--l "Transfer Attributes"
--c "performTransferAttributes 1"
--i "polyTransferAttributes.png";
-
-menuItem
 -l "Connect Shapes"
 -c "da_ConnectShapeUI"
 -i "da_OneToMany.png";
@@ -9339,6 +9334,38 @@ menuItem
 -l "Scatter on a Surface"
 -c "da_SurfaceScatterMash"
 -i "out_MASH_Points.png";
+
+setParent -m ..;
+
+menuItem
+-l "Mesh Edit"
+-sm 1
+-i "polyMesh.png";
+
+menuItem
+-l "Fill Hole"
+-c "FillHole"
+-i "polyCloseBorder.png";
+
+menuItem
+-l "Transfer Attributes"
+-c "performTransferAttributes 1"
+-i "polyTransferAttributes.png";
+
+menuItem
+-d 1;
+
+if (`about -api` >= 20180000){
+menuItem
+-l "Clean Non Mainfold"
+-c "da_CleanNonmainfold"
+-i "polyDisc.png";
+}else{
+menuItem
+-l "Clean Non Mainfold"
+-c "da_CleanNonmainfold"
+-i "polyPyramid.png";
+}
 
 setParent -m ..;
 
@@ -10007,6 +10034,20 @@ menuItem
 -l "Select"
 -sm 1
 -i "aselect.png";
+
+menuItem
+-l "Triangle"
+-c "da_SelectTriangle"
+-i "polyTriangulate.png";
+
+menuItem
+-l "Nsided"
+-c "da_SelectNsided"
+-i "polyCreateFacet.png";
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Hard Edges"
@@ -12928,7 +12969,7 @@ menuItem
 
 menuItem
 -l "Detach"
--c "DetachVertexComponent;"
+-c "da_DetachVertex"
 -i "polySplitVertex.png";
 
 menuItem
