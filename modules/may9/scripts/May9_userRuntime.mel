@@ -2409,10 +2409,10 @@ runTimeCommand
 global proc May9_runTimeCommandsRemover(){
 
 catchQuiet (`runTimeCommand -e -del
-	da_DetachEdge);
+	da_DetachEdge`);
 
 catchQuiet (`runTimeCommand -e -del
-	da_DetachVertex);
+	da_DetachVertex`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_SelectTriangle`);
