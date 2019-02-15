@@ -1277,7 +1277,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Open light List Panel UI"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("if (`about -api` >= 20180000){\n\tcallPython \"maya.app.renderSetup.lightEditor.views.editorUI\" \"createLightEditorWindow\" {};\n}else{\n\tcallPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};\n}")
+	-c ("if (`about -api` >= 20200000){\n\tcallPython \"maya.app.renderSetup.lightEditor.views.editorUI\" \"createLightEditorWindow\" {};\n}else{\n\tcallPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};\n}")
 	da_LightList;
 
 runTimeCommand

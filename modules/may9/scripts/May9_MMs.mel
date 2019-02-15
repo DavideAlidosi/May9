@@ -9196,7 +9196,7 @@ setParent -m ..;
 // Define PolyPoly marking menu
 global proc PolyPoly_MM_May9(){
 
-string $mySelShape[] = `listRelatives -s`;
+string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
@@ -10153,7 +10153,7 @@ setParent -m ..;
 // Define Poly marking menu
 global proc Poly_MM_May9(){
 
-string $mySelShape[] = `listRelatives -s`;
+string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
