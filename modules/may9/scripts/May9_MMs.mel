@@ -1396,6 +1396,11 @@ menuItem
 -i "uvIsolateSelectReset.png";
 
 menuItem
+-l "Move Skinned Joints" 
+-c "MoveSkinJointsTool" 
+-i "moveSkinnedJoint.png";
+
+menuItem
 -l "separator" 
 -d 1;
 
@@ -1421,6 +1426,10 @@ menuItem
 -l "Delta Skin" 
 -c "da_DeltaSkin" 
 -i "smoothSkinWeights.png";
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Shape to Joint(s)" 
@@ -4859,6 +4868,11 @@ menuItem
 -l "Select Weighted Vertices" 
 -c "da_SelectVertexJoint" 
 -i "uvIsolateSelectReset.png";
+
+menuItem
+-l "Move Skinned Joints" 
+-c "MoveSkinJointsTool" 
+-i "moveSkinnedJoint.png";
 
 menuItem
 -l "separator" 
@@ -9616,6 +9630,11 @@ menuItem
 -c "da_BatchSkinTransfertUV";
 
 setParent -m ..;
+
+menuItem
+-l "Substitute Geometry"
+-c "SubstituteGeometryOptions"
+-i "substGeometry.png";
 
 menuItem
 -l "Bake Deformers to Skin"
