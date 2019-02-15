@@ -50,7 +50,7 @@ Exclusive script
 - Control Constraint: this set of scripts constraint a controller to a single or multiple controlled object(s)
 
 
-Version 10 highlight
+Version Next highlight
 - Add support to Maya 2019
 - May9 Next Hotkey Sets are added over standard ones without overwrite the user ones
 - Contextual Marking menus are now loaded as command
