@@ -9578,13 +9578,20 @@ menuItem
 -c "CreateTextureDeformer"
 -i "textureDeformer.png";
 
+setParent -m ..;
+
 menuItem
--d 1;
+-l "Skin/Muscle"
+-sm 1
+-i "smoothSkin.png";
 
 menuItem
 -l "Muscle Multi Collide"
 -c "cMuscleMultiCollide_setup(); "
 -i "cMuscle_multi_apply.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Add Influence to Skin"
@@ -10503,8 +10510,12 @@ menuItem
 
 setParent -m ..;
 
+setParent -m ..;
+
 menuItem
--d 1;
+-l "Skin/Muscle"
+-sm 1
+-i "smoothSkin.png";
 
 menuItem
 -l "Apply Muscle System to Skin"
@@ -10525,6 +10536,9 @@ menuItem
 -l "Smooth Skin to Muscle System"
 -c "cMuscleConvertSkin()"
 -i "cMuscle_skin_convert.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Bake Deformers to Skin"
@@ -13078,14 +13092,21 @@ menuItem
 -c "CreateLattice"
 -i "lattice.png";
 
+setParent -m ..;
+
 menuItem
--l "separator" 
--d 1;
+-l "Skin/Muscle"
+-sm 1
+-i "smoothSkin.png";
 
 menuItem
 -l "Muscle Self Collision Groups"
 -c "cMuscleSelfCollisionUI(); "
 -i "cMuscle_multi_apply.png";
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Paint Skin Weights"
