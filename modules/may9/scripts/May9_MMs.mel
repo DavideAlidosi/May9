@@ -1544,6 +1544,26 @@ menuItem
 setParent -m ..;
 
 } 
+
+// Define Container marking menu
+global proc Container_MM_May9(){
+
+menuItem
+-l "Edit Asset" 
+-c "da_EditContainer" 
+-rp "N" 
+-i "expandContainer.png";
+
+menuItem
+-l "Remove Asset" 
+-c "unpackAndRemoveContainer(`ls -sl -containers`)" 
+-rp "S" 
+-i "removeContainer.png";
+
+setParent -m ..;
+
+}
+
 // Define CurveCreate marking menu
 global proc CurveCreate_MM_May9(){
 
@@ -4552,6 +4572,18 @@ menuItem
 setParent -m ..;
 
 } 
+// Define Hypergraph Container marking menu
+global proc Hypergraph_Container_MM_May9(){
+
+menuItem
+-l "Remove Asset" 
+-c "unpackAndRemoveContainer(`ls -sl -containers`)" 
+-rp "N" 
+-i "removeContainer.png";
+
+setParent -m ..;
+
+}
 // Define HyperShade marking menu
 global proc HyperShade_MM_May9(){
 
@@ -6510,6 +6542,15 @@ menuItem
 -i "greasePencilExport.png";
 
 menuItem
+-l "Create Asset" 
+-c "CreateContainer" 
+-i "createContainer.png";
+
+menuItem
+-l "separator" 
+-d 1;
+
+menuItem
 -l "Connection Editor"
 -c "ConnectionEditor"
 -i "out_list.png";
@@ -7787,6 +7828,9 @@ setParent -m ..;
 // Define Outliner marking menu
 global proc Outliner_MM_May9(){
 
+string $mySel[] = `ls -sl -containers`;
+if ( `size($mySel)` == 0 ){
+
 string $UnderPointerPanel = `getPanel -underPointer`;
 int $DAGCheck = `outlinerEditor -q -dag $UnderPointerPanel`;
 int $ShapesCheck = `outlinerEditor -q -shp $UnderPointerPanel`;
@@ -7959,6 +8003,22 @@ setParent -m ..;
 
 setParent -m ..;
 
+}else{
+
+menuItem
+-l "Edit Asset" 
+-c "da_EditContainer" 
+-rp "N" 
+-i "expandContainer.png";
+
+menuItem
+-l "Remove Asset" 
+-c "unpackAndRemoveContainer(`ls -sl -containers`)" 
+-rp "S" 
+-i "removeContainer.png";
+
+setParent -m ..;
+}
 } 
 // Define PaintFX marking menu
 global proc PaintFX_MM_May9(){
