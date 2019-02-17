@@ -1555,6 +1555,12 @@ menuItem
 -i "expandContainer.png";
 
 menuItem
+-l "Asset Editor" 
+-c "AssetEditor" 
+-rp "E" 
+-i "out_container.png";
+
+menuItem
 -l "Remove Asset" 
 -c "unpackAndRemoveContainer(`ls -sl -containers`)" 
 -rp "S" 
@@ -4579,6 +4585,12 @@ menuItem
 -l "Toggle Status" 
 -c "da_ToggleContainer" 
 -rp "N" 
+-i "showBatchRender.png";
+
+menuItem
+-l "Asset Editor" 
+-c "AssetEditor" 
+-rp "E" 
 -i "out_container.png";
 
 menuItem
@@ -4628,6 +4640,15 @@ menuItem
 -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
 -rp "SW" 
 -i "greasePencilExport.png";
+
+menuItem
+-l "Create Asset" 
+-c "CreateContainer" 
+-i "createContainer.png";
+
+menuItem
+-l "separator" 
+-d 1;
 
 menuItem
 -l "Texture Link" 
@@ -8016,6 +8037,12 @@ menuItem
 -c "da_EditContainer" 
 -rp "N" 
 -i "expandContainer.png";
+
+menuItem
+-l "Asset Editor" 
+-c "AssetEditor" 
+-rp "E" 
+-i "out_container.png";
 
 menuItem
 -l "Remove Asset" 
