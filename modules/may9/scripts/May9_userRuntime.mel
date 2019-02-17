@@ -10,13 +10,13 @@ runTimeCommand
 runTimeCommand
 	-ann "Edit Container"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("HypergraphDGWindow")
+	-c ("string $myContainer[] = `ls -sl -containers`;\nHypergraphDGWindow;\nevalDeferred (\"select $myContainer\")")
 	da_EditContainer;
 
 runTimeCommand
 	-ann "Toggle Container Status"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("print toggle")
+	-c ("string $myActualPanel = `getPanel -underPointer`;\nint $ToggleContainerTag = (($ToggleContainerTag + 1) % 2);\n\nif ($ToggleContainerTag){\n\thyperGraph -e -ec ($myActualPanel + \"HyperGraphEd\");\n}else{\n\thyperGraph -e -cc ($myActualPanel + \"HyperGraphEd\");\n}")
 	da_ToggleContainer;
 
 runTimeCommand

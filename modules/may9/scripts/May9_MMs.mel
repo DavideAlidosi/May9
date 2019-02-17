@@ -4576,9 +4576,15 @@ setParent -m ..;
 global proc Hypergraph_Container_MM_May9(){
 
 menuItem
+-l "Toggle Status" 
+-c "da_ToggleContainer" 
+-rp "N" 
+-i "out_container.png";
+
+menuItem
 -l "Remove Asset" 
 -c "unpackAndRemoveContainer(`ls -sl -containers`)" 
--rp "N" 
+-rp "S" 
 -i "removeContainer.png";
 
 setParent -m ..;
