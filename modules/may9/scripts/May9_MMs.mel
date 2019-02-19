@@ -939,7 +939,8 @@ menuItem
 -l "Create Asset" -bld 1 
 -c "CreateContainer; filterUIClearFilter hyperShadePrimaryNodeEditor; da_ExpandShade" 
 -i "createContainer.png";
-}else{
+}
+else if(`gmatch $currentPanel "nodeEditorPanel*"` || `gmatch $currentPanel "hyperGraphPanel*"` || `gmatch $currentPanel "outlinerPanel*"`){
 menuItem -bld 1
 -l "Create Asset" 
 -c "CreateContainer" 
