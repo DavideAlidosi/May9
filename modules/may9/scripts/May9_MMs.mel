@@ -6154,54 +6154,9 @@ menuItem
 -i "polyDelEdgeVertex.png";
 
 menuItem
--l "Select Edges" 
+-l "Mesh Edit"
 -sm 1
--rp "SE" 
--i "edges_NEX.png";
-
-menuItem
--l "Right Angle" 
--c "da_EdgeRightAngle" 
--rp "SE" 
--i "da_rightAngle.png";
-
-menuItem
--l "Acute Angle" 
--c "da_EdgeAcuteAngle" 
--rp "S" 
--i "da_acuteAngle.png";
-
-menuItem
--l "Straight Angle" 
--c "da_EdgeStraightAngle" 
--rp "E" 
--i "da_sraightAngle.png";
-
-menuItem
--l "Inside" 
--c "da_EdgeInside" 
--rp "NE" 
--i "da_insideEdge.png";
-
-menuItem
--l "On Border" 
--c "da_EdgeBorder" 
--rp "N" 
--i "da_borderEdge.png";
-
-menuItem
--l "Soft" 
--c "da_EdgeSoft" 
--rp "W" 
--i "da_softEdge.png";
-
-menuItem
--l "Hard" 
--c "da_EdgeHard" 
--rp "SW" 
--i "da_hardEdge.png";
-
-setParent -m ..;
+-i "polyMesh.png";
 
 menuItem
 -l "Transform" 
@@ -6216,6 +6171,58 @@ menuItem
 menuItem
 -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
 -ob 1;
+
+setParent -m ..;
+
+menuItem
+-l "Select"
+-sm 1
+-i "aselect.png";
+
+menuItem
+-l "All"
+-c "SelectAll" 
+-i "aselect.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Straight Angle"
+-c "da_EdgeStraightAngle"
+-i "da_sraightAngle.png";
+
+menuItem
+-l "Right Angle"
+-c "da_EdgeRightAngle"
+-i "da_rightAngle.png";
+
+menuItem
+-l "Acute Angle"
+-c "da_EdgeAcuteAngle"
+-i "da_acuteAngle.png";
+
+menuItem
+-l "Inside"
+-c "da_EdgeInside"
+-i "da_insideEdge.png";
+
+menuItem
+-l "On Border"
+-c "da_EdgeBorder"
+-i "da_borderEdge.png";
+
+menuItem
+-l "Soft"
+-c "da_EdgeSoft"
+-i "da_softEdge.png";
+
+menuItem
+-l "Hard"
+-c "da_EdgeHard"
+-i "da_hardEdge.png";
+
+setParent -m ..;
 
 setParent -m ..;
 
@@ -6313,56 +6320,6 @@ menuItem
 -i "polyExtrudeFacet.png";
 
 menuItem
--l "Select Edges" 
--sm 1
--rp "SE" 
--i "edges_NEX.png";
-
-menuItem
--l "On Border" 
--c "da_EdgeBorder" 
--rp "N" 
--i "da_borderEdge.png";
-
-menuItem
--l "Inside" 
--c "da_EdgeInside" 
--rp "NE" 
--i "da_insideEdge.png";
-
-menuItem
--l "Straight Angle" 
--c "da_EdgeStraightAngle" 
--rp "E" 
--i "da_sraightAngle.png" ;
-
-menuItem
--l "Right Angle" 
--c "da_EdgeRightAngle" 
--rp "SE" 
--i "da_rightAngle.png";
-
-menuItem
--l "Acute Angle" 
--c "da_EdgeAcuteAngle" 
--rp "S" 
--i "da_acuteAngle.png";
-
-menuItem
--l "Hard" 
--c "da_EdgeHard" 
--rp "SW" 
--i "da_hardEdge.png";
-
-menuItem
--l "Soft" 
--c "da_EdgeSoft" 
--rp "W" 
--i "da_softEdge.png";
-
-setParent -m ..;
-
-menuItem
 -l "Multi Cut" 
 -c "dR_multiCutTool;" 
 -rp "W" 
@@ -6400,6 +6357,51 @@ menuItem
 -c "BevelPolygon;" 
 -rp "NW" 
 -i "polyBevel.png";
+
+menuItem
+-l "Select"
+-sm 1
+-i "aselect.png";
+
+menuItem
+-l "Straight Angle"
+-c "da_EdgeStraightAngle"
+-i "da_sraightAngle.png";
+
+menuItem
+-l "Right Angle"
+-c "da_EdgeRightAngle"
+-i "da_rightAngle.png";
+
+menuItem
+-l "Acute Angle"
+-c "da_EdgeAcuteAngle"
+-i "da_acuteAngle.png";
+
+menuItem
+-l "Inside"
+-c "da_EdgeInside"
+-i "da_insideEdge.png";
+
+menuItem
+-l "On Border"
+-c "da_EdgeBorder"
+-i "da_borderEdge.png";
+
+menuItem
+-l "Soft"
+-c "da_EdgeSoft"
+-i "da_softEdge.png";
+
+menuItem
+-l "Hard"
+-c "da_EdgeHard"
+-i "da_hardEdge.png";
+
+setParent -m ..;
+
+menuItem
+-d 1;
 
 if (`size($polyCheck)` != 0){
 menuItem
