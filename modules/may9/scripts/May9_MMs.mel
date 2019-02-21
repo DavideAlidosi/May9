@@ -6464,6 +6464,8 @@ setParent -m ..;
 } 
 // Define NodeEditor marking menu
 global proc NodeEditor_MM_May9(){
+string $myNodeEditor = `getCurrentNodeEditor`;
+string $myConnectionStyle = `nodeEditor -q -connectionStyle $myNodeEditor`;
 
 menuItem
 -l "Select Time Node" 
@@ -6629,6 +6631,36 @@ menuItem
 -i "out_instancer.png";
 
 setParent -m ..;
+if (`about -api` >= 20180000){
+menuItem
+-l "Connection Style" 
+-sm 1
+-i "mergeConnections.png";
+
+radioMenuItemCollection;
+
+menuItem
+-l "Bezier" 
+-c "nodeEditor -e -connectionStyle \"bezier\" `getCurrentNodeEditor`" 
+-rb ($myConnectionStyle == "bezier");
+
+menuItem
+-l "Straight" 
+-c "nodeEditor -e -connectionStyle \"straight\" `getCurrentNodeEditor`" 
+-rb ($myConnectionStyle == "straight");
+
+menuItem
+-l "Corner" 
+-c "nodeEditor -e -connectionStyle \"corner\" `getCurrentNodeEditor`" 
+-rb ($myConnectionStyle == "corner");
+
+menuItem
+-l "S-Shape" 
+-c "nodeEditor -e -connectionStyle \"sshape\" `getCurrentNodeEditor`" 
+-rb ($myConnectionStyle == "sshape");
+
+setParent -m ..;
+}
 
 setParent -m ..;
 
