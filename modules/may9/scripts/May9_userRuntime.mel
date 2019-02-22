@@ -2,6 +2,18 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Display Hypergraph as Hierachy"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("string $myActualPanel = `getPanel -underPointer`;\nshowDAGLevel ($myActualPanel + \"HyperGraphEd\")")
+	da_HgHierachy;
+
+runTimeCommand
+	-ann "Display Hypergraph as Connections"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("string $myActualPanel = `getPanel -underPointer`;\nshowDGLevel ($myActualPanel + \"HyperGraphEd\")")
+	da_HgConnections;
+
+runTimeCommand
 	-ann "Define Outliner no Click Command"
 	-cat "Custom Scripts.May9_Next.Scene"
 	-c ("string $mySel[] = `ls -sl -containers`;\nif ( `size($mySel)` == 0 ){\n    OutlinerRevealSelected;\n}else{\n    da_EditContainer;\n}")
@@ -1301,7 +1313,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Show HG Connection of a node(s)"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("showDGLevel hyperGraphPanel1HyperGraphEd;")
+	-c ("string $myActualPanel = `getPanel -underPointer`;\nshowDGLevel ($myActualPanel + \"HyperGraphEd\")")
 	da_HgConnectionLevel;
 
 runTimeCommand
@@ -2425,6 +2437,12 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_HgHierachy`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_HgConnections`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_OutlinerNoClick`);

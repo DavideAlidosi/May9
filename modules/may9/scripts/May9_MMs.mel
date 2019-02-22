@@ -4553,6 +4553,177 @@ menuItem
 setParent -m ..;
 
 } 
+// Define HyperGraph marking menu
+global proc HyperGraph_MM_May9(){
+
+menuItem
+-l "Select Time Node" 
+-c "select time1" 
+-rp "N" 
+-i "time.svg";
+
+menuItem
+-l "Create Node" 
+-c "createNodeWindow" 
+-rp "SE" 
+-i "createNode.png";
+
+menuItem
+-l "Delete Unused Nodes" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"deleteUnusedNodes\");" 
+-rp "S" 
+-i "deleteActive.png";
+
+menuItem
+-l "Select All Nodes" 
+-c "select `listHistory -ac`" 
+-rp "W" 
+-i "createBinFromSelectedNodes.png";
+
+menuItem
+-l "Duplicate Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"duplicateShadingNetwork\");" 
+-rp "NE" 
+-i "duplicateReference.png";
+
+menuItem
+-l "Import Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"import\");" 
+-rp "NW" 
+-i "greasePencilImport.png";
+
+menuItem
+-l "Export Network" 
+-c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
+-rp "SW" 
+-i "greasePencilExport.png";
+
+menuItem
+-l "Display as" 
+-sm 1
+-rp "E" 
+-i "hypergraph.png";
+
+menuItem
+-l "Hierarchy" 
+-c "da_HgHierachy" 
+-rp "E" 
+-i "showDag.png";
+
+menuItem
+-l "Connections" 
+-c "da_HgConnections" 
+-rp "SE" 
+-i "showDepend.png";
+
+setParent -m ..;
+
+menuItem
+-l "Connection Editor"
+-c "ConnectionEditor"
+-i "out_list.png";
+
+menuItem
+-l "Expression Editor" 
+-c "ExpressionEditor" 
+-i "out_expression.png";
+
+menuItem
+-d 1;
+
+if (`pluginInfo -q -l bifrostBoard` == 1){
+menuItem 
+-l "Bifrost Board"
+-c "createNode bifrostBoard"
+-i "out_bifrostBoard.png";
+}
+
+menuItem
+-l "Create Common Nodes" 
+-sm 1
+-i "nodeGrapherAddNodes.png";
+
+menuItem
+-l "ramp" 
+-c "createNode ramp" 
+-i "out_ramp.png";
+
+menuItem
+-l "samplerInfo" 
+-c "createNode samplerInfo" 
+-i "out_samplerInfo.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "vectorProduct" 
+-c "createNode vectorProduct;" 
+-i "render_vectorProduct.png";
+
+menuItem
+-l "decomposeMatrix" 
+-c "createNode decomposeMatrix;" 
+-i "out_decomposeMatrix.png";
+
+menuItem
+-l "multiplyDivide" 
+-c "createNode multiplyDivide;" 
+-i "render_multiplyDivide.png";
+
+menuItem
+-l "plusMinusAverage" 
+-c "createNode plusMinusAverage" 
+-i "out_plusMinusAverage.png";
+
+menuItem
+-l "reverse" 
+-c "createNode reverse" 
+-i "out_reverse.png";
+
+menuItem
+-l "chooser" 
+-c "createNode chooser" 
+-i "render_chooser.png";
+
+menuItem
+-l "blendColors" 
+-c "createNode blendColors" 
+-i "out_blendColors.png";
+
+menuItem
+-l "blendTwoAttr" 
+-c "createNode blendTwoAttr" 
+-i "render_blendTwoAttr.png";
+
+menuItem
+-l "condition" 
+-c "createNode condition" 
+-i "out_condition.png" ;
+
+menuItem
+-l "choice" 
+-c "createNode choice" 
+-i "render_choice.png";
+
+menuItem
+-l "combinationShape" 
+-c "createNode combinationShape" 
+-i "swapBlendShape.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "instancer" 
+-c "createNode instancer" 
+-i "out_instancer.png";
+
+setParent -m ..;
+
+setParent -m ..;
+
+} 
 // Define Hypergraph Container marking menu
 global proc Hypergraph_Container_MM_May9(){
 
@@ -4591,6 +4762,12 @@ menuItem
 -c "da_SelectObjectMaterial" 
 -rp "E" 
 -i "aselect.png";
+
+menuItem
+-l "Create Node" 
+-c "createNodeWindow" 
+-rp "SE" 
+-i "createNode.png";
 
 menuItem
 -l "Duplicate Network" 
@@ -4665,12 +4842,6 @@ menuItem
 -i "out_samplerInfo.png";
 
 setParent -m ..;
-
-menuItem
--l "Create Node" 
--c "createNodeWindow" 
--rp "SE" 
--i "createNode.png";
 
 setParent -m ..;
 
@@ -6474,26 +6645,6 @@ menuItem
 -i "time.svg";
 
 menuItem
--l "Output Nodes" 
--sm 1
--rp "E" 
--i "out_dagNode.png";
-
-menuItem
--l "Enable All" 
--c "enableFuture" 
--rp "E" 
--i "enabled.png";
-
-menuItem
--l "Disable All" 
--c "disableFuture" 
--rp "NE" 
--i "RS_disable.png";
-
-setParent -m ..;
-
-menuItem
 -l "Create Node" 
 -c "createNodeWindow" 
 -rp "SE" 
@@ -6528,6 +6679,26 @@ menuItem
 -c "hyperShadePanelMenuCommand(\"hyperShadePanel1\", \"exportSelectedNetwork\");" 
 -rp "SW" 
 -i "greasePencilExport.png";
+
+menuItem
+-l "Hypergraph" 
+-sm 1
+-rp "E" 
+-i "hypergraph.png";
+
+menuItem
+-l "Hierarchy" 
+-c "HypergraphHierarchyWindow" 
+-rp "E" 
+-i "showDag.png";
+
+menuItem
+-l "Connections" 
+-c "HypergraphDGWindow" 
+-rp "SE" 
+-i "showDepend.png";
+
+setParent -m ..;
 
 menuItem
 -l "Connection Editor"
@@ -6631,6 +6802,7 @@ menuItem
 -i "out_instancer.png";
 
 setParent -m ..;
+
 if (`about -api` >= 20180000){
 menuItem
 -l "Connection Style" 
