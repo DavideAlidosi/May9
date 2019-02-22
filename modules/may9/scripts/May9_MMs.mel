@@ -4760,8 +4760,28 @@ menuItem
 menuItem
 -l "Select Object With Material" 
 -c "da_SelectObjectMaterial" 
--rp "E" 
+-rp "N" 
 -i "aselect.png";
+
+menuItem
+-l "Hypergraph" 
+-sm 1
+-rp "E" 
+-i "hypergraph.png";
+
+menuItem
+-l "Hierarchy" 
+-c "HypergraphHierarchyWindow" 
+-rp "E" 
+-i "showDag.png";
+
+menuItem
+-l "Connections" 
+-c "HypergraphDGWindow" 
+-rp "SE" 
+-i "showDepend.png";
+
+setParent -m ..;
 
 menuItem
 -l "Create Node" 
