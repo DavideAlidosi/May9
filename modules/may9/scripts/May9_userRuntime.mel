@@ -989,7 +989,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Select Object by Material"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("string $mySel[] = `ls -sl`; \nhyperShade -objects $mySel")
+	-c ("hyperShade -objects \"\"")
 	da_SelectObjectMaterial;
 
 runTimeCommand

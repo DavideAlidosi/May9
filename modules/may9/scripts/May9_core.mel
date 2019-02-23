@@ -110,3 +110,37 @@ global proc int da_round(float $da_value){
     }
     return $da_value;
 }
+
+// Define da_SelectOver
+global proc da_SelectOver(){
+if( `popupMenu -ex da_SelectOverCleaner` ) {
+    deleteUI da_SelectOverCleaner;
+}
+popupMenu -ctl 1 -b 2 -mm 1 -p viewPanes -pmc (
+    "string $myPreSelection[] = `ls -preSelectHilite`;" +
+    "if ( `popupMenu -e -ex da_SelectOverCleaner `){" +
+        "popupMenu -e -dai da_SelectOverCleaner;" + " setParent -m da_SelectOverCleaner;" +
+    "if ( `dagObjectHit` )" +
+	    "menuItem -l `da_Overlay_MM_May9` -rp \"N\" -c \"select `da_Overlay_MM_May9`\";" +
+    "else" +
+        " menuItem -l \"No Object or polyComponent Detected\" -rp \"S\";" +
+    "if ( size( $myPreSelection ) ) " +
+        "menuItem" + "-l $myPreSelection[0] -rp \"S\" -c \"select $myPreSelection[0]\";}"
+)
+da_SelectOverCleaner;
+}
+
+global proc string da_Overlay_MM_May9(){
+    dagObjectHit -mn "da_SelectOverCleaner";
+    string $myChildren[] = `popupMenu -q -itemArray da_SelectOverCleaner`; 
+    string $myObjecItem = `menuItem -q -l $myChildren[0]`;
+    string $myObject[];
+    tokenize $myObjecItem "." $myObject;
+
+    popupMenu -e -dai da_SelectOverCleaner;
+ 
+return $myObject[0];
+}
+
+// Run da_SelectOver
+da_SelectOver;
