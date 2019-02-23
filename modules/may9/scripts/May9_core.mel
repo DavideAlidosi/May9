@@ -116,17 +116,21 @@ global proc da_SelectOver(){
 if( `popupMenu -ex da_SelectOverCleaner` ) {
     deleteUI da_SelectOverCleaner;
 }
+
 popupMenu -ctl 1 -b 2 -mm 1 -p viewPanes -pmc (
     "string $myPreSelection[] = `ls -preSelectHilite`;" +
     "if ( `popupMenu -e -ex da_SelectOverCleaner `){" +
         "popupMenu -e -dai da_SelectOverCleaner;" + " setParent -m da_SelectOverCleaner;" +
     "if ( `dagObjectHit` )" +
-	    "menuItem -l `da_Overlay_MM_May9` -rp \"N\" -c \"select `da_Overlay_MM_May9`\";" +
+	    "menuItem -bld 1 -l `da_Overlay_MM_May9` -rp \"N\" -c \"select `da_Overlay_MM_May9`\";" +
     "else" +
-        " menuItem -l \"No Object or polyComponent Detected\" -rp \"S\";" +
+        " menuItem -itl 1 -en 0 -l \"No Object Detected\" -rp \"N\";" +
     "if ( size( $myPreSelection ) ) " +
-        "menuItem" + "-l $myPreSelection[0] -rp \"S\" -c \"select $myPreSelection[0]\";}"
+        "menuItem -bld 1 -l $myPreSelection[0] -rp \"S\" -c \"select $myPreSelection[0]\";" +
+    "else" +
+        " menuItem -itl 1 -en 0 -l \"No polyComponent Detected\" -rp \"S\";}"
 )
+
 da_SelectOverCleaner;
 }
 
