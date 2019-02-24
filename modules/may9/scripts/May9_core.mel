@@ -111,28 +111,28 @@ global proc int da_round(float $da_value){
     return $da_value;
 }
 
-// Define da_SelectOver
-global proc da_SelectOver(){
+// Define da_MouseOver_MM_May9
+global proc da_MouseOver_MM_May9(){
 	if( `popupMenu -ex da_SelectOverCleaner` ) {
 	    deleteUI da_SelectOverCleaner;
 	}
 
 	popupMenu -ctl 1 -b 2 -mm 1 -p viewPanes -pmc (
-	    "string $myPreSelection[] = `ls -preSelectHilite`;" +
+	    "string $myComponentOver[] = `ls -preSelectHilite`;" +
 	    "if ( `popupMenu -e -ex da_SelectOverCleaner `){" +
 	        "popupMenu -e -dai da_SelectOverCleaner;" + " setParent -m da_SelectOverCleaner;" +
 	    "if ( `dagObjectHit` )" +
-		    "menuItem -bld 1 -l `da_Overlay_MM_May9` -rp \"N\" -c \"select `da_Overlay_MM_May9`\";" +
+		    "menuItem -bld 1 -l `da_ObjectOver` -rp \"N\" -c \"select `da_ObjectOver`\";" +
 	    "else" +
 	        " menuItem -itl 1 -en 0 -l \"No Object Detected\" -rp \"N\";" +
-	    "if ( size( $myPreSelection ) ) " +
-	        "menuItem -bld 1 -l $myPreSelection[0] -rp \"S\" -c \"select $myPreSelection[0]\";" +
+	    "if ( size( $myComponentOver ) ) " +
+	        "menuItem -bld 1 -l $myComponentOver[0] -rp \"S\" -c \"select $myComponentOver[0]\";" +
 	    "else" +
 	        " menuItem -itl 1 -en 0 -l \"No polyComponent Detected\" -rp \"S\";}"
 	) da_SelectOverCleaner;
 }
 
-global proc string da_Overlay_MM_May9(){
+global proc string da_ObjectOver(){
     dagObjectHit -mn "da_SelectOverCleaner";
     string $myChildren[] = `popupMenu -q -itemArray da_SelectOverCleaner`; 
     string $myObjecItem = `menuItem -q -l $myChildren[0]`;
@@ -144,5 +144,5 @@ global proc string da_Overlay_MM_May9(){
 return $myObject[0];
 }
 
-// Run da_SelectOver
-da_SelectOver;
+// Run da_MouseOver_MM_May9
+da_MouseOver_MM_May9;
