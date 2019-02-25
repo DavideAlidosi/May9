@@ -1299,13 +1299,9 @@ menuItem
 
 menuItem
 -l "Bind Skin" 
--c "SmoothBindSkin;" 
+-c "SmoothBindSkinOptions" 
 -rp "E" 
 -i "smoothSkin.png";
-
-menuItem
--c "SmoothBindSkinOptions;" 
--ob 1;
 
 menuItem
 -l "Display Joint As" 
@@ -1344,7 +1340,7 @@ menuItem
 
 menuItem
 -l "Muscle Builder" 
--c "cMuscleBuilder(); " 
+-c "cMuscleBuilder" 
 -i "cMuscle_muscle_muscleBuilder.png";
 
 menuItem
@@ -1415,21 +1411,18 @@ menuItem
 
 menuItem
 -l "Bind Skin" 
--c "SmoothBindSkin;" 
+-c "SmoothBindSkinOptions" 
 -i "smoothSkin.png";
 
 menuItem
--c "SmoothBindSkinOptions;" 
--ob 1;
+-l "Bind Rigid Skin" 
+-c "da_BindRigidSkin" 
+-i "detachSkin.png";
 
 menuItem
 -l "Rigid Bind" 
--c "bindSkin -cj" 
--i "rigidBind.png";
-
-menuItem
 -c "RigidBindSkinOptions" 
--ob 1;
+-i "rigidBind.png";
 
 menuItem
 -l "Delta Skin" 
@@ -4920,28 +4913,26 @@ global proc JointPoly_MM_May9(){
 
 menuItem
 -l "Bind Skin" 
--c "SmoothBindSkin;" 
+-c "SmoothBindSkinOptions" 
 -rp "N" 
 -i "smoothSkin.png";
 
 menuItem
--c "SmoothBindSkinOptions;" 
--ob 1;
-
-menuItem
 -l "Rigid Bind" 
--c "bindSkin -cj" 
--rp "W" 
+-c "RigidBindSkinOptions" 
+-rp "SW" 
 -i "rigidBind.png";
 
 menuItem
--c "RigidBindSkinOptions" 
--ob 1;
+-l "Bind Rigid Skin" 
+-c "da_BindRigidSkin" 
+-rp "W" 
+-i "detachSkin.png";
 
 menuItem
 -l "Delta Skin" 
 -c "da_DeltaSkin" 
--rp "SW" 
+-rp "SE" 
 -i "smoothSkinWeights.png";
 
 menuItem
@@ -12719,6 +12710,7 @@ menuItem
 }
 }
 
+	
 }
 // Define Tool_XGenBrush marking menu
 global proc Tool_XGenBrush_MM_May9(){
