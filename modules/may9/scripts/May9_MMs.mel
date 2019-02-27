@@ -11795,39 +11795,52 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Remove Frame" 
--c "removeGreasePencilFrameAtCurrentTime();" 
+-c "removeGreasePencilFrameAtCurrentTime" 
 -rp "W" 
 -i "greasePencilDeleteFrame.png";
 
 menuItem -itl 1 
 -l "Add Frame" 
--c "createOrEditGreasePencilFrameAtCurrentTime();" 
+-c "createOrEditGreasePencilFrameAtCurrentTime" 
 -rp "E" 
 -i "greasePencilAddFrame.png";
 
 menuItem -itl 1 
 -l "Pre-Frame Ghost" 
--c "toggleGreasePencilPreFrameCount();" 
+-c "toggleGreasePencilPreFrameCount" 
 -rp "SW" 
--i "greasePencilPreGhostOn.png";
+-i "greasePencilPreGhostOff.png";
 
 menuItem -itl 1 
 -l "Post-Frame Ghost" 
--c "toggleGreasePencilPostFrameCount();" 
+-c "toggleGreasePencilPostFrameCount" 
 -rp "SE" 
--i "greasePencilPostGhostOn.png";
+-i "greasePencilPostGhostOff.png";
 
 menuItem -itl 1 
 -l "Marker" 
--c "setGreasePencilType 2;" 
+-c "setGreasePencilType 2" 
 -rp "NW" 
 -i "greasePencilMarker.png";
 
 menuItem -itl 1 
 -l "Soft Pencil" 
--c "setGreasePencilType 3;" 
+-c "setGreasePencilType 3" 
 -rp "NE" 
 -i "greasePencilSoftPencil.png";
+
+menuItem -itl 1 
+-l "Tool Window" 
+-c "createGreasePencilWindow" 
+-i "GreasePencil.png";
+
+menuItem -itl 1 
+-d 1; 
+
+menuItem -itl 1 
+-l "Complete Tool" 
+-c "buildSelectMM;MarkingMenuPopDown;if (`window -ex greasePencilFloatingWindow`)deleteUI greasePencilFloatingWindow" 
+-i "aselect.png";
 
 setParent -m ..;
 
