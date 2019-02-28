@@ -1549,7 +1549,7 @@ setParent -m ..;
 global proc Container_MM_May9(){
 
 menuItem
--l "Edit Asset" 
+-l "Edit in Hypergraph" 
 -c "da_EditContainer" 
 -rp "N" 
 -i "expandContainer.png";
@@ -1561,7 +1561,7 @@ menuItem
 -i "out_container.png";
 
 menuItem
--l "Remove Asset" 
+-l "Remove" 
 -c "unpackAndRemoveContainer(`ls -sl -containers`)" 
 -rp "S" 
 -i "removeContainer.png";
@@ -4733,7 +4733,7 @@ menuItem
 -i "out_container.png";
 
 menuItem
--l "Remove Asset" 
+-l "Remove" 
 -c "unpackAndRemoveContainer(`ls -sl -containers`)" 
 -rp "S" 
 -i "removeContainer.png";
@@ -4855,6 +4855,11 @@ menuItem
 -i "out_samplerInfo.png";
 
 setParent -m ..;
+
+menuItem
+-l "Show All Nodes" 
+-c "filterUIClearFilter hyperShadePrimaryNodeEditor" 
+-i "selectUnsortedNodes.png";
 
 setParent -m ..;
 
@@ -8179,7 +8184,7 @@ setParent -m ..;
 }else{
 
 menuItem
--l "Edit Asset" 
+-l "Edit in Hypergraph" 
 -c "da_EditContainer" 
 -rp "N" 
 -i "expandContainer.png";
@@ -8191,7 +8196,7 @@ menuItem
 -i "out_container.png";
 
 menuItem
--l "Remove Asset" 
+-l "Remove" 
 -c "unpackAndRemoveContainer(`ls -sl -containers`)" 
 -rp "S" 
 -i "removeContainer.png";
