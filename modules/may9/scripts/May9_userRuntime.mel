@@ -857,7 +857,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Convert Edges to Loops and to Curves"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("resetPolySelectConstraint;\nstring $myResult = `confirmDialog -title \"To Loops to Curves\" -message \"Before continue make sure to have seleted only one edge for loop. Continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n        string $edgeSel[] = `ls -sl -fl`;\n        \n        for ($i=0; $i<`size$edgeSel`; $i++)\n        {\n        \tselect $edgeSel[$i];\n        \tpolySelectConstraint -pp 4 -m2a 30 -m3a 90;\n        \tpolyToCurve -form 2 -degree 3;\n        }\n}")
+	-c ("resetPolySelectConstraint;\nstring $myResult = `confirmDialog -title \"To Loops to Curves\" -message \"Before continue make sure to have seleted only one edge for loop. Continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\n\tif ($myResult == \"Yes\") {\n        string $edgeSel[] = `ls -sl -fl`;\n        \n        for ($i=0; $i<`size$edgeSel`; $i++)\n        {\n        \tselect $edgeSel[$i];\n        \tSelectEdgeLoopSp;\n        \tpolyToCurve -form 2 -degree 3;\n        }\n}")
 	da_EdgesToLoopToCurve;
 
 runTimeCommand
