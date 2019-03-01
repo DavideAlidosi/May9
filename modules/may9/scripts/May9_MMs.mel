@@ -12290,33 +12290,21 @@ int $axisDirection = `sculptMeshCacheCtx -q -mirror $currentCtx`;
 
 menuItem -itl 1 
 -l "Freeze" 
--c "SetMeshFreezeTool" 
+-c "SetMeshFreezeTool; da_OpenToolSettings" 
 -rp "NE" 
 -i "Freeze.png";
 
 menuItem -itl 1 
--c "ShowMeshFreezeToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Sculpt" 
--c "SetMeshSculptTool" 
+-c "SetMeshSculptTool; da_OpenToolSettings" 
 -rp "E" 
 -i "Sculpt.png";
 
 menuItem -itl 1 
--c "ShowMeshSculptToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Grab" 
--c "SetMeshGrabTool" 
+-c "SetMeshGrabTool; da_OpenToolSettings" 
 -rp "NW" 
 -i "Grab.png";
-
-menuItem -itl 1 
--c "ShowMeshGrabToolOptions" 
--ob 1;
 
 menuItem -itl 1 
 -l "Wireframe" 
@@ -12329,10 +12317,6 @@ menuItem -itl 1
 -l "Flood" 
 -c "da_SculptFlood" 
 -i "polySmoothProxy.png";
-
-menuItem -itl 1 
--c "ToolSettingsWindow" 
--ob 1;
 }
 
 menuItem -itl 1 
@@ -12340,192 +12324,112 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Smooth" 
--c "SetMeshSmoothTool" 
+-c "SetMeshSmoothTool; da_OpenToolSettings" 
 -i "Smooth.png";
-
-menuItem -itl 1 
--c "ShowMeshSmoothToolOptions" 
--ob 1;
 
 menuItem -itl 1 
 -l "Relax" 
 -rp "S" 
--c "SetMeshRelaxTool" 
+-c "SetMeshRelaxTool; da_OpenToolSettings" 
 -i "Relax.png";
-
-menuItem -itl 1 
--c "ShowMeshRelaxToolOptions" 
--ob 1;
 
 menuItem -itl 1 
 -l "Pinch" 
 -rp "SE" 
--c "SetMeshPinchTool" 
+-c "SetMeshPinchTool; da_OpenToolSettings" 
 -i "Pinch.png" ;
-
-menuItem -itl 1 
--c "ShowMeshPinchToolOptions" 
--ob 1;
 
 menuItem -itl 1 
 -l "Flatten" 
 -rp "SW" 
--c "SetMeshFlattenTool" 
+-c "SetMeshFlattenTool; da_OpenToolSettings" 
 -i "Flatten.png";
 
 menuItem -itl 1 
--c "ShowMeshFlattenToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Foamy" 
--c "SetMeshFoamyTool" 
+-c "SetMeshFoamyTool; da_OpenToolSettings" 
 -i "Foamy.png";
 
 menuItem -itl 1 
--c "ShowMeshFoamyToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Spray" 
--c "SetMeshSprayTool" 
+-c "SetMeshSprayTool; da_OpenToolSettings" 
 -i "Spray.png";
 
 menuItem -itl 1 
--c "ShowMeshSprayToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Repeat" 
--c "SetMeshRepeatTool" 
+-c "SetMeshRepeatTool; da_OpenToolSettings" 
 -i "Repeat.png";
 
 menuItem -itl 1 
--c "ShowMeshRepeatToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Imprint" 
--c "SetMeshImprintTool" 
+-c "SetMeshImprintTool; da_OpenToolSettings" 
 -i "Imprint.png";
 
 menuItem -itl 1 
--c "ShowMeshImprintToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Wax" 
--c "SetMeshWaxTool" 
+-c "SetMeshWaxTool; da_OpenToolSettings" 
 -i "Wax.png";
 
 menuItem -itl 1 
--c "ShowMeshWaxToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Scrape" 
--c "SetMeshScrapeTool" 
+-c "SetMeshScrapeTool; da_OpenToolSettings" 
 -i "Scrape.png";
 
 menuItem -itl 1 
--c "ShowMeshScrapeToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Fill" 
--c "SetMeshFillTool" 
+-c "SetMeshFillTool; da_OpenToolSettings" 
 -i "Fill.png";
 
 menuItem -itl 1 
--c "ShowMeshFillToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Knife" 
--c "SetMeshKnifeTool" 
+-c "SetMeshKnifeTool; da_OpenToolSettings" 
 -i "Knife.png";
 
 menuItem -itl 1 
--c "ShowMeshKnifeToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Smear" 
--c "SetMeshSmearTool" 
+-c "SetMeshSmearTool; da_OpenToolSettings" 
 -i "Smear.png";
 
 menuItem -itl 1 
--c "ShowMeshSmearToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Bulge" 
--c "SetMeshBulgeTool" 
+-c "SetMeshBulgeTool; da_OpenToolSettings" 
 -i "Bulge.png";
 
 menuItem -itl 1 
--c "ShowMeshBulgeToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Amplify" 
--c "SetMeshAmplifyTool" 
+-c "SetMeshAmplifyTool; da_OpenToolSettings" 
 -i "Amplify.png";
-
-menuItem -itl 1 
--c "ShowMeshAmplifyToolOptions" 
--ob 1;
 
 menuItem -itl 1 
 -d 1;
 
 menuItem -itl 1 
 -l "Smooth Target" 
--c "SetMeshSmoothTargetTool" 
+-c "SetMeshSmoothTargetTool; da_OpenToolSettings" 
 -i "SmoothTarget.png";
 
 menuItem -itl 1 
--c "ShowMeshSmoothTargetToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Clone Target" 
--c "SetMeshCloneTargetTool" 
+-c "SetMeshCloneTargetTool; da_OpenToolSettings" 
 -i "CloneTarget.png";
 
 menuItem -itl 1 
--c "ShowMeshCloneTargetToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Mask Target" 
--c "SetMeshMaskTool" 
+-c "SetMeshMaskTool; da_OpenToolSettings" 
 -i "Mask.png";
 
 menuItem -itl 1 
--c "ShowMeshMaskToolOptions" 
--ob 1;
-
-menuItem -itl 1 
 -l "Erase Target" 
--c "SetMeshEraseTool" 
+-c "SetMeshEraseTool; da_OpenToolSettings" 
 -i "Erase.png";
-
-menuItem -itl 1 
--c "ShowMeshEraseToolOptions" 
--ob 1;
 
 menuItem -itl 1 
 -d 1;
 
 menuItem -itl 1 
 -l "3D Grab UV" 
--c "SetMeshGrabUVTool" 
+-c "SetMeshGrabUVTool; da_OpenToolSettings" 
 -i "UV_3D_Grab_Brush.png";
-
-menuItem -itl 1 
--c "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
--ob 1;
 
 setParent -m ..;
 
@@ -12755,43 +12659,27 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Length" 
--c "XgmSetLengthBrushTool" 
+-c "XgmSetLengthBrushTool; da_OpenToolSettings" 
 -rp "N" 
 -i "xgIG_length.png";
 
 menuItem -itl 1 
--c "XgmSetLengthBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Comb" 
--c "XgmSetCombBrushTool" 
+-c "XgmSetCombBrushTool; da_OpenToolSettings" 
 -rp "W" 
 -i "xgIG_comb.png";
 
 menuItem -itl 1 
--c "XgmSetCombBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Freeze" 
--c "XgmSetFreezeBrushTool" 
+-c "XgmSetFreezeBrushTool; da_OpenToolSettings" 
 -rp "NE" 
 -i "xgIG_freeze.png";
 
 menuItem -itl 1 
--c "XgmSetFreezeBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Grab" 
--c "XgmSetGrabBrushTool" 
+-c "XgmSetGrabBrushTool; da_OpenToolSettings" 
 -rp "NW" 
 -i "xgIG_grab.png";
-
-menuItem -itl 1 
--c "XgmSetGrabBrushToolOption" 
--ob 1;
 
 menuItem -itl 1 
 -l "Mesh Collide" 
@@ -12819,96 +12707,56 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Density" 
--c "XgmSetDensityBrushTool" 
+-c "XgmSetDensityBrushTool; da_OpenToolSettings" 
 -i "xgIG_density.png";
 
 menuItem -itl 1 
--c "XgmSetDensityBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Place" 
--c "XgmSetPlaceBrushTool" 
+-c "XgmSetPlaceBrushTool; da_OpenToolSettings" 
 -i "xgIG_place.png";
 
 menuItem -itl 1 
--c "XgmSetPlaceBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Cut" 
--c "XgmSetCutBrushTool" 
+-c "XgmSetCutBrushTool; da_OpenToolSettings" 
 -i "xgIG_cut.png";
 
 menuItem -itl 1 
--c "XgmSetCutBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Width" 
--c "XgmSetWidthBrushTool" 
+-c "XgmSetWidthBrushTool; da_OpenToolSettings" 
 -i "xgIG_width.png";
 
 menuItem -itl 1 
--c "XgmSetWidthBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Twist" 
--c "XgmSetDirectionBrushTool" 
+-c "XgmSetDirectionBrushTool; da_OpenToolSettings" 
 -i "xgIG_twist.png";
 
 menuItem -itl 1 
--c "XgmSetDirectionBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Smooth" 
--c "XgmSetSmoothBrushTool" 
+-c "XgmSetSmoothBrushTool; da_OpenToolSettings" 
 -i "xgIG_smooth.png";
 
 menuItem -itl 1 
--c "XgmSetSmoothBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Noise" 
--c "XgmSetNoiseBrushTool" 
+-c "XgmSetNoiseBrushTool; da_OpenToolSettings" 
 -i "xgIG_noise.png";
 
 menuItem -itl 1 
--c "XgmSetNoiseBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Clump" 
--c "XgmSetClumpBrushTool" 
+-c "XgmSetClumpBrushTool; da_OpenToolSettings" 
 -i "xgIG_clump.png";
 
 menuItem -itl 1 
--c "XgmSetClumpBrushToolOption" 
--ob 1;
-
-menuItem -itl 1 
 -l "Part" 
--c "XgmSetPartBrushTool" 
+-c "XgmSetPartBrushTool; da_OpenToolSettings" 
 -i "xgIG_part.png";
-
-menuItem -itl 1 
--c "XgmSetPartBrushToolOption" 
--ob 1;
 
 menuItem -itl 1 
 -d 1;
 
 menuItem -itl 1 
 -l "Select" 
--c "XgmSetSelectBrushTool" 
+-c "XgmSetSelectBrushTool; da_OpenToolSettings" 
 -i "xgIG_select.png";
-
-menuItem -itl 1 
--c "XgmSetSelectBrushToolOption" 
--ob 1;
 
 setParent -m ..;
 
