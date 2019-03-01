@@ -2990,7 +2990,7 @@ menuItem
 -i "polyEdgeToCurves.png";
 
 menuItem
--l "Edges to Curves"
+-l "Edges to Curve"
 -c "CreateCurveFromPoly"
 -i "polyEdgeToCurves.png";
 
@@ -3316,11 +3316,6 @@ menuItem
 }
 
 menuItem
--l "Selection to Vertices"
--c "ConvertSelectionToVertices"
--i "vertex_NEX.png";
-
-menuItem
 -d 1;
 
 menuItem
@@ -3334,6 +3329,14 @@ menuItem
 -i "out_objectSet.png";
 
 setParent -m ..;
+
+menuItem
+-d 1;
+
+menuItem
+-l "Selection to Vertices"
+-c "ConvertSelectionToVertices"
+-i "vertex_NEX.png";
 
 setParent -m ..;
 
@@ -3838,19 +3841,6 @@ menuItem
 -d 1;
 
 menuItem
--l "Selection to Vertices"
--c "ConvertSelectionToVertices"
--i "vertex_NEX.png";
-
-menuItem
--l "Selection to Edges"
--c "ConvertSelectionToEdgePerimeter"
--i "UVTkEdge.png";
-
-menuItem
--d 1;
-
-menuItem
 -l "Selection Constraints"
 -c "PolygonSelectionConstraints"
 -i "polySelectUsingConstraints.png";
@@ -3861,6 +3851,19 @@ menuItem
 -i "out_objectSet.png";
 
 setParent -m ..;
+
+menuItem
+-d 1;
+
+menuItem
+-l "Selection to Vertices"
+-c "ConvertSelectionToVertices"
+-i "vertex_NEX.png";
+
+menuItem
+-l "Selection to Edges"
+-c "ConvertSelectionToEdgePerimeter"
+-i "UVTkEdge.png";
 
 setParent -m ..;
 
@@ -13374,14 +13377,6 @@ menuItem
 -d 1;
 
 menuItem
--l "Selection to UVs"
--c "ConvertSelectionToUVs"
--i "UVEditorVertex.png";
-
-menuItem
--d 1;
-
-menuItem
 -l "Selection Constraints"
 -c "PolygonSelectionConstraints"
 -i "polySelectUsingConstraints.png";
@@ -13392,6 +13387,14 @@ menuItem
 -i "out_objectSet.png";
 
 setParent -m ..;
+
+menuItem
+-d 1;
+
+menuItem
+-l "Selection to UVs"
+-c "ConvertSelectionToUVs"
+-i "UVEditorVertex.png";
 
 setParent -m ..;
 
