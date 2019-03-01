@@ -9911,7 +9911,7 @@ menuItem
 -i "UV_3D_Grab_Brush.png";
 
 menuItem
--c "ShowMeshGrabUVToolOptions;toolPropertyWindow;"
+-c "ShowMeshGrabUVToolOptions;da_OpenToolSettings"
 -ob 1;
 
 menuItem
@@ -10807,7 +10807,7 @@ menuItem
 -i "UV_3D_Grab_Brush.png";
 
 menuItem
--c "ShowMeshGrabUVToolOptions;toolPropertyWindow;"
+-c "ShowMeshGrabUVToolOptions;da_OpenToolSettings"
 -ob 1;
 
 menuItem
@@ -11739,7 +11739,7 @@ global proc Tool_CreateParticle_MM_May9(){
 
 menuItem -itl 1
 -l "Tool Settings" 
--c "toolPropertyWindow -inMainWindow true" 
+-c "da_OpenToolSettings" 
 -rp "N" 
 -i "toolSettings.png";
 
@@ -11897,7 +11897,7 @@ global proc Tool_IkHandle_MM_May9(){
 
 menuItem -itl 1
 -l "Tool Settings" 
--c "toolPropertyWindow -inMainWindow true" 
+-c "da_OpenToolSettings" 
 -rp "N" 
 -i "toolSettings.png";
 
@@ -11921,7 +11921,7 @@ global proc Tool_IkSplineHandle_MM_May9(){
 
 menuItem -itl 1
 -l "Tool Settings" 
--c "toolPropertyWindow -inMainWindow true" 
+-c "da_OpenToolSettings" 
 -rp "N" 
 -i "toolSettings.png";
 
@@ -12477,92 +12477,56 @@ global proc Tool_UVBushes_MM_May9(){
 
 menuItem -itl 1 
 -l "Cut" 
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -rp "NE" 
 -i "cutUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
--ob 1;
-
-menuItem -itl 1 
 -l "Sew" 
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;da_OpenToolSettings" 
 -rp "E" 
 -i "sewUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;\ntoolPropertyWindow" 
--ob 1;
-
-menuItem -itl 1 
 -l "Grab" 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "SE" 
 -i "grabUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;\ntoolPropertyWindow;" 
--ob 1;
-
-menuItem -itl 1 
 -l "Pin" 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "S" 
 -i "pinUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;\ntoolPropertyWindow" 
--ob 1;
-
-menuItem -itl 1 
 -l "Smear" 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "SW" 
 -i "smearUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;\ntoolPropertyWindow" 
--ob 1;
-
-menuItem -itl 1 
 -l "Optimize" 
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -rp "NW" 
 -i "optimizeUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
--ob 1;
-
-menuItem -itl 1 
 -l "Symmetrize" 
--c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
+-c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;da_OpenToolSettings" 
 -i "symmetrizeUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
--ob 1;
-
-menuItem -itl 1 
 -l "Unfold" 
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;da_OpenToolSettings" 
 -rp "N" 
 -i "unfoldUVTool.png";
 
 menuItem -itl 1 
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;\ntoolPropertyWindow" 
--ob 1;
-
-menuItem -itl 1 
 -l "Pinch" 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj" 
+-c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "W" 
 -i "pinchUVTool.png";
-
-menuItem -itl 1 
--c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj\ntoolPropertyWindow;" 
--ob 1;
 
 setParent -m ..;
 
@@ -12591,7 +12555,7 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Tool Property" 
--c "toolPropertyWindow"
+-c "da_OpenToolSettings"
 -i "toolSettings.png" 
 -rp "W";
 
@@ -12820,7 +12784,7 @@ menuItem -itl 1
 -i "xgGuideSculptTool.png";
 
 menuItem -itl 1 
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
 -ob 1;
 
 menuItem -itl 1 
@@ -12936,7 +12900,7 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -12946,7 +12910,7 @@ menuItem
 -i "optimizeUVTool.png";
 
 menuItem
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -13014,7 +12978,7 @@ menuItem
 -i "UV_3D_Grab_Brush.png";
 
 menuItem
--c "ShowMeshGrabUVToolOptions;toolPropertyWindow;" 
+-c "ShowMeshGrabUVToolOptions;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -13484,7 +13448,7 @@ menuItem
 -i "optimizeUVTool.png";
 
 menuItem
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -13494,7 +13458,7 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -13625,7 +13589,7 @@ menuItem
 -i "optimizeUVTool.png";
 
 menuItem
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;\ntoolPropertyWindow\n" 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -13635,7 +13599,7 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;\ntoolPropertyWindow;" 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -13679,7 +13643,7 @@ menuItem
 -i "symmetrizeUVTool.png";
 
 menuItem
--c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;\ntoolPropertyWindow" 
+-c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -13934,7 +13898,7 @@ menuItem
 -i "xgGuideSculptTool.png";
 
 menuItem
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;"
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings"
 -ob 1;
 
 menuItem
@@ -13960,7 +13924,7 @@ menuItem
 -i "xgGuideSculptTool.png";
 
 menuItem
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
 -ob 1;
 
 menuItem
@@ -14009,7 +13973,7 @@ menuItem
 -i "xgGuideSculptTool.png";
 
 menuItem
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");\ntoolPropertyWindow -inMainWindow true;" 
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
 -ob 1;
 
 menuItem
