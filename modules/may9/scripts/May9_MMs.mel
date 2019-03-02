@@ -3258,6 +3258,11 @@ menuItem
 -i "aselect.png";
 
 menuItem
+-l "Invert"
+-c "InvertSelection" 
+-i "out_reverse.png";
+
+menuItem
 -l "All"
 -c "SelectAll" 
 -i "aselect.png";
@@ -3337,6 +3342,11 @@ menuItem
 -l "Selection to Vertices"
 -c "ConvertSelectionToVertices"
 -i "vertex_NEX.png";
+
+menuItem
+-l "Selection to UVs"
+-c "ConvertSelectionToUVs"
+-i "UVEditorVertex.png";
 
 setParent -m ..;
 
@@ -3818,6 +3828,11 @@ menuItem
 -l "Select"
 -sm 1
 -i "aselect.png";
+
+menuItem
+-l "Invert"
+-c "InvertSelection" 
+-i "out_reverse.png";
 
 menuItem
 -l "All"
@@ -6368,6 +6383,11 @@ menuItem
 -l "Select"
 -sm 1
 -i "aselect.png";
+
+menuItem
+-l "Invert"
+-c "InvertSelection" 
+-i "out_reverse.png";
 
 menuItem
 -l "All"
@@ -12151,6 +12171,19 @@ menuItem -itl 1
 -i "shrinkCVselect.png";
 }
 
+if ($paintModeCheck == 1){
+menuItem -itl 1 
+-l "Set Add to 0.05" 
+-c "artAttrPaintOperation artAttrSkinPaintCtx Add; artAttrSkinPaintCtx -e -opacity .05 `currentCtx`";
+
+menuItem -itl 1 
+-l "Set Replace to 1" 
+-c "artAttrPaintOperation artAttrSkinPaintCtx Replace; artAttrSkinPaintCtx -e -opacity 1 `currentCtx`";
+
+menuItem 
+-d 1; 
+}
+
 menuItem -itl 1 
 -l "Color Management"
 -c "da_ToggleColorManagement" 
@@ -13009,9 +13042,17 @@ menuItem
 -d 1;
 
 menuItem
+-l "Select Invert"
+-c "InvertSelection" 
+-i "out_reverse.png";
+
+menuItem
 -l "Select All"
 -c "SelectAll" 
 -i "aselect.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Selection to Edges" 
@@ -13373,6 +13414,11 @@ menuItem
 -l "Select"
 -sm 1
 -i "aselect.png";
+
+menuItem
+-l "Invert"
+-c "InvertSelection" 
+-i "out_reverse.png";
 
 menuItem
 -l "All"
@@ -13810,9 +13856,17 @@ menuItem
 -d 1;
 
 menuItem
+-l "Select Invert"
+-c "InvertSelection" 
+-i "out_reverse.png";
+
+menuItem
 -l "Select All"
 -c "SelectAll" 
 -i "aselect.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Selection to Edges" 
