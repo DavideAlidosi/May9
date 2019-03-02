@@ -12112,12 +12112,12 @@ int $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;
 
 if ($paintModeCheck == 1){
 menuItem -itl 1 
--l "Set Add to 0.05" 
+-l "Add to 0.05" 
 -c "artAttrPaintOperation artAttrSkinPaintCtx Add; artAttrSkinPaintCtx -e -opacity 0.05 `currentCtx`"
 -rp "NE";
 
 menuItem -itl 1 
--l "Set Replace to 1" 
+-l "Replace to 1" 
 -c "artAttrPaintOperation artAttrSkinPaintCtx Replace; artAttrSkinPaintCtx -e -opacity 1 `currentCtx`"
 -rp "N";
 
@@ -12128,16 +12128,21 @@ menuItem -itl 1
 -cb (`artAttrSkinPaintCtx -q -useColorRamp artAttrSkinContext`);
 
 menuItem -itl 1 
--l "Flood Smooth" 
--c "artAttrPaintOperation artAttrSkinPaintCtx Smooth;\nartAttrSkinPaintCtx -e -clear `currentCtx`;" 
--rp "W";
+-l "Smooth to 1" 
+-c "artAttrPaintOperation artAttrSkinPaintCtx Smooth; artAttrSkinPaintCtx -e -opacity 1 `currentCtx`"
+-rp "NW";
+
+menuItem -itl 1 
+-l "Flood" 
+-c "artAttrSkinPaintCtx -e -clear `currentCtx`"
+-rp "SW";
 }
 
 menuItem -itl 1 
 -l "Select Vertex" 
 -c "da_SkinPaintMode" 
 -cb ($paintModeCheck == 0)
--rp "NW";
+-rp "W";
 
 menuItem -itl 1 
 -l "XRay Joints" 
@@ -12150,12 +12155,6 @@ menuItem -itl 1
 -c "da_ToggleSkinWireframe" 
 -rp "SE" 
 -cb (`artAttrSkinPaintCtx -q -showactive artAttrSkinContext`);
-
-menuItem -itl 1 
--l "Anti-Aliasing" 
--c "da_AntiAliasToggle" 
--rp "SW" 
--cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
 
 if ($paintModeCheck == 0){
 menuItem -itl 1 
@@ -12183,6 +12182,11 @@ menuItem -itl 1
 -l "Color Management"
 -c "da_ToggleColorManagement" 
 -cb (`colorManagementPrefs -q -cme`);
+
+menuItem -itl 1 
+-l "Anti-Aliasing" 
+-c "da_AntiAliasToggle"  
+-cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
 
 setParent -m ..;
 
