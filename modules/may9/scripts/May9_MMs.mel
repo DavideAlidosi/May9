@@ -12142,13 +12142,13 @@ menuItem -itl 1
 -c "artAttrSkinPaintCtx -e -clear `currentCtx`"
 -i "alignVMin.png"
 -rp "SW";
-}
 
 menuItem -itl 1 
 -l "Select Vertex" 
 -c "da_SkinPaintMode" 
 -cb ($paintModeCheck == 0)
 -rp "W";
+}
 
 menuItem -itl 1 
 -l "XRay Joints" 
@@ -12176,6 +12176,68 @@ menuItem -itl 1
 -rp "NW" 
 -c "ShrinkPolygonSelectionRegion" 
 -i "shrinkCVselect.png";
+
+menuItem -itl 1 
+-l "Deselect All"
+-rp "S" 
+-c "select -cl" 
+-i "hotkeyFieldClear.png";
+
+if (`selectType -q -pe`){
+if (size(`filterExpand -sm 32`)){
+menuItem -itl 1 
+-l "Convert to Vertex"
+-rp "SW" 
+-c "ConvertSelectionToVertices" 
+-i "polyConvertToVertices.png";
+
+menuItem -itl 1 
+-l "Select Vertex" 
+-c "ConvertSelectionToVertices;da_SkinPaintMode" 
+-cb ($paintModeCheck == 0)
+-rp "W";
+}else{
+menuItem -itl 1 
+-l "Vertex Mode"
+-rp "SW" 
+-c "SelectVertexMask" 
+-i "vertex_NEX.png";
+
+menuItem -itl 1 
+-l "Select Vertex" 
+-c "da_SkinPaintMode" 
+-cb ($paintModeCheck == 0)
+-rp "W";
+}
+} else {
+if (size(`filterExpand -sm 31`)){
+if (size(`filterExpand -sm 31`) >= 2){
+menuItem -itl 1 
+-l "Convert to Edge"
+-rp "SW" 
+-c "ConvertSelectionToContainedEdges" 
+-i "polyConvertToContainedEdges.png";
+}else{
+menuItem -itl 1 
+-l "Convert to Edge"
+-rp "SW" 
+-c "ConvertSelectionToEdges" 
+-i "polyConvertToEdge.png";
+}
+}else{
+menuItem -itl 1 
+-l "Edge Mode"
+-rp "SW" 
+-c "SelectEdgeMask" 
+-i "edges_NEX.png";
+}
+
+menuItem -itl 1 
+-l "Select Vertex" 
+-c "da_SkinPaintMode" 
+-cb ($paintModeCheck == 0)
+-rp "W";
+}
 }
 
 menuItem -itl 1 

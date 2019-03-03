@@ -124,7 +124,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Toggle Skin Paint Mode"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("string $currentTool = `currentCtx`;\nint $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;\n\nif ($paintModeCheck != 0){\n\tartAttrSkinPaintModePaintSelect 0 artAttrSkinPaintCtx;\n\tSelectVertexMask;\n}else{\n\tartAttrSkinPaintModePaintSelect 1 artAttrSkinPaintCtx;\n}")
+	-c ("string $currentTool = `currentCtx`;\nint $paintModeCheck = `artAttrSkinPaintCtx -q -skinPaintMode $currentTool`;\n\nif ($paintModeCheck != 0){\n\tartAttrSkinPaintModePaintSelect 0 artAttrSkinPaintCtx;\n\tsetSelectMode components Components;\n\tselectType -smp 1 -sme 0 -smf 0 -smu 0 -pv 1 -pe 0 -pf 0 -puv 0;\n\tHideManipulators;\n}else{\n\tif (size(`filterExpand -sm 31`) == 0){\n\t    inViewMessage -pos topCenter -amg \"Select at least one component\" -fade;\n\t}else{\n\t    artAttrSkinPaintModePaintSelect 1 artAttrSkinPaintCtx;\n\t}\n}")
 	da_SkinPaintMode;
 
 runTimeCommand
