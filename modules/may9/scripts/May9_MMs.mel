@@ -12200,7 +12200,7 @@ menuItem -itl 1
 menuItem -itl 1 
 -l "Vertex Mode"
 -rp "SW" 
--c "SelectVertexMask" 
+-c "setSelectMode components Components; selectType -smp 1 -sme 0 -smf 0 -smu 0 -pv 1 -pe 0 -pf 0 -puv 0; HideManipulators" 
 -i "vertex_NEX.png";
 
 menuItem -itl 1 
@@ -12228,7 +12228,7 @@ menuItem -itl 1
 menuItem -itl 1 
 -l "Edge Mode"
 -rp "SW" 
--c "SelectEdgeMask" 
+-c "setSelectMode components Components; selectType -smp 0 -sme 1 -smf 0 -smu 0 -pv 0 -pe 1 -pf 0 -puv 0; HideManipulators" 
 -i "edges_NEX.png";
 }
 
