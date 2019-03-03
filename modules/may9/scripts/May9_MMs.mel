@@ -12163,8 +12163,7 @@ menuItem -itl 1
 -cb (`artAttrSkinPaintCtx -q -showactive artAttrSkinContext`);
 
 if ($paintModeCheck == 0){
-Sup_Symmetry_MM_May9;
-Sup_SoftSelect_MM_May9;
+Sup_Symmetry_PaintSkin_MM_May9;
 
 menuItem -itl 1 
 -l "Grow Selection"
@@ -14239,7 +14238,7 @@ setParent -m ..;
 } 
 // Support MMs
 
-// Define Sup_SoftSelect marking menu
+// Define Support SoftSelect marking menu
 global proc Sup_SoftSelect_MM_May9(){
 int $softSelectOn = `softSelect -q -softSelectEnabled`;
 int $fallofMode = `softSelect -q -softSelectFalloff`;
@@ -14291,7 +14290,7 @@ menuItem
 setParent -m ..;
 
 }
-// Define Sup_SoftSelect marking menu
+// Define Support Symmetry marking menu
 global proc Sup_Symmetry_MM_May9(){
 int $reflectionOn = `symmetricModelling -q -symmetry`;
 
@@ -14364,6 +14363,55 @@ menuItem
 -rp	"SW"
 -rb	($reflectionAxis == 2)
 -c	("symmetricModelling -e -axis \"z\"");
+
+setParent -m ..;
+
+}
+
+// Define Support Symmetry for PaintSkin marking menu
+global proc Sup_Symmetry_PaintSkin_MM_May9(){
+int $reflectionOn = `symmetricModelling -q -symmetry`;
+
+int $reflectionAxis;
+$val = `symmetricModelling -q -axis` ;
+if ($val == "x")
+$reflectionAxis = 0;
+else if ($val == "y")
+$reflectionAxis = 1;
+else
+$reflectionAxis = 2;
+
+menuItem -itl 1 
+-l "Symmetry"
+-i "symmetryConstraint.svg"
+-sm 1
+-radialPosition	"N";
+
+menuItem -itl 1 
+-l "Symmetry"
+-rp	"N"
+-cb	$reflectionOn
+-c	("symmetricModelling -e -symmetry #1; if (#1) SymmetrizeSelection; symmetricModelling -e -about \"object\"");
+
+radioMenuItemCollection;
+
+menuItem -itl 1 
+-l "X Axis"
+-rp	"NW"
+-rb	($reflectionAxis == 0)
+-c ("symmetricModelling -e -axis \"x\"; symmetricModelling -e -about \"object\"");
+
+menuItem -itl 1 
+-l "Y Axis"
+-rp	"W"
+-rb	($reflectionAxis == 1)
+-c	("symmetricModelling -e -axis \"y\"; symmetricModelling -e -about \"object\"");
+
+menuItem -itl 1 
+-label "Z Axis"
+-rp	"SW"
+-rb	($reflectionAxis == 2)
+-c	("symmetricModelling -e -axis \"z\"; symmetricModelling -e -about \"object\"");
 
 setParent -m ..;
 
