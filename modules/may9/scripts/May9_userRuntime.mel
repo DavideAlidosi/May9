@@ -2,6 +2,18 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Open Paint Skin Tool"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c("ArtPaintSkinWeightsTool;\nda_OpenToolSettings;\nevalDeferred \"artAttrSkinPaintModePaintSelect 1 artAttrSkinPaintCtx\";")
+	da_OpenPaintSkinTool;
+
+runTimeCommand
+	-ann "Close Paint Skin Tool"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("buildSelectMM; MarkingMenuPopDown; da_BackToObjectMode;\nstring $polySel[] = `filterExpand -sm 12`;\nselect $polySel;")
+	da_ClosePaintSkinTool;
+
+runTimeCommand
 	-ann "Open Tool Settings Only if is Closed"
 	-cat "Custom Scripts.May9_Next.Scene"
 	-c ("if (`isUIComponentVisible(\"Tool Settings\")` == 0){\n    toolPropertyWindow -inMainWindow true;\n}")
@@ -2455,6 +2467,12 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_OpenPaintSkinTool`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_ClosePaintSkinTool`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_OpenToolSettings`);
