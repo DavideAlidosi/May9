@@ -4986,6 +4986,11 @@ menuItem
 -rp "NW" 
 -i "removeWrapInfluence.png";
 
+menuItem
+-l "Paint Skin Weights"
+-c "ArtPaintSkinWeightsToolOptions"
+-i "paintSkinWeights.png";
+
 setParent -m ..;
 
 } 
@@ -11861,9 +11866,6 @@ menuItem -itl 1
 -i "GreasePencil.png";
 
 menuItem -itl 1 
--d 1; 
-
-menuItem -itl 1 
 -l "Complete Tool" 
 -c "buildSelectMM;MarkingMenuPopDown;if (`window -ex greasePencilFloatingWindow`)deleteUI greasePencilFloatingWindow" 
 -i "aselect.png";
@@ -12114,11 +12116,13 @@ if ($paintModeCheck == 1){
 menuItem -itl 1 
 -l "Add to 0.05" 
 -c "artAttrPaintOperation artAttrSkinPaintCtx Add; artAttrSkinPaintCtx -e -opacity 0.05 `currentCtx`"
+-i "addCreateGeneric.png"
 -rp "NE";
 
 menuItem -itl 1 
 -l "Replace to 1" 
 -c "artAttrPaintOperation artAttrSkinPaintCtx Replace; artAttrSkinPaintCtx -e -opacity 1 `currentCtx`"
+-i "teKeyRefresh.png"
 -rp "N";
 
 menuItem -itl 1 
@@ -12130,11 +12134,13 @@ menuItem -itl 1
 menuItem -itl 1 
 -l "Smooth to 1" 
 -c "artAttrPaintOperation artAttrSkinPaintCtx Smooth; artAttrSkinPaintCtx -e -opacity 1 `currentCtx`"
+-i "smoothSkinWeights.png"
 -rp "NW";
 
 menuItem -itl 1 
 -l "Flood" 
 -c "artAttrSkinPaintCtx -e -clear `currentCtx`"
+-i "alignVMin.png"
 -rp "SW";
 }
 
@@ -12157,15 +12163,18 @@ menuItem -itl 1
 -cb (`artAttrSkinPaintCtx -q -showactive artAttrSkinContext`);
 
 if ($paintModeCheck == 0){
+Sup_Symmetry_MM_May9;
+Sup_SoftSelect_MM_May9;
+
 menuItem -itl 1 
 -l "Grow Selection"
--rp "N" 
+-rp "NE" 
 -c "GrowPolygonSelectionRegion" 
 -i "growCVselect.png";
 
 menuItem -itl 1 
 -l "Shrink Selection"
--rp "S" 
+-rp "NW" 
 -c "ShrinkPolygonSelectionRegion" 
 -i "shrinkCVselect.png";
 }
@@ -12174,6 +12183,11 @@ menuItem -itl 1
 -l "Tool Property" 
 -c "da_OpenToolSettings"
 -i "toolSettings.png";
+
+menuItem -itl 1 
+-l "Complete Tool" 
+-c "buildSelectMM; MarkingMenuPopDown; da_BackToObjectMode" 
+-i "aselect.png";
 
 menuItem 
 -d 1;
