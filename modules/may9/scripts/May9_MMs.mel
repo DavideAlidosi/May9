@@ -398,6 +398,23 @@ menuItem -bld 1
 setParent -m ..;
 
 menuItem -bld 1 
+-l "Character Set"
+-sm 1
+-i "HIKcreateControlRig.png";
+
+menuItem -bld 1 
+-l "Create Character"
+-c "CreateCharacterOptions"
+-i "HIKCharacterToolFullBody.png";
+
+menuItem -bld 1 
+-l "Create Subcharacter"
+-c "CreateSubCharacterOptions"
+-i "HIKCharacterToolBodyPart.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
 -l "Attributes"
 -sm 1
 -i "attributes.png";
