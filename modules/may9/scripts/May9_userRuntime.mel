@@ -1031,13 +1031,13 @@ runTimeCommand
 runTimeCommand
 	-ann "Enable Bifrost Continuous Emission"
 	-cat "Custom Scripts.May9_Next.Dynamics"
-	-c ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nsetAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 1;\n\ninViewMessage -pos topCenter -msg \"Continuous emission enable on selected emitter(s)\" -fade;")
+	-c ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nif ( size($myShaderGroup) == 7){\n    setAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 1;\n} else {\n    setAttr ($myShaderGroup[5] + \".bifrostContinuousEmission\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"Continuous emission enable on selected emitter(s)\" -fade;")
 	da_BifrostContinuousEmission;
 
 runTimeCommand
 	-ann "Disable Bifrost Continuous Emission"
 	-cat "Custom Scripts.May9_Next.Dynamics"
-	-c ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nsetAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 0;\n\ninViewMessage -pos topCenter -msg \"Continuous emission disabled on selected emitter(s)\" -fade;")
+	-c ("PickWalkLeft;\nstring $objectShape[] = `listRelatives -s`;\nstring $myShaderGroup[] = `listConnections -type \"bifrostContainer\"`;\nif ( size($myShaderGroup) == 7){\n    setAttr ($myShaderGroup[6] + \".bifrostContinuousEmission\") 0;\n} else {\n    setAttr ($myShaderGroup[5] + \".bifrostContinuousEmission\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Continuous emission disabled on selected emitter(s)\" -fade;")
 	da_BifrostNoContinuousEmission;
 
 runTimeCommand
