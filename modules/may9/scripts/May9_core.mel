@@ -35,16 +35,13 @@ if (`about -api` >= 20190000){
 da_MouseOver_MM_May9;
 
 // First run May9 procedures
-if (`optionVar -q "May9ActivationCheck"` < 31){
+if (`optionVar -q "May9ActivationCheck"` < 10000){
 
     //Source userPrefs only at May9 initialization
     source May9_layouts.mel;
 
     // Enable Membrane Paintable Attributes
 	makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
-}
-
-if (`optionVar -q "May9ActivationCheck"` < 320){
 
 	// Store initial hyperShadeDockingLayout
 	optionVar -sv da_hyperShadeDockingLayout `optionVar -q hyperShadeDockingLayout`;
@@ -67,9 +64,6 @@ if (`optionVar -q "May9ActivationCheck"` < 320){
 
 	// Declare initial layout state
 	global int $myLayout = 0;
-}
-
-if (`optionVar -q "May9ActivationCheck"` < 10000){
 
 	// Store inital hotkeySet
 	optionVar -sv da_initialHotkey `hotkeySet -q -current`;
@@ -94,19 +88,21 @@ if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 
 	// Store Preferences Changes
 	savePrefs -g -hk;
+
+	// Maya 2018 Plug-in Update Initialization Fix
+	if (`about -api` >= 20180000 && `about -api` < 20190000){
+		if ( !`pluginInfo -q -l May9_Next` ){
+			// Load May9 Plug-in
+			loadPlugin May9_Next;
+
+			// Auto load May9 Plug-in
+			pluginInfo -e -a 1 May9_Next;
+
+			// Save Plug-ins auto load prefs
+			pluginInfo -spp;
+		}
+	}
 }
 
 // Initialzie May9Menu
 evalDeferred ("da_May9Menu");
-
-// Plug-in Initialzie Check
-if ( !`pluginInfo -q -l May9_Next` ){
-	// Load May9 Plug-in
-	loadPlugin May9_Next;
-
-	// Auto load May9 Plug-in
-	pluginInfo -e -a 1 May9_Next;
-
-	// Save Plug-ins auto load prefs
-	pluginInfo -spp;
-}

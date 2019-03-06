@@ -203,7 +203,7 @@ runTimeCommand
 	-ann "Disable MMtoKey"
 	-cat "Custom Scripts.May9_Next.System"
 	-cl "python"
-	-c ("May9_Next.releaseSelected()\nwhile cmds.popupMenu(\"mm_1\", q=True, ex=True): cmds.deleteUI(\"mm_1\")\nwhile cmds.popupMenu(\"mm_2\", q=True, ex=True): cmds.deleteUI(\"mm_2\")")
+	-c ("May9_Next.releaseSelected()")
 	da_MMtoKey_release;
 
 runTimeCommand
@@ -3686,10 +3686,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_SepareCurves`);
-}
-
 
 // Remove May9 Legacy RunTime Commands
 
 catchQuiet (`runTimeCommand -e -del
 	da_ToggleUV`);
+}
