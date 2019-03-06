@@ -1449,7 +1449,7 @@ runTimeCommand
 	-ann "Open Bifrost Ocean Simulation"
 	-cat "Custom Scripts.May9_Next.Dynamics"
 	-cl "python"
-	-c ("be.BossEditor()")
+	-c ("import boss.BossEditor as be\nbe.BossEditor()")
 	da_OpenBossEditor;
 
 runTimeCommand
@@ -2104,7 +2104,7 @@ runTimeCommand
 runTimeCommand
 	-ann "About May9 Next Window"
 	-cat "Custom Scripts.May9_Next.System"
-	-c ("string $myResult = `confirmDialog -title \"About\" -message (\"\\nDavide Alidosi's \" +$may9Version+\"        \\n\"+$may9CodeName+\"\") \n    -button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;")
+	-c ("string $myResult = `confirmDialog -title \"About\" -message (\"\\nDavide Alidosi's \" +$may9Version+\"        \\n\"+$may9SecondLine+\"\") \n    -button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;")
 	da_AboutMay9;
 
 runTimeCommand

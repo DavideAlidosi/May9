@@ -1,7 +1,7 @@
 // Store May9 Version
-string $may9Version = "May9 Next.0.5";
-string $may9CodeName = "is powered by MMtoKey core";
-int $may9Value = "10056";
+string $may9Version = "May9 Next.0.6";
+string $may9SecondLine = "is powered by MMtoKey core";
+int $may9Value = "10060";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -14,6 +14,9 @@ ModCreateMenu mainCreateMenu;
 
 // Inizialize Marking Menues
 source May9_MMs.mel;
+
+// Inizialize Scripts
+source May9_scripts.mel;
 
 // Set new scene opened preferences
 string $myLayoutReset = "int $myLayout = 0";
@@ -28,9 +31,8 @@ if (`about -api` >= 20190000){
 	python "from maya.plugin.evaluator.cache_preferences import CachePreferenceEnabled";
 }
 
-// Preload Boss Editor
-if ( catchQuiet( `python "import boss.BossEditor as be"` ) )
-	print "Please check Bifrost installation";
+// Run da_MouseOver_MM_May9
+da_MouseOver_MM_May9;
 
 // First run May9 procedures
 if (`optionVar -q "May9ActivationCheck"` < 31){
@@ -87,63 +89,24 @@ if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 	// Preload userRuntime
 	source May9_userRuntime.mel;
 
-	// Clean userRuntime
-	May9_runTimeCommandsRemover;
-
-	// Preload userRuntime
-	May9_runTimeCommands;
+	// Initialize Runtime 
+	da_RuntimeInit;
 
 	// Store Preferences Changes
 	savePrefs -g -hk;
 }
 
-// Preload May9Menu
+// Initialzie May9Menu
 evalDeferred ("da_May9Menu");
 
-// Define da_round
-global proc int da_round(float $da_value){
-    float $n = $da_value % 1;
-    if($n >= 0.5){
-    	$da_value = `ceil $da_value`;
-    }else{
-    	$da_value = `floor $da_value`;
-    }
-    return $da_value;
+// Plug-in Initialzie Check
+if ( !`pluginInfo -q -l May9_Next` ){
+	// Load May9 Plug-in
+	loadPlugin May9_Next;
+
+	// Auto load May9 Plug-in
+	pluginInfo -e -a 1 May9_Next;
+
+	// Save Plug-ins auto load prefs
+	pluginInfo -spp;
 }
-
-// Define da_MouseOver_MM_May9
-string $myWrapSimbol = "\n";
-
-global proc da_MouseOver_MM_May9(){    
-	if( `popupMenu -ex da_SelectOverCleaner` ) {
-	    deleteUI da_SelectOverCleaner;
-	}
-
-	popupMenu -ctl 1 -b 2 -mm 1 -p viewPanes -pmc (
-	    "string $myComponentOver[] = `ls -preSelectHilite`;" +
-	    "if ( `popupMenu -e -ex da_SelectOverCleaner `){" +
-	        "popupMenu -e -dai da_SelectOverCleaner;" + " setParent -m da_SelectOverCleaner;" +
-	    "if ( `dagObjectHit` )" +
-		    "menuItem -l `da_ObjectOver` -rp \"N\" -c \"select `da_ObjectOver`; print (`da_ObjectOver` + $myWrapSimbol) \";" +
-	    "else" +
-	        " menuItem -en 0 -l \"No Object Detected\" -rp \"N\";" +
-	    "if ( size( $myComponentOver ) ) " +
-	        "menuItem -l $myComponentOver[0] -rp \"S\" -c \"select $myComponentOver[0]; print ($myComponentOver[0] + $myWrapSimbol)\";" +
-	    "else" +
-	        " menuItem -en 0 -l \"No polyComponent Detected\" -rp \"S\";}"
-	) da_SelectOverCleaner;
-}
-
-global proc string da_ObjectOver(){
-    dagObjectHit -mn "da_SelectOverCleaner";
-    string $myChildren[] = `popupMenu -q -itemArray da_SelectOverCleaner`; 
-    string $myObjecItem = `menuItem -q -l $myChildren[0]`;
-    string $myObject[];
-    tokenize $myObjecItem "." $myObject;
-    popupMenu -e -dai da_SelectOverCleaner;
- 
-return $myObject[0];
-}
-
-// Run da_MouseOver_MM_May9
-da_MouseOver_MM_May9;
