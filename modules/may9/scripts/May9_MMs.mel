@@ -3565,17 +3565,17 @@ menuItem
 -i "UVTkUVShell.png";
 
 menuItem
+-l "Match Shells Scale" 
+-c "uvTkDoSetTexelDensity" 
+-i "polyScaleUV.png";
+
+menuItem
 -d 1;
 
 menuItem
--l "Automatic Mapping"
+-l "Automatic"
 -c "performPolyAutoProj 1"
 -i "polyAutoProj.png";
-
-menuItem
--l "Cylindrical"
--c "performPolyProjectionArgList \"1\" {\"0\", \"Cylindrical\", \"ls -selection\", \"0\"} \"\";"
--i "polyCylProj.png";
 
 menuItem
 -l "Spherical"
@@ -9946,14 +9946,19 @@ menuItem
 -i "polyUnfoldUVs.png";
 
 menuItem
--l "Match"
+-l "Select All"
+-c "da_SelectUV"
+-i "polyGridUV.png";
+
+menuItem
+-l "Match UV"
 -c "da_MatchUV"
 -i "polyMatchUV.png";
 
 menuItem
--l "Select All"
--c "da_SelectUV"
--i "polyGridUV.png";
+-l "Match Shells Scale" 
+-c "uvTkDoSetTexelDensity" 
+-i "polyScaleUV.png";
 
 menuItem
 -l "3D Grab UV"
@@ -10844,6 +10849,11 @@ menuItem
 -l "Select All"
 -c "da_SelectUV"
 -i "polyGridUV.png";
+
+menuItem
+-l "Match Shells Scale" 
+-c "uvTkDoSetTexelDensity" 
+-i "polyScaleUV.png";
 
 menuItem
 -l "3D Cut and Sew"
@@ -13683,6 +13693,18 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
+-l "Match Shells Scale" 
+-c "uvTkDoSetTexelDensity" 
+-rp "W" 
+-i "polyScaleUV.png";
+
+menuItem
+-l "Per Face Map"
+-c "da_MapFacesFacesUV"
+-rp "S" 
+-i "polyNormalProj.png";
+
+menuItem
 -l "UV Toolkit" 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
@@ -13810,6 +13832,11 @@ menuItem
 menuItem
 -c "LayoutUVOptions" 
 -ob 1;
+
+menuItem
+-l "Match Shells Scale" 
+-c "uvTkDoSetTexelDensity" 
+-i "polyScaleUV.png";
 
 menuItem
 -d 1;
