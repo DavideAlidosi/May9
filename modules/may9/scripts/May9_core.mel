@@ -1,4 +1,5 @@
 print "May9 console: Source May9_core.mel \n";
+
 // Store May9 Version
 string $may9Version = "May9 Next.0.6";
 string $may9SecondLine = "is powered by MMtoKey core";
@@ -83,13 +84,18 @@ da_MouseOver_MM_May9;
 print "May9 console: Complete standard procedures \n";
 
 // Initialize installer preference
-if (`optionVar -q "May9ActivationCheck"` < 10000){
+if (`optionVar -q "May9ActivationCheck"` < 1){
 
-    //Source userPrefs only at May9 initialization
+    //Source userPrefs only at first May9 initialization
     source May9_layouts.mel;
 
     // Enable Membrane Paintable Attributes
 	makePaintable  -at "doubleArray" "membrane" "weightPerVertex";
+
+	print "May9 console: First-time initialization \n";
+}
+
+if (`optionVar -q "May9ActivationCheck"` < 10000){
 
 	// Store initial hyperShadeDockingLayout
 	optionVar -sv da_hyperShadeDockingLayout `optionVar -q hyperShadeDockingLayout`;
@@ -147,10 +153,12 @@ if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 		if ( !`pluginInfo -q -l May9_Next` ){
 			// Load May9 Plug-in
 			loadPlugin May9_Next;
+
 		print "May9 console: Fix Maya 2018 updater bug \n";
 		}
 	}
-	print "May9 console: Complete installation or update release \n";
+
+	print "May9 console: Complete update release \n";
 }
 
 print "May9 console: Complete initialization of May9 Next \n";

@@ -1,3 +1,5 @@
+print "May9 console: Source May9_uninstall.mel \n";
+
 // Un-load main Plug-ins
 unloadPlugin May9_Next;
 
@@ -6,6 +8,8 @@ pluginInfo -e -a 0 May9_Next;
 
 // Save Plug-ins auto load prefs
 pluginInfo -spp;
+
+print "May9 console: Un-Load May9 Next Plug-in \n";
 
 // Set back to initial hyperShadeDockingLayout
 optionVar -sv hyperShadeDockingLayout `optionVar -q "da_hyperShadeDockingLayout"`;
@@ -19,34 +23,42 @@ if(`optionVar -q "da_DuplicateVariableWarnings"` == 1){
 	melOptions -duplicateVariableWarnings on;
 }
 
-// Set back to prior Hotkeyset
-hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
-
-// Delete May9_Full, Core and Next hotkeySets
-hotkeySet -e -delete May9_Next;
-
-// Remove May9 Next main menu
-da_May9MenuRemover;
-
 // Remove optionVars
 optionVar -rm da_hyperShadeDockingLayout;
 optionVar -rm da_connectWindowLeftSHD;
 optionVar -rm da_connectWindowRightSHD;
 optionVar -rm da_DuplicateVariableWarnings;
-optionVar -rm da_initialHotkey;
 
 // Set May9 Intallation in idle mode
-optionVar -iv May9ActivationCheck 32;
+optionVar -iv May9ActivationCheck 1;
 
-// Store Preferences Changes
-savePrefsChanges;
+print "May9 console: Restored previous preferences \n";
+
+// Set back to prior Hotkeyset
+hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
+
+// Remove Hotkeyset optionVars
+optionVar -rm da_initialHotkey;
+
+// Delete May9_Full, Core and Next hotkeySets
+hotkeySet -e -delete May9_Next;
+
+print "May9 console: Removed May9 Next Hotkeyset \n";
+
+// Remove May9 Next main menu
+da_May9MenuRemover;
+
+print "May9 console: Removed May9 Next main menu \n";
 
 // Remove runtimeCommand
 May9_runTimeCommandsRemover;
 
+print "May9 console: Removed May9 Next runtimeCommand \n";
+
 // Store Preferences Changes
 savePrefs -g -hk;
-pluginInfo -spp;
 
 // Un-install confirmation
 inViewMessage -pos midCenterTop -msg "May9 Next un-installed" -fade;
+
+print "May9 console: Complete May9 Next un-installation \n";
