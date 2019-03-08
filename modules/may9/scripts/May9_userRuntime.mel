@@ -2,6 +2,12 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Create nParticle Kill Field"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $nParticle[];\nstring $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -s`; \n\nint $num = 0;\nint $part = 0;\n\nfor ($i in $mySel) {\n    $nParticle[$part] = $i;\n    $part++;\n}\n\n$field = `turbulence -pos 0 0 0  -name \"kill_#\" -m 0.1 -att 0 -f 2 -phaseX 0 -phaseY 0 -phaseZ 0 -noiseLevel 2 -noiseRatio 0.707  -mxd -1  -vsh cube -vex 0 -vof 0 0 0 -vsw 360 -tsr 0.5`;\n$num = 0;\n\nfor ($i in $nParticle) {\n    connectDynamic -f ($field[0]) ($i);\n}\n\nstring $connections[] = `listConnections -d 1 -s 0 -p 1 $field[0]`;\n$num = 0;\nfor ($i in $nParticle) {\n    string $exp = `dynExpression -q -s -rad ($nParticle[$num])`;\n    $exp += \"\\n//kill field: \"+$field[0] +\"\\n\";\n    $exp += \"if (mag(\" + $connections[$num] + \") > 0) {lifespanPP = 0;}\\n\";\n    dynExpression -rad -s $exp ($nParticle[$num]);\n    $num++;\n}\n\nfor ($each in $myShape){\n    setAttr ($each +\".lifespanMode\") 3;\n}\n\nselect $field[0];")
+	da_nParticleKill;
+
+runTimeCommand
 	-ann "Open Paint Skin Tool"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c("ArtPaintSkinWeightsTool;\nda_OpenToolSettings;\nevalDeferred \"artAttrSkinPaintModePaintSelect 1 artAttrSkinPaintCtx\";")
@@ -2462,6 +2468,9 @@ runTimeCommand
 
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
+
+catchQuiet (`runTimeCommand -e -del
+	da_nParticleKill`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_OpenPaintSkinTool`);

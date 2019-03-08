@@ -4111,6 +4111,9 @@ menuItem
 -i "posVolumeAxis.png" ;
 
 menuItem
+-d 1;
+
+menuItem
 -l "Kill Volume" 
 -c "da_FluidKillFields" 
 -i "removeTweaks.png" ;
@@ -8855,6 +8858,14 @@ menuItem
 -l "Volume Axis" 
 -c "dynExecuteFieldCommands 1 \"volumeAxis\"" 
 -i "posVolumeAxis.png" ;
+
+menuItem
+-d 1;
+
+menuItem
+-l "Kill Volume" 
+-c "da_nParticleKill" 
+-i "removeTweaks.png";
 
 setParent -m ..;
 
