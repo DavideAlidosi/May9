@@ -1978,9 +1978,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 setParent -m ..;
 
@@ -2724,9 +2734,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 setParent -m ..;
 
@@ -2850,9 +2870,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 setParent -m ..;
 
@@ -4093,12 +4123,17 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create Fluid Cache"
+-l "Create Cache"
 -c "CreateFluidCacheOptions"
 -i "fluidCacheCreate.png";
 
 menuItem
--l "Delete Fluid Cache"
+-l "Replace Cache"
+-c "fluidReplaceCache"
+-i "fluidCacheReplace.png";
+
+menuItem
+-l "Delete Cache"
 -c "fluidDeleteCacheOpt"
 -i "fluidCacheDelete.png";
 
@@ -4226,9 +4261,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 setParent -m ..;
 
@@ -4577,9 +4622,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 setParent -m ..;
 
@@ -8378,45 +8433,30 @@ menuItem
 -l "Add Compass to Direction" 
 -c "da_EmitterCompass"
 -i "volumeSphere.png" 
--rp "N";
+-rp "W";
 
 menuItem
--l "Emitter Type" 
--rp "E"
--i "emitter.png" 
--sm 1;
-
-menuItem
--l "Directional" 
--rp "NE"
+-l "Emitter Directional" 
+-rp "NW"
+-i "out_fluidEmitter.png" 
 -c "da_EmitterDirectional";
 
 menuItem
--l "Omni"
--rp "E" 
+-l "Emitter Omni"
+-rp "N" 
+-i "out_pointEmitter.png"
 -c "da_EmitterOmni";
 
 menuItem
--l "Volume" 
--rp "SE"
+-l "Emitter Volume" 
+-rp "NE"
+-i "volumeCube.png"
 -c "da_EmitterVolume";
 
-setParent -m ..;
-
 menuItem
--l "Cache"
--sm 1
--i "nClothCacheCreate.png";
-
-menuItem
--l "Create nCache"
--c "nClothCacheOpt"
--i "nClothCacheCreate.png";
-
-menuItem
--l "Delete nCache"
--c "deleteNclothCache"
--i "nClothCacheDelete.png";
+-l "Volume As Direc" 
+-rp "NE"
+-c "da_EmitterVolume";
 
 setParent -m ..;
 
@@ -8851,9 +8891,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 setParent -m ..;
 
@@ -10270,9 +10320,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 menuItem
 -d 1;
@@ -11196,9 +11256,19 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
+-l "Append to Cache"
+-c "cacheAppend"
+-i "nClothCacheAppend.png";
+
+menuItem
 -l "Delete nCache"
 -c "deleteNclothCache"
 -i "nClothCacheDelete.png";
+
+menuItem
+-l "Attach Cache"
+-c "attachCache"
+-i "nClothCacheExisting.png";
 
 menuItem
 -d 1;
