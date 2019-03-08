@@ -990,25 +990,17 @@ menuItem
 -l "Stop Processing" 
 -c "bifrost -edit -stopProcessing;" 
 -rp "N" 
--i "kAlertStopIcon.png";
+-i "rvIPRStop.png";
 
 menuItem
 -l "Bifrost Options" 
 -c "performBifrostOptionsChange" 
+-i "out_bifrostAttrNotifier.png" 
 -rp "S";
 
 menuItem
--l "Add Foam" 
--c "AddBifrostFoam" 
--rp "E";
-
-menuItem
--l "Remove Foam" 
--c "RemoveBifrostFoam" 
--rp "W";
-
-menuItem
 -l "Create Cache" 
+-i "nClothCacheCreate.png" 
 -c "performCreateBifrostCache 0 0";
 
 menuItem
@@ -1017,6 +1009,7 @@ menuItem
 
 menuItem
 -l "Delete Cache" 
+-i "nClothCacheDelete.png" 
 -c "bifrost -edit -flushScratchCache";
 
 menuItem
@@ -1039,11 +1032,12 @@ menuItem
 -l "Stop Processing" 
 -c "bifrost -edit -stopProcessing;" 
 -rp "N" 
--i "kAlertStopIcon.png";
+-i "rvIPRStop.png";
 
 menuItem
 -l "Bifrost Options" 
 -c "performBifrostOptionsChange" 
+-i "out_bifrostAttrNotifier.png" 
 -rp "S";
 
 menuItem
@@ -1130,6 +1124,7 @@ menuItem
 
 menuItem
 -l "Create Cache" 
+-i "nClothCacheCreate.png" 
 -c "performCreateBifrostCache 0 0";
 
 menuItem
@@ -1138,6 +1133,7 @@ menuItem
 
 menuItem
 -l "Delete Cache" 
+-i "nClothCacheDelete.png" 
 -c "bifrost -edit -flushScratchCache";
 
 menuItem
@@ -1145,6 +1141,7 @@ menuItem
 
 menuItem
 -l "Set Liquid Initial State" 
+-i "fluidInitialStateSet.png" 
 -c "doSetBifrostInitialState 1 { \"\", \"0\" }" ;
 
 menuItem
@@ -1153,6 +1150,7 @@ menuItem
 
 menuItem
 -l "Clear Liquid Initial State" 
+-i "fluidInitialStateClear.png"
 -c "ClearBifrostInitialState";
 
 menuItem
@@ -8984,6 +8982,7 @@ int $bifrostHUDCheck = `optionVar -q bifrostHUDVisibility`;
 menuItem
 -l "Add to Simulation" 
 -sm 1
+-i "addClip.png" 
 -rp "E";
 
 menuItem
@@ -9015,6 +9014,7 @@ setParent -m ..;
 
 menuItem
 -l "Remove from Simulation" 
+-i "deleteClip.png" 
 -sm 1
 -rp "W";
 
@@ -9044,15 +9044,17 @@ menuItem
 -l "Stop Processing" 
 -c "bifrost -edit -stopProcessing;" 
 -rp "N" 
--i "kAlertStopIcon.png";
+-i "rvIPRStop.png";
 
 menuItem
 -l "Bifrost Options" 
 -c "performBifrostOptionsChange" 
+-i "out_bifrostAttrNotifier.png" 
 -rp "S";
 
 menuItem
 -l "Create Cache" 
+-i "nClothCacheCreate.png" 
 -c "performCreateBifrostCache 0 0";
 
 menuItem
@@ -9061,6 +9063,7 @@ menuItem
 
 menuItem
 -l "Delete Cache" 
+-i "nClothCacheDelete.png" 
 -c "bifrost -edit -flushScratchCache";
 
 menuItem
