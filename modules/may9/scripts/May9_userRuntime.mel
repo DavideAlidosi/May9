@@ -2,6 +2,20 @@
 global proc May9_runTimeCommands(){
 
 runTimeCommand
+	-ann "Enable MMtoKey"
+	-cat "Custom Scripts.May9_Next.System"
+	-cl "python"
+	-c ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
+	da_MMtoKey_press;
+
+runTimeCommand
+	-ann "Disable MMtoKey"
+	-cat "Custom Scripts.May9_Next.System"
+	-cl "python"
+	-c ("May9_Next.releaseSelected()")
+	da_MMtoKey_release;
+
+runTimeCommand
 	-ann "Toggle Emitter Manipulators"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("if (`currentCtx` == \"ShowManips\"){\n    buildSelectMM;MarkingMenuPopDown;\n} else {\n    ShowManipulators;\n}")
@@ -202,21 +216,6 @@ runTimeCommand
 	-cl "python"
 	-c ("from maya.plugin.evaluator.CacheUiHud import CachePreferenceHud; CachePreferenceHud().set_value( not 1 )")
 	da_NoEvalCacheHUD;
-}
-
-runTimeCommand
-	-ann "Enable MMtoKey"
-	-cat "Custom Scripts.May9_Next.System"
-	-cl "python"
-	-c ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
-	da_MMtoKey_press;
-
-runTimeCommand
-	-ann "Disable MMtoKey"
-	-cat "Custom Scripts.May9_Next.System"
-	-cl "python"
-	-c ("May9_Next.releaseSelected()")
-	da_MMtoKey_release;
 
 runTimeCommand
 	-ann "Connect Transform Attributes"

@@ -3158,102 +3158,6 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Dynamics"
--sm 1
--i "out_nucleus.png";
-
-menuItem
--l "Emit nParticle"
--c "NEmitFromObjectOptions"
--i "emitter.png";
-
-menuItem
--l "Particle Style"
--sm 1
--i "out_particle.png";
-
-menuItem
--l "Points"
--c "optionVar -stringValue NParticleStyle \"Points\";"
--i "nPartPoints.png";
-
-menuItem
--l "Balls"
--c "optionVar -stringValue NParticleStyle \"Balls\";"
--i "nPartBalls.png";
-
-menuItem
--l "Cloud"
--c "optionVar -stringValue NParticleStyle \"Cloud\";"
--i "nPartCloud.png";
-
-menuItem
--l "ThickCloud"
--c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
--i "nPartThickCloud.png";
-
-menuItem
--l "Water"
--c "optionVar -stringValue NParticleStyle \"Water\";"
--i "nPartWater.png";
-
-setParent -m ..;
-
-menuItem
--l "Add Fields"
--sm 1
--i "posRadial.png";
-
-menuItem
--l "Air"
--c "dynExecuteFieldCommands 1 \"air\""
--i "posAir.png";
-
-menuItem
--l "Drag"
--c "dynExecuteFieldCommands 1 \"drag\""
--i "posDrag.png";
-
-menuItem
--l "Gravity"
--c "dynExecuteFieldCommands 1 \"gravity\""
--i "posGravity.png";
-
-menuItem
--l "Newton"
--c "dynExecuteFieldCommands 1 \"newton\""
--i "posNewton.png";
-
-menuItem
--l "Radial"
--c "dynExecuteFieldCommands 1 \"radial\""
--i "posRadial.png";
-
-menuItem
--l "Turbulence"
--c "dynExecuteFieldCommands 1 \"turbulence\""
--i "posTurbulence.png";
-
-menuItem
--l "Uniform"
--c "dynExecuteFieldCommands 1 \"uniform\""
--i "posUniform.png";
-
-menuItem
--l "Vortex"
--c "dynExecuteFieldCommands 1 \"vortex\""
--i "posVortex.png";
-
-menuItem
--l "Volume Axis"
--c "dynExecuteFieldCommands 1 \"volumeAxis\""
--i "posVolumeAxis.png";
-
-setParent -m ..;
-
-setParent -m ..;
-
-menuItem
 -l "nConstraint"
 -sm 1
 -i "menuIconConstraints.png";
@@ -3704,99 +3608,6 @@ menuItem
 -l "Create Hair"
 -c "CreateHairOptions"
 -i "hairCreate.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Emit nParticle"
--c "NEmitFromObjectOptions"
--i "emitter.png";
-
-menuItem
--l "Particle Style"
--sm 1
--i "out_particle.png";
-
-menuItem
--l "Points"
--c "optionVar -stringValue NParticleStyle \"Points\";"
--rp "N"
--i "nPartPoints.png";
-
-menuItem
--l "Balls"
--c "optionVar -stringValue NParticleStyle \"Balls\";"
--i "nPartBalls.png";
-
-menuItem
--l "Cloud"
--c "optionVar -stringValue NParticleStyle \"Cloud\";"
--i "nPartCloud.png";
-
-menuItem
--l "ThickCloud"
--c "optionVar -stringValue NParticleStyle \"ThickCloud\";"
--i "nPartThickCloud.png";
-
-menuItem
--l "Water"
--c "optionVar -stringValue NParticleStyle \"Water\";"
--i "nPartWater.png";
-
-setParent -m ..;
-
-menuItem
--l "Add Fields"
--sm 1
--i "posRadial.png";
-
-menuItem
--l "Air"
--c "dynExecuteFieldCommands 1 \"air\""
--i "posAir.png";
-
-menuItem
--l "Drag"
--c "dynExecuteFieldCommands 1 \"drag\""
--i "posDrag.png";
-
-menuItem
--l "Gravity"
--c "dynExecuteFieldCommands 1 \"gravity\""
--i "posGravity.png";
-
-menuItem
--l "Newton"
--c "dynExecuteFieldCommands 1 \"newton\""
--i "posNewton.png";
-
-menuItem
--l "Radial"
--c "dynExecuteFieldCommands 1 \"radial\""
--i "posRadial.png";
-
-menuItem
--l "Turbulence"
--c "dynExecuteFieldCommands 1 \"turbulence\""
--i "posTurbulence.png";
-
-menuItem
--l "Uniform"
--c "dynExecuteFieldCommands 1 \"uniform\""
--i "posUniform.png";
-
-menuItem
--l "Vortex"
--c "dynExecuteFieldCommands 1 \"vortex\""
--i "posVortex.png";
-
-menuItem
--l "Volume Axis"
--c "dynExecuteFieldCommands 1 \"volumeAxis\""
--i "posVolumeAxis.png";
-
-setParent -m ..;
 
 setParent -m ..;
 
@@ -8433,20 +8244,20 @@ setParent -m ..;
 global proc ParticleEmitter_MM_May9(){
 
 menuItem
--l "Add Compass to Direction" 
+-l "Add Compass to Directional" 
 -c "da_EmitterCompass"
 -i "volumeSphere.png" 
--rp "W";
+-rp "S";
 
 menuItem
 -l "Emitter Directional" 
--rp "NW"
+-rp "N"
 -i "out_fluidEmitter.png" 
 -c "da_EmitterDirectional";
 
 menuItem
 -l "Emitter Omni"
--rp "N" 
+-rp "NW" 
 -i "out_pointEmitter.png"
 -c "da_EmitterOmni";
 
@@ -8460,6 +8271,12 @@ menuItem
 -l "Volume As Direc" 
 -rp "NE"
 -c "da_EmitterVolume";
+
+menuItem
+-l "Emitter Manipulators"
+-rp "E"
+-c "da_ToggleEmitterManipulators"
+-cb (`currentCtx` == "ShowManips");
 
 setParent -m ..;
 
@@ -10180,7 +9997,7 @@ menuItem
 menuItem
 -l "Emit nParticle"
 -c "NEmitFromObjectOptions"
--i "posEmitter.png";
+-i "emitter.png";
 
 menuItem
 -l "Fill Object With Particle"
@@ -11105,7 +10922,7 @@ menuItem
 menuItem
 -l "Emit nParticle"
 -c "NEmitFromObjectOptions"
--i "posEmitter.png";
+-i "emitter.png";
 
 menuItem
 -l "Fill Object With Particle"
@@ -13484,58 +13301,6 @@ menuItem
 -l "Water"
 -c "optionVar -stringValue NParticleStyle \"Water\";"
 -i "nPartWater.png";
-
-setParent -m ..;
-
-menuItem
--l "Add Fields"
--sm 1
--i "posRadial.png";
-
-menuItem
--l "Air"
--c "dynExecuteFieldCommands 1 \"air\""
--i "posAir.png";
-
-menuItem
--l "Drag"
--c "dynExecuteFieldCommands 1 \"drag\""
--i "posDrag.png";
-
-menuItem
--l "Gravity"
--c "dynExecuteFieldCommands 1 \"gravity\""
--i "posGravity.png";
-
-menuItem
--l "Newton"
--c "dynExecuteFieldCommands 1 \"newton\""
--i "posNewton.png";
-
-menuItem
--l "Radial"
--c "dynExecuteFieldCommands 1 \"radial\""
--i "posRadial.png";
-
-menuItem
--l "Turbulence"
--c "dynExecuteFieldCommands 1 \"turbulence\""
--i "posTurbulence.png";
-
-menuItem
--l "Uniform"
--c "dynExecuteFieldCommands 1 \"uniform\""
--i "posUniform.png";
-
-menuItem
--l "Vortex"
--c "dynExecuteFieldCommands 1 \"vortex\""
--i "posVortex.png";
-
-menuItem
--l "Volume Axis"
--c "dynExecuteFieldCommands 1 \"volumeAxis\""
--i "posVolumeAxis.png";
 
 setParent -m ..;
 
