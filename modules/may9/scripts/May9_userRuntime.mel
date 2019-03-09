@@ -216,6 +216,7 @@ runTimeCommand
 	-cl "python"
 	-c ("from maya.plugin.evaluator.CacheUiHud import CachePreferenceHud; CachePreferenceHud().set_value( not 1 )")
 	da_NoEvalCacheHUD;
+}
 
 runTimeCommand
 	-ann "Connect Transform Attributes"
@@ -2475,6 +2476,12 @@ runTimeCommand
 global proc May9_runTimeCommandsRemover(){
 
 catchQuiet (`runTimeCommand -e -del
+	da_MMtoKey_press`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ToggleEmitterManipulators`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -2572,12 +2579,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_NoEvalCacheHUD`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_press`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_ConnectTransformUI`);
