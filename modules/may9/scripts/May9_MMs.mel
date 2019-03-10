@@ -8248,6 +8248,8 @@ setParent -m ..;
 // Define ParticleEmitter marking menu
 global proc ParticleEmitter_MM_May9(){
 
+int $particleCountCheck = `optionVar -q particleCountVisibility`;
+
 menuItem
 -l "Add Compass to Directional" 
 -c "da_EmitterCompass"
@@ -8284,6 +8286,11 @@ menuItem
 -cb (`currentCtx` == "ShowManips");
 
 setParent -m ..;
+
+menuItem
+-l "HUD Info" 
+-c "ToggleParticleCount" 
+-cb (1 == $particleCountCheck);
 
 } 
 // Define ParticlePoints marking menu
