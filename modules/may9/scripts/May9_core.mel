@@ -52,7 +52,7 @@ global proc da_MouseOver_MM_May9(){
 	    deleteUI da_SelectOverCleaner;
 	}
 
-	popupMenu -ctl 1 -b 2 -mm 1 -p viewPanes -pmc (
+	popupMenu -ctl 1 -sh 1 -alt 1 -b 2 -mm 1 -p viewPanes -pmc (
 	    "string $myComponentOver[] = `ls -preSelectHilite`;" +
 	    "if ( `popupMenu -e -ex da_SelectOverCleaner` ){" +
 	        "popupMenu -e -dai da_SelectOverCleaner;" + " setParent -m da_SelectOverCleaner;" +
