@@ -662,7 +662,7 @@ menuItem
 
 menuItem -bld 1 
 -l "Delete Static Channels" 
--c "DeleteStaticChannels" 
+-c "delete -staticChannels -unitlessAnimationCurves false -hierarchy none -controlPoints 0 -shape 1" 
 -i "deleteGeneric.png";
 
 menuItem -bld 1 
@@ -773,11 +773,6 @@ menuItem -bld 1
 -l "Optimize Scene Size" 
 -c "OptimizeSceneOptions"
 -i "sequenceCompress.png";
-
-menuItem -bld 1 
--l "Namespace Editor"
--c "NamespaceEditor"
--i "QR_rename.png";
 
 menuItem 
 -d 1;
@@ -4176,13 +4171,9 @@ menuItem
 
 menuItem
 -l "Delete Static Channels" 
--c "DeleteStaticChannels" 
+-c "delete -staticChannels -unitlessAnimationCurves false -hierarchy none -controlPoints 0 -shape 1" 
 -rp "S" 
 -i "deleteGeneric.png";
-
-menuItem
--c "DeleteStaticChannelsOptions" 
--ob 1;
 
 menuItem
 -l "Round Keyframes"
@@ -10522,7 +10513,7 @@ menuItem
 
 menuItem
 -l "Mirror"
--c "MirrorPolygonGeometryOptions"
+-c "MirrorPolygonGeometry"
 -i "polyMirrorGeometry.png";
 
 menuItem
@@ -10690,9 +10681,7 @@ menuItem
 -i "textureDeformer.png";
 
 menuItem
--l "nCloth as Deformer"
--sm 1
--i "nCloth.svg";
+-d 1;
 
 menuItem
 -l "Create nCloth as Deformer"
@@ -10703,8 +10692,6 @@ menuItem
 -l "Paint nCloth Input Attract"
 -c "setNClothMapType(\"inputAttract\",\"\",1); artAttrNClothToolScript 3 inputAttract"
 -i "nClothPaintPerVertex.png";
-
-setParent -m ..;
 
 setParent -m ..;
 
