@@ -4,7 +4,7 @@ global proc aiAreaLight_MM_May9(){
 int $lightCheck = `renderManip -q -st`;
 
 menuItem
--l "Light Linking" 
+-l "Light Linking..." 
 -c "LightCentricLightLinkingEditor;" 
 -rp "W" 
 -i "out_defaultLightList.png";
@@ -21,19 +21,11 @@ menuItem
 -rp "S" 
 -i "singlePerspLayout.png";
 
-if (`about -api` >= 20180000){
 menuItem
--l "Light Editor" 
+-l "Light Editor..." 
 -c "da_LightList" 
 -rp "NW" 
 -i "light_manager.png";
-}else{
-menuItem
--l "Light Editor" 
--c "da_LightList" 
--rp "NW" 
--i "lightEditor.png";
-}
 
 menuItem
 -l "Edit Light" 
@@ -210,18 +202,18 @@ menuItem
 
 if (`about -api` >= 20180000){
 menuItem -bld 1 
--l "Import AI Curves"
+-l "Import AI Curves..."
 -c "CreateIllustratorCurves"
 -i "aiObject.png";
 }else{
 menuItem -bld 1 
--l "Import AI Curves"
+-l "Import AI Curves..."
 -c "CreateIllustratorCurves"
 -i "ai.png";
 }
 
 menuItem -bld 1 
--l "Curves Based Text"
+-l "Curves Based Text..."
 -c "CreateTextOptions"
 -i "text.png";
 
@@ -258,40 +250,40 @@ menuItem -bld 1
 -i "ResolutionGate.png";
 
 menuItem -bld 1 
--l "Playblast"
+-l "Playblast..."
 -c "PlayblastOptions"
 -rp "SE"
 -i "playblast.png";
 
 menuItem -bld 1 
--l "Export StandIn"
+-l "Export StandIn..."
 -c "da_doExportStandIn"
 -rp "N" 
 -i "ExportStandinShelf.png";
 
 menuItem -bld 1 
--l "Import StandIn"
+-l "Import StandIn..."
 -c "da_CreateStandInFile"
 -rp "NE" 
 -i "StandinShelf.png";
 
 menuItem -bld 1 
--l "Render Settings"
+-l "Render Settings..."
 -c "unifiedRenderGlobalsWindow"
 -i "rvRenderGlobals.png";
 
 menuItem -bld 1 
--l "Camera Bookmark"
+-l "Camera Bookmark..."
 -c "da_CameraBookmark"
 -i "Bookmark.png";
 
 menuItem -bld 1 
--l "File Path Editor"
+-l "File Path Editor..."
 -c "FilePathEditor;"
 -i "folder-open.png";
 
 menuItem -bld 1 
--l "Transfer Maps"
+-l "Transfer Maps..."
 -c "performSurfaceSampling 1"
 -i "UseDefaultMaterial.png";
 
@@ -312,25 +304,25 @@ menuItem -bld 1
 -i "kinJoint.png";
 
 menuItem -bld 1 
--l "Parent Constraint"
+-l "Parent Constraint..."
 -c "ParentConstraintOptions"
 -rp "S"
 -i "parentConstraint.png";
 
 menuItem -bld 1 
--l "Orient Constraint"
+-l "Orient Constraint..."
 -c "OrientConstraintOptions"
 -rp "E"
 -i "orientConstraint.png";
 
 menuItem -bld 1 
--l "Aim Constraint"
+-l "Aim Constraint..."
 -c "AimConstraintOptions"
 -rp "N"
 -i "aimConstraint.png";
 
 menuItem -bld 1 
--l "Point Constraint"
+-l "Point Constraint..."
 -c "PointConstraintOptions"
 -rp "SE"
 -i "posConstraint.png";
@@ -348,17 +340,17 @@ menuItem -bld 1
 -i "kinSplineHandle.png";
 
 menuItem -bld 1 
--l "Connection Editor"
+-l "Connection Editor..."
 -c "ConnectionEditor"
 -i "out_list.png";
 
 menuItem -bld 1 
--l "Expression Editor"
+-l "Expression Editor..."
 -c "ExpressionEditor"
 -i "out_expression.png";
 
 menuItem -bld 1 
--l "Channel Control"
+-l "Channel Control..."
 -c "ChannelControlEditor"
 -i "channelBox.png";
 
@@ -403,17 +395,17 @@ menuItem -bld 1
 -i "HIKcreateControlRig.png";
 
 menuItem -bld 1 
--l "Create Character"
+-l "Create Character..."
 -c "CreateCharacterOptions"
 -i "HIKCharacterToolFullBody.png";
 
 menuItem -bld 1 
--l "Create Subcharacter"
+-l "Create Subcharacter..."
 -c "CreateSubCharacterOptions"
 -i "HIKCharacterToolBodyPart.png";
 
 menuItem -bld 1 
--l "Edit Character"
+-l "Edit Character..."
 -c "characterEditor( true )"
 -i "HIKcreateControlRig.png";
 
@@ -425,17 +417,17 @@ menuItem -bld 1
 -i "attributes.png";
 
 menuItem -bld 1 
--l "Add"
+-l "Add..."
 -c "AddAttribute"
 -i "publishAttributes.png";
 
 menuItem -bld 1 
--l "Edit"
+-l "Edit..."
 -c "RenameAttribute"
 -i "setEdEditMode.png";
 
 menuItem -bld 1 
--l "Delete"
+-l "Delete..."
 -c "DeleteAttribute"
 -i "unpublishAttributes.png";
 
@@ -505,20 +497,13 @@ menuItem -bld 1
 -rp "N"
 -i "LightPortalShelf.png";
 
-if (`about -api` >= 20180000){
 menuItem -bld 1 
--l "Light Editor"
+-l "Light Editor..."
 -c "da_LightList"
 -i "light_manager.png";
-}else{
-menuItem -bld 1 
--l "Light Editor"
--c "da_LightList"
--i "lightEditor.png";
-}
 
 menuItem -bld 1 
--l "Light Linking"
+-l "Light Linking..."
 -c "LightCentricLightLinkingEditor"
 -i "out_defaultLightList.png";
 
@@ -580,12 +565,12 @@ menuItem -bld 1
 }
 
 menuItem -bld 1 
--l "Constuct Plane"
+-l "Constuct Plane..."
 -c "CreateConstructionPlaneOptions" 
 -i "sketchPlane.png";
 
 menuItem -bld 1 
--l "Annotation"
+-l "Annotation..."
 -c "CreateAnnotateNode"
 -i "annotation.png";
 
@@ -593,7 +578,7 @@ menuItem
 -d 1;
 
 menuItem -bld 1 
--l "Paint Effects"
+-l "Paint Effects..."
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -i "userPaint.png";
 
@@ -618,7 +603,7 @@ menuItem -bld 1
 -i "keyIntoclip.png";
 
 menuItem -bld 1 
--l "Flow Path Object"
+-l "Flow Path Object..."
 -c "FlowPathObjectOptions"
 -rp "S"
 -i "flowPathObj.png";
@@ -630,7 +615,7 @@ menuItem -bld 1
 -i "motionPathKey.png";
 
 menuItem -bld 1 
--l "Attach to Motion Path"
+-l "Attach to Motion Path..."
 -c "AttachToPathOptions"
 -rp "SW"
 -i "motionPath.png";
@@ -666,22 +651,22 @@ menuItem -bld 1
 -i "deleteGeneric.png";
 
 menuItem -bld 1 
--l "Editable Motion Trail"
+-l "Editable Motion Trail..."
 -c "CreateMotionTrailOptions"
 -i "motionTrail.png";
 
 menuItem -bld 1 
--l "Grease Pencil Tool"
+-l "Grease Pencil Tool..."
 -c "GreasePencilTool"
 -i "GreasePencil.png";
 
 menuItem -bld 1 
--l "Set Driven Key"
+-l "Set Driven Key..."
 -c "SetDrivenKeyOptions"
 -i "setDrivenKeyframe.png";
 
 menuItem -bld 1 
--l "MASH Editor"
+-l "MASH Editor..."
 -c "MASHOutliner"
 -i "MASH_Editor.png";
 
@@ -760,17 +745,17 @@ menuItem -bld 1
 -i "distanceDim.png";
 
 menuItem -bld 1 
--l "Content Browser"
+-l "Content Browser..."
 -c "ContentBrowserWindow"
 -i "folder-open.png";
 
 menuItem -bld 1 
--l "Import GPU Cache"
+-l "Import GPU Cache..."
 -c "doGpuCacheImportArgList 1 {\"0\",\"0\"}"
 -i "greasePencilImport.png";
 
 menuItem -bld 1 
--l "Optimize Scene Size" 
+-l "Optimize Scene Size..." 
 -c "OptimizeSceneOptions"
 -i "sequenceCompress.png";
 
@@ -866,17 +851,17 @@ menuItem -bld 1
 -i "out_buttonManip.png";
 
 menuItem -bld 1 
--l "Duplicate Special"
+-l "Duplicate Special..."
 -c "DuplicateSpecialOptions" 
 -i "da_duplicate.png";
 
 menuItem -bld 1 
--l "Mirror Duplicate"
+-l "Mirror Duplicate..."
 -c "da_TransformMirrorSelector"
 -i "polyMirrorGeometry.png";
 
 menuItem -bld 1 
--l "Connect Transform"
+-l "Connect Transform..."
 -c "da_ConnectTransformUI"
 -i "da_OneToMany.png";
 
@@ -993,7 +978,7 @@ menuItem
 -i "rvIPRStop.png";
 
 menuItem
--l "Bifrost Options" 
+-l "Bifrost Options..." 
 -c "performBifrostOptionsChange" 
 -i "out_bifrostAttrNotifier.png" 
 -rp "S";
@@ -1035,7 +1020,7 @@ menuItem
 -i "rvIPRStop.png";
 
 menuItem
--l "Bifrost Options" 
+-l "Bifrost Options..." 
 -c "performBifrostOptionsChange" 
 -i "out_bifrostAttrNotifier.png" 
 -rp "S";
@@ -1168,7 +1153,7 @@ setParent -m ..;
 global proc Board_MM_May9(){
 
 menuItem
--l "Compound Editor" 
+-l "Compound Editor..." 
 -c "openBifrostCompoundEditor" 
 -rp "N" 
 -i "out_bifrostCompound.png";
@@ -1252,13 +1237,13 @@ menuItem
 -i "setEdit.png";
 
 menuItem
--l "Deformer Set Editor" 
+-l "Deformer Set Editor..." 
 -c "DeformerSetEditor" 
 -rp "E" 
 -i "da_deformerSetEditor.png";
 
 menuItem
--l "Set Membership" 
+-l "Set Membership..." 
 -c "PaintSetMembershipToolOptions" 
 -rp "SE" 
 -i "paintSetMembership.png";
@@ -1270,7 +1255,7 @@ setParent -m ..;
 global proc CMuscle_MM_May9(){
 
 menuItem
--l "Joint Orientation" 
+-l "Joint Orientation..." 
 -c "OrientJointOptions" 
 -rp "N" 
 -i "orientJoint.png";
@@ -1318,7 +1303,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Bind Skin" 
+-l "Bind Skin..." 
 -c "SmoothBindSkinOptions" 
 -rp "E" 
 -i "smoothSkin.png";
@@ -1430,7 +1415,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Bind Skin" 
+-l "Bind Skin..." 
 -c "SmoothBindSkinOptions" 
 -i "smoothSkin.png";
 
@@ -1440,7 +1425,7 @@ menuItem
 -i "detachSkin.png";
 
 menuItem
--l "Rigid Bind" 
+-l "Rigid Bind..." 
 -c "RigidBindSkinOptions" 
 -i "rigidBind.png";
 
@@ -1575,7 +1560,7 @@ menuItem
 -i "expandContainer.png";
 
 menuItem
--l "Asset Editor" 
+-l "Asset Editor..." 
 -c "AssetEditor" 
 -rp "E" 
 -i "out_container.png";
@@ -1702,7 +1687,7 @@ menuItem
 -i "da_combineCurves.png";
 
 menuItem
--l "Rebuild"
+-l "Rebuild..."
 -c "RebuildCurveOptions"
 -i "rebuildCurve.png";
 
@@ -1911,7 +1896,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Emit nParticle From CV"
+-l "Emit nParticle From CV..."
 -c "NEmitFromObjectOptions"
 -i "emitter.png";
 
@@ -1949,7 +1934,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Create nSoft Body"
+-l "Create nSoft Body..."
 -c "CreateNSoftBodyOptions"
 -i "soft.png";
 
@@ -2098,7 +2083,7 @@ menuItem
 -i "out_nucleus.png";
 
 menuItem
--l "Emit nParticle From CV" 
+-l "Emit nParticle From CV..." 
 -c "NEmitFromObjectOptions" 
 -i "emitter.png";
 
@@ -2281,7 +2266,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Rebuild" 
+-l "Rebuild..." 
 -c "RebuildCurveOptions" 
 -rp "N" 
 -i "rebuildCurve.png";
@@ -2336,7 +2321,7 @@ menuItem
 -i "out_nucleus.png";
 
 menuItem
--l "Emit nParticle From CV" 
+-l "Emit nParticle From CV..." 
 -c "NEmitFromObjectOptions" 
 -i "emitter.png";
 
@@ -2466,7 +2451,7 @@ menuItem
 
 
 menuItem
--l "Rebuild"
+-l "Rebuild..."
 -c "RebuildCurveOptions"
 -i "rebuildCurve.png";
 
@@ -2668,7 +2653,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Emit nParticle From CV"
+-l "Emit nParticle From CV..."
 -c "NEmitFromObjectOptions"
 -i "emitter.png";
 
@@ -2705,7 +2690,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Create nSoft Body"
+-l "Create nSoft Body..."
 -c "CreateNSoftBodyOptions"
 -i "soft.png";
 
@@ -2795,13 +2780,13 @@ menuItem
 -i "setEdit.png";
 
 menuItem
--l "Deformer Set Editor" 
+-l "Deformer Set Editor..." 
 -c "DeformerSetEditor" 
 -rp "NW" 
 -i "da_deformerSetEditor.png";
 
 menuItem
--l "Set Membership" 
+-l "Set Membership..." 
 -c "PaintSetMembershipToolOptions" 
 -rp "NE" 
 -i "paintSetMembership.png";
@@ -2932,7 +2917,7 @@ setParent -m ..;
 global proc EdgeVertices_MM_May9(){
 
 menuItem
--l "Crease Set Editor" 
+-l "Crease Set Editor..." 
 -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
 -rp "N" 
 -i "polyCrease.png";
@@ -3269,7 +3254,7 @@ menuItem
 
 if (`about -api` >= 20180000){
 menuItem
--l "Contiguous"
+-l "Contiguous..."
 -c "SelectContiguousEdgesOptions"
 -i "polySplitEdgeRing.png";
 }
@@ -3605,7 +3590,7 @@ menuItem
 -i "out_follicle.png";
 
 menuItem
--l "Create Hair"
+-l "Create Hair..."
 -c "CreateHairOptions"
 -i "hairCreate.png";
 
@@ -3800,7 +3785,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Emit from Object" 
+-l "Emit from Object..." 
 -c "EmitFluidFromObjectOptions" 
 -rp "S" 
 -i "fluidObjectEmit.png" ;
@@ -3937,7 +3922,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create Cache"
+-l "Create Cache..."
 -c "CreateFluidCacheOptions"
 -i "fluidCacheCreate.png";
 
@@ -4183,8 +4168,8 @@ menuItem
 
 if (`about -api` < 20190000){
 menuItem
--l "Simplify Curves" 
--c "performSimplify 3 graphEditor1GraphEd" 
+-l "Simplify Curves..." 
+-c "performSimplify 4 graphEditor1GraphEd" 
 -rp "SW"
 -i "da_simplifyCurve.png";
 }
@@ -4228,12 +4213,12 @@ menuItem
 
 if (`about -api` >= 20190000){
 menuItem
--l "Butterworth Filter" 
+-l "Butterworth Filter..." 
 -c "performButterworth 4 graphEditor1GraphEd" 
 -i "da_smoothCurve.png";
 
 menuItem
--l "Key Reducer Filter" 
+-l "Key Reducer Filter..." 
 -c "performKeyReducer 4 graphEditor1GraphEd" 
 -i "da_simplifyCurve.png";
 
@@ -4253,10 +4238,6 @@ menuItem
 
 menuItem
 -d 1;
-
-menuItem
--c "performSimplify 4 graphEditor1GraphEd;" 
--ob 1;
 
 menuItem
 -l "Select Curve" 
@@ -4297,14 +4278,10 @@ menuItem
 -i "hairScaleTool.png";
 
 menuItem
--l "Paint Hair Follicle" 
--c "paintHairTool 0;" 
+-l "Paint Hair Follicle..." 
+-c "paintHairTool 1;" 
 -rp "W" 
 -i "hairPaint.png" ;
-
-menuItem
--c "paintHairTool 1;" 
--ob 1;
 
 menuItem
 -l "Set Start Position" 
@@ -4520,12 +4497,12 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Connection Editor"
+-l "Connection Editor..."
 -c "ConnectionEditor"
 -i "out_list.png";
 
 menuItem
--l "Expression Editor" 
+-l "Expression Editor..." 
 -c "ExpressionEditor" 
 -i "out_expression.png";
 
@@ -4635,7 +4612,7 @@ menuItem
 -i "showBatchRender.png";
 
 menuItem
--l "Asset Editor" 
+-l "Asset Editor..." 
 -c "AssetEditor" 
 -rp "E" 
 -i "out_container.png";
@@ -4715,7 +4692,7 @@ menuItem
 -i "greasePencilExport.png";
 
 menuItem
--l "Texture Link" 
+-l "Texture Link..." 
 -c "TextureCentricUVLinkingEditor" 
 -i "textureEditor.png";
 
@@ -4725,12 +4702,12 @@ menuItem
 -i "TXManagerShelf.png";
 
 menuItem
--l "Connection Editor"
+-l "Connection Editor..."
 -c "ConnectionEditor"
 -i "out_list.png";
 
 menuItem
--l "Expression Editor" 
+-l "Expression Editor..." 
 -c "ExpressionEditor" 
 -i "out_expression.png";
 
@@ -4825,13 +4802,13 @@ setParent -m ..;
 global proc JointPoly_MM_May9(){
 
 menuItem
--l "Bind Skin" 
+-l "Bind Skin..." 
 -c "SmoothBindSkinOptions" 
 -rp "N" 
 -i "smoothSkin.png";
 
 menuItem
--l "Rigid Bind" 
+-l "Rigid Bind..." 
 -c "RigidBindSkinOptions" 
 -rp "SW" 
 -i "rigidBind.png";
@@ -4877,7 +4854,7 @@ menuItem
 -i "removeWrapInfluence.png";
 
 menuItem
--l "Paint Skin Weights"
+-l "Paint Skin Weights..."
 -c "da_OpenPaintSkinTool"
 -i "paintSkinWeights.png";
 
@@ -4888,7 +4865,7 @@ setParent -m ..;
 global proc Joint_MM_May9(){
 
 menuItem
--l "Joint Orientation" 
+-l "Joint Orientation..." 
 -c "OrientJointOptions" 
 -rp "N" 
 -i "orientJoint.png";
@@ -5049,7 +5026,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Deformer Set Editor" 
+-l "Deformer Set Editor..." 
 -c "DeformerSetEditor" 
 -rp "NW" 
 -i "da_deformerSetEditor.png";
@@ -5061,7 +5038,7 @@ menuItem
 -i "setEdit.png";
 
 menuItem
--l "Set Membership" 
+-l "Set Membership..." 
 -c "PaintSetMembershipToolOptions" 
 -rp "SW" 
 -i "paintSetMembership.png";
@@ -5159,13 +5136,13 @@ menuItem
 -i "setEdit.png";
 
 menuItem
--l "Deformer Set Editor" 
+-l "Deformer Set Editor..." 
 -c "DeformerSetEditor" 
 -rp "NW" 
 -i "da_deformerSetEditor.png";
 
 menuItem
--l "Set Membership" 
+-l "Set Membership..." 
 -c "PaintSetMembershipToolOptions" 
 -rp "SW" 
 -i "paintSetMembership.png";
@@ -5279,7 +5256,7 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--c "BendOptions;"
+-c "Bend ;"
 -ob 1;
 
 menuItem
@@ -5346,7 +5323,7 @@ global proc Legacy_Particle_MM_May9(){
 int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
 menuItem
--l "Use as Fluid Emitter" 
+-l "Use as Fluid Emitter..." 
 -c "EmitFluidFromObjectOptions" 
 -rp "NW" 
 -i "fluidObjectEmit.png";
@@ -5403,7 +5380,7 @@ menuItem
 -i "menuIconParticles.png";
 
 menuItem
--l "Instancer" 
+-l "Instancer..." 
 -c "ParticleInstancerOptions" 
 -i "instancer.png";
 
@@ -5593,19 +5570,19 @@ setParent -m ..;
 global proc Legacy_Subdiv_MM_May9(){
 
 menuItem
--l "Sculpt" 
+-l "Sculpt..." 
 -c "SculptGeometryToolOptions" 
 -rp "N" 
 -i "Sculpt.png";
 
 menuItem
--l "Paint" 
+-l "Paint..." 
 -c "Art3dPaintToolOptions" 
 -rp "NE" 
 -i "art3dPaint.png";
 
 menuItem
--l "Paint Select" 
+-l "Paint Select..." 
 -c "ArtPaintSelectToolOptions" 
 -rp "NW" 
 -i "artPaintSelect.png";
@@ -5679,7 +5656,7 @@ global proc Light_MM_May9(){
 int $lightCheck = `renderManip -q -st`;
 
 menuItem
--l "Light Linking" 
+-l "Light Linking..." 
 -c "LightCentricLightLinkingEditor;" 
 -rp "W" 
 -i "out_defaultLightList.png";
@@ -5702,19 +5679,11 @@ menuItem
 -rp "S" 
 -i "singlePerspLayout.png";
 
-if (`about -api` >= 20180000){
 menuItem
--l "Light Editor" 
+-l "Light Editor..." 
 -c "da_LightList" 
 -rp "NW" 
 -i "light_manager.png";
-}else{
-menuItem
--l "Light Editor" 
--c "da_LightList" 
--rp "NW" 
--i "lightEditor.png";
-}
 
 menuItem
 -l "Edit Light" 
@@ -5809,7 +5778,7 @@ setParent -m ..;
 global proc MASH_Bullet_MM_May9(){
 
 menuItem
--l "MASH Editor" 
+-l "MASH Editor..." 
 -c "MASHOutliner;" 
 -rp "N" 
 -i "MASH_Editor.png";
@@ -5857,7 +5826,7 @@ setParent -m ..;
 global proc MASH_MM_May9(){
 
 menuItem
--l "MASH Editor" 
+-l "MASH Editor..." 
 -c "MASHOutliner;" 
 -rp "N" 
 -i "MASH_Editor.png";
@@ -6122,13 +6091,13 @@ setParent -m ..;
 global proc MeshLight_MM_May9(){
 
 menuItem
--l "Light Editor" 
+-l "Light Editor..." 
 -c "da_LightList" 
 -rp "NW" 
 -i "light_manager.png";
 
 menuItem
--l "Light Linking" 
+-l "Light Linking..." 
 -c "LightCentricLightLinkingEditor;" 
 -rp "W" 
 -i "out_defaultLightList.png";
@@ -6635,12 +6604,12 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Connection Editor"
+-l "Connection Editor..."
 -c "ConnectionEditor"
 -i "out_list.png";
 
 menuItem
--l "Expression Editor" 
+-l "Expression Editor..." 
 -c "ExpressionEditor" 
 -i "out_expression.png";
 
@@ -7318,7 +7287,7 @@ menuItem
 -i "out_nucleus.png";
 
 menuItem
--l "Emit Particle From CV" 
+-l "Emit Particle From CV..." 
 -c "NEmitFromObjectOptions" 
 -i "emitter.png";
 
@@ -7355,12 +7324,12 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Create nSoft Body" 
+-l "Create nSoft Body..." 
 -c "CreateNSoftBodyOptions" 
 -i "soft.png";
 
 menuItem
--l "Create nHair" 
+-l "Create nHair..." 
 -c "CreateHairOptions" 
 -i "hairCreate.png";
 
@@ -7368,12 +7337,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Active Rigid Body" 
+-l "Create Active Rigid Body..." 
 -c "CreateActiveRigidBodyOptions" 
 -i "rigid.png";
 
 menuItem
--l "Create Passive Rigid Body" 
+-l "Create Passive Rigid Body..." 
 -c "CreatePassiveRigidBodyOptions" 
 -i "rigidPassive.png";
 
@@ -7757,7 +7726,7 @@ menuItem
 -i "out_nucleus.png";
 
 menuItem
--l "Emit nParticle From CV" 
+-l "Emit nParticle From CV..." 
 -c "NEmitFromObjectOptions" 
 -i "emitter.png";
 
@@ -7794,12 +7763,12 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Create nSoft Body" 
+-l "Create nSoft Body..." 
 -c "CreateNSoftBodyOptions" 
 -i "soft.png";
 
 menuItem
--l "Create nHair" 
+-l "Create nHair..." 
 -c "CreateHairOptions" 
 -i "hairCreate.png"; 
 
@@ -7807,12 +7776,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Active Rigid Body" 
+-l "Create Active Rigid Body..." 
 -c "CreateActiveRigidBodyOptions" 
 -i "rigid.png";
 
 menuItem
--l "Create Passive Rigid Body" 
+-l "Create Passive Rigid Body..." 
 -c "CreatePassiveRigidBodyOptions" 
 -i "rigidPassive.png";
 
@@ -8108,7 +8077,7 @@ menuItem
 -i "expandContainer.png";
 
 menuItem
--l "Asset Editor" 
+-l "Asset Editor..." 
 -c "AssetEditor" 
 -rp "E" 
 -i "out_container.png";
@@ -8154,7 +8123,7 @@ menuItem
 -i "toonLineModifier.png";
 
 menuItem
--l "Get Brush" 
+-l "Get Brush..." 
 -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
 -rp "NE" 
 -i "paintEffectsBrushesLarge.png";
@@ -8478,7 +8447,7 @@ menuItem
 -i "nParticleToPolygons.png" ;
 
 menuItem
--l "Use as Fluid Emitter" 
+-l "Use as Fluid Emitter..." 
 -c "EmitFluidFromObjectOptions" 
 -rp "NW" 
 -i "fluidObjectEmit.png";
@@ -8531,7 +8500,7 @@ menuItem
 -i "menuIconParticles.png";
 
 menuItem
--l "Instancer" 
+-l "Instancer..." 
 -c "ParticleInstancerOptions" 
 -i "instancer.png";
 
@@ -8758,7 +8727,7 @@ setParent -m ..;
 global proc PhotometricLight_MM_May9(){
 
 menuItem
--l "Light Linking" 
+-l "Light Linking..." 
 -c "LightCentricLightLinkingEditor;" 
 -rp "W" 
 -i "out_defaultLightList.png";
@@ -8775,19 +8744,11 @@ menuItem
 -rp "S" 
 -i "singlePerspLayout.png";
 
-if (`about -api` >= 20180000){
 menuItem
--l "Light Editor" 
+-l "Light Editor..." 
 -c "da_LightList" 
 -rp "NW" 
 -i "light_manager.png";
-}else{
-menuItem
--l "Light Editor" 
--c "da_LightList" 
--rp "NW" 
--i "lightEditor.png";
-}
 
 menuItem
 -l "Edit Light" 
@@ -8933,7 +8894,7 @@ menuItem
 -i "rvIPRStop.png";
 
 menuItem
--l "Bifrost Options" 
+-l "Bifrost Options..." 
 -c "performBifrostOptionsChange" 
 -i "out_bifrostAttrNotifier.png" 
 -rp "S";
@@ -9441,48 +9402,48 @@ menuItem
 -i "out_brush.png";
 
 menuItem
--l "Set Membership"
+-l "Set Membership..."
 -c "PaintSetMembershipToolOptions"
 -i "paintSetMembership.png";
 
 menuItem
--l "Paint Effects"
+-l "Paint Effects..."
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -rp "SW"
 -i "paintEffectsTool.png";
 
 menuItem
--l "Paint Skin Weights"
+-l "Paint Skin Weights..."
 -c "da_OpenPaintSkinTool"
 -rp "NW"
 -i "paintSkinWeights.png";
 
 menuItem
--l "Legacy Sculpt"
+-l "Legacy Sculpt..."
 -c "SculptGeometryToolOptions"
 -rp "W"
 -i "sculptPull.png";
 
 menuItem
--l "Sculpt Geometry"
+-l "Sculpt Geometry..."
 -c "ShowMeshSculptToolOptions" 
 -rp "N"
 -i "Sculpt.png";
 
 menuItem
--l "3D Paint Tool"
+-l "3D Paint Tool..."
 -c "Art3dPaintToolOptions;\nDisplayShadedAndTextured"
 -rp "NE"
 -i "art3dPaint.png";
 
 menuItem
--l "Paint Hair Follicle"
--c "paintHairTool 0"
+-l "Paint Hair Follicle..."
+-c "paintHairTool 1"
 -rp "E"
 -i "hairPaint.png";
 
 menuItem
--l "Paint Attributes"
+-l "Paint Attributes..."
 -c "ArtPaintAttrToolOptions"
 -rp "SE"
 -i "artAttr.png";
@@ -9509,7 +9470,7 @@ menuItem
 -i "MASH_CreateNetwork.png";
 
 menuItem
--l "Create MASH Network"
+-l "Create MASH Network..."
 -c "MASHcreateOptions"
 -i "MASH_CreateNetwork.png";
 
@@ -9586,7 +9547,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Normals Size"
+-l "Normals Size..."
 -c "ChangeNormalSize"
 -i "resizeWindow.png";
 
@@ -9615,7 +9576,7 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--l "Deformer Set Editor"
+-l "Deformer Set Editor..."
 -c "DeformerSetEditor"
 -i "da_deformerSetEditor.png";
 
@@ -9726,12 +9687,12 @@ menuItem
 -i "da_membrane.png";
 
 menuItem
--l "Wrap"
+-l "Wrap..."
 -c "CreateWrapOptions;"
 -i "wrap.png";
 
 menuItem
--l "ShrinkWrap"
+-l "ShrinkWrap..."
 -c "CreateShrinkWrapOptions;"
 -i "shrinkwrap.png";
 
@@ -9773,7 +9734,7 @@ menuItem
 -i "addWrapInfluence.png";
 
 menuItem
--c "AddInfluenceOptions;"
+-c "AddInfluenceOptions"
 -ob 1;
 
 menuItem
@@ -9787,7 +9748,7 @@ menuItem
 -i "copySkinWeight.png";
 
 menuItem
--l "Copy Skin Weights"
+-l "Copy Skin Weights..."
 -c "CopySkinWeightsOptions"
 -i "copySkinWeight.png";
 
@@ -9813,7 +9774,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Substitute Geometry"
+-l "Substitute Geometry..."
 -c "SubstituteGeometryOptions"
 -i "substGeometry.png";
 
@@ -9823,7 +9784,7 @@ menuItem
 -i "out_baked.png";
 
 menuItem
--l "Unbind Skin"
+-l "Unbind Skin..."
 -c "DetachSkinOptions"
 -i "detachSkin.png";
 
@@ -9900,7 +9861,7 @@ menuItem
 -i "polyNormal.png";
 
 menuItem
--l "Set Soften Edge Angle"
+-l "Set Soften Edge Angle..."
 -c "PolygonSoftenHardenOptions"
 -i "polySoftEdge.png";
 
@@ -9993,7 +9954,7 @@ menuItem
 -i "nClothCreate.png";
 
 menuItem
--l "Create nHair"
+-l "Create nHair..."
 -c "CreateHairOptions"
 -i "hairCreate.png";
 
@@ -10003,17 +9964,17 @@ menuItem
 -i "nClothCreatePassive.png";
 
 menuItem
--l "Emit nParticle"
+-l "Emit nParticle..."
 -c "NEmitFromObjectOptions"
 -i "emitter.png";
 
 menuItem
--l "Fill Object With Particle"
+-l "Fill Object With Particle..."
 -c "ParticleFillOptions"
 -i "nPartfillObject.png";
 
 menuItem
--l "Create nSoft Body"
+-l "Create nSoft Body..."
 -c "CreateNSoftBodyOptions"
 -i "soft.png";
 
@@ -10026,12 +9987,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Active Rigid Body"
+-l "Create Active Rigid Body..."
 -c "CreateActiveRigidBodyOptions"
 -i "rigid.png";
 
 menuItem
--l "Create Passive Rigid Body"
+-l "Create Passive Rigid Body..."
 -c "CreatePassiveRigidBodyOptions"
 -i "rigidPassive.png";
 
@@ -10066,7 +10027,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Emit Fluid From Object"
+-l "Emit Fluid From Object..."
 -c "EmitFluidFromObjectOptions"
 -i "fluidObjectEmit.png";
 
@@ -10187,7 +10148,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Export to GPU Cache"
+-l "Export to GPU Cache..."
 -c "GpuCacheExportSelectionOptions"
 -i "greasePencilExport.png";
 
@@ -10209,7 +10170,7 @@ menuItem
 -i "xgIG_comb.png";
 
 menuItem
--l "Interactive Groom Editor"
+-l "Interactive Groom Editor..."
 -c "XgCreateIgSplineEditor"
 -i "xgIG_editor.png";
 
@@ -10222,7 +10183,7 @@ menuItem
 -i "xgCreateDescription.png";
 
 menuItem
--l "XGen Editor"
+-l "XGen Editor..."
 -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor"
 -i "xgDEditor.png";
 
@@ -10376,48 +10337,48 @@ menuItem
 -i "out_brush.png";
 
 menuItem
--l "Set Membership"
+-l "Set Membership..."
 -c "PaintSetMembershipToolOptions"
 -i "paintSetMembership.png";
 
 menuItem
--l "Paint Attributes"
+-l "Paint Attributes..."
 -c "ArtPaintAttrToolOptions"
 -rp "SE"
 -i "artAttr.png";
 
 menuItem
--l "Paint Hair Follicle"
--c "paintHairTool 0"
+-l "Paint Hair Follicle..."
+-c "paintHairTool 1"
 -rp "E"
 -i "hairPaint.png";
 
 menuItem
--l "Paint Skin Weights"
+-l "Paint Skin Weights..."
 -c "da_OpenPaintSkinTool"
 -rp "NW"
 -i "paintSkinWeights.png";
 
 menuItem
--l "Legacy Sculpt"
+-l "Legacy Sculpt..."
 -c "SculptGeometryToolOptions"
 -rp "W"
 -i "sculptPull.png";
 
 menuItem
--l "Paint Effects"
+-l "Paint Effects..."
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -rp "SW"
 -i "paintEffectsTool.png";
 
 menuItem
--l "Sculpt Geometry"
+-l "Sculpt Geometry..."
 -c "ShowMeshSculptToolOptions" 
 -rp "N"
 -i "Sculpt.png";
 
 menuItem
--l "3D Paint Tool"
+-l "3D Paint Tool..."
 -c "Art3dPaintToolOptions;\nDisplayShadedAndTextured"
 -rp "NE"
 -i "art3dPaint.png";
@@ -10454,7 +10415,7 @@ menuItem
 -i "out_list.png";
 
 menuItem
--l "Create MASH Network"
+-l "Create MASH Network..."
 -c "MASHcreateOptions"
 -i "MASH_CreateNetwork.png";
 
@@ -10517,7 +10478,7 @@ menuItem
 -i "polyMirrorGeometry.png";
 
 menuItem
--l "Mirror Cut"
+-l "Mirror Cut..."
 -c "da_MirrorCutSelector"
 -i "polyMirrorCut.png";
 
@@ -10555,7 +10516,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Normals Size"
+-l "Normals Size..."
 -c "ChangeNormalSize"
 -i "resizeWindow.png";
 
@@ -10584,7 +10545,7 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--l "Deformer Set Editor"
+-l "Deformer Set Editor..."
 -c "DeformerSetEditor"
 -i "da_deformerSetEditor.png";
 
@@ -10729,7 +10690,7 @@ menuItem
 -i "out_baked.png";
 
 menuItem
--l "Unbind Skin"
+-l "Unbind Skin..."
 -c "DetachSkinOptions"
 -i "detachSkin.png";
 
@@ -10814,7 +10775,7 @@ menuItem
 -i "polyNormalUnlock.png";
 
 menuItem
--l "Set Soften Edge Angle"
+-l "Set Soften Edge Angle..."
 -c "PolygonSoftenHardenOptions"
 -i "polySoftEdge.png";
 
@@ -10914,7 +10875,7 @@ menuItem
 -i "nClothCreate.png";
 
 menuItem
--l "Create nHair"
+-l "Create nHair..."
 -c "CreateHairOptions"
 -i "hairCreate.png";
 
@@ -10924,17 +10885,17 @@ menuItem
 -i "nClothCreatePassive.png";
 
 menuItem
--l "Emit nParticle"
+-l "Emit nParticle..."
 -c "NEmitFromObjectOptions"
 -i "emitter.png";
 
 menuItem
--l "Fill Object With Particle"
+-l "Fill Object With Particle..."
 -c "ParticleFillOptions"
 -i "nPartfillObject.png";
 
 menuItem
--l "Create nSoft Body"
+-l "Create nSoft Body..."
 -c "CreateNSoftBodyOptions"
 -i "soft.png";
 
@@ -10947,12 +10908,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Active Rigid Body"
+-l "Create Active Rigid Body..."
 -c "CreateActiveRigidBodyOptions"
 -i "rigid.png";
 
 menuItem
--l "Create Passive Rigid Body"
+-l "Create Passive Rigid Body..."
 -c "CreatePassiveRigidBodyOptions"
 -i "rigidPassive.png";
 
@@ -10993,7 +10954,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Emit Fluid From Object"
+-l "Emit Fluid From Object..."
 -c "EmitFluidFromObjectOptions"
 -i "fluidObjectEmit.png";
 
@@ -11071,7 +11032,7 @@ menuItem
 -i "out_bifrostShape.png";
 
 menuItem
--l "Bifrost Ocean"
+-l "Bifrost Ocean..."
 -c "da_OpenBossEditor"
 -i "fluidCreate2D.png";
 
@@ -11119,7 +11080,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Export to GPU Cache"
+-l "Export to GPU Cache..."
 -c "GpuCacheExportSelectionOptions"
 -i "greasePencilExport.png";
 
@@ -11141,7 +11102,7 @@ menuItem
 -i "xgIG_comb.png";
 
 menuItem
--l "Interactive Groom Editor"
+-l "Interactive Groom Editor..."
 -c "XgCreateIgSplineEditor"
 -i "xgIG_editor.png";
 
@@ -11154,7 +11115,7 @@ menuItem
 -i "xgCreateDescription.png";
 
 menuItem
--l "XGen Editor"
+-l "XGen Editor..."
 -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor"
 -i "xgDEditor.png";
 
@@ -11278,7 +11239,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Color Picker" 
+-l "Color Picker..." 
 -c "colorEditor" 
 -rp "S" 
 -i "render_swColorPerVertex.png";
@@ -11376,24 +11337,16 @@ setParent -m ..;
 global proc SkyDomeLight_MM_May9(){
 
 menuItem
--l "Light Linking" 
+-l "Light Linking..." 
 -c "LightCentricLightLinkingEditor;" 
 -rp "W" 
 -i "out_defaultLightList.png";
 
-if (`about -api` >= 20180000){
 menuItem
--l "Light Editor" 
+-l "Light Editor..." 
 -c "da_LightList" 
 -rp "NW" 
 -i "light_manager.png";
-}else{
-menuItem
--l "Light Editor" 
--c "da_LightList" 
--rp "NW" 
--i "lightEditor.png";
-}
 
 menuItem
 -l "Edit Light" 
@@ -11449,7 +11402,7 @@ global proc StandIn_MM_May9(){
 
 if (`about -api` >= 20180000){
 menuItem
--l "Create MASH Network" 
+-l "Create MASH Network..." 
 -c "MASHcreateOptions" 
 -rp "N" 
 -i "MASH_CreateNetwork.png";
@@ -11579,7 +11532,7 @@ menuItem -itl 1
 -i "aselect.png";
 
 menuItem -itl 1 
--l "Reset Settings" 
+-l "Reset Settings..." 
 -c "mtk_initToolOptions(1, \"connect\"); nexCtx -resetManip; dR_updateCommandPanel" 
 -i "CN_refresh.png";
 
@@ -11634,7 +11587,7 @@ menuItem -itl 1
 -rp "NE";
 
 menuItem -itl 1 
--l "Crease Set Editor" 
+-l "Crease Set Editor..." 
 -c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
 -i "polyCrease.png";
 
@@ -11818,8 +11771,8 @@ int $reflectionCheck = `artAttrCtx -q -rn $currentCtx`;
 string $reflectionDirection = `artAttrCtx -q -ra $currentCtx`;
 
 menuItem -itl 1 
--l "Paint Hair Settings" 
--c "paintHairTool 0;" 
+-l "Paint Hair Settings..." 
+-c "paintHairTool 1;" 
 -rp "N" 
 -i "hairPaint.png";
 
@@ -12020,7 +11973,7 @@ setParent -m ..;
 global proc Tool_PaintFX_MM_May9(){
 
 menuItem -itl 1 
--l "Get Brush" 
+-l "Get Brush..." 
 -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
 -rp "N" 
 -i "paintEffectsBrushesLarge.png";
@@ -12707,7 +12660,7 @@ menuItem -itl 1
 setParent -m ..;
 
 menuItem -itl 1 
--l "Groom Editor" 
+-l "Groom Editor..." 
 -c "XgCreateIgSplineEditor" 
 -i "xgIG_editor.png";
 
@@ -12812,7 +12765,7 @@ menuItem -itl 1
 -i "xgGuideContext.png";
 
 menuItem -itl 1 
--l "XGen Editor" 
+-l "XGen Editor..." 
 -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
 -i "xgDEditor.png";
 
@@ -12964,12 +12917,12 @@ menuItem
 -i "UVTk.png";
 
 menuItem
--l "UV Set Editor" 
+-l "UV Set Editor..." 
 -c "UVSetEditor" 
 -i "polyUVSetEditor.png";
 
 menuItem
--l "UV Link Editor" 
+-l "UV Link Editor..." 
 -c "UVCentricUVLinkingEditor" 
 -i "da_uvLinkEditor.png";
 
@@ -13245,7 +13198,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Paint Skin Weights"
+-l "Paint Skin Weights..."
 -c "da_OpenPaintSkinTool"
 -i "paintSkinWeights.png";
 
@@ -13272,7 +13225,7 @@ menuItem
 -i "out_nucleus.png";
 
 menuItem
--l "Emit nParticle"
+-l "Emit nParticle..."
 -c "NEmitFromObjectOptions"
 -i "emitter.png";
 
@@ -13695,7 +13648,7 @@ menuItem
 -d 1;
 
 menuItem
--l "UV Set Editor" 
+-l "UV Set Editor..." 
 -c "UVSetEditor" 
 -i "polyUVSetEditor.png";
 
@@ -13929,7 +13882,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "XGen Editor" 
+-l "XGen Editor..." 
 -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
 -i "xgDEditor.png";
 
@@ -13983,7 +13936,7 @@ menuItem
 -i "xgSelectionToggle.png";
 
 menuItem
--l "XGen Editor" 
+-l "XGen Editor..." 
 -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
 -i "xgDEditor.png";
 
@@ -14020,7 +13973,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "XGen Editor" 
+-l "XGen Editor..." 
 -c "if (!`pluginInfo -q -loaded xgenToolkit`) loadPlugin xgenToolkit.mll;XgCreateDescriptionEditor" 
 -i "xgDEditor.png";
 
@@ -14091,7 +14044,7 @@ menuItem
 -ob 1;
 
 menuItem 
--l "Groom Editor" 
+-l "Groom Editor..." 
 -c "XgCreateIgSplineEditor" 
 -i "xgIG_editor.png";
 
