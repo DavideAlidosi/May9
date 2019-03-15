@@ -18,7 +18,7 @@ hotkey -k "t" -ctl -alt -n ("da_TitleBarToggleNameCommand");
 hotkey -k "l" -ctl -alt -n ("da_ListInputOperationsNameCommand");
 hotkey -k "." -ctl -alt -n ("da_moveKeyframeToNextNameCommand");
 hotkey -k "," -ctl -alt -n ("da_moveKeyframeToPrevNameCommand");
-hotkey -k "Space" -ctl -alt -n ("InteractivePlaybackNameCommand");
+hotkey -k "Space" -ctl -alt -n ("da_InteractivePlaybackNameCommand");
 
 // CTRL Shift Alt Hotkeys
 hotkey -k "c" -ctl -alt -sht -n ("da_CopySelectionNameCommand");
@@ -422,9 +422,9 @@ nameCommand
 	da_ToggleResolutionGateNameCommand;
 
 nameCommand
-	-ann "InteractivePlaybackNameCommand"
-	-c ("InteractivePlayback")
-	InteractivePlaybackNameCommand;
+	-ann "da_InteractivePlaybackNameCommand"
+	-c ("da_InteractivePlayback")
+	da_InteractivePlaybackNameCommand;
 
 nameCommand
 	-ann "MatchPivotsNameCommand"

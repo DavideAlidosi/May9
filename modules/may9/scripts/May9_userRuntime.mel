@@ -16,6 +16,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Restart and Enable Interactive Playback"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 1;\nplayButtonStart;\nInteractivePlayback")
+	da_InteractivePlayback;
+
+runTimeCommand
 	-ann "Toggle Emitter Manipulators"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("if (`currentCtx` == \"ShowManips\"){\n    buildSelectMM;MarkingMenuPopDown;\n} else {\n    ShowManipulators;\n}")
@@ -2480,6 +2486,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_InteractivePlayback`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_ToggleEmitterManipulators`);
