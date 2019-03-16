@@ -9779,7 +9779,7 @@ menuItem
 -i "substGeometry.png";
 
 menuItem
--l "Bake Deformers to Skin"
+-l "Bake Deformers to Skin..."
 -c "BakeDeformerTool"
 -i "out_baked.png";
 
@@ -9811,7 +9811,7 @@ menuItem
 -i "polyScaleUV.png";
 
 menuItem
--l "3D Grab UV"
+-l "3D Grab UV..."
 -c "SetMeshGrabUVTool; da_OpenToolSettings"
 -i "UV_3D_Grab_Brush.png";
 
@@ -10667,17 +10667,17 @@ menuItem
 -i "cMuscle_skin_apply.png";
 
 menuItem
--l "Default Muscle Weights"
+-l "Default Muscle Weights..."
 -c "cMuscleWeightDefaultUI()"
 -i "cMuscle_skin_applyDefault.png";
 
 menuItem
--l "Paint Muscle Weights"
+-l "Paint Muscle Weights..."
 -c "cMusclePaint()"
 -i "cMuscle_skin_paint.png";
 
 menuItem
--l "Smooth Skin to Muscle System"
+-l "Smooth Skin to Muscle System..."
 -c "cMuscleConvertSkin()"
 -i "cMuscle_skin_convert.png";
 
@@ -10685,7 +10685,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Bake Deformers to Skin"
+-l "Bake Deformers to Skin..."
 -c "BakeDeformerTool"
 -i "out_baked.png";
 
@@ -10717,7 +10717,7 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--l "3D Grab UV"
+-l "3D Grab UV..."
 -c "SetMeshGrabUVTool; da_OpenToolSettings"
 -i "UV_3D_Grab_Brush.png";
 
@@ -11654,7 +11654,7 @@ setParent -m ..;
 global proc Tool_CreateParticle_MM_May9(){
 
 menuItem -itl 1
--l "Tool Settings" 
+-l "Tool Settings..." 
 -c "da_OpenToolSettings" 
 -rp "N" 
 -i "toolSettings.png";
@@ -11809,7 +11809,7 @@ setParent -m ..;
 global proc Tool_IkHandle_MM_May9(){
 
 menuItem -itl 1
--l "Tool Settings" 
+-l "Tool Settings..." 
 -c "da_OpenToolSettings" 
 -rp "N" 
 -i "toolSettings.png";
@@ -11833,7 +11833,7 @@ setParent -m ..;
 global proc Tool_IkSplineHandle_MM_May9(){
 
 menuItem -itl 1
--l "Tool Settings" 
+-l "Tool Settings..." 
 -c "da_OpenToolSettings" 
 -rp "N" 
 -i "toolSettings.png";
@@ -12131,7 +12131,7 @@ menuItem -itl 1
 }
 
 menuItem -itl 1 
--l "Tool Property" 
+-l "Tool Property..." 
 -c "da_OpenToolSettings"
 -i "toolSettings.png";
 
@@ -12287,19 +12287,19 @@ int $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentCtx`;
 int $axisDirection = `sculptMeshCacheCtx -q -mirror $currentCtx`;
 
 menuItem -itl 1 
--l "Freeze" 
+-l "Freeze..." 
 -c "SetMeshFreezeTool; da_OpenToolSettings" 
 -rp "NE" 
 -i "Freeze.png";
 
 menuItem -itl 1 
--l "Sculpt" 
+-l "Sculpt..." 
 -c "SetMeshSculptTool; da_OpenToolSettings" 
 -rp "E" 
 -i "Sculpt.png";
 
 menuItem -itl 1 
--l "Grab" 
+-l "Grab..." 
 -c "SetMeshGrabTool; da_OpenToolSettings" 
 -rp "NW" 
 -i "Grab.png";
@@ -12321,80 +12321,80 @@ menuItem -itl 1
 -d 1; 
 
 menuItem -itl 1 
--l "Smooth" 
+-l "Smooth..." 
 -c "SetMeshSmoothTool; da_OpenToolSettings" 
 -i "Smooth.png";
 
 menuItem -itl 1 
--l "Relax" 
+-l "Relax..." 
 -rp "S" 
 -c "SetMeshRelaxTool; da_OpenToolSettings" 
 -i "Relax.png";
 
 menuItem -itl 1 
--l "Pinch" 
+-l "Pinch..." 
 -rp "SE" 
 -c "SetMeshPinchTool; da_OpenToolSettings" 
 -i "Pinch.png" ;
 
 menuItem -itl 1 
--l "Flatten" 
+-l "Flatten..." 
 -rp "SW" 
 -c "SetMeshFlattenTool; da_OpenToolSettings" 
 -i "Flatten.png";
 
 menuItem -itl 1 
--l "Foamy" 
+-l "Foamy..." 
 -c "SetMeshFoamyTool; da_OpenToolSettings" 
 -i "Foamy.png";
 
 menuItem -itl 1 
--l "Spray" 
+-l "Spray..." 
 -c "SetMeshSprayTool; da_OpenToolSettings" 
 -i "Spray.png";
 
 menuItem -itl 1 
--l "Repeat" 
+-l "Repeat..." 
 -c "SetMeshRepeatTool; da_OpenToolSettings" 
 -i "Repeat.png";
 
 menuItem -itl 1 
--l "Imprint" 
+-l "Imprint..." 
 -c "SetMeshImprintTool; da_OpenToolSettings" 
 -i "Imprint.png";
 
 menuItem -itl 1 
--l "Wax" 
+-l "Wax..." 
 -c "SetMeshWaxTool; da_OpenToolSettings" 
 -i "Wax.png";
 
 menuItem -itl 1 
--l "Scrape" 
+-l "Scrape..." 
 -c "SetMeshScrapeTool; da_OpenToolSettings" 
 -i "Scrape.png";
 
 menuItem -itl 1 
--l "Fill" 
+-l "Fill..." 
 -c "SetMeshFillTool; da_OpenToolSettings" 
 -i "Fill.png";
 
 menuItem -itl 1 
--l "Knife" 
+-l "Knife..." 
 -c "SetMeshKnifeTool; da_OpenToolSettings" 
 -i "Knife.png";
 
 menuItem -itl 1 
--l "Smear" 
+-l "Smear..." 
 -c "SetMeshSmearTool; da_OpenToolSettings" 
 -i "Smear.png";
 
 menuItem -itl 1 
--l "Bulge" 
+-l "Bulge..." 
 -c "SetMeshBulgeTool; da_OpenToolSettings" 
 -i "Bulge.png";
 
 menuItem -itl 1 
--l "Amplify" 
+-l "Amplify..." 
 -c "SetMeshAmplifyTool; da_OpenToolSettings" 
 -i "Amplify.png";
 
@@ -12402,22 +12402,22 @@ menuItem -itl 1
 -d 1;
 
 menuItem -itl 1 
--l "Smooth Target" 
+-l "Smooth Target..." 
 -c "SetMeshSmoothTargetTool; da_OpenToolSettings" 
 -i "SmoothTarget.png";
 
 menuItem -itl 1 
--l "Clone Target" 
+-l "Clone Target..." 
 -c "SetMeshCloneTargetTool; da_OpenToolSettings" 
 -i "CloneTarget.png";
 
 menuItem -itl 1 
--l "Mask Target" 
+-l "Mask Target..." 
 -c "SetMeshMaskTool; da_OpenToolSettings" 
 -i "Mask.png";
 
 menuItem -itl 1 
--l "Erase Target" 
+-l "Erase Target..." 
 -c "SetMeshEraseTool; da_OpenToolSettings" 
 -i "Erase.png";
 
@@ -12425,7 +12425,7 @@ menuItem -itl 1
 -d 1;
 
 menuItem -itl 1 
--l "3D Grab UV" 
+-l "3D Grab UV..." 
 -c "SetMeshGrabUVTool; da_OpenToolSettings" 
 -i "UV_3D_Grab_Brush.png";
 
@@ -12474,54 +12474,54 @@ setParent -m ..;
 global proc Tool_UVBushes_MM_May9(){
 
 menuItem -itl 1 
--l "Cut" 
+-l "Cut..." 
 -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -rp "NE" 
 -i "cutUVTool.png";
 
 menuItem -itl 1 
--l "Sew" 
+-l "Sew..." 
 -c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Sew texCutUVContext;da_OpenToolSettings" 
 -rp "E" 
 -i "sewUVTool.png";
 
 menuItem -itl 1 
--l "Grab" 
+-l "Grab..." 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Grab texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "SE" 
 -i "grabUVTool.png";
 
 menuItem -itl 1 
--l "Pin" 
+-l "Pin..." 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Freeze texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "S" 
 -i "pinUVTool.png";
 
 menuItem -itl 1 
--l "Smear" 
+-l "Smear..." 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Smear texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "SW" 
 -i "smearUVTool.png";
 
 menuItem -itl 1 
--l "Optimize" 
+-l "Optimize..." 
 -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -rp "NW" 
 -i "optimizeUVTool.png";
 
 menuItem -itl 1 
--l "Symmetrize" 
+-l "Symmetrize..." 
 -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;da_OpenToolSettings" 
 -i "symmetrizeUVTool.png";
 
 menuItem -itl 1 
--l "Unfold" 
+-l "Unfold..." 
 -c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -unfold texUnfoldUVContext;da_OpenToolSettings" 
 -rp "N" 
 -i "unfoldUVTool.png";
 
 menuItem -itl 1 
--l "Pinch" 
+-l "Pinch..." 
 -c "setToolTo texSculptCacheContextObj;\ntexSculptCacheContext -e -m Pinch -i1 texSculptCacheContextObj;da_OpenToolSettings" 
 -rp "W" 
 -i "pinchUVTool.png";
@@ -12552,7 +12552,7 @@ menuItem -itl 1
 -rp "E";
 
 menuItem -itl 1 
--l "Tool Property" 
+-l "Tool Property..." 
 -c "da_OpenToolSettings"
 -i "toolSettings.png" 
 -rp "W";
@@ -12620,25 +12620,25 @@ menuItem -itl 1
 -rp "SW";
 
 menuItem -itl 1 
--l "Length" 
+-l "Length..." 
 -c "XgmSetLengthBrushTool; da_OpenToolSettings" 
 -rp "N" 
 -i "xgIG_length.png";
 
 menuItem -itl 1 
--l "Comb" 
+-l "Comb..." 
 -c "XgmSetCombBrushTool; da_OpenToolSettings" 
 -rp "W" 
 -i "xgIG_comb.png";
 
 menuItem -itl 1 
--l "Freeze" 
+-l "Freeze..." 
 -c "XgmSetFreezeBrushTool; da_OpenToolSettings" 
 -rp "NE" 
 -i "xgIG_freeze.png";
 
 menuItem -itl 1 
--l "Grab" 
+-l "Grab..." 
 -c "XgmSetGrabBrushTool; da_OpenToolSettings" 
 -rp "NW" 
 -i "xgIG_grab.png";
@@ -12668,47 +12668,47 @@ menuItem -itl 1
 -d 1;
 
 menuItem -itl 1 
--l "Density" 
+-l "Density..." 
 -c "XgmSetDensityBrushTool; da_OpenToolSettings" 
 -i "xgIG_density.png";
 
 menuItem -itl 1 
--l "Place" 
+-l "Place..." 
 -c "XgmSetPlaceBrushTool; da_OpenToolSettings" 
 -i "xgIG_place.png";
 
 menuItem -itl 1 
--l "Cut" 
+-l "Cut..." 
 -c "XgmSetCutBrushTool; da_OpenToolSettings" 
 -i "xgIG_cut.png";
 
 menuItem -itl 1 
--l "Width" 
+-l "Width..." 
 -c "XgmSetWidthBrushTool; da_OpenToolSettings" 
 -i "xgIG_width.png";
 
 menuItem -itl 1 
--l "Twist" 
+-l "Twist..." 
 -c "XgmSetDirectionBrushTool; da_OpenToolSettings" 
 -i "xgIG_twist.png";
 
 menuItem -itl 1 
--l "Smooth" 
+-l "Smooth..." 
 -c "XgmSetSmoothBrushTool; da_OpenToolSettings" 
 -i "xgIG_smooth.png";
 
 menuItem -itl 1 
--l "Noise" 
+-l "Noise..." 
 -c "XgmSetNoiseBrushTool; da_OpenToolSettings" 
 -i "xgIG_noise.png";
 
 menuItem -itl 1 
--l "Clump" 
+-l "Clump..." 
 -c "XgmSetClumpBrushTool; da_OpenToolSettings" 
 -i "xgIG_clump.png";
 
 menuItem -itl 1 
--l "Part" 
+-l "Part..." 
 -c "XgmSetPartBrushTool; da_OpenToolSettings" 
 -i "xgIG_part.png";
 
@@ -12716,7 +12716,7 @@ menuItem -itl 1
 -d 1;
 
 menuItem -itl 1 
--l "Select" 
+-l "Select..." 
 -c "XgmSetSelectBrushTool; da_OpenToolSettings" 
 -i "xgIG_select.png";
 
@@ -12776,14 +12776,10 @@ setParent -m ..;
 global proc Tool_XGenPlaceGuide_MM_May9(){
 
 menuItem -itl 1 
--l "Sculpt Guides" 
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
+-l "Sculpt Guides..." 
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
 -rp "N" 
 -i "xgGuideSculptTool.png";
-
-menuItem -itl 1 
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
--ob 1;
 
 menuItem -itl 1 
 -l "Mirror Guides X-axis" 
@@ -12892,24 +12888,16 @@ setParent -m ..;
 global proc UV_Editor_MM_May9(){
 
 menuItem
--l "Cut/Sew" 
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+-l "Cut/Sew..." 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -rp "NE" 
 -i "CutSewUVTool.png";
 
 menuItem
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
--ob 1;
-
-menuItem
--l "Optimize" 
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+-l "Optimize..." 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -rp "NW" 
 -i "optimizeUVTool.png";
-
-menuItem
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
--ob 1;
 
 menuItem
 -l "UV Toolkit" 
@@ -12970,7 +12958,7 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--l "3D Grab UV" 
+-l "3D Grab UV..." 
 -c "SetMeshGrabUVTool;da_OpenToolSettings" 
 -rp "NE" 
 -i "UV_3D_Grab_Brush.png";
@@ -13397,24 +13385,16 @@ menuItem
 -i "polyUVMultiStitch.png";
 
 menuItem
--l "Optimize" 
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+-l "Optimize..." 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -rp "NW" 
 -i "optimizeUVTool.png";
 
 menuItem
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
--ob 1;
-
-menuItem
--l "Cut/Sew" 
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+-l "Cut/Sew..." 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -rp "NE" 
 -i "CutSewUVTool.png";
-
-menuItem
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
--ob 1;
 
 menuItem
 -l "UV Toolkit" 
@@ -13550,24 +13530,16 @@ menuItem
 -i "UV_Unfold_Brush.png";
 
 menuItem
--l "Optimize" 
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext" 
+-l "Optimize..." 
+-c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
 -rp "NW" 
 -i "optimizeUVTool.png";
 
 menuItem
--c "setToolTo texUnfoldUVContext;\nUnfold3DContext -e -optimize texUnfoldUVContext;da_OpenToolSettings" 
--ob 1;
-
-menuItem
--l "Cut/Sew" 
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;" 
+-l "Cut/Sew..." 
+-c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
 -rp "NE" 
 -i "CutSewUVTool.png";
-
-menuItem
--c "setToolTo texCutUVContext;\ntexCutContext -edit -mode Cut texCutUVContext;da_OpenToolSettings" 
--ob 1;
 
 menuItem
 -l "Automatic Map" 
@@ -13605,13 +13577,9 @@ menuItem
 -i "UVTk.png";
 
 menuItem
--l "Symmetrize" 
--c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext" 
--i "symmetrizeUVTool.png";
-
-menuItem
+-l "Symmetrize..." 
 -c "setToolTo texSymmetrizeUVContext;\nSymmetrizeUVContext -e texSymmetrizeUVContext;da_OpenToolSettings" 
--ob 1;
+-i "symmetrizeUVTool.png";
 
 menuItem
 -d 1;
@@ -13872,14 +13840,10 @@ menuItem
 -i "da_xgPolyConvert.png";
 
 menuItem
--l "Sculpt Guides"
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");"
+-l "Sculpt Guides..."
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings"
 -rp "NE" 
 -i "xgGuideSculptTool.png";
-
-menuItem
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings"
--ob 1;
 
 menuItem
 -l "XGen Editor..." 
@@ -13898,14 +13862,10 @@ setParent -m ..;
 global proc XGen_Guides_MM_May9(){
 
 menuItem
--l "Sculpt Guides" 
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
+-l "Sculpt Guides..." 
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
 -rp "N" 
 -i "xgGuideSculptTool.png";
-
-menuItem
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
--ob 1;
 
 menuItem
 -l "Guides Tool" 
@@ -13947,14 +13907,10 @@ setParent -m ..;
 global proc XGen_Patch_MM_May9(){
 
 menuItem
--l "Sculpt Guides" 
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");" 
+-l "Sculpt Guides..." 
+-c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
 -rp "N" 
 -i "xgGuideSculptTool.png";
-
-menuItem
--c "python(\"xgui.createDescriptionEditor(False).guideSculptContext(False)\");da_OpenToolSettings" 
--ob 1;
 
 menuItem
 -l "Guides Tool" 
