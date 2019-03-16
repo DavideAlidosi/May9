@@ -1185,12 +1185,12 @@ menuItem
 -i "singlePerspLayout.png";
 
 menuItem
--l "Add Image Plane" 
+-l "Add Image Plane..." 
 -c "da_CameraImagesPlane" 
 -i "out_imagePlane.png";
 
 menuItem
--l "Add Movie Plane" 
+-l "Add Movie Plane..." 
 -c "da_CameraVideoImagesPlane" 
 -i "da_video_plane.png";
 
@@ -1344,7 +1344,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Muscle Builder" 
+-l "Muscle Builder..." 
 -c "cMuscleBuilder" 
 -i "cMuscle_muscle_muscleBuilder.png";
 
@@ -1357,8 +1357,8 @@ menuItem
 -d 1;
 
 menuItem
--l "Joint Size" 
--c "jdsWin;" 
+-l "Joint Size..." 
+-c "jdsWin" 
 -i "resizeWindow.png";
 
 setParent -m ..;
@@ -1688,14 +1688,14 @@ menuItem
 -i "rebuildCurve.png";
 
 menuItem
--l "Pivot to Origin"
--c "da_PivotToCurvesOrigin"
--i "selectFirstCV.png";
-
-menuItem
 -l "Connect Shapes..." 
 -c "da_ConnectNurbsShapesUI" 
 -i "da_OneToMany.png";
+
+menuItem
+-l "Pivot to Origin"
+-c "da_PivotToCurvesOrigin"
+-i "selectFirstCV.png";
 
 menuItem
 -d 1;
@@ -1804,8 +1804,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice"
--c "CreateLattice"
+-l "Lattice..."
+-c "CreateLatticeOptions"
 -i "lattice.png";
 
 setParent -m ..;
@@ -2058,8 +2058,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -i "lattice.png";
 
 setParent -m ..;
@@ -2154,7 +2154,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Quick Set"
+-l "Create Quick Set..."
 -c "CreateQuickSelectSet" 
 -i "out_objectSet.png";
 
@@ -2432,21 +2432,20 @@ menuItem
 -ob 1;
 
 menuItem
--l "Input Operations" 
+-l "Separate"
+-rp "NE"
+-c "da_SepareCurves"
+-i "da_separateCurves.png";
+
+menuItem
+-l "Input Operations..." 
 -c "da_ListInputOperations" 
 -i "out_list.png";
-
 
 menuItem
 -l "Rebuild..."
 -c "RebuildCurveOptions"
 -i "rebuildCurve.png";
-
-menuItem
--l "Separate"
--rp "NE"
--c "da_SepareCurves"
--i "da_separateCurves.png";
 
 menuItem
 -l "Pivot to Origin"
@@ -2560,8 +2559,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice"
--c "CreateLattice"
+-l "Lattice..."
+-c "CreateLatticeOptions"
 -i "lattice.png";
 
 setParent -m ..;
@@ -3017,7 +3016,7 @@ menuItem
 -i "polyEdgeToCurves.png";
 
 menuItem
--l "To Loops to Curves"
+-l "To Loops to Curves..."
 -c "da_EdgesToLoopToCurve"
 -i "da_EdgeToLoopToCurve.png";
 
@@ -3071,8 +3070,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice"
--c "CreateLattice"
+-l "Lattice..."
+-c "CreateLatticeOptions"
 -i "lattice.png";
 
 setParent -m ..;
@@ -3250,12 +3249,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Selection Constraints"
+-l "Selection Constraints..."
 -c "PolygonSelectionConstraints"
 -i "polySelectUsingConstraints.png";
 
 menuItem
--l "Create Quick Set"
+-l "Create Quick Set..."
 -c "CreateQuickSelectSet" 
 -i "out_objectSet.png";
 
@@ -3447,8 +3446,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice"
--c "CreateLattice"
+-l "Lattice..."
+-c "CreateLatticeOptions"
 -i "lattice.png";
 
 setParent -m ..;
@@ -3689,12 +3688,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Selection Constraints"
+-l "Selection Constraints..."
 -c "PolygonSelectionConstraints"
 -i "polySelectUsingConstraints.png";
 
 menuItem
--l "Create Quick Set"
+-l "Create Quick Set..."
 -c "CreateQuickSelectSet" 
 -i "out_objectSet.png";
 
@@ -3844,7 +3843,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Add Fields" 
+-l "Fields" 
 -sm 1
 -i "posRadial.png";
 
@@ -4766,7 +4765,7 @@ menuItem
 -rp "E";
 
 menuItem
--l "IK Handle Size" 
+-l "IK Handle Size..." 
 -i "resizeWindow.png" 
 -c "ikHdsWin";
 
@@ -4819,8 +4818,8 @@ menuItem
 -i "XRayJoints.png";
 
 menuItem
--l "Joint Size" 
--c "jdsWin;" 
+-l "Joint Size..." 
+-c "jdsWin" 
 -rp "S" 
 -i "resizeWindow.png";
 
@@ -4961,13 +4960,13 @@ menuItem
 -d 1;
 
 menuItem
--l "Convert to Bone" 
+-l "Convert to Bone..." 
 -c "cMuscle_makeMuscle(0)" 
 -i "cMuscle_muscle_convertToMuscle.png";
 
 menuItem
--l "Muscle Builder" 
--c "cMuscleBuilder()" 
+-l "Muscle Builder..." 
+-c "cMuscleBuilder" 
 -i "cMuscle_muscle_muscleBuilder.png";
 
 menuItem
@@ -4984,8 +4983,8 @@ menuItem
 -d 1;
 
 menuItem
--l "Joint Size" 
--c "jdsWin;" 
+-l "Joint Size..." 
+-c "jdsWin" 
 -i "resizeWindow.png";
 
 setParent -m ..;
@@ -4999,14 +4998,10 @@ Sup_Symmetry_MM_May9;
 Sup_SoftSelect_MM_May9;
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -rp "NE" 
 -i "lattice.png";
-
-menuItem
--c "CreateLatticeOptions;" 
--ob 1;
 
 menuItem
 -l "Deformer Set Editor..." 
@@ -5033,17 +5028,9 @@ menuItem
 -i "cluster.png";
 
 menuItem
--c "CreateClusterOptions" 
--ob 1;
-
-menuItem
 -l "Bend" 
 -c "Bend;" 
 -i "bendNLD.png";
-
-menuItem
--c "BendOptions;" 
--ob 1;
 
 menuItem
 -l "Flare" 
@@ -5051,17 +5038,9 @@ menuItem
 -i "flareNLD.png";
 
 menuItem
--c "FlareOptions;" 
--ob 1;
-
-menuItem
 -l "Sine" 
 -c "Sine" 
 -i "sineNLD.png";
-
-menuItem
--c "SineOptions;" 
--ob 1;
 
 menuItem
 -l "Squash" 
@@ -5069,26 +5048,14 @@ menuItem
 -i "squashNLD.png";
 
 menuItem
--c "SquashOptions;" 
--ob 1;
-
-menuItem
 -l "Twist" 
 -c "Twist" 
 -i "twistNLD.png";
 
 menuItem
--c "TwistOptions" 
--ob 1;
-
-menuItem
 -l "Wave" 
 -c "Wave" 
 -i "waveNLD.png";
-
-menuItem
--c "WaveOptions;" 
--ob 1;
 
 setParent -m ..;
 
@@ -5097,14 +5064,10 @@ setParent -m ..;
 global proc Lattice_MM_May9(){
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -rp "NE" 
 -i "lattice.png";
-
-menuItem
--c "CreateLatticeOptions;" 
--ob 1;
 
 menuItem
 -l "Reset" 
@@ -5137,17 +5100,9 @@ menuItem
 -i "cluster.png";
 
 menuItem
--c "CreateClusterOptions" 
--ob 1;
-
-menuItem
 -l "Bend" 
 -c "Bend;" 
 -i "bendNLD.png";
-
-menuItem
--c "BendOptions;" 
--ob 1;
 
 menuItem
 -l "Flare" 
@@ -5155,17 +5110,9 @@ menuItem
 -i "flareNLD.png";
 
 menuItem
--c "FlareOptions;" 
--ob 1;
-
-menuItem
 -l "Sine" 
 -c "Sine" 
 -i "sineNLD.png";
-
-menuItem
--c "SineOptions;" 
--ob 1;
 
 menuItem
 -l "Squash" 
@@ -5173,26 +5120,14 @@ menuItem
 -i "squashNLD.png";
 
 menuItem
--c "SquashOptions;" 
--ob 1;
-
-menuItem
 -l "Twist" 
 -c "Twist" 
 -i "twistNLD.png";
 
 menuItem
--c "TwistOptions" 
--ob 1;
-
-menuItem
 -l "Wave" 
 -c "Wave" 
 -i "waveNLD.png";
-
-menuItem
--c "WaveOptions;" 
--ob 1;
 
 menuItem
 -l "Create nSoft Body" 
@@ -5209,14 +5144,10 @@ global proc Legacy_ParticlePoints_MM_May9(){
 int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -rp "NE" 
 -i "lattice.png";
-
-menuItem
--c "CreateLatticeOptions;" 
--ob 1;
 
 menuItem
 -l "Cluster" 
@@ -5225,11 +5156,7 @@ menuItem
 -i "cluster.png";
 
 menuItem
--c "CreateClusterOptions" 
--ob 1;
-
-menuItem
--l "Add Deformer"
+-l "Deformers"
 -sm 1
 -i "bendNLD.png";
 
@@ -5239,17 +5166,9 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--c "Bend ;"
--ob 1;
-
-menuItem
 -l "Flare"
 -c "Flare;"
 -i "flareNLD.png";
-
-menuItem
--c "FlareOptions;"
--ob 1;
 
 menuItem
 -l "Sine"
@@ -5257,17 +5176,9 @@ menuItem
 -i "sineNLD.png";
 
 menuItem
--c "SineOptions;"
--ob 1;
-
-menuItem
 -l "Squash"
 -c "Squash"
 -i "squashNLD.png";
-
-menuItem
--c "SquashOptions;"
--ob 1;
 
 menuItem
 -l "Twist"
@@ -5275,17 +5186,9 @@ menuItem
 -i "twistNLD.png";
 
 menuItem
--c "TwistOptions"
--ob 1;
-
-menuItem
 -l "Wave"
 -c "Wave"
 -i "waveNLD.png";
-
-menuItem
--c "WaveOptions;"
--ob 1;
 
 setParent -m ..;
 
@@ -5312,24 +5215,16 @@ menuItem
 -i "fluidObjectEmit.png";
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -rp "NE" 
 -i "lattice.png";
-
-menuItem
--c "CreateLatticeOptions;" 
--ob 1;
 
 menuItem
 -l "Cluster" 
 -c "CreateCluster" 
 -rp "E" 
 -i "cluster.png";
-
-menuItem
--c "CreateClusterOptions" 
--ob 1;
 
 menuItem
 -l "Set Initial State" 
@@ -5357,10 +5252,17 @@ menuItem
 -c "CreateSpringOptions" 
 -ob 1;
 
+if (`about -api` >= 20190000){
 menuItem
--l "Sprite Wizard" 
+-l "Sprite Wizard..." 
+-c "PartSpriteWizard" 
+-i "menuIconParticles.png";
+}else{
+menuItem
+-l "Sprite Wizard..." 
 -c "spriteWizardMenu" 
 -i "menuIconParticles.png";
+}
 
 menuItem
 -l "Instancer..." 
@@ -5371,7 +5273,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Add Deformer"
+-l "Deformers"
 -sm 1
 -i "bendNLD.png";
 
@@ -5381,17 +5283,9 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--c "BendOptions;"
--ob 1;
-
-menuItem
 -l "Flare"
 -c "Flare;"
 -i "flareNLD.png";
-
-menuItem
--c "FlareOptions;"
--ob 1;
 
 menuItem
 -l "Sine"
@@ -5399,17 +5293,9 @@ menuItem
 -i "sineNLD.png";
 
 menuItem
--c "SineOptions;"
--ob 1;
-
-menuItem
 -l "Squash"
 -c "Squash"
 -i "squashNLD.png";
-
-menuItem
--c "SquashOptions;"
--ob 1;
 
 menuItem
 -l "Twist"
@@ -5417,22 +5303,14 @@ menuItem
 -i "twistNLD.png";
 
 menuItem
--c "TwistOptions"
--ob 1;
-
-menuItem
 -l "Wave"
 -c "Wave"
 -i "waveNLD.png";
 
-menuItem
--c "WaveOptions;"
--ob 1;
-
 setParent -m ..;
 
 menuItem
--l "Add Fields" 
+-l "Fields" 
 -sm 1
 -i "posRadial.png";
 
@@ -5938,7 +5816,7 @@ menuItem
     -cb (`window -q -titleBar MayaWindow`);
 
 menuItem
-    -l "Save Workspace" 
+    -l "Save Workspace..." 
     -c "SaveCurrentWorkspace" 
     -i "fileSave.png"
     -rp "S";
@@ -6046,12 +5924,12 @@ menuItem
 -i "da_y.png";
 
 menuItem
--l "Add Image Plane" 
+-l "Add Image Plane..." 
 -c "da_ImagesPlane" 
 -i "out_imagePlane.png";
 
 menuItem
--l "Add Movie Plane" 
+-l "Add Movie Plane..." 
 -c "da_VideoImagesPlane" 
 -i "da_video_plane.png";
 
@@ -6390,14 +6268,11 @@ menuItem
 }
 if (`size($polyCheck)` != 0){
 menuItem
--l "Sculpt Geometry" 
--c "SetMeshSculptTool" 
+-l "Sculpt Geometry..." 
+-c "ShowMeshSculptToolOptions" 
 -rp "N" 
 -i "Sculpt.png";
 }
-menuItem
--c "ShowMeshSculptToolOptions" 
--ob 1;
 
 menuItem
 -l "Smooth" 
@@ -7047,14 +6922,10 @@ menuItem
 -ob 1;
 
 menuItem
--l "Sculpt Geometry" 
--c "SculptGeometryTool;\nartPuttyCtx -e -showactive false `currentCtx`;" 
+-l "Sculpt Geometry..." 
+-c "SculptGeometryToolOptions;\nartPuttyCtx -e -showactive true `currentCtx`;" 
 -rp "N" 
 -i "putty.png";
-
-menuItem
--c "SculptGeometryToolOptions;\nartPuttyCtx -e -showactive true `currentCtx`;" 
--ob 1;
 
 menuItem
 -l "Attach" 
@@ -7087,23 +6958,19 @@ menuItem
 -ob 1;
 
 menuItem
--l "Align Surfaces" 
--c "AlignSurfaces" 
--i "alignSurface.png";
-
-menuItem
+-l "Align Surfaces..." 
 -c "AlignSurfacesOptions" 
--ob 1;
-
-menuItem
--l "NURBS to Polygons" 
--c "da_NurbsToMesh" 
--i "nurbsToPolygons.png";
+-i "alignSurface.png";
 
 menuItem
 -l "Connect Shapes..." 
 -c "da_ConnectNurbsShapesUI" 
 -i "da_OneToMany.png";
+
+menuItem
+-l "NURBS to Polygons" 
+-c "da_NurbsToMesh" 
+-i "nurbsToPolygons.png";
 
 menuItem
 -d 1;
@@ -7198,8 +7065,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -i "lattice.png";
 
 setParent -m ..;
@@ -7351,7 +7218,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Add Fields" 
+-l "Fields" 
 -sm 1
 -i "posRadial.png";
 
@@ -7410,13 +7277,13 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create Muscle Cache"
--c "cMuscle_makeCacheUI(); "
+-l "Create Muscle Cache..."
+-c "cMuscle_makeCacheUI"
 -i "cMuscle_skin_cacheCreate.png";
 
 menuItem
--l "Delete Muscle Node Cache"
--c "cMuscle_deleteNodeCacheUI(); "
+-l "Delete Muscle Node Cache..."
+-c "cMuscle_deleteNodeCacheUI"
 -i "cMuscle_skin_cacheDelete.png";
 
 setParent -m ..;
@@ -7482,14 +7349,10 @@ menuItem
 global proc Nurbs_MM_May9(){
 
 menuItem
--l "Sculpt Geometry" 
--c "SculptGeometryTool;\nartPuttyCtx -e -showactive false `currentCtx`;" 
+-l "Sculpt Geometry..." 
+-c "SculptGeometryToolOptions;\nartPuttyCtx -e -showactive true `currentCtx`;" 
 -rp "N" 
 -i "putty.png";
-
-menuItem
--c "SculptGeometryToolOptions;\nartPuttyCtx -e -showactive true `currentCtx`;" 
--ob 1;
 
 menuItem
 -l "Trim Tool" 
@@ -7552,7 +7415,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Input Operations" 
+-l "Input Operations..." 
 -c "da_ListInputOperations" 
 -i "out_list.png";
 
@@ -7637,8 +7500,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -i "lattice.png";
 
 setParent -m ..;
@@ -7795,7 +7658,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Add Fields" 
+-l "Fields" 
 -sm 1
 -i "posRadial.png";
 
@@ -7854,13 +7717,13 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create Muscle Cache"
--c "cMuscle_makeCacheUI(); "
+-l "Create Muscle Cache..."
+-c "cMuscle_makeCacheUI"
 -i "cMuscle_skin_cacheCreate.png";
 
 menuItem
--l "Delete Muscle Node Cache"
--c "cMuscle_deleteNodeCacheUI(); "
+-l "Delete Muscle Node Cache..."
+-c "cMuscle_deleteNodeCacheUI"
 -i "cMuscle_skin_cacheDelete.png";
 
 setParent -m ..;
@@ -7904,7 +7767,7 @@ menuItem
 -cb ($MaterialCheck);
 
 menuItem
--l "Create Quick Set" 
+-l "Create Quick Set..." 
 -c "CreateQuickSelectSet"
 -rp "S"
 -i "out_objectSet.png";
@@ -8238,14 +8101,10 @@ global proc ParticlePoints_MM_May9(){
 int $particleCountCheck = `optionVar -q particleCountVisibility`;
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -rp "NE" 
 -i "lattice.png";
-
-menuItem
--c "CreateLatticeOptions;" 
--ob 1;
 
 menuItem
 -l "Cluster" 
@@ -8254,11 +8113,7 @@ menuItem
 -i "cluster.png";
 
 menuItem
--c "CreateClusterOptions" 
--ob 1;
-
-menuItem
--l "Add Deformer"
+-l "Deformers"
 -sm 1
 -i "bendNLD.png";
 
@@ -8268,17 +8123,9 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--c "BendOptions;"
--ob 1;
-
-menuItem
 -l "Flare"
 -c "Flare;"
 -i "flareNLD.png";
-
-menuItem
--c "FlareOptions;"
--ob 1;
 
 menuItem
 -l "Sine"
@@ -8286,17 +8133,9 @@ menuItem
 -i "sineNLD.png";
 
 menuItem
--c "SineOptions;"
--ob 1;
-
-menuItem
 -l "Squash"
 -c "Squash"
 -i "squashNLD.png";
-
-menuItem
--c "SquashOptions;"
--ob 1;
 
 menuItem
 -l "Twist"
@@ -8304,22 +8143,14 @@ menuItem
 -i "twistNLD.png";
 
 menuItem
--c "TwistOptions"
--ob 1;
-
-menuItem
 -l "Wave"
 -c "Wave"
 -i "waveNLD.png";
 
-menuItem
--c "WaveOptions;"
--ob 1;
-
 setParent -m ..;
 
 menuItem
--l "Add Fields" 
+-l "Fields" 
 -sm 1
 -i "posRadial.png";
 
@@ -8427,14 +8258,10 @@ menuItem
 -i "fluidObjectEmit.png";
 
 menuItem
--l "Lattice" 
--c "CreateLattice" 
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
 -rp "NE" 
 -i "lattice.png";
-
-menuItem
--c "CreateLatticeOptions;" 
--ob 1;
 
 menuItem
 -l "Add Trails" 
@@ -8447,10 +8274,6 @@ menuItem
 -c "CreateCluster" 
 -rp "E" 
 -i "cluster.png";
-
-menuItem
--c "CreateClusterOptions" 
--ob 1;
 
 menuItem
 -l "Convert to Metaballs" 
@@ -8468,10 +8291,17 @@ menuItem
 -c "CreateSpringOptions" 
 -ob 1;
 
+if (`about -api` >= 20190000){
 menuItem
--l "Sprite Wizard" 
+-l "Sprite Wizard..." 
+-c "PartSpriteWizard" 
+-i "menuIconParticles.png";
+}else{
+menuItem
+-l "Sprite Wizard..." 
 -c "spriteWizardMenu" 
 -i "menuIconParticles.png";
+}
 
 menuItem
 -l "Instancer..." 
@@ -8517,7 +8347,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Add Deformer"
+-l "Deformers"
 -sm 1
 -i "bendNLD.png";
 
@@ -8527,17 +8357,9 @@ menuItem
 -i "bendNLD.png";
 
 menuItem
--c "BendOptions;"
--ob 1;
-
-menuItem
 -l "Flare"
 -c "Flare;"
 -i "flareNLD.png";
-
-menuItem
--c "FlareOptions;"
--ob 1;
 
 menuItem
 -l "Sine"
@@ -8545,17 +8367,9 @@ menuItem
 -i "sineNLD.png";
 
 menuItem
--c "SineOptions;"
--ob 1;
-
-menuItem
 -l "Squash"
 -c "Squash"
 -i "squashNLD.png";
-
-menuItem
--c "SquashOptions;"
--ob 1;
 
 menuItem
 -l "Twist"
@@ -8563,22 +8377,14 @@ menuItem
 -i "twistNLD.png";
 
 menuItem
--c "TwistOptions"
--ob 1;
-
-menuItem
 -l "Wave"
 -c "Wave"
 -i "waveNLD.png";
 
-menuItem
--c "WaveOptions;"
--ob 1;
-
 setParent -m ..;
 
 menuItem
--l "Add Fields" 
+-l "Fields" 
 -sm 1
 -i "posRadial.png";
 
@@ -9622,8 +9428,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice"
--c "CreateLattice"
+-l "Lattice..."
+-c "CreateLatticeOptions"
 -i "lattice.png";
 
 menuItem
@@ -10001,7 +9807,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Add Fields"
+-l "Fields"
 -sm 1
 -i "posRadial.png";
 
@@ -10371,7 +10177,7 @@ menuItem
 -i "polySmooth.png";
 
 menuItem
--l "Input Operations" 
+-l "Input Operations..." 
 -c "da_ListInputOperations" 
 -i "out_list.png";
 
@@ -10561,8 +10367,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice"
--c "CreateLattice"
+-l "Lattice..."
+-c "CreateLatticeOptions"
 -i "lattice.png";
 
 menuItem
@@ -10928,7 +10734,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Add Fields"
+-l "Fields"
 -sm 1
 -i "posRadial.png";
 
@@ -12861,7 +12667,7 @@ menuItem
 -i "optimizeUVTool.png";
 
 menuItem
--l "UV Toolkit" 
+-l "UV Toolkit..." 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
 
@@ -12925,12 +12731,12 @@ menuItem
 -i "UV_3D_Grab_Brush.png";
 
 menuItem
--l "UV Toolkit" 
+-l "UV Toolkit..." 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
 
 menuItem
--l "Take Snapshot" 
+-l "Take Snapshot..." 
 -c "performUVSnapshot" 
 -i "out_snapshot.png";
 
@@ -13127,8 +12933,8 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Lattice"
--c "CreateLattice"
+-l "Lattice..."
+-c "CreateLatticeOptions"
 -i "lattice.png";
 
 setParent -m ..;
@@ -13290,12 +13096,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Selection Constraints"
+-l "Selection Constraints..."
 -c "PolygonSelectionConstraints"
 -i "polySelectUsingConstraints.png";
 
 menuItem
--l "Create Quick Set"
+-l "Create Quick Set..."
 -c "CreateQuickSelectSet" 
 -i "out_objectSet.png";
 
@@ -13358,7 +13164,7 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--l "UV Toolkit" 
+-l "UV Toolkit..." 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
 
@@ -13397,8 +13203,8 @@ menuItem
 -i "polyEdgeToCurves.png";
 
 menuItem
--l "To Loops to Curves" 
--c "da_EdgeToLoopToCurve" 
+-l "To Loops to Curves..." 
+-c "da_EdgesToLoopToCurve" 
 -i "da_EdgeToLoopToCurve.png";
 
 menuItem
@@ -13452,7 +13258,7 @@ menuItem
 -i "polyNormalProj.png";
 
 menuItem
--l "UV Toolkit" 
+-l "UV Toolkit..." 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
 
@@ -13533,7 +13339,7 @@ menuItem
 -i "UVEditorShell.png";
 
 menuItem
--l "UV Toolkit" 
+-l "UV Toolkit..." 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
 
@@ -13632,14 +13438,10 @@ menuItem
 -i "UVEditorShell.png";
 
 menuItem
--l "Lattice" 
--c "LatticeUVTool" 
+-l "Lattice..." 
+-c "LatticeUVTool;da_OpenToolSettings" 
 -rp "NE" 
 -i "uvlattice.png";
-
-menuItem
--c "LatticeUVToolOptions" 
--ob 1;
 
 menuItem
 -l "Select Shell Border" 
@@ -13648,12 +13450,12 @@ menuItem
 -i "UVEditorShellBorder.png";
 
 menuItem
--l "UV Toolkit" 
+-l "UV Toolkit..." 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
 
 menuItem
--l "Take Snapshot" 
+-l "Take Snapshot..." 
 -c "performUVSnapshot" 
 -i "out_snapshot.png";
 
@@ -13760,7 +13562,7 @@ menuItem
 -i "UVEditorVertex.png";
 
 menuItem
--l "UV Toolkit" 
+-l "UV Toolkit..." 
 -c "da_OpenUvTool" 
 -i "UVTk.png";
 
