@@ -9510,35 +9510,9 @@ menuItem
 -i "removeWrapInfluence.png";
 
 menuItem
--l "Copy Skin Weights"
--sm 1
+-l "Batch Copy Skin Weights..."
+-c "da_BatchSkinTransfertUI"
 -i "copySkinWeight.png";
-
-menuItem
--l "Copy Skin Weights..."
--c "CopySkinWeightsOptions"
--i "copySkinWeight.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Batch by Closest Point"
--c "da_BatchSkinTransfertCP";
-
-menuItem
--l "Batch by Ray Cast"
--c "da_BatchSkinTransfertRC";
-
-menuItem
--l "Batch by Closest Component"
--c "da_BatchSkinTransfertCC";
-
-menuItem
--l "Batch by UVs"
--c "da_BatchSkinTransfertUV";
-
-setParent -m ..;
 
 menuItem
 -l "Substitute Geometry..."

@@ -16,6 +16,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Batch Skin Transfert UI"
+	-cat"Custom Scripts.May9_Next.Rigging"
+	-c ("string $myResult = `confirmDialog -title \"Copy Skin Weight\" -message \"Before continue please check if you have select for first the weighted geometry, and the other meshe(s) are bind on same skeleton. What association did you want use?\" \n-button \"Closest Point on Surface\" -button \"Ray Cast\" -button \"Closest Component\" -button \"UV Space\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Closest Point on Surface\") {\n    da_BatchSkinTransfertCP;\n}\n    \nelse if ($myResult == \"Ray Cast\") {\n    da_BatchSkinTransfertRC;\n}\n    \nelse if ($myResult == \"Closest Component\") {\n    da_BatchSkinTransfertCC;\n}\n\nelse if ($myResult == \"UV Space\") {\n    da_BatchSkinTransfertUV;\n}")
+	da_BatchSkinTransfertUI;
+
+runTimeCommand
 	-ann "Restart and Enable Interactive Playback"
 	-cat "Custom Scripts.May9_Next.Scene"
 	-c ("playbackOptions -e -playbackSpeed 0 -maxPlaybackSpeed 1;\nplayButtonStart;\nInteractivePlayback")
@@ -2486,6 +2492,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_BatchSkinTransfertUI`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_InteractivePlayback`);
