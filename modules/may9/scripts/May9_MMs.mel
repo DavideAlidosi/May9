@@ -1462,13 +1462,9 @@ menuItem
 -i "poleVectorConstraint.png";
 
 menuItem
--l "Add Influence" 
--c "AddInfluence" 
--i "addWrapInfluence.png";
-
-menuItem
+-l "Add Influence..." 
 -c "AddInfluenceOptions" 
--ob 1;
+-i "addWrapInfluence.png";
 
 menuItem
 -l "Remove Influence" 
@@ -1697,7 +1693,7 @@ menuItem
 -i "selectFirstCV.png";
 
 menuItem
--l "Connect Shapes" 
+-l "Connect Shapes..." 
 -c "da_ConnectNurbsShapesUI" 
 -i "da_OneToMany.png";
 
@@ -1754,23 +1750,14 @@ menuItem
 -i "blendShape.png";
 
 menuItem
--l "Create Blend Shape"
--c "CreateBlendShape;"
--rp "N"
+-l "Create"
+-c "CreateBlendShape"
 -i "blendShape.png";
 
 menuItem
--c "CreateBlendShapeOptions;"
--ob 1;
-
-menuItem
 -l "Add Shape"
--c "AddBlendShape;"
+-c "AddBlendShape"
 -i "ts-add.png";
-
-menuItem
--c "AddBlendShapeOptions;"
--ob 1;
 
 setParent -m ..;
 
@@ -1958,7 +1945,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -1973,7 +1960,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -2714,7 +2701,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -2729,7 +2716,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -2850,7 +2837,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -2865,7 +2852,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -3490,7 +3477,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Automatic"
+-l "Automatic..."
 -c "performPolyAutoProj 1"
 -i "polyAutoProj.png";
 
@@ -3500,7 +3487,7 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face"
+-l "Per Face..."
 -c "da_MapFacesFacesUV"
 -i "polyNormalProj.png";
 
@@ -3547,7 +3534,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material"
+-l "Assign New Material..."
 -c "createAssignNewMaterialTreeLister \"\""
 -i "render_adskMaterial.png";
 
@@ -3651,7 +3638,7 @@ menuItem
 -i "xgDEditor.png";
 
 menuItem
--l "Create Interactive Groom"
+-l "Create Interactive Groom..."
 -c "XgmCreateInteractiveGroomSplinesOption"
 -i "xgIG_creation.png";
 
@@ -3659,7 +3646,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Description"
+-l "Create Description..."
 -c "XgCreateDescription"
 -i "xgCreateDescription.png";
 
@@ -3927,7 +3914,7 @@ menuItem
 -i "fluidCacheCreate.png";
 
 menuItem
--l "Delete Cache"
+-l "Delete Cache..."
 -c "fluidDeleteCacheOpt"
 -i "fluidCacheDelete.png";
 
@@ -3937,7 +3924,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -4060,7 +4047,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -4075,7 +4062,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -4409,7 +4396,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -4424,7 +4411,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -4441,7 +4428,7 @@ menuItem
 -i "time.svg";
 
 menuItem
--l "Create Node" 
+-l "Create Node..." 
 -c "createNodeWindow" 
 -rp "SE" 
 -i "createNode.png";
@@ -4648,13 +4635,13 @@ menuItem
 -i "hypergraph.png";
 
 menuItem
--l "Hierarchy" 
+-l "Hierarchy..." 
 -c "HypergraphHierarchyWindow" 
 -rp "E" 
 -i "showDag.png";
 
 menuItem
--l "Connections" 
+-l "Connections..." 
 -c "HypergraphDGWindow" 
 -rp "SE" 
 -i "showDepend.png";
@@ -4662,7 +4649,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Create Node" 
+-l "Create Node..." 
 -c "createNodeWindow" 
 -rp "SE" 
 -i "createNode.png";
@@ -4838,14 +4825,10 @@ menuItem
 -i "resizeWindow.png";
 
 menuItem
--l "Add Influence" 
--c "AddInfluence" 
+-l "Add Influence..." 
+-c "AddInfluenceOptions" 
 -rp "NE" 
 -i "addWrapInfluence.png";
-
-menuItem
--c "AddInfluenceOptions" 
--ob 1;
 
 menuItem
 -l "Remove Influence" 
@@ -5559,7 +5542,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material" 
+-l "Assign New Material..." 
 -c "createAssignNewMaterialTreeLister \"\";" 
 -i "render_adskMaterial.png";
 
@@ -5622,7 +5605,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material" 
+-l "Assign New Material..." 
 -c "createAssignNewMaterialTreeLister \"\";" 
 -i "render_adskMaterial.png";
 
@@ -6548,7 +6531,7 @@ menuItem
 -i "time.svg";
 
 menuItem
--l "Create Node" 
+-l "Create Node..." 
 -c "createNodeWindow" 
 -rp "SE" 
 -i "createNode.png";
@@ -6590,13 +6573,13 @@ menuItem
 -i "hypergraph.png";
 
 menuItem
--l "Hierarchy" 
+-l "Hierarchy..." 
 -c "HypergraphHierarchyWindow" 
 -rp "E" 
 -i "showDag.png";
 
 menuItem
--l "Connections" 
+-l "Connections..." 
 -c "HypergraphDGWindow" 
 -rp "SE" 
 -i "showDepend.png";
@@ -6919,7 +6902,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material" 
+-l "Assign New Material..." 
 -c "createAssignNewMaterialTreeLister \"\";" 
 -i "render_adskMaterial.png";
 
@@ -7118,7 +7101,7 @@ menuItem
 -i "nurbsToPolygons.png";
 
 menuItem
--l "Connect Shapes" 
+-l "Connect Shapes..." 
 -c "da_ConnectNurbsShapesUI" 
 -i "da_OneToMany.png";
 
@@ -7161,23 +7144,14 @@ menuItem
 -i "blendShape.png";
 
 menuItem
--l "Create Blend Shape"
--c "CreateBlendShape;"
--rp "N"
+-l "Create"
+-c "CreateBlendShape"
 -i "blendShape.png";
-
-menuItem
--c "CreateBlendShapeOptions;"
--ob 1;
 
 menuItem
 -l "Add Shape"
 -c "AddBlendShape;"
 -i "ts-add.png";
-
-menuItem
--c "AddBlendShapeOptions;"
--ob 1;
 
 setParent -m ..;
 
@@ -7244,7 +7218,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material" 
+-l "Assign New Material..." 
 -c "createAssignNewMaterialTreeLister \"\";" 
 -i "render_adskMaterial.png";
 
@@ -7683,7 +7657,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material" 
+-l "Assign New Material..." 
 -c "createAssignNewMaterialTreeLister \"\";" 
 -i "render_adskMaterial.png";
 
@@ -8691,7 +8665,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -8706,7 +8680,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -9374,7 +9348,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Cut by Plane"
+-l "Cut by Plane..."
 -c "da_PlaneCutter"
 -rp "S"
 -i "polyCut.png";
@@ -9457,7 +9431,7 @@ menuItem
 -i "polyExtrudeFacet.png";
 
 menuItem
--l "Connect Shapes"
+-l "Connect Shapes..."
 -c "da_ConnectShapeUI"
 -i "da_OneToMany.png";
 
@@ -9475,12 +9449,12 @@ menuItem
 -i "MASH_CreateNetwork.png";
 
 menuItem
--l "Voxelize in a Volume"
+-l "Voxelize in a Volume..."
 -c "da_MashVoxelizer"
 -i "ae_MASH_Explode.png";
 
 menuItem
--l "Scatter on a Surface"
+-l "Scatter on a Surface..."
 -c "da_SurfaceScatterMash"
 -i "out_MASH_Points.png";
 
@@ -9497,7 +9471,7 @@ menuItem
 -i "polyCloseBorder.png";
 
 menuItem
--l "Transfer Attributes"
+-l "Transfer Attributes..."
 -c "performTransferAttributes 1"
 -i "polyTransferAttributes.png";
 
@@ -9594,23 +9568,14 @@ menuItem
 -i "blendShape.png";
 
 menuItem
--l "Create Blend Shape"
--c "CreateBlendShape;"
--rp "N"
+-l "Create"
+-c "CreateBlendShape"
 -i "blendShape.png";
-
-menuItem
--c "CreateBlendShapeOptions;"
--ob 1;
 
 menuItem
 -l "Add Shape"
 -c "AddBlendShape;"
 -i "ts-add.png";
-
-menuItem
--c "AddBlendShapeOptions;"
--ob 1;
 
 setParent -m ..;
 
@@ -9729,13 +9694,9 @@ menuItem
 -d 1;
 
 menuItem
--l "Add Influence to Skin"
--c "AddInfluence"
--i "addWrapInfluence.png";
-
-menuItem
+-l "Add Influence to Skin..."
 -c "AddInfluenceOptions"
--ob 1;
+-i "addWrapInfluence.png";
 
 menuItem
 -l "Remove Influence to Skin"
@@ -9819,7 +9780,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Automatic"
+-l "Automatic..."
 -c "performPolyAutoProj 1"
 -i "polyAutoProj.png";
 
@@ -9829,7 +9790,7 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face"
+-l "Per Face..."
 -c "da_MapFacesUV"
 -i "polyNormalProj.png";
 
@@ -9894,7 +9855,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material"
+-l "Assign New Material..."
 -c "createAssignNewMaterialTreeLister \"\""
 -i "render_adskMaterial.png";
 
@@ -10112,7 +10073,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -10127,7 +10088,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -10135,12 +10096,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Geometry Cache"
+-l "Create Geometry Cache..."
 -c "geometryCacheOpt"
 -i "createCache.png";
 
 menuItem
--l "Delete Geometry Cache"
+-l "Delete Geometry Cache..."
 -c "geometryDeleteCacheOpt"
 -i "deleteCache.png";
 
@@ -10160,12 +10121,12 @@ menuItem
 -i "xgDEditor.png";
 
 menuItem
--l "Create Interactive Groom"
+-l "Create Interactive Groom..."
 -c "XgmCreateInteractiveGroomSplinesOption"
 -i "xgIG_creation.png";
 
 menuItem
--l "Interactive Brush"
+-l "Interactive Brush..."
 -c "XgmSetCombBrushToolOption"
 -i "xgIG_comb.png";
 
@@ -10178,7 +10139,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Description"
+-l "Create Description..."
 -c "XgCreateDescription"
 -i "xgCreateDescription.png";
 
@@ -10188,7 +10149,7 @@ menuItem
 -i "xgDEditor.png";
 
 menuItem
--l "XGen Library"
+-l "XGen Library..."
 -c "XGenLibraryWindow"
 -i "xgLibrary.png";
 
@@ -10725,7 +10686,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Automatic"
+-l "Automatic..."
 -c "performPolyAutoProj 1"
 -i "polyAutoProj.png";
 
@@ -10735,7 +10696,7 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face"
+-l "Per Face..."
 -c "da_MapFacesUV"
 -i "polyNormalProj.png";
 
@@ -10748,7 +10709,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Auto Seams"
+-l "Auto Seams..."
 -c "performPolyAutoSeamUV 1"
 -i "polyAutoSeams.png";
 
@@ -10815,7 +10776,7 @@ menuItem
 setParent -menu ..;
 
 menuItem
--l "Assign New Material"
+-l "Assign New Material..."
 -c "createAssignNewMaterialTreeLister \"\""
 -i "render_adskMaterial.png";
 
@@ -11044,7 +11005,7 @@ menuItem
 -i "nClothCacheCreate.png";
 
 menuItem
--l "Create nCache"
+-l "Create nCache..."
 -c "nClothCacheOpt"
 -i "nClothCacheCreate.png";
 
@@ -11059,7 +11020,7 @@ menuItem
 -i "nClothCacheAppend.png";
 
 menuItem
--l "Attach Cache"
+-l "Attach Cache..."
 -c "attachCache"
 -i "nClothCacheExisting.png";
 
@@ -11067,12 +11028,12 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Geometry Cache"
+-l "Create Geometry Cache..."
 -c "geometryCacheOpt"
 -i "createCache.png";
 
 menuItem
--l "Delete Geometry Cache"
+-l "Delete Geometry Cache..."
 -c "geometryDeleteCacheOpt"
 -i "deleteCache.png";
 
@@ -11092,12 +11053,12 @@ menuItem
 -i "xgDEditor.png";
 
 menuItem
--l "Create Interactive Groom"
+-l "Create Interactive Groom..."
 -c "XgmCreateInteractiveGroomSplinesOption"
 -i "xgIG_creation.png";
 
 menuItem
--l "Interactive Brush"
+-l "Interactive Brush..."
 -c "XgmSetCombBrushToolOption"
 -i "xgIG_comb.png";
 
@@ -11110,7 +11071,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Description"
+-l "Create Description..."
 -c "XgCreateDescription"
 -i "xgCreateDescription.png";
 
@@ -11120,7 +11081,7 @@ menuItem
 -i "xgDEditor.png";
 
 menuItem
--l "XGen Library"
+-l "XGen Library..."
 -c "XGenLibraryWindow"
 -i "xgLibrary.png";
 
@@ -11751,7 +11712,7 @@ menuItem -itl 1
 -i "greasePencilSoftPencil.png";
 
 menuItem -itl 1 
--l "Tool Window" 
+-l "Tool Window..." 
 -c "createGreasePencilWindow" 
 -i "GreasePencil.png";
 
@@ -12977,7 +12938,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Auto Seams" 
+-l "Auto Seams..." 
 -c "performPolyAutoSeamUV 1" 
 -i "polyAutoSeams.png";
 
@@ -13405,7 +13366,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Auto Seams" 
+-l "Auto Seams..." 
 -c "performPolyAutoSeamUV 1" 
 -i "polyAutoSeams.png";
 
@@ -13467,7 +13428,7 @@ menuItem
 -i "UVTkUVShell.png";
 
 menuItem
--l "Automatic Map" 
+-l "Automatic Map..." 
 -c "performPolyAutoProj 1" 
 -rp "SW" 
 -i "polyAutoProj.png";
@@ -13485,7 +13446,7 @@ menuItem
 -i "polyScaleUV.png";
 
 menuItem
--l "Per Face Map"
+-l "Per Face Map..."
 -c "da_MapFacesFacesUV"
 -rp "S" 
 -i "polyNormalProj.png";
@@ -13542,7 +13503,7 @@ menuItem
 -i "CutSewUVTool.png";
 
 menuItem
--l "Automatic Map" 
+-l "Automatic Map..." 
 -c "performPolyAutoProj 1" 
 -rp "SW" 
 -i "polyAutoProj.png";
@@ -13554,7 +13515,7 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face Map"
+-l "Per Face Map..."
 -c "da_MapFacesUV"
 -rp "E"
 -i "polyNormalProj.png";
@@ -13585,7 +13546,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Auto Seams" 
+-l "Auto Seams..." 
 -c "performPolyAutoSeamUV 1" 
 -i "polyAutoSeams.png";
 
@@ -13709,7 +13670,7 @@ menuItem
 -ob 1;
 
 menuItem
--l "Auto Seams" 
+-l "Auto Seams..." 
 -c "performPolyAutoSeamUV 1" 
 -i "polyAutoSeams.png";
 
@@ -13851,7 +13812,7 @@ menuItem
 -i "xgDEditor.png";
 
 menuItem
--l "XGen Library"
+-l "XGen Library..."
 -c "XGenLibraryWindow"
 -i "xgLibrary.png";
 
@@ -13960,44 +13921,28 @@ menuItem
 -rp "SW";
 
 menuItem 
--l "Length" 
--c "XgmSetLengthBrushTool" 
+-l "Length..." 
+-c "XgmSetLengthBrushToolOption" 
 -rp "N" 
 -i "xgIG_length.png";
 
 menuItem 
--c "XgmSetLengthBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Comb" 
--c "XgmSetCombBrushTool" 
+-l "Comb..." 
+-c "XgmSetCombBrushToolOption" 
 -rp "W" 
 -i "xgIG_comb.png";
 
 menuItem 
--c "XgmSetCombBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Freeze" 
--c "XgmSetFreezeBrushTool" 
+-l "Freeze..." 
+-c "XgmSetFreezeBrushToolOption" 
 -rp "NE" 
 -i "xgIG_freeze.png";
 
 menuItem 
--c "XgmSetFreezeBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Grab" 
--c "XgmSetGrabBrushTool" 
+-l "Grab..." 
+-c "XgmSetGrabBrushToolOption" 
 -rp "NW" 
 -i "xgIG_grab.png";
-
-menuItem 
--c "XgmSetGrabBrushToolOption" 
--ob 1;
 
 menuItem 
 -l "Groom Editor..." 
@@ -14014,97 +13959,57 @@ menuItem
 -d 1;
 
 menuItem 
--l "Density" 
--c "XgmSetDensityBrushTool" 
+-l "Density..." 
+-c "XgmSetDensityBrushToolOption" 
 -i "xgIG_density.png";
 
 menuItem 
--c "XgmSetDensityBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Place" 
--c "XgmSetPlaceBrushTool" 
+-l "Place..." 
+-c "XgmSetPlaceBrushToolOption" 
 -i "xgIG_place.png";
 
 menuItem 
--c "XgmSetPlaceBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Cut" 
--c "XgmSetCutBrushTool" 
+-l "Cut..." 
+-c "XgmSetCutBrushToolOption" 
 -i "xgIG_cut.png";
 
 menuItem 
--c "XgmSetCutBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Width" 
--c "XgmSetWidthBrushTool" 
+-l "Width..." 
+-c "XgmSetWidthBrushToolOption" 
 -i "xgIG_width.png";
 
 menuItem 
--c "XgmSetWidthBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Twist" 
--c "XgmSetDirectionBrushTool" 
+-l "Twist..." 
+-c "XgmSetDirectionBrushToolOption" 
 -i "xgIG_twist.png";
 
 menuItem 
--c "XgmSetDirectionBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Smooth" 
--c "XgmSetSmoothBrushTool" 
+-l "Smooth..." 
+-c "XgmSetSmoothBrushToolOption" 
 -i "xgIG_smooth.png";
 
 menuItem 
--c "XgmSetSmoothBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Noise" 
--c "XgmSetNoiseBrushTool" 
+-l "Noise..." 
+-c "XgmSetNoiseBrushToolOption" 
 -i "xgIG_noise.png";
 
 menuItem 
--c "XgmSetNoiseBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Clump" 
--c "XgmSetClumpBrushTool" 
+-l "Clump..." 
+-c "XgmSetClumpBrushToolOption" 
 -i "xgIG_clump.png";
 
 menuItem 
--c "XgmSetClumpBrushToolOption" 
--ob 1;
-
-menuItem 
--l "Part" 
--c "XgmSetPartBrushTool" 
--i "xgIG_part.png";
-
-menuItem 
+-l "Part..." 
 -c "XgmSetPartBrushToolOption" 
--ob 1;
+-i "xgIG_part.png";
 
 menuItem 
 -d 1;
 
 menuItem 
--l "Select" 
--c "XgmSetSelectBrushTool" 
--i "xgIG_select.png";
-
-menuItem 
+-l "Select..." 
 -c "XgmSetSelectBrushToolOption" 
--ob 1;
+-i "xgIG_select.png";
 
 setParent -m ..;
 
