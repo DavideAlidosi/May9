@@ -123,13 +123,13 @@ setParent -m ..;
 global proc AiVolume_MM_May9(){
 
 menuItem
--l "Edit Shader" 
+-l "Edit Shader..." 
 -c "da_AiVolumeShader" 
 -rp "E" 
 -i "VolumeShelf.png";
 
 menuItem
--l "Edit Volume" 
+-l "Edit Volume..." 
 -c "da_AiVolumeShapes" 
 -rp "W" 
 -i "WireFrameOnShaded.png";
@@ -9911,7 +9911,7 @@ menuItem
 -i "xgIG_comb.png";
 
 menuItem
--l "Interactive Groom Editor..."
+-l "Interactive Groom Editor"
 -c "XgCreateIgSplineEditor"
 -i "xgIG_editor.png";
 
@@ -10843,7 +10843,7 @@ menuItem
 -i "xgIG_comb.png";
 
 menuItem
--l "Interactive Groom Editor..."
+-l "Interactive Groom Editor"
 -c "XgCreateIgSplineEditor"
 -i "xgIG_editor.png";
 
@@ -12401,7 +12401,7 @@ menuItem -itl 1
 setParent -m ..;
 
 menuItem -itl 1 
--l "Groom Editor..." 
+-l "Groom Editor" 
 -c "XgCreateIgSplineEditor" 
 -i "xgIG_editor.png";
 
@@ -13559,7 +13559,7 @@ setParent -m ..;
 global proc XGen_Description_MM_May9(){
 
 menuItem
--l "Convert to Interactive Groom" 
+-l "Convert to Interactive Groom..." 
 -c "python(\"xgui.createXgIgConvertToInteractiveGroomWindow()\")" 
 -rp "E" 
 -i "xgConvertToIG.png";
@@ -13571,7 +13571,7 @@ menuItem
 -i "xgGuideContext.png";
 
 menuItem
--l "Primitives to Poly"
+-l "Primitives to Poly..."
 -c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(True)\")"
 -rp "S" 
 -i "da_xgPolyConvert.png";
@@ -13611,7 +13611,7 @@ menuItem
 -i "xgGuideContext.png";
 
 menuItem
--l "Primitives to Poly" 
+-l "Primitives to Poly..." 
 -c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")" 
 -rp "E" 
 -i "da_xgPolyConvert.png";
@@ -13656,7 +13656,7 @@ menuItem
 -i "xgGuideContext.png";
 
 menuItem
--l "Primitives to Poly" 
+-l "Primitives to Poly..." 
 -c "python(\"import xgenm.xmaya.xgmConvertPrimToPolygon as cpp;cpp.convertPrimToPolygon(False)\")" 
 -rp "E" 
 -i "da_xgPolyConvert.png";
@@ -13721,12 +13721,12 @@ menuItem
 -i "xgIG_grab.png";
 
 menuItem 
--l "Groom Editor..." 
+-l "Groom Editor" 
 -c "XgCreateIgSplineEditor" 
 -i "xgIG_editor.png";
 
 menuItem 
--l "Groom to Polygons" 
+-l "Groom to Polygons..." 
 -c "import xgenm.xmaya.xgmSplineToGeometryConvert as convert;convert.convertPrimToPolygon(True)" 
 -i "xgConvertToPoly.png" 
 -stp "python";

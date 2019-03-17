@@ -953,7 +953,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Recreate the persp camera if needed"
 	-cat "Custom Scripts.May9_Next.System"
-	-c ("string $camera = findStartUpCamera( \"persp\" );\nstring $camera2[] = `camera -n persp -hc \"viewSet -p %camera\"`;\n\ncamera -e -sc 0 $camera; delete \"persp\";\nrename $camera2[0] \"persp\";\ncamera -e -sc 1 \"persp\";")
+	-c ("da_DisableWalkTool;\nstring $camera = findStartUpCamera( \"persp\" );\nstring $camera2[] = `camera -n persp -hc \"viewSet -p %camera\"`;\n\ncamera -e -sc 0 $camera; delete \"persp\";\nrename $camera2[0] \"persp\";\ncamera -e -sc 1 \"persp\";\nviewSet -h")
 	da_ClearPersp;
 
 runTimeCommand

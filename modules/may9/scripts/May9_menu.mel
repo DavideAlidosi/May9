@@ -6,9 +6,9 @@ global proc da_May9Menu(){
  
     global string $gMainWindow;
     $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
-	menuItem -p $menuMain -l "Interactive Playback" -c "da_InteractivePlayback" -i "interactivePlayback.png";
+	menuItem -p $menuMain -l "Interactive Playback" -c "InteractivePlayback" -i "interactivePlayback.png";
     menuItem -p $menuMain -l "Freeze/Delete Non-Deform" -c "da_FreezeDelNonDef" -i "UV_Freeze_Tool.png";
-    menuItem -p $menuMain -l "Delete Mental Ray Nodes" -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
+    menuItem -p $menuMain -l "Delete Mental Ray Nodes..." -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
 
     menuItem -d 1 -l "Toggle";
     menuItem -p $menuMain -l "Persp/Ortho" -c "da_perspToggle" -i "hyperShadeResetCameraView.png";
@@ -34,8 +34,8 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Hypershade" -c "da_LayoutHypershade" -i "da_Hypershade_Layout.png";
     
     menuItem -d 1 -l "Reset";
-    menuItem -p $menuMain -l "To Last Save" -c "da_RevertToSave" -i "CN_refresh.png";
-    menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp;\nviewSet -h" -i "out_camera.png";
+    menuItem -p $menuMain -l "To Last Save..." -c "da_RevertToSave" -i "CN_refresh.png";
+    menuItem -p $menuMain -l "Persp Camera" -c "da_ClearPersp" -i "out_camera.png";
     menuItem -p $menuMain -l "Current Workspace" -c "da_CloseAllPanel" -i "RS_refresh_layer.png";
 
     menuItem -d 1 -l "Options";
@@ -43,9 +43,9 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Wheel Zoom" -c "da_ToggleMouseWheel" -cb (`optionVar -q "useScrollWheel"`);
 
     menuItem -d 1 -l "May9 Next";
-    menuItem -p $menuMain -l "About" -c "da_AboutMay9" -i "menuIconHelp.png";
-    menuItem -p $menuMain -l "Home Page" -c "showHelp -a \"https://www.highend3d.com/maya/plugin/may9-next-an-alternative-user-experience-for-maya\";" -i "menuIconHelp.png";
-    menuItem -p $menuMain -l "User Guide" -c "showHelp -a \"https://github.com/DavideAlidosi/May9/blob/master/May9%20Next%20User%20Guide.pdf\";" -i "menuIconHelp.png";
+    menuItem -p $menuMain -l "About..." -c "da_AboutMay9" -i "menuIconHelp.png";
+    menuItem -p $menuMain -l "Home Page..." -c "showHelp -a \"https://www.highend3d.com/maya/plugin/may9-next-an-alternative-user-experience-for-maya\";" -i "menuIconHelp.png";
+    menuItem -p $menuMain -l "User Guide..." -c "showHelp -a \"https://github.com/DavideAlidosi/May9/blob/master/May9%20Next%20User%20Guide.pdf\";" -i "menuIconHelp.png";
 }
 
 global proc da_May9MenuRemover(){
