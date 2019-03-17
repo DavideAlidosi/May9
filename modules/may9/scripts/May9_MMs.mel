@@ -28,7 +28,7 @@ menuItem
 -i "light_manager.png";
 
 menuItem
--l "Edit Light" 
+-l "Edit Light..." 
 -c "AttributeEditor" 
 -rp "SW" 
 -i "attributes.png";
@@ -722,9 +722,13 @@ menuItem
 
 menuItem -bld 1 
 -l "Select Camera"
--c "da_SelectCamera;AttributeEditor"
+-c "da_SelectCamera"
 -rp "SW"
 -i "Camera.png";
+
+menuItem
+-c "da_SelectCamera; AttributeEditor" 
+-ob 1;
 
 menuItem -bld 1 
 -l "Select None"
@@ -1550,7 +1554,7 @@ setParent -m ..;
 global proc Container_MM_May9(){
 
 menuItem
--l "Edit in Hypergraph" 
+-l "Edit in Hypergraph..." 
 -c "da_EditContainer" 
 -rp "N" 
 -i "expandContainer.png";
@@ -2761,7 +2765,7 @@ menuItem
 -i "paintSetMembership.png";
 
 menuItem
--l "Edit Deformer" 
+-l "Edit Deformer..." 
 -c "ShowManipulators;da_LastOpInStack" 
 -rp "S" 
 -i "selectObject.png";
@@ -2887,7 +2891,7 @@ global proc EdgeVertices_MM_May9(){
 
 menuItem
 -l "Crease Set Editor..." 
--c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
+-c "python \"creaseSetEditor.showCreaseSetEditor()\";" 
 -rp "N" 
 -i "polyCrease.png";
 
@@ -2970,7 +2974,7 @@ menuItem
 -i "polyCrease.png";
 
 menuItem
--c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";"
+-c "python \"creaseSetEditor.showCreaseSetEditor()\";"
 -ob 1;
 
 menuItem
@@ -5521,7 +5525,7 @@ menuItem
 -i "light_manager.png";
 
 menuItem
--l "Edit Light" 
+-l "Edit Light..." 
 -c "AttributeEditor" 
 -rp "SW" 
 -i "attributes.png";
@@ -5938,7 +5942,7 @@ menuItem
 -i "out_defaultLightList.png";
 
 menuItem
--l "Edit Light" 
+-l "Edit Light..." 
 -c "AttributeEditor" 
 -rp "SW" 
 -i "attributes.png";
@@ -6073,7 +6077,7 @@ menuItem
 -i "polyCrease.png";
 
 menuItem
--c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
+-c "python \"creaseSetEditor.showCreaseSetEditor()\";" 
 -ob 1;
 
 setParent -m ..;
@@ -7875,7 +7879,7 @@ setParent -m ..;
 }else{
 
 menuItem
--l "Edit in Hypergraph" 
+-l "Edit in Hypergraph..." 
 -c "da_EditContainer" 
 -rp "N" 
 -i "expandContainer.png";
@@ -8498,7 +8502,7 @@ menuItem
 -i "light_manager.png";
 
 menuItem
--l "Edit Light" 
+-l "Edit Light..." 
 -c "AttributeEditor" 
 -rp "SW" 
 -i "attributes.png";
@@ -8550,7 +8554,7 @@ menuItem
 -i "showManip.png";
 
 menuItem
--l "Edit Attributes" 
+-l "Edit Attributes..." 
 -c "AttributeEditor" 
 -rp "S" 
 -i "attributes.png";
@@ -8842,7 +8846,7 @@ menuItem
 -i "showManip.png";
 
 menuItem
--l "Edit Attributes" 
+-l "Edit Attributes..." 
 -c "AttributeEditor" 
 -rp "S" 
 -i "attributes.png";
@@ -8870,7 +8874,7 @@ setParent -m ..;
 global proc PolyExtrudeFace_MM_May9(){
 
 menuItem
--l "Edit Attributes" 
+-l "Edit Attributes..." 
 -c "AttributeEditor" 
 -rp "S" 
 -i "attributes.png";
@@ -8916,7 +8920,7 @@ menuItem
 -i "showManip.png";
 
 menuItem
--l "Edit Attributes" 
+-l "Edit Attributes..." 
 -c "AttributeEditor" 
 -rp "S" 
 -i "attributes.png";
@@ -8940,7 +8944,7 @@ menuItem
 -i "showManip.png";
 
 menuItem
--l "Edit Attributes" 
+-l "Edit Attributes..." 
 -c "AttributeEditor" 
 -rp "S" 
 -i "attributes.png";
@@ -11005,7 +11009,7 @@ menuItem
 -i "Camera.png";
 
 menuItem
--c "da_SelectCamera;\nAttributeEditor\n" 
+-c "da_SelectCamera; AttributeEditor" 
 -ob 1;
 
 setParent -m ..;
@@ -11033,7 +11037,7 @@ setParent -m ..;
 global proc Shaders_MM_May9(){
 
 menuItem
--l "Edit Shaders" 
+-l "Edit Shaders..." 
 -c "da_EditAndFrameShaderOutliner" 
 -rp "N" 
 -i "hsGraphMaterial.png";
@@ -11057,7 +11061,7 @@ menuItem
 -i "light_manager.png";
 
 menuItem
--l "Edit Light" 
+-l "Edit Light..." 
 -c "AttributeEditor" 
 -rp "SW" 
 -i "attributes.png";
@@ -11296,7 +11300,7 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Crease Set Editor..." 
--c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";" 
+-c "python \"creaseSetEditor.showCreaseSetEditor()\";" 
 -i "polyCrease.png";
 
 menuItem  -itl 1 
@@ -12798,7 +12802,7 @@ menuItem
 -i "polyCrease.png";
 
 menuItem
--c "python \"from maya.app.general import creaseSetEditor; creaseSetEditor.showCreaseSetEditor()\";"
+-c "python \"creaseSetEditor.showCreaseSetEditor()\";"
 -ob 1;
 
 menuItem
