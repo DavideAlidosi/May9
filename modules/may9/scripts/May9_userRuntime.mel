@@ -16,6 +16,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Enable Blue Overrides on Selected Shape\n"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myShape[] = `listRelatives -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 6;\n}\n")
+	da_BlueOverrides;
+
+runTimeCommand
 	-ann "Batch Skin Transfert UI"
 	-cat"Custom Scripts.May9_Next.Rigging"
 	-c ("string $myResult = `confirmDialog -title \"Copy Skin Weight\" -message \"Before continue please check if you have select for first the weighted geometry, and the other meshe(s) are bind on same skeleton. What association did you want use?\" \n-button \"Closest Point on Surface\" -button \"Ray Cast\" -button \"Closest Component\" -button \"UV Space\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Closest Point on Surface\") {\n    da_BatchSkinTransfertCP;\n}\n    \nelse if ($myResult == \"Ray Cast\") {\n    da_BatchSkinTransfertRC;\n}\n    \nelse if ($myResult == \"Closest Component\") {\n    da_BatchSkinTransfertCC;\n}\n\nelse if ($myResult == \"UV Space\") {\n    da_BatchSkinTransfertUV;\n}")
@@ -255,7 +261,7 @@ runTimeCommand
 	da_RedOverrides;
 
 runTimeCommand
-	-ann "Enable Green  Overrides on Selected Shape"
+	-ann "Enable Green Overrides on Selected Shape"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $myShape[] = `listRelatives -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 14;\n}")
 	da_GreenOverrides;
@@ -2492,6 +2498,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_BlueOverrides`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_BatchSkinTransfertUI`);
