@@ -1385,7 +1385,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Edit Current Deformer"
 	-cat "Custom Scripts.May9_Next.Animate"
-	-c ("ShowManipulators;da_LastOpInStack")
+	-c ("string $currentTool = `currentCtx`;\n\nif ($currentTool == \"ShowManips\"){\n    buildSelectMM;MarkingMenuPopDown;;\n}else{\n    ShowManipulators;\n}")
 	da_EditDeformer;
 
 runTimeCommand
