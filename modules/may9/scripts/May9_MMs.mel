@@ -11388,6 +11388,32 @@ menuItem -itl 1
 setParent -m ..;
 
 } 
+
+// Define Tool_EditMembership marking menu
+global proc Tool_EditMembership_MM_May9(){
+
+menuItem -itl 1 
+-l "Grow Selection"
+-rp "NE" 
+-c "GrowPolygonSelectionRegion" 
+-i "growCVselect.png";
+
+menuItem -itl 1 
+-l "Shrink Selection"
+-rp "NW" 
+-c "ShrinkPolygonSelectionRegion" 
+-i "shrinkCVselect.png";
+
+menuItem -itl 1 
+-l "Complete Tool" 
+-c "buildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode" 
+-rp "E" 
+-i "aselect.png";
+
+setParent -m ..;
+
+}
+
 // Define Tool_GreasePencil marking menu
 global proc Tool_GreasePencil_MM_May9(){
 
