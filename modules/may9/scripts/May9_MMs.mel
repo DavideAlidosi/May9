@@ -694,41 +694,23 @@ menuItem -bld 1
 -cb ($HUDCheck);
 }
 
-if (`about -api` >= 20180000){
-menuItem -bld 1 
--l "Select Inverse" 
--c "InvertSelection"
--i "selectCycle.png" 
--rp "W";
-}else{
-menuItem -bld 1 
--l "Select Inverse" 
--c "InvertSelection"
--i "invertUVpinning.png" 
--rp "W";
-}
-
 menuItem -bld 1 
 -l "Select Hierarchy"
 -c "SelectHierarchy"
 -rp "N"
 -i "selectByHierarchy.png";
 
-menuItem 
--l "Reset Persp Camera"
--c "da_ClearPersp;\nviewSet -h"
--rp "N"
--i "hyperShadeResetCameraView.png";
+menuItem -bld 1 
+-l "Selection Size"
+-c "da_SelectionSize"
+-rp "W"
+-i "out_decomposeMatrix.png";
 
 menuItem -bld 1 
--l "Select Camera"
+-l "Current Camera"
 -c "da_SelectCamera"
 -rp "SW"
 -i "Camera.png";
-
-menuItem
--c "da_SelectCamera; AttributeEditor" 
--ob 1;
 
 menuItem -bld 1 
 -l "Select None"
@@ -9309,14 +9291,6 @@ menuItem
 -i "da_deformerSetEditor.png";
 
 menuItem
--l "Edit Membership Tool"
--c "da_EditMembershipTool"
--i "setEdit.png";
-
-menuItem
--d 1;
-
-menuItem
 -l "Blend Shape"
 -sm 1
 -i "blendShape.png";
@@ -10237,14 +10211,6 @@ menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
 -i "da_deformerSetEditor.png";
-
-menuItem
--l "Edit Membership Tool"
--c "da_EditMembershipTool"
--i "setEdit.png";
-
-menuItem
--d 1;
 
 menuItem
 -l "Nonlinear"

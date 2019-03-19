@@ -16,6 +16,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Return Selection Size"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $mySel[] = `ls -sl`; \nint $myCurrSize = `size($mySel)`;\n\ninViewMessage -pos topCenter -msg (\"Selection Size \"+$myCurrSize) -fade;\nprint ($myCurrSize + \"\\n\");")
+	da_SelectionSize;
+
+runTimeCommand
 	-ann "Custom Edit Membership Tool"
 	-cat "Custom Scripts.May9_Next.Object"
 	-c ("string $myCurDeformer[] = `ls -sl`;\n\nEditMembershipTool;\n")
@@ -2388,7 +2394,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Return the Length of Selected Curve"
 	-cat "Custom Scripts.May9_Next.Object"
-	-c ("string $mySel[] = `ls -sl`;\nfloat $myLength = `arclen $mySel[0]`;\n\ninViewMessage -pos topCenter -msg (\"Curve length \"+$myLength) -fade;\nprint $myLength;")
+	-c ("string $mySel[] = `ls -sl`;\nfloat $myLength = `arclen $mySel[0]`;\n\ninViewMessage -pos topCenter -msg (\"Curve length \" + $myLength) -fade;\nprint ($myLength + \"\\n\");")
 	da_CurveLength;
 
 runTimeCommand
@@ -2510,6 +2516,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_SelectionSize`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_EditMembershipTool`);
