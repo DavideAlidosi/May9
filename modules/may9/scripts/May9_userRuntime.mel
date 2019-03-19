@@ -16,6 +16,18 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Custom Edit Membership Tool"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $myCurDeformer[] = `ls -sl`;\n\nEditMembershipTool;\n")
+	da_EditMembershipTool;
+
+runTimeCommand
+	-ann "Complete Edit Membership Tool"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("buildSelectMM;\nMarkingMenuPopDown;\nselect $myCurDeformer[0]")
+	da_CompleteEditMembershipTool;
+
+runTimeCommand
 	-ann "Enable Blue Overrides on Selected Shape\n"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $myShape[] = `listRelatives -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 6;\n}\n")
@@ -2498,6 +2510,12 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_EditMembershipTool`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_CompleteEditMembershipTool`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_BlueOverrides`);
