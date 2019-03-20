@@ -192,14 +192,6 @@ menuItem -bld 1
 -rp "SE"
 -i "plane.png";
 
-menuItem -bld 1 
--l "Interactive Creation"
--c "da_TogglePrimitiveAsTool"
--cb ($IntCreationCheck);
-
-menuItem 
--d 1;
-
 if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Import AI Curves..."
@@ -216,6 +208,11 @@ menuItem -bld 1
 -l "Curves Based Text..."
 -c "CreateTextOptions"
 -i "text.png";
+
+menuItem -bld 1 
+-l "Interactive Creation"
+-c "da_TogglePrimitiveAsTool"
+-cb ($IntCreationCheck);
 
 setParent -m ..;
 
@@ -353,9 +350,6 @@ menuItem -bld 1
 -l "Channel Control..."
 -c "ChannelControlEditor"
 -i "channelBox.png";
-
-menuItem 
--d 1;
 
 menuItem -bld 1 
 -l "Controllers"
@@ -574,9 +568,6 @@ menuItem -bld 1
 -c "CreateAnnotateNode"
 -i "annotation.png";
 
-menuItem
--d 1;
-
 menuItem -bld 1 
 -l "Paint Effects..."
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
@@ -627,27 +618,9 @@ menuItem -bld 1
 -i "teSetKeyframe.png";
 
 menuItem -bld 1 
--l "Select Hierarchy" 
--c "SelectHierarchy" 
--rp "E" 
--i "selectByHierarchy.png";
-
-menuItem -bld 1 
--l "Play Max Real-time"
--c "da_maxPlaybackSpeedToggle"
--cb (`playbackOptions -q -maxPlaybackSpeed`);
-
-menuItem -bld 1 
--l "Stepped Preview"
--c "da_steppedPreview"
--cb (`playbackOptions -q -blockingAnim`);
-
-menuItem
--d 1;
-
-menuItem -bld 1 
 -l "Delete Static Channels" 
 -c "delete -staticChannels -unitlessAnimationCurves false -hierarchy none -controlPoints 0 -shape 1" 
+-rp "E"
 -i "deleteGeneric.png";
 
 menuItem -bld 1 
@@ -669,6 +642,16 @@ menuItem -bld 1
 -l "MASH Editor..."
 -c "MASHOutliner"
 -i "MASH_Editor.png";
+
+menuItem -bld 1 
+-l "Play Max Real-time"
+-c "da_maxPlaybackSpeedToggle"
+-cb (`playbackOptions -q -maxPlaybackSpeed`);
+
+menuItem -bld 1 
+-l "Stepped Preview"
+-c "da_steppedPreview"
+-cb (`playbackOptions -q -blockingAnim`);
 
 setParent -m ..;
 
@@ -745,9 +728,6 @@ menuItem -bld 1
 -c "OptimizeSceneOptions"
 -i "sequenceCompress.png";
 
-menuItem 
--d 1;
-
 if (`about -api` >= 20190000){
 string $evalMode[] = `evaluationManager -q -m`;
 
@@ -791,27 +771,27 @@ menuItem -bld 1
 -i "move_M.png";
 
 menuItem -bld 1 
--l "Align Tool"
--c "setToolTo alignToolCtx"
--rp "SE"
--i "alignTool.png";
+-l "Expose Pivot/Rotate Order"
+-c "da_ExposeRotationOrder;da_pivotKeyable" 
+-rp "NE"
+-i "pickPivotComp.png";
 
 menuItem -bld 1 
--l "Snap Together Tool"
--c "setToolTo snapTogetherToolCtx"
+-l "Toggle Local Axes" 
+-c "ToggleLocalRotationAxes"
 -rp "E"
--i "snapTogetherTool.png";
+-i "polyNormalSetToFace.png";
 
 if (`about -api` >= 20180000){
 menuItem -bld 1 
--l "Freeze Transforms"
--c "FreezeTransformations" 
+-l "Freeze/Delete Non-Deform"
+-c "da_FreezeDelNonDef" 
 -rp "NW"
 -i "FreezeTransform.png";
 }else{
 menuItem -bld 1 
--l "Freeze Transforms"
--c "FreezeTransformations" 
+-l "Freeze/Delete Non-Deform"
+-c "da_FreezeDelNonDef" 
 -rp "NW"
 -i "UV_Freeze_Tool.png";
 }
@@ -820,13 +800,13 @@ if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Center Pivot"
 -c "CenterPivot" 
--rp "NE"
+-rp "SE"
 -i "CenterPivot.png";
 }else{
 menuItem -bld 1 
 -l "Center Pivot"
 -c "CenterPivot" 
--rp "NE"
+-rp "SE"
 -i "menuIconModify.png";
 }
 
@@ -850,24 +830,6 @@ menuItem -bld 1
 -l "Connect Transform..."
 -c "da_ConnectTransformUI"
 -i "da_OneToMany.png";
-
-menuItem 
--d 1;
-
-menuItem -bld 1 
--l "Toggle Local Axes" 
--c "ToggleLocalRotationAxes"
--i "polyNormalSetToFace.png";
-
-menuItem -bld 1 
--l "Expose Rotate Order"
--c "da_ExposeRotationOrder" 
--i "rotateUVccw.png";
-
-menuItem -bld 1 
--l "Expose Pivot Channels"
--c "da_pivotKeyable"
--i "pickPivotComp.png";
 
 setParent -m ..;
 
@@ -924,8 +886,6 @@ menuItem
 }
 }
 
-menuItem 
--d 1;
 }else{
 if (`gmatch $currentPanel "hyperShadePanel*"`){
 menuItem
