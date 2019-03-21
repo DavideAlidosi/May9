@@ -223,6 +223,18 @@ menuItem -bld 1
 -i "render.png";
 
 menuItem -bld 1 
+-l "Render Frame"
+-c "RenderIntoNewWindow"
+-rp "N"
+-i "RS_render.png";
+
+menuItem -bld 1 
+-l "Select Camera"
+-c "da_SelectCamera"
+-rp "NE"
+-i "Camera.png";
+
+menuItem -bld 1 
 -l "Render Sequence"
 -c "RenderSequence"
 -rp "NW"
@@ -247,22 +259,10 @@ menuItem -bld 1
 -i "ResolutionGate.png";
 
 menuItem -bld 1 
--l "Playblast..."
--c "PlayblastOptions"
+-l "Playblast"
+-c "performPlayblast 3"
 -rp "SE"
 -i "playblast.png";
-
-menuItem -bld 1 
--l "Export StandIn..."
--c "da_doExportStandIn"
--rp "N" 
--i "ExportStandinShelf.png";
-
-menuItem -bld 1 
--l "Import StandIn..."
--c "da_CreateStandInFile"
--rp "NE" 
--i "StandinShelf.png";
 
 menuItem -bld 1 
 -l "Render Settings..."
@@ -280,9 +280,14 @@ menuItem -bld 1
 -i "folder-open.png";
 
 menuItem -bld 1 
--l "Transfer Maps..."
--c "performSurfaceSampling 1"
--i "UseDefaultMaterial.png";
+-l "Export StandIn..."
+-c "da_doExportStandIn"
+-i "ExportStandinShelf.png";
+
+menuItem -bld 1 
+-l "Import StandIn..."
+-c "da_CreateStandInFile"
+-i "StandinShelf.png";
 
 setParent -m ..;
 
@@ -690,10 +695,10 @@ menuItem -bld 1
 -i "out_decomposeMatrix.png";
 
 menuItem -bld 1 
--l "Current Camera"
--c "da_SelectCamera"
+-l "Align Tool"
+-c "setToolTo alignToolCtx"
 -rp "SW"
--i "Camera.png";
+-i "alignTool.png";
 
 menuItem -bld 1 
 -l "Select None"
@@ -7651,21 +7656,21 @@ menuItem
 -rp "SE" 
 -cb ($MaterialCheck);
 
-menuItem
--l "Create Quick Set..." 
--c "CreateQuickSelectSet"
--rp "S"
--i "out_objectSet.png";
-
 if ($MaterialCheck || $DAGCheck == 0){
 menuItem
 -l "Select by Shader" 
 -c "da_SelectObjectMaterial" 
+-rp "S" 
 -i "out_layeredShader.png";
 }
 
 menuItem
--l "Namespace Editor"
+-l "Create Quick Set..." 
+-c "CreateQuickSelectSet"
+-i "out_objectSet.png";
+
+menuItem
+-l "Namespace..."
 -c "NamespaceEditor"
 -i "QR_rename.png";
 
@@ -7726,9 +7731,6 @@ menuItem
 -i "RS_disable.png";
 
 setParent -m ..;
-
-menuItem
--d 1;
 
 menuItem
 -l "Reference" 
@@ -10915,10 +10917,6 @@ menuItem
 -c "da_SelectCamera" 
 -rp "SE" 
 -i "Camera.png";
-
-menuItem
--c "da_SelectCamera; AttributeEditor" 
--ob 1;
 
 setParent -m ..;
 
