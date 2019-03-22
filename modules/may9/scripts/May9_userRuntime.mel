@@ -16,6 +16,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Remove Infinity from Graph Editor"
+	-cat "Custom Scripts.May9_Next.Animate"
+	-c ("setInfinity -pri constant;\nsetInfinity -poi constant;\n")
+	da_RemoveInfinity;
+
+runTimeCommand
 	-ann "Disable Portal Light for Skydome"
 	-cat "Custom Scripts.May9_Next.Render"
 	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n\tsetAttr ($each +\".portalMode\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Portal Mode Off\" -fade;")
@@ -2506,6 +2512,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_RemoveInfinity`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_AiPortalModeOff`);
