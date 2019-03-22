@@ -16,6 +16,24 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Disable Portal Light for Skydome"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n\tsetAttr ($each +\".portalMode\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Portal Mode Off\" -fade;")
+	da_AiPortalModeOff;
+
+runTimeCommand
+	-ann "Interior Only Portal Light for Skydome"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n\tsetAttr ($each +\".portalMode\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"Portal Mode Interior Only\" -fade;")
+	da_AiPortalModeInterior;
+
+runTimeCommand
+	-ann "Interior and Exterior Portal Light for Skydome"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n\tsetAttr ($each +\".portalMode\") 2;\n}\n\ninViewMessage -pos topCenter -msg \"Portal Mode Interior and Exterior\" -fade;")
+	da_AiPortalModeInteriorExterior;
+
+runTimeCommand
 	-ann "Return Selection Size"
 	-cat "Custom Scripts.May9_Next.Object"
 	-c ("string $mySel[] = `ls -sl`; \nint $myCurrSize = `size($mySel)`;\n\ninViewMessage -pos topCenter -msg (\"Selection Size \"+$myCurrSize) -fade;\nprint ($myCurrSize + \"\\n\");")
@@ -2488,6 +2506,15 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiPortalModeOff`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiPortalModeInterior`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiPortalModeInteriorExterior`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_SelectionSize`);

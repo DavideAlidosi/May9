@@ -491,6 +491,12 @@ menuItem -bld 1
 -c "cmdPhotometricLights;PickWalkUp"
 -rp "S"
 -i "PhotometricLightShelf.png";
+}else{
+menuItem -bld 1 
+-l "Volume"
+-c "CreateVolumeLight"
+-rp "S"
+-i "volumelight.png";
 }
 
 if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
@@ -499,6 +505,12 @@ menuItem -bld 1
 -c "cmdLightPortal"
 -rp "N"
 -i "LightPortalShelf.png";
+}else{
+menuItem -bld 1 
+-l "Ambient"
+-c "CreateAmbientLight"
+-rp "N"
+-i "ambientlight.png";
 }
 
 menuItem -bld 1 
@@ -11014,6 +11026,25 @@ menuItem
 menuItem
 -l "High" 
 -c "da_AiHighSample";
+
+setParent -m ..;
+
+menuItem
+-l "Portal Mode" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "Off" 
+-c "da_AiPortalModeOff";
+
+menuItem
+-l "Interior" 
+-c "da_AiPortalModeInterior";
+
+menuItem
+-l "Interior and Exterior" 
+-c "da_AiPortalModeInteriorExterior";
 
 setParent -m ..;
 
