@@ -293,7 +293,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Enable AiMesh Light on multiple mesh"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("FreezeTransformations;\n\nstring $mySel[] = `ls -sl`; \nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n\tda_AiMeshLight;\n\tCenterPivot;\n}")
+	-c ("FreezeTransformations;\n\nstring $mySel[] = `ls -sl`; \nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n\tcmdArnoldMeshLight;\n\tCenterPivot;\n}")
 	da_AiMeshesLight;
 
 runTimeCommand
@@ -1461,27 +1461,6 @@ runTimeCommand
 	da_AiNoLightNormalize;
 
 runTimeCommand
-	-ann "Create AiPhotometric Light"
-	-cat "Custom Scripts.May9_Next.Render"
-	-cl "python"
-	-c ("import mtoa.utils as mutils; mutils.createLocator(\"aiPhotometricLight\", asLight=True)")
-	da_AiPhotometric;
-
-runTimeCommand
-	-ann "Create AiSkyDome Light"
-	-cat "Custom Scripts.May9_Next.Render"
-	-cl "python"
-	-c ("import mtoa.utils as mutils; mutils.createLocator(\"aiSkyDomeLight\", asLight=True)")
-	da_AiSkyDome;
-
-runTimeCommand
-	-ann "Create ai Mesh Light"
-	-cat "Custom Scripts.May9_Next.Render"
-	-cl "python"
-	-c ("import mtoa.utils as mutils; mutils.createMeshLight()")
-	da_AiMeshLight;
-
-runTimeCommand
 	-ann "Create a MASH Network for Voxelize a Mash"
 	-cat "Custom Scripts.May9_Next.MASH"
 	-c ("string $mySel[] = `ls -sl`;\nif ( `size($mySel)` == 2 ){\n    string $myResult = `confirmDialog -title \"Confirm\" -message \"Make sure you have selected before the filler mesh, do you continue?\" \n\t-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n\t-cancelButton \"No\" -dismissString \"No\"`;\n\tif ($myResult == \"Yes\") {\n        select $mySel[0];\n        MASHnewNetwork(\"MASH#\");\n        string $myMashNerwork[] = `listConnections -s true -d false`;\n        \n        // Create connection and set MASH to Voxelize\n        connectAttr ($mySel[1] + \".worldMesh[0]\", $myMashNerwork[0] + \".inputMesh\");\n        \n        setAttr ($myMashNerwork[0] + \".arrangement\") 4;\n        setAttr ($myMashNerwork[0] + \".meshType\") 6;\n        setAttr ($myMashNerwork[0] + \".voxelMode\") 2;\n        \n        // Set hidden order and open Attribute Editor wondow\n        hide $mySel[1];\n        showHidden $mySel[0];\n        \n        select $myMashNerwork[0];\n        \n        openAEWindow;\n    }\n}else{\n    string $myResult = `confirmDialog -title \"Warning\" -message \"Please select only two meshes, first the filler than the volume.\" \n\t-button \"Ok\" -defaultButton \"Ok\" \n\t-cancelButton \"Ok\" -dismissString \"Ok\"`;\n}")
@@ -1805,13 +1784,6 @@ runTimeCommand
 	-cat "Custom Scripts.May9_Next.Object"
 	-c ("string $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n\tconnectAttr -f ($createConnect[0] + \".output\") ($createConnect[$i] + \".inMesh\");\n}")
 	da_ConnectCereation;
-
-runTimeCommand
-	-ann "Create Ai LightPortal"
-	-cat "Custom Scripts.May9_Next.Render"
-	-cl "python"
-	-c ("import mtoa.utils as mutils;mutils.createLocator(\"aiLightPortal\", asLight=True)")
-	da_AiLightPortal;
 
 runTimeCommand
 	-ann "Toggle Playback Animation"
@@ -3241,15 +3213,6 @@ catchQuiet (`runTimeCommand -e -del
 	da_AiNoLightNormalize`);
 
 catchQuiet (`runTimeCommand -e -del
-	da_AiPhotometric`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_AiSkyDome`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_AiMeshLight`);
-
-catchQuiet (`runTimeCommand -e -del
 	da_MashVoxelizer`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -3410,9 +3373,6 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_ConnectCereation`);
-
-catchQuiet (`runTimeCommand -e -del
-	da_AiLightPortal`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_TogglePlayback`);
@@ -3763,4 +3723,16 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_ToggleUV`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiSkyDome`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiLightPortal`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiMeshLight`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiPhotometric`);
 }

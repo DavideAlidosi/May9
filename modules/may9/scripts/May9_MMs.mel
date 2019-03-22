@@ -466,10 +466,9 @@ menuItem -bld 1
 if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "Area"
--c "import mtoa.utils as mutils;mutils.createLocator(\"aiAreaLight\", asLight=True)"
+-c "cmdArnoldAreaLights"
 -rp "NE"
--i "AreaLightShelf.png"
--stp "python";
+-i "AreaLightShelf.png";
 }else{
 menuItem -bld 1 
 -l "Area"
@@ -478,23 +477,29 @@ menuItem -bld 1
 -i "out_areaLight.png";
 }
 
+if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "SkyDome"
--c "da_AiSkyDome;PickWalkUp"
+-c "cmdSkydomeLight;PickWalkUp"
 -rp "NW"
 -i "SkydomeLightShelf.png";
+}
 
+if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "Photometric"
--c "da_AiPhotometric;PickWalkUp"
+-c "cmdPhotometricLights;PickWalkUp"
 -rp "S"
 -i "PhotometricLightShelf.png";
+}
 
+if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "Portal"
--c "da_AiLightPortal"
+-c "cmdLightPortal"
 -rp "N"
 -i "LightPortalShelf.png";
+}
 
 menuItem -bld 1 
 -l "Light Editor..."

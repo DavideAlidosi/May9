@@ -20,7 +20,7 @@ Release Note
 - Unified installation process, is highly recommended a new installation instead update it
 - Compatibility to any Workspace, anyway the use of Maya Classic is high suggested
 - May9 Next Hotkey Set are added over standards ones and do not substitute the user hotkeys
-- Tested and develop on Autodesk Maya 2019, Autodesk Maya 2018.5 and Autodesk Maya 2017.5
+- Tested and develop on Autodesk Maya 2019, Autodesk Maya 2018.5 and Autodesk Maya 2017.5 with MtoA 3.2
 
 
 Exclusive script
