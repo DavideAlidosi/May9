@@ -1,9 +1,9 @@
 print "May9 console: Source May9_core.mel \n";
 
 // Store May9 Version
-string $may9Version = "May9 Next.0.7";
+string $may9Version = "May9 Next.1.0";
 string $may9SecondLine = "is powered by MMtoKey core";
-int $may9Value = "10070";
+int $may9Value = "10100";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -17,6 +17,22 @@ ModCreateMenu mainCreateMenu;
 // Inizialize Marking Menues
 source May9_MMs.mel;
 
+// Initialzie May9Menu
+evalDeferred ("da_May9Menu");
+
+// Inizialize Arnold Options
+global proc da_AiOptions(){
+	if (`pluginInfo -q -l mtoa`){
+		if( !`objExists defaultArnoldRenderOptions` ){
+			createNode aiOptions -n defaultArnoldRenderOptions;
+		}
+		select -cl;
+	}
+}
+da_AiOptions;
+scriptJob -e "NewSceneOpened" da_AiOptions;
+scriptJob -e "SceneOpened" da_AiOptions;
+
 // Set new scene opened preferences
 string $myLayoutReset = "int $myLayout = 0";
 scriptJob -e "NewSceneOpened" $myLayoutReset;
@@ -29,9 +45,6 @@ python "from maya.app.general import creaseSetEditor";
 if (`about -api` >= 20190000){
 	python "from maya.plugin.evaluator.cache_preferences import CachePreferenceEnabled";
 }
-
-// Initialzie May9Menu
-evalDeferred ("da_May9Menu");
 
 // Define da_round
 global proc int da_round(float $da_value){
@@ -75,10 +88,9 @@ global proc string da_ObjectOver(){
     tokenize $myObjecItem "." $myObject;
     popupMenu -e -dai da_SelectOverCleaner;
  
-return $myObject[0];
+	return $myObject[0];
 }
 
-// Run da_MouseOver_MM_May9
 da_MouseOver_MM_May9;
 
 print "May9 console: Complete standard procedures \n";
