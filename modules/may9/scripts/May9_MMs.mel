@@ -466,7 +466,7 @@ menuItem -bld 1
 if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "Area"
--c "cmdArnoldAreaLights"
+-c "da_AiAreaLight"
 -rp "NE"
 -i "AreaLightShelf.png";
 }else{
@@ -480,7 +480,7 @@ menuItem -bld 1
 if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "SkyDome"
--c "cmdSkydomeLight;PickWalkUp"
+-c "da_AiSkyDome"
 -rp "NW"
 -i "SkydomeLightShelf.png";
 }
@@ -488,7 +488,7 @@ menuItem -bld 1
 if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "Photometric"
--c "cmdPhotometricLights;PickWalkUp"
+-c "da_AiPhotometric"
 -rp "S"
 -i "PhotometricLightShelf.png";
 }else{
@@ -502,7 +502,7 @@ menuItem -bld 1
 if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
 -l "Portal"
--c "cmdLightPortal"
+-c "da_AiLightPortal"
 -rp "N"
 -i "LightPortalShelf.png";
 }else{

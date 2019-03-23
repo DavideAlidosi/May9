@@ -6,7 +6,7 @@ global proc da_May9Menu(){
  
     global string $gMainWindow;
     $menuMain = `menu -p $gMainWindow -tearOff true -l $menuName`;
-	menuItem -p $menuMain -l "Interactive Playback" -c "InteractivePlayback" -i "interactivePlayback.png";
+	menuItem -p $menuMain -l "Interactive Playback" -c "da_InteractivePlayback" -i "interactivePlayback.png";
     menuItem -p $menuMain -l "Delete Mental Ray Nodes..." -c "da_RemoveMrNodes" -i "createBinFromSelectedNodes.png";
 
     menuItem -d 1 -l "Toggle";
