@@ -364,7 +364,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Tag As Controller"
 -c "TagAsController"
--i "checkboxOn.png";
+-i "HIKcreateControlRig.png";
 
 menuItem -bld 1 
 -l "Parent Controller"
@@ -382,6 +382,13 @@ menuItem -bld 1
 -l "Prossimity Off"
 -c "da_ControllerNoProssimity"
 -i "rvViewingPipelineOff.png";
+
+if (`gmatch $currentPanel "modelPanel*"`){
+menuItem
+-l "Visibility" 
+-c "da_ToggleControllersVis" 
+-cb (`modelEditor -q -controllers $currentPanel`);
+}
 }
 
 setParent -m ..;
@@ -853,7 +860,7 @@ menuItem -bld 1
 -cb (`tumbleCtx -q -asp tumbleContext`);
 
 menuItem -bld 1
--l "Selection Highlighting" 
+-l "Selection Highlight" 
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
@@ -5659,10 +5666,12 @@ menuItem
     -c "da_ToggleLocVis" 
 	-cb (`modelEditor -q -locators $panel`);
 
+if (`about -api` >= 20180000){
 menuItem
 	-l "Controllers" 
 	-c "da_ToggleControllersVis" 
 	-cb (`modelEditor -q -controllers $panel`);
+}
 
 menuItem
     -l "Deformers" 
@@ -11255,7 +11264,7 @@ string $myCamera = `modelPanel -q -cam $currentPanel`;
 string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
 
 menuItem -itl 1
--l "Selection Highlighting" 
+-l "Selection Highlight" 
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
@@ -12226,7 +12235,7 @@ string $myCamera = `modelPanel -q -cam $currentPanel`;
 string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
 
 menuItem -itl 1
--l "Selection Highlighting" 
+-l "Selection Highlight" 
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
