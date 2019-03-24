@@ -1,4 +1,4 @@
-May9 Next.0.7 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next.1.0 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
@@ -16,11 +16,8 @@ Installation
 
 
 Release Note
-- Contextual Marking menus are now loaded as command instead of source it
-- Unified installation process, is highly recommended a new installation instead update it
-- Compatibility to any Workspace, anyway the use of Maya Classic is high suggested
-- May9 Next Hotkey Set are added over standards ones and do not substitute the user hotkeys
-- Tested and develop on Autodesk Maya 2019, Autodesk Maya 2018.5 and Autodesk Maya 2017.5 with MtoA 3.2
+- Tested and develop on Autodesk Maya 2019, Autodesk Maya 2018.5 and Autodesk Maya 2017.5
+- Autodesk Arnold MtoA 3.2.0 is not a requirement but is highly suggested
 
 
 Exclusive script
