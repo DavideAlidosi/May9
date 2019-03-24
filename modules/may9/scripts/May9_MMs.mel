@@ -144,6 +144,9 @@ int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -
 
 string $currentPanel = `getPanel -wf`;
 
+string $myCamera = `modelPanel -q -cam $currentPanel`;
+string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
+
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
@@ -862,9 +865,6 @@ setParent -m ..;
 setParent -m ..;
 
 if (`gmatch $currentPanel "modelPanel*"`){
-string $myCamera = `modelPanel -q -cam $currentPanel`;
-string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
-
 menuItem -bld 1
 -l "Isolate Select" 
 -c "ToggleIsolateSelect" 
@@ -880,7 +880,7 @@ menuItem -bld 1
 -c "da_ToggleLocalTumble" 
 -cb (`tumbleCtx -q -asp tumbleContext`);
 
-if (`pluginInfo -q -l mtoa`){
+if (`objExists defaultArnoldRenderOptions`){
 if (`about -api` >= 20180000 && $myArnoldIntVersion >= 310){
 menuItem -bld 1
 -l "Arnold Viewport" 
@@ -11200,6 +11200,9 @@ string $mySel[] = `ls -sl`;
 string $mySelShape[] = `listRelatives -s`;
 string $currentPanel = `getPanel -wf`;
 
+string $myCamera = `modelPanel -q -cam $currentPanel`;
+string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
+
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
@@ -11269,10 +11272,7 @@ menuItem -itl 1
 }
 
 if (`gmatch $currentPanel "modelPanel*"`){
-string $myCamera = `modelPanel -q -cam $currentPanel`;
-string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
-
-if (`pluginInfo -q -l mtoa`){
+if (`objExists defaultArnoldRenderOptions`){
 if (`about -api` >= 20180000 && $myArnoldIntVersion >= 310){
 menuItem -itl 1 
 -l "Arnold Viewport" 
@@ -12206,6 +12206,9 @@ setParent -m ..;
 global proc Tool_Walk_MM_May9(){
 string $currentPanel = `getPanel -wf`;
 
+string $myCamera = `modelPanel -q -cam $currentPanel`;
+string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
+
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
@@ -12235,10 +12238,7 @@ menuItem -itl 1
 -rp "W";
 
 if (`gmatch $currentPanel "modelPanel*"`){
-string $myCamera = `modelPanel -q -cam $currentPanel`;
-string $myOverrideCheck = `modelEditor -q -rom $currentPanel`;
-
-if (`pluginInfo -q -l mtoa`){
+if (`objExists defaultArnoldRenderOptions`){
 if (`about -api` >= 20180000 && $myArnoldIntVersion >= 310){
 menuItem -itl 1 
 -l "Arnold Viewport" 

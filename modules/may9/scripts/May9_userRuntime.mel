@@ -16,6 +16,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Toggle Arnold Render Device"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("int $myRenderDevice = `getAttr \"defaultArnoldRenderOptions.renderDevice\"`;\n\nif ($myRenderDevice){\n    setAttr \"defaultArnoldRenderOptions.renderDevice\" 0;\n}else{\n    setAttr \"defaultArnoldRenderOptions.renderDevice\" 1;\n}")
+	da_ToggleRenderDevice;
+
+runTimeCommand
 	-ann "Create AiAreaLight Light"
 	-cat "Custom Scripts.May9_Next.Render"
 	-cl "python"
@@ -2547,6 +2553,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_ToggleRenderDevice`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_AiAreaLight`);
