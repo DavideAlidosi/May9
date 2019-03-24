@@ -14,6 +14,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()")
 	da_MMtoKey_release;
+runTimeCommand
+	-ann "Toggle Selection Highlighting"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $panel = `getPanel -wf`;\nstring $selCheck = `modelEditor -q -sel $panel`;\n\nif ($selCheck == 1){\n    modelEditor -e -sel 0 $panel;\n    inViewMessage -pos topCenter -msg \"Selection Highlighting OFF\" -fade;\n}else{\n    modelEditor -e -sel 1 $panel;\n    inViewMessage -pos topCenter -msg \"Selection Highlighting ON\" -fade;\n}")
+	da_ToggleSelectionHighlighting;
+
+runTimeCommand
+	-ann "Toggle Controllers visibility"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -controllers $panel`;\n\nif ($visCheck == 1){\n    modelEditor -e -controllers 0 $panel;\n    inViewMessage -pos topCenter -msg \"Controllers visibility OFF\" -fade;\n}else{\n    modelEditor -e -controllers 1 $panel;\n    inViewMessage -pos topCenter -msg \"Controllers visibility ON\" -fade;\n}\n")
+	da_ToggleControllersVis;
+
 
 runTimeCommand
 	-ann "Toggle Arnold Render Device"
@@ -2553,6 +2565,12 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_ToggleSelectionHighlighting`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_ToggleControllersVis`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_ToggleRenderDevice`);
