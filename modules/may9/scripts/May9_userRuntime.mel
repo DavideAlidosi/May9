@@ -24,7 +24,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Complete Edit Constraint Membership Tool"
 	-cat "Custom Scripts.May9_Next.Object"
-	-c("nConstraintReplaceMembers;\nbuildSelectMM;\nMarkingMenuPopDown;\nselect $myCurConstraint[0]")
+	-c ("if (`about -api` >= 20190000){\n\tnConstraintReplaceMembers;\n}else{\n\tdynamicConstraintMembership \"replace\";\n}\n\nbuildSelectMM;\nMarkingMenuPopDown;\nselect $myCurConstraint[0]")
 	da_CompleteEditConstraintMembershipTool;
 
 runTimeCommand
