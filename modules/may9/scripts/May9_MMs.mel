@@ -2721,19 +2721,13 @@ menuItem
 menuItem
 -l "Remove nConstraint" 
 -c "dynamicConstraintRemove;" 
--rp "N" 
+-rp "W" 
 -i "nConstraintRemoveMembers.png";
 
 menuItem
--l "Select Members" 
--c "dynamicConstraintMembership \"select\";" 
--rp "NW" 
--i "nConstraintSelectMembers.png";
-
-menuItem
--l "Membership Tool" 
--c "nConstraintMembershipTool;" 
--rp "NE" 
+-l "Edit Membership Tool" 
+-c "da_EditConstraintMembershipTool" 
+-rp "N" 
 -i "nConstraintMembership.png";
 
 menuItem
@@ -11361,6 +11355,30 @@ menuItem -itl 1
 setParent -m ..;
 
 } 
+
+// Define Tool_EditConstraintMembership marking menu
+global proc Tool_EditConstraintMembership_MM_May9(){
+
+menuItem -itl 1 
+-l "Grow Selection"
+-rp "NE" 
+-c "GrowPolygonSelectionRegion" 
+-i "growCVselect.png";
+
+menuItem -itl 1 
+-l "Shrink Selection"
+-rp "NW" 
+-c "ShrinkPolygonSelectionRegion" 
+-i "shrinkCVselect.png";
+
+menuItem -itl 1 
+-l "Complete Tool" 
+-c "da_CompleteEditConstraintMembershipTool" 
+-rp "E" 
+-i "aselect.png";
+
+setParent -m ..;
+}
 
 // Define Tool_EditMembership marking menu
 global proc Tool_EditMembership_MM_May9(){

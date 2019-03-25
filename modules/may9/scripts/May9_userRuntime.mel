@@ -16,6 +16,18 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Custom Edit Constraint Membership Tool"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $myCurConstraint[] = `ls -sl`;\n\nnConstraintMembershipTool")
+	da_EditConstraintMembershipTool;
+
+runTimeCommand
+	-ann "Complete Edit Constraint Membership Tool"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c("nConstraintReplaceMembers;\nbuildSelectMM;\nMarkingMenuPopDown;\nselect $myCurConstraint[0]")
+	da_CompleteEditConstraintMembershipTool;
+
+runTimeCommand
 	-ann "Toggle Selection Highlighting"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("string $panel = `getPanel -wf`;\nstring $selCheck = `modelEditor -q -sel $panel`;\n\nif ($selCheck == 1){\n    modelEditor -e -sel 0 $panel;\n    inViewMessage -pos topCenter -msg \"Selection Highlighting OFF\" -fade;\n}else{\n    modelEditor -e -sel 1 $panel;\n    inViewMessage -pos topCenter -msg \"Selection Highlighting ON\" -fade;\n}")
@@ -2565,6 +2577,12 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_EditConstraintMembershipTool`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_CompleteEditConstraintMembershipTool`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_ToggleSelectionHighlighting`);
