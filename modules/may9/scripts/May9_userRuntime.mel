@@ -14,6 +14,7 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()")
 	da_MMtoKey_release;
+
 runTimeCommand
 	-ann "Toggle Selection Highlighting"
 	-cat "Custom Scripts.May9_Next.Toggle"
@@ -25,7 +26,6 @@ runTimeCommand
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("string $panel = `getPanel -wf`;\nstring $visCheck = `modelEditor -q -controllers $panel`;\n\nif ($visCheck == 1){\n    modelEditor -e -controllers 0 $panel;\n    inViewMessage -pos topCenter -msg \"Controllers visibility OFF\" -fade;\n}else{\n    modelEditor -e -controllers 1 $panel;\n    inViewMessage -pos topCenter -msg \"Controllers visibility ON\" -fade;\n}\n")
 	da_ToggleControllersVis;
-
 
 runTimeCommand
 	-ann "Toggle Arnold Render Device"
@@ -1020,7 +1020,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Open AE to Last Operation"
 	-cat "Custom Scripts.May9_Next.Object"
-	-c ("string $his[] = `listHistory -leaf true`; \nif( size($his)>1 ){\nshowEditorExact($his[1]);\n}\nelse{\nerror \"can't find last operator in stack.\";\n}")
+	-c ("string $myListHistory[] = `listHistory`; \nif( size($myListHistory)>1 ){\n    AttributeEditor;\n    evalDeferred (\"showEditorExact($myListHistory[1])\");\n}else{\n\tAttributeEditor;\n}")
 	da_LastOpInStack;
 
 runTimeCommand
@@ -1750,7 +1750,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Select Assigned Shader from Selection"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("hyperShade -smn;\nAttributeEditor")
+	-c ("AttributeEditor;\nevalDeferred (\"hyperShade -smn\");")
 	da_SelectAssignedShader;
 
 runTimeCommand
