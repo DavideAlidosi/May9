@@ -16,6 +16,13 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Bake Light to Texture"
+	-cat "Custom Scripts.May9_Next.Render"
+	-commandLanguage "python"
+	-c ("import mtoa.ui.arnoldmenu;mtoa.ui.arnoldmenu.arnoldRenderToTexture()")
+	da_AiRenderToTexture;
+
+runTimeCommand
 	-ann "Custom Edit Constraint Membership Tool"
 	-cat "Custom Scripts.May9_Next.Object"
 	-c ("string $myCurConstraint[] = `ls -sl`;\n\nnConstraintMembershipTool")
@@ -2577,6 +2584,9 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiRenderToTexture`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_EditConstraintMembershipTool`);

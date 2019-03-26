@@ -32,6 +32,7 @@ hotkey -k "t" -ctl -alt -sht -n ("da_CtrlPointConstraintNameCommand");
 hotkey -k "o" -ctl -alt -sht -n ("da_CtrlOrientConstraintNameCommand");
 hotkey -k "a" -ctl -alt -sht -n ("da_CtrlAimConstraintNameCommand");
 hotkey -k "i" -ctl -alt -sht -n ("da_CtrlPoleVectorConstraintNameCommand");
+hotkey -k "l" -ctl -alt -sht -n ("da_LastOpInStackNameCommand");
 
 // Rigging hotkeys
 hotkey -k "d" -ctl -alt -sht -n ("MatchPivotsNameCommand");
@@ -495,6 +496,11 @@ nameCommand
 	-ann "ToggleIsolateSelectNameCommand"
 	-c ("ToggleIsolateSelect")
 	ToggleIsolateSelectNameCommand;
+
+nameCommand
+	-ann "da_LastOpInStackNameCommand"
+	-c ("da_LastOpInStack")
+	da_LastOpInStackNameCommand;
 
 if (`about -api` >= 20200000){
 nameCommand

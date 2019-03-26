@@ -364,7 +364,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Tag As Controller"
 -c "TagAsController"
--i "HIKcreateControlRig.png";
+-i "circle.png";
 
 menuItem -bld 1 
 -l "Parent Controller"
@@ -385,7 +385,7 @@ menuItem -bld 1
 
 if (`gmatch $currentPanel "modelPanel*"`){
 menuItem
--l "Visibility" 
+-l "Visibility" -bld 1  
 -c "da_ToggleControllersVis" 
 -cb (`modelEditor -q -controllers $currentPanel`);
 }
@@ -412,6 +412,28 @@ menuItem -bld 1
 -l "Delete..."
 -c "DeleteAttribute"
 -i "unpublishAttributes.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Character Set"
+-sm 1
+-i "HIKcreateControlRig.png";
+
+menuItem -bld 1 
+-l "Create Character..."
+-c "CreateCharacterOptions"
+-i "HIKCharacterToolFullBody.png";
+
+menuItem -bld 1 
+-l "Create Subcharacter..."
+-c "CreateSubCharacterOptions"
+-i "HIKCharacterToolBodyPart.png";
+
+menuItem -bld 1 
+-l "Edit Character..."
+-c "characterEditor( true )"
+-i "HIKcreateControlRig.png";
 
 setParent -m ..;
 
@@ -864,7 +886,7 @@ menuItem -bld 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if (`objExists defaultArnoldRenderOptions`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
@@ -881,7 +903,7 @@ menuItem
 -ob 1;
 }
 }
-if ($myArnoldIntVersion >= 320){
+if ($myArnoldIntVersion >= 320 && `objExists defaultArnoldRenderOptions`){
 menuItem -bld 1
 -l "Arnold GPU" 
 -c "da_ToggleRenderDevice" 
@@ -9565,6 +9587,13 @@ menuItem
 menuItem
 -d 1;
 
+if (`pluginInfo -q -l mtoa`){
+menuItem
+-l "Arnold Light to Texture"
+-c "da_AiRenderToTexture"
+-i "RenderToTextureShelf.png";
+}
+
 menuItem
 -l "Mesh Light"
 -c "da_AiMeshesLight"
@@ -10483,6 +10512,13 @@ menuItem
 menuItem
 -d 1;
 
+if (`pluginInfo -q -l mtoa`){
+menuItem
+-l "Arnold Light to Texture"
+-c "da_AiRenderToTexture"
+-i "RenderToTextureShelf.png";
+}
+
 menuItem
 -l "Mesh Light"
 -c "da_AiMeshesLight"
@@ -11277,7 +11313,7 @@ menuItem -itl 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if (`objExists defaultArnoldRenderOptions`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
@@ -11294,7 +11330,7 @@ menuItem
 -ob 1;
 }
 }
-if ($myArnoldIntVersion >= 320){
+if ($myArnoldIntVersion >= 320 && `objExists defaultArnoldRenderOptions`){
 menuItem -itl 1 
 -l "Arnold GPU" 
 -c "da_ToggleRenderDevice" 
@@ -12272,7 +12308,7 @@ menuItem -itl 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if (`objExists defaultArnoldRenderOptions`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
@@ -12289,7 +12325,7 @@ menuItem
 -ob 1;
 }
 }
-if ($myArnoldIntVersion >= 320){
+if ($myArnoldIntVersion >= 320 && `objExists defaultArnoldRenderOptions`){
 menuItem -itl 1 
 -l "Arnold GPU" 
 -c "da_ToggleRenderDevice" 
