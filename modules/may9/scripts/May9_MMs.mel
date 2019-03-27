@@ -1,5 +1,7 @@
 // Define aiAreaLight marking menu
 global proc aiAreaLight_MM_May9(){
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
 int $lightCheck = `renderManip -q -st`;
 
@@ -68,6 +70,25 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
+
+if ($myArnoldIntVersion >= 320){
+menuItem
+-l "Visible" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On" 
+-c "da_AiLightVisible" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_AiNoLightVisible" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+}
 
 menuItem 
 -d 1;
