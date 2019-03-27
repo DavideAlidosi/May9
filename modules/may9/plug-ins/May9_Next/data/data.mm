@@ -474,7 +474,7 @@ sg23
 S'da_ToggleLightManipulators'
 p109
 sg25
-S'Light_MM_May9'
+S'PointLight_MM_May9'
 p110
 sg27
 I0

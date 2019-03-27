@@ -16,6 +16,18 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Enable Point Light Visible"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    setAttr ($each +\".aiRadius\") 1;\n    \n\tsetAttr ($each +\".aiCamera\") 1;\n\tsetAttr ($each +\".aiTransmission\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"Light Visible On\" -fade;")
+	da_AiPointLightVisible;
+
+runTimeCommand
+	-ann "Disable Point Light Visible"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    setAttr ($each +\".aiRadius\") 0;\n    \n\tsetAttr ($each +\".aiCamera\") 0;\n\tsetAttr ($each +\".aiTransmission\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Light Visible Off\" -fade;")
+	da_AiNoPointLightVisible;
+
+runTimeCommand
 	-ann "Enable Light Visible"
 	-cat "Custom Scripts.May9_Next.Render"
 	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n\tsetAttr ($each +\".aiCamera\") 1;\n\tsetAttr ($each +\".aiTransmission\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"Light Visible On\" -fade;")
@@ -2596,6 +2608,12 @@ catchQuiet (`runTimeCommand -e -del
 
 catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiPointLightVisible`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_AiNoPointLightVisible`);
 
 catchQuiet (`runTimeCommand -e -del
 	da_AiLightVisible`);

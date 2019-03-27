@@ -8530,6 +8530,125 @@ setParent -m ..;
 
 } 
 // Define PolyBevel marking menu
+global proc PointLight_MM_May9(){
+int $lightCheck = `renderManip -q -st`;
+
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+
+menuItem
+-l "Light Linking..." 
+-c "LightCentricLightLinkingEditor;" 
+-rp "W" 
+-i "out_defaultLightList.png";
+
+menuItem
+-l "Light Manipulators" 
+-c "da_ToggleLightManipulators" 
+-rp "E" 
+-cb (1 == $lightCheck);
+
+menuItem
+-l "Look Through" 
+-c "da_LookThruSelected" 
+-rp "N" 
+-i "snapshot.svg";
+
+menuItem
+-l "Persp View" 
+-c "dR_DoCmd(\"viewPersp\");" 
+-rp "S" 
+-i "singlePerspLayout.png";
+
+menuItem
+-l "Light Editor..." 
+-c "da_LightList" 
+-rp "NW" 
+-i "light_manager.png";
+
+menuItem
+-l "Edit Light..." 
+-c "AttributeEditor" 
+-rp "SW" 
+-i "attributes.png";
+
+menuItem
+-l "Temperature" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "Cold" 
+-c "da_AiColdLight";
+
+menuItem
+-l "Neutral" 
+-c "da_AiNeutralLight";
+
+menuItem
+-l "Warm" 
+-c "da_AiWarmLight";
+
+setParent -m ..;
+
+menuItem
+-l "Normalize" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On" 
+-c "da_AiLightNormalize" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_AiNoLightNormalize" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+if ($myArnoldIntVersion >= 320){
+menuItem
+-l "Visible" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On" 
+-c "da_AiPointLightVisible" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_AiNoPointLightVisible" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+}
+
+menuItem 
+-d 1;
+
+menuItem
+-l "Samples" 
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "Low" 
+-c "da_AiLowSample";
+
+menuItem
+-l "High" 
+-c "da_AiHighSample";
+
+setParent -m ..;
+
+setParent -m ..;
+
+}
+// Define PolyBevel marking menu
 global proc PolyBevel_MM_May9(){
 
 menuItem
