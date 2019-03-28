@@ -8,6 +8,9 @@ global proc May9_runTimeCommandsRemover(){
 		da_MMtoKey_release`);
 
 	catchQuiet (`runTimeCommand -e -del
+		da_TogglePivotVisibility`);
+
+	catchQuiet (`runTimeCommand -e -del
 		da_AiPointLightVisible`);
 
 	catchQuiet (`runTimeCommand -e -del
@@ -1323,6 +1326,12 @@ global proc May9_runTimeCommands(){
 		da_MMtoKey_release;
 
 	runTimeCommand
+		-ann "Toggle Pivot Visibility"
+		-cat "Custom Scripts.May9_Next.Toggle"
+		-c ("string $mySel[] = `ls -sl`;\n\nif(getAttr ($mySel[0] + \".drp\")){\n    for ($i=0; $i<size($mySel); $i++){\n    \tsetAttr ($mySel[$i] + \".drp\") 0;\n    }\n    inViewMessage -pos topCenter -msg \"Pivot Visibility Off\" -fade;\n}else{\n    for ($i=0; $i<size($mySel); $i++){\n    \tsetAttr ($mySel[$i] + \".drp\") 1;\n    }\n    inViewMessage -pos topCenter -msg \"Pivot Visibility On\" -fade;\n}")
+		da_TogglePivotVisibility;
+
+	runTimeCommand
 		-ann "Enable Point Light Visible"
 		-cat "Custom Scripts.May9_Next.Render"
 		-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\n    setAttr ($each +\".aiRadius\") 1;\n    \n\tsetAttr ($each +\".aiCamera\") 1;\n\tsetAttr ($each +\".aiTransmission\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"Light Visible On\" -fade;")
@@ -1656,7 +1665,7 @@ global proc May9_runTimeCommands(){
 	runTimeCommand
 		-ann "Connect Transform Attributes"
 		-cat "Custom Scripts.May9_Next.Object"
-		-c ("string $myResult = `confirmDialog -title \"Transform Connector\" -message \"Before continue please check if you have select for first the parent geometry.\\nWhat attribute did you want to connect?\" \n-button \"Translate\" -button \"Rotate\" -button \"Scale\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Translate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".tx\") ($createConnect[$i] + \".tx\");\n        connectAttr -f ($createConnect[0] + \".ty\") ($createConnect[$i] + \".ty\");\n        connectAttr -f ($createConnect[0] + \".tz\") ($createConnect[$i] + \".tz\");\n    }\n}\n    \nelse if ($myResult == \"Rotate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".rx\") ($createConnect[$i] + \".rx\");\n        connectAttr -f ($createConnect[0] + \".ry\") ($createConnect[$i] + \".ry\");\n        connectAttr -f ($createConnect[0] + \".rz\") ($createConnect[$i] + \".rz\");\n    }\n}\n    \nelse if ($myResult == \"Scale\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".sx\") ($createConnect[$i] + \".sx\");\n        connectAttr -f ($createConnect[0] + \".sy\") ($createConnect[$i] + \".sy\");\n        connectAttr -f ($createConnect[0] + \".sz\") ($createConnect[$i] + \".sz\");\n    }\n}")
+		-c ("string $myResult = `confirmDialog -title \"Transform Connector\" -message \"Before continue please check if you have select for first the parent geometry.\\nWhat attribute did you want to connect?\" \n-button \"Translate\" -button \"Rotate\" -button \"Scale\" -button \"All\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Translate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".tx\") ($createConnect[$i] + \".tx\");\n        connectAttr -f ($createConnect[0] + \".ty\") ($createConnect[$i] + \".ty\");\n        connectAttr -f ($createConnect[0] + \".tz\") ($createConnect[$i] + \".tz\");\n    }\n}\n    \nelse if ($myResult == \"Rotate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".rx\") ($createConnect[$i] + \".rx\");\n        connectAttr -f ($createConnect[0] + \".ry\") ($createConnect[$i] + \".ry\");\n        connectAttr -f ($createConnect[0] + \".rz\") ($createConnect[$i] + \".rz\");\n    }\n}\n    \nelse if ($myResult == \"Scale\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".sx\") ($createConnect[$i] + \".sx\");\n        connectAttr -f ($createConnect[0] + \".sy\") ($createConnect[$i] + \".sy\");\n        connectAttr -f ($createConnect[0] + \".sz\") ($createConnect[$i] + \".sz\");\n    }\n}\n\nelse if ($myResult == \"All\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".tx\") ($createConnect[$i] + \".tx\");\n        connectAttr -f ($createConnect[0] + \".ty\") ($createConnect[$i] + \".ty\");\n        connectAttr -f ($createConnect[0] + \".tz\") ($createConnect[$i] + \".tz\");\n        connectAttr -f ($createConnect[0] + \".rx\") ($createConnect[$i] + \".rx\");\n        connectAttr -f ($createConnect[0] + \".ry\") ($createConnect[$i] + \".ry\");\n        connectAttr -f ($createConnect[0] + \".rz\") ($createConnect[$i] + \".rz\");\n        connectAttr -f ($createConnect[0] + \".sx\") ($createConnect[$i] + \".sx\");\n        connectAttr -f ($createConnect[0] + \".sy\") ($createConnect[$i] + \".sy\");\n        connectAttr -f ($createConnect[0] + \".sz\") ($createConnect[$i] + \".sz\");\n    }\n}")
 		da_ConnectTransformUI;
 
 	runTimeCommand
