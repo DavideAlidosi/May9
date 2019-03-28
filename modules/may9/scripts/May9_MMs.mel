@@ -912,6 +912,11 @@ string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
 
+if (`about -api` >= 20180000 && $myArnoldIntVersion >= 320){
+menuItem 
+-d 1;
+}
+
 if (`about -api` >= 20180000 && $myArnoldIntVersion >= 310){
 menuItem -bld 1
 -l "Arnold Viewport" 
@@ -9190,6 +9195,9 @@ string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+
 menuItem
 -l "Multi Cut"
 -c "dR_multiCutTool;"
@@ -9739,6 +9747,7 @@ menuItem
 -c "da_AiMeshesLight"
 -i "MeshLightShelf.png";
 
+if ($myArnoldIntVersion < 320){
 menuItem
 -l "Opaque Mesh"
 -sm 1
@@ -9755,6 +9764,7 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
+}
 
 setParent -m ..;
 
@@ -10126,6 +10136,9 @@ global proc Poly_MM_May9(){
 string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
 menuItem
 -l "Multi Cut"
@@ -10664,6 +10677,7 @@ menuItem
 -c "da_AiMeshesLight"
 -i "MeshLightShelf.png";
 
+if ($myArnoldIntVersion < 320){
 menuItem
 -l "Opaque Mesh"
 -sm 1
@@ -10680,6 +10694,7 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
+}
 
 setParent -m ..;
 
