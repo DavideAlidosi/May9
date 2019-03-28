@@ -1,0 +1,54 @@
+// Inizialize Arnold Options
+global proc da_AiOptions(){
+	if (`pluginInfo -q -l mtoa`){
+		if( !`objExists defaultArnoldRenderOptions` ){
+			createNode aiOptions -n defaultArnoldRenderOptions;
+		}
+		select -cl;
+	}
+}
+
+// Define da_MouseOver_MM_May9
+string $myWrapSimbol = "\n";
+
+global proc da_MouseOver_MM_May9(){    
+	if( `popupMenu -ex da_SelectOverCleaner` ) {
+	    deleteUI da_SelectOverCleaner;
+	}
+
+	popupMenu -ctl 1 -sh 1 -alt 1 -b 2 -mm 1 -p viewPanes -pmc (
+	    "string $myComponentOver[] = `ls -preSelectHilite`;" +
+	    "if ( `popupMenu -e -ex da_SelectOverCleaner` ){" +
+	        "popupMenu -e -dai da_SelectOverCleaner;" + " setParent -m da_SelectOverCleaner;" +
+	    "if ( `dagObjectHit` )" +
+		    "menuItem -l `da_ObjectOver` -rp \"N\" -c \"select `da_ObjectOver`; print (`da_ObjectOver` + $myWrapSimbol) \";" +
+	    "else" +
+	        " menuItem -en 0 -l \"No Object Detected\" -rp \"N\";" +
+	    "if ( size( $myComponentOver ) ) " +
+	        "menuItem -l $myComponentOver[0] -rp \"S\" -c \"select $myComponentOver[0]; print ($myComponentOver[0] + $myWrapSimbol)\";" +
+	    "else" +
+	        " menuItem -en 0 -l \"No polyComponent Detected\" -rp \"S\";}"
+	) da_SelectOverCleaner;
+}
+
+global proc string da_ObjectOver(){
+    dagObjectHit -mn "da_SelectOverCleaner";
+    string $myChildren[] = `popupMenu -q -itemArray da_SelectOverCleaner`; 
+    string $myObjecItem = `menuItem -q -l $myChildren[0]`;
+    string $myObject[];
+    tokenize $myObjecItem "." $myObject;
+    popupMenu -e -dai da_SelectOverCleaner;
+ 
+	return $myObject[0];
+}
+
+// Define da_round
+global proc int da_round(float $da_value){
+    float $n = $da_value % 1;
+    if($n >= 0.5){
+    	$da_value = `ceil $da_value`;
+    }else{
+    	$da_value = `floor $da_value`;
+    }
+    return $da_value;
+}
