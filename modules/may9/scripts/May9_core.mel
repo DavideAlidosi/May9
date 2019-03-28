@@ -99,7 +99,6 @@ if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 	source May9_userRuntime.mel;
 
 	// Run Runtime Commands procedure
-	May9_runTimeCommandsRemover;
 	May9_runTimeCommands;
 
 	// Run May9 Next Hotkey Set
@@ -118,7 +117,7 @@ if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 		}
 	}
 
-	print "May9 console: Complete update release \n";
+	print "May9 console: Complete intialization or update of May9 Next \n";
 }
 
 print "May9 console: Complete initialization of May9 Next \n";
