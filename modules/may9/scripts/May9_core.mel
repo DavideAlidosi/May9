@@ -85,9 +85,6 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 	// Declare initial layout state
 	global int $myLayout = 0;
 
-	// Run May9 Next Hotkey Set
-	da_May9HotkeySet;
-
 	print "May9 console: Initialized installer preference \n";
 }
 
@@ -98,12 +95,15 @@ if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 	// Define May9 Next installation status 
 	optionVar -iv May9ActivationCheck $may9Value;
 
-	// Preload userRuntime
+	// Source userRuntime
 	source May9_userRuntime.mel;
 
-	// Initialize Runtime 
+	// Run Runtime Commands procedure
 	May9_runTimeCommandsRemover;
 	May9_runTimeCommands;
+
+	// Run May9 Next Hotkey Set
+	da_May9HotkeySet;
 
 	// Store Preferences Changes
 	savePrefs -g -hk;

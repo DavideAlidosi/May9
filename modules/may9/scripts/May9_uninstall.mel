@@ -33,15 +33,7 @@ optionVar -rm da_DuplicateVariableWarnings;
 optionVar -iv May9ActivationCheck 1;
 
 print "May9 console: Restored previous preferences \n";
-
-// Set back to prior Hotkeyset
-hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
-
-// Remove Hotkeyset optionVars
-optionVar -rm da_initialHotkey;
-
-// Delete May9_Full, Core and Next hotkeySets
-hotkeySet -e -delete May9_Next;
+da_May9HotkeySetRemover;
 
 print "May9 console: Removed May9 Next Hotkeyset \n";
 

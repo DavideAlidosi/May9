@@ -1,6 +1,5 @@
 // Define da_AiOptions
 global proc da_May9Hotkeys(){
-
 	// MMtoKey Contextual Workflow hotkeys
 	hotkey -k "z" -n ("da_MMtoKey_pressNameCommand");
 	hotkey -k "z" -rn ("da_MMtoKey_releaseNameCommand");
@@ -508,18 +507,22 @@ global proc da_May9Hotkeys(){
 		-c ("Help")
 		HelpNameCommand;
 	}
+}
 
+// Define da_May9HotkeySetRemover
+global proc da_May9HotkeySetRemover(){
+	hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
+	optionVar -rm da_initialHotkey;
+	hotkeySet -e -delete May9_Next;
 }
 
 // Define da_May9HotkeySet
 global proc da_May9HotkeySet(){
-	// Store inital hotkeySet
+	if(`hotkeySet -q -current` == "May9_Next"){
+		da_May9HotkeySetRemover;
+	}
 	optionVar -sv da_initialHotkey `hotkeySet -q -current`;
-
-	// Preload hotkeys
 	hotkeySet -source `optionVar -q "da_initialHotkey"` -current May9_Next;
 	da_May9Hotkeys;
-
-	// Set May9 Next hotkeySet
 	hotkeySet -edit -current May9_Next;
 }
