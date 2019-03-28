@@ -1,4 +1,4 @@
-// Inizialize Arnold Options
+// Define da_AiOptions
 global proc da_AiOptions(){
 	if (`pluginInfo -q -l mtoa`){
 		if( !`objExists defaultArnoldRenderOptions` ){

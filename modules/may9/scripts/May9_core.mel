@@ -28,6 +28,9 @@ source May9_scripts.mel;
 // Source Marking Menues
 source May9_MMs.mel;
 
+// Source hotkeys
+source May9_hotkeys.mel;
+
 // Run May9 Next main menu
 evalDeferred ("da_May9Menu");
 
@@ -82,14 +85,8 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 	// Declare initial layout state
 	global int $myLayout = 0;
 
-	// Store inital hotkeySet
-	optionVar -sv da_initialHotkey `hotkeySet -q -current`;
-
-	// Preload hotkeys
-	source May9_hotkeys.mel;
-
-	// Set May9 Next hotkeySet
-	hotkeySet -edit -current May9_Next;
+	// Run May9 Next Hotkey Set
+	da_May9HotkeySet;
 
 	print "May9 console: Initialized installer preference \n";
 }
