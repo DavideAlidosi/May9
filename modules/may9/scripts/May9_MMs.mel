@@ -391,6 +391,58 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 1);
 
 if (size($myCurTransform) >= 1){
+
+menuItem -bld 1 
+-l "Attributes"
+-sm 1
+-i "attributes.png";
+
+menuItem -bld 1 
+-l "Add..."
+-c "AddAttribute"
+-i "publishAttributes.png";
+
+menuItem -bld 1 
+-l "Delete..."
+-c "DeleteAttribute"
+-i "unpublishAttributes.png";
+
+menuItem -bld 1 
+-l "Edit..."
+-c "RenameAttribute"
+-i "setEdEditMode.png";
+
+setParent -m ..;
+
+menuItem -bld 1 
+-l "Character Set"
+-sm 1
+-i "HIKcreateControlRig.png";
+
+menuItem -bld 1 
+-l "Create..."
+-c "CreateCharacterOptions"
+-i "HIKCharacterToolFullBody.png";
+
+menuItem -bld 1 
+-l "Define SubCharacter..."
+-c "CreateSubCharacterOptions"
+-i "HIKCharacterToolBodyPart.png";
+
+menuItem -bld 1 
+-l "Edit..."
+-c "characterEditor( true )"
+-i "HIKcreateControlRig.png";
+
+setParent -m ..;
+}else{
+menuItem -bld 1 
+-l "Edit Character..."
+-c "characterEditor( true )"
+-i "HIKcreateControlRig.png";
+}
+
+if (size($myCurTransform) >= 1){
 menuItem -bld 1 
 -l "Controllers"
 -sm 1
@@ -421,53 +473,14 @@ menuItem -bld 1
 }
 
 setParent -m ..;
-
-menuItem -bld 1 
--l "Attributes"
--sm 1
--i "attributes.png";
-
-menuItem -bld 1 
--l "Add..."
--c "AddAttribute"
--i "publishAttributes.png";
-
-menuItem -bld 1 
--l "Edit..."
--c "RenameAttribute"
--i "setEdEditMode.png";
-
-menuItem -bld 1 
--l "Delete..."
--c "DeleteAttribute"
--i "unpublishAttributes.png";
-
-setParent -m ..;
 }
 
-menuItem -bld 1 
--l "Character Set"
--sm 1
--i "HIKcreateControlRig.png";
-
-menuItem -bld 1 
--l "Create Character..."
--c "CreateCharacterOptions"
--i "HIKCharacterToolFullBody.png"
--en (size($myCurTransform) >= 1);
-
-menuItem -bld 1 
--l "Create Subcharacter..."
--c "CreateSubCharacterOptions"
--i "HIKCharacterToolBodyPart.png"
--en (size($myCurTransform) >= 1);
-
-menuItem -bld 1 
--l "Edit Character..."
--c "characterEditor( true )"
--i "HIKcreateControlRig.png";
-
-setParent -m ..;
+if (`gmatch $currentPanel "modelPanel*"` && `about -api` >= 20180000){
+menuItem
+-l "Controllers Visibility" -bld 1  
+-c "da_ToggleControllersVis" 
+-cb (`modelEditor -q -controllers $currentPanel`);
+}
 
 menuItem -bld 1
 -l "Highlight Affected" 
