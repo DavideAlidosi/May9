@@ -4,6 +4,8 @@ May9 Next.1.0 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 General info
 May9 Next is a plug-in aim to offer an alternative user experience for Autodesk Maya designed to improve the speed of daily workflow and maximize new tools learning.
 May9 Next streamline the most common commands into a single keyboard button (Z), by predicting them from the context.
+The most advanced included MM are programmed to be polymorphic, so their design can change in base of: selection type or size, UI panel, tool preferences or application preferences.
+In addition to the contextual workflow describe above, May9 Next include: contextual hotkeys, layouts, scripts, presets, and optional hotkeys.
 
 
 Installation
