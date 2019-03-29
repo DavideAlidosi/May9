@@ -310,7 +310,8 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Export StandIn..."
 -c "da_doExportStandIn"
--i "ExportStandinShelf.png";
+-i "ExportStandinShelf.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Import StandIn..."
@@ -337,25 +338,29 @@ menuItem -bld 1
 -l "Parent Constraint..."
 -c "ParentConstraintOptions"
 -rp "S"
--i "parentConstraint.png";
+-i "parentConstraint.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "Orient Constraint..."
 -c "OrientConstraintOptions"
 -rp "E"
--i "orientConstraint.png";
+-i "orientConstraint.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "Aim Constraint..."
 -c "AimConstraintOptions"
 -rp "N"
--i "aimConstraint.png";
+-i "aimConstraint.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "Point Constraint..."
 -c "PointConstraintOptions"
 -rp "SE"
--i "posConstraint.png";
+-i "posConstraint.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "IK Handle"
@@ -382,8 +387,10 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Channel Control..."
 -c "ChannelControlEditor"
--i "channelBox.png";
+-i "channelBox.png"
+-en (size($myCurTransform) >= 1);
 
+if (size($myCurTransform) >= 1){
 menuItem -bld 1 
 -l "Controllers"
 -sm 1
@@ -397,7 +404,8 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Parent Controller"
 -c "TagAsControllerParent"
--i "parent.png";
+-i "parent.png"
+-en (size($myCurTransform) >= 2);
 
 if (`about -api` >= 20180000){
 
@@ -410,13 +418,6 @@ menuItem -bld 1
 -l "Prossimity Off"
 -c "da_ControllerNoProssimity"
 -i "rvViewingPipelineOff.png";
-
-if (`gmatch $currentPanel "modelPanel*"`){
-menuItem
--l "Visibility" -bld 1  
--c "da_ToggleControllersVis" 
--cb (`modelEditor -q -controllers $currentPanel`);
-}
 }
 
 setParent -m ..;
@@ -442,6 +443,7 @@ menuItem -bld 1
 -i "unpublishAttributes.png";
 
 setParent -m ..;
+}
 
 menuItem -bld 1 
 -l "Character Set"
@@ -451,12 +453,14 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Create Character..."
 -c "CreateCharacterOptions"
--i "HIKCharacterToolFullBody.png";
+-i "HIKCharacterToolFullBody.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Create Subcharacter..."
 -c "CreateSubCharacterOptions"
--i "HIKCharacterToolBodyPart.png";
+-i "HIKCharacterToolBodyPart.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Edit Character..."
@@ -640,48 +644,56 @@ menuItem -bld 1
 -l "Mouse Tracker"
 -c "da_MouseTrack"
 -rp "N"
--i "aselect.png";
+-i "aselect.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Set Smart Keyframe"
 -c "da_KeyKeyedOnly"
 -rp "NW"
--i "keyIntoclip.png";
+-i "keyIntoclip.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Flow Path Object..."
 -c "FlowPathObjectOptions"
 -rp "S"
--i "flowPathObj.png";
+-i "flowPathObj.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Set Motion Path Key"
 -c "SetKeyPath"
 -rp "W"
--i "motionPathKey.png";
+-i "motionPathKey.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Attach to Motion Path..."
 -c "AttachToPathOptions"
 -rp "SW"
--i "motionPath.png";
+-i "motionPath.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "Round Keyframes"
 -c "da_roundKeyframe"
 -rp "NE"
--i "teSetKeyframe.png";
+-i "teSetKeyframe.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Delete Static Channels" 
 -c "delete -staticChannels -unitlessAnimationCurves false -hierarchy none -controlPoints 0 -shape 1" 
 -rp "E"
--i "deleteGeneric.png";
+-i "deleteGeneric.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Editable Motion Trail..."
 -c "CreateMotionTrailOptions"
--i "motionTrail.png";
+-i "motionTrail.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Grease Pencil Tool..."
@@ -736,7 +748,8 @@ menuItem -bld 1
 -l "Select Hierarchy"
 -c "SelectHierarchy"
 -rp "N"
--i "selectByHierarchy.png";
+-i "selectByHierarchy.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Selection Size"
@@ -748,7 +761,8 @@ menuItem -bld 1
 -l "Align Tool"
 -c "setToolTo alignToolCtx"
 -rp "SW"
--i "alignTool.png";
+-i "alignTool.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "Select None"
@@ -814,19 +828,19 @@ menuItem -bld 1
 -rp "S"
 -i "HIKCustomRigToolTranslate.png";
 
-if (size($myCurTransform) >= 2){
 menuItem -bld 1 
 -l "Match Pivot"
 -c "MatchPivots"
 -rp "S"
--i "UVPivotBottom.png";
+-i "UVPivotBottom.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "Match Transforms"
 -c "MatchTransform"
 -rp "SW"
--i "move_M.png";
-}
+-i "move_M.png"
+-en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
 -l "Expose Pivot/Rotate Order"
@@ -884,12 +898,11 @@ menuItem -bld 1
 -c "da_TransformMirrorSelector"
 -i "polyMirrorGeometry.png";
 
-if (size($myCurTransform) >= 2){
 menuItem -bld 1 
 -l "Connect Transform..."
 -c "da_ConnectTransformUI"
--i "da_OneToMany.png";
-}
+-i "da_OneToMany.png"
+-en (size($myCurTransform) >= 2);
 
 if (!(catchQuiet (`getAttr ($myCurTransform[0] + ".drp")`))){
 int $myDrpSetting = getAttr ($myCurTransform[0] + ".drp");
@@ -2846,40 +2859,24 @@ menuItem
 -d 1;
 
 menuItem
--l "Parent Constraint" 
--c "ParentConstraint" 
+-l "Parent Constraint..." 
+-c "ParentConstraintOptions" 
 -i "parentConstraint.png";
 
 menuItem
--c "ParentConstraintOptions" 
--ob 1;
-
-menuItem
--l "Point Constraint" 
--c "PointConstraint" 
+-l "Point Constraint..." 
+-c "PointConstraintOptions" 
 -i "posConstraint.png";
 
 menuItem
--c "PointConstraintOptions" 
--ob 1;
-
-menuItem
--l "Orient Constraint" 
--c "performOrientConstraint 0" 
+-l "Orient Constraint..." 
+-c "OrientConstraintOptions" 
 -i "orientConstraint.png";
 
 menuItem
--c "OrientConstraintOptions;" 
--ob 1;
-
-menuItem
--l "Aim Constraint" 
--c "AimConstraint" 
--i "aimConstraint.png";
-
-menuItem
+-l "Aim Constraint..." 
 -c "AimConstraintOptions" 
--ob 1;
+-i "aimConstraint.png";
 
 setParent -m ..;
 
@@ -3509,8 +3506,8 @@ $item = "";
 
 $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
 menuItem 
-	-edit 
-	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+-edit 
+-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
 setParent -menu ..;
 
 menuItem
@@ -4084,12 +4081,12 @@ global proc GraphEditor_MM_May9(){
 int $weightedTangentsCheck[] = `keyTangent -q -weightedTangents`;
 int $weightedTangentsSum = 0;
 for ($each in $weightedTangentsCheck)
-	$weightedTangentsSum += $each;
+$weightedTangentsSum += $each;
 
 int $breakTangentsCheck[] = `keyTangent -q -lock`;
 int $breakTangentsSum = 0;
 for ($each in $breakTangentsCheck)
-	$breakTangentsSum += $each;
+$breakTangentsSum += $each;
 
 menuItem
 -l "Weighted Tangents" 
@@ -7053,8 +7050,8 @@ $item = "";
 
 $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
 menuItem 
-	-edit 
-	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+-edit 
+-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
 setParent -menu ..;
 
 menuItem
@@ -7489,8 +7486,8 @@ $item = "";
 
 $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
 menuItem 
-	-edit 
-	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+-edit 
+-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
 setParent -menu ..;
 
 menuItem
@@ -9131,24 +9128,16 @@ setParent -m ..;
 global proc PolyMuscle_MM_May9(){
 
 menuItem
--l "Parent Constraint" 
--c "ParentConstraint;" 
+-l "Parent Constraint..." 
+-c "ParentConstraintOptions" 
 -rp "N" 
 -i "parentConstraint.png";
 
 menuItem
--c "ParentConstraintOptions;" 
--ob 1;
-
-menuItem
--l "Aim Constraint" 
--c "AimConstraint;" 
+-l "Aim Constraint..." 
+-c "AimConstraintOptions" 
 -rp "S" 
 -i "aimConstraint.png";
-
-menuItem
--c "AimConstraintOptions;" 
--ob 1;
 
 menuItem
 -l "Connect selected Muscle" 
@@ -9156,24 +9145,16 @@ menuItem
 -i "cMuscle_skin_connMus.png";
 
 menuItem
--l "Point Constraint" 
--c "PointConstraint" 
+-l "Point Constraint..." 
+-c "PointConstraintOptions" 
 -rp "NE" 
 -i "posConstraint.png";
 
 menuItem
--c "PointConstraintOptions" 
--ob 1;
-
-menuItem
--l "Orient Constraint" 
--c "OrientConstraint" 
+-l "Orient Constraint..." 
+-c "OrientConstraintOptions" 
 -rp "NW" 
 -i "orientConstraint.png";
-
-menuItem
--c "OrientConstraintOptions" 
--ob 1;
 
 setParent -m ..;
 
@@ -9725,8 +9706,8 @@ $item = "";
 
 $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
 menuItem 
-	-edit 
-	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+-edit 
+-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
 setParent -menu ..;
 
 menuItem
@@ -10655,8 +10636,8 @@ $item = "";
 
 $menuAssign = `menuItem -l (uiRes("m_buildShaderMenus.kAssignExistingMaterial")) -sm true -i "out_shaderList.png"`;
 menuItem 
-	-edit 
-	-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
+-edit 
+-postMenuCommand ("buildAssignShaderMenu " + $menuAssign + " \""+$item+"\"") $menuAssign;
 setParent -menu ..;
 
 menuItem
