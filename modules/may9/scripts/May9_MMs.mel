@@ -1086,17 +1086,22 @@ menuItem
 -l "Render As" 
 -sm 1;
 
+radioMenuItemCollection;
+
 menuItem
 -l "Surface" 
--c "setAttr \".renderAs\" 0";
+-c "setAttr \".renderAs\" 0" 
+-rb (`getAttr ".renderAs"` == 0);
 
 menuItem
 -l "Points" 
--c "setAttr \".renderAs\" 1";
+-c "setAttr \".renderAs\" 1" 
+-rb (`getAttr ".renderAs"` == 1);
 
 menuItem
 -l "Volume" 
--c "setAttr \".renderAs\" 2";
+-c "setAttr \".renderAs\" 2" 
+-rb (`getAttr ".renderAs"` == 2);
 
 setParent -m ..;
 
