@@ -215,17 +215,10 @@ menuItem -bld 1
 -rp "SE"
 -i "plane.png";
 
-if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Import AI Curves..."
 -c "CreateIllustratorCurves"
 -i "aiObject.png";
-}else{
-menuItem -bld 1 
--l "Import AI Curves..."
--c "CreateIllustratorCurves"
--i "ai.png";
-}
 
 menuItem -bld 1 
 -l "Curves Based Text..."
@@ -867,33 +860,17 @@ menuItem -bld 1
 -rp "E"
 -i "polyNormalSetToFace.png";
 
-if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Freeze/Delete Non-Deform"
 -c "da_FreezeDelNonDef" 
 -rp "NW"
 -i "FreezeTransform.png";
-}else{
-menuItem -bld 1 
--l "Freeze/Delete Non-Deform"
--c "da_FreezeDelNonDef" 
--rp "NW"
--i "UV_Freeze_Tool.png";
-}
 
-if (`about -api` >= 20180000){
 menuItem -bld 1 
 -l "Center Pivot"
 -c "CenterPivot" 
 -rp "SE"
 -i "CenterPivot.png";
-}else{
-menuItem -bld 1 
--l "Center Pivot"
--c "CenterPivot" 
--rp "SE"
--i "menuIconModify.png";
-}
 
 menuItem -bld 1 
 -l "Reset Transforms"
@@ -1099,6 +1076,29 @@ menuItem
 -l "Add Kill Field" 
 -c "AddBifrostKillField" 
 -rp "NE";
+
+menuItem
+-l "Assign New Material..."
+-c "createAssignNewMaterialTreeLister \"\""
+-i "render_adskMaterial.png";
+
+menuItem
+-l "Render As" 
+-sm 1;
+
+menuItem
+-l "Surface" 
+-c "setAttr \".renderAs\" 0";
+
+menuItem
+-l "Points" 
+-c "setAttr \".renderAs\" 1";
+
+menuItem
+-l "Volume" 
+-c "setAttr \".renderAs\" 2";
+
+setParent -m ..;
 
 menuItem
 -l "Mesh" 
@@ -9334,6 +9334,11 @@ menuItem
 -i "polyExtrudeFacet.png";
 
 menuItem
+-l "Quick Rig..."
+-c "QuickRigEditor"
+-i "QR_QuickRigTool.png";
+
+menuItem
 -l "Connect Shapes..."
 -c "da_ConnectShapeUI"
 -i "da_OneToMany.png";
@@ -9381,17 +9386,10 @@ menuItem
 menuItem
 -d 1;
 
-if (`about -api` >= 20180000){
 menuItem
 -l "Clean Non Mainfold"
 -c "da_CleanNonmainfold"
 -i "polyDisc.png";
-}else{
-menuItem
--l "Clean Non Mainfold"
--c "da_CleanNonmainfold"
--i "polyPyramid.png";
-}
 
 setParent -m ..;
 
@@ -9727,9 +9725,6 @@ menuItem
 -l "Assign New Material..."
 -c "createAssignNewMaterialTreeLister \"\""
 -i "render_adskMaterial.png";
-
-menuItem
--d 1;
 
 menuItem
 -l "Assign Toon Shader"
@@ -10252,6 +10247,11 @@ menuItem
 -i "polySmooth.png";
 
 menuItem
+-l "Quick Rig..."
+-c "QuickRigEditor"
+-i "QR_QuickRigTool.png";
+
+menuItem
 -l "Input Operations..." 
 -c "da_ListInputOperations" 
 -i "out_list.png";
@@ -10287,17 +10287,10 @@ menuItem
 -c "da_PolyDivision"
 -i "polyCleanup.png";
 
-if (`about -api` >= 20180000){
 menuItem
 -l "Clean Non Mainfold"
 -c "da_CleanNonmainfold"
 -i "polyDisc.png";
-}else{
-menuItem
--l "Clean Non Mainfold"
--c "da_CleanNonmainfold"
--i "polyPyramid.png";
-}
 
 menuItem
 -l "Remesh"
@@ -10657,9 +10650,6 @@ menuItem
 -l "Assign New Material..."
 -c "createAssignNewMaterialTreeLister \"\""
 -i "render_adskMaterial.png";
-
-menuItem
--d 1;
 
 menuItem
 -l "Assign Toon Shader"

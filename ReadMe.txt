@@ -3,7 +3,7 @@ May9 Next.1.0 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 General info
 May9 Next is a plug-in aim to offer an alternative user experience for Autodesk Maya designed to improve the speed of daily workflow and maximize new tools learning
-May9 Next streamline the most common commands into a single keyboard button (Z), by predicting them from the context
+May9 Next streamline the most common commands into a single keyboard button "Z", by predicting them from the context
 The most advanced included MM are programmed to be polymorphic, so their design can change in base of: selection type or size, UI panel, tool preferences or application preferences
 In addition May9 Next also include: contextual hotkeys, layouts, scripts, presets, and optional hotkeys
 
@@ -18,51 +18,8 @@ Installation
 
 
 Release Note
-- Tested and develop on Autodesk Maya 2019, Autodesk Maya 2018.5 and Autodesk Maya 2017.5
+- Tested and develop on Autodesk Maya 2019 and Autodesk Maya 2018.5
 - Autodesk Arnold MtoA 3.2.0 is not a requirement but is highly suggested
-
-
-Exclusive script
-- da_curveToPoly: this script make possible the conversion of curves in polygons
-- da_interactiveBooleans: this script make the Polygonal Boolean process more interactive
-- da_BooleanFullIntersect: this script make a full intersect, so this execute a mesh subtraction but maintain subtracted part as separate object
-- da_PlaneCutter: this script cut a mesh by using a flat mesh, this can be useful for simulate surface cracks
-- da_AutoBevel: this script analyse the angle between faces and try to add a Bevel node only on needed edges
-- da_ClothAsDeformer: this script set up the current mesh to be deformed by nCloth solver, this can be useful for simulate character selfcollision skin or muscle dynamics
-- da_nParticleConverter: this script add the ability to convert particle to a specific type after their creation
-- da_perspToggle: this script convert the current persp view to the closest ortho, and vice versa
-- da_shell: this script emulates Shell deformer of Autodesk 3D Studio Max, by adding a thickness to flat polygons
-- da_ConvertToMetaballs: this script convert particles to polygonal Metaballs
-- da_MashVoxelizer: this script use MASH to voxelize an arbitrary mesh inside of another mesh
-- da_RivetMash: this script constraint the pivot of a polygon to a component of another polygon
-- da_CurveDistributionMash: this script scatter and constrain a polygonal object along a curve
-- da_EdgeToLoopToCurve: this script convert edge selection to loop and then make a batch conversion to curves, this is useful for converting polygonal hair to curve hair
-- da_SurfaceScatterMash: this script scatter and constrain a polygonal object on a mesh
-- da_CurveLength: this script returns the length of a curve in Maya unit
-- da_MouseTrack: this script tracks the mouse movement and create an animation
-- da_FacesFollicles: this script creates a follicle in the centre of selected faces
-- da_Compass: this script converts Euler angle into a XYZ vector, for drive wind direction in Nucleus and Air Filed
-- da_CombineCurves: this script combines curves in a single transform
-- da_SepareCurves: this script separate combined curves
-- da_MapFacesUV: this script maps any single faces of a mesh as separate planar UV shell
-- da_KeyKeyedOnly: this script creates animation keys only on already animated channels
-- Control Constraint: this set of scripts constraint a controller to a single or multiple controlled object(s)
-
-
-Version Next highlight
-- Add support to Maya 2019
-- May9 Next Hotkey Sets are added over standard ones without overwrite the user ones
-- Contextual Marking menus are now loaded as command
-- Incorporate MMtoKey into May9 Next Plug-in, now is possible configure a standalone MMtoKey aside May9 Next
-- Imporved usability of objects and components contextual MMs
-- Complete the support of Modeling Toolkit
-- Removed support to third party plug-ins
-- Global polish and optimization
-
-
-Useful links
-fb.com/May9Next
-youtube.com/c/May9
 
 
 Licenses
