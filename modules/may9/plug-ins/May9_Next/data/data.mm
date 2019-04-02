@@ -4,37 +4,37 @@ S'default_lmb'
 p1
 S'MayaWindow_MM_May9'
 p2
-sS'preset_hud_b'
-p3
-I2
-sS'cache_mel'
-p4
-I00
-sS'preset_hud_s'
-p5
-I2
 sS'same_non_dag'
-p6
+p3
 I01
 sS'preset_hud'
-p7
+p4
 I01
+sS'preset_hud_b'
+p5
+I2
 sS'default_lmb_type'
-p8
+p6
 I0
 sS'default_mmb'
-p9
+p7
 S'All_MM_May9'
-p10
+p8
 sS'preset_radial'
-p11
+p9
 I01
 sS'same_dag'
-p12
+p10
 I01
 sS'default_mmb_type'
-p13
+p11
 I0
+sS'cache_mel'
+p12
+I00
+sS'preset_hud_s'
+p13
+I2
 s(dp14
 S'dag'
 p15
@@ -1040,28 +1040,9 @@ VNurbsFace_MM_May9
 p222
 sg27
 I0
-ssS'any locator mesh'
+ssS'any bifrostShape'
 p223
 (dp224
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-S'da_SelectMulti'
-p225
-sg25
-S'Constraint_MM_May9'
-p226
-sg27
-I0
-ssS'any bifrostShape'
-p227
-(dp228
 g19
 I6
 sg20
@@ -1074,12 +1055,12 @@ sg23
 g34
 sg25
 S'Bifrost_MM_May9'
-p229
+p225
 sg27
 I0
 ssS'any PolygonEdges nurbsCurve'
-p230
-(dp231
+p226
+(dp227
 g19
 I6
 sg20
@@ -1090,15 +1071,15 @@ sg22
 I0
 sg23
 S'PolyExtrude'
-p232
+p228
 sg25
 S'FaceCurve_MM_May9'
-p233
+p229
 sg27
 I0
 ssS'any clusterHandle'
-p234
-(dp235
+p230
+(dp231
 g19
 I6
 sg20
@@ -1111,12 +1092,12 @@ sg23
 g34
 sg25
 S'Cluster_MM_May9'
-p236
+p232
 sg27
 I0
 ssS'any mesh nCloth'
-p237
-(dp238
+p233
+(dp234
 g19
 I6
 sg20
@@ -1129,12 +1110,12 @@ sg23
 g34
 sg25
 S'PolynCloth_MM_May9'
-p239
+p235
 sg27
 I0
 ssS'any bifrostShape bifrostShape'
-p240
-(dp241
+p236
+(dp237
 g19
 I6
 sg20
@@ -1147,12 +1128,12 @@ sg23
 g34
 sg25
 S'BifrostBifrost_MM_May9'
-p242
+p238
 sg27
 I0
 ssS'any stroke'
-p243
-(dp244
+p239
+(dp240
 g19
 I6
 sg20
@@ -1163,15 +1144,15 @@ sg22
 I0
 sg23
 S'da_LastOpInStack'
-p245
+p241
 sg25
 S'PaintFX_MM_May9'
-p246
+p242
 sg27
 I0
 ssS'any cMuscleObject'
-p247
-(dp248
+p243
+(dp244
 g19
 I6
 sg20
@@ -1184,12 +1165,12 @@ sg23
 g34
 sg25
 S'CMuscle_MM_May9'
-p249
+p245
 sg27
 I0
 ssS'any bifrostShape mesh'
-p250
-(dp251
+p246
+(dp247
 g19
 I6
 sg20
@@ -1202,12 +1183,12 @@ sg23
 g34
 sg25
 S'PolyBifrost_MM_May9'
-p252
+p248
 sg27
 I0
 ssS'any deformFlare'
-p253
-(dp254
+p249
+(dp250
 g19
 I6
 sg20
@@ -1218,15 +1199,15 @@ sg22
 I0
 sg23
 S'da_EditDeformer'
-p255
+p251
 sg25
 S'Deformers_MM_May9'
-p256
+p252
 sg27
 I0
 ssS'any gpuCache'
-p257
-(dp258
+p253
+(dp254
 g19
 I6
 sg20
@@ -1239,12 +1220,12 @@ sg23
 g34
 sg25
 S'GPUCache_MM_May9'
-p259
+p255
 sg27
 I0
 ssVany nCloth
-p260
-(dp261
+p256
+(dp257
 g19
 I6
 sg20
@@ -1257,12 +1238,12 @@ sg23
 g34
 sg25
 VnCloth_MM_May9
-p262
+p258
 sg27
 I0
 ssS'any locator'
-p263
-(dp264
+p259
+(dp260
 g19
 I6
 sg20
@@ -1275,10 +1256,29 @@ sg23
 g34
 sg25
 S'Locator_MM_May9'
-p265
+p261
 sg27
 I0
 ssS'any PolygonEdges'
+p262
+(dp263
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+S'da_BackToObjectMode'
+p264
+sg25
+S'Edge_MM_May9'
+p265
+sg27
+I0
+ssS'any deformSquash'
 p266
 (dp267
 g19
@@ -1290,35 +1290,16 @@ I00
 sg22
 I0
 sg23
-S'da_BackToObjectMode'
+S'da_EditDeformer'
 p268
 sg25
-S'Edge_MM_May9'
+S'Deformers_MM_May9'
 p269
 sg27
 I0
-ssS'any deformSquash'
+ssVany aiAreaLight
 p270
 (dp271
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-S'da_EditDeformer'
-p272
-sg25
-S'Deformers_MM_May9'
-p273
-sg27
-I0
-ssVany aiAreaLight
-p274
-(dp275
 g19
 I6
 sg20
@@ -1331,12 +1312,12 @@ sg23
 g34
 sg25
 VaiAreaLight_MM_May9
-p276
+p272
 sg27
 I0
 ssS'any lineModifier mesh'
-p277
-(dp278
+p273
+(dp274
 g19
 I6
 sg20
@@ -1349,10 +1330,29 @@ sg23
 g34
 sg25
 S'PolyLineModifier_MM_May9'
-p279
+p275
 sg27
 I0
 ssVpolyTexturePlacementPanel PolygonUVs
+p276
+(dp277
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+Vda_ToggleUV
+p278
+sg25
+VWindow_UV_UV_MM_May9
+p279
+sg27
+I0
+ssS'any spotLight'
 p280
 (dp281
 g19
@@ -1364,14 +1364,14 @@ I00
 sg22
 I0
 sg23
-Vda_ToggleUV
+S'da_ToggleLightManipulators'
 p282
 sg25
-VWindow_UV_UV_MM_May9
+S'Light_MM_May9'
 p283
 sg27
 I0
-ssS'any spotLight'
+ssS'any PolygonVertices mesh'
 p284
 (dp285
 g19
@@ -1383,14 +1383,14 @@ I00
 sg22
 I0
 sg23
-S'da_ToggleLightManipulators'
+S'performCreateDynamicConstraint 1 "transform"'
 p286
 sg25
-S'Light_MM_May9'
+S'PolyVertex_MM_May9'
 p287
 sg27
 I0
-ssS'any PolygonVertices mesh'
+ssS'any deformTwist'
 p288
 (dp289
 g19
@@ -1402,14 +1402,14 @@ I00
 sg22
 I0
 sg23
-S'performCreateDynamicConstraint 1 "transform"'
+S'da_EditDeformer'
 p290
 sg25
-S'PolyVertex_MM_May9'
+S'Deformers_MM_May9'
 p291
 sg27
 I0
-ssS'any deformTwist'
+ssS'any pfxHair'
 p292
 (dp293
 g19
@@ -1421,14 +1421,14 @@ I00
 sg22
 I0
 sg23
-S'da_EditDeformer'
+S'da_LastOpInStack'
 p294
 sg25
-S'Deformers_MM_May9'
+S'Hair_MM_May9'
 p295
 sg27
 I0
-ssS'any pfxHair'
+ssS'any ControlVertices'
 p296
 (dp297
 g19
@@ -1440,35 +1440,16 @@ I00
 sg22
 I0
 sg23
-S'da_LastOpInStack'
+S'da_BackToObjectMode'
 p298
 sg25
-S'Hair_MM_May9'
+S'CurveCV_MM_May9'
 p299
 sg27
 I0
-ssS'any ControlVertices'
+ssS'any xgmSplineDescription'
 p300
 (dp301
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-S'da_BackToObjectMode'
-p302
-sg25
-S'CurveCV_MM_May9'
-p303
-sg27
-I0
-ssS'any xgmSplineDescription'
-p304
-(dp305
 g19
 I6
 sg20
@@ -1481,10 +1462,29 @@ sg23
 g34
 sg25
 S'XGen_SplineDescription_MM_May9'
-p306
+p302
 sg27
 I0
 ssS'any areaLight'
+p303
+(dp304
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+S'da_ToggleLightManipulators'
+p305
+sg25
+S'Light_MM_May9'
+p306
+sg27
+I0
+ssS'any lattice'
 p307
 (dp308
 g19
@@ -1496,14 +1496,14 @@ I00
 sg22
 I0
 sg23
-S'da_ToggleLightManipulators'
+S'da_SelectLattice'
 p309
 sg25
-S'Light_MM_May9'
+S'Lattice_MM_May9'
 p310
 sg27
 I0
-ssS'any lattice'
+ssS'any directionalLight'
 p311
 (dp312
 g19
@@ -1515,14 +1515,14 @@ I00
 sg22
 I0
 sg23
-S'da_SelectLattice'
+S'da_ToggleLightManipulators'
 p313
 sg25
-S'Lattice_MM_May9'
+S'Light_MM_May9'
 p314
 sg27
 I0
-ssS'any directionalLight'
+ssS'any mesh nurbsCurve'
 p315
 (dp316
 g19
@@ -1534,14 +1534,14 @@ I00
 sg22
 I0
 sg23
-S'da_ToggleLightManipulators'
+S'da_GoToCvsMode'
 p317
 sg25
-S'Light_MM_May9'
+S'PolyCurve_MM_May9'
 p318
 sg27
 I0
-ssS'any mesh nurbsCurve'
+ssS'any camera'
 p319
 (dp320
 g19
@@ -1553,14 +1553,14 @@ I00
 sg22
 I0
 sg23
-S'da_GoToCvsMode'
+S'da_ToggleCameraManipulators'
 p321
 sg25
-S'PolyCurve_MM_May9'
+S'Camera_MM_May9'
 p322
 sg27
 I0
-ssS'any camera'
+ssVpolyTexturePlacementPanel PolygonFace
 p323
 (dp324
 g19
@@ -1572,35 +1572,16 @@ I00
 sg22
 I0
 sg23
-S'da_ToggleCameraManipulators'
+Vda_BackToObjectMode
 p325
 sg25
-S'Camera_MM_May9'
+VWindow_UV_Face_MM_May9
 p326
 sg27
 I0
-ssVpolyTexturePlacementPanel PolygonFace
+ssVany cMuscleSmartCollide mesh
 p327
 (dp328
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-Vda_BackToObjectMode
-p329
-sg25
-VWindow_UV_Face_MM_May9
-p330
-sg27
-I0
-ssVany cMuscleSmartCollide mesh
-p331
-(dp332
 g19
 I6
 sg20
@@ -1613,10 +1594,29 @@ sg23
 g34
 sg25
 VPolySmartCollide_MM_May9
-p333
+p329
 sg27
 I0
 ssS'any handle joint'
+p330
+(dp331
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+S'ParentConstraintOptions'
+p332
+sg25
+S'Constraint_MM_May9'
+p333
+sg27
+I0
+ssS'any ambientLight'
 p334
 (dp335
 g19
@@ -1628,14 +1628,14 @@ I00
 sg22
 I0
 sg23
-S'ParentConstraintOptions'
+S'AttributeEditor'
 p336
 sg25
-S'Constraint_MM_May9'
+S'Light_MM_May9'
 p337
 sg27
 I0
-ssS'any ambientLight'
+ssS'any volumeLight'
 p338
 (dp339
 g19
@@ -1857,7 +1857,7 @@ S'FaceEdge_MM_May9'
 p379
 sg27
 I0
-ssS'any volumeLight'
+ssS'any locator mesh'
 p380
 (dp381
 g19
@@ -1869,10 +1869,10 @@ I00
 sg22
 I0
 sg23
-S'AttributeEditor'
+S'da_SelectMulti'
 p382
 sg25
-S'Light_MM_May9'
+S'Constraint_MM_May9'
 p383
 sg27
 I0
@@ -2107,7 +2107,7 @@ S'Tool_XGenBrush_MM_May9'
 p432
 sg27
 I0
-ssS'any nexMultiCutCtx1'
+ssS'any xgmGuideSculptTool'
 p433
 (dp434
 g19
@@ -2121,11 +2121,11 @@ I0
 sg23
 g34
 sg25
-S'Tool_MultiCut_MM_May9'
+S'Tool_XGenGuide_MM_May9'
 p435
 sg27
 I0
-ssS'any dynParticleContext'
+ssS'any nexMultiCutCtx1'
 p436
 (dp437
 g19
@@ -2139,11 +2139,11 @@ I0
 sg23
 g34
 sg25
-S'Tool_CreateParticle_MM_May9'
+S'Tool_MultiCut_MM_May9'
 p438
 sg27
 I0
-ssS'any dynWireCtx1'
+ssS'any dynParticleContext'
 p439
 (dp440
 g19
@@ -2157,11 +2157,11 @@ I0
 sg23
 g34
 sg25
-S'Tool_PaintFX_MM_May9'
+S'Tool_CreateParticle_MM_May9'
 p441
 sg27
 I0
-ssVany setEditContext
+ssS'any artAttrContext'
 p442
 (dp443
 g19
@@ -2175,11 +2175,11 @@ I0
 sg23
 g34
 sg25
-VTool_EditMembership_MM_May9
+S'Tool_PaintAttr_MM_May9'
 p444
 sg27
 I0
-ssS'any xgmFreezeBrushTool'
+ssVany setEditContext
 p445
 (dp446
 g19
@@ -2193,11 +2193,11 @@ I0
 sg23
 g34
 sg25
-S'Tool_XGenBrush_MM_May9'
+VTool_EditMembership_MM_May9
 p447
 sg27
 I0
-ssS'any xgmLengthBrushTool'
+ssS'any xgmFreezeBrushTool'
 p448
 (dp449
 g19
@@ -2215,7 +2215,7 @@ S'Tool_XGenBrush_MM_May9'
 p450
 sg27
 I0
-ssS'any artPuttyContext'
+ssS'any xgmLengthBrushTool'
 p451
 (dp452
 g19
@@ -2229,11 +2229,11 @@ I0
 sg23
 g34
 sg25
-S'Tool_SculptLegacy_MM_May9'
+S'Tool_XGenBrush_MM_May9'
 p453
 sg27
 I0
-ssS'any xgmClumpBrushTool'
+ssS'any xgmGrabBrushTool'
 p454
 (dp455
 g19
@@ -2287,7 +2287,7 @@ S'Tool_UVBushes_MM_May9'
 p462
 sg27
 I0
-ssS'polyTexturePlacementPanel texUnfoldUVContext'
+ssS'any artPuttyContext'
 p463
 (dp464
 g19
@@ -2301,7 +2301,7 @@ I0
 sg23
 g34
 sg25
-S'Tool_UVBushes_MM_May9'
+S'Tool_SculptLegacy_MM_May9'
 p465
 sg27
 I0
@@ -2323,7 +2323,7 @@ S'Tool_XGenBrush_MM_May9'
 p468
 sg27
 I0
-ssS'any artAttrContext'
+ssS'any dynWireCtx1'
 p469
 (dp470
 g19
@@ -2337,7 +2337,7 @@ I0
 sg23
 g34
 sg25
-S'Tool_PaintAttr_MM_May9'
+S'Tool_PaintFX_MM_May9'
 p471
 sg27
 I0
@@ -2449,7 +2449,7 @@ VTool_IkSplineHandle_MM_May9
 p489
 sg27
 I0
-ssS'any xgmGrabBrushTool'
+ssS'any xgmClumpBrushTool'
 p490
 (dp491
 g19
@@ -2485,7 +2485,7 @@ S'Tool_XGenBrush_MM_May9'
 p495
 sg27
 I0
-ssS'any xgmPlaceBrushTool'
+ssVany nConstraintMembershipTool
 p496
 (dp497
 g19
@@ -2499,7 +2499,7 @@ I0
 sg23
 g34
 sg25
-S'Tool_XGenBrush_MM_May9'
+VTool_EditConstraintMembership_MM_May9
 p498
 sg27
 I0
@@ -2557,7 +2557,7 @@ S'Tool_XGenBrush_MM_May9'
 p507
 sg27
 I0
-ssVany nConstraintMembershipTool
+ssS'any xgmCombBrushTool'
 p508
 (dp509
 g19
@@ -2571,7 +2571,7 @@ I0
 sg23
 g34
 sg25
-VTool_EditConstraintMembership_MM_May9
+S'Tool_XGenBrush_MM_May9'
 p510
 sg27
 I0
@@ -2737,7 +2737,7 @@ VTool_IkHandle_MM_May9
 p537
 sg27
 I0
-ssS'any xgmGuideSculptTool'
+ssS'polyTexturePlacementPanel texUnfoldUVContext'
 p538
 (dp539
 g19
@@ -2751,7 +2751,7 @@ I0
 sg23
 g34
 sg25
-S'Tool_XGenGuide_MM_May9'
+S'Tool_UVBushes_MM_May9'
 p540
 sg27
 I0
@@ -2773,7 +2773,7 @@ S'Tool_GreasePencil_MM_May9'
 p543
 sg27
 I0
-ssS'any xgmCombBrushTool'
+ssS'any xgmPlaceBrushTool'
 p544
 (dp545
 g19
@@ -2868,7 +2868,7 @@ VPoly_MM_May9
 p562
 sg27
 I0
-ssS'any makeNurbCircle'
+ssVhyperGraphPanel container
 p563
 (dp564
 g19
@@ -2880,15 +2880,16 @@ I00
 sg22
 I0
 sg23
-g34
-sg25
-S'CurveCreate_MM_May9'
+Vda_ToggleContainer
 p565
+sg25
+VHypergraph_Container_MM_May9
+p566
 sg27
 I0
-ssVmodelPanel polyTorus transform
-p566
-(dp567
+ssVany MASH_Waiter transform
+p567
+(dp568
 g19
 I6
 sg20
@@ -2898,10 +2899,9 @@ I00
 sg22
 I0
 sg23
-Vda_SelectMulti
-p568
+g34
 sg25
-VPoly_MM_May9
+VMASH_Particle_MM_May9
 p569
 sg27
 I0
@@ -2979,7 +2979,7 @@ VFileTexture_MM_May9
 p583
 sg27
 I0
-ssVany polySuperShape
+ssS'any nParticle'
 p584
 (dp585
 g19
@@ -2991,15 +2991,16 @@ I00
 sg22
 I0
 sg23
-g34
-sg25
-VPolyCreate_MM_May9
+S'da_BackToObjectMode'
 p586
+sg25
+S'ParticlePoints_MM_May9'
+p587
 sg27
 I0
-ssVany bifrostBoard
-p587
-(dp588
+ssS'any makeNurbCircle'
+p588
+(dp589
 g19
 I6
 sg20
@@ -3009,14 +3010,13 @@ I00
 sg22
 I0
 sg23
-VopenBifrostCompoundEditor
-p589
+g34
 sg25
-VBoard_MM_May9
+S'CurveCreate_MM_May9'
 p590
 sg27
 I0
-ssS'any MASH_Waiter'
+ssS'any instancer'
 p591
 (dp592
 g19
@@ -3028,14 +3028,14 @@ I00
 sg22
 I0
 sg23
-S'MASHOutliner'
+S'MASHBakeGUI'
 p593
 sg25
-S'MASH_MM_May9'
+S'Instancer_MM_May9'
 p594
 sg27
 I0
-ssS'any instancer'
+ssS'any mesh mesh'
 p595
 (dp596
 g19
@@ -3047,14 +3047,14 @@ I00
 sg22
 I0
 sg23
-S'MASHBakeGUI'
+Vda_BackToObjectMode
 p597
 sg25
-S'Instancer_MM_May9'
+S'MeshMesh_MM_May9'
 p598
 sg27
 I0
-ssS'any mesh mesh'
+ssVany xgmPalette
 p599
 (dp600
 g19
@@ -3066,16 +3066,15 @@ I00
 sg22
 I0
 sg23
-Vda_BackToObjectMode
-p601
+g34
 sg25
-S'MeshMesh_MM_May9'
-p602
+VXGen_Description_MM_May9
+p601
 sg27
 I0
-ssS'any polyPlane'
-p603
-(dp604
+ssVmodelPanel polySphere transform
+p602
+(dp603
 g19
 I6
 sg20
@@ -3085,9 +3084,10 @@ I00
 sg22
 I0
 sg23
-g71
+Vda_SelectMulti
+p604
 sg25
-S'PolyCreate_MM_May9'
+VPoly_MM_May9
 p605
 sg27
 I0
@@ -3165,7 +3165,7 @@ S'PolyCreate_MM_May9'
 p619
 sg27
 I0
-ssVmodelPanel polySphere transform
+ssS'any polyPlane'
 p620
 (dp621
 g19
@@ -3177,16 +3177,15 @@ I00
 sg22
 I0
 sg23
-Vda_SelectMulti
+g71
+sg25
+S'PolyCreate_MM_May9'
 p622
-sg25
-VPoly_MM_May9
+sg27
+I0
+ssS'any nurbsSurface nurbsSurface'
 p623
-sg27
-I0
-ssVnodeEditorPanel lambert
-p624
-(dp625
+(dp624
 g19
 I6
 sg20
@@ -3196,16 +3195,16 @@ I00
 sg22
 I0
 sg23
-Vda_EditAndFrameShaderOutliner
+S'da_BackToObjectMode'
+p625
+sg25
+S'NurbsShapeNurbsShape_MM_May9'
 p626
-sg25
-VShaders_MM_May9
-p627
 sg27
 I0
-ssVany polyDisc
-p628
-(dp629
+ssS'any objectSet'
+p627
+(dp628
 g19
 I6
 sg20
@@ -3215,13 +3214,14 @@ I00
 sg22
 I0
 sg23
-g34
+S'selectAllSetMembers outlinerPanel1'
+p629
 sg25
-VPolyCreate_MM_May9
+S'Sets_MM_May9'
 p630
 sg27
 I0
-ssVany polyCone
+ssVnodeEditorPanel aiStandardHair
 p631
 (dp632
 g19
@@ -3233,51 +3233,51 @@ I00
 sg22
 I0
 sg23
-g34
-sg25
-VPolyCreate_MM_May9
-p633
-sg27
-I0
-ssS'any objectSet'
-p634
-(dp635
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-S'selectAllSetMembers outlinerPanel1'
-p636
-sg25
-S'Sets_MM_May9'
-p637
-sg27
-I0
-ssVnodeEditorPanel aiStandardHair
-p638
-(dp639
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
 Vda_EditAndFrameShaderOutliner
-p640
+p633
 sg25
 VShaders_MM_May9
-p641
+p634
 sg27
 I0
 ssVany nurbsCurve transform
+p635
+(dp636
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+Vparent -r -s
+p637
+sg25
+VTransformShape_MM_May9
+p638
+sg27
+I0
+ssS'any makeNurbPlane'
+p639
+(dp640
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+g34
+sg25
+S'NurbsCreate_MM_May9'
+p641
+sg27
+I0
+ssS'any makeNurbTorus'
 p642
 (dp643
 g19
@@ -3289,16 +3289,15 @@ I00
 sg22
 I0
 sg23
-Vparent -r -s
-p644
+g34
 sg25
-VTransformShape_MM_May9
-p645
+S'NurbsCreate_MM_May9'
+p644
 sg27
 I0
-ssS'any makeNurbPlane'
-p646
-(dp647
+ssS'any particle'
+p645
+(dp646
 g19
 I6
 sg20
@@ -3308,13 +3307,14 @@ I00
 sg22
 I0
 sg23
-g34
+S'da_BackToObjectMode'
+p647
 sg25
-S'NurbsCreate_MM_May9'
+S'Legacy_ParticlePoints_MM_May9'
 p648
 sg27
 I0
-ssS'any makeNurbTorus'
+ssVmodelPanel polyHelix transform
 p649
 (dp650
 g19
@@ -3326,53 +3326,16 @@ I00
 sg22
 I0
 sg23
-g34
-sg25
-S'NurbsCreate_MM_May9'
-p651
-sg27
-I0
-ssS'any particle'
-p652
-(dp653
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-S'da_BackToObjectMode'
-p654
-sg25
-S'Legacy_ParticlePoints_MM_May9'
-p655
-sg27
-I0
-ssVmodelPanel polyHelix transform
-p656
-(dp657
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
 Vda_SelectMulti
-p658
+p651
 sg25
 VPoly_MM_May9
-p659
+p652
 sg27
 I0
 ssS'any ikHandle'
-p660
-(dp661
+p653
+(dp654
 g19
 I6
 sg20
@@ -3385,10 +3348,47 @@ sg23
 g34
 sg25
 S'IK_MM_May9'
+p655
+sg27
+I0
+ssVany mesh tweak
+p656
+(dp657
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+g34
+sg25
+VTweakMesh_MM_May9
+p658
+sg27
+I0
+ssVany bifrostBoard
+p659
+(dp660
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+VopenBifrostCompoundEditor
+p661
+sg25
+VBoard_MM_May9
 p662
 sg27
 I0
-ssS'any nParticle'
+ssVany polyExtrudeVertex
 p663
 (dp664
 g19
@@ -3400,14 +3400,14 @@ I00
 sg22
 I0
 sg23
-S'da_BackToObjectMode'
+VShowManipulators
 p665
 sg25
-S'ParticlePoints_MM_May9'
+VPolyExtrudeVertex_MM_May9
 p666
 sg27
 I0
-ssVany polyExtrudeVertex
+ssVnodeEditorPanel anisotropic
 p667
 (dp668
 g19
@@ -3419,14 +3419,14 @@ I00
 sg22
 I0
 sg23
-VShowManipulators
+Vda_EditAndFrameShaderOutliner
 p669
 sg25
-VPolyExtrudeVertex_MM_May9
+VShaders_MM_May9
 p670
 sg27
 I0
-ssVnodeEditorPanel anisotropic
+ssVoutlinerPanel nurbsCurve
 p671
 (dp672
 g19
@@ -3438,35 +3438,16 @@ I00
 sg22
 I0
 sg23
-Vda_EditAndFrameShaderOutliner
+Vda_ExtractCurveShape
 p673
 sg25
-VShaders_MM_May9
+VCurveShape_MM_May9
 p674
 sg27
 I0
-ssVoutlinerPanel nurbsCurve
+ssS'any makeNurbSphere'
 p675
 (dp676
-g19
-I6
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-Vda_ExtractCurveShape
-p677
-sg25
-VCurveShape_MM_May9
-p678
-sg27
-I0
-ssS'any makeNurbSphere'
-p679
-(dp680
 g19
 I6
 sg20
@@ -3479,6 +3460,25 @@ sg23
 g34
 sg25
 S'NurbsCreate_MM_May9'
+p677
+sg27
+I0
+ssS'any nucleus'
+p678
+(dp679
+g19
+I6
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+S'AttributeEditor'
+p680
+sg25
+S'Nucleus_MM_May9'
 p681
 sg27
 I0
@@ -3594,7 +3594,7 @@ S'Joint_MM_May9'
 p703
 sg27
 I0
-ssVany mesh tweak
+ssVany polyDisc
 p704
 (dp705
 g19
@@ -3608,7 +3608,7 @@ I0
 sg23
 g34
 sg25
-VTweakMesh_MM_May9
+VPolyCreate_MM_May9
 p706
 sg27
 I0
@@ -3630,7 +3630,7 @@ VPolyCreate_MM_May9
 p709
 sg27
 I0
-ssS'any nurbsSurface nurbsSurface'
+ssVany polyCone
 p710
 (dp711
 g19
@@ -3642,16 +3642,15 @@ I00
 sg22
 I0
 sg23
-S'da_BackToObjectMode'
-p712
+g34
 sg25
-S'NurbsShapeNurbsShape_MM_May9'
-p713
+VPolyCreate_MM_May9
+p712
 sg27
 I0
 ssS'any ikHandle transform'
-p714
-(dp715
+p713
+(dp714
 g19
 I6
 sg20
@@ -3664,12 +3663,12 @@ sg23
 g34
 sg25
 S'Constraint_MM_May9'
-p716
+p715
 sg27
 I0
-ssVany MASH_Waiter transform
-p717
-(dp718
+ssVnodeEditorPanel lambert
+p716
+(dp717
 g19
 I6
 sg20
@@ -3679,9 +3678,10 @@ I00
 sg22
 I0
 sg23
-g34
+Vda_EditAndFrameShaderOutliner
+p718
 sg25
-VMASH_Particle_MM_May9
+VShaders_MM_May9
 p719
 sg27
 I0
@@ -3760,7 +3760,7 @@ VShaders_MM_May9
 p734
 sg27
 I0
-ssVhyperGraphPanel container
+ssVmodelPanel polyTorus transform
 p735
 (dp736
 g19
@@ -3772,10 +3772,10 @@ I00
 sg22
 I0
 sg23
-Vda_ToggleContainer
+Vda_SelectMulti
 p737
 sg25
-VHypergraph_Container_MM_May9
+VPoly_MM_May9
 p738
 sg27
 I0
@@ -3798,7 +3798,7 @@ VPoly_MM_May9
 p742
 sg27
 I0
-ssS'any nucleus'
+ssVany polySuperShape
 p743
 (dp744
 g19
@@ -3810,16 +3810,15 @@ I00
 sg22
 I0
 sg23
-S'AttributeEditor'
-p745
+g34
 sg25
-S'Nucleus_MM_May9'
-p746
+VPolyCreate_MM_May9
+p745
 sg27
 I0
 ssVany container
-p747
-(dp748
+p746
+(dp747
 g19
 I6
 sg20
@@ -3830,15 +3829,40 @@ sg22
 I0
 sg23
 Vda_EditContainer
-p749
+p748
 sg25
 VContainer_MM_May9
-p750
+p749
 sg27
 I0
+ssVany place2dTexture
+p750
+(dp751
+S'search_filter'
+p752
+I6
+sS'menu_type'
+p753
+I0
+sS'command_always'
+p754
+I00
+sS'search_name'
+p755
+I0
+sS'command'
+p756
+g34
+sS'menu'
+p757
+VPlacementNode_MM_May9
+p758
+sS'command_type'
+p759
+I0
 ssVhyperShadePanel file
-p751
-(dp752
+p760
+(dp761
 g19
 I6
 sg20
@@ -3851,12 +3875,12 @@ sg23
 g34
 sg25
 VFileTexture_MM_May9
-p753
+p762
 sg27
 I0
 ssS'any membrane'
-p754
-(dp755
+p763
+(dp764
 g19
 I6
 sg20
@@ -3867,15 +3891,15 @@ sg22
 I0
 sg23
 S'da_MembraneCollider'
-p756
+p765
 sg25
 S'MembraneNode_MM_May9'
-p757
+p766
 sg27
 I0
 ssVnodeEditorPanel aiStandardSurface
-p758
-(dp759
+p767
+(dp768
 g19
 I6
 sg20
@@ -3886,15 +3910,15 @@ sg22
 I0
 sg23
 Vda_EditAndFrameShaderOutliner
-p760
+p769
 sg25
 VShaders_MM_May9
-p761
+p770
 sg27
 I0
 ssS'any polyHelix'
-p762
-(dp763
+p771
+(dp772
 g19
 I6
 sg20
@@ -3907,12 +3931,12 @@ sg23
 g71
 sg25
 S'PolyCreate_MM_May9'
-p764
+p773
 sg27
 I0
-ssVany xgmPalette
-p765
-(dp766
+ssS'any MASH_Waiter'
+p774
+(dp775
 g19
 I6
 sg20
@@ -3922,74 +3946,20 @@ I00
 sg22
 I0
 sg23
-g34
+S'MASHOutliner'
+p776
 sg25
-VXGen_Description_MM_May9
-p767
+S'MASH_MM_May9'
+p777
 sg27
 I0
 sssS'preset'
-p768
-(dp769
-sS'panel'
-p770
-(dp771
-S'nodeEditorPanel'
-p772
-(dp773
-g19
-I2
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-S'NodeEditorGraphUpDownstream'
-p774
-sg25
-S'NodeEditor_MM_May9'
-p775
-sg27
-I0
-ssS'dopeSheetPanel'
-p776
-(dp777
-g19
-I6
-sg20
-I1
-sg21
-I00
-sg22
-I0
-sg23
-g34
-sg25
-VNull
 p778
-sg27
-I0
-ssS'shapePanel'
-p779
-(dp780
-g19
-I6
-sg20
-I1
-sg21
-I00
-sg22
-I0
-sg23
-g34
-sg25
-VNull
-p781
-sg27
-I0
-ssS'hyperShadePanel'
+(dp779
+sS'panel'
+p780
+(dp781
+S'nodeEditorPanel'
 p782
 (dp783
 g19
@@ -4001,16 +3971,71 @@ I00
 sg22
 I0
 sg23
-Vda_ExpandShade
+S'NodeEditorGraphUpDownstream'
 p784
 sg25
-S'HyperShade_MM_May9'
+S'NodeEditor_MM_May9'
 p785
 sg27
 I0
-ssS'outlinerPanel'
+ssS'dopeSheetPanel'
 p786
 (dp787
+g19
+I6
+sg20
+I1
+sg21
+I00
+sg22
+I0
+sg23
+g34
+sg25
+VNull
+p788
+sg27
+I0
+ssS'shapePanel'
+p789
+(dp790
+g19
+I6
+sg20
+I1
+sg21
+I00
+sg22
+I0
+sg23
+g34
+sg25
+VNull
+p791
+sg27
+I0
+ssS'hyperShadePanel'
+p792
+(dp793
+g19
+I2
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+Vda_ExpandShade
+p794
+sg25
+S'HyperShade_MM_May9'
+p795
+sg27
+I0
+ssS'outlinerPanel'
+p796
+(dp797
 g19
 I6
 sg20
@@ -4021,15 +4046,15 @@ sg22
 I0
 sg23
 Vda_OutlinerNoClick
-p788
+p798
 sg25
 S'Outliner_MM_May9'
-p789
+p799
 sg27
 I0
 ssS'graphEditor'
-p790
-(dp791
+p800
+(dp801
 g19
 I0
 sg20
@@ -4040,15 +4065,15 @@ sg22
 I0
 sg23
 S'da_InseritKeyframe'
-p792
+p802
 sg25
 S'GraphEditor_MM_May9'
-p793
+p803
 sg27
 I0
 ssS'contentBrowserPanel'
-p794
-(dp795
+p804
+(dp805
 g19
 I6
 sg20
@@ -4061,12 +4086,12 @@ sg23
 g34
 sg25
 VNull
-p796
+p806
 sg27
 I0
 ssS'profilerPanel'
-p797
-(dp798
+p807
+(dp808
 g19
 I6
 sg20
@@ -4079,12 +4104,12 @@ sg23
 g34
 sg25
 VNull
-p799
+p809
 sg27
 I0
 ssS'any'
-p800
-(dp801
+p810
+(dp811
 g19
 I7
 sg20
@@ -4095,14 +4120,14 @@ sg22
 I0
 sg23
 S'da_BackToObjectMode'
-p802
+p812
 sg25
 g34
 sg27
 I0
 ssS'relationshipPanel'
-p803
-(dp804
+p813
+(dp814
 g19
 I6
 sg20
@@ -4115,65 +4140,10 @@ sg23
 g34
 sg25
 VNull
-p805
-sg27
-I0
-ssS'sequenceEditorPanel'
-p806
-(dp807
-g19
-I6
-sg20
-I1
-sg21
-I00
-sg22
-I0
-sg23
-g34
-sg25
-VNull
-p808
-sg27
-I0
-ssS'clipEditorPanel'
-p809
-(dp810
-g19
-I6
-sg20
-I1
-sg21
-I00
-sg22
-I0
-sg23
-g34
-sg25
-VNull
-p811
-sg27
-I0
-ssS'referenceEditorPanel'
-p812
-(dp813
-g19
-I0
-sg20
-I0
-sg21
-I00
-sg22
-I0
-sg23
-S'referenceEdLoadCB'
-p814
-sg25
-S'ReferenceEditor_MM_May9'
 p815
 sg27
 I0
-ssS'dynPaintScriptedPanel'
+ssS'sequenceEditorPanel'
 p816
 (dp817
 g19
@@ -4191,7 +4161,7 @@ VNull
 p818
 sg27
 I0
-ssS'createNodePanel'
+ssS'clipEditorPanel'
 p819
 (dp820
 g19
@@ -4209,27 +4179,28 @@ VNull
 p821
 sg27
 I0
-ssS'posePanel'
+ssS'referenceEditorPanel'
 p822
 (dp823
 g19
-I6
+I0
 sg20
-I1
+I0
 sg21
 I00
 sg22
 I0
 sg23
-g34
-sg25
-VNull
+S'referenceEdLoadCB'
 p824
+sg25
+S'ReferenceEditor_MM_May9'
+p825
 sg27
 I0
-ssS'scriptEditorPanel'
-p825
-(dp826
+ssS'dynPaintScriptedPanel'
+p826
+(dp827
 g19
 I6
 sg20
@@ -4242,29 +4213,28 @@ sg23
 g34
 sg25
 VNull
-p827
+p828
 sg27
 I0
-ssS'renderView'
-p828
-(dp829
+ssS'createNodePanel'
+p829
+(dp830
 g19
-I0
+I6
 sg20
-I0
+I1
 sg21
 I00
 sg22
 I0
 sg23
-S'da_SaveRenderImage'
-p830
+g34
 sg25
-S'RenderView_MM_May9'
+VNull
 p831
 sg27
 I0
-ssS'componentEditorPanel'
+ssS'posePanel'
 p832
 (dp833
 g19
@@ -4282,7 +4252,7 @@ VNull
 p834
 sg27
 I0
-ssS'timeEditorPanel'
+ssS'scriptEditorPanel'
 p835
 (dp836
 g19
@@ -4300,11 +4270,11 @@ VNull
 p837
 sg27
 I0
-ssS'hyperGraphPanel'
+ssS'renderView'
 p838
 (dp839
 g19
-I2
+I0
 sg20
 I0
 sg21
@@ -4312,14 +4282,14 @@ I00
 sg22
 I0
 sg23
-S'da_HgConnectionLevel'
+S'da_SaveRenderImage'
 p840
 sg25
-S'HyperGraph_MM_May9'
+S'RenderView_MM_May9'
 p841
 sg27
 I0
-ssS'dynRelEdPanel'
+ssS'componentEditorPanel'
 p842
 (dp843
 g19
@@ -4337,9 +4307,64 @@ VNull
 p844
 sg27
 I0
-ssS'polyTexturePlacementPanel'
+ssS'timeEditorPanel'
 p845
 (dp846
+g19
+I6
+sg20
+I1
+sg21
+I00
+sg22
+I0
+sg23
+g34
+sg25
+VNull
+p847
+sg27
+I0
+ssS'hyperGraphPanel'
+p848
+(dp849
+g19
+I2
+sg20
+I0
+sg21
+I00
+sg22
+I0
+sg23
+S'da_HgConnectionLevel'
+p850
+sg25
+S'HyperGraph_MM_May9'
+p851
+sg27
+I0
+ssS'dynRelEdPanel'
+p852
+(dp853
+g19
+I6
+sg20
+I1
+sg21
+I00
+sg22
+I0
+sg23
+g34
+sg25
+VNull
+p854
+sg27
+I0
+ssS'polyTexturePlacementPanel'
+p855
+(dp856
 g19
 I1
 sg20
@@ -4350,11 +4375,11 @@ sg22
 I0
 sg23
 Vda_BackToObjectMode
-p847
+p857
 sg25
 VUV_Editor_MM_May9
-p848
+p858
 sg27
 I0
-ssstp849
+ssstp859
 .

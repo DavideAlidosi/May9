@@ -8,6 +8,9 @@ global proc May9_runTimeCommandsRemover(){
 		da_MMtoKey_release`);
 
 	catchQuiet (`runTimeCommand -e -del
+		da_ConnectPlace2dToFile`);
+
+	catchQuiet (`runTimeCommand -e -del
 		da_TogglePivotVisibility`);
 
 	catchQuiet (`runTimeCommand -e -del
@@ -1324,6 +1327,13 @@ global proc May9_runTimeCommands(){
 		-cl "python"
 		-c ("May9_Next.releaseSelected()")
 		da_MMtoKey_release;
+
+
+	runTimeCommand
+		-ann "Connect Place2d Node to File"
+		-cat "Custom Scripts.May9_Next.Render"
+		-c ("string $myPlace2d[] = `ls -sl -type transform -type place2dTexture`;\nstring $myFiles[] = `ls -sl -type transform -type file`;\nif (size($myPlace2d) == 0){\n    createNode place2dTexture;\n    string $myPlace2d[] = `ls -sl -type transform -type place2dTexture`;\n}\n\nif (size($myFiles) > 0){\n    for ($i=0; $i<size($myFiles); $i++) {\n        connectAttr -f ($myPlace2d[0] + \".outUV\") ($myFiles[$i] + \".uvCoord\");\n        connectAttr -f ($myPlace2d[0] + \".outUvFilterSize\") ($myFiles[$i] + \".uvFilterSize\");\n        connectAttr -f ($myPlace2d[0] + \".vertexCameraOne\") ($myFiles[$i] + \".vertexCameraOne\");\n        \n        connectAttr -f ($myPlace2d[0] + \".vertexUvOne\") ($myFiles[$i] + \".vertexUvOne\");\n        connectAttr -f ($myPlace2d[0] + \".vertexUvThree\") ($myFiles[$i] + \".vertexUvThree\");\n        connectAttr -f ($myPlace2d[0] + \".vertexUvTwo\") ($myFiles[$i] + \".vertexUvTwo\");\n        \n        connectAttr -f ($myPlace2d[0] + \".coverage\") ($myFiles[$i] + \".coverage\");\n        connectAttr -f ($myPlace2d[0] + \".mirrorU\") ($myFiles[$i] + \".mirrorU\");\n        connectAttr -f ($myPlace2d[0] + \".mirrorV\") ($myFiles[$i] + \".mirrorV\");\n        \n        connectAttr -f ($myPlace2d[0] + \".noiseUV\") ($myFiles[$i] + \".noiseUV\");\n        connectAttr -f ($myPlace2d[0] + \".offset\") ($myFiles[$i] + \".offset\");\n        connectAttr -f ($myPlace2d[0] + \".repeatUV\") ($myFiles[$i] + \".repeatUV\");\n        \n        connectAttr -f ($myPlace2d[0] + \".rotateFrame\") ($myFiles[$i] + \".rotateFrame\");\n        connectAttr -f ($myPlace2d[0] + \".rotateUV\") ($myFiles[$i] + \".rotateUV\");\n        connectAttr -f ($myPlace2d[0] + \".stagger\") ($myFiles[$i] + \".stagger\");\n        \n        connectAttr -f ($myPlace2d[0] + \".translateFrame\") ($myFiles[$i] + \".translateFrame\");\n        \n        connectAttr -f ($myPlace2d[0] + \".wrapU\") ($myFiles[$i] + \".wrapU\");\n        connectAttr -f ($myPlace2d[0] + \".wrapV\") ($myFiles[$i] + \".wrapV\");\n    }\n}else{\n    string $myPlace2d[] = `ls -sl -type transform -type place2dTexture`;\n    string $mySel[] = `ls -sl`;\n    select -d $myPlace2d[0];\n    string $myTexture[] = `ls -sl`;\n    for ($i=0; $i<size($myTexture); $i++) {\n        connectAttr -f ($myPlace2d[0] + \".outUV\") ($myTexture[$i] + \".uvCoord\");\n        connectAttr -f ($myPlace2d[0] + \".outUvFilterSize\") ($myTexture[$i] + \".uvFilterSize\");\n    }\n}")
+		da_ConnectPlace2dToFile;
 
 	runTimeCommand
 		-ann "Toggle Pivot Visibility"
@@ -3530,7 +3540,7 @@ global proc May9_runTimeCommands(){
 	runTimeCommand
 		-ann "Layout Hypershade"
 		-cat "Custom Scripts.May9_Next.System"
-		-c ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daHyperShade\";\n    inViewMessage -pos topCenter -msg \"Hypershade layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n}else{\n    panePop;\n}\n\nint $myLayout = 10")
+		-c ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daHyperShade\";\n    inViewMessage -pos topCenter -msg \"Hypershade layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n\n\tsetOutlinerVisible 0;\n\tda_ChannelBox;\n}else{\n    panePop;\n\tsetOutlinerVisible 0;\n\tda_ChannelBox;\n}\n\nint $myLayout = 10")
 		da_LayoutHypershade;
 
 	runTimeCommand

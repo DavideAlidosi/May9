@@ -3744,6 +3744,12 @@ menuItem
 -c "da_FileFilterQuadratic" 
 -rp "NE";
 
+menuItem
+-l "Connect Place2d Node" 
+-c "da_ConnectPlace2dToFile" 
+-i "out_place2dTexture.png" 
+-rp "N";
+
 setParent -m ..;
 
 } 
@@ -4684,7 +4690,7 @@ menuItem
 -i "textureEditor.png";
 
 menuItem
--l "TX Manager" 
+-l "TX Manager..." 
 -c "da_TxManager" 
 -i "TXManagerShelf.png";
 
@@ -4710,6 +4716,14 @@ menuItem
 -l "file" 
 -c "createRenderNodeCB -as2DTexture \"\" file \"\"" 
 -i "out_file.png";
+
+menuItem
+-l "place2dTexture" 
+-c "createNode place2dTexture" 
+-i "out_place2dTexture.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "ramp" 
@@ -8569,6 +8583,17 @@ setParent -m ..;
 setParent -m ..;
 
 } 
+// Define PolyBevel marking menu
+global proc PlacementNode_MM_May9(){
+
+menuItem
+-l "Connect Place2d Node" 
+-c "da_ConnectPlace2dToFile" 
+-i "out_place2dTexture.png" 
+-rp "N";
+
+setParent -m ..;
+}
 // Define PolyBevel marking menu
 global proc PointLight_MM_May9(){
 int $lightCheck = `renderManip -q -st`;
