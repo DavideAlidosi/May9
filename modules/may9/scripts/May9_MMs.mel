@@ -4708,41 +4708,6 @@ menuItem
 -d 1;
 
 menuItem
--l "Create Common Nodes" 
--sm 1
--i "nodeGrapherAddNodes.png";
-
-menuItem
--l "file" 
--c "createRenderNodeCB -as2DTexture \"\" file \"\"" 
--i "out_file.png";
-
-menuItem
--l "place2dTexture" 
--c "createNode place2dTexture" 
--i "out_place2dTexture.png";
-
-menuItem
--d 1;
-
-menuItem
--l "ramp" 
--c "createNode ramp" 
--i "out_ramp.png";
-
-menuItem
--l "layeredTexture" 
--c "createNode layeredTexture" 
--i "out_layeredTexture.png";
-
-menuItem
--l "samplerInfo" 
--c "createNode samplerInfo" 
--i "out_samplerInfo.png";
-
-setParent -m ..;
-
-menuItem
 -l "Show All Nodes" 
 -c "filterUIClearFilter hyperShadePrimaryNodeEditor" 
 -i "selectUnsortedNodes.png";
@@ -6500,6 +6465,11 @@ menuItem
 -l "ramp" 
 -c "createNode ramp" 
 -i "out_ramp.png";
+
+menuItem
+-l "layeredTexture" 
+-c "createNode layeredTexture" 
+-i "out_layeredTexture.png";
 
 menuItem
 -l "samplerInfo" 
@@ -9659,6 +9629,9 @@ menuItem
 -i "polyGridUV.png";
 
 menuItem
+-d 1;
+
+menuItem
 -l "Match UV"
 -c "da_MatchUV"
 -i "polyMatchUV.png";
@@ -9755,6 +9728,9 @@ menuItem
 -l "Assign New Material..."
 -c "createAssignNewMaterialTreeLister \"\""
 -i "render_adskMaterial.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Assign Toon Shader"
@@ -10564,6 +10540,9 @@ menuItem
 -i "polyGridUV.png";
 
 menuItem
+-d 1;
+
+menuItem
 -l "Match Shells Scale" 
 -c "uvTkDoGetTexelDensity;uvTkDoSetTexelDensity" 
 -i "polyScaleUV.png";
@@ -10680,6 +10659,9 @@ menuItem
 -l "Assign New Material..."
 -c "createAssignNewMaterialTreeLister \"\""
 -i "render_adskMaterial.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Assign Toon Shader"

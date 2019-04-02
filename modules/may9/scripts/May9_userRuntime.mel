@@ -2673,7 +2673,7 @@ runTimeCommand
 runTimeCommand
 	-ann "UV Selection on Selected Objects"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("$myUvSel = `ls -sl -l`;\nint $numObj = size($myUvSel);\nfor($i=0; $i<$numObj; $i++) doMenuComponentSelection($myUvSel[$i], \"puv\");")
+	-c ("dR_DoCmd(\"modeUV\");\nSelectAll;")
 	da_SelectUV;
 
 runTimeCommand
