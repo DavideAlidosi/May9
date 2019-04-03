@@ -406,6 +406,7 @@ menuItem -bld 1
 -i "setEdEditMode.png";
 
 setParent -m ..;
+}
 
 menuItem -bld 1 
 -l "Character Set"
@@ -415,12 +416,14 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Create..."
 -c "CreateCharacterOptions"
--i "HIKCharacterToolFullBody.png";
+-i "HIKCharacterToolFullBody.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Define SubCharacter..."
 -c "CreateSubCharacterOptions"
--i "HIKCharacterToolBodyPart.png";
+-i "HIKCharacterToolBodyPart.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Edit..."
@@ -428,12 +431,6 @@ menuItem -bld 1
 -i "HIKcreateControlRig.png";
 
 setParent -m ..;
-}else{
-menuItem -bld 1 
--l "Edit Character..."
--c "characterEditor( true )"
--i "HIKcreateControlRig.png";
-}
 
 if (size($myCurTransform) >= 1){
 menuItem -bld 1 
@@ -4515,19 +4512,6 @@ menuItem
 -i "nodeGrapherAddNodes.png";
 
 menuItem
--l "ramp" 
--c "createNode ramp" 
--i "out_ramp.png";
-
-menuItem
--l "samplerInfo" 
--c "createNode samplerInfo" 
--i "out_samplerInfo.png";
-
-menuItem
--d 1;
-
-menuItem
 -l "vectorProduct" 
 -c "createNode vectorProduct;" 
 -i "render_vectorProduct.png";
@@ -6460,24 +6444,6 @@ menuItem
 -l "Create Common Nodes" 
 -sm 1
 -i "nodeGrapherAddNodes.png";
-
-menuItem
--l "ramp" 
--c "createNode ramp" 
--i "out_ramp.png";
-
-menuItem
--l "layeredTexture" 
--c "createNode layeredTexture" 
--i "out_layeredTexture.png";
-
-menuItem
--l "samplerInfo" 
--c "createNode samplerInfo" 
--i "out_samplerInfo.png";
-
-menuItem
--d 1;
 
 menuItem
 -l "vectorProduct" 
