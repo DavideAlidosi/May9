@@ -18,8 +18,9 @@ Installation
 
 
 Release Note
-- Tested and develop on Autodesk Maya 2019 and Autodesk Maya 2018.5
-- Autodesk Arnold MtoA 3.2.0 is not a requirement but is highly suggested
+May9 Next required Autodesk Maya 2017 Update 3 or greater to work
+Tested and develop on Autodesk Maya 2019 and Autodesk Maya 2018.5
+Autodesk Arnold MtoA 3.2.0 is not a requirement but is highly suggested
 
 
 Licenses
