@@ -160,12 +160,14 @@ setParent -m ..;
 } 
 // Define All marking menu
 global proc All_MM_May9(){
-
 int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -q createNurbsPrimitiveAsTool`;
 
 string $currentPanel = `getPanel -wf`;
 
 string $myCurTransform[] = `ls -sl -typ "transform"`;
+
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
 menuItem -bld 1 
 -l "Poly/NURBS"
@@ -927,17 +929,12 @@ menuItem -bld 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if (`pluginInfo -q -l mtoa`){
-string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+if (`pluginInfo -q -l mtoa` && `about -api` >= 20180000 && $myArnoldIntVersion >= 320){
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
 
-if (`about -api` >= 20180000 && $myArnoldIntVersion >= 320){
 menuItem 
 -d 1;
-}
 
-if (`about -api` >= 20180000 && $myArnoldIntVersion >= 310){
 menuItem -bld 1
 -l "Arnold Viewport" 
 -c "da_ArnoldRenderViewport" 
@@ -948,13 +945,11 @@ menuItem
 -c "arnoldViewOverrideOptionBox" 
 -ob 1;
 }
-}
-if ($myArnoldIntVersion >= 320 && `objExists defaultArnoldRenderOptions`){
+
 menuItem -bld 1
 -l "Arnold GPU" 
 -c "da_ToggleRenderDevice" 
 -cb ($myRenderDevice);
-}
 
 menuItem 
 -d 1;
@@ -972,10 +967,10 @@ menuItem -bld 1
 -c "CreateContainer" 
 -i "createContainer.png";
 }
+}
 
 menuItem 
 -d 1;
-}
 
 menuItem -bld 1
 -l "Construction History" 
@@ -6361,7 +6356,6 @@ setParent -m ..;
 // Define NodeEditor marking menu
 global proc NodeEditor_MM_May9(){
 string $myNodeEditor = `getCurrentNodeEditor`;
-string $myConnectionStyle = `nodeEditor -q -connectionStyle $myNodeEditor`;
 
 menuItem
 -l "Select Time Node" 
@@ -6516,6 +6510,8 @@ menuItem
 setParent -m ..;
 
 if (`about -api` >= 20180000){
+string $myConnectionStyle = `nodeEditor -q -connectionStyle $myNodeEditor`;
+
 menuItem
 -l "Connection Style" 
 -sm 1
@@ -11381,10 +11377,12 @@ setParent -m ..;
 } 
 // Define Tool_Crease marking menu
 global proc Tool_Crease_MM_May9(){
-
 string $mySel[] = `ls -sl`;
 string $mySelShape[] = `listRelatives -s`;
 string $currentPanel = `getPanel -wf`;
+
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
 menuItem -itl 1 
 -l "No Crease" 
@@ -11459,13 +11457,13 @@ menuItem -itl 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if (`pluginInfo -q -l mtoa`){
-string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+if (`pluginInfo -q -l mtoa` && `about -api` >= 20180000 && $myArnoldIntVersion >= 320){
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
 
-if (`about -api` >= 20180000 && $myArnoldIntVersion >= 310){
-menuItem -itl 1 
+menuItem 
+-d 1;
+
+menuItem -itl 1
 -l "Arnold Viewport" 
 -c "da_ArnoldRenderViewport" 
 -cb ($myOverrideCheck == "arnoldViewOverride");
@@ -11475,13 +11473,11 @@ menuItem
 -c "arnoldViewOverrideOptionBox" 
 -ob 1;
 }
-}
-if ($myArnoldIntVersion >= 320 && `objExists defaultArnoldRenderOptions`){
-menuItem -itl 1 
+
+menuItem -itl 1
 -l "Arnold GPU" 
 -c "da_ToggleRenderDevice" 
 -cb ($myRenderDevice);
-}
 }
 }
 
@@ -12421,6 +12417,9 @@ setParent -m ..;
 global proc Tool_Walk_MM_May9(){
 string $currentPanel = `getPanel -wf`;
 
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+
 menuItem -itl 1 
 -l "Increase Speed" 
 -c "da_IncreaseWalkSpeed"
@@ -12454,13 +12453,13 @@ menuItem -itl 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if (`pluginInfo -q -l mtoa`){
-string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+if (`pluginInfo -q -l mtoa` && `about -api` >= 20180000 && $myArnoldIntVersion >= 320){
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
 
-if (`about -api` >= 20180000 && $myArnoldIntVersion >= 310){
-menuItem -itl 1 
+menuItem 
+-d 1;
+
+menuItem -itl 1
 -l "Arnold Viewport" 
 -c "da_ArnoldRenderViewport" 
 -cb ($myOverrideCheck == "arnoldViewOverride");
@@ -12470,13 +12469,11 @@ menuItem
 -c "arnoldViewOverrideOptionBox" 
 -ob 1;
 }
-}
-if ($myArnoldIntVersion >= 320 && `objExists defaultArnoldRenderOptions`){
-menuItem -itl 1 
+
+menuItem -itl 1
 -l "Arnold GPU" 
 -c "da_ToggleRenderDevice" 
 -cb ($myRenderDevice);
-}
 }
 }
 
