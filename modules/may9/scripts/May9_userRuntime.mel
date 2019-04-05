@@ -8,6 +8,9 @@ catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
+	da_SelectFromAnimCurve`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_ChannelBox`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -1330,6 +1333,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Select Object(s) from Animation Curve(s)"
+	-cat "Custom Scripts.May9_Next.Animate"
+	-c ("string $myAnimCurve[] = `keyframe -q -sl -name`;\n\nif (`size($myAnimCurve)`){\n    string $myAnimObject[] = stringArrayRemoveDuplicates(`listConnections $myAnimCurve`);\n    select -r $myAnimObject;\n}else{\n    warning \"Please select at least one animation curve\";\n}")
+	da_SelectFromAnimCurve;
 
 runTimeCommand
 	-ann "Display Channel Box"

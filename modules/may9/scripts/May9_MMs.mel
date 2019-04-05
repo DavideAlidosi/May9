@@ -4141,18 +4141,16 @@ menuItem
 -i "deleteGeneric.png";
 
 menuItem
+-l "Object from Curve" 
+-c "da_SelectFromAnimCurve" 
+-rp "SW" 
+-i "aselect.png";
+
+menuItem
 -l "Round Keyframes"
 -c "da_roundKeyframe"
 -rp "SE"
 -i "teSetKeyframe.png";
-
-if (`about -api` < 20190000){
-menuItem
--l "Simplify Curves..." 
--c "performSimplify 4 graphEditor1GraphEd" 
--rp "SW"
--i "da_simplifyCurve.png";
-}
 
 menuItem 
 -l "Disable Infinity"
@@ -4206,10 +4204,15 @@ menuItem
 -l "Key Reducer Filter..." 
 -c "performKeyReducer 4 graphEditor1GraphEd" 
 -i "da_simplifyCurve.png";
+}else{
+menuItem
+-l "Simplify Curves..." 
+-c "performSimplify 4 graphEditor1GraphEd" 
+-i "da_simplifyCurve.png";
+}
 
 menuItem
 -d 1;
-}
 
 menuItem
 -l "Play Max Real-time"
