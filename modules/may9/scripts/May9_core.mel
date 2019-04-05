@@ -91,7 +91,6 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 // Complete installation or update release
 if (`optionVar -q "May9ActivationCheck"` < $may9Value){
 
-
 	// Define May9 Next installation status 
 	optionVar -iv May9ActivationCheck $may9Value;
 
