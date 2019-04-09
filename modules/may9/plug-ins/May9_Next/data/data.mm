@@ -509,7 +509,7 @@ I00
 sg22
 I0
 sg23
-Vda_BackToObjectMode
+VConvertSelectionToUVs
 p117
 sg25
 VWindow_UV_Edge_MM_May9
@@ -1591,7 +1591,7 @@ I00
 sg22
 I0
 sg23
-Vda_BackToObjectMode
+VConvertSelectionToUVs
 p329
 sg25
 VWindow_UV_Face_MM_May9
