@@ -1,7 +1,12 @@
 // Define aiAreaLight marking menu
 global proc aiAreaLight_MM_May9(){
+string $myArnoldVersion;
+int $myArnoldIntVersion;
+
+if(`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+}
 
 int $lightCheck = `renderManip -q -st`;
 
@@ -166,8 +171,13 @@ string $currentPanel = `getPanel -wf`;
 
 string $myCurTransform[] = `ls -sl -typ "transform"`;
 
+string $myArnoldVersion;
+int $myArnoldIntVersion;
+
+if(`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+}
 
 menuItem -bld 1 
 -l "Poly/NURBS"
@@ -8542,8 +8552,13 @@ setParent -m ..;
 global proc PointLight_MM_May9(){
 int $lightCheck = `renderManip -q -st`;
 
+string $myArnoldVersion;
+int $myArnoldIntVersion;
+
+if(`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+}
 
 menuItem
 -l "Light Linking..." 
@@ -9183,8 +9198,13 @@ string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
+string $myArnoldVersion;
+int $myArnoldIntVersion;
+
+if(`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+}
 
 menuItem
 -l "Multi Cut"
@@ -10126,8 +10146,13 @@ string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 
+string $myArnoldVersion;
+int $myArnoldIntVersion;
+
+if(`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+}
 
 menuItem
 -l "Multi Cut"
@@ -11384,8 +11409,13 @@ string $mySel[] = `ls -sl`;
 string $mySelShape[] = `listRelatives -s`;
 string $currentPanel = `getPanel -wf`;
 
+string $myArnoldVersion;
+int $myArnoldIntVersion;
+
+if(`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+}
 
 menuItem -itl 1 
 -l "No Crease" 
@@ -12420,8 +12450,13 @@ setParent -m ..;
 global proc Tool_Walk_MM_May9(){
 string $currentPanel = `getPanel -wf`;
 
+string $myArnoldVersion;
+int $myArnoldIntVersion;
+
+if(`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+}
 
 menuItem -itl 1 
 -l "Increase Speed" 
