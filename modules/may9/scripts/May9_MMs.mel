@@ -169,9 +169,6 @@ string $currentPanel = `getPanel -wf`;
 
 string $myCurTransform[] = `ls -sl -typ "transform"`;
 
-string $mySelectionLayers[] = `listConnections -t "displayLayer"`;
-string $myActualLayers[] = `stringArrayRemoveDuplicates $mySelectionLayers`;
-
 menuItem -bld 1 
 -l "Poly/NURBS"
 -sm 1
@@ -770,7 +767,7 @@ menuItem -bld 1
 -c "da_SelectLayerObject"
 -rp "S"
 -i "alignTool.png"
--en (size($myCurTransform) >= 1 && size($myActualLayers));
+-en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
 -l "Select None"

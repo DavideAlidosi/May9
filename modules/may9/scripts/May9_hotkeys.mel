@@ -83,6 +83,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "k" -rn ("da_TimeDraggerNoSmoothNameCommand");
 	hotkey -k "Space" -cmd -n ("da_toggleMainWindowFullScreenModeNameCommand");
 	hotkey -k "i" -ctl -alt -n ("ToggleIsolateSelectNameCommand");
+	hotkey -k "l" -ctl -sht -name ("da_SelectLayerObjectNameCommand");
 
 	// Changed hotkeys
 	hotkey -k "1" -ctl -alt -n ("da_SmoothPreviewOffNameCommand");
@@ -500,6 +501,12 @@ global proc da_May9Hotkeys(){
 		-ann "da_LastOpInStackNameCommand"
 		-c ("da_LastOpInStack")
 		da_LastOpInStackNameCommand;
+
+	nameCommand
+		-annotation "da_SelectLayerObjectNameCommand"
+		-sourceType "mel"
+		-command ("da_SelectLayerObject")
+		da_SelectLayerObjectNameCommand;
 
 	if (`about -api` >= 20200000){
 	nameCommand
