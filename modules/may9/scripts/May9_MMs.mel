@@ -8583,6 +8583,10 @@ menuItem
 -rp "SW" 
 -i "attributes.png";
 
+if(`pluginInfo -q -l mtoa`){
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+
 menuItem
 -l "Temperature" 
 -sm 1
@@ -8619,10 +8623,6 @@ menuItem
 
 setParent -m ..;
 
-if(`pluginInfo -q -l mtoa`){
-string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
-
 if ($myArnoldIntVersion >= 320){
 menuItem
 -l "Visible" 
@@ -8640,8 +8640,6 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
-}
-}
 
 menuItem 
 -d 1;
@@ -8660,6 +8658,8 @@ menuItem
 -c "da_AiHighSample";
 
 setParent -m ..;
+}
+}
 
 setParent -m ..;
 
@@ -9725,24 +9725,22 @@ menuItem
 -c "removePfxToonOutlines"
 -i "toonRemoveOutline.png";
 
+if(`pluginInfo -q -l mtoa`){
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+
 menuItem
 -d 1;
 
-if (`pluginInfo -q -l mtoa`){
 menuItem
 -l "Arnold Light to Texture"
 -c "da_AiRenderToTexture"
 -i "RenderToTextureShelf.png";
-}
 
 menuItem
 -l "Mesh Light"
 -c "da_AiMeshesLight"
 -i "MeshLightShelf.png";
-
-if(`pluginInfo -q -l mtoa`){
-string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
 if ($myArnoldIntVersion < 320){
 menuItem
@@ -10658,24 +10656,22 @@ menuItem
 -c "removePfxToonOutlines"
 -i "toonRemoveOutline.png";
 
+if(`pluginInfo -q -l mtoa`){
+string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
+int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
+
 menuItem
 -d 1;
 
-if (`pluginInfo -q -l mtoa`){
 menuItem
 -l "Arnold Light to Texture"
 -c "da_AiRenderToTexture"
 -i "RenderToTextureShelf.png";
-}
 
 menuItem
 -l "Mesh Light"
 -c "da_AiMeshesLight"
 -i "MeshLightShelf.png";
-
-if(`pluginInfo -q -l mtoa`){
-string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
-int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
 if ($myArnoldIntVersion < 320){
 menuItem
