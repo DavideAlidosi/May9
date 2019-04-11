@@ -8,6 +8,9 @@ catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
+	da_SelectLayerObject`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_SelectFromAnimCurve`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -1333,6 +1336,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Select Object in the Same Layer"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $mySelectionLayers[] = `listConnections -t \"displayLayer\"`;\nstring $myActualLayers[] = `stringArrayRemoveDuplicates $mySelectionLayers`;\n\nstring $myObjectLayer[];\n\nif (size($myActualLayers)){\n    for ($i = 0; $i < size($myActualLayers); $i++){\n        layerEditorSelectObjects $myActualLayers[$i];\n        appendStringArray ( $myObjectLayer, `ls -sl`, size(`ls -sl`) );\n        select -cl;\n    }\n\nselect $myObjectLayer;\nclear $myObjectLayer;\n}else{\n    warning \"Object(s) is not into a Layer\";\n}")
+	da_SelectLayerObject;
 
 runTimeCommand
 	-ann "Select Object(s) from Animation Curve(s)"

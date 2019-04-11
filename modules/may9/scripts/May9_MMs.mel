@@ -69,7 +69,7 @@ menuItem
 
 setParent -m ..;
 
-if(`pluginInfo -q -l mtoa`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
@@ -168,6 +168,9 @@ int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -
 string $currentPanel = `getPanel -wf`;
 
 string $myCurTransform[] = `ls -sl -typ "transform"`;
+
+string $mySelectionLayers[] = `listConnections -t "displayLayer"`;
+string $myActualLayers[] = `stringArrayRemoveDuplicates $mySelectionLayers`;
 
 menuItem -bld 1 
 -l "Poly/NURBS"
@@ -759,15 +762,15 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Selection Size"
 -c "da_SelectionSize"
--rp "W"
+-rp "SW"
 -i "out_decomposeMatrix.png";
 
 menuItem -bld 1 
--l "Align Tool"
--c "setToolTo alignToolCtx"
--rp "SW"
+-l "Select Layer Objects"
+-c "da_SelectLayerObject"
+-rp "S"
 -i "alignTool.png"
--en (size($myCurTransform) >= 2);
+-en (size($myCurTransform) >= 1 && size($myActualLayers));
 
 menuItem -bld 1 
 -l "Select None"
@@ -784,7 +787,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Distance Tool"
 -c "DistanceTool"
--rp "S"
+-rp "W"
 -i "distanceDim.png";
 
 menuItem -bld 1 
@@ -929,7 +932,7 @@ menuItem -bld 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if(`pluginInfo -q -l mtoa`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
@@ -8583,7 +8586,7 @@ menuItem
 -rp "SW" 
 -i "attributes.png";
 
-if(`pluginInfo -q -l mtoa`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
@@ -9725,7 +9728,7 @@ menuItem
 -c "removePfxToonOutlines"
 -i "toonRemoveOutline.png";
 
-if(`pluginInfo -q -l mtoa`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
@@ -10656,7 +10659,7 @@ menuItem
 -c "removePfxToonOutlines"
 -i "toonRemoveOutline.png";
 
-if(`pluginInfo -q -l mtoa`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
@@ -11464,7 +11467,7 @@ menuItem -itl 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if(`pluginInfo -q -l mtoa`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
@@ -12462,7 +12465,7 @@ menuItem -itl 1
 -c "da_ToggleSelectionHighlighting" 
 -cb (`modelEditor -q -sel $currentPanel`);
 
-if(`pluginInfo -q -l mtoa`){
+if (`pluginInfo -q -l mtoa`){
 string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
