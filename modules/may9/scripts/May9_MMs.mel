@@ -878,6 +878,12 @@ menuItem -bld 1
 -i "out_buttonManip.png";
 
 menuItem -bld 1 
+-l "Align Tool..."
+-c "setToolTo alignToolCtx"
+-i "alignTool.png"
+-en (size($myCurTransform) >= 2);
+
+menuItem -bld 1 
 -l "Duplicate Special..."
 -c "DuplicateSpecialOptions" 
 -i "da_duplicate.png";
@@ -12452,6 +12458,12 @@ menuItem -itl 1
 -c "da_OpenToolSettings"
 -i "toolSettings.png" 
 -rp "W";
+
+menuItem -itl 1 
+-l "Select None"
+-c "SelectNone" 
+-rp "NE"
+-i "hotkeyFieldClear.png";
 
 if (`gmatch $currentPanel "modelPanel*"`){
 string $myCamera = `modelPanel -q -cam $currentPanel`;
