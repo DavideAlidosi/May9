@@ -8,6 +8,12 @@ catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
+	da_FiledCurve`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_VolumeFieldToCurve`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_SelectLayerObject`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -1336,6 +1342,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Apply Volume Axis Field to Curve"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $myShape[] = `listRelatives -s`;\nstring $myVolumeAxisField = `createNode volumeAxisField`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace\") ($myVolumeAxisField + \".inputCurve\");\nconnectAttr -f time1.outTime ($myVolumeAxisField + \".time\");\n\nsetAttr ($myVolumeAxisField + \".volumeShape\") 7;\nsetAttr ($myVolumeAxisField + \".awayFromAxis\") 0;\nsetAttr ($myVolumeAxisField + \".alongAxis\") .2;\nsetAttr ($myVolumeAxisField + \".magnitude\") 200;")
+	da_FiledCurve;
+
+runTimeCommand
+	-ann "Connect Volume Field to a Curve"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $myShape[] = `listRelatives -s`;\nstring $myVolumeField[] = `ls -sl -ni -typ \"volumeAxisField\"`;\n\nif(size($myShape) > 0){\n\tconnectAttr -f ($myShape[0] + \".worldSpace\") ($myVolumeField[0] + \".inputCurve\");\n\n\tsetAttr ($myVolumeField[0] + \".volumeShape\") 7;\n\tsetAttr ($myVolumeField[0] + \".awayFromAxis\") 0;\n\tsetAttr ($myVolumeField[0] + \".alongAxis\") .2;\n\tsetAttr ($myVolumeField[0] + \".magnitude\") 200;\n}else{\n\twarning \"No curve selected\";\n}")
+	da_VolumeFieldToCurve;
 
 runTimeCommand
 	-ann "Select Object in the Same Layer"
