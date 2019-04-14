@@ -8,6 +8,12 @@ catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
+	da_VolumeFieldCube`);
+
+catchQuiet (`runTimeCommand -e -del
+	da_VolumeFieldCurve`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_FiledCurve`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -1344,6 +1350,18 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Set Volume Field to Cube"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $myVolumeField[] = `ls -sl -ni -typ \"volumeAxisField\"`;\nfor($i=0; $i<size($myVolumeField); $i++){\n    setAttr ($myVolumeField[$i] + \".volumeShape\") 1;\n}")
+	da_VolumeFieldCube;
+
+runTimeCommand
+	-ann "Set Volume Field to Curve"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $myVolumeField[] = `ls -sl -ni -typ \"volumeAxisField\"`;\nfor($i=0; $i<size($myVolumeField); $i++){\n    setAttr ($myVolumeField[$i] + \".volumeShape\") 7;\n}\n")
+	da_VolumeFieldCurve;
+
+runTimeCommand
 	-ann "Apply Volume Axis Field to Curve"
 	-cat "Custom Scripts.May9_Next.Dynamics"
 	-c ("string $myShape[] = `listRelatives -s`;\nstring $myVolumeAxisField = `createNode volumeAxisField`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace\") ($myVolumeAxisField + \".inputCurve\");\nconnectAttr -f time1.outTime ($myVolumeAxisField + \".time\");\n\nsetAttr ($myVolumeAxisField + \".volumeShape\") 7;\nsetAttr ($myVolumeAxisField + \".awayFromAxis\") 0;\nsetAttr ($myVolumeAxisField + \".alongAxis\") .2;\nsetAttr ($myVolumeAxisField + \".magnitude\") 200;")
@@ -1352,7 +1370,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Connect Volume Field to a Curve"
 	-cat "Custom Scripts.May9_Next.Dynamics"
-	-c ("string $myShape[] = `listRelatives -s`;\nstring $myVolumeField[] = `ls -sl -ni -typ \"volumeAxisField\"`;\n\nif(size($myShape) > 0){\n\tconnectAttr -f ($myShape[0] + \".worldSpace\") ($myVolumeField[0] + \".inputCurve\");\n\n\tsetAttr ($myVolumeField[0] + \".volumeShape\") 7;\n\tsetAttr ($myVolumeField[0] + \".awayFromAxis\") 0;\n\tsetAttr ($myVolumeField[0] + \".alongAxis\") .2;\n\tsetAttr ($myVolumeField[0] + \".magnitude\") 200;\n}else{\n\twarning \"No curve selected\";\n}")
+	-c ("string $myShape[] = `listRelatives -s`;\nstring $myVolumeField[] = `ls -sl -ni -typ \"volumeAxisField\"`;\n\nif(size($myShape) == 1){\n\tconnectAttr -f ($myShape[0] + \".worldSpace\") ($myVolumeField[0] + \".inputCurve\");\n\n\tsetAttr ($myVolumeField[0] + \".volumeShape\") 7;\n\tsetAttr ($myVolumeField[0] + \".awayFromAxis\") 0;\n\tsetAttr ($myVolumeField[0] + \".alongAxis\") .2;\n\tsetAttr ($myVolumeField[0] + \".magnitude\") 200;\n}else{\n\twarning \"Select one curve\";\n}")
 	da_VolumeFieldToCurve;
 
 runTimeCommand

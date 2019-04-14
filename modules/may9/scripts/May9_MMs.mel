@@ -2716,7 +2716,7 @@ menuItem
 -i "soft.png";
 
 menuItem
--l "Convert to Volume Field"
+-l "Convert to Volume Curve"
 -c "da_FiledCurve"
 -i "posVolumeAxis.png";
 
@@ -13330,14 +13330,32 @@ setParent -m ..;
 } 
 // Define Window_UV_Edge marking menu
 global proc volumeAxisField_MM_May9(){
-string $myCurTransform[] = `ls -sl -typ "transform"`;
+string $myCurve[] = `filterExpand -sm 9`;
 
 menuItem
--l "Connect to Curve"
+-l "Connect and Set Curve"
 -c "da_VolumeFieldToCurve"
 -i "out_nurbsCurve.png"
 -rp "N"
--en (size($myCurTransform) == 2);
+-en (size($myCurve) == 1);
+
+menuItem
+-l "Set to Curve"
+-c "da_VolumeFieldCurve"
+-i "out_curveVarGroup.png"
+-rp "NE";
+
+menuItem
+-l "Set to Cube"
+-c "da_VolumeFieldCube"
+-i "volumeCube.png"
+-rp "E";
+
+menuItem
+-l "Dynamic Relationship..."
+-c "DynamicRelationshipEditor"
+-i "passSetRelationEditor.png"
+-rp "S";
 
 setParent -m ..;
 
