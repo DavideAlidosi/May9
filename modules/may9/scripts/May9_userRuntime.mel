@@ -8,6 +8,9 @@ catchQuiet (`runTimeCommand -e -del
 	da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del
+	da_RiggedCluster`);
+
+catchQuiet (`runTimeCommand -e -del
 	da_VolumeFieldCube`);
 
 catchQuiet (`runTimeCommand -e -del
@@ -1348,6 +1351,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Create a Rigged Culster"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myNewCluster[] = `newCluster \"-relative -envelope 1\"`;\nstring $myNewCTRLCurve[] = `circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1`;\n\nselect $myNewCTRLCurve[0];\nselect -add $myNewCluster[1];\n\nmatchTransform;\n\nperformFreezeTransformations(0);\n\nconnectAttr -f ($myNewCTRLCurve[0] + \".tx\") ($myNewCluster[1] + \".tx\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".ty\") ($myNewCluster[1] + \".ty\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".tz\") ($myNewCluster[1] + \".tz\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".rx\") ($myNewCluster[1] + \".rx\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".ry\") ($myNewCluster[1] + \".ry\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".rz\") ($myNewCluster[1] + \".rz\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".sx\") ($myNewCluster[1] + \".sx\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".sy\") ($myNewCluster[1] + \".sy\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".sz\") ($myNewCluster[1] + \".sz\");\n\nstring $myNewGroup = `group`;\n\nselect -add $myNewCTRLCurve[0];\n\nMatchPivots;\n\nselect $myNewCluster[1];\nrename \"Cluster\";\n\nda_EnableReference;\n\nselect $myNewGroup;\nrename \"RiggedCluster1\";\n\nselect $myNewCTRLCurve[0];\nrename \"ClusterCTRL\";\n\nTagAsController;")
+	da_RiggedCluster;
 
 runTimeCommand
 	-ann "Set Volume Field to Cube"
