@@ -9257,6 +9257,7 @@ global proc PolyPoly_MM_May9(){
 string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
 -l "Multi Cut"
@@ -10143,6 +10144,11 @@ menuItem
 -c "da_HighQualityDispMeshToggle"
 -cb ($myDispSetting);
 
+menuItem 
+-l "Smooth UV Borders" 
+-c "da_SmoothUV"
+-cb ($myUVSmoothMode == 2);
+
 setParent -m ..;
 
 } 
@@ -10200,6 +10206,7 @@ global proc Poly_MM_May9(){
 string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
+int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
 -l "Multi Cut"
@@ -11084,6 +11091,11 @@ menuItem
 -l "Displacement Preview" 
 -c "da_HighQualityDispMeshToggle"
 -cb ($myDispSetting);
+
+menuItem 
+-l "Smooth UV Borders" 
+-c "da_SmoothUV"
+-cb ($myUVSmoothMode == 2);
 
 setParent -m ..;
 
