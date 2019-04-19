@@ -1754,7 +1754,7 @@ menuItem
 -i "da_OneToMany.png";
 
 menuItem
--l "Add Rivet to CVs"
+-l "Rivet to CVs"
 -c "da_CurveCvRivet"
 -i "pickPointComp.png";
 
@@ -2226,7 +2226,7 @@ setParent -m ..;
 global proc CurveEP_MM_May9(){
 menuItem
 -l "Point On Curve" 
--c "PointOnCurve" 
+-c "da_PointOnCurve" 
 -rp "N" 
 -i "ptPosCrvConstraint.png";
 
@@ -2517,7 +2517,7 @@ menuItem
 -i "rebuildCurve.png";
 
 menuItem
--l "Add Rivet to CVs"
+-l "Rivet to CVs"
 -c "da_CurveCvRivet"
 -i "pickPointComp.png";
 
@@ -5680,6 +5680,18 @@ menuItem
 -i "poleVectorConstraint.png";
 
 menuItem
+-l "Increase Size" 
+-c "da_IncreaseLocatorSize" 
+-rp "E" 
+-i "moveUVUp.png";
+
+menuItem
+-l "Decrease Size" 
+-c "da_DecreaseLocatorSize" 
+-rp "W" 
+-i "moveUVDown.png";
+
+menuItem
 -l "Shape Visibility" 
 -sm 1;
 
@@ -7393,9 +7405,14 @@ menuItem
 -i "unlockLength.png";
 
 menuItem
--l "Add Rivet to CVs"
+-l "Rivet to CVs"
 -c "da_CurveCvRivet"
 -i "pickPointComp.png";
+
+menuItem
+-l "Point On Curve" 
+-c "da_PointOnCurve" 
+-i "ptPosCrvConstraint.png";
 
 setParent -m ..;
 } 
