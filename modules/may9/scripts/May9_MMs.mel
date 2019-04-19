@@ -227,6 +227,9 @@ menuItem -bld 1
 -c "CreateTextOptions"
 -i "text.png";
 
+menuItem
+-d 1;
+
 menuItem -bld 1 
 -l "Interactive Creation"
 -c "da_TogglePrimitiveAsTool"
@@ -301,6 +304,9 @@ menuItem -bld 1
 -l "File Path Editor..."
 -c "FilePathEditor;"
 -i "folder-open.png";
+
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Export StandIn..."
@@ -386,6 +392,9 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 1);
 
 if (size($myCurTransform) >= 1){
+
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Attributes"
@@ -715,6 +724,9 @@ menuItem -bld 1
 -c "MASHOutliner"
 -i "MASH_Editor.png";
 
+menuItem
+-d 1;
+
 menuItem -bld 1 
 -l "Play Max Real-time"
 -c "da_maxPlaybackSpeedToggle"
@@ -810,6 +822,9 @@ menuItem -bld 1
 if (`about -api` >= 20190000){
 string $evalMode[] = `evaluationManager -q -m`;
 
+menuItem
+-d 1;
+
 menuItem -bld 1 
 -l "Parallel Evaluation" 
 -c "da_evalToggle"
@@ -822,6 +837,9 @@ menuItem -bld 1
 -en ($evalMode[0] == "parallel");
 }else{
 string $evalMode[] = `evaluationManager -q -m`;
+
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Parallel Evaluation" 
@@ -906,6 +924,9 @@ menuItem -bld 1
 
 if (!(catchQuiet (`getAttr ($myCurTransform[0] + ".drp")`))){
 int $myDrpSetting = getAttr ($myCurTransform[0] + ".drp");
+
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Pivot Visibility" 
@@ -1745,6 +1766,11 @@ menuItem
 -i "da_OneToMany.png";
 
 menuItem
+-l "Add Rivet to CVs"
+-c "da_CurveCvRivet"
+-i "pickPointComp.png";
+
+menuItem
 -l "Pivot to Origin"
 -c "da_PivotToCurvesOrigin"
 -i "selectFirstCV.png";
@@ -2039,6 +2065,12 @@ global proc CurveCV_MM_May9(){
 Sup_SoftSelect_MM_May9;
 
 menuItem
+-l "Add Rivet"
+-c "da_CurveCvRivet"
+-rp "N" 
+-i "pickPointComp.png";
+
+menuItem
 -l "Lock Length" 
 -c "LockCurveLength;" 
 -rp "E" 
@@ -2202,6 +2234,16 @@ setParent -m ..;
 setParent -m ..;
 
 } 
+// Define CurveEP marking menu
+global proc CurveEP_MM_May9(){
+menuItem
+-l "Point On Curve" 
+-c "PointOnCurve" 
+-rp "N" 
+-i "ptPosCrvConstraint.png";
+
+setParent -m ..;
+}
 // Define CurvePoint marking menu
 global proc CurvePoint_MM_May9(){
 
@@ -2485,6 +2527,11 @@ menuItem
 -l "Rebuild..."
 -c "RebuildCurveOptions"
 -i "rebuildCurve.png";
+
+menuItem
+-l "Add Rivet to CVs"
+-c "da_CurveCvRivet"
+-i "pickPointComp.png";
 
 menuItem
 -l "Pivot to Origin"
@@ -7345,8 +7392,6 @@ menuItem
 -rp "E" 
 -i "nConstraintSlideonSurface.png";
 
-setParent -m ..;
-
 menuItem
 -l "Lock Length" 
 -rp "NE" 
@@ -7359,6 +7404,12 @@ menuItem
 -c "UnlockCurveLength"  
 -i "unlockLength.png";
 
+menuItem
+-l "Add Rivet to CVs"
+-c "da_CurveCvRivet"
+-i "pickPointComp.png";
+
+setParent -m ..;
 } 
 // Define Null marking menu
 global proc Null_MM_May9(){

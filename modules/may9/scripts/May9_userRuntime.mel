@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_CurveCvRivet`);
+
 catchQuiet (`runTimeCommand -e -del da_RiggedCluster`);
 
 catchQuiet (`runTimeCommand -e -del da_VolumeFieldCube`);
@@ -910,6 +912,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Add Rivet to Curve CVs"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $curveCheck[] = `filterExpand -sm 9`;\n\nif (size($curveCheck)){\n    da_GoToCVsNURBS;\n    SelectAll;\n}\n\nstring $nucleusCheck[] = `ls -type \"nucleus\"`;\nstring $mySel[] = `ls -sl -fl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    NEmitFromObject;\n    rename curveRivet1;\n    select `listConnections -s 0 -d 1`;\n    delete;\n}\n\nif (`size($nucleusCheck)` == 0){\n    delete nucleus1;\n}")
+	da_CurveCvRivet;
 
 runTimeCommand
 	-ann "Create a Rigged Culster"
