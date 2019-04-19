@@ -227,9 +227,6 @@ menuItem -bld 1
 -c "CreateTextOptions"
 -i "text.png";
 
-menuItem
--d 1;
-
 menuItem -bld 1 
 -l "Interactive Creation"
 -c "da_TogglePrimitiveAsTool"
@@ -391,10 +388,10 @@ menuItem -bld 1
 -i "channelBox.png"
 -en (size($myCurTransform) >= 1);
 
-if (size($myCurTransform) >= 1){
-
 menuItem
 -d 1;
+
+if (size($myCurTransform) >= 1){
 
 menuItem -bld 1 
 -l "Attributes"
@@ -724,9 +721,6 @@ menuItem -bld 1
 -c "MASHOutliner"
 -i "MASH_Editor.png";
 
-menuItem
--d 1;
-
 menuItem -bld 1 
 -l "Play Max Real-time"
 -c "da_maxPlaybackSpeedToggle"
@@ -821,9 +815,6 @@ menuItem -bld 1
 
 if (`about -api` >= 20190000){
 string $evalMode[] = `evaluationManager -q -m`;
-
-menuItem
--d 1;
 
 menuItem -bld 1 
 -l "Parallel Evaluation" 
@@ -924,9 +915,6 @@ menuItem -bld 1
 
 if (!(catchQuiet (`getAttr ($myCurTransform[0] + ".drp")`))){
 int $myDrpSetting = getAttr ($myCurTransform[0] + ".drp");
-
-menuItem
--d 1;
 
 menuItem -bld 1 
 -l "Pivot Visibility" 
@@ -13396,7 +13384,7 @@ global proc volumeAxisField_MM_May9(){
 string $myCurve[] = `filterExpand -sm 9`;
 
 menuItem
--l "Connect and Set Curve"
+-l "Connect and Set to Curve"
 -c "da_VolumeFieldToCurve"
 -i "out_nurbsCurve.png"
 -rp "N"
