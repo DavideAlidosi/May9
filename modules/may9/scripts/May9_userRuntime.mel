@@ -5,6 +5,12 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_PointOnCurve`);
+
+catchQuiet (`runTimeCommand -e -del da_IncreaseLocatorSize`);
+
+catchQuiet (`runTimeCommand -e -del da_DecreaseLocatorSize`);
+
 catchQuiet (`runTimeCommand -e -del da_CurveCvRivet`);
 
 catchQuiet (`runTimeCommand -e -del da_RiggedCluster`);
@@ -912,6 +918,24 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Advanced Point On Curve"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl -fl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    PointOnCurve;\n    rename PointOnCurve1;\n    CenterPivot;\n}")
+	da_PointOnCurve;
+
+runTimeCommand
+	-ann "Increase Locator Size"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    setAttr(\".localScaleX\", getAttr(\".localScaleX\") * 1.5);\n    setAttr(\".localScaleY\", getAttr(\".localScaleY\") * 1.5);\n    setAttr(\".localScaleZ\", getAttr(\".localScaleZ\") * 1.5);\n}\n\nselect $mySel")
+	da_IncreaseLocatorSize;
+
+runTimeCommand
+	-ann "Decrease Locator Size"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    setAttr(\".localScaleX\", getAttr(\".localScaleX\") * -.75);\n    setAttr(\".localScaleY\", getAttr(\".localScaleY\") * -.75);\n    setAttr(\".localScaleZ\", getAttr(\".localScaleZ\") * -.75);\n}\n\nselect $mySel")
+	da_DecreaseLocatorSize;
 
 runTimeCommand
 	-ann "Add Rivet to Curve CVs"
