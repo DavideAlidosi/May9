@@ -11399,6 +11399,32 @@ setParent -m ..;
 setParent -m ..;
 
 } 
+// Define SurfacePoint marking menu
+global proc SurfacePoint_MM_May9(){
+
+menuItem
+-l "Insert Isoparms" 
+-c "InsertIsoparms" 
+-rp "N"
+-i "insert.png";
+
+menuItem
+-c "InsertIsoparmsOptions" 
+-ob 1;
+
+menuItem
+-l "Surface Editing" 
+-c "SurfaceEditingTool" 
+-rp "S" 
+-i "surfaceEditor.png";
+
+menuItem
+-c "SurfaceEditingToolOptions" 
+-ob 1;
+
+setParent -m ..;
+
+}
 // Define StandIn marking menu
 global proc StandIn_MM_May9(){
 
