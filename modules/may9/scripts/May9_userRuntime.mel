@@ -5,6 +5,12 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_CreateMathNode`);
+
+catchQuiet (`runTimeCommand -e -del da_LocatorOnSurface`);
+
+catchQuiet (`runTimeCommand -e -del da_LocatorOnCurve`);
+
 catchQuiet (`runTimeCommand -e -del da_PointOnCurve`);
 
 catchQuiet (`runTimeCommand -e -del da_IncreaseLocatorSize`);
@@ -920,6 +926,24 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "da_CreateMathNode"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("if (!`pluginInfo -q -l asdkMathNode`){\n    loadPlugin asdkMathNode;\n    createNode asdkMathNode;\n}else{\n    createNode asdkMathNode;\n}")
+	da_CreateMathNode;
+
+runTimeCommand
+	-ann "Add Locator to a Surface"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("if (!`pluginInfo -q -l asdkMathNode`){\n    loadPlugin asdkMathNode;\n}\n\nstring $myShape[] = `listRelatives -s`; \nstring $myPointOnSurface = `createNode pointOnSurfaceInfo`;\nstring $myMathNodeU = `createNode asdkMathNode`;\nstring $myMathNodeV = `createNode asdkMathNode`;\nstring $myLocator[] = `spaceLocator -p 0 0 0`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace[0]\") ($myPointOnSurface + \".inputSurface\");\nconnectAttr -f ($myPointOnSurface + \".position\") ($myLocator[0] + \".translate\");\n\nsetAttr ($myPointOnSurface + \".turnOnPercentage\") 1;\n\naddAttr -ln \"PositionU\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".PositionU\");\n\naddAttr -ln \"PositionV\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".PositionV\");\n\nconnectAttr -f ($myLocator[0] + \".PositionU\") ($myMathNodeU + \".aIn\");\nconnectAttr -f ($myMathNodeU + \".result\") ($myPointOnSurface + \".parameterU\");\n\nconnectAttr -f ($myLocator[0] + \".PositionV\") ($myMathNodeV + \".aIn\");\nconnectAttr -f ($myMathNodeV + \".result\") ($myPointOnSurface + \".parameterV\");\n\nsetAttr -type \"string\" ($myMathNodeU + \".expression\") \"fmod(a,1)\";\nsetAttr -type \"string\" ($myMathNodeV + \".expression\") \"fmod(a,1)\";\n\nselect $myShape[0];\nselect -add $myLocator[0];\n\nnormalConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n\nselect $myLocator[0];\nrename locatorSurface1")
+	da_LocatorOnSurface;
+
+runTimeCommand
+	-ann "Add Locator to a Curve"
+	-cat"Custom Scripts.May9_Next.Rigging"
+	-c ("if (!`pluginInfo -q -l asdkMathNode`){\n    loadPlugin asdkMathNode;\n}\n\nstring $myShape[] = `listRelatives -s`; \nstring $myPointOnCurve = `createNode pointOnCurveInfo`;\nstring $myMathNode = `createNode asdkMathNode`;\nstring $myLocator[] = `spaceLocator -p 0 0 0`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace[0]\") ($myPointOnCurve + \".inputCurve\");\nconnectAttr -f ($myPointOnCurve + \".position\") ($myLocator[0] + \".translate\");\n\nsetAttr ($myPointOnCurve + \".turnOnPercentage\") 1;\n\naddAttr -ln \"Position\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".Position\");\n\nconnectAttr -f ($myLocator[0] + \".Position\") ($myMathNode + \".aIn\");\nconnectAttr -f ($myMathNode + \".result\") ($myPointOnCurve + \".parameter\");\n\nsetAttr -type \"string\" ($myMathNode + \".expression\") \"fmod(a,1)\";\n\nselect $myShape[0];\nselect -add $myLocator[0];\n\ntangentConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n\nselect $myLocator[0];\nrename locatorCurve1")
+	da_LocatorOnCurve;
+
+runTimeCommand
 	-ann "Advanced Point On Curve"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $mySel[] = `ls -sl -fl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    PointOnCurve;\n    rename PointOnCurve1;\n    CenterPivot;\n}")
@@ -946,7 +970,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create a Rigged Culster"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myNewCluster[] = `newCluster \"-relative -envelope 1\"`;\nstring $myNewCTRLCurve[] = `circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1`;\n\nselect $myNewCTRLCurve[0];\nselect -add $myNewCluster[1];\n\nmatchTransform;\n\nperformFreezeTransformations(0);\n\nconnectAttr -f ($myNewCTRLCurve[0] + \".tx\") ($myNewCluster[1] + \".tx\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".ty\") ($myNewCluster[1] + \".ty\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".tz\") ($myNewCluster[1] + \".tz\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".rx\") ($myNewCluster[1] + \".rx\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".ry\") ($myNewCluster[1] + \".ry\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".rz\") ($myNewCluster[1] + \".rz\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".sx\") ($myNewCluster[1] + \".sx\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".sy\") ($myNewCluster[1] + \".sy\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".sz\") ($myNewCluster[1] + \".sz\");\n\nstring $myNewGroup = `group`;\n\nselect -add $myNewCTRLCurve[0];\n\nMatchPivots;\n\nselect $myNewCluster[1];\nrename \"Cluster\";\n\nda_EnableReference;\n\nselect $myNewGroup;\nrename \"RiggedCluster1\";\n\nselect $myNewCTRLCurve[0];\nrename \"ClusterCTRL\";\n\nTagAsController;")
+	-c ("string $myNewCluster[] = `newCluster \"-relative -envelope 1\"`;\nstring $myNewCTRLCurve[] = `circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1`;\n\nselect $myNewCTRLCurve[0];\nselect -add $myNewCluster[1];\n\nmatchTransform;\n\nperformFreezeTransformations(0);\n\nconnectAttr -f ($myNewCTRLCurve[0] + \".t\") ($myNewCluster[1] + \".t\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".r\") ($myNewCluster[1] + \".r\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".s\") ($myNewCluster[1] + \".s\");\n\nstring $myNewGroup = `group`;\n\nselect -add $myNewCTRLCurve[0];\n\nMatchPivots;\n\nselect $myNewCluster[1];\nrename \"Cluster\";\n\nda_EnableReference;\n\nselect $myNewGroup;\nrename \"RiggedCluster1\";\n\nselect $myNewCTRLCurve[0];\nrename \"ClusterCTRL\";\n\nTagAsController;")
 	da_RiggedCluster;
 
 runTimeCommand
@@ -1337,7 +1361,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Connect Transform Attributes"
 	-cat "Custom Scripts.May9_Next.Object"
-	-c ("string $myResult = `confirmDialog -title \"Transform Connector\" -message \"Before continue please check if you have select for first the parent geometry.\\nWhat attribute did you want to connect?\" \n-button \"Translate\" -button \"Rotate\" -button \"Scale\" -button \"All\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Translate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".tx\") ($createConnect[$i] + \".tx\");\n        connectAttr -f ($createConnect[0] + \".ty\") ($createConnect[$i] + \".ty\");\n        connectAttr -f ($createConnect[0] + \".tz\") ($createConnect[$i] + \".tz\");\n    }\n}\n    \nelse if ($myResult == \"Rotate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".rx\") ($createConnect[$i] + \".rx\");\n        connectAttr -f ($createConnect[0] + \".ry\") ($createConnect[$i] + \".ry\");\n        connectAttr -f ($createConnect[0] + \".rz\") ($createConnect[$i] + \".rz\");\n    }\n}\n    \nelse if ($myResult == \"Scale\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".sx\") ($createConnect[$i] + \".sx\");\n        connectAttr -f ($createConnect[0] + \".sy\") ($createConnect[$i] + \".sy\");\n        connectAttr -f ($createConnect[0] + \".sz\") ($createConnect[$i] + \".sz\");\n    }\n}\n\nelse if ($myResult == \"All\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".tx\") ($createConnect[$i] + \".tx\");\n        connectAttr -f ($createConnect[0] + \".ty\") ($createConnect[$i] + \".ty\");\n        connectAttr -f ($createConnect[0] + \".tz\") ($createConnect[$i] + \".tz\");\n        connectAttr -f ($createConnect[0] + \".rx\") ($createConnect[$i] + \".rx\");\n        connectAttr -f ($createConnect[0] + \".ry\") ($createConnect[$i] + \".ry\");\n        connectAttr -f ($createConnect[0] + \".rz\") ($createConnect[$i] + \".rz\");\n        connectAttr -f ($createConnect[0] + \".sx\") ($createConnect[$i] + \".sx\");\n        connectAttr -f ($createConnect[0] + \".sy\") ($createConnect[$i] + \".sy\");\n        connectAttr -f ($createConnect[0] + \".sz\") ($createConnect[$i] + \".sz\");\n    }\n}")
+	-c ("string $myResult = `confirmDialog -title \"Transform Connector\" -message \"Before continue please check if you have select for first the parent geometry.\\nWhat attribute did you want to connect?\" \n-button \"Translate\" -button \"Rotate\" -button \"Scale\" -button \"All\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Translate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".t\") ($createConnect[$i] + \".t\");\n    }\n}\n    \nelse if ($myResult == \"Rotate\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".r\") ($createConnect[$i] + \".r\");\n    }\n}\n    \nelse if ($myResult == \"Scale\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".s\") ($createConnect[$i] + \".s\");\n    }\n}\n\nelse if ($myResult == \"All\") {\n    string $createConnect[] = `ls -sl`;\n    int $numObj = size($createConnect); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".t\") ($createConnect[$i] + \".t\");\n        connectAttr -f ($createConnect[0] + \".r\") ($createConnect[$i] + \".r\");\n        connectAttr -f ($createConnect[0] + \".s\") ($createConnect[$i] + \".s\");\n    }\n}")
 	da_ConnectTransformUI;
 
 runTimeCommand
