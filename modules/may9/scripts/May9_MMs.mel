@@ -3342,7 +3342,7 @@ menuItem
 
 menuItem
 -l "Expression Editor..."
--c "ExpressionEditor;EEselectFilterCB expression;"
+-c "da_ExpressionEditor"
 -rp "S" 
 -i "out_expression.png";
 
@@ -7066,9 +7066,21 @@ menuItem
 -i "da_OneToMany.png";
 
 menuItem
+-d 1;
+
+menuItem
 -l "NURBS to Polygons" 
 -c "da_NurbsToMesh" 
 -i "nurbsToPolygons.png";
+
+menuItem
+-l "Stitch Edges" 
+-c "StitchEdgesTool" 
+-i "stitchSrf.png";
+
+menuItem
+-c "StitchEdgesToolOptions" 
+-ob 1;
 
 menuItem
 -d 1;
@@ -7521,6 +7533,9 @@ menuItem
 -l "Input Operations..." 
 -c "da_ListInputOperations" 
 -i "out_list.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "NURBS to Polygons" 

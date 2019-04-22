@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ExpressionEditor`);
+
 catchQuiet (`runTimeCommand -e -del da_StringNodeToExpression`);
 
 catchQuiet (`runTimeCommand -e -del da_LocatorOnSurface`);
@@ -924,6 +926,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Custom Expression Editor"
+	-cat "Custom Scripts.May9_Next.Scene"
+	-c ("ExpressionEditor;\nEEselectFilterCB expression")
+	da_ExpressionEditor;
 
 runTimeCommand
 	-ann "Connect String Node to a Expression"
