@@ -1,4 +1,4 @@
-May9 Next.1.0 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next.1.2 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
@@ -24,8 +24,5 @@ Autodesk Arnold MtoA 3.2.0 is not a requirement but is highly suggested
 
 
 Licenses
-May9 Next is licensed under MIT License (https://opensource.org/licenses/MIT)
-Copyright (c) Davide Alidosi (https://www.highend3d.com/maya/plugin/may9-next-an-alternative-user-experience-for-maya)
-
-MMtoKey is under custom license: you can free modify source code of script, include to your preferences pack and redistribute, but you're not allowed to sell this script
-Copyright (c) Andrey Menshikov (https://www.highend3d.com/maya/script/free-mmtokey-for-maya)
+May9 Next is made by Davide Alidosi and licensed under MIT license
+MMtoKey is made by Andrey Menshikov and licensed under a custom non-commercial license

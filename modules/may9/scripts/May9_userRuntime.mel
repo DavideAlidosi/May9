@@ -5,8 +5,6 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
-catchQuiet (`runTimeCommand -e -del da_CreateMathNode`);
-
 catchQuiet (`runTimeCommand -e -del da_LocatorOnSurface`);
 
 catchQuiet (`runTimeCommand -e -del da_LocatorOnCurve`);
@@ -924,12 +922,6 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
-
-runTimeCommand
-	-ann "da_CreateMathNode"
-	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("if (!`pluginInfo -q -l asdkMathNode`){\n    loadPlugin asdkMathNode;\n    createNode asdkMathNode;\n}else{\n    createNode asdkMathNode;\n}")
-	da_CreateMathNode;
 
 runTimeCommand
 	-ann "Add Locator to a Surface"
