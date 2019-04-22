@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_StringNodeToExpression`);
+
 catchQuiet (`runTimeCommand -e -del da_LocatorOnSurface`);
 
 catchQuiet (`runTimeCommand -e -del da_LocatorOnCurve`);
@@ -924,15 +926,21 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Connect String Node to a Expression"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`; \n\nfor ($i=0; $i < size($mySel); $i++){\n    string $myTextExpression = `createNode makeTextCurves`;\n    \n    connectAttr -f ($mySel[$i] + \".expression\") ($myTextExpression + \".text\");\n    disconnectAttr ($mySel[$i] + \".expression\") ($myTextExpression + \".text\");\n    \n    connectAttr -f ($myTextExpression + \".text\") ($mySel[$i] + \".expression\");\n    \n    select $myTextExpression;\n    rename stringExpression1;\n    \n    select -cl;\n}")
+	da_StringNodeToExpression;
+
+runTimeCommand
 	-ann "Add Locator to a Surface"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myShape[] = `listRelatives -s`; \nstring $myPointOnSurface = `createNode pointOnSurfaceInfo`;\nstring $myLocator[] = `spaceLocator -p 0 0 0`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace[0]\") ($myPointOnSurface + \".inputSurface\");\nconnectAttr -f ($myPointOnSurface + \".position\") ($myLocator[0] + \".translate\");\n\nsetAttr ($myPointOnSurface + \".turnOnPercentage\") 1;\n\naddAttr -ln \"PositionU\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".PositionU\");\n\naddAttr -ln \"PositionV\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".PositionV\");\n\nexpression -n \"LocatorOnSurfaceU1\" -s ($myPointOnSurface + \".parameterU = \" + \"fmod ( \" + $myLocator[0] + \".PositionU , 1)\");\nexpression -n \"LocatorOnSurfaceV1\" -s ($myPointOnSurface + \".parameterV = \" + \"fmod ( \" + $myLocator[0] + \".PositionV , 1)\");\n\nselect $myShape[0];\nselect -add $myLocator[0];\n\nnormalConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n\nselect $myLocator[0];\n\nsetAttr -l 1 \".t\";\nsetAttr -l 1 \".r\";\nrename locatorSurface1")
+	-c ("string $myShape[] = `listRelatives -s`; \nstring $myPointOnSurface = `createNode pointOnSurfaceInfo`;\n\nspaceLocator -p 0 0 0;\nrename locatorSurface1;\n\nstring $myLocator[] = `ls -sl`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace[0]\") ($myPointOnSurface + \".inputSurface\");\nconnectAttr -f ($myPointOnSurface + \".position\") ($myLocator[0] + \".translate\");\n\nsetAttr ($myPointOnSurface + \".turnOnPercentage\") 1;\n\naddAttr -ln \"PositionU\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".PositionU\");\n\naddAttr -ln \"PositionV\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".PositionV\");\n\nexpression -n \"LocatorOnSurfaceU1\" -s ($myPointOnSurface + \".parameterU = \" + \"fmod ( \" + $myLocator[0] + \".PositionU , 1)\");\nexpression -n \"LocatorOnSurfaceV1\" -s ($myPointOnSurface + \".parameterV = \" + \"fmod ( \" + $myLocator[0] + \".PositionV , 1)\");\n\nselect $myShape[0];\nselect -add $myLocator[0];\n\nnormalConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n\nselect $myLocator[0];\n\nsetAttr -l 1 \".t\";\nsetAttr -l 1 \".r\"")
 	da_LocatorOnSurface;
 
 runTimeCommand
 	-ann "Add Locator to a Curve"
 	-cat"Custom Scripts.May9_Next.Rigging"
-	-c ("string $myShape[] = `listRelatives -s`; \nstring $myPointOnCurve = `createNode pointOnCurveInfo`;\nstring $myLocator[] = `spaceLocator -p 0 0 0`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace[0]\") ($myPointOnCurve + \".inputCurve\");\nconnectAttr -f ($myPointOnCurve + \".position\") ($myLocator[0] + \".translate\");\n\nsetAttr ($myPointOnCurve + \".turnOnPercentage\") 1;\n\naddAttr -ln \"Position\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".Position\");\n\nexpression -n \"LocatorOnCurve1\" -s ($myPointOnCurve + \".parameter = \" + \"fmod ( \" + $myLocator[0] + \".Position , 1)\");\n\nselect $myShape[0];\nselect -add $myLocator[0];\n\ntangentConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n\nselect $myLocator[0];\n\nsetAttr -l 1 \".t\";\nsetAttr -l 1 \".r\";\nrename locatorCurve1")
+	-c ("string $myShape[] = `listRelatives -s`; \nstring $myPointOnCurve = `createNode pointOnCurveInfo`;\n\nspaceLocator -p 0 0 0;\nrename locatorCurve1;\n\nstring $myLocator[] = `ls -sl`;\n\nconnectAttr -f ($myShape[0] + \".worldSpace[0]\") ($myPointOnCurve + \".inputCurve\");\nconnectAttr -f ($myPointOnCurve + \".position\") ($myLocator[0] + \".translate\");\n\nsetAttr ($myPointOnCurve + \".turnOnPercentage\") 1;\n\naddAttr -ln \"Position\" -at double -min 0 -dv 0 $myLocator[0];\nsetAttr -e -k 1 ($myLocator[0] + \".Position\");\n\nexpression -n \"LocatorOnCurve1\" -s ($myPointOnCurve + \".parameter = \" + \"fmod ( \" + $myLocator[0] + \".Position , 1)\");\n\nselect $myShape[0];\nselect -add $myLocator[0];\n\ntangentConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n\nselect $myLocator[0];\n\nsetAttr -l 1 \".t\";\nsetAttr -l 1 \".r\"")
 	da_LocatorOnCurve;
 
 runTimeCommand

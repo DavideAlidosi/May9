@@ -3325,6 +3325,23 @@ menuItem
 setParent -m ..;
 
 } 
+// Define Expression marking menu
+global proc Expression_MM_May9(){
+
+menuItem
+-l "String to Expression"
+-c "da_StringNodeToExpression"
+-rp "N" 
+-i "text.png";
+
+menuItem
+-l "Expression Editor..."
+-c "ExpressionEditor;EEselectFilterCB expression;"
+-rp "S" 
+-i "out_expression.png";
+
+setParent -m ..;
+}
 // Define FaceCurve marking menu
 global proc FaceCurve_MM_May9(){
 
