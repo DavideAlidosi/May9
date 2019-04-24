@@ -6951,6 +6951,8 @@ setParent -m ..;
 // Define NurbsNurbs marking menu
 global proc NurbsNurbs_MM_May9(){
 
+string $myCurTransform[] = `ls -sl -typ "transform"`;
+
 menuItem
 -l "Intersect Surfaces" 
 -c "IntersectSurfaces" 
@@ -7165,6 +7167,12 @@ menuItem
 -l "Rigged Cluster" 
 -c "da_RiggedCluster" 
 -i "cluster.png";
+
+menuItem
+-l "Rigged Sculpt"
+-c "da_SculptDeformer"
+-i "sculpt.png"
+-en (size($myCurTransform) == 2);
 
 menuItem
 -l "Lattice..." 
@@ -7619,7 +7627,7 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Sculpt Deformer"
+-l "Rigged Sculpt"
 -c "da_SculptDeformer"
 -i "sculpt.png";
 
@@ -9297,6 +9305,7 @@ setParent -m ..;
 } 
 // Define PolyMuscle marking menu
 global proc PolyMuscle_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Parent Constraint..." 
@@ -9311,8 +9320,16 @@ menuItem
 -i "aimConstraint.png";
 
 menuItem
+-l "Rigged Sculpt Deformer"
+-c "da_SculptDeformer"
+-rp "E" 
+-i "sculpt.png"
+-en (size($myCurTransform) == 2);
+
+menuItem
 -l "Connect selected Muscle" 
--c "cMuscle_connectToSystem(); " 
+-c "cMuscle_connectToSystem()"
+-rp "W"  
 -i "cMuscle_skin_connMus.png";
 
 menuItem
@@ -9367,6 +9384,8 @@ string $mySelShape[] = `listRelatives -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
+
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Multi Cut"
@@ -9669,6 +9688,12 @@ menuItem
 -l "Rigged Cluster"
 -c "da_RiggedCluster"
 -i "cluster.png";
+
+menuItem
+-l "Rigged Sculpt"
+-c "da_SculptDeformer"
+-i "sculpt.png"
+-en (size($myCurTransform) == 2);
 
 menuItem
 -l "Lattice..."
@@ -10595,7 +10620,7 @@ menuItem
 -i "cluster.png";
 
 menuItem
--l "Sculpt Deformer"
+-l "Rigged Sculpt"
 -c "da_SculptDeformer"
 -i "sculpt.png";
 
