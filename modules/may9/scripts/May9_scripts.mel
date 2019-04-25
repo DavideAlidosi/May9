@@ -52,3 +52,14 @@ global proc int da_round(float $da_value){
     }
     return $da_value;
 }
+
+// Define da_QueryFilterExpand
+global proc int da_QueryFilterExpand(){
+	for ($i=0;$i<256;$i++){
+		string $myFilterExpand[] = `filterExpand -ex 1 -sm $i`;
+		
+		if (size($myFilterExpand)>0){
+			return $i;
+		}
+	}
+}

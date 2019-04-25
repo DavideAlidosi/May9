@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_SelectAll`);
+
+catchQuiet (`runTimeCommand -e -del da_InvertSelection`);
+
 catchQuiet (`runTimeCommand -e -del da_SculptDeformer`);
 
 catchQuiet (`runTimeCommand -e -del da_ExpressionEditor`);
@@ -928,6 +932,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Select All Components from Multi Selection"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("switch (`da_QueryFilterExpand`){\n    case 34: setSelectMode components Components; selectType -smp 0 -sme 0 -smf 1 -smu 0 -pv 0 -pe 0 -pf 1 -puv 0; HideManipulators; break;\n    case 32: setSelectMode components Components; selectType -smp 0 -sme 1 -smf 0 -smu 0 -pv 0 -pe 1 -pf 0 -puv 0; HideManipulators; break;\n    case 31: setSelectMode components Components; selectType -smp 1 -sme 0 -smf 0 -smu 0 -pv 1 -pe 0 -pf 0 -puv 0; HideManipulators; break;\n}\nSelectAll;")
+	da_SelectAll;
+
+runTimeCommand
+	-ann "Invert Components from Multi Selection"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("switch (`da_QueryFilterExpand`){\n    case 34: setSelectMode components Components; selectType -smp 0 -sme 0 -smf 1 -smu 0 -pv 0 -pe 0 -pf 1 -puv 0; HideManipulators; break;\n    case 32: setSelectMode components Components; selectType -smp 0 -sme 1 -smf 0 -smu 0 -pv 0 -pe 1 -pf 0 -puv 0; HideManipulators; break;\n    case 31: setSelectMode components Components; selectType -smp 1 -sme 0 -smf 0 -smu 0 -pv 1 -pe 0 -pf 0 -puv 0; HideManipulators; break;\n}\nInvertSelection")
+	da_InvertSelection;
 
 runTimeCommand
 	-ann "Create Sculpt Deformer"
