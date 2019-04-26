@@ -9789,7 +9789,8 @@ menuItem
 menuItem
 -l "Substitute Geometry..."
 -c "SubstituteGeometryOptions"
--i "substGeometry.png";
+-i "substGeometry.png"
+-en (size($myCurTransform) == 2);
 
 menuItem
 -l "Bake Deformers to Skin..."
