@@ -63,3 +63,18 @@ global proc int da_QueryFilterExpand(){
 		}
 	}
 }
+
+// Define da_QueryArrayFilterExpand
+global proc int[] da_QueryArrayFilterExpand(){
+    global int $myArray[];
+    clear $myArray;
+
+	for ($i=0;$i<256;$i++){
+		string $myFilterExpand[] = `filterExpand -ex 1 -sm $i`;
+		
+		if (size($myFilterExpand)>0){
+			 $myArray[size($myArray)] = $i;
+		}
+	}
+	return $myArray;
+}

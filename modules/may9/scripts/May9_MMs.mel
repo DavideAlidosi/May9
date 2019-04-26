@@ -9429,7 +9429,8 @@ menuItem
 -l "Cut by Plane..."
 -c "da_PlaneCutter"
 -rp "S"
--i "polyCut.png";
+-i "polyCut.png"
+-en (size($myCurTransform) == 2);
 
 menuItem
 -l "Combine"
@@ -9534,12 +9535,14 @@ menuItem
 menuItem
 -l "Voxelize in a Volume..."
 -c "da_MashVoxelizer"
--i "ae_MASH_Explode.png";
+-i "ae_MASH_Explode.png"
+-en (size($myCurTransform) == 2);
 
 menuItem
 -l "Scatter on a Surface..."
 -c "da_SurfaceScatterMash"
--i "out_MASH_Points.png";
+-i "out_MASH_Points.png"
+-en (size($myCurTransform) == 2);
 
 setParent -m ..;
 
@@ -9723,7 +9726,8 @@ menuItem
 menuItem
 -l "Add Membrane Collider"
 -c "da_Auto_MembraneCollider"
--i "da_membrane.png";
+-i "da_membrane.png"
+-en (size($myCurTransform) == 2);
 
 menuItem
 -l "Wrap..."
