@@ -9380,7 +9380,7 @@ setParent -m ..;
 // Define PolyPoly marking menu
 global proc PolyPoly_MM_May9(){
 
-string $mySelShape[] = `listRelatives -s -typ "mesh"`;
+string $mySelShape[] = `listRelatives -f -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
@@ -10342,7 +10342,7 @@ setParent -m ..;
 // Define Poly marking menu
 global proc Poly_MM_May9(){
 
-string $mySelShape[] = `listRelatives -s -typ "mesh"`;
+string $mySelShape[] = `listRelatives -f -s -typ "mesh"`;
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
@@ -11638,7 +11638,7 @@ setParent -m ..;
 // Define Tool_Crease marking menu
 global proc Tool_Crease_MM_May9(){
 string $mySel[] = `ls -sl`;
-string $mySelShape[] = `listRelatives -s`;
+string $mySelShape[] = `listRelatives -f -s`;
 string $currentPanel = `getPanel -wf`;
 
 menuItem -itl 1 
@@ -13720,7 +13720,7 @@ setParent -m ..;
 } 
 // Define Window_UV_Mesh marking menu
 global proc Window_UV_Mesh_MM_May9(){
-string $mySelShape[] = `listRelatives -s`;
+string $mySelShape[] = `listRelatives -f -s`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
