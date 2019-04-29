@@ -1511,11 +1511,6 @@ menuItem
 -i "moveSkinnedJoint.png";
 
 menuItem
--l "Joint Size..." 
--c "jdsWin" 
--i "resizeWindow.png";
-
-menuItem
 -d 1;
 
 menuItem
@@ -1555,9 +1550,22 @@ menuItem
 -d 1;
 
 menuItem
--l "Connect selected Muscle" 
+-l "Muscle Builder..." 
+-c "cMuscleBuilder" 
+-i "cMuscle_muscle_muscleBuilder.png";
+
+menuItem
+-l "Connect Selected Muscle" 
 -c "cMuscle_connectToSystem()" 
 -i "cMuscle_skin_connMus.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Joint Size..." 
+-c "jdsWin" 
+-i "resizeWindow.png";
 
 setParent -m ..;
 
@@ -4556,40 +4564,38 @@ setParent -m ..;
 global proc Handle_MM_May9(){
 
 menuItem
--l "Shape to Joint(s)" 
--c "da_shapeParentJoints" 
--rp "E" 
--i "XRayJoints.png";
-
-menuItem
--l "Controller Aim" 
--c "da_CtrlAimConstraint" 
--rp "SW" 
--i "aimConstraint.png";
-
-menuItem
--l "Controller Parent" 
--c "da_CtrlParentConstraint" 
+-l "Joint Orientation..." 
+-c "OrientJointOptions" 
 -rp "N" 
--i "parentConstraint.png";
+-i "orientJoint.png";
 
 menuItem
--l "Controller Pole Vector" 
--c "da_CtrlPoleVectorConstraint" 
--rp "SE" 
--i "poleVectorConstraint.png";
-
-menuItem
--l "Controller Point" 
--c "da_CtrlPointConstraint" 
+-l "Go To Bind Pose" 
+-c "GoToBindPose;" 
 -rp "NE" 
--i "posConstraint.png";
+-i "goToBindPose.png";
 
 menuItem
--l "Controller Orient" 
--c "da_CtrlOrientConstraint" 
+-l "Mirror Joint" 
+-c "mirrorJoint" 
 -rp "NW" 
--i "orientConstraint.png";
+-i "kinMirrorJoint_S.png";
+
+menuItem
+-c "MirrorJointOptions" 
+-ob 1;
+
+menuItem
+-l "Remove Joints" 
+-c "RemoveJoint" 
+-rp "SE" 
+-i "kinRemove.png";
+
+menuItem
+-l "Insert Joints" 
+-c "InsertJointTool" 
+-rp "E" 
+-i "kinInsert.png";
 
 menuItem
 -l "IK Spline Handle" 
@@ -4597,21 +4603,61 @@ menuItem
 -rp "W" 
 -i "kinSplineHandle.png";
 
-menuItem 
--l "Match Pivots"
--c "MatchPivots"
--rp "S"
--i "pickPivotComp.png";
+menuItem
+-l "IK Handle" 
+-c "IKHandleTool;" 
+-rp "SW" 
+-i "kinHandle.png";
+
+menuItem
+-c "IKHandleToolOptions;" 
+-ob 1;
+
+menuItem
+-l "Show Local Axes" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_ShowLocalAxis" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_HideLocalAxis" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Display As" 
+-sm 1;
+
+menuItem
+-l "Bone" 
+-c "da_JointsAsBone" 
+-i "out_joint.png";
+
+menuItem
+-l "None" 
+-c "da_JointsAsNone" 
+-i "RS_disable.png";
+
+setParent -m ..;
+
+menuItem
+-d 1;
+
+menuItem
+-l "Select Hierarchy" 
+-c "SelectHierarchy" 
+-rp "S" 
+-i "selectByHierarchy.png";
 
 menuItem
 -l "IK on Selected Joints" 
 -c "da_IkOnJoint" 
 -i "out_ikRPsolver.png";
-
-menuItem
--l "IK on Selected Curve" 
--c "da_IkOnCurve" 
--i "out_ikHandleGadget.png";
 
 menuItem
 -l "Select Weighted Vertices" 
@@ -4624,53 +4670,35 @@ menuItem
 -i "moveSkinnedJoint.png";
 
 menuItem
+-d 1;
+
+menuItem
+-l "Convert to Bone..." 
+-c "cMuscle_makeMuscle(0)" 
+-i "cMuscle_muscle_convertToMuscle.png";
+
+menuItem
+-l "Muscle Builder..." 
+-c "cMuscleBuilder" 
+-i "cMuscle_muscle_muscleBuilder.png";
+
+menuItem
+-l "Connect Selected Muscle" 
+-c "cMuscle_connectToSystem()" 
+-i "cMuscle_skin_connMus.png";
+
+menuItem
+-l "Muscle Smart Collide" 
+-c "cMuscleSmartCollide_setup()" 
+-i "cMuscle_smart_create.png";
+
+menuItem
+-d 1;
+
+menuItem
 -l "Joint Size..." 
 -c "jdsWin" 
 -i "resizeWindow.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Bind Skin..." 
--c "SmoothBindSkinOptions" 
--i "smoothSkin.png";
-
-menuItem
--l "Bind Rigid Skin" 
--c "da_BindRigidSkin" 
--i "detachSkin.png";
-
-menuItem
--l "Rigid Bind..." 
--c "RigidBindSkinOptions" 
--i "rigidBind.png";
-
-menuItem
--l "Delta Skin" 
--c "da_DeltaSkin" 
--i "smoothSkinWeights.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Add Influence..." 
--c "AddInfluenceOptions" 
--i "addWrapInfluence.png";
-
-menuItem
--l "Remove Influence" 
--c "RemoveInfluence" 
--i "removeWrapInfluence.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Connect selected Muscle" 
--c "cMuscle_connectToSystem()" 
--i "cMuscle_skin_connMus.png";
 
 setParent -m ..;
 
