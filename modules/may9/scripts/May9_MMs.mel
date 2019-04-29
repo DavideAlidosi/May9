@@ -1345,13 +1345,9 @@ menuItem
 
 menuItem
 -l "IK Spline Handle" 
--c "IKSplineHandleTool;" 
+-c "IKSplineHandleTool" 
 -rp "W" 
 -i "kinSplineHandle.png";
-
-menuItem
--c "IKSplineHandleToolOptions;" 
--ob 1;
 
 menuItem
 -l "IK Handle" 
@@ -1446,6 +1442,48 @@ setParent -m ..;
 // Define Constraint marking menu
 global proc Constraint_MM_May9(){
 
+menuItem
+-l "Shape to Joint(s)" 
+-c "da_shapeParentJoints" 
+-rp "E" 
+-i "XRayJoints.png";
+
+menuItem
+-l "Controller Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "SW" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Controller Parent" 
+-c "da_CtrlParentConstraint" 
+-rp "N" 
+-i "parentConstraint.png";
+
+menuItem
+-l "Controller Pole Vector" 
+-c "da_CtrlPoleVectorConstraint" 
+-rp "SE" 
+-i "poleVectorConstraint.png";
+
+menuItem
+-l "Controller Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Controller Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
+
+menuItem
+-l "IK Spline Handle" 
+-c "IKSplineHandleTool" 
+-rp "W" 
+-i "kinSplineHandle.png";
+
 menuItem 
 -l "Match Pivots"
 -c "MatchPivots"
@@ -1471,6 +1509,11 @@ menuItem
 -l "Move Skinned Joints" 
 -c "MoveSkinJointsTool" 
 -i "moveSkinnedJoint.png";
+
+menuItem
+-l "Joint Size..." 
+-c "jdsWin" 
+-i "resizeWindow.png";
 
 menuItem
 -d 1;
@@ -1499,30 +1542,6 @@ menuItem
 -d 1;
 
 menuItem
--l "Shape to Joint(s)" 
--c "da_shapeParentJoints" 
--rp "E" 
--i "XRayJoints.png";
-
-menuItem
--l "Controller Aim" 
--c "da_CtrlAimConstraint" 
--rp "SW" 
--i "aimConstraint.png";
-
-menuItem
--l "Controller Parent" 
--c "da_CtrlParentConstraint" 
--rp "N" 
--i "parentConstraint.png";
-
-menuItem
--l "Controller Pole Vector" 
--c "da_CtrlPoleVectorConstraint" 
--rp "SE" 
--i "poleVectorConstraint.png";
-
-menuItem
 -l "Add Influence..." 
 -c "AddInfluenceOptions" 
 -i "addWrapInfluence.png";
@@ -1533,34 +1552,12 @@ menuItem
 -i "removeWrapInfluence.png";
 
 menuItem
--l "IK Spline Handle" 
--c "IKSplineHandleTool;" 
--rp "W" 
--i "kinSplineHandle.png";
-
-menuItem
--c "IKSplineHandleToolOptions;" 
--ob 1;
-
-menuItem
 -d 1;
 
 menuItem
 -l "Connect selected Muscle" 
 -c "cMuscle_connectToSystem()" 
 -i "cMuscle_skin_connMus.png";
-
-menuItem
--l "Controller Point" 
--c "da_CtrlPointConstraint" 
--rp "NE" 
--i "posConstraint.png";
-
-menuItem
--l "Controller Orient" 
--c "da_CtrlOrientConstraint" 
--rp "NW" 
--i "orientConstraint.png";
 
 setParent -m ..;
 
@@ -4555,6 +4552,129 @@ menuItem
 setParent -m ..;
 
 } 
+// Define Handle marking menu
+global proc Handle_MM_May9(){
+
+menuItem
+-l "Shape to Joint(s)" 
+-c "da_shapeParentJoints" 
+-rp "E" 
+-i "XRayJoints.png";
+
+menuItem
+-l "Controller Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "SW" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Controller Parent" 
+-c "da_CtrlParentConstraint" 
+-rp "N" 
+-i "parentConstraint.png";
+
+menuItem
+-l "Controller Pole Vector" 
+-c "da_CtrlPoleVectorConstraint" 
+-rp "SE" 
+-i "poleVectorConstraint.png";
+
+menuItem
+-l "Controller Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Controller Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
+
+menuItem
+-l "IK Spline Handle" 
+-c "IKSplineHandleTool" 
+-rp "W" 
+-i "kinSplineHandle.png";
+
+menuItem 
+-l "Match Pivots"
+-c "MatchPivots"
+-rp "S"
+-i "pickPivotComp.png";
+
+menuItem
+-l "IK on Selected Joints" 
+-c "da_IkOnJoint" 
+-i "out_ikRPsolver.png";
+
+menuItem
+-l "IK on Selected Curve" 
+-c "da_IkOnCurve" 
+-i "out_ikHandleGadget.png";
+
+menuItem
+-l "Select Weighted Vertices" 
+-c "da_SelectVertexJoint" 
+-i "uvIsolateSelectReset.png";
+
+menuItem
+-l "Move Skinned Joints" 
+-c "MoveSkinJointsTool" 
+-i "moveSkinnedJoint.png";
+
+menuItem
+-l "Joint Size..." 
+-c "jdsWin" 
+-i "resizeWindow.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Bind Skin..." 
+-c "SmoothBindSkinOptions" 
+-i "smoothSkin.png";
+
+menuItem
+-l "Bind Rigid Skin" 
+-c "da_BindRigidSkin" 
+-i "detachSkin.png";
+
+menuItem
+-l "Rigid Bind..." 
+-c "RigidBindSkinOptions" 
+-i "rigidBind.png";
+
+menuItem
+-l "Delta Skin" 
+-c "da_DeltaSkin" 
+-i "smoothSkinWeights.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Add Influence..." 
+-c "AddInfluenceOptions" 
+-i "addWrapInfluence.png";
+
+menuItem
+-l "Remove Influence" 
+-c "RemoveInfluence" 
+-i "removeWrapInfluence.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Connect selected Muscle" 
+-c "cMuscle_connectToSystem()" 
+-i "cMuscle_skin_connMus.png";
+
+setParent -m ..;
+
+} 
 // Define HyperGraph marking menu
 global proc HyperGraph_MM_May9(){
 
@@ -4985,13 +5105,9 @@ menuItem
 
 menuItem
 -l "IK Spline Handle" 
--c "IKSplineHandleTool;" 
+-c "IKSplineHandleTool" 
 -rp "W" 
 -i "kinSplineHandle.png";
-
-menuItem
--c "IKSplineHandleToolOptions;" 
--ob 1;
 
 menuItem
 -l "IK Handle" 
