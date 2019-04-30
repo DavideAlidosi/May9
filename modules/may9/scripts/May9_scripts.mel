@@ -66,7 +66,7 @@ global proc int da_QueryFilterExpand(){
 
 // Define da_QueryArrayFilterExpand
 global proc int[] da_QueryArrayFilterExpand(){
-    global int $myArray[];
+    int $myArray[];
     clear $myArray;
 
 	for ($i=0;$i<256;$i++){
@@ -77,4 +77,26 @@ global proc int[] da_QueryArrayFilterExpand(){
 		}
 	}
 	return $myArray;
+}
+
+global proc string[] da_QueryArrayNodeType(){
+    string $mySel[] = `ls -sl`;
+    string $myArrayNodeType[];
+    clear $myArrayNodeType;
+    
+    if (size($mySel)){
+        for ($i = 0; $i < size($mySel); $i++){
+            select $mySel[$i];
+            string $myShape[] = `listRelatives -f -s`;
+            if (size($myShape)){
+                string $myNodeType = `nodeType $myShape[0]`;
+                appendStringArray ( $myArrayNodeType, {$myNodeType}, size(`ls -sl`) );
+            }else{
+                string $myNodeType = `nodeType $mySel[$i]`;
+                appendStringArray ( $myArrayNodeType, {$myNodeType}, size(`ls -sl`) );
+            }
+            select -cl;
+        }
+    }
+    return $myArrayNodeType;
 }

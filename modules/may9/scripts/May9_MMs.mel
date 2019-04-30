@@ -1406,7 +1406,7 @@ menuItem
 -i "cMuscle_muscle_muscleBuilder.png";
 
 menuItem
--l "Connect selected Muscle Objects" 
+-l "Connect Selected Muscle" 
 -c "cMuscle_connectToSystem(); " 
 -i "cMuscle_skin_connMus.png";
 
@@ -4562,145 +4562,14 @@ setParent -m ..;
 } 
 // Define Handle marking menu
 global proc Handle_MM_May9(){
+string $mySel[] = `ls -sl`;
+string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
-menuItem
--l "Joint Orientation..." 
--c "OrientJointOptions" 
--rp "N" 
--i "orientJoint.png";
+if ($myQueryArrayNodeType[0] == "joint") Joint_MM_May9;
+else if ($myQueryArrayNodeType[0] == "nurbsCurve") Curves_MM_May9;
+else Constraint_MM_May9;
 
-menuItem
--l "Go To Bind Pose" 
--c "GoToBindPose;" 
--rp "NE" 
--i "goToBindPose.png";
-
-menuItem
--l "Mirror Joint" 
--c "mirrorJoint" 
--rp "NW" 
--i "kinMirrorJoint_S.png";
-
-menuItem
--c "MirrorJointOptions" 
--ob 1;
-
-menuItem
--l "Remove Joints" 
--c "RemoveJoint" 
--rp "SE" 
--i "kinRemove.png";
-
-menuItem
--l "Insert Joints" 
--c "InsertJointTool" 
--rp "E" 
--i "kinInsert.png";
-
-menuItem
--l "IK Spline Handle" 
--c "IKSplineHandleTool" 
--rp "W" 
--i "kinSplineHandle.png";
-
-menuItem
--l "IK Handle" 
--c "IKHandleTool;" 
--rp "SW" 
--i "kinHandle.png";
-
-menuItem
--c "IKHandleToolOptions;" 
--ob 1;
-
-menuItem
--l "Show Local Axes" 
--sm 1;
-
-menuItem
--l "On" 
--c "da_ShowLocalAxis" 
--i "rvViewingPipelineOn.png";
-
-menuItem
--l "Off" 
--c "da_HideLocalAxis" 
--i "rvViewingPipelineOff.png";
-
-setParent -m ..;
-
-menuItem
--l "Display As" 
--sm 1;
-
-menuItem
--l "Bone" 
--c "da_JointsAsBone" 
--i "out_joint.png";
-
-menuItem
--l "None" 
--c "da_JointsAsNone" 
--i "RS_disable.png";
-
-setParent -m ..;
-
-menuItem
--d 1;
-
-menuItem
--l "Select Hierarchy" 
--c "SelectHierarchy" 
--rp "S" 
--i "selectByHierarchy.png";
-
-menuItem
--l "IK on Selected Joints" 
--c "da_IkOnJoint" 
--i "out_ikRPsolver.png";
-
-menuItem
--l "Select Weighted Vertices" 
--c "da_SelectVertexJoint" 
--i "uvIsolateSelectReset.png";
-
-menuItem
--l "Move Skinned Joints" 
--c "MoveSkinJointsTool" 
--i "moveSkinnedJoint.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Convert to Bone..." 
--c "cMuscle_makeMuscle(0)" 
--i "cMuscle_muscle_convertToMuscle.png";
-
-menuItem
--l "Muscle Builder..." 
--c "cMuscleBuilder" 
--i "cMuscle_muscle_muscleBuilder.png";
-
-menuItem
--l "Connect Selected Muscle" 
--c "cMuscle_connectToSystem()" 
--i "cMuscle_skin_connMus.png";
-
-menuItem
--l "Muscle Smart Collide" 
--c "cMuscleSmartCollide_setup()" 
--i "cMuscle_smart_create.png";
-
-menuItem
--d 1;
-
-menuItem
--l "Joint Size..." 
--c "jdsWin" 
--i "resizeWindow.png";
-
-setParent -m ..;
+select $mySel;
 
 } 
 // Define HyperGraph marking menu
@@ -9471,7 +9340,7 @@ menuItem
 -en (size($myCurTransform) == 2);
 
 menuItem
--l "Connect selected Muscle" 
+-l "Connect Selected Muscle" 
 -c "cMuscle_connectToSystem()"
 -rp "W"  
 -i "cMuscle_skin_connMus.png";
