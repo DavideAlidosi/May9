@@ -1438,9 +1438,20 @@ menuItem
 
 setParent -m ..;
 
-} 
-// Define Constraint marking menu
+}
+// Define Constraints marking menu
 global proc Constraint_MM_May9(){
+string $mySel[] = `ls -sl`;
+string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
+
+if ($myQueryArrayNodeType[0] == "nurbsCurve") Curves_MM_May9;
+else Constraints_MM_May9;
+
+select $mySel;
+
+} 
+// Define Constraints marking menu
+global proc Constraints_MM_May9(){
 
 menuItem
 -l "Shape to Joint(s)" 
@@ -1666,7 +1677,7 @@ menuItem
 -l "Controller"
 -sm 1
 -rp "E"
--i "humanIK_CharCtrl.png";
+-i "teLockUnchecked.png";
 
 menuItem
 -l "Orient" 
@@ -1757,6 +1768,11 @@ menuItem
 -l "Connect Shapes..." 
 -c "da_ConnectNurbsShapesUI" 
 -i "da_OneToMany.png";
+
+menuItem
+-l "Bevel Plus..."
+-c "BevelPlusOptions"
+-i "bevelPlus.png";
 
 menuItem
 -d 1;
@@ -2457,14 +2473,42 @@ menuItem
 -i "curveAddPt.png";
 
 menuItem
--l "Bevel Plus"
--c "BevelPlus;"
+-l "Controller"
+-sm 1
 -rp "E"
--i "bevelPlus.png";
+-i "teLockUnchecked.png";
 
 menuItem
--c "BevelPlusOptions;"
--ob 1;
+-l "Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
+
+menuItem
+-l "Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "E" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Parent" 
+-c "da_CtrlParentConstraint" 
+-rp "N" 
+-i "parentConstraint.png";
+
+menuItem
+-l "Pole Vector" 
+-c "da_CtrlPoleVectorConstraint" 
+-rp "SE" 
+-i "poleVectorConstraint.png";
+
+setParent -m ..;
 
 menuItem
 -l "Curve Length"
@@ -2523,6 +2567,11 @@ menuItem
 -l "Rebuild..."
 -c "RebuildCurveOptions"
 -i "rebuildCurve.png";
+
+menuItem
+-l "Bevel Plus..."
+-c "BevelPlusOptions"
+-i "bevelPlus.png";
 
 menuItem
 -d 1;
@@ -4566,8 +4615,9 @@ string $mySel[] = `ls -sl`;
 string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
 if ($myQueryArrayNodeType[0] == "joint") Joint_MM_May9;
+else if ($myQueryArrayNodeType[0] == "locator") Locator_MM_May9;
 else if ($myQueryArrayNodeType[0] == "nurbsCurve") Curves_MM_May9;
-else Constraint_MM_May9;
+else Constraints_MM_May9;
 
 select $mySel;
 
