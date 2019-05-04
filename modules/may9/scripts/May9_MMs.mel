@@ -1435,13 +1435,15 @@ menuItem
 setParent -m ..;
 
 }
-// Define Constraints marking menu
+// Define Constraint marking menu
 global proc Constraint_MM_May9(){
 string $mySel[] = `ls -sl`;
 string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
-if ($myQueryArrayNodeType[0] == "nurbsCurve") Curves_MM_May9;
-else Constraints_MM_May9;
+switch ($myQueryArrayNodeType[0]){
+case "nurbsCurve": Curves_MM_May9; break;
+default: Constraints_MM_May9; break;
+}
 
 select $mySel;
 
@@ -4610,10 +4612,12 @@ global proc Handle_MM_May9(){
 string $mySel[] = `ls -sl`;
 string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
-if ($myQueryArrayNodeType[0] == "joint") Joint_MM_May9;
-else if ($myQueryArrayNodeType[0] == "locator") Locator_MM_May9;
-else if ($myQueryArrayNodeType[0] == "nurbsCurve") Curves_MM_May9;
-else Constraints_MM_May9;
+switch ($myQueryArrayNodeType[0]){
+case "joint": Joint_MM_May9; break;
+case "locator": Locator_MM_May9; break;
+case "nurbsCurve": Curves_MM_May9; break;
+default: Constraints_MM_May9; break;
+}
 
 select $mySel;
 
@@ -5089,6 +5093,8 @@ menuItem
 -i "RS_disable.png";
 
 setParent -m ..;
+
+Sup_JointLabel_MM_May9;
 
 menuItem
 -d 1;
@@ -14445,7 +14451,7 @@ menuItem
 -c	("symmetricModelling -e -axis \"y\"");
 
 menuItem 
--label "Z Axis"
+-l "Z Axis"
 -rp	"SW"
 -rb	($reflectionAxis == 2)
 -c	("symmetricModelling -e -axis \"z\"");
@@ -14494,11 +14500,155 @@ menuItem -itl 1
 -c	("symmetricModelling -e -axis \"y\"; symmetricModelling -e -about \"object\"");
 
 menuItem -itl 1 
--label "Z Axis"
+-l "Z Axis"
 -rp	"SW"
 -rb	($reflectionAxis == 2)
 -c	("symmetricModelling -e -axis \"z\"; symmetricModelling -e -about \"object\"");
 
 setParent -m ..;
 
+}
+
+// Define Support JointLabel marking menu
+global proc Sup_JointLabel_MM_May9(){
+menuItem 
+-l "Labelling"
+-sm 1;
+
+menuItem 
+-l "Add Label" 
+-sm 1
+fbikLabelItem;
+
+menuItem
+-rtc "FBIKLabelLeft";
+
+menuItem 
+-rtc "FBIKLabelRight";
+
+menuItem 
+-rtc "FBIKLabelCenter";
+
+menuItem 
+-d 1;
+
+menuItem 
+-rtc "FBIKLabelNone";
+
+menuItem 
+-rtc "FBIKLabelArm";
+
+menuItem 
+-rtc "FBIKLabelLeg";
+
+menuItem 
+-d 1;
+
+menuItem 
+-rtc "FBIKLabelCollar";
+
+menuItem 
+-rtc "FBIKLabelElbow";
+
+menuItem 
+-rtc "FBIKLabelFoot";
+
+menuItem 
+-rtc "FBIKLabelHand";
+
+menuItem 
+-rtc "FBIKLabelHead";
+
+menuItem 
+-rtc "FBIKLabelHip";
+
+menuItem 
+-rtc "FBIKLabelKnee";
+
+menuItem 
+-rtc "FBIKLabelNeck";
+
+menuItem 
+-rtc "FBIKLabelRoot";
+
+menuItem 
+-rtc "FBIKLabelShoulder";
+
+menuItem 
+-rtc "FBIKLabelSpine";
+
+menuItem 
+-d 1;
+
+menuItem 
+-rtc "FBIKLabelThumb";
+
+menuItem 
+-rtc "FBIKLabelIndex";
+
+menuItem 
+-rtc "FBIKLabelMiddleFinger";
+
+menuItem 
+-rtc "FBIKLabelRingFinger";
+
+menuItem 
+-rtc "FBIKLabelPinky";
+
+menuItem 
+-rtc "FBIKLabelExtraFinger";
+
+menuItem 
+-rtc "FBIKLabelFingerBase";
+
+menuItem 
+-d 1;
+
+menuItem 
+-rtc "FBIKLabelBigToe";
+
+menuItem 
+-rtc "FBIKLabelIndexToe";
+
+menuItem 
+-rtc "FBIKLabelMiddleToe";
+
+menuItem 
+-rtc "FBIKLabelRingToe";
+
+menuItem 
+-rtc "FBIKLabelPinkyToe";
+
+menuItem 
+-rtc "FBIKLabelFootThumb";
+
+menuItem 
+-rtc "FBIKLabelToeBase";
+
+setParent -m ..;
+
+menuItem 
+-d 1;
+
+menuItem 
+-rtc "ToggleSelectedLabels";
+
+menuItem 
+-rtc "ShowAllLabels";
+
+menuItem 
+-rtc "HideAllLabels";
+
+menuItem 
+-d 1;
+
+menuItem 
+-rtc "RenameJointsFromLabels"
+renameJointsMenu;
+
+menuItem 
+-rtc "LabelBasedOnJointNames"
+labelJointsMenu;
+
+setParent -m ..;
 }

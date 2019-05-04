@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ExposeJointOrient`);
+
 catchQuiet (`runTimeCommand -e -del da_SelectAll`);
 
 catchQuiet (`runTimeCommand -e -del da_InvertSelection`);
@@ -932,6 +934,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Expose Joint Orient"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myTransform[] = `ls -sl -tr`;\nfor ($each in $myTransform){\n    setAttr -k on ($each + \".jointOrientX\");\n    setAttr -k on ($each + \".jointOrientY\");\n    setAttr -k on ($each + \".jointOrientZ\");\n}")
+	da_ExposeJointOrient;
 
 runTimeCommand
 	-ann "Select All Components from Multi Selection"
@@ -1915,7 +1923,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Freeze Transformations and Delete Non Deformable History"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `listRelatives -f -s`;\nstring $mySelType = `objectType $mySel[0]`;\nif($mySelType == \"locator\"){\n    FreezeTransformations;\n}else{\n    FreezeTransformations;\n    BakeNonDefHistory;\n}")
+	-c ("string $mySel[] = `ls -sl`;\nstring $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;\n\nselect $mySel;\n\nswitch ($myQueryArrayNodeType[0]){\n    case \"joint\": FreezeTransformations; break;\n    case \"locator\": FreezeTransformations; break;\n    default:\n        FreezeTransformations;\n        BakeNonDefHistory; break;\n}")
 	da_FreezeDelNonDef;
 
 runTimeCommand
