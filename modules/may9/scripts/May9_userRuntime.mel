@@ -1923,7 +1923,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Freeze Transformations and Delete Non Deformable History"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `ls -sl`;\nstring $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;\n\nselect $mySel;\n\nswitch ($myQueryArrayNodeType[0]){\n    case \"joint\": FreezeTransformations; break;\n    case \"locator\": FreezeTransformations; break;\n    default:\n        FreezeTransformations;\n        BakeNonDefHistory; break;\n}")
+	-c ("string $mySel[] = `ls -sl`;\nstring $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;\n\nselect $mySel;\n\nswitch ($myQueryArrayNodeType[0]){\n    case \"joint\": makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1; break;\n    case \"locator\": makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1; break;\n    default:\n        makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1;\n        performBakeNonDefHistory false; break;\n}")
 	da_FreezeDelNonDef;
 
 runTimeCommand

@@ -5045,6 +5045,12 @@ menuItem
 -i "kinRemove.png";
 
 menuItem
+-l "Select Hierarchy" 
+-c "SelectHierarchy" 
+-rp "S" 
+-i "selectByHierarchy.png";
+
+menuItem
 -l "Insert Joints" 
 -c "InsertJointTool" 
 -rp "E" 
@@ -5100,12 +5106,6 @@ menuItem
 -d 1;
 
 menuItem
--l "Select Hierarchy" 
--c "SelectHierarchy" 
--rp "S" 
--i "selectByHierarchy.png";
-
-menuItem
 -l "IK on Selected Joints" 
 -c "da_IkOnJoint" 
 -i "out_ikRPsolver.png";
@@ -5119,6 +5119,11 @@ menuItem
 -l "Move Skinned Joints" 
 -c "MoveSkinJointsTool" 
 -i "moveSkinnedJoint.png";
+
+menuItem
+-l "Expose Joint Orient" 
+-c "da_ExposeJointOrient" 
+-i "showLineNumbers.png";
 
 menuItem
 -d 1;
