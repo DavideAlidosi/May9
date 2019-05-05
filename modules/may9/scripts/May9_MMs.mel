@@ -1440,12 +1440,13 @@ global proc Constraint_MM_May9(){
 string $mySel[] = `ls -sl`;
 string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
+select $mySel;
+
 switch ($myQueryArrayNodeType[0]){
+case "joint": Joint_MM_May9; break;
 case "nurbsCurve": Curves_MM_May9; break;
 default: Constraints_MM_May9; break;
 }
-
-select $mySel;
 
 } 
 // Define Constraints marking menu
@@ -4612,14 +4613,14 @@ global proc Handle_MM_May9(){
 string $mySel[] = `ls -sl`;
 string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
+select $mySel;
+
 switch ($myQueryArrayNodeType[0]){
 case "joint": Joint_MM_May9; break;
 case "locator": Locator_MM_May9; break;
 case "nurbsCurve": Curves_MM_May9; break;
 default: Constraints_MM_May9; break;
 }
-
-select $mySel;
 
 } 
 // Define HyperGraph marking menu
@@ -4956,61 +4957,15 @@ setParent -m ..;
 } 
 // Define JointPoly marking menu
 global proc JointPoly_MM_May9(){
+string $mySel[] = `ls -sl`;
+string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
-menuItem
--l "Bind Skin..." 
--c "SmoothBindSkinOptions" 
--rp "N" 
--i "smoothSkin.png";
+select $mySel;
 
-menuItem
--l "Rigid Bind..." 
--c "RigidBindSkinOptions" 
--rp "SW" 
--i "rigidBind.png";
-
-menuItem
--l "Bind Rigid Skin" 
--c "da_BindRigidSkin" 
--rp "W" 
--i "detachSkin.png";
-
-menuItem
--l "Delta Skin" 
--c "da_DeltaSkin" 
--rp "SE" 
--i "smoothSkinWeights.png";
-
-menuItem
--l "Shape to Joint(s)" 
--c "da_shapeParentJoints" 
--rp "E" 
--i "XRayJoints.png";
-
-menuItem
--l "Joint Size..." 
--c "jdsWin" 
--rp "S" 
--i "resizeWindow.png";
-
-menuItem
--l "Add Influence..." 
--c "AddInfluenceOptions" 
--rp "NE" 
--i "addWrapInfluence.png";
-
-menuItem
--l "Remove Influence" 
--c "RemoveInfluence" 
--rp "NW" 
--i "removeWrapInfluence.png";
-
-menuItem
--l "Paint Skin Weights..."
--c "da_OpenPaintSkinTool"
--i "paintSkinWeights.png";
-
-setParent -m ..;
+switch ($myQueryArrayNodeType[0]){
+case "mesh": Poly_MM_May9; break;
+default: PolyJoint_MM_May9; break;
+}
 
 } 
 // Define Joint marking menu
@@ -11306,6 +11261,65 @@ menuItem
 -l "Smooth UV Borders" 
 -c "da_SmoothUV"
 -cb ($myUVSmoothMode == 2);
+
+setParent -m ..;
+
+} 
+// Define PolyJoint marking menu
+global proc PolyJoint_MM_May9(){
+
+menuItem
+-l "Bind Skin..." 
+-c "SmoothBindSkinOptions" 
+-rp "N" 
+-i "smoothSkin.png";
+
+menuItem
+-l "Rigid Bind..." 
+-c "RigidBindSkinOptions" 
+-rp "SW" 
+-i "rigidBind.png";
+
+menuItem
+-l "Bind Rigid Skin" 
+-c "da_BindRigidSkin" 
+-rp "W" 
+-i "detachSkin.png";
+
+menuItem
+-l "Delta Skin" 
+-c "da_DeltaSkin" 
+-rp "SE" 
+-i "smoothSkinWeights.png";
+
+menuItem
+-l "Shape to Joint(s)" 
+-c "da_shapeParentJoints" 
+-rp "E" 
+-i "XRayJoints.png";
+
+menuItem
+-l "Joint Size..." 
+-c "jdsWin" 
+-rp "S" 
+-i "resizeWindow.png";
+
+menuItem
+-l "Add Influence..." 
+-c "AddInfluenceOptions" 
+-rp "NE" 
+-i "addWrapInfluence.png";
+
+menuItem
+-l "Remove Influence" 
+-c "RemoveInfluence" 
+-rp "NW" 
+-i "removeWrapInfluence.png";
+
+menuItem
+-l "Paint Skin Weights..."
+-c "da_OpenPaintSkinTool"
+-i "paintSkinWeights.png";
 
 setParent -m ..;
 
