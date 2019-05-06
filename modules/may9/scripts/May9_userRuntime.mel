@@ -1234,7 +1234,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Bind Rigid by Using Skin Cluster"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $polySel[] = `filterExpand -sm 12`;\nstring $jointSel[] = `filterExpand -sm 3`;\n\nfor ($i=0; $i<size($polySel); $i++){\n    select $polySel[$i];\n    select -add $jointSel[0];\n    skinCluster -mi 1;\n}\n")
+	-c ("string $polySel[] = `filterExpand -sm 12`;\nstring $jointSel[] = `ls -sl -typ \"joint\"`;\n\nfor ($i=0; $i<size($polySel); $i++){\n    select $polySel[$i];\n    select -add $jointSel[0];\n    skinCluster -mi 1;\n}")
 	da_BindRigidSkin;
 
 runTimeCommand
