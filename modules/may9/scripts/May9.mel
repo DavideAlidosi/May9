@@ -1,21 +1,23 @@
-print "May9 console: Run May9 Next installer \n";
+global proc May9(){
+	print "May9 console: Run May9 Next installer \n";
 
-if (`about -api` < 201740){
-	warning "May9 Next required Autodesk Maya 2017 update 3 and newer to install, please update your Autodesk Maya before install it";
-}else{
-print "May9 console: Load May9 Next Plug-in \n";
+	if (`about -api` < 201740){
+		warning "May9 Next required Autodesk Maya 2017 update 3 and newer to install, please update your Autodesk Maya before install it";
+	}else{
+	print "May9 console: Load May9 Next Plug-in \n";
 
-	// Load May9 Plug-in
-	loadPlugin May9_Next;
+		// Load May9 Plug-in
+		loadPlugin May9_Next;
 
-	// Auto load May9 Plug-in
-	pluginInfo -e -a 1 May9_Next;
+		// Auto load May9 Plug-in
+		pluginInfo -e -a 1 May9_Next;
 
-	// Save Plug-ins auto load prefs
-	pluginInfo -spp;
+		// Save Plug-ins auto load prefs
+		pluginInfo -spp;
 
-	// Install confimation
-	inViewMessage -pos midCenterTop -msg "May9 Next is installed and ready" -fade;
+		// Install confimation
+		inViewMessage -pos midCenterTop -msg "May9 Next is installed and ready" -fade;
+	}
+
+	print "May9 console: Complete May9 Next installation \n";
 }
-
-print "May9 console: Complete May9 Next installation \n";
