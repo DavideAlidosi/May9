@@ -4358,6 +4358,67 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 menuItem 
+-l "Pre Infinity"
+-sm 1
+-i "preInfinityCycle.png";
+
+menuItem
+-l "Cycle" 
+-c "setInfinity -pri cycle; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-i "preInfinityCycle.png";
+
+menuItem
+-l "Cycle with Offset" 
+-c "setInfinity -pri cycleRelative; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-i "preInfinityCycleOffset.png";
+
+menuItem
+-l "Oscillate" 
+-c "setInfinity -pri oscillate; animCurveEditor -e -di 1 graphEditor1GraphEd";
+
+menuItem
+-l "Linear" 
+-c "setInfinity -pri linear; animCurveEditor -e -di 1 graphEditor1GraphEd";
+
+menuItem
+-l "Costant" 
+-c "setInfinity -pri constant; animCurveEditor -e -di 1 graphEditor1GraphEd";
+
+setParent -m ..;
+
+menuItem 
+-l "Post Infinity"
+-sm 1
+-i "postInfinityCycle.png";
+
+menuItem
+-l "Cycle" 
+-c "setInfinity -poi cycle; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-i "postInfinityCycle.png";
+
+menuItem
+-l "Cycle with Offset" 
+-c "setInfinity -poi cycleRelative; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-i "postInfinityCycleOffset.png";
+
+menuItem
+-l "Oscillate" 
+-c "setInfinity -poi oscillate; animCurveEditor -e -di 1 graphEditor1GraphEd";
+
+menuItem
+-l "Linear" 
+-c "setInfinity -poi linear; animCurveEditor -e -di 1 graphEditor1GraphEd";
+
+menuItem
+-l "Costant" 
+-c "setInfinity -poi constant; animCurveEditor -e -di 1 graphEditor1GraphEd";
+
+setParent -m ..;
+
+menuItem
+-d 1;
+
+menuItem 
 -l "Lock Channel"
 -sm 1
 -i "nodeGrapherLocked.png";
