@@ -4353,6 +4353,11 @@ menuItem
 -i "teSetKeyframe.png";
 
 menuItem 
+-l "Infinity"
+-c "da_ToggleGraphInfinity"
+-cb (`animCurveEditor -q -di graphEditor1GraphEd`);
+
+menuItem 
 -l "Disable Infinity"
 -c "da_RemoveInfinity"
 -i "rvViewingPipelineOff.png";
