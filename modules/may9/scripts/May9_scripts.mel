@@ -79,6 +79,7 @@ global proc int[] da_QueryArrayFilterExpand(){
 	return $myArray;
 }
 
+// Define da_QueryArrayNodeType
 global proc string[] da_QueryArrayNodeType(){
     string $mySel[] = `ls -sl`;
     string $myArrayNodeType[];
@@ -99,4 +100,18 @@ global proc string[] da_QueryArrayNodeType(){
         }
     }
     return $myArrayNodeType;
+}
+
+// Define da_MotionTrailToCurve
+global proc da_MotionTrailToCurve(){ 
+    $selected = `ls -dag -et snapshotShape`;
+    for ($obj in $selected) {
+        $pts = (getAttr($obj+".pts"));
+        $size = size($pts);
+        $curve = `curve -d 1 -p $pts[0] $pts[1] $pts[2] -p $pts[4] $pts[5] $pts[6] -k 0 -k 1`;
+        
+    	for($i=8;$i<$size;$i+=4){
+    	    curve -os -a -p $pts[$i] $pts[$i+1] $pts[$i+2] $curve;
+    	}
+    }
 }
