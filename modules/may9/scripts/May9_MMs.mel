@@ -659,12 +659,6 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
--l "Noising Selected Channels"
--c "da_NoiseChannel"
--rp "W"
--i "polyRandomizeShell.png";
-
-menuItem -bld 1 
 -l "Set Smart Keyframe"
 -c "da_KeyKeyedOnly"
 -rp "NW"
@@ -672,11 +666,16 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
--l "Set Motion Path Key"
--c "SetKeyPath"
+-l "Noise Selected Channel"
+-c "da_NoiseChannel"
+-rp "W"
+-i "normCurves.png";
+
+menuItem -bld 1 
+-l "Sine Selected Channel"
+-c "da_SineChannel"
 -rp "SW"
--i "motionPathKey.png"
--en (size($myCurTransform) >= 1);
+-i "traxGraphAnimCurves.png";
 
 menuItem -bld 1 
 -l "Attach to Motion Path"

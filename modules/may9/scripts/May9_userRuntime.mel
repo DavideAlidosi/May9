@@ -7,6 +7,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleGraphInfinity`);
 
+catchQuiet (`runTimeCommand -e -del da_SineChannel`);
+
 catchQuiet (`runTimeCommand -e -del da_NoiseChannel`);
 
 catchQuiet (`runTimeCommand -e -del da_DofLocator`);
@@ -946,6 +948,12 @@ runTimeCommand
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("if (`animCurveEditor -q -di graphEditor1GraphEd`){\n    animCurveEditor -e -di 0 graphEditor1GraphEd;\n}else{\n    animCurveEditor -e -di 1 graphEditor1GraphEd;\n}")
 	da_ToggleGraphInfinity;
+
+runTimeCommand
+	-ann "Add Sine to Selected Channel(s)"
+	-cat "Custom Scripts.May9_Next.Animate"
+	-c ("string $myInputObjects[] = `channelBox -q -hol mainChannelBox`;\nstring $myOutputObjects[] = `channelBox -q -ool mainChannelBox`;\nstring $myShapeObjects[] = `channelBox -q -sol mainChannelBox`;\n\nstring $myInputChannels[] = `channelBox -q -sha mainChannelBox`;\nstring $myOutputChannels[] = `channelBox -q -soa mainChannelBox`;\nstring $myShapeChannels[] = `channelBox -q -ssa mainChannelBox`;\n\nif (size($myInputChannels))\n    select $myInputObjects;\nelse if (size($myOutputChannels))\n    select $myOutputObjects;\nelse if (size($myShapeChannels))\n    select $myShapeObjects;\n\nstring $mySel[] = `ls -sl`;\nstring $myChannels[] = `selectedChannelBoxAttributes`;\n\nif (size($myChannels) < 1){\n    inViewMessage -pos topCenter -msg \"Select at least one attribute in the channel box\" -fade;\n}\n\nfor($each in $mySel){\n    for($attr in $myChannels){\n        float $myFrequency = rand(1,10);\n        float $myAmplitude = rand(.1,1); \n        float $myOffsetTime = rand(0,1);\n        float $myOffsetSpace = 0;  \n\n        string $myFrequencyName = \"Frequency_\" + $attr;\n        string $myAmplitudeName = \"Amplitude_\" + $attr;\n        string $myOffsetTimeName = \"Offset_Time_\" + $attr;\n        string $myOffsetSpaceName = \"Offset_Space_\" + $attr;\n        string $myFrequencyAttr = $each + \".\" + $myFrequencyName;\n        string $myAmplitudeAttr = $each + \".\" + $myAmplitudeName;\n        string $myOffsetTimeAttr = $each + \".\" + $myOffsetTimeName;\n        string $myOffsetSpaceAttr = $each + \".\" + $myOffsetSpaceName;\n        string $myObjectAttr = $each + \".\" + $attr;\t\n        string $mySeparatorName = \"Sine_\" + $attr;\n        string $mySeparatorAttr = $each + \".\" + $mySeparatorName;\n\n        if (`attributeExists $attr $each`){ \n            addAttr -ln $mySeparatorName -k 0 $each;  \n            setAttr -cb 1 -l 1 $mySeparatorAttr;\n            \n            addAttr -ln $myFrequencyName -k 1 -dv $myFrequency $each;\n            addAttr -ln $myAmplitudeName -k 1 -dv $myAmplitude $each;\n            addAttr -ln $myOffsetTimeName -k 1 -dv $myOffsetTime $each;\t\n            addAttr -ln $myOffsetSpaceName -k 1 -dv $myOffsetSpace $each;\t\n\t\n            string $exp = $myObjectAttr + \"= sin(time*\" + $myFrequencyAttr + \"+\" + $myOffsetTimeAttr + \")*\" + $myAmplitudeAttr + \"+\" + $myOffsetSpaceAttr;\n            string $expName = $attr + \"_sine\";\n            expression -s $exp -n $expName;\n            \n            setAttr -l 1 $myObjectAttr;\n        }\n    }\n}")
+	da_SineChannel;
 
 runTimeCommand
 	-ann "Add Noise to Selected Channel(s)"
