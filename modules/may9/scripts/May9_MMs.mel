@@ -672,12 +672,6 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
--l "Flow Path Object..."
--c "FlowPathObjectOptions"
--i "flowPathObj.png"
--en (size($myCurTransform) >= 1);
-
-menuItem -bld 1 
 -l "Set Motion Path Key"
 -c "SetKeyPath"
 -rp "SW"
@@ -685,8 +679,8 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
--l "Attach to Motion Path..."
--c "AttachToPathOptions"
+-l "Attach to Motion Path"
+-c "AttachToPath"
 -rp "S"
 -i "motionPath.png"
 -en (size($myCurTransform) >= 2);
@@ -4294,6 +4288,8 @@ setParent -m ..;
 // Define GraphEditor marking menu
 global proc GraphEditor_MM_May9(){
 
+string $myAnimCurve[] = `keyframe -q -sl -name`;
+
 int $weightedTangentsCheck[] = `keyTangent -q -weightedTangents`;
 int $weightedTangentsSum = 0;
 for ($each in $weightedTangentsCheck)
@@ -4307,26 +4303,50 @@ $breakTangentsSum += $each;
 menuItem
 -l "Weighted Tangents" 
 -c "da_weightedTangents" 
+-rp "E"
 -cb ($weightedTangentsSum) 
--rp "E";
+-en (`size($myAnimCurve)`);
 
 menuItem
 -l "Break Tangents" 
 -c "da_breakTangents" 
+-rp "W"
 -cb (! $breakTangentsSum) 
--rp "W";
+-en (`size($myAnimCurve)`);
 
 menuItem
 -l "Insert Keyframe" 
 -c "da_InseritKeyframe" 
 -rp "N" 
--i "keyIntoclip.png";
+-i "keyIntoclip.png"
+-en (`size($myAnimCurve)`);
 
 menuItem
 -l "Swap Buffer Curve" 
 -c "doBuffer swap graphEditor1GraphEd" 
 -rp "NE" 
--i "bufferSwap.png";
+-i "bufferSwap.png"
+-en (`size($myAnimCurve)`);
+
+if (`animCurveEditor -q -sb graphEditor1GraphEd` == "on" && `size($myAnimCurve)`){
+menuItem
+-l "Update Buffer Curves" 
+-c "doBuffer snapshot graphEditor1GraphEd" 
+-rp "NW"
+-i "bufferSnap.png";
+} else if (`animCurveEditor -q -sb graphEditor1GraphEd` == "off" && `size($myAnimCurve)`) {
+menuItem
+-l "Buffer Curves" 
+-c "animCurveEditor -e -sb 1 graphEditor1GraphEd" 
+-rp "NW" 
+-cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+} else {
+menuItem
+-l "Buffer Curves" 
+-c "animCurveEditor -e -sb 0 graphEditor1GraphEd" 
+-rp "NW" 
+-cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+}
 
 menuItem
 -l "Buffer Curves" 
@@ -4344,7 +4364,8 @@ menuItem
 -l "Object from Curve" 
 -c "da_SelectFromAnimCurve" 
 -rp "SW" 
--i "aselect.png";
+-i "aselect.png" 
+-en (`size($myAnimCurve)`);
 
 menuItem
 -l "Round Keyframes"
@@ -4353,15 +4374,17 @@ menuItem
 -i "teSetKeyframe.png";
 
 menuItem 
--l "Infinity"
+-l "Display Infinity"
 -c "da_ToggleGraphInfinity"
 -cb (`animCurveEditor -q -di graphEditor1GraphEd`);
 
 menuItem 
 -l "Disable Infinity"
 -c "da_RemoveInfinity"
--i "rvViewingPipelineOff.png";
+-i "rvViewingPipelineOff.png"
+-en (`size($myAnimCurve)`);
 
+if (`size($myAnimCurve)`){
 menuItem 
 -l "Pre Infinity"
 -sm 1
@@ -4456,6 +4479,7 @@ menuItem
 -i "teMuteOff.png";
 
 setParent -m ..;
+}
 
 menuItem
 -d 1;
@@ -7574,6 +7598,7 @@ da_MMtoKey_release;
 }
 // Define Nurbs marking menu
 global proc Nurbs_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Sculpt Geometry..." 
@@ -7734,6 +7759,12 @@ menuItem
 -l "Rigged Sculpt"
 -c "da_SculptDeformer"
 -i "sculpt.png";
+
+menuItem 
+-l "Flow Path Object..."
+-c "FlowPathObjectOptions"
+-i "flowPathObj.png"
+-en (size(`listConnections -s 1 -d 0 ($myCurTransform[0] + ".tx")`));
 
 menuItem
 -l "Lattice..." 
@@ -10446,7 +10477,9 @@ setParent -m ..;
 // Define Poly marking menu
 global proc Poly_MM_May9(){
 
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 string $mySelShape[] = `listRelatives -f -s -typ "mesh"`;
+
 int $myDispSetting = `getAttr ($mySelShape[0] + ".showDisplacements")`;
 int $mySubdivMode = `getAttr ($mySelShape[0] + ".smoothDrawType")`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
@@ -10732,6 +10765,12 @@ menuItem
 -l "Rigged Sculpt"
 -c "da_SculptDeformer"
 -i "sculpt.png";
+
+menuItem 
+-l "Flow Path Object..."
+-c "FlowPathObjectOptions"
+-i "flowPathObj.png"
+-en (size(`listConnections -s 1 -d 0 ($myCurTransform[0] + ".tx")`));
 
 menuItem
 -l "Lattice..."
