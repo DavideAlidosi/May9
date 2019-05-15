@@ -166,7 +166,7 @@ global proc All_MM_May9(){
 int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -q createNurbsPrimitiveAsTool`;
 
 string $currentPanel = `getPanel -wf`;
-
+string $myKeyTangent[] = `keyTangent -q -global -ott`;
 string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem -bld 1 
@@ -725,9 +725,9 @@ menuItem -bld 1
 -cb (`playbackOptions -q -maxPlaybackSpeed`);
 
 menuItem -bld 1 
--l "Stepped Preview"
--c "da_steppedPreview"
--cb (`playbackOptions -q -blockingAnim`);
+-l "Stepped Tangent"
+-c "da_ToggleKeyTangent"
+-cb ($myKeyTangent[0] == "step");
 
 setParent -m ..;
 
@@ -4288,6 +4288,7 @@ setParent -m ..;
 global proc GraphEditor_MM_May9(){
 
 string $myAnimCurve[] = `keyframe -q -sl -name`;
+string $myKeyTangent[] = `keyTangent -q -global -ott`;
 
 int $weightedTangentsCheck[] = `keyTangent -q -weightedTangents`;
 int $weightedTangentsSum = 0;
@@ -4509,9 +4510,9 @@ menuItem
 -cb (`playbackOptions -q -maxPlaybackSpeed`);
 
 menuItem
--l "Stepped Preview"
--c "da_steppedPreview"
--cb (`playbackOptions -q -blockingAnim`);
+-l "Stepped Tangent"
+-c "da_ToggleKeyTangent"
+-cb ($myKeyTangent[0] == "step");
 
 menuItem
 -d 1;
