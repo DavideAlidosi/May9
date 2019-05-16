@@ -12,11 +12,11 @@ global proc May9_uninstall(){
 
 	print "May9 console: Un-Load May9 Next Plug-in \n";
 
-	// Set back to initial renderSequenceAllCameras
-	optionVar -sv renderSequenceAllCameras `optionVar -q "da_renderSequenceAllCameras"`;
-
 	// Set back to initial hyperShadeDockingLayout
 	optionVar -sv hyperShadeDockingLayout `optionVar -q "da_hyperShadeDockingLayout"`;
+
+	// Set back to initial renderSequenceAllCameras
+	optionVar -iv renderSequenceAllCameras `optionVar -q "da_renderSequenceAllCameras"`;
 
 	// Set back to initial Connection Editor prefs
 	optionVar -iv connectWindowLeftSHD `optionVar -q "da_connectWindowLeftSHD"`;
@@ -29,6 +29,7 @@ global proc May9_uninstall(){
 
 	// Remove optionVars
 	optionVar -rm da_hyperShadeDockingLayout;
+	optionVar -rm da_renderSequenceAllCameras;
 	optionVar -rm da_connectWindowLeftSHD;
 	optionVar -rm da_connectWindowRightSHD;
 	optionVar -rm da_DuplicateVariableWarnings;
