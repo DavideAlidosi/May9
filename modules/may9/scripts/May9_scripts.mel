@@ -115,3 +115,26 @@ global proc da_MotionTrailToCurve(){
     	}
     }
 }
+
+// Define da_AntiAlias
+global proc da_AntiAlias(){
+        setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
+}
+
+global proc da_NoAntiAlias(){
+        setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
+}
+
+// Define da_AntiAliasPrefs
+global proc da_AntiAliasPrefs(){
+    if (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`){
+        setAttr "hardwareRenderingGlobals.multiSampleEnable" 0;
+        optionVar -iv "da_AntiAliasEnable" 0;
+        scriptJob -e "NewSceneOpened" da_NoAntiAlias;
+    }else{
+        setAttr "hardwareRenderingGlobals.multiSampleEnable" 1;
+        optionVar -iv "da_AntiAliasEnable" 1;
+        scriptJob -e "NewSceneOpened" da_AntiAlias;
+    }
+    savePrefs -g -hk;
+}
