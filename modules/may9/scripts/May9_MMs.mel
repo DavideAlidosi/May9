@@ -385,8 +385,7 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Channel Control..."
 -c "ChannelControlEditor"
--i "channelBox.png"
--en (size($myCurTransform) >= 1);
+-i "channelBox.png";
 
 menuItem
 -d 1;
@@ -679,7 +678,7 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Attach to Motion Path"
--c "AttachToPath"
+-c "pathAnimation -fm 1 -f 1 -fa z -ua y -wut \"vector\" -wu 0 1 0 -iu 0 -if 0 -b 0 -stu `playbackOptions -q -min` -etu `playbackOptions -q -max`;"
 -rp "S"
 -i "motionPath.png"
 -en (size($myCurTransform) >= 2);
@@ -4345,7 +4344,8 @@ menuItem
 -l "Buffer Curves" 
 -c "animCurveEditor -e -sb 0 graphEditor1GraphEd" 
 -rp "NW" 
--cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+-cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on")
+-en (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
 }
 
 menuItem

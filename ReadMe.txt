@@ -1,4 +1,4 @@
-May9 Next.1.4 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next.1.5 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
@@ -14,7 +14,7 @@ Installation
 	Windows: \Users\<username>\Documents\maya\modules
 	Mac OS: /Users/<username>/Library/Preferences/Autodesk/maya/modules
 	Linux: ~<username>/maya/modules
-3) Open Autodesk Maya and run source May9.mel as MEL command
+3) Open Autodesk Maya and run 'May9' as MEL command
 
 
 Release Note
