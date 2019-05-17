@@ -81,12 +81,6 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 	// Set initial Anti Alias prefs
 	optionVar -iv "da_AntiAliasEnable" 0;
 
-	// Store initial renderSequenceAllCameras
-	optionVar -iv da_renderSequenceAllCameras `optionVar -q renderSequenceAllCameras`;
-
-	// Set renderSequenceAllCameras
-	optionVar -iv "renderSequenceAllCameras" 1;
-
 	// Store initial Connection Editor prefs
 	optionVar -iv da_connectWindowLeftSHD `optionVar -q connectWindowLeftSHD`;
 	optionVar -iv da_connectWindowRightSHD `optionVar -q connectWindowRightSHD`;
@@ -108,6 +102,12 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 
 // Complete installation or update release
 if (`optionVar -q "May9ActivationCheck"` < $may9Value){
+
+	// Store initial renderSequenceAllCameras
+	optionVar -iv da_renderSequenceAllCameras `optionVar -q renderSequenceAllCameras`;
+
+	// Set renderSequenceAllCameras
+	optionVar -iv "renderSequenceAllCameras" 1;
 
 	// Define May9 Next installation status 
 	optionVar -iv May9ActivationCheck $may9Value;
