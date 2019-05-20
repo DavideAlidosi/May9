@@ -678,7 +678,7 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Attach to Motion Path"
--c "pathAnimation -fm 1 -f 1 -fa z -ua y -wut \"vector\" -wu 0 1 0 -iu 0 -if 0 -b 0 -stu `playbackOptions -q -min` -etu `playbackOptions -q -max`;"
+-c "da_AttachToMotionPath"
 -rp "S"
 -i "motionPath.png"
 -en (size($myCurTransform) >= 2);
