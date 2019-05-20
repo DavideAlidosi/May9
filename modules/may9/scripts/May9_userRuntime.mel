@@ -950,7 +950,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Attach to Motion Path"
 	-cat "Custom Scripts.May9_Next.Animate"
-	-c ("int $myMinTime = `playbackOptions -q -min`;\nint $myMaxTime = `playbackOptions -q -max`;\n\nif(catch(`pathAnimation -fm 1 -f 1 -fa z -ua y -wut \"vector\" -wu 0 1 0 -iu 0 -if 0 -b 0 -stu $myMinTime -etu $myMaxTime`)){\n    pathAnimation -fm 1 -f 0 -wu 0 1 0 -iu 0 -if 0 -b 0 -stu $myMinTime -etu $myMaxTime;\n}")
+	-c ("int $myMinTime = `playbackOptions -q -min`;\nint $myMaxTime = `playbackOptions -q -max`;\n\nif(catchQuiet(`pathAnimation -fm 1 -f 1 -fa z -ua y -wut \"vector\" -wu 0 1 0 -iu 0 -if 0 -b 0 -stu $myMinTime -etu $myMaxTime`)){\n    pathAnimation -fm 1 -f 0 -wu 0 1 0 -iu 0 -if 0 -b 0 -stu $myMinTime -etu $myMaxTime;\n}")
 	da_AttachToMotionPath;
 
 runTimeCommand

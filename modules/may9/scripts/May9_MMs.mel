@@ -1255,6 +1255,31 @@ menuItem
 -i "cameraAim.png";
 
 menuItem
+-l "Convert to" 
+-sm 1
+-i "hyperShadeResetCameraView.png";
+
+menuItem
+-l "Camera" 
+-c "cameraMakeNode 1 \"\"" 
+-i "view.png";
+
+menuItem
+-l "Camera and Aim" 
+-c "cameraMakeNode 1 \"\"; cameraMakeNode 2 \"\"" 
+-i "cameraAim.png";
+
+menuItem
+-l "Camera, Aim and Up" 
+-c "cameraMakeNode 1 \"\"; cameraMakeNode 3 \"\"" 
+-i "cameraAimUp.png";
+
+setParent -m ..;
+
+menuItem
+-d 1;
+
+menuItem
 -l "Add Image Plane..." 
 -c "da_CameraImagesPlane" 
 -i "out_imagePlane.png";
