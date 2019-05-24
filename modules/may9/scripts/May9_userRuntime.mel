@@ -2221,19 +2221,19 @@ runTimeCommand
 runTimeCommand
 	-ann "Toggle DAG Node in Outliner"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("int $DAGCheck = `outlinerEditor -q -dag outlinerPanel1`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -dag false outlinerPanel1;\nelse\n\toutlinerEditor -edit -dag true outlinerPanel1;")
+	-c ("string $myActualPanel = `getPanel -underPointer`;\nint $DAGCheck = `outlinerEditor -q -dag $myActualPanel`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -dag false $myActualPanel;\nelse\n\toutlinerEditor -edit -dag true $myActualPanel;")
 	da_ToggleDagNode;
 
 runTimeCommand
 	-ann "Toggle Material Node in Outliner"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("int $MaterialCheck = `outlinerEditor -q -sam outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -sam false outlinerPanel1;\nelse\n\toutlinerEditor -edit -sam true outlinerPanel1;")
+	-c ("string $myActualPanel = `getPanel -underPointer`;\nint $MaterialCheck = `outlinerEditor -q -sam $myActualPanel`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -sam false $myActualPanel;\nelse\n\toutlinerEditor -edit -sam true $myActualPanel;")
 	da_ToggleMaterial;
 
 runTimeCommand
 	-ann "Toggle Shapes Node in Outliner"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("int $MaterialCheck = `outlinerEditor -q -shp outlinerPanel1`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -shp false outlinerPanel1;\nelse\n\toutlinerEditor -edit -shp true outlinerPanel1;")
+	-c ("string $myActualPanel = `getPanel -underPointer`;\nint $MaterialCheck = `outlinerEditor -q -shp $myActualPanel`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -shp false $myActualPanel;\nelse\n\toutlinerEditor -edit -shp true $myActualPanel;")
 	da_ToggleShapes;
 
 runTimeCommand

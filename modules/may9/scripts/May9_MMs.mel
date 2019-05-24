@@ -11589,10 +11589,11 @@ setParent -m ..;
 } 
 // Define Sets marking menu
 global proc Sets_MM_May9(){
+string $myActualPanel = `getPanel -underPointer`;
 
 menuItem
 -l "Select Set" 
--c "selectAllSetMembers outlinerPanel1" 
+-c "selectAllSetMembers $myActualPanel" 
 -rp "N" 
 -i "aselect.png";
 
