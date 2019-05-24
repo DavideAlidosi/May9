@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleFogging`);
+
 catchQuiet (`runTimeCommand -e -del da_AttachToMotionPath`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleKeyTangent`);
@@ -946,6 +948,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Toggle Fogging"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $selectedPanel = `getPanel -wf`;\n\nif (`modelEditor -q -fg $selectedPanel`)\n\tmodelEditor -e -fg 0 $selectedPanel;\nelse\n\tmodelEditor -e -fg 1 $selectedPanel;")
+	da_ToggleFogging;
 
 runTimeCommand
 	-ann "Attach to Motion Path"

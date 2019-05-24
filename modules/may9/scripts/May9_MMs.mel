@@ -6133,6 +6133,12 @@ menuItem
 }
 
 menuItem
+-l "Fog" 
+-c "da_ToggleFogging" 
+-rp "N" 
+-cb (`modelEditor -q -fg $panel`);
+
+menuItem
 -l "Motion Blur" 
 -c "da_motionBlurEnableToggle" 
 -rp "S" 
