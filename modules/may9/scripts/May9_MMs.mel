@@ -4310,6 +4310,8 @@ setParent -m ..;
 } 
 // Define GraphEditor marking menu
 global proc GraphEditor_MM_May9(){
+global string $da_underPointerPanel;
+$da_underPointerPanel = `getPanel -underPointer` + "GraphEd";
 
 string $myAnimCurve[] = `keyframe -q -sl -name`;
 string $myKeyTangent[] = `keyTangent -q -global -ott`;
@@ -4347,37 +4349,37 @@ menuItem
 
 menuItem
 -l "Swap Buffer Curve" 
--c "doBuffer swap graphEditor1GraphEd" 
+-c "doBuffer swap $da_underPointerPanel" 
 -rp "NE" 
 -i "bufferSwap.png"
 -en (`size($myAnimCurve)`);
 
-if (`animCurveEditor -q -sb graphEditor1GraphEd` == "on" && `size($myAnimCurve)`){
+if (`animCurveEditor -q -sb $da_underPointerPanel` == "on" && `size($myAnimCurve)`){
 menuItem
 -l "Update Buffer Curves" 
--c "doBuffer snapshot graphEditor1GraphEd" 
+-c "doBuffer snapshot $da_underPointerPanel" 
 -rp "NW"
 -i "bufferSnap.png";
-} else if (`animCurveEditor -q -sb graphEditor1GraphEd` == "off" && `size($myAnimCurve)`) {
+} else if (`animCurveEditor -q -sb $da_underPointerPanel` == "off" && `size($myAnimCurve)`) {
 menuItem
 -l "Buffer Curves" 
--c "animCurveEditor -e -sb 1 graphEditor1GraphEd" 
+-c "animCurveEditor -e -sb 1 $da_underPointerPanel" 
 -rp "NW" 
--cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+-cb (`animCurveEditor -q -sb $da_underPointerPanel` == "on");
 } else {
 menuItem
 -l "Buffer Curves" 
--c "animCurveEditor -e -sb 0 graphEditor1GraphEd" 
+-c "animCurveEditor -e -sb 0 $da_underPointerPanel" 
 -rp "NW" 
--cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on")
--en (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+-cb (`animCurveEditor -q -sb $da_underPointerPanel` == "on")
+-en (`animCurveEditor -q -sb $da_underPointerPanel` == "on");
 }
 
 menuItem
 -l "Buffer Curves" 
--c "animCurveEditor -edit -sb tgl graphEditor1GraphEd; doBuffer snapshot graphEditor1GraphEd" 
+-c "animCurveEditor -edit -sb tgl $da_underPointerPanel; doBuffer snapshot $da_underPointerPanel" 
 -rp "NW" 
--cb (`animCurveEditor -q -sb graphEditor1GraphEd` == "on");
+-cb (`animCurveEditor -q -sb $da_underPointerPanel` == "on");
 
 menuItem
 -l "Delete Static Channels" 
@@ -4401,7 +4403,7 @@ menuItem
 menuItem 
 -l "Display Infinity"
 -c "da_ToggleGraphInfinity"
--cb (`animCurveEditor -q -di graphEditor1GraphEd`);
+-cb (`animCurveEditor -q -di $da_underPointerPanel`);
 
 menuItem 
 -l "Disable Infinity"
@@ -4417,25 +4419,25 @@ menuItem
 
 menuItem
 -l "Cycle" 
--c "setInfinity -pri cycle; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-c "setInfinity -pri cycle; animCurveEditor -e -di 1 $da_underPointerPanel" 
 -i "preInfinityCycle.png";
 
 menuItem
 -l "Cycle with Offset" 
--c "setInfinity -pri cycleRelative; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-c "setInfinity -pri cycleRelative; animCurveEditor -e -di 1 $da_underPointerPanel" 
 -i "preInfinityCycleOffset.png";
 
 menuItem
 -l "Oscillate" 
--c "setInfinity -pri oscillate; animCurveEditor -e -di 1 graphEditor1GraphEd";
+-c "setInfinity -pri oscillate; animCurveEditor -e -di 1 $da_underPointerPanel";
 
 menuItem
 -l "Linear" 
--c "setInfinity -pri linear; animCurveEditor -e -di 1 graphEditor1GraphEd";
+-c "setInfinity -pri linear; animCurveEditor -e -di 1 $da_underPointerPanel";
 
 menuItem
 -l "Costant" 
--c "setInfinity -pri constant; animCurveEditor -e -di 1 graphEditor1GraphEd";
+-c "setInfinity -pri constant; animCurveEditor -e -di 1 $da_underPointerPanel";
 
 setParent -m ..;
 
@@ -4446,25 +4448,25 @@ menuItem
 
 menuItem
 -l "Cycle" 
--c "setInfinity -poi cycle; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-c "setInfinity -poi cycle; animCurveEditor -e -di 1 $da_underPointerPanel" 
 -i "postInfinityCycle.png";
 
 menuItem
 -l "Cycle with Offset" 
--c "setInfinity -poi cycleRelative; animCurveEditor -e -di 1 graphEditor1GraphEd" 
+-c "setInfinity -poi cycleRelative; animCurveEditor -e -di 1 $da_underPointerPanel" 
 -i "postInfinityCycleOffset.png";
 
 menuItem
 -l "Oscillate" 
--c "setInfinity -poi oscillate; animCurveEditor -e -di 1 graphEditor1GraphEd";
+-c "setInfinity -poi oscillate; animCurveEditor -e -di 1 $da_underPointerPanel";
 
 menuItem
 -l "Linear" 
--c "setInfinity -poi linear; animCurveEditor -e -di 1 graphEditor1GraphEd";
+-c "setInfinity -poi linear; animCurveEditor -e -di 1 $da_underPointerPanel";
 
 menuItem
 -l "Costant" 
--c "setInfinity -poi constant; animCurveEditor -e -di 1 graphEditor1GraphEd";
+-c "setInfinity -poi constant; animCurveEditor -e -di 1 $da_underPointerPanel";
 
 setParent -m ..;
 
@@ -4512,17 +4514,17 @@ menuItem
 if (`about -api` >= 20190000){
 menuItem
 -l "Butterworth Filter..." 
--c "performButterworth 4 graphEditor1GraphEd" 
+-c "performButterworth 4 $da_underPointerPanel" 
 -i "da_smoothCurve.png";
 
 menuItem
 -l "Key Reducer Filter..." 
--c "performKeyReducer 4 graphEditor1GraphEd" 
+-c "performKeyReducer 4 $da_underPointerPanel" 
 -i "da_simplifyCurve.png";
 }else{
 menuItem
 -l "Simplify Curves..." 
--c "performSimplify 4 graphEditor1GraphEd" 
+-c "performSimplify 4 $da_underPointerPanel" 
 -i "da_simplifyCurve.png";
 }
 
@@ -4549,23 +4551,23 @@ menuItem
 
 menuItem
 -l "Pre-Select Highlight" 
--c "animCurveEditor -e -psh (!`animCurveEditor -q -psh graphEditor1GraphEd`) graphEditor1GraphEd" 
--cb (`animCurveEditor -q -psh graphEditor1GraphEd`);
+-c "animCurveEditor -e -psh (!`animCurveEditor -q -psh $da_underPointerPanel`) $da_underPointerPanel" 
+-cb (`animCurveEditor -q -psh $da_underPointerPanel`);
 
 menuItem
 -d 1;
 
 menuItem
 -l "Auto Frame" 
--c "animCurveEditor -e -af (!`animCurveEditor -q -af graphEditor1GraphEd`) graphEditor1GraphEd;optionVar -intValue graphEditorAutoFit (!`animCurveEditor -q -af graphEditor1GraphEd`)" 
--cb (`animCurveEditor -q -af graphEditor1GraphEd`);
+-c "animCurveEditor -e -af (!`animCurveEditor -q -af $da_underPointerPanel`) $da_underPointerPanel;optionVar -intValue graphEditorAutoFit (!`animCurveEditor -q -af $da_underPointerPanel`)" 
+-cb (`animCurveEditor -q -af $da_underPointerPanel`);
 
 if (`about -api` >= 20180300){
 menuItem
 -l "Auto Frame Time" 
--c "animCurveEditor -e -aft (!`animCurveEditor -q -aft graphEditor1GraphEd`) graphEditor1GraphEd;optionVar -intValue graphEditorAutoFitTime (!`animCurveEditor -q -aft graphEditor1GraphEd`)" 
--cb (`animCurveEditor -q -aft graphEditor1GraphEd`)
--en (`animCurveEditor -q -af graphEditor1GraphEd`);
+-c "animCurveEditor -e -aft (!`animCurveEditor -q -aft $da_underPointerPanel`) $da_underPointerPanel;optionVar -intValue graphEditorAutoFitTime (!`animCurveEditor -q -aft $da_underPointerPanel`)" 
+-cb (`animCurveEditor -q -aft $da_underPointerPanel`)
+-en (`animCurveEditor -q -af $da_underPointerPanel`);
 }
 
 setParent -m ..;
@@ -8036,13 +8038,15 @@ setParent -m ..;
 } 
 // Define Outliner marking menu
 global proc Outliner_MM_May9(){
-string $underPointerPanel = `getPanel -underPointer`;
+global string $da_underPointerPanel;
+$da_underPointerPanel = `getPanel -underPointer`;
+
 
 string $mySel[] = `ls -sl -containers`;
 if ( `size($mySel)` == 0 ){
-int $DAGCheck = `outlinerEditor -q -dag $underPointerPanel`;
-int $ShapesCheck = `outlinerEditor -q -shp $underPointerPanel`;
-int $MaterialCheck = `outlinerEditor -q -sam $underPointerPanel`;
+int $DAGCheck = `outlinerEditor -q -dag $da_underPointerPanel`;
+int $ShapesCheck = `outlinerEditor -q -shp $da_underPointerPanel`;
+int $MaterialCheck = `outlinerEditor -q -sam $da_underPointerPanel`;
 
 menuItem
 -l "Select Hierarchy" 
@@ -8052,19 +8056,19 @@ menuItem
 
 menuItem
 -l "DAG Only" 
--c "if (`outlinerEditor -q -dag outlinerPanel1`) outlinerEditor -e -dag 0 outlinerPanel1; else outlinerEditor -e -dag 1 outlinerPanel1" 
+-c "if (`outlinerEditor -q -dag $da_underPointerPanel`) outlinerEditor -e -dag 0 $da_underPointerPanel; else outlinerEditor -e -dag 1 $da_underPointerPanel" 
 -rp "NE" 
 -cb ($DAGCheck);
 
 menuItem
 -l "Shapes" 
--c "if (`outlinerEditor -q -shp outlinerPanel1`) outlinerEditor -e -shp 0 outlinerPanel1; else outlinerEditor -e -shp 1 outlinerPanel1" 
+-c "if (`outlinerEditor -q -shp $da_underPointerPanel`) outlinerEditor -e -shp 0 $da_underPointerPanel; else outlinerEditor -e -shp 1 $da_underPointerPanel" 
 -rp "E" 
 -cb ($ShapesCheck);
 
 menuItem
 -l "Materials" 
--c "if (`outlinerEditor -q -sam outlinerPanel1`) outlinerEditor -e -sam 0 outlinerPanel1; else outlinerEditor -e -sam 1 outlinerPanel1" 
+-c "if (`outlinerEditor -q -sam $da_underPointerPanel`) outlinerEditor -e -sam 0 $da_underPointerPanel; else outlinerEditor -e -sam 1 $da_underPointerPanel" 
 -rp "SE" 
 -cb ($MaterialCheck);
 
@@ -11588,10 +11592,12 @@ setParent -m ..;
 } 
 // Define Sets marking menu
 global proc Sets_MM_May9(){
+global string $da_underPointerPanel;
+$da_underPointerPanel = `getPanel -underPointer`;
 
 menuItem
 -l "Select Set" 
--c "selectAllSetMembers outlinerPanel1" 
+-c "selectAllSetMembers $da_underPointerPanel" 
 -rp "N" 
 -i "aselect.png";
 
