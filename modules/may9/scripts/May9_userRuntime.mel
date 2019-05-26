@@ -2219,24 +2219,6 @@ runTimeCommand
 	da_ToggleWireOnShade;
 
 runTimeCommand
-	-ann "Toggle DAG Node in Outliner"
-	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("string $myActualPanel = `getPanel -underPointer`;\nint $DAGCheck = `outlinerEditor -q -dag $myActualPanel`;\n\nif ($DAGCheck == 1)\n\toutlinerEditor -edit -dag false $myActualPanel;\nelse\n\toutlinerEditor -edit -dag true $myActualPanel;")
-	da_ToggleDagNode;
-
-runTimeCommand
-	-ann "Toggle Material Node in Outliner"
-	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("string $myActualPanel = `getPanel -underPointer`;\nint $MaterialCheck = `outlinerEditor -q -sam $myActualPanel`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -sam false $myActualPanel;\nelse\n\toutlinerEditor -edit -sam true $myActualPanel;")
-	da_ToggleMaterial;
-
-runTimeCommand
-	-ann "Toggle Shapes Node in Outliner"
-	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("string $myActualPanel = `getPanel -underPointer`;\nint $MaterialCheck = `outlinerEditor -q -shp $myActualPanel`;\n\nif ($MaterialCheck == 1)\n\toutlinerEditor -edit -shp false $myActualPanel;\nelse\n\toutlinerEditor -edit -shp true $myActualPanel;")
-	da_ToggleShapes;
-
-runTimeCommand
 	-ann "Expand Shade Network"
 	-cat "Custom Scripts.May9_Next.Render"
 	-c ("hyperShadePanelGraphCommand(\"hyperShadePanel1\", \"showUpAndDownstream\")")

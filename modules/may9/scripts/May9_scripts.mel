@@ -137,4 +137,10 @@ global proc da_AntiAliasPrefs(){
         scriptJob -e "NewSceneOpened" da_AntiAlias;
     }
     savePrefs -g -hk;
+} 
+
+// Define da_UnderPointerPanel
+global proc string da_UnderPointerPanel(){
+    string $da_underPointerPanel = `getPanel -underPointer`;
+    return $da_underPointerPanel;
 }
