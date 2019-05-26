@@ -8036,7 +8036,7 @@ setParent -m ..;
 } 
 // Define Outliner marking menu
 global proc Outliner_MM_May9(){
-string $underPointerPanel = `da_UnderPointerPanel`;
+string $underPointerPanel = `getPanel -underPointer`;
 
 string $mySel[] = `ls -sl -containers`;
 if ( `size($mySel)` == 0 ){
@@ -8052,19 +8052,19 @@ menuItem
 
 menuItem
 -l "DAG Only" 
--c "if (`outlinerEditor -q -dag $underPointerPanel`) outlinerEditor -e -dag 0 $underPointerPanel; else outlinerEditor -e -dag 1 $underPointerPanel" 
+-c "if (`outlinerEditor -q -dag outlinerPanel1`) outlinerEditor -e -dag 0 outlinerPanel1; else outlinerEditor -e -dag 1 outlinerPanel1" 
 -rp "NE" 
 -cb ($DAGCheck);
 
 menuItem
 -l "Shapes" 
--c "if (`outlinerEditor -q -sam $underPointerPanel`) outlinerEditor -e -sam 0 $underPointerPanel; else outlinerEditor -e -sam 1 $underPointerPanel" 
+-c "if (`outlinerEditor -q -shp outlinerPanel1`) outlinerEditor -e -shp 0 outlinerPanel1; else outlinerEditor -e -shp 1 outlinerPanel1" 
 -rp "E" 
 -cb ($ShapesCheck);
 
 menuItem
 -l "Materials" 
--c "if (`outlinerEditor -q -shp $underPointerPanel`) outlinerEditor -e -shp 0 $underPointerPanel; else outlinerEditor -e -shp 1 $underPointerPanel" 
+-c "if (`outlinerEditor -q -sam outlinerPanel1`) outlinerEditor -e -sam 0 outlinerPanel1; else outlinerEditor -e -sam 1 outlinerPanel1" 
 -rp "SE" 
 -cb ($MaterialCheck);
 
@@ -11588,11 +11588,10 @@ setParent -m ..;
 } 
 // Define Sets marking menu
 global proc Sets_MM_May9(){
-string $underPointerPanel = `da_UnderPointerPanel`;
 
 menuItem
 -l "Select Set" 
--c "selectAllSetMembers $underPointerPanel" 
+-c "selectAllSetMembers outlinerPanel1" 
 -rp "N" 
 -i "aselect.png";
 
