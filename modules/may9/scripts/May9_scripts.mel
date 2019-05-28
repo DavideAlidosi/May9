@@ -138,3 +138,21 @@ global proc da_AntiAliasPrefs(){
     }
     savePrefs -g -hk;
 }
+
+// Define da_May9HotkeySetRemover
+global proc da_May9HotkeySetRemover(){
+	hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
+	optionVar -rm da_initialHotkey;
+	hotkeySet -e -delete May9_Next;
+}
+
+// Define da_May9HotkeySet
+global proc da_May9HotkeySet(){
+	if(`hotkeySet -q -current` == "May9_Next"){
+		da_May9HotkeySetRemover;
+	}
+	optionVar -sv da_initialHotkey `hotkeySet -q -current`;
+	hotkeySet -source `optionVar -q "da_initialHotkey"` -current May9_Next;
+	da_May9Hotkeys;
+	hotkeySet -edit -current May9_Next;
+}

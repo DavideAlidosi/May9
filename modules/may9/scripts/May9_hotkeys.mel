@@ -74,6 +74,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "Down" -sht -n ("da_GoToTopNameCommand");
 	hotkey -k "Left" -sht -n ("da_GoToPerspNameCommand");
 	hotkey -k "t" -sht -n ("da_CreateAssigNodeNameCommand");
+	hotkey -k "Return" -sht -n ("da_CopyAttributeEditorTabNameCommand");
 
 	// Other hotkeys
 	hotkey -k "~" -n ("da_ManipToggleNameCommand"); hotkey -k "|" -n ("da_ManipToggleNameCommand"); //Italian layout
@@ -503,10 +504,14 @@ global proc da_May9Hotkeys(){
 		da_LastOpInStackNameCommand;
 
 	nameCommand
-		-annotation "da_SelectLayerObjectNameCommand"
-		-sourceType "mel"
-		-command ("da_SelectLayerObject")
+		-ann "da_SelectLayerObjectNameCommand"
+		-c ("da_SelectLayerObject")
 		da_SelectLayerObjectNameCommand;
+
+	nameCommand
+		-ann "da_CopyAttributeEditorTabNameCommand"
+		-c ("da_CopyAttributeEditorTab")
+		da_CopyAttributeEditorTabNameCommand;
 
 	if (`about -api` >= 20200000){
 	nameCommand
@@ -514,22 +519,4 @@ global proc da_May9Hotkeys(){
 		-c ("Help")
 		HelpNameCommand;
 	}
-}
-
-// Define da_May9HotkeySetRemover
-global proc da_May9HotkeySetRemover(){
-	hotkeySet -edit -current `optionVar -q "da_initialHotkey"`;
-	optionVar -rm da_initialHotkey;
-	hotkeySet -e -delete May9_Next;
-}
-
-// Define da_May9HotkeySet
-global proc da_May9HotkeySet(){
-	if(`hotkeySet -q -current` == "May9_Next"){
-		da_May9HotkeySetRemover;
-	}
-	optionVar -sv da_initialHotkey `hotkeySet -q -current`;
-	hotkeySet -source `optionVar -q "da_initialHotkey"` -current May9_Next;
-	da_May9Hotkeys;
-	hotkeySet -edit -current May9_Next;
 }

@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_CopyAttributeEditorTab`);
+
 catchQuiet (`runTimeCommand -e -del da_ToggleFogging`);
 
 catchQuiet (`runTimeCommand -e -del da_AttachToMotionPath`);
@@ -948,6 +950,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Copy Current Attribute Editor Tab"
+	-cat "Custom Scripts.May9_Next.System"
+	-c ("if(`workspaceControl -q -r AttributeEditor`){\n    commitAENotes($gAECurrentTab);copyAEWindow;\n}")
+	da_CopyAttributeEditorTab;
 
 runTimeCommand
 	-ann "Toggle Fogging"

@@ -4310,8 +4310,9 @@ setParent -m ..;
 } 
 // Define GraphEditor marking menu
 global proc GraphEditor_MM_May9(){
-global string $da_underPointerPanel;
-$da_underPointerPanel = `getPanel -underPointer` + "GraphEd";
+
+global string $da_currentGraphPanel;
+$da_currentGraphPanel = `getPanel -underPointer` + "GraphEd";
 
 string $myAnimCurve[] = `keyframe -q -sl -name`;
 string $myKeyTangent[] = `keyTangent -q -global -ott`;
@@ -4349,37 +4350,37 @@ menuItem
 
 menuItem
 -l "Swap Buffer Curve" 
--c "doBuffer swap $da_underPointerPanel" 
+-c "doBuffer swap $da_currentGraphPanel" 
 -rp "NE" 
 -i "bufferSwap.png"
 -en (`size($myAnimCurve)`);
 
-if (`animCurveEditor -q -sb $da_underPointerPanel` == "on" && `size($myAnimCurve)`){
+if (`animCurveEditor -q -sb $da_currentGraphPanel` == "on" && `size($myAnimCurve)`){
 menuItem
 -l "Update Buffer Curves" 
--c "doBuffer snapshot $da_underPointerPanel" 
+-c "doBuffer snapshot $da_currentGraphPanel" 
 -rp "NW"
 -i "bufferSnap.png";
-} else if (`animCurveEditor -q -sb $da_underPointerPanel` == "off" && `size($myAnimCurve)`) {
+} else if (`animCurveEditor -q -sb $da_currentGraphPanel` == "off" && `size($myAnimCurve)`) {
 menuItem
 -l "Buffer Curves" 
--c "animCurveEditor -e -sb 1 $da_underPointerPanel" 
+-c "animCurveEditor -e -sb 1 $da_currentGraphPanel" 
 -rp "NW" 
--cb (`animCurveEditor -q -sb $da_underPointerPanel` == "on");
+-cb (`animCurveEditor -q -sb $da_currentGraphPanel` == "on");
 } else {
 menuItem
 -l "Buffer Curves" 
--c "animCurveEditor -e -sb 0 $da_underPointerPanel" 
+-c "animCurveEditor -e -sb 0 $da_currentGraphPanel" 
 -rp "NW" 
--cb (`animCurveEditor -q -sb $da_underPointerPanel` == "on")
--en (`animCurveEditor -q -sb $da_underPointerPanel` == "on");
+-cb (`animCurveEditor -q -sb $da_currentGraphPanel` == "on")
+-en (`animCurveEditor -q -sb $da_currentGraphPanel` == "on");
 }
 
 menuItem
 -l "Buffer Curves" 
--c "animCurveEditor -edit -sb tgl $da_underPointerPanel; doBuffer snapshot $da_underPointerPanel" 
+-c "animCurveEditor -edit -sb tgl $da_currentGraphPanel; doBuffer snapshot $da_currentGraphPanel" 
 -rp "NW" 
--cb (`animCurveEditor -q -sb $da_underPointerPanel` == "on");
+-cb (`animCurveEditor -q -sb $da_currentGraphPanel` == "on");
 
 menuItem
 -l "Delete Static Channels" 
@@ -4403,7 +4404,7 @@ menuItem
 menuItem 
 -l "Display Infinity"
 -c "da_ToggleGraphInfinity"
--cb (`animCurveEditor -q -di $da_underPointerPanel`);
+-cb (`animCurveEditor -q -di $da_currentGraphPanel`);
 
 menuItem 
 -l "Disable Infinity"
@@ -4419,25 +4420,25 @@ menuItem
 
 menuItem
 -l "Cycle" 
--c "setInfinity -pri cycle; animCurveEditor -e -di 1 $da_underPointerPanel" 
+-c "setInfinity -pri cycle; animCurveEditor -e -di 1 $da_currentGraphPanel" 
 -i "preInfinityCycle.png";
 
 menuItem
 -l "Cycle with Offset" 
--c "setInfinity -pri cycleRelative; animCurveEditor -e -di 1 $da_underPointerPanel" 
+-c "setInfinity -pri cycleRelative; animCurveEditor -e -di 1 $da_currentGraphPanel" 
 -i "preInfinityCycleOffset.png";
 
 menuItem
 -l "Oscillate" 
--c "setInfinity -pri oscillate; animCurveEditor -e -di 1 $da_underPointerPanel";
+-c "setInfinity -pri oscillate; animCurveEditor -e -di 1 $da_currentGraphPanel";
 
 menuItem
 -l "Linear" 
--c "setInfinity -pri linear; animCurveEditor -e -di 1 $da_underPointerPanel";
+-c "setInfinity -pri linear; animCurveEditor -e -di 1 $da_currentGraphPanel";
 
 menuItem
 -l "Costant" 
--c "setInfinity -pri constant; animCurveEditor -e -di 1 $da_underPointerPanel";
+-c "setInfinity -pri constant; animCurveEditor -e -di 1 $da_currentGraphPanel";
 
 setParent -m ..;
 
@@ -4448,25 +4449,25 @@ menuItem
 
 menuItem
 -l "Cycle" 
--c "setInfinity -poi cycle; animCurveEditor -e -di 1 $da_underPointerPanel" 
+-c "setInfinity -poi cycle; animCurveEditor -e -di 1 $da_currentGraphPanel" 
 -i "postInfinityCycle.png";
 
 menuItem
 -l "Cycle with Offset" 
--c "setInfinity -poi cycleRelative; animCurveEditor -e -di 1 $da_underPointerPanel" 
+-c "setInfinity -poi cycleRelative; animCurveEditor -e -di 1 $da_currentGraphPanel" 
 -i "postInfinityCycleOffset.png";
 
 menuItem
 -l "Oscillate" 
--c "setInfinity -poi oscillate; animCurveEditor -e -di 1 $da_underPointerPanel";
+-c "setInfinity -poi oscillate; animCurveEditor -e -di 1 $da_currentGraphPanel";
 
 menuItem
 -l "Linear" 
--c "setInfinity -poi linear; animCurveEditor -e -di 1 $da_underPointerPanel";
+-c "setInfinity -poi linear; animCurveEditor -e -di 1 $da_currentGraphPanel";
 
 menuItem
 -l "Costant" 
--c "setInfinity -poi constant; animCurveEditor -e -di 1 $da_underPointerPanel";
+-c "setInfinity -poi constant; animCurveEditor -e -di 1 $da_currentGraphPanel";
 
 setParent -m ..;
 
@@ -4514,17 +4515,17 @@ menuItem
 if (`about -api` >= 20190000){
 menuItem
 -l "Butterworth Filter..." 
--c "performButterworth 4 $da_underPointerPanel" 
+-c "performButterworth 4 $da_currentGraphPanel" 
 -i "da_smoothCurve.png";
 
 menuItem
 -l "Key Reducer Filter..." 
--c "performKeyReducer 4 $da_underPointerPanel" 
+-c "performKeyReducer 4 $da_currentGraphPanel" 
 -i "da_simplifyCurve.png";
 }else{
 menuItem
 -l "Simplify Curves..." 
--c "performSimplify 4 $da_underPointerPanel" 
+-c "performSimplify 4 $da_currentGraphPanel" 
 -i "da_simplifyCurve.png";
 }
 
@@ -4551,23 +4552,23 @@ menuItem
 
 menuItem
 -l "Pre-Select Highlight" 
--c "animCurveEditor -e -psh (!`animCurveEditor -q -psh $da_underPointerPanel`) $da_underPointerPanel" 
--cb (`animCurveEditor -q -psh $da_underPointerPanel`);
+-c "animCurveEditor -e -psh (!`animCurveEditor -q -psh $da_currentGraphPanel`) $da_currentGraphPanel" 
+-cb (`animCurveEditor -q -psh $da_currentGraphPanel`);
 
 menuItem
 -d 1;
 
 menuItem
 -l "Auto Frame" 
--c "animCurveEditor -e -af (!`animCurveEditor -q -af $da_underPointerPanel`) $da_underPointerPanel;optionVar -intValue graphEditorAutoFit (!`animCurveEditor -q -af $da_underPointerPanel`)" 
--cb (`animCurveEditor -q -af $da_underPointerPanel`);
+-c "animCurveEditor -e -af (!`animCurveEditor -q -af $da_currentGraphPanel`) $da_currentGraphPanel; optionVar -intValue graphEditorAutoFit (!`animCurveEditor -q -af $da_currentGraphPanel`)" 
+-cb (`animCurveEditor -q -af $da_currentGraphPanel`);
 
 if (`about -api` >= 20180300){
 menuItem
 -l "Auto Frame Time" 
--c "animCurveEditor -e -aft (!`animCurveEditor -q -aft $da_underPointerPanel`) $da_underPointerPanel;optionVar -intValue graphEditorAutoFitTime (!`animCurveEditor -q -aft $da_underPointerPanel`)" 
--cb (`animCurveEditor -q -aft $da_underPointerPanel`)
--en (`animCurveEditor -q -af $da_underPointerPanel`);
+-c "animCurveEditor -e -aft (!`animCurveEditor -q -aft $da_currentGraphPanel`) $da_currentGraphPanel; optionVar -intValue graphEditorAutoFitTime (!`animCurveEditor -q -aft $da_currentGraphPanel`)" 
+-cb (`animCurveEditor -q -aft $da_currentGraphPanel`)
+-en (`animCurveEditor -q -af $da_currentGraphPanel`);
 }
 
 setParent -m ..;
@@ -5182,11 +5183,12 @@ menuItem
 -i "RS_disable.png";
 
 setParent -m ..;
-
+if (`about -api` >= 20190000){
 Sup_JointLabel_MM_May9;
 
 menuItem
 -d 1;
+}
 
 menuItem
 -l "IK on Selected Joints" 
@@ -6187,6 +6189,31 @@ menuItem
 -c "dR_DoCmd(\"viewTop\");" 
 -rp "W" 
 -i "da_y.png";
+
+menuItem
+-l "Select" 
+-sm 1
+-i "aselect.png";
+
+menuItem
+-l "Polygons" 
+-c "string $myTransforms[] = `ls -tr`; select -r `filterExpand -sm 12 $myTransforms`;"
+-i "polyCube.png";
+
+menuItem
+-l "Curves" 
+-c "string $myTransforms[] = `ls -tr`; select -r `filterExpand -sm 9 $myTransforms`;"
+-i "circle.png";
+
+menuItem
+-l "Nurbs" 
+-c "string $myTransforms[] = `ls -tr`; select -r `filterExpand -sm 10 $myTransforms`;"
+-i "cube.png";
+
+setParent -m ..;
+
+menuItem
+-d 1;
 
 menuItem
 -l "Add Image Plane..." 
@@ -8042,8 +8069,8 @@ global string $da_underPointerPanel;
 $da_underPointerPanel = `getPanel -underPointer`;
 
 
-string $mySel[] = `ls -sl -containers`;
-if ( `size($mySel)` == 0 ){
+string $myContainer[] = `ls -sl -containers`;
+if ( `size($myContainer)` == 0 ){
 int $DAGCheck = `outlinerEditor -q -dag $da_underPointerPanel`;
 int $ShapesCheck = `outlinerEditor -q -shp $da_underPointerPanel`;
 int $MaterialCheck = `outlinerEditor -q -sam $da_underPointerPanel`;
@@ -8215,6 +8242,14 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
+
+menuItem
+-d 1;
+
+menuItem
+-l "Duplicate Outliner"
+-c "tearOffCopyItemCmd outlinerPanel $da_underPointerPanel"
+-i "UVTkDuplicateSet.png";
 
 setParent -m ..;
 
@@ -10432,6 +10467,11 @@ menuItem
 -i "da_hardEdge.png";
 
 menuItem
+-l "Soft Edges"
+-c "da_EdgeSoft"
+-i "da_softEdge.png";
+
+menuItem
 -l "Border Edges"
 -c "da_EdgeBorder"
 -i "da_borderEdge.png";
@@ -11391,6 +11431,11 @@ menuItem
 -l "Hard Edges"
 -c "da_EdgeHard"
 -i "da_hardEdge.png";
+
+menuItem
+-l "Soft Edges"
+-c "da_EdgeSoft"
+-i "da_softEdge.png";
 
 menuItem
 -l "Border Edges"
