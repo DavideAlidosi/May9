@@ -1,4 +1,4 @@
-May9 Next.1.5 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next.1.6 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
@@ -18,9 +18,9 @@ Installation
 
 
 Release Note
-May9 Next required Autodesk Maya 2017 Update 3 or greater to work
-Tested and develop on Autodesk Maya 2019 and Autodesk Maya 2018.6
-Autodesk Arnold MtoA 3.2.0 is not a requirement but is highly suggested
+May9 Next required Autodesk Maya 2017 update 3 and newer
+Tested and develop on Autodesk Maya 2019.1 and Autodesk Maya 2018.6
+Autodesk Arnold MtoA 3.2.0 or higher is highly suggested
 
 
 Licenses
