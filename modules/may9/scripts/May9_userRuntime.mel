@@ -1976,7 +1976,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Match UV Between Meshes"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $myRefUV[] = `ls -sl -tail 1`;\nstring $myTargets[] = stringArrayRemove(`ls -sl -tail 1`, `ls -sl -fl`);\nint $numObj = size($myTargets);\nfor($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 0 -uvs 1 -col 0 -spa 0 -sm 3 -clb 1 $myRefUV[0] $myTargets[$i];")
+	-c ("string $myResult = `confirmDialog -title \"Confirm\" -message \"Before contine make sure the source UV mesh get picked last, do you continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\") {\n    string $myRefUV[] = `ls -sl -tail 1`;\n    string $myTargets[] = stringArrayRemove(`ls -sl -tail 1`, `ls -sl -fl`);\n    int $numObj = size($myTargets);\n    for($i=0; $i<$numObj; $i++) transferAttributes -pos 0 -nml 0 -uvs 2 -col 0 -spa 4 -sm 3 -clb 1 $myRefUV[0] $myTargets[$i];\n}")
 	da_MatchUV;
 
 runTimeCommand

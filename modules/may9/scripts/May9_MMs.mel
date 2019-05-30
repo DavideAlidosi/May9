@@ -829,14 +829,11 @@ menuItem -bld 1
 -l "Cached Smooth Meshes" 
 -c "da_ToggleSmoothMeshCache"
 -cb (`python "CachePreferenceCacheSmoothMeshes().get_value()"`)
--en (`python "CachePreferenceEnabled().get_value()"`);
+-en (`python "CachePreferenceEnabled().get_value()"` && $evalMode[0] == "parallel");
 }
 
 }else{
 string $evalMode[] = `evaluationManager -q -m`;
-
-menuItem
--d 1;
 
 menuItem -bld 1 
 -l "Parallel Evaluation" 
