@@ -173,6 +173,8 @@ catchQuiet (`runTimeCommand -e -del da_EvalCacheHUD`);
 
 catchQuiet (`runTimeCommand -e -del da_NoEvalCacheHUD`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleSmoothMeshCache`);
+
 catchQuiet (`runTimeCommand -e -del da_ConnectTransformUI`);
 
 catchQuiet (`runTimeCommand -e -del da_ConnectShapeUI`);
@@ -1464,6 +1466,15 @@ runTimeCommand
 	da_NoEvalCacheHUD;
 }
 
+if (`about -api` >= 20190100){
+runTimeCommand
+	-ann "Toggle SmoothMesh Cache"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-cl "python"
+	-c ("if CachePreferenceCacheSmoothMeshes().get_value():\n    CachePreferenceCacheSmoothMeshes().set_value( not 1 )\nelse:\n    CachePreferenceCacheSmoothMeshes().set_value( not 0 )")
+	da_ToggleSmoothMeshCache;
+}
+
 runTimeCommand
 	-ann "Connect Transform Attributes"
 	-cat "Custom Scripts.May9_Next.Object"
@@ -2571,7 +2582,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Open light List Panel UI"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("if (`about -api` >= 20200000){\n\tcallPython \"maya.app.renderSetup.lightEditor.views.editorUI\" \"createLightEditorWindow\" {};\n}else{\n\tcallPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};\n}")
+	-c ("if (`about -api` >= 20190100){\n\tcallPython \"maya.app.renderSetup.lightEditor.views.editorUI\" \"createLightEditorWindow\" {};\n}else{\n\tcallPython \"maya.app.renderSetup.views.lightEditor.editor\" \"openEditorUI\" {};\n}")
 	da_LightList;
 
 runTimeCommand

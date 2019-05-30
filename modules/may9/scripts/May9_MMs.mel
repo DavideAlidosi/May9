@@ -823,6 +823,15 @@ menuItem -bld 1
 -c "da_ToggleCachePlayback"
 -cb (`python "CachePreferenceEnabled().get_value()"`)
 -en ($evalMode[0] == "parallel");
+
+if (`about -api` >= 20190100){
+menuItem -bld 1 
+-l "Cached Smooth Meshes" 
+-c "da_ToggleSmoothMeshCache"
+-cb (`python "CachePreferenceCacheSmoothMeshes().get_value()"`)
+-en (`python "CachePreferenceEnabled().get_value()"`);
+}
+
 }else{
 string $evalMode[] = `evaluationManager -q -m`;
 
@@ -10682,6 +10691,11 @@ menuItem
 -l "Fill Hole"
 -c "FillHole"
 -i "polyCloseBorder.png";
+
+menuItem
+-l "Bridge"
+-c "performBridgeOrFill"
+-i "polyBridge.png";
 
 menuItem
 -l "Shell Proxy"

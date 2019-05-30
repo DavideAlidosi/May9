@@ -25,6 +25,10 @@ if (`about -api` >= 20190000){
 	python "from maya.plugin.evaluator.cache_preferences import CachePreferenceEnabled";
 }
 
+if (`about -api` >= 20190100){
+	python "from maya.plugin.evaluator.cache_optionvar_states import CachePreferenceCacheSmoothMeshes";
+}
+
 // Source main scripts
 source May9_scripts.mel;
 
