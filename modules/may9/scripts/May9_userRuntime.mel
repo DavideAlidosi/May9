@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_PolyCombine`);
+
+catchQuiet (`runTimeCommand -e -del da_PolySeparate`);
+
 catchQuiet (`runTimeCommand -e -del da_CopyAttributeEditorTab`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleFogging`);
@@ -952,6 +956,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Combine Poly Mesh"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("if(catchQuiet(`polyUniteSkinned -ch 0 -muv 1 -cp`)){\n    polyUnite -ch 0 -muv 1 -cp;\n}")
+	da_PolyCombine;
+
+runTimeCommand
+	-ann "Separate Poly Mesh"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("string $mySel[] = `ls -sl`;\nif(size(`findRelatedSkinCluster $mySel[0]`)){\n    string $mySkinnedMesh[] = `ls -sl`;\n    polySeparate -ch 1;\n    pickWalkUp;\n    pickWalkDown;\n    pickWalkLeft;\n    delete;\n    select $mySkinnedMesh;\n    BakeNonDefHistory;\n}else{\n    polySeparate -ch 0;\n}\n")
+	da_PolySeparate;
 
 runTimeCommand
 	-ann "Copy Current Attribute Editor Tab"
