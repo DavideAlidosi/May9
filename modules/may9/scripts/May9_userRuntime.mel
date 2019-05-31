@@ -3403,7 +3403,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Unlock and Fix Normals"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("polyNormalPerVertex -ufn true;\npolySoftEdge -angle 47")
+	-c ("string $mySel[] = `ls -sl`;\nfor($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    polyNormalPerVertex -ufn 1;\n    polySoftEdge -a 47;\n    select -cl;\n}\n\nselect $mySel;")
 	da_UnlockAndFixNormals;
 
 runTimeCommand
