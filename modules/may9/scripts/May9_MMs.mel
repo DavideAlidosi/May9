@@ -415,31 +415,24 @@ menuItem -bld 1
 setParent -m ..;
 }
 
+if (size($myCurTransform) >= 1){
 menuItem -bld 1 
 -l "Character Set"
 -sm 1
 -i "HIKcreateControlRig.png";
 
 menuItem -bld 1 
--l "Create..."
+-l "Create Character..."
 -c "CreateCharacterOptions"
--i "HIKCharacterToolFullBody.png"
--en (size($myCurTransform) >= 1);
+-i "HIKCharacterToolFullBody.png";
 
 menuItem -bld 1 
 -l "Define SubCharacter..."
 -c "CreateSubCharacterOptions"
--i "HIKCharacterToolBodyPart.png"
--en (size($myCurTransform) >= 1);
-
-menuItem -bld 1 
--l "Edit..."
--c "characterEditor( true )"
--i "HIKcreateControlRig.png";
+-i "HIKCharacterToolBodyPart.png";
 
 setParent -m ..;
 
-if (size($myCurTransform) >= 1){
 menuItem -bld 1 
 -l "Controllers"
 -sm 1
@@ -4760,7 +4753,21 @@ default: Constraints_MM_May9; break;
 } 
 // Define HyperGraph marking menu
 global proc HyperGraph_MM_May9(){
+global string $da_underPointerPanel;
+$da_underPointerPanel = `getPanel -underPointer`;
 
+string $mySel[] = `ls -sl`;
+string $myNodeType[] = `da_QueryArrayNodeType`;
+
+if($myNodeType[0] == "character"){
+select $mySel;
+
+menuItem -bld 1 
+-l "Edit Character..."
+-rp "N" 
+-c "characterEditor( true )"
+-i "HIKcreateControlRig.png";
+}else{
 menuItem
 -l "Select Time Node" 
 -c "select time1" 
@@ -4913,8 +4920,17 @@ menuItem
 
 setParent -m ..;
 
+menuItem
+-d 1;
+
+menuItem
+-l "Duplicate Window"
+-c "tearOffCopyItemCmd scriptedPanel $da_underPointerPanel"
+-i "UVTkDuplicateSet.png";
+
 setParent -m ..;
 
+}
 } 
 // Define Hypergraph Container marking menu
 global proc Hypergraph_Container_MM_May9(){
@@ -6700,8 +6716,22 @@ setParent -m ..;
 } 
 // Define NodeEditor marking menu
 global proc NodeEditor_MM_May9(){
+global string $da_underPointerPanel;
+$da_underPointerPanel = `getPanel -underPointer`;
+
+string $mySel[] = `ls -sl`;
+string $myNodeType[] = `da_QueryArrayNodeType`;
 string $myNodeEditor = `getCurrentNodeEditor`;
 
+if($myNodeType[0] == "character"){
+select $mySel;
+
+menuItem -bld 1 
+-l "Edit Character..."
+-rp "N" 
+-c "characterEditor( true )"
+-i "HIKcreateControlRig.png";
+}else{
 menuItem
 -l "Select Time Node" 
 -c "select time1" 
@@ -6887,8 +6917,17 @@ menuItem
 setParent -m ..;
 }
 
+menuItem
+-d 1;
+
+menuItem
+-l "Duplicate Window"
+-c "tearOffCopyItemCmd scriptedPanel $da_underPointerPanel"
+-i "UVTkDuplicateSet.png";
+
 setParent -m ..;
 
+}
 } 
 // Define nRigid marking menu
 global proc nRigid_MM_May9(){
@@ -8074,8 +8113,10 @@ global proc Outliner_MM_May9(){
 global string $da_underPointerPanel;
 $da_underPointerPanel = `getPanel -underPointer`;
 
-
+string $mySel[] = `ls -sl`;
 string $myContainer[] = `ls -sl -containers`;
+string $myNodeType[] = `da_QueryArrayNodeType`;
+
 if ( `size($myContainer)` == 0 ){
 int $DAGCheck = `outlinerEditor -q -dag $da_underPointerPanel`;
 int $ShapesCheck = `outlinerEditor -q -shp $da_underPointerPanel`;
@@ -8253,14 +8294,22 @@ menuItem
 -d 1;
 
 menuItem
--l "Duplicate Outliner"
+-l "Duplicate Window"
 -c "tearOffCopyItemCmd outlinerPanel $da_underPointerPanel"
 -i "UVTkDuplicateSet.png";
 
 setParent -m ..;
 
 }else{
+if($myNodeType[0] == "character"){
+select $mySel;
 
+menuItem -bld 1 
+-l "Edit Character..."
+-rp "N" 
+-c "characterEditor( true )"
+-i "HIKcreateControlRig.png";
+}else{
 menuItem
 -l "Edit in Hypergraph..." 
 -c "da_EditContainer" 
@@ -8280,6 +8329,7 @@ menuItem
 -i "removeContainer.png";
 
 setParent -m ..;
+}
 }
 } 
 // Define PaintFX marking menu
