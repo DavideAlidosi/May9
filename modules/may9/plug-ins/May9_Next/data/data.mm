@@ -4100,7 +4100,7 @@ I00
 sg22
 I0
 sg23
-S'NodeEditorGraphUpDownstream'
+S'da_NodeEditorNoClick'
 p838
 sg25
 S'NodeEditor_MM_May9'

@@ -4758,9 +4758,9 @@ $da_underPointerPanel = `getPanel -underPointer`;
 
 string $mySel[] = `ls -sl`;
 string $myNodeType[] = `da_QueryArrayNodeType`;
+select $mySel;
 
 if($myNodeType[0] == "character"){
-select $mySel;
 
 menuItem -bld 1 
 -l "Edit Character..."
@@ -6722,9 +6722,9 @@ $da_underPointerPanel = `getPanel -underPointer`;
 string $mySel[] = `ls -sl`;
 string $myNodeType[] = `da_QueryArrayNodeType`;
 string $myNodeEditor = `getCurrentNodeEditor`;
+select $mySel;
 
 if($myNodeType[0] == "character"){
-select $mySel;
 
 menuItem -bld 1 
 -l "Edit Character..."
@@ -8116,6 +8116,7 @@ $da_underPointerPanel = `getPanel -underPointer`;
 string $mySel[] = `ls -sl`;
 string $myContainer[] = `ls -sl -containers`;
 string $myNodeType[] = `da_QueryArrayNodeType`;
+select $mySel;
 
 if ( `size($myContainer)` == 0 ){
 int $DAGCheck = `outlinerEditor -q -dag $da_underPointerPanel`;
@@ -8302,7 +8303,6 @@ setParent -m ..;
 
 }else{
 if($myNodeType[0] == "character"){
-select $mySel;
 
 menuItem -bld 1 
 -l "Edit Character..."
