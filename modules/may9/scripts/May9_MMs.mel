@@ -10111,6 +10111,14 @@ menuItem
 -c "da_SingleShellMapping"
 -i "UVEditorShell.png";
 
+menuItem
+-d 1;
+
+menuItem
+-l "Auto Unfold..." 
+-c "da_AutoUnfold" 
+-i "UV_Unfold_Brush.png";
+
 setParent -m ..;
 
 menuItem
@@ -11063,6 +11071,11 @@ menuItem
 -l "Auto Seams..."
 -c "performPolyAutoSeamUV 1"
 -i "polyAutoSeams.png";
+
+menuItem
+-l "Auto Unfold..." 
+-c "da_AutoUnfold" 
+-i "UV_Unfold_Brush.png";
 
 setParent -m ..;
 
@@ -14069,7 +14082,7 @@ string $mySelShape[] = `listRelatives -f -s`;
 int $myUVSmoothMode = `getAttr ($mySelShape[0] + ".osdFvarBoundary")`;
 
 menuItem
--l "Auto Unfold" 
+-l "Auto Unfold..." 
 -c "da_AutoUnfold" 
 -rp "N" 
 -i "UV_Unfold_Brush.png";

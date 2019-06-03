@@ -1428,7 +1428,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Auto UV Unfolding"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("string $mySel[] = `ls -sl`; \nda_SingleShellMapping;\nselect $mySel;\nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n    u3dAutoSeam -s 0 -p 1;\n    performUnfold 0;\n    LayoutUV;\n}")
+	-c ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command automatic generate UV map and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n    string $mySel[] = `ls -sl`; \n    \n    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1;\n    for ($i=0; $i<size($mySel); $i++){\n        select $mySel[$i];\n        performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -sl\", \"0\"} \"\";\n    \tSelectUVBorderComponents;\n    \tSewUVs;\n    \tda_BackToObjectMode;\n        u3dAutoSeam -s 0 -p 1;\n        performUnfold 0;\n        LayoutUV;\n    }\n}")
 	da_AutoUnfold;
 
 runTimeCommand
