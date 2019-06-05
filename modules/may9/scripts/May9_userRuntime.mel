@@ -1428,7 +1428,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Auto UV Unfolding"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command automatic generate UV map and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n    string $mySel[] = `ls -sl`; \n    \n    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1;\n    for ($i=0; $i<size($mySel); $i++){\n        select $mySel[$i];\n        performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -sl\", \"0\"} \"\";\n    \tSelectUVBorderComponents;\n    \tSewUVs;\n    \tda_BackToObjectMode;\n        u3dAutoSeam -s 0 -p 1;\n        performUnfold 0;\n        LayoutUV;\n    }\n}")
+	-c ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command automatic generate UV map and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n    string $mySel[] = `ls -sl`; \n    \n    makeIdentity -apply true -t 1 -r 1 -s 1 -n 0 -pn 1;\n    for ($i=0; $i<size($mySel); $i++){\n        select $mySel[$i];\n        polyProjection -ch 1 -type Spherical -ibd on -sf on;\n    \tda_BackToObjectMode;\n        u3dAutoSeam -s 0 -p 1;\n        u3dOptimize -ite 1 -pow 1 -sa 1 -bi 0 -tf 1 -ms 1024 -rs 0;\n        u3dUnfold -ite 1 -p 0 -bi 1 -tf 1 -ms 1024 -rs 0;\n        u3dLayout -res 256 -scl 1 -box 0 1 0 1;\n    }\n\n\tselect $mySel;\n}")
 	da_AutoUnfold;
 
 runTimeCommand
@@ -1446,7 +1446,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Single Shell Mapping"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("string $mySel[] = `ls -sl`;\nfor ($i=0; $i<size($mySel); $i++) {\n    select $mySel[$i];\n\tperformPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -sl\", \"0\"} \"\";\n\tSelectUVBorderComponents;\n\tSewUVs;\n\tda_BackToObjectMode;\n}")
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i<size($mySel); $i++) {\n    select $mySel[$i];\n\tperformPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -sl\", \"0\"} \"\";\n\tSelectUVBorderComponents;\n\tSewUVs;\n\tda_BackToObjectMode;\n\tu3dLayout -res 256 -scl 1 -box 0 1 0 1;\n}\n")
 	da_SingleShellMapping;
 
 runTimeCommand
