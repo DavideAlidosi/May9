@@ -974,7 +974,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Separate Poly Mesh"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $mySel[] = `ls -sl`;\nif(size(`findRelatedSkinCluster $mySel[0]`)){\n    string $mySkinnedMesh[] = `ls -sl`;\n    polySeparate -ch 1;\n    pickWalkUp;\n    pickWalkDown;\n    pickWalkLeft;\n    delete;\n    select $mySkinnedMesh;\n    BakeNonDefHistory;\n}else{\n    polySeparate -ch 0;\n}\n")
+	-c ("string $mySel[] = `ls -sl`;\nif(size(`findRelatedSkinCluster $mySel[0]`)){\n    string $mySkinnedMesh[] = `ls -sl`;\n    BakeNonDefHistory;\n    polySeparate -ch 1;\n    pickWalkUp;\n    pickWalkDown;\n    pickWalkLeft;\n    delete;\n}else{\n    polySeparate -ch 0;\n}")
 	da_PolySeparate;
 
 runTimeCommand
