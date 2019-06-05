@@ -788,6 +788,13 @@ menuItem -bld 1
 -c "ContentBrowserWindow"
 -i "folder-open.png";
 
+if (`pluginInfo -q -l bifrostGraph` == 1){
+menuItem -bld 1 
+-l "Bifrost Browser..."
+-c "bifrostBrowser"
+-i "out_bifrostBoard.png";
+}
+
 menuItem -bld 1 
 -l "Create Reference..."
 -c "CreateReference"
