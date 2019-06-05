@@ -613,10 +613,10 @@ menuItem -bld 1
 -rp "SE"
 -i "particle.png";
 
-if (`pluginInfo -q -l bifrostBoard`){
+if (`pluginInfo -q -l bifrostGraph`){
 menuItem -bld 1 
--l "Bifrost Board"
--c "CreateNewBifrostBoard"
+-l "Bifrost Graph"
+-c "CreateNewBifrostGraph"
 -i "out_bifrostBoard.png";
 }
 
@@ -1216,8 +1216,8 @@ setParent -m ..;
 global proc Board_MM_May9(){
 
 menuItem
--l "Compound Editor..." 
--c "openBifrostCompoundEditor" 
+-l "Bifrost Graph Editor..." 
+-c "openBifrostGraphEditorFromSelection" 
 -rp "N" 
 -i "out_bifrostCompound.png";
 
@@ -4843,10 +4843,10 @@ menuItem
 menuItem
 -d 1;
 
-if (`pluginInfo -q -l bifrostBoard` == 1){
+if (`pluginInfo -q -l bifrostGraph` == 1){
 menuItem 
--l "Bifrost Board"
--c "createNode bifrostBoard"
+-l "Bifrost Graph"
+-c "createNode bifrostBoard; rename bifrostGraph1; showDGLevel ($da_underPointerPanel + \"HyperGraphEd\")"
 -i "out_bifrostBoard.png";
 }
 
@@ -6807,10 +6807,10 @@ menuItem
 menuItem
 -d 1;
 
-if (`pluginInfo -q -l bifrostBoard` == 1){
+if (`pluginInfo -q -l bifrostGraph` == 1){
 menuItem 
--l "Bifrost Board"
--c "createNode bifrostBoard"
+-l "Bifrost Graph"
+-c "createNode bifrostBoard; rename bifrostGraph1"
 -i "out_bifrostBoard.png";
 }
 

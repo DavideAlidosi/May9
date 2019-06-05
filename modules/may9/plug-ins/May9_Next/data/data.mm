@@ -3484,7 +3484,7 @@ I00
 sg22
 I0
 sg23
-VopenBifrostCompoundEditor
+VopenBifrostGraphEditorFromSelection
 p704
 sg25
 VBoard_MM_May9
