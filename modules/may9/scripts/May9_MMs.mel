@@ -133,12 +133,20 @@ setParent -m ..;
 } 
 // Define AirField marking menu
 global proc AirField_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Add Compass to Direction" 
 -c "da_AirWindController" 
 -rp "N" 
 -i "out_implicitSphere.png";
+
+menuItem
+-l "Assign Field to Selected" 
+-c "AffectSelectedObject" 
+-rp "W" 
+-i "connectField.png" 
+-en (size($myCurTransform) >= 2);
 
 setParent -m ..;
 
@@ -3874,6 +3882,17 @@ menuItem
 setParent -m ..;
 
 } 
+// Define Field marking menu
+global proc Field_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
+
+menuItem
+-l "Assign Field to Selected" 
+-c "AffectSelectedObject" 
+-rp "W" 
+-i "connectField.png" 
+-en (size($myCurTransform) >= 2);
+}
 // Define FileTexture marking menu
 global proc FileTexture_MM_May9(){
 
@@ -3918,6 +3937,19 @@ setParent -m ..;
 } 
 // Define Fluid marking menu
 global proc Fluid_MM_May9(){
+string $mySel[] = `ls -sl`;
+string $myCurve[] = `filterExpand -sm 9`;
+string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
+
+select $mySel;
+
+if (stringArrayContains("volumeAxisField", $myQueryArrayNodeType) || stringArrayContains("airField", $myQueryArrayNodeType) || stringArrayContains("dragField", $myQueryArrayNodeType) || stringArrayContains("gravityField", $myQueryArrayNodeType) || stringArrayContains("newtonField", $myQueryArrayNodeType) || stringArrayContains("radialField", $myQueryArrayNodeType) || stringArrayContains("turbulenceField", $myQueryArrayNodeType) || stringArrayContains("uniformField", $myQueryArrayNodeType) || stringArrayContains("vortexField", $myQueryArrayNodeType)){
+menuItem
+-l "Assign Field to Selected" 
+-c "AffectSelectedObject" 
+-rp "W" 
+-i "connectField.png";
+}
 
 menuItem
 -l "Paint Fluids" 
@@ -3970,14 +4002,8 @@ menuItem
 menuItem
 -l "Convert to Polygons" 
 -c "da_FluidToMesh" 
--rp "W" 
--i "fluidtoPoly.png";
-
-menuItem
--l "Assign Field to Selected" 
--c "AffectSelectedObject" 
 -rp "SW" 
--i "connectField.png";
+-i "fluidtoPoly.png";
 
 menuItem
 -l "AutoResize" 
@@ -4750,11 +4776,15 @@ string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
 select $mySel;
 
+if (stringArrayContains("dragField", $myQueryArrayNodeType) || stringArrayContains("gravityField", $myQueryArrayNodeType) || stringArrayContains("newtonField", $myQueryArrayNodeType) || stringArrayContains("radialField", $myQueryArrayNodeType) || stringArrayContains("turbulenceField", $myQueryArrayNodeType) || stringArrayContains("uniformField", $myQueryArrayNodeType) || stringArrayContains("vortexField", $myQueryArrayNodeType)){
+Field_MM_May9;
+}else{
 switch ($myQueryArrayNodeType[0]){
 case "joint": Joint_MM_May9; break;
 case "locator": Locator_MM_May9; break;
 case "nurbsCurve": Curves_MM_May9; break;
 default: Constraints_MM_May9; break;
+}
 }
 
 } 
@@ -4769,7 +4799,7 @@ select $mySel;
 
 if($myNodeType[0] == "character"){
 
-menuItem -bld 1 
+menuItem
 -l "Edit Character..."
 -rp "N" 
 -c "characterEditor( true )"
@@ -6733,7 +6763,7 @@ select $mySel;
 
 if($myNodeType[0] == "character"){
 
-menuItem -bld 1 
+menuItem
 -l "Edit Character..."
 -rp "N" 
 -c "characterEditor( true )"
@@ -8311,7 +8341,7 @@ setParent -m ..;
 }else{
 if($myNodeType[0] == "character"){
 
-menuItem -bld 1 
+menuItem
 -l "Edit Character..."
 -rp "N" 
 -c "characterEditor( true )"
@@ -13878,6 +13908,7 @@ setParent -m ..;
 // Define Window_UV_Edge marking menu
 global proc volumeAxisField_MM_May9(){
 string $myCurve[] = `filterExpand -sm 9`;
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Connect and Set to Curve"
@@ -13885,6 +13916,13 @@ menuItem
 -i "out_nurbsCurve.png"
 -rp "N"
 -en (size($myCurve) == 1);
+
+menuItem
+-l "Assign Field to Selected" 
+-c "AffectSelectedObject" 
+-rp "W" 
+-i "connectField.png" 
+-en (size($myCurTransform) >= 2);
 
 menuItem
 -l "Set to Curve"
