@@ -54,21 +54,17 @@ if(`optionVar -q da_AntiAliasEnable`){
 
 // Define Arnold Options startup
 da_AiOptions;
-scriptJob -e "NewSceneOpened" da_AiOptions;
 scriptJob -e "SceneOpened" da_AiOptions;
 
 // Clear and enable Undo queue
 da_UndoClear;
-scriptJob -e "NewSceneOpened" da_UndoClear;
 scriptJob -e "SceneOpened" da_UndoClear;
 
 // Refresh May9 Next main menu
-scriptJob -e "NewSceneOpened" da_May9MenuRefresh;
 scriptJob -e "SceneOpened" da_May9MenuRefresh;
 
 // Define layout state startup
 string $myLayoutReset = "int $myLayout = 0";
-scriptJob -e "NewSceneOpened" $myLayoutReset;
 scriptJob -e "SceneOpened" $myLayoutReset;
 
 print "May9 console: Complete standard procedures \n";
