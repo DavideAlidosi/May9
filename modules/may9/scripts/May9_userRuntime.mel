@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_nParticleNoLiveOutsideEmitter`);
+
+catchQuiet (`runTimeCommand -e -del da_nParticleLiveOutsideEmitter`);
+
 catchQuiet (`runTimeCommand -e -del da_NodeEditorNoClick`);
 
 catchQuiet (`runTimeCommand -e -del da_PolyCombine`);
@@ -958,6 +962,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "nParticle Die Outside Emitter"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".dieOnEmissionVolumeExit\") 1;\n}\ninViewMessage -pos topCenter -msg \"nParticle die outside the emitter volume\" -fade;")
+	da_nParticleNoLiveOutsideEmitter;
+
+runTimeCommand
+	-ann "nParticle Live Outside Emitter"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel)\n{\nsetAttr ($each +\".dieOnEmissionVolumeExit\") 0;\n}\ninViewMessage -pos topCenter -msg \"nParticle live outside the emitter volume\" -fade;")
+	da_nParticleLiveOutsideEmitter;
 
 runTimeCommand
 	-ann "Define Node Editor no Click Command"

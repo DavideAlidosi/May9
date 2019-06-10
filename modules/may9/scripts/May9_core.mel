@@ -14,13 +14,15 @@ channelBoxCommand -break;
 // Inizialize Main Create Menu
 ModCreateMenu mainCreateMenu;
 
-// Inizialize Main Skeletons Menu
-source ChaSkeletonsMenu;
+// Inizialize Main Skeletons Menu in Maya 2019
+if (`about -api` >= 20190000){
+	source ChaSkeletonsMenu;
+}
 
 // Inizialize Crease Set Editor
 python "from maya.app.general import creaseSetEditor";
 
-// Inizialize Cache Playback Preferences
+// Inizialize Cache Playback Preferences in Maya 2019
 if (`about -api` >= 20190000){
 	python "from maya.plugin.evaluator.cache_preferences import CachePreferenceEnabled";
 }
@@ -54,6 +56,15 @@ if(`optionVar -q da_AntiAliasEnable`){
 da_AiOptions;
 scriptJob -e "NewSceneOpened" da_AiOptions;
 scriptJob -e "SceneOpened" da_AiOptions;
+
+// Clear and enable Undo queue
+da_UndoClear;
+scriptJob -e "NewSceneOpened" da_UndoClear;
+scriptJob -e "SceneOpened" da_UndoClear;
+
+// Refresh May9 Next main menu
+scriptJob -e "NewSceneOpened" da_May9MenuRefresh;
+scriptJob -e "SceneOpened" da_May9MenuRefresh;
 
 // Define layout state startup
 string $myLayoutReset = "int $myLayout = 0";

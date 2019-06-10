@@ -148,6 +148,12 @@ menuItem
 -i "connectField.png" 
 -en (size($myCurTransform) >= 2);
 
+menuItem
+-l "Dynamic Relationship..."
+-c "DynamicRelationshipEditor"
+-i "passSetRelationEditor.png"
+-rp "S";
+
 setParent -m ..;
 
 } 
@@ -1484,10 +1490,14 @@ string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
 select $mySel;
 
+if (stringArrayContains("dragField", $myQueryArrayNodeType) || stringArrayContains("gravityField", $myQueryArrayNodeType) || stringArrayContains("newtonField", $myQueryArrayNodeType) || stringArrayContains("radialField", $myQueryArrayNodeType) || stringArrayContains("turbulenceField", $myQueryArrayNodeType) || stringArrayContains("uniformField", $myQueryArrayNodeType) || stringArrayContains("vortexField", $myQueryArrayNodeType)){
+Field_MM_May9;
+}else{
 switch ($myQueryArrayNodeType[0]){
 case "joint": Joint_MM_May9; break;
 case "nurbsCurve": Curves_MM_May9; break;
 default: Constraints_MM_May9; break;
+}
 }
 
 } 
@@ -3892,6 +3902,12 @@ menuItem
 -rp "W" 
 -i "connectField.png" 
 -en (size($myCurTransform) >= 2);
+
+menuItem
+-l "Dynamic Relationship..."
+-c "DynamicRelationshipEditor"
+-i "passSetRelationEditor.png"
+-rp "S";	
 }
 // Define FileTexture marking menu
 global proc FileTexture_MM_May9(){
@@ -4883,8 +4899,20 @@ menuItem
 if (`pluginInfo -q -l bifrostGraph` == 1){
 menuItem 
 -l "Bifrost Graph"
+-sm 1
+-i "out_bifrostBoard.png";
+
+menuItem 
+-l "Create Graph"
 -c "createNode bifrostBoard; rename bifrostGraph1; showDGLevel ($da_underPointerPanel + \"HyperGraphEd\")"
 -i "out_bifrostBoard.png";
+
+menuItem 
+-l "Create bifShape"
+-c "createNode bifShape; showDGLevel ($da_underPointerPanel + \"HyperGraphEd\")"
+-i "out_mesh.png";
+
+setParent -m ..;
 }
 
 menuItem
@@ -5150,9 +5178,14 @@ string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
 
 select $mySel;
 
+if (stringArrayContains("dragField", $myQueryArrayNodeType) || stringArrayContains("gravityField", $myQueryArrayNodeType) || stringArrayContains("newtonField", $myQueryArrayNodeType) || stringArrayContains("radialField", $myQueryArrayNodeType) || stringArrayContains("turbulenceField", $myQueryArrayNodeType) || stringArrayContains("uniformField", $myQueryArrayNodeType) || stringArrayContains("vortexField", $myQueryArrayNodeType)){
+Field_MM_May9;
+}else{
+
 switch ($myQueryArrayNodeType[0]){
 case "mesh": Poly_MM_May9; break;
 default: PolyJoint_MM_May9; break;
+}
 }
 
 } 
@@ -5566,9 +5599,33 @@ menuItem
 }
 
 menuItem
+-l "Collision Event..." 
+-c "ParticleCollisionEvents" 
+-i "collisionEvents.png";
+
+menuItem
 -l "Instancer..." 
 -c "ParticleInstancerOptions" 
 -i "instancer.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Die on Volume Exit" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_nParticleNoLiveOutsideEmitter" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_nParticleLiveOutsideEmitter" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
 
 menuItem
 -d 1;
@@ -6542,6 +6599,12 @@ menuItem
 -c "MakeCollideOptions" 
 -ob 1;
 
+menuItem
+-l "Collision Event..." 
+-c "ParticleCollisionEvents"
+-rp "S"  
+-i "collisionEvents.png";
+
 setParent -m ..;
 
 } 
@@ -6847,8 +6910,20 @@ menuItem
 if (`pluginInfo -q -l bifrostGraph` == 1){
 menuItem 
 -l "Bifrost Graph"
+-sm 1
+-i "out_bifrostBoard.png";
+
+menuItem 
+-l "Create Graph"
 -c "createNode bifrostBoard; rename bifrostGraph1"
 -i "out_bifrostBoard.png";
+
+menuItem 
+-l "Create bifShape"
+-c "createNode bifShape"
+-i "out_mesh.png";
+
+setParent -m ..;
 }
 
 menuItem
@@ -8745,6 +8820,11 @@ menuItem
 }
 
 menuItem
+-l "Collision Event..." 
+-c "ParticleCollisionEvents" 
+-i "collisionEvents.png";
+
+menuItem
 -l "Instancer..." 
 -c "ParticleInstancerOptions" 
 -i "instancer.png";
@@ -8780,6 +8860,22 @@ menuItem
 menuItem
 -l "Off" 
 -c "da_nParticleNoSelfCollide" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Die on Volume Exit" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_nParticleNoLiveOutsideEmitter" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_nParticleLiveOutsideEmitter" 
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;

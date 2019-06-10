@@ -8,6 +8,18 @@ global proc da_AiOptions(){
 	}
 }
 
+// Define da_UndoClear
+global proc da_UndoClear(){
+    undoInfo -st 0;
+    undoInfo -st 1;
+}
+
+// Define da_UndoClear
+global proc da_May9MenuRefresh(){
+    da_May9MenuRemover;
+    da_May9Menu;
+}
+
 // Define da_MouseOver_MM_May9
 string $myWrapSimbol = "\n";
 
