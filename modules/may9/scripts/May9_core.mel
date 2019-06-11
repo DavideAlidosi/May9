@@ -99,10 +99,16 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 	// Set Connection Editor prefs
 	optionVar -iv "connectWindowLeftSHD" 1 -iv "connectWindowRightSHD" 1;
 
-	// Store initial melDuplicateVariableWarnings
+	// Store initial Use Scene Panel Config
+	optionVar -iv da_useScenePanelConfig `optionVar -q useScenePanelConfig`;
+
+	// Disable Use Scene Panel Config
+	$gUseScenePanelConfig = 0;
+
+	// Store initial Duplicate Variable Warnings
 	optionVar -iv da_DuplicateVariableWarnings `optionVar -q melDuplicateVariableWarnings`;
 
-	// Disable melDuplicateVariableWarnings
+	// Disable Duplicate Variable Warnings
 	melOptions -duplicateVariableWarnings off;
 
 	// Declare initial layout state
