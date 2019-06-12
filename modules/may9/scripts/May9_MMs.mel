@@ -909,7 +909,12 @@ menuItem -bld 1
 -i "out_buttonManip.png";
 
 menuItem -bld 1 
--l "Align Tool"
+-l "Bake Pivot..."
+-c "BakeCustomPivotOptions"
+-i "menuIconModify.png";
+
+menuItem -bld 1 
+-l "Align Tool..."
 -c "setToolTo alignToolCtx"
 -i "alignTool.png"
 -en (size($myCurTransform) >= 2);
