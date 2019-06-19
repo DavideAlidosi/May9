@@ -4144,6 +4144,27 @@ setParent -m ..;
 setParent -m ..;
 
 } 
+// Define FluidEmitter marking menu
+global proc FluidEmitter_MM_May9(){
+menuItem
+-l "Emitter Omni"
+-rp "NW" 
+-i "out_pointEmitter.png"
+-c "da_EmitterOmni";
+
+menuItem
+-l "Emitter Volume" 
+-rp "NE"
+-i "volumeCube.png"
+-c "da_EmitterVolume";
+
+menuItem
+-l "Volume As Direc" 
+-rp "NE"
+-c "da_EmitterVolume";
+
+setParent -m ..;
+}
 // Define Follicle marking menu
 global proc Follicle_MM_May9(){
 
@@ -4804,6 +4825,7 @@ switch ($myQueryArrayNodeType[0]){
 case "joint": Joint_MM_May9; break;
 case "locator": Locator_MM_May9; break;
 case "nurbsCurve": Curves_MM_May9; break;
+case "fluidEmitter": FluidEmitter_MM_May9; break;
 default: Constraints_MM_May9; break;
 }
 }
@@ -14006,7 +14028,7 @@ menuItem
 setParent -m ..;
 
 } 
-// Define Window_UV_Edge marking menu
+// Define volumeAxisField marking menu
 global proc volumeAxisField_MM_May9(){
 string $myCurve[] = `filterExpand -sm 9`;
 string $myCurTransform[] = `ls -sl -typ "transform"`;
