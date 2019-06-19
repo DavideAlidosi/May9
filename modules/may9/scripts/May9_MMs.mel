@@ -307,6 +307,11 @@ menuItem -bld 1
 -i "render_setup.png";
 
 menuItem -bld 1 
+-l "Transfer Maps..."
+-c "performSurfaceSampling 1"
+-i "Textured.png";
+
+menuItem -bld 1 
 -l "Camera Bookmark..."
 -c "da_CameraBookmark"
 -i "Bookmark.png";
@@ -4027,7 +4032,7 @@ menuItem
 -i "fluidtoPoly.png";
 
 menuItem
--l "AutoResize" 
+-l "Auto Resize" 
 -sm 1;
 
 menuItem
@@ -4038,6 +4043,22 @@ menuItem
 menuItem
 -l "Off" 
 -c "da_FluidAutoResizeOff" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Self Shadow" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_FluidSelfShadowingOn" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_FluidSelfShadowingOff" 
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;

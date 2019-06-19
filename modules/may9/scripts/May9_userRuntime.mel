@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_FluidSelfShadowingOn`);
+
+catchQuiet (`runTimeCommand -e -del da_FluidSelfShadowingOff`);
+
 catchQuiet (`runTimeCommand -e -del da_nParticleNoLiveOutsideEmitter`);
 
 catchQuiet (`runTimeCommand -e -del da_nParticleLiveOutsideEmitter`);
@@ -962,6 +966,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Enable Fluid Self Shadowing\n"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".selfShadowing\") 1;\n}\ninViewMessage -pos topCenter -msg \"Fluid Self Shadow Enable\" -fade;")
+	da_FluidSelfShadowingOn;
+
+runTimeCommand
+	-ann "Disable Fluid Self Shadowing"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $mySel[] = `ls -sl`; \nfor ($each in $mySel){\nsetAttr ($each +\".selfShadowing\") 0;\n}\ninViewMessage -pos topCenter -msg \"Fluid Self Shadow Disable\" -fade;")
+	da_FluidSelfShadowingOff;
 
 runTimeCommand
 	-ann "nParticle Die Outside Emitter"
