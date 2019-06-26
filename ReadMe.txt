@@ -1,4 +1,4 @@
-May9 Next.2.0 - A new user experience for Autodesk Maya 2017, 2018 and 2019
+May9 Next.2.1 - A new user experience for Autodesk Maya 2017, 2018 and 2019
 
 
 General info
