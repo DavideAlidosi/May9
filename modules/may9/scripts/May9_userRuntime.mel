@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_SmoothProxy`);
+
 catchQuiet (`runTimeCommand -e -del da_FluidSelfShadowingOn`);
 
 catchQuiet (`runTimeCommand -e -del da_FluidSelfShadowingOff`);
@@ -966,6 +968,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Enable Advanced Smooth Proxy"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -f -s`;\nint $myPolyCounts[] =  `polyEvaluate -f`;\n\nstring $mySmooth[] = `duplicate`;\nstring $mySmoothShape[] = `listRelatives -f -s`;\n\nstring $myProxyNode = `createNode polySmoothProxy`;\n\nif ($myPolyCounts[0] <= 24) {\n\tsetAttr ($myProxyNode + \".exponentialLevel\") 6;\n} else if ($myPolyCounts[0] <= 96) {\n\tsetAttr ($myProxyNode + \".exponentialLevel\") 5;\n} else if ($myPolyCounts[0] <= 384) {\n\tsetAttr ($myProxyNode + \".exponentialLevel\") 4;\n} else if ($myPolyCounts[0] <= 1536) {\n\tsetAttr ($myProxyNode + \".exponentialLevel\") 3;\n} else if ($myPolyCounts[0] <= 6144) {\n\tsetAttr ($myProxyNode + \".exponentialLevel\") 2;\n} else if ($myPolyCounts[0] <= 24576) {\n\tsetAttr ($myProxyNode + \".exponentialLevel\") 1;\n} else {\n\tsetAttr ($myProxyNode + \".smoothLevel\") 0;\n}\n\nsetAttr ($myProxyNode + \".subdivisionType\") 2;\n\nconnectAttr -f ($myShape[0] + \".outMesh\") ($myProxyNode + \".inputPolymesh\");\nconnectAttr -f ($myProxyNode + \".output\") ($mySmoothShape[0] + \".inMesh\");\n\nrename $mySmooth[0] ($mySel[0] + \"SmoothProxy\");\n\nselect $mySel[0];\nda_PolyNoShade;")
+	da_SmoothProxy;
 
 runTimeCommand
 	-ann "Enable Fluid Self Shadowing\n"
@@ -3587,12 +3595,6 @@ runTimeCommand
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $myTweak[] = `ls -sl -typ \"tweak\"`;\nstring $myMesh[] = `ls -sl -typ \"mesh\"`;\n\nint $numObj = size($myMesh); \nfor($i=0; $i<$numObj; $i++){\n    connectAttr -f ($myTweak[0] + \".outputGeometry[0]\") ($myMesh[$i] + \".inMesh\");\n}")
 	da_TweakToMesh;
-
-runTimeCommand
-	-ann "Subdivide by Using Subdivs Preview"
-	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("SmoothPolygon;\ndR_modeObject;\ndR_modeObject;\nShowManipulators")
-	da_Subdivision;
 
 runTimeCommand
 	-ann "Create Rivet by MASH by Using Faces"
