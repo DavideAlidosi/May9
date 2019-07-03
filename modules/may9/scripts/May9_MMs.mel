@@ -3130,6 +3130,16 @@ menuItem
 -rp "E"
 -i "polyExtrudeFacet.png";
 
+if (`about -api` >= 20200000){
+menuItem
+-l "Rivet Constraint" 
+-c "Rivet" 
+-i "pointOnPolyConstraint.png";
+
+menuItem
+-d 1;
+}
+
 menuItem
 -l "Edge Edit"
 -sm 1
@@ -3543,6 +3553,16 @@ menuItem
 -c "PolyExtrude"
 -rp "E"
 -i "polyExtrudeFacet.png";
+
+if (`about -api` >= 20200000){
+menuItem
+-l "Rivet Constraint" 
+-c "Rivet" 
+-i "pointOnPolyConstraint.png";
+
+menuItem
+-d 1;
+}
 
 menuItem
 -l "Face Edit"
@@ -12029,6 +12049,14 @@ menuItem
 -c "SurfaceEditingToolOptions" 
 -ob 1;
 
+if (`about -api` >= 20200000){
+menuItem
+-l "Rivet Constraint" 
+-c "Rivet" 
+-rp "E" 
+-i "pointOnPolyConstraint.png";
+}
+
 setParent -m ..;
 
 }
@@ -13770,6 +13798,16 @@ menuItem
 -c "PolyExtrude"
 -rp "E"
 -i "polyExtrudeFacet.png";
+
+if (`about -api` >= 20200000){
+menuItem
+-l "Rivet Constraint" 
+-c "Rivet" 
+-i "pointOnPolyConstraint.png";
+
+menuItem
+-d 1;
+}
 
 menuItem
 -l "Vertex Edit"
