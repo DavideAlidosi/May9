@@ -3941,6 +3941,7 @@ menuItem
 }
 // Define FileTexture marking menu
 global proc FileTexture_MM_May9(){
+string $myNode[] = `ls -sl`;
 
 menuItem
 -l "Alpha is Luminance On" 
@@ -3976,6 +3977,7 @@ menuItem
 -l "Connect Place2d Node" 
 -c "da_ConnectPlace2dToFile" 
 -i "out_place2dTexture.png" 
+-en (size($myNode) >= 2) 
 -rp "N";
 
 setParent -m ..;
@@ -9180,11 +9182,13 @@ setParent -m ..;
 } 
 // Define PolyBevel marking menu
 global proc PlacementNode_MM_May9(){
+string $myNode[] = `ls -sl`;
 
 menuItem
 -l "Connect Place2d Node" 
 -c "da_ConnectPlace2dToFile" 
 -i "out_place2dTexture.png" 
+-en (size($myNode) >= 2) 
 -rp "N";
 
 setParent -m ..;
