@@ -8666,7 +8666,8 @@ menuItem
 -l "Select Particles" 
 -rp "W"
 -i "out_nParticle.png"
--c "select `listConnections -s 0 -d 1 -t \"nParticle\"`";
+-c "select `listConnections -s 0 -d 1 -t \"nParticle\"`"
+-en (size(`listConnections -s 0 -d 1 -t "nParticle"`) > 0);
 
 menuItem
 -l "Emitter Manipulators"
@@ -8825,6 +8826,8 @@ setParent -m ..;
 global proc Particle_MM_May9(){
 
 int $particleCountCheck = `optionVar -q particleCountVisibility`;
+string $myEmitterShape[] = `listRelatives -s`;
+string $myEmitter[] = `listConnections -s 1 -d 0 -t "pointEmitter" $myEmitterShape[0]`;
 
 menuItem
 -l "Set Initial State" 
@@ -8839,10 +8842,17 @@ menuItem
 -i "nParticleToPolygons.png" ;
 
 menuItem
+-l "Convert to Metaballs" 
+-c "da_MetaBalls" 
+-rp "E" 
+-i "da_metaBalls.png";
+
+menuItem
 -l "Select Emitter" 
 -rp "W"
 -i "out_pointEmitter.png"
--c "select `listRelatives -s`; select `listConnections -s 1 -d 0 -t \"pointEmitter\"`";
+-c "select `listRelatives -s`; select `listConnections -s 1 -d 0 -t \"pointEmitter\"`"
+-en (size($myEmitter) > 0);
 
 if (`about -api` >= 20190000){
 menuItem
@@ -8857,12 +8867,6 @@ menuItem
 -rp "S" 
 -i "MASH_AddTrailsToParticles.png";
 }
-
-menuItem
--l "Convert to Metaballs" 
--c "da_MetaBalls" 
--rp "NW" 
--i "da_metaBalls.png";
 
 menuItem
 -l "Create Springs" 
