@@ -8663,9 +8663,10 @@ menuItem
 -c "da_EmitterVolume";
 
 menuItem
--l "Volume As Direc" 
--rp "NE"
--c "da_EmitterVolume";
+-l "Select Particles" 
+-rp "W"
+-i "out_nParticle.png"
+-c "select `listConnections -s 0 -d 1 -t \"nParticle\"`";
 
 menuItem
 -l "Emitter Manipulators"
@@ -8834,37 +8835,33 @@ menuItem
 menuItem
 -l "Convert to Polygons" 
 -c "da_ParticleToMesh" 
--rp "W" 
+-rp "NE" 
 -i "nParticleToPolygons.png" ;
 
 menuItem
--l "Use as Fluid Emitter..." 
--c "EmitFluidFromObjectOptions" 
--rp "NW" 
--i "fluidObjectEmit.png";
+-l "Select Emitter" 
+-rp "W"
+-i "out_pointEmitter.png"
+-c "select `listRelatives -s`; select `listConnections -s 1 -d 0 -t \"pointEmitter\"`";
 
-menuItem
--l "Lattice..." 
--c "CreateLatticeOptions" 
--rp "NE" 
--i "lattice.png";
-
+if (`about -api` >= 20190000){
 menuItem
 -l "Add Trails" 
 -c "AddTrailsToParticles" 
 -rp "S" 
 -i "MASH_AddTrailsToParticles.png";
-
+}else{
 menuItem
--l "Rigged Cluster" 
--c "da_RiggedCluster" 
--rp "E" 
--i "cluster.png";
+-l "Add Trails" 
+-c "MASHaddTrailsToParticles" 
+-rp "S" 
+-i "MASH_AddTrailsToParticles.png";
+}
 
 menuItem
 -l "Convert to Metaballs" 
 -c "da_MetaBalls" 
--rp "SW" 
+-rp "NW" 
 -i "da_metaBalls.png";
 
 menuItem
@@ -8876,6 +8873,11 @@ menuItem
 menuItem
 -c "CreateSpringOptions" 
 -ob 1;
+
+menuItem
+-l "Use as Fluid Emitter..." 
+-c "EmitFluidFromObjectOptions" 
+-i "fluidObjectEmit.png";
 
 if (`about -api` >= 20190000){
 menuItem
@@ -8987,6 +8989,19 @@ menuItem
 -l "Wave"
 -c "Wave"
 -i "waveNLD.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Rigged Cluster" 
+-c "da_RiggedCluster" 
+-i "cluster.png";
+
+menuItem
+-l "Lattice..." 
+-c "CreateLatticeOptions" 
+-i "lattice.png";
 
 setParent -m ..;
 
