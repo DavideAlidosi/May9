@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ParticleTrails`);
+
 catchQuiet (`runTimeCommand -e -del da_SmoothProxy`);
 
 catchQuiet (`runTimeCommand -e -del da_FluidSelfShadowingOn`);
@@ -968,6 +970,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Add MASH Trails to Particle"
+	-cat "Custom Scripts.May9_Next.MASH"
+	-c ("string $myParticles[] = `ls -sl`;\nstring $myMashTrails = `createNode MASH_Trails`;\n\nconnectAttr -f ($myParticles[0] + \".position\") ($myMashTrails + \".positionInPP\");\nconnectAttr -f (\"time1.outTime\") ($myMashTrails + \".time\");\n\nstring $myMeshTrails = `createNode mesh`;\nhyperShade -assign initialShadingGroup;\n\nconnectAttr -f ($myMashTrails + \".outputMesh\") ($myMeshTrails + \".inMesh\");\n\npickWalk -d up;\nrename particleTrails1;\n\nselect $myMashTrails;AttributeEditor")
+	da_ParticleTrails;
 
 runTimeCommand
 	-ann "Enable Advanced Smooth Proxy"

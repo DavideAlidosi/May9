@@ -8663,7 +8663,7 @@ menuItem
 -c "da_EmitterVolume";
 
 menuItem
--l "Select Particles" 
+-l "Select nParticles" 
 -rp "W"
 -i "out_nParticle.png"
 -c "select `listConnections -s 0 -d 1 -t \"nParticle\"`"
@@ -8854,19 +8854,11 @@ menuItem
 -c "select `listRelatives -s`; select `listConnections -s 1 -d 0 -t \"pointEmitter\"`"
 -en (size($myEmitter) > 0);
 
-if (`about -api` >= 20190000){
 menuItem
 -l "Add Trails" 
--c "AddTrailsToParticles" 
+-c "da_ParticleTrails" 
 -rp "S" 
 -i "MASH_AddTrailsToParticles.png";
-}else{
-menuItem
--l "Add Trails" 
--c "MASHaddTrailsToParticles" 
--rp "S" 
--i "MASH_AddTrailsToParticles.png";
-}
 
 menuItem
 -l "Create Springs" 
