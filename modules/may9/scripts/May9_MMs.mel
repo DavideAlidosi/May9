@@ -306,6 +306,13 @@ menuItem -bld 1
 -c "RenderSetupWindow"
 -i "render_setup.png";
 
+if (`pluginInfo -q -l substancemaya` == 1){
+menuItem -bld 1 
+-l "Substance Settings..." 
+-c "SubstancePluginSettingsWindow" 
+-i "Substance_Settings.png";
+}
+
 menuItem -bld 1 
 -l "Transfer Maps..."
 -c "performSurfaceSampling 1"
@@ -5175,6 +5182,26 @@ menuItem
 -l "Expression Editor..." 
 -c "ExpressionEditor" 
 -i "out_expression.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Create 2D Texture Node" 
+-c "createRenderNodeCB -as2DTexture \"\" file \"\"" 
+-i "file.svg";
+
+menuItem
+-l "Create Ramp Node" 
+-c "createRenderNodeCB -as2DTexture \"\" ramp \"\"" 
+-i "out_ramp.png";
+
+if (`pluginInfo -q -l substancemaya` == 1){
+menuItem
+-l "Create Substance Node" 
+-c "createRenderNodeCB -as2DTexture \"\" substanceNode \"\"" 
+-i "Substance_Source.png";
+}
 
 menuItem
 -d 1;
