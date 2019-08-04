@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_DeltaWrap`);
+
 catchQuiet (`runTimeCommand -e -del da_ParticleTrails`);
 
 catchQuiet (`runTimeCommand -e -del da_SmoothProxy`);
@@ -970,6 +972,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Apply Wrap Deformer and Delta Mush"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myResult = `confirmDialog -title \"Continue?\" -message \"Before contine please check to have selected: first the driven mesh, then the driver one\" \n-button \"Continue\" -button \"Close\"  -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Continue\"){\n    string $polySel[] = `filterExpand -sm 12`;\n    doWrapArgList \"2\" { \"1\",\"0\",\"0\" };\n    select $polySel[0];\t\n    DeltaMush;\n    select $polySel[1];\n}")
+	da_DeltaWrap;
 
 runTimeCommand
 	-ann "Add MASH Trails to Particle"

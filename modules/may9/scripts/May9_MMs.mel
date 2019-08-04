@@ -10229,9 +10229,10 @@ menuItem
 -en (size($myCurTransform) == 2);
 
 menuItem
--l "Wrap..."
--c "CreateWrapOptions;"
--i "wrap.png";
+-l "Delta Wrap..."
+-c "da_DeltaWrap"
+-i "wrap.png"
+-en (size($myCurTransform) == 2);
 
 menuItem
 -l "ShrinkWrap..."
@@ -13745,6 +13746,12 @@ menuItem
 -i "polyAutoSeams.png";
 
 menuItem
+-l "Legacy Unfold" 
+-c "polyOptUvs -i 5000 -ss 0.001 -gb 0 -gmb 0.5 -pub 0 -ps  0 -oa  0 -us off -ch 1" 
+-i "polyUnfoldUVs.png";
+
+if (`pluginInfo -q -l Unfold3D` == 1){
+menuItem
 -l "Unfold" 
 -c "performUnfold 0" 
 -i "textureEditorUnfoldUVs.png";
@@ -13761,6 +13768,7 @@ menuItem
 menuItem
 -c "performPolyOptimizeUV 1" 
 -ob 1;
+}
 
 menuItem
 -d 1;
@@ -14222,6 +14230,12 @@ menuItem
 -i "polyAutoSeams.png";
 
 menuItem
+-l "Legacy Unfold" 
+-c "polyOptUvs -i 5000 -ss 0.001 -gb 0 -gmb 0.5 -pub 0 -ps  0 -oa  0 -us off -ch 1" 
+-i "polyUnfoldUVs.png";
+
+if (`pluginInfo -q -l Unfold3D` == 1){
+menuItem
 -l "Unfold" 
 -c "performUnfold 0" 
 -i "textureEditorUnfoldUVs.png";
@@ -14238,6 +14252,7 @@ menuItem
 menuItem
 -c "performPolyOptimizeUV 1" 
 -ob 1;
+}
 
 menuItem
 -l "Layout" 
@@ -14411,6 +14426,12 @@ menuItem
 -i "polyAutoSeams.png";
 
 menuItem
+-l "Legacy Unfold" 
+-c "polyOptUvs -i 5000 -ss 0.001 -gb 0 -gmb 0.5 -pub 0 -ps  0 -oa  0 -us off -ch 1" 
+-i "polyUnfoldUVs.png";
+
+if (`pluginInfo -q -l Unfold3D` == 1){
+menuItem
 -l "Unfold" 
 -c "performUnfold 0" 
 -i "textureEditorUnfoldUVs.png";
@@ -14427,6 +14448,7 @@ menuItem
 menuItem
 -c "performPolyOptimizeUV 1" 
 -ob 1;
+}
 
 menuItem
 -l "Layout" 
@@ -14540,6 +14562,12 @@ menuItem
 -i "polyAutoSeams.png";
 
 menuItem
+-l "Legacy Unfold" 
+-c "polyOptUvs -i 5000 -ss 0.001 -gb 0 -gmb 0.5 -pub 0 -ps  0 -oa  0 -us off -ch 1" 
+-i "polyUnfoldUVs.png";
+
+if (`pluginInfo -q -l Unfold3D` == 1){
+menuItem
 -l "Unfold" 
 -c "performUnfold 0" 
 -i "textureEditorUnfoldUVs.png";
@@ -14556,6 +14584,7 @@ menuItem
 menuItem
 -c "performPolyOptimizeUV 1" 
 -ob 1;
+}
 
 menuItem
 -l "Straighten" 
