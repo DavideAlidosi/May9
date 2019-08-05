@@ -20,6 +20,7 @@ Installation
 Release Note
 May9 Next required Autodesk Maya 2017 update 3 and newer
 Tested and develop on Autodesk Maya 2019.2
+Autodesk Arnold MtoA 3.2.0 or higher is highly suggested
 
 
 Licenses

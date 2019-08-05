@@ -976,7 +976,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Apply Wrap Deformer and Delta Mush"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myResult = `confirmDialog -title \"Continue?\" -message \"Before contine please check to have selected: first the driven mesh, then the driver one\" \n-button \"Continue\" -button \"Close\"  -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Continue\"){\n    string $polySel[] = `filterExpand -sm 12`;\n    doWrapArgList \"2\" { \"1\",\"0\",\"0\" };\n    select $polySel[0];\t\n    DeltaMush;\n    select $polySel[1];\n}")
+	-c ("string $myResult = `confirmDialog -title \"Continue?\" -message \"Before continue please check to have selected: first the driven mesh, then the driver one\" \n-button \"Continue\" -button \"Close\"  -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Continue\"){\n    string $polySel[] = `filterExpand -sm 12`;\n    doWrapArgList \"2\" { \"1\",\"0\",\"0\" };\n    select $polySel[0];\t\n    DeltaMush;\n    select $polySel[1];\n}")
 	da_DeltaWrap;
 
 runTimeCommand
@@ -1636,7 +1636,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create IK for selected curve"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myResult = `confirmDialog -title \"Continue?\" -message \"Befoere contine please check to have selected in this order:\\n- First Joint of the chain\\n- Last Joint of the chain\\n- The curve for the IK solver\" \n-button \"Continue\" -button \"Close\"  -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Continue\"){\n    string $mySel[] = `ls -sl`;\n\n    ikHandle -sj $mySel[0] -ee $mySel[1] -c $mySel[2] -sol ikSplineSolver -ccv 0;\n}")
+	-c ("string $myResult = `confirmDialog -title \"Continue?\" -message \"Before continue please check to have selected in this order:\\n- First Joint of the chain\\n- Last Joint of the chain\\n- The curve for the IK solver\" \n-button \"Continue\" -button \"Close\"  -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Continue\"){\n    string $mySel[] = `ls -sl`;\n\n    ikHandle -sj $mySel[0] -ee $mySel[1] -c $mySel[2] -sol ikSplineSolver -ccv 0;\n}")
 	da_IkOnCurve;
 
 runTimeCommand
