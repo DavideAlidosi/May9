@@ -67,6 +67,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "l" -alt -n ("da_OpenColorEditorNameCommand");
 	hotkey -k "Return" -alt -n ("da_PerspToggleNameCommand");
 	hotkey -k "x" -alt -n ("da_EnableWalkToolNameCommand");
+	hotkey -k "k" -alt -n ("da_BifrostGraphEditorNameCommand");
 
 	// Shift hotkeys
 	hotkey -k "Up" -sht -n ("da_GoToSideNameCommand");
@@ -507,6 +508,11 @@ global proc da_May9Hotkeys(){
 		-ann "da_SelectLayerObjectNameCommand"
 		-c ("da_SelectLayerObject")
 		da_SelectLayerObjectNameCommand;
+
+	nameCommand
+		-ann "da_BifrostGraphEditorNameCommand"
+		-c ("da_BifrostGraphEditor")
+		da_BifrostGraphEditorNameCommand;
 
 	nameCommand
 		-ann "da_CopyAttributeEditorTabNameCommand"

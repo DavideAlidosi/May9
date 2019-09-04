@@ -1039,6 +1039,30 @@ menuItem -bld 1
 setParent -m ..;
 
 } 
+// Define Bif marking menu
+global proc Bif_MM_May9(){
+
+menuItem
+-l "BIF placeholder" 
+-c "da_AirWindController" 
+-rp "N" 
+-i "out_implicitSphere.png";
+
+setParent -m ..;
+
+}
+// Define BifBifrost marking menu
+global proc BifBifrost_MM_May9(){
+
+menuItem
+-l "BIF Bifrost placeholder" 
+-c "da_AirWindController" 
+-rp "N" 
+-i "out_implicitSphere.png";
+
+setParent -m ..;
+
+}
 // Define BifrostBifrost marking menu
 global proc BifrostBifrost_MM_May9(){
 

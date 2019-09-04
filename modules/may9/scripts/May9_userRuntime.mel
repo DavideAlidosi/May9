@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_BifrostGraphEditor`);
+
 catchQuiet (`runTimeCommand -e -del da_DeltaWrap`);
 
 catchQuiet (`runTimeCommand -e -del da_ParticleTrails`);
@@ -972,6 +974,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Bifrost Graph Editor"
+	-cat "Custom Scripts.May9_Next.System"
+	-c ("if (`pluginInfo -q -l bifrostGraph` == 1){\n    openBifrostGraphEditorFromSelection;\n}")
+	da_BifrostGraphEditor;
 
 runTimeCommand
 	-ann "Apply Wrap Deformer and Delta Mush"
