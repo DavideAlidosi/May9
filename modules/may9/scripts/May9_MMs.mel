@@ -641,7 +641,7 @@ menuItem -bld 1
 
 if (`pluginInfo -q -l bifrostGraph`){
 menuItem -bld 1 
--l "Bifrost Graph"
+-l "Bifrost Graph..."
 -c "CreateNewBifrostGraph"
 -i "out_bifrostBoard.png";
 }
@@ -1043,10 +1043,10 @@ setParent -m ..;
 global proc Bif_MM_May9(){
 
 menuItem
--l "BIF placeholder" 
--c "da_AirWindController" 
+-l "Bifrost Graph Editor..." 
+-c "da_BifBoardEdit" 
 -rp "N" 
--i "out_implicitSphere.png";
+-i "out_bifrostCompound.png";
 
 setParent -m ..;
 
@@ -1055,10 +1055,10 @@ setParent -m ..;
 global proc BifBifrost_MM_May9(){
 
 menuItem
--l "BIF Bifrost placeholder" 
--c "da_AirWindController" 
+-l "Bifrost Graph Editor..." 
+-c "da_BifBoardEdit" 
 -rp "N" 
--i "out_implicitSphere.png";
+-i "out_bifrostCompound.png";
 
 setParent -m ..;
 
@@ -1276,12 +1276,21 @@ setParent -m ..;
 } 
 // Define Board marking menu
 global proc Board_MM_May9(){
+string $myBoard[] = `ls -sl`;
 
 menuItem
 -l "Bifrost Graph Editor..." 
 -c "openBifrostGraphEditorFromSelection" 
 -rp "N" 
 -i "out_bifrostCompound.png";
+
+if (attributeExists ("mesh", $myBoard[0]) && size($myBoard) == 1){
+menuItem
+-l "Generate Maya Geo" 
+-c "da_BifrostGeoToMaya" 
+-rp "S" 
+-i "out_mesh.png";
+}
 
 setParent -m ..;
 

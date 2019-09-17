@@ -1340,7 +1340,7 @@ p286
 I0
 sS'command'
 p287
-Vda_BifrostGraphEditor
+Vda_BifBoardEdit
 p288
 sS'menu'
 p289

@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_BifrostGeoToMaya`);
+
+catchQuiet (`runTimeCommand -e -del da_BifBoardEdit`);
+
 catchQuiet (`runTimeCommand -e -del da_BifrostGraphEditor`);
 
 catchQuiet (`runTimeCommand -e -del da_DeltaWrap`);
@@ -976,8 +980,20 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Convert Bifrost Geo to Maya Ones"
+	-cat "Custom Scripts.May9_Next.BifrostGraph"
+	-c ("string $mySel[] = `ls -sl`;\nstring $myBifMayaMesh = `createNode bifrostGeoToMaya`;\nstring $myMesh = `createNode mesh`;\n\nconnectAttr -f ($mySel[0] + \".mesh\") ($myBifMayaMesh + \".bifrostGeo\");\nconnectAttr -f ($myBifMayaMesh + \".mayaMesh[0]\") ($myMesh + \".inMesh\");\nhyperShade -assign initialShadingGroup;")
+	da_BifrostGeoToMaya;
+
+runTimeCommand
+	-ann "Edit Bif Node Board"
+	-cat "Custom Scripts.May9_Next.BifrostGraph"
+	-c ("pickWalk -d down;\nstring $myBoard[] = `listConnections -s 1 -d 0 -t \"bifrostBoard\"`;\n\nselect $myBoard[0];\nopenBifrostGraphEditorFromSelection;")
+	da_BifBoardEdit;
+
+runTimeCommand
 	-ann "Bifrost Graph Editor"
-	-cat "Custom Scripts.May9_Next.System"
+	-cat "Custom Scripts.May9_Next.BifrostGraph"
 	-c ("if (`pluginInfo -q -l bifrostGraph` == 1){\n    openBifrostGraphEditorFromSelection;\n}")
 	da_BifrostGraphEditor;
 
