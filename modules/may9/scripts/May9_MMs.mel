@@ -4765,6 +4765,12 @@ menuItem
 -i "paintFXtoCurve.png";
 
 menuItem
+-l "Add aiStandardHair" 
+-c "da_AiStandardHairToPfxHair" 
+-rp "NE" 
+-i "hairConvertHairSystem.png";
+
+menuItem
 -l "Simulation Method" 
 -sm 1;
 
@@ -4855,10 +4861,20 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Add aiStandardHair" 
--c "da_AiStandardHairToPfxHair" 
--rp "NE" 
--i "hairConvertHairSystem.png";
+-l "Mesh" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_HairMeshOn" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_HairMeshOff" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
 
 setParent -m ..;
 

@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_HairMeshOn`);
+
+catchQuiet (`runTimeCommand -e -del da_HairMeshOff`);
+
 catchQuiet (`runTimeCommand -e -del da_BifrostGeoToMaya`);
 
 catchQuiet (`runTimeCommand -e -del da_BifBoardEdit`);
@@ -978,6 +982,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Enable Hair Mesh"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $objectShape[] = `listRelatives -f -s`;\n\nsetAttr ($objectShape[0] + \".drawAsMesh\") 1;")
+	da_HairMeshOn;
+
+runTimeCommand
+	-ann "Disable Hair Mesh"
+	-cat "Custom Scripts.May9_Next.Dynamics"
+	-c ("string $objectShape[] = `listRelatives -f -s`;\n\nsetAttr ($objectShape[0] + \".drawAsMesh\") 0;")
+	da_HairMeshOff;
 
 runTimeCommand
 	-ann "Convert Bifrost Geo to Maya Ones"
