@@ -3647,6 +3647,12 @@ runTimeCommand
 	da_TweakToMesh;
 
 runTimeCommand
+	-ann "Subdivide by Using Subdivs Preview"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("SmoothPolygon;\ndR_modeObject;\ndR_modeObject;\nShowManipulators")
+	da_Subdivision;
+
+runTimeCommand
 	-ann "Create Rivet by MASH by Using Faces"
 	-cat "Custom Scripts.May9_Next.MASH"
 	-c ("string $faceSel[] = `filterExpand -sm 34`;\nstring $polySel[] = `filterExpand -sm 12`;\n\nif (size($polySel) == 1){\n    select $faceSel;\n    dR_modeObject;\n    string $myMesh[] = `listRelatives -f -s`;\n    \n    select $faceSel;\n    $myRivetSet = `sets -name \"rivetSet1\"`;\n    select $polySel;\n\tda_ZeroTransfomations;\n    $myMash = `MASHnewNetwork(\"MASH#\")`;\n    string $myMashDistribute[] = `listConnections -s 1 -d 0 -t \"MASH_Distribute\"`;\n    \n    connectAttr -f ($myRivetSet + \".message\") ($myMashDistribute[0] + \".selectionSetMessage\");\n    connectAttr -f ($myMesh[0] + \".worldMesh\") ($myMashDistribute[0] + \".inputMesh\");\n    \n    setAttr ($myMashDistribute[0] + \".arrangement\") 4;\n    setAttr ($myMashDistribute[0] + \".meshType\") 7;\n    setAttr ($myMashDistribute[0] + \".floodMesh\") 1;\n    setAttr ($myMashDistribute[0] + \".useUpVector\") 1;\n    \n    select $myMashDistribute[0];\n    openAEWindow;\n}else{\n    inViewMessage -pos topCenter -msg \"Only one mesh is allowed\" -fade;\n}")

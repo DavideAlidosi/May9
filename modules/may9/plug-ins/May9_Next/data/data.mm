@@ -3436,7 +3436,7 @@ I00
 sg22
 I0
 sg23
-Vparent -r -s
+VdR_DoCmd("modeVert")
 p701
 sg25
 VTransformShape_MM_May9
