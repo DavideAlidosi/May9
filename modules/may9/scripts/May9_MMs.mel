@@ -9442,7 +9442,7 @@ menuItem
 
 menuItem
 -l "Emitter" 
--c "RemoveBifrostEmitter" 
+-c "AddBifrostEmitter" 
 -rp "E";
 
 menuItem
@@ -9461,6 +9461,11 @@ menuItem
 -rp "SE";
 
 menuItem
+-l "Emission Region" 
+-c "AddBifrostEmissionRegion" 
+-rp "S";
+
+menuItem
 -l "Kill Field" 
 -c "AddBifrostKillField" 
 -rp "NW";
@@ -9475,23 +9480,28 @@ menuItem
 
 menuItem
 -l "Emitter" 
--c "evalEcho( \"RemoveBifrostEmitter\" );" 
+-c "RemoveBifrostEmitter" 
 -rp "W";
 
 menuItem
 -l "Collider" 
--c "evalEcho( \"RemoveBifrostCollider\" );" 
+-c "RemoveBifrostCollider" 
 -rp "NW";
 
 menuItem
 -l "Accelerator" 
--c "evalEcho( \"RemoveBifrostAccelerator\" );" 
+-c "RemoveBifrostAccelerator" 
 -rp "N";
 
 menuItem
 -l "Guide" 
 -c "RemoveBifrostGuide" 
 -rp "SW";
+
+menuItem
+-l "Emission Region" 
+-c "RemoveBifrostEmissionRegion" 
+-rp "S";
 
 setParent -m ..;
 

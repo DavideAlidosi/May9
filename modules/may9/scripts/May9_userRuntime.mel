@@ -2813,8 +2813,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Open Bifrost Ocean Simulation"
 	-cat "Custom Scripts.May9_Next.Dynamics"
-	-cl "python"
-	-c ("import boss.BossEditor as be\nbe.BossEditor()")
+	-c ("if (`pluginInfo -q -l Boss`){\n    OpenBossEditor;\n} else {\n    loadPlugin Boss;\n    evalDeferred \"OpenBossEditor\";\n}")
 	da_OpenBossEditor;
 
 runTimeCommand
