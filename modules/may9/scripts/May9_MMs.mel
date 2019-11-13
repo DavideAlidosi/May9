@@ -9475,6 +9475,10 @@ menuItem
 -c "AddBifrostKillField" 
 -rp "NW";
 
+menuItem
+-l "Motion Field" 
+-c "AddBifrostMotionField";
+
 setParent -m ..;
 
 menuItem
@@ -9514,35 +9518,6 @@ menuItem
 -rp "SE";
 
 setParent -m ..;
-
-menuItem
--l "Stop Processing" 
--c "bifrost -edit -stopProcessing;" 
--rp "N" 
--i "rvIPRStop.png";
-
-menuItem
--l "Bifrost Options..." 
--c "performBifrostOptionsChange" 
--i "out_bifrostAttrNotifier.png" 
--rp "S";
-
-menuItem
--l "Create Cache" 
--i "nClothCacheCreate.png" 
--c "performCreateBifrostCache 0 0";
-
-menuItem
--c "performCreateBifrostCache 1 0" 
--ob 1;
-
-menuItem
--l "Delete Cache" 
--i "nClothCacheDelete.png" 
--c "bifrost -edit -flushScratchCache";
-
-menuItem
--d 1;
 
 menuItem
 -l "HUD Info" 

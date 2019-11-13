@@ -18,8 +18,8 @@ Installation
 
 
 Release Note
-Tested and develop on Autodesk Maya 2019.2
-Autodesk Arnold MtoA 3.2.0 or higher is highly suggested
+Tested and develop on Autodesk Maya 2019.2 and MtoA 3.2.2
+Autodesk Arnold MtoA 3.2.2 or higher is highly suggested
 
 
 Licenses
