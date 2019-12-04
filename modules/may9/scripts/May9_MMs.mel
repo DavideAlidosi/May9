@@ -387,15 +387,21 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
+-l "Scale Constraint..."
+-c "ScaleConstraintzOptions"
+-rp "NW"
+-i "scaleConstraint.png"
+-en (size($myCurTransform) >= 2);
+
+menuItem -bld 1 
 -l "IK Handle"
 -c "IKHandleTool"
--rp "NW"
+-rp "W"
 -i "kinHandle.png";
 
 menuItem -bld 1 
 -l "IK Spline Handle..."
 -c "IKSplineHandleToolOptions"
--rp "W"
 -i "kinSplineHandle.png";
 
 menuItem -bld 1 
@@ -1910,6 +1916,23 @@ menuItem
 -l "Create Curve Collector"
 -c "da_aiCurveCollector"
 -i "CurveCollectorShelf.png";
+
+setParent -m ..;
+
+menuItem
+-l "Surface" 
+-sm 1
+-i "da_flatPoly.png";
+
+menuItem
+-l "Flat Surface"
+-c "da_FlattenSurface"
+-i "da_flatPoly.png";
+
+menuItem
+-l "Bevel Plus Mesh"
+-c "da_BevelPlusForText"
+-i "polyBevel.png";
 
 setParent -m ..;
 
@@ -5245,6 +5268,13 @@ menuItem
 -c "createRenderNodeCB -as2DTexture \"\" ramp \"\"" 
 -i "out_ramp.png";
 
+if (`pluginInfo -q -l mtoa` == 1){
+menuItem
+-l "Create User Data Color" 
+-c "createNode aiUserDataColor" 
+-i "MtoA_Logo.png";
+}
+
 if (`pluginInfo -q -l substancemaya` == 1){
 menuItem
 -l "Create Substance Node" 
@@ -6204,15 +6234,21 @@ global proc MASH_MM_May9(){
 
 menuItem
 -l "MASH Editor..." 
--c "MASHOutliner;" 
+-c "MASHOutliner" 
 -rp "N" 
 -i "MASH_Editor.png";
 
 menuItem
 -l "Cache MASH" 
--c "MASHcacheRedirection;" 
+-c "MASHcacheRedirection" 
 -rp "S" 
 -i "MASH_CacheNetwork.png";
+
+menuItem
+-l "Switch MASH Geometry Type" 
+-c "SwitchMashGeometryType" 
+-rp "E" 
+-i "MASH_SwitchGeometryType.png";
 
 setParent -m ..;
 
@@ -10003,6 +10039,11 @@ menuItem
 -i "paintSetMembership.png";
 
 menuItem
+-l "Paint Vertex Color..."
+-c "PaintVertexColorToolOptions"
+-i "paintVertexColour.png";
+
+menuItem
 -l "Paint Effects..."
 -c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
 -rp "SW"
@@ -10146,6 +10187,11 @@ menuItem
 -l "Normals Size..."
 -c "ChangeNormalSize"
 -i "resizeWindow.png";
+
+menuItem
+-l "Color Set Editor..."
+-c "OpenColorSetEditor"
+-i "polyColorSetEditor.png";
 
 setParent -m ..;
 
@@ -10507,6 +10553,23 @@ menuItem
 -c "da_AiMeshesLight"
 -i "MeshLightShelf.png";
 
+menuItem
+-l "Export Vertex Colors"
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On"
+-c "da_AiExportVertexColors"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_AiNoExportVertexColors"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
 if ($myArnoldIntVersion < 320){
 menuItem
 -l "Opaque Mesh"
@@ -10568,6 +10631,14 @@ menuItem
 -l "Set Initial State"
 -c "setNClothStartState;"
 -i "fluidInitialStateSet.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "MASH Bullet Dynamics" 
+-c "AddShellDynamics" 
+-i "MASH_ShellDynamics.png";
 
 menuItem
 -d 1;
@@ -10941,6 +11012,11 @@ menuItem
 -i "paintSetMembership.png";
 
 menuItem
+-l "Paint Vertex Color..."
+-c "PaintVertexColorToolOptions"
+-i "paintVertexColour.png";
+
+menuItem
 -l "Paint Attributes..."
 -c "ArtPaintAttrToolOptions"
 -rp "SE"
@@ -11126,6 +11202,11 @@ menuItem
 -l "Normals Size..."
 -c "ChangeNormalSize"
 -i "resizeWindow.png";
+
+menuItem
+-l "Color Set Editor..."
+-c "OpenColorSetEditor"
+-i "polyColorSetEditor.png";
 
 setParent -m ..;
 
@@ -11477,6 +11558,23 @@ menuItem
 -c "da_AiMeshesLight"
 -i "MeshLightShelf.png";
 
+menuItem
+-l "Export Vertex Colors"
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On"
+-c "da_AiExportVertexColors"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_AiNoExportVertexColors"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
 if ($myArnoldIntVersion < 320){
 menuItem
 -l "Opaque Mesh"
@@ -11538,6 +11636,14 @@ menuItem
 -l "Set Initial State"
 -c "setNClothStartState;"
 -i "fluidInitialStateSet.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "MASH Bullet Dynamics" 
+-c "AddShellDynamics" 
+-i "MASH_ShellDynamics.png";
 
 menuItem
 -d 1;

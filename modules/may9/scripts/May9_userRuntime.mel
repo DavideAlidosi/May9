@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_AiExportVertexColors`);
+
+catchQuiet (`runTimeCommand -e -del da_AiNoExportVertexColors`);
+
 catchQuiet (`runTimeCommand -e -del da_HairMeshOn`);
 
 catchQuiet (`runTimeCommand -e -del da_HairMeshOff`);
@@ -982,6 +986,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Enable Export Vertex Colors"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $mySelShape[] = `listRelatives -f -s`;\n\nfor ($each in $mySelShape){\n    setAttr ($each +\".aiExportColors\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"Export Vertex Colors Enable\" -fade;\n")
+	da_AiExportVertexColors;
+
+runTimeCommand
+	-ann "Disable Export Vertex Colors"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $mySelShape[] = `listRelatives -f -s`;\n\nfor ($each in $mySelShape){\n    setAttr ($each +\".aiExportColors\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Export Vertex Colors Disable\" -fade;\n")
+	da_AiNoExportVertexColors;
 
 runTimeCommand
 	-ann "Enable Hair Mesh"
