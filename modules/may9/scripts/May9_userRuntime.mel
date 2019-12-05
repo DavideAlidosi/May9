@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_AirRivet`);
+
 catchQuiet (`runTimeCommand -e -del da_AiExportVertexColors`);
 
 catchQuiet (`runTimeCommand -e -del da_AiNoExportVertexColors`);
@@ -986,6 +988,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Create Air Rivet for Selected Component(s)"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl -fl`;\n\nif(size($mySel) != 1){\n\n    string $myResult = `confirmDialog -title \"Air Rivet\" -message \"Did you want a Rivet for component or at the average position of components?\" \n    -button \"One Rivet for Component\" -button \"One Rivet at the Average Position of Components\"  -button \"Close\" -defaultButton \"Close\" \n    -cancelButton \"Close\" -dismissString \"Close\"`;\n    \n    if ($myResult == \"One Rivet for Component\") {\n        for ($i=0; $i < size($mySel); $i++){\n            select $mySel[$i];\n            ConvertSelectionToVertices;\n            string $myAirRivet[] = `air`;\n            select $myAirRivet[0];\n            select -add $myAirRivet[1];\n            normalConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n            \n            setAttr ($myAirRivet[1] + \".magnitude\") 0;\n            rename $myAirRivet[1] AirRivet1;\n        }\n    }\n        \n    else if ($myResult == \"One Rivet at the Average Position of Components\") {\n        ConvertSelectionToVertices;\n        string $myAirRivet[] = `air`;\n        select $myAirRivet[0];\n        select -add $myAirRivet[1];\n        normalConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n        \n        setAttr ($myAirRivet[1] + \".magnitude\") 0;\n        rename $myAirRivet[1] AirRivet1;\n    }\n}else{\n    ConvertSelectionToVertices;\n    string $myAirRivet[] = `air`;\n    select $myAirRivet[0];\n    select -add $myAirRivet[1];\n    normalConstraint -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0;\n    \n    setAttr ($myAirRivet[1] + \".magnitude\") 0;\n    rename $myAirRivet[1] AirRivet1;\n}")
+	da_AirRivet;
 
 runTimeCommand
 	-ann "Enable Export Vertex Colors"

@@ -3156,6 +3156,7 @@ Sup_Symmetry_MM_May9;
 Sup_SoftSelect_MM_May9;
 
 string $SurfaceSlide = `xformConstraint -q -type`;
+string $myComponents[] = `ls -sl -fl`;
 
 menuItem
 -l "Surface Slide"
@@ -3202,6 +3203,21 @@ menuItem
 menuItem
 -d 1;
 }
+
+if(size($myComponents) != 1){
+menuItem
+-l "Air Rivet..."
+-c "da_AirRivet"
+-i "out_airField.png";
+}else{
+menuItem
+-l "Air Rivet"
+-c "da_AirRivet"
+-i "out_airField.png";
+}
+
+menuItem
+-d 1;
 
 menuItem
 -l "Edge Edit"
@@ -3578,6 +3594,7 @@ Sup_Symmetry_MM_May9;
 Sup_SoftSelect_MM_May9;
 
 string $SurfaceSlide = `xformConstraint -q -type`;
+string $myComponents[] = `ls -sl -fl`;
 
 menuItem
 -l "Surface Slide"
@@ -3626,6 +3643,21 @@ menuItem
 menuItem
 -d 1;
 }
+
+if(size($myComponents) != 1){
+menuItem
+-l "Air Rivet..."
+-c "da_AirRivet"
+-i "out_airField.png";
+}else{
+menuItem
+-l "Air Rivet"
+-c "da_AirRivet"
+-i "out_airField.png";
+}
+
+menuItem
+-d 1;
 
 menuItem
 -l "Face Edit"
@@ -13967,6 +13999,7 @@ Sup_Symmetry_MM_May9;
 Sup_SoftSelect_MM_May9;
 
 string $EdgeSlide = `xformConstraint -q -type`;
+string $myComponents[] = `ls -sl -fl`;
 
 menuItem
 -l "Edge Slide"
@@ -14013,6 +14046,21 @@ menuItem
 menuItem
 -d 1;
 }
+
+if(size($myComponents) != 1){
+menuItem
+-l "Air Rivet..."
+-c "da_AirRivet"
+-i "out_airField.png";
+}else{
+menuItem
+-l "Air Rivet"
+-c "da_AirRivet"
+-i "out_airField.png";
+}
+
+menuItem
+-d 1;
 
 menuItem
 -l "Vertex Edit"
