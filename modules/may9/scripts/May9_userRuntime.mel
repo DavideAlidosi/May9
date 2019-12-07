@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_HiddenSet`);
+
+catchQuiet (`runTimeCommand -e -del da_RevealSet`);
+
 catchQuiet (`runTimeCommand -e -del da_AirRivet`);
 
 catchQuiet (`runTimeCommand -e -del da_AiExportVertexColors`);
@@ -988,6 +992,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Hidden Set(s)"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tsetAttr ($each +\".hiddenInOutliner\") 1;\n}\n\nAEobjectSetCommonRefreshOutliners();")
+	da_HiddenSet;
+
+runTimeCommand
+	-ann "Reveal Set(s)"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $mySel[] = `ls -sl`;\nfor ($each in $mySel){\n\tsetAttr ($each +\".hiddenInOutliner\") 0;\n}\n\nAEobjectSetCommonRefreshOutliners();")
+	da_RevealSet;
 
 runTimeCommand
 	-ann "Create Air Rivet for Selected Component(s)"
