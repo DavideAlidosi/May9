@@ -3210,11 +3210,7 @@ menuItem
 -l "Rivet Constraint" 
 -c "Rivet" 
 -i "pointOnPolyConstraint.png";
-
-menuItem
--d 1;
-}
-
+}else{
 if(size($myComponents) != 1){
 menuItem
 -l "Air Rivet..."
@@ -3225,6 +3221,7 @@ menuItem
 -l "Air Rivet"
 -c "da_AirRivet"
 -i "out_airField.png";
+}
 }
 
 menuItem
@@ -3650,11 +3647,7 @@ menuItem
 -l "Rivet Constraint" 
 -c "Rivet" 
 -i "pointOnPolyConstraint.png";
-
-menuItem
--d 1;
-}
-
+}else{
 if(size($myComponents) != 1){
 menuItem
 -l "Air Rivet..."
@@ -3665,6 +3658,7 @@ menuItem
 -l "Air Rivet"
 -c "da_AirRivet"
 -i "out_airField.png";
+}
 }
 
 menuItem
@@ -5116,6 +5110,13 @@ menuItem
 -l "vectorProduct" 
 -c "createNode vectorProduct;" 
 -i "render_vectorProduct.png";
+
+if (`about -api` >= 20200000){
+menuItem
+-l "blendMatrix" 
+-c "createNode blendMatrix;" 
+-i "nodeGridDisplay.png";
+}
 
 menuItem
 -l "decomposeMatrix" 
@@ -7169,6 +7170,13 @@ menuItem
 -l "vectorProduct" 
 -c "createNode vectorProduct;" 
 -i "render_vectorProduct.png";
+
+if (`about -api` >= 20200000){
+menuItem
+-l "blendMatrix" 
+-c "createNode blendMatrix;" 
+-i "nodeGridDisplay.png";
+}
 
 menuItem
 -l "decomposeMatrix" 
@@ -11192,16 +11200,16 @@ menuItem
 -c "da_CleanNonmainfold"
 -i "polyDisc.png";
 
+if (`about -api` >= 20200000){
 menuItem
 -l "Remesh"
--c "polyRemesh -rdt 0 -ipt 0"
--i "out_mesh.png";
+-c "polyRemesh"
+-i "polyRemesh.png";
 
-if (`about -api` >= 20180000){
 menuItem
 -l "Retopo"
--c "polyRetopo -tfc 500"
--i "out_polyCube.png";
+-c "polyRetopo"
+-i "polyRetopo.png";
 }
 
 menuItem
@@ -14074,11 +14082,7 @@ menuItem
 -l "Rivet Constraint" 
 -c "Rivet" 
 -i "pointOnPolyConstraint.png";
-
-menuItem
--d 1;
-}
-
+}else{
 if(size($myComponents) != 1){
 menuItem
 -l "Air Rivet..."
@@ -14089,6 +14093,7 @@ menuItem
 -l "Air Rivet"
 -c "da_AirRivet"
 -i "out_airField.png";
+}
 }
 
 menuItem
