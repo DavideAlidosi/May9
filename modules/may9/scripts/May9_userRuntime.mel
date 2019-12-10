@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleSmoothDynamics`);
+
+catchQuiet (`runTimeCommand -e -del da_OffsetParentMatrix`);
+
 catchQuiet (`runTimeCommand -e -del da_HiddenSet`);
 
 catchQuiet (`runTimeCommand -e -del da_RevealSet`);
@@ -992,6 +996,19 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Toggle Dynamics Cache"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-cl "python"
+	-c ("if CachePreferenceDynamicsSupportEnabled().get_value():\n    CachePreferenceDynamicsSupportEnabled().set_value( not 1 )\nelse:\n    CachePreferenceDynamicsSupportEnabled().set_value( not 0 )")
+	da_ToggleSmoothDynamics;
+
+runTimeCommand
+	-ann "Create Offset Parent Matrix Connection"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myResult = `confirmDialog -title \"Offset Parent Matrix Connector\" -message \"Before continue please check if you have select for first the parent transform.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $mySel[] = `ls -sl`;\n    int $numObj = size($mySel); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".matrix\") ($createConnect[$i] + \".offsetParentMatrix\");\n    }\n}")
+	da_OffsetParentMatrix;
 
 runTimeCommand
 	-ann "Hidden Set(s)"
@@ -2118,7 +2135,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Insert a Keyframe at Current Frame"
 	-cat "Custom Scripts.May9_Next.Animate"
-	-c ("string $curves[] = `keyframe -q -selected -name`;\nint $i;\nfor ($i = 0; $i < size($curves); $i++){\n\t\tfloat $curTime = `animCurveEditor -keyingTime $curves[$i] -q graphEditor1GraphEd`;\n\t\tif ( size($curves) ) setKeyframe -time $curTime -insert $curves[$i];\n}")
+	-c ("if (`about -api` >= 20200000){\n\tstring $curves[] = `keyframe -q -selected -name`;\n\tint $i;\n\tfor ($i = 0; $i < size($curves); $i++){\n\t\tfloat $curTime = `animCurveEditor -keyingTime $curves[$i] -q graphEditor1GraphEd`;\n\t\tif ( size($curves) ) setKeyframe -time $curTime -insert $curves[$i];\n\t}\n}else{\n\tInsertKeysTool;\n}")
 	da_InseritKeyframe;
 
 runTimeCommand

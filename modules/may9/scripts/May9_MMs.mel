@@ -845,6 +845,9 @@ menuItem -bld 1
 if (`about -api` >= 20190000){
 string $evalMode[] = `evaluationManager -q -m`;
 
+menuItem
+-d 1;
+
 menuItem -bld 1 
 -l "Parallel Evaluation" 
 -c "da_evalToggle"
@@ -861,6 +864,14 @@ menuItem -bld 1
 -l "Cached Smooth Meshes" 
 -c "da_ToggleSmoothMeshCache"
 -cb (`python "CachePreferenceCacheSmoothMeshes().get_value()"`)
+-en (`python "CachePreferenceEnabled().get_value()"` && $evalMode[0] == "parallel");
+}
+
+if (`about -api` >= 20200000){
+menuItem -bld 1 
+-l "Cached Dynamics" 
+-c "da_ToggleSmoothDynamics"
+-cb (`python "CachePreferenceDynamicsSupportEnabled().get_value()"`)
 -en (`python "CachePreferenceEnabled().get_value()"` && $evalMode[0] == "parallel");
 }
 
@@ -4726,7 +4737,7 @@ menuItem
 
 if (`about -api` >= 20190000){
 menuItem
--l "Butterworth Filter..." 
+-l "Smooth Filter..." 
 -c "performButterworth 4 $da_currentGraphPanel" 
 -i "da_smoothCurve.png";
 
@@ -7038,6 +7049,8 @@ string $myNodeType[] = `da_QueryArrayNodeType`;
 string $myNodeEditor = `getCurrentNodeEditor`;
 select $mySel;
 
+string $myCurTransform[] = `ls -sl -typ "transform"`;
+
 if($myNodeType[0] == "character"){
 
 menuItem
@@ -7117,6 +7130,13 @@ menuItem
 -l "Expression Editor..." 
 -c "ExpressionEditor" 
 -i "out_expression.png";
+
+if (`about -api` >= 20200000 && size($myCurTransform) >= 2){
+menuItem
+-l "Offset Parent Matrix..." 
+-c "da_OffsetParentMatrix" 
+-i "parent.png";
+}
 
 menuItem
 -d 1;

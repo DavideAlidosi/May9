@@ -34,6 +34,16 @@ global proc da_May9Hotkeys(){
 	hotkey -k "l" -ctl -alt -sht -n ("da_LastOpInStackNameCommand");
 
 	// Rigging hotkeys
+	hotkey -k "1" -ctl -alt -sht -n ("da_TogglePerspNameCommand");
+	hotkey -k "2" -ctl -alt -sht -n ("da_ToggleNodeEditorNameCommand");
+	hotkey -k "3" -ctl -alt -sht -n ("da_ToggleUVTextureEditorNameCommand");
+	hotkey -k "4" -ctl -alt -sht -n ("da_GraphEditorNameCommand");
+	hotkey -k "5" -ctl -alt -sht -n ("da_ShapeEditorNameCommand");
+	hotkey -k "6" -ctl -alt -sht -n ("da_LayoutReferenceEditorNameCommand");
+	hotkey -k "7" -ctl -alt -sht -n ("da_ComponentEditorNameCommand");
+	hotkey -k "8" -ctl -alt -sht -n ("da_ToggleRelationshipEditorNameCommand");
+	hotkey -k "9" -ctl -alt -sht -n ("da_DynamicRelationshipEditorNameCommand");
+	hotkey -k "0" -ctl -alt -sht -n ("da_LayoutHypershadeNameCommand");
 	hotkey -k "d" -ctl -alt -sht -n ("MatchPivotsNameCommand");
 	hotkey -k "d" -ctl -alt -n ("da_ResetPivotNameCommand");
 	hotkey -k "o" -ctl -alt -n ("TagAsControllerNameCommand");
@@ -47,16 +57,6 @@ global proc da_May9Hotkeys(){
 	hotkey -k "k" -ctl -n ("ChannelControlEditorNameCommand");
 
 	// Alt hotkeys
-	hotkey -k "1" -alt -n ("da_TogglePerspNameCommand");
-	hotkey -k "2" -alt -n ("da_ToggleNodeEditorNameCommand");
-	hotkey -k "3" -alt -n ("da_ToggleUVTextureEditorNameCommand");
-	hotkey -k "4" -alt -n ("da_GraphEditorNameCommand");
-	hotkey -k "5" -alt -n ("da_ShapeEditorNameCommand");
-	hotkey -k "6" -alt -n ("da_LayoutReferenceEditorNameCommand");
-	hotkey -k "7" -alt -n ("da_ComponentEditorNameCommand");
-	hotkey -k "8" -alt -n ("da_ToggleRelationshipEditorNameCommand");
-	hotkey -k "9" -alt -n ("da_DynamicRelationshipEditorNameCommand");
-	hotkey -k "0" -alt -n ("da_LayoutHypershadeNameCommand");
 	hotkey -k "c" -alt -n ("da_ToggleChannelLayerNameCommand");
 	hotkey -k "a" -alt -n ("da_ToggleAttributeNameCommand");
 	hotkey -k "m" -alt -n ("da_ToggleMTKNameCommand");
@@ -105,7 +105,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "\\" -rn ("STRSTweakModeOffNameCommand");
 
 	// TTF and resigned Help hotkeys
-	if (`about -api` >= 20200000){
+	if (`about -api` >= 20210000){
 	hotkey -k "F1" -n ("");
 	hotkey -k "F1" -rn ("TypeToFindNameCommand");
 	hotkey -k "F1" -sht -n ("HelpNameCommand");

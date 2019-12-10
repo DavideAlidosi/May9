@@ -1,9 +1,9 @@
 print "May9 console: Source May9_core.mel \n";
 
 // Store May9 Version
-string $may9Version = "May9 Next.2.3";
+string $may9Version = "May9 Next.2.5";
 string $may9SecondLine = "is powered by MMtoKey core";
-int $may9Value = "10230";
+int $may9Value = "10250";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -30,6 +30,11 @@ if (`about -api` >= 20190000){
 if (`about -api` >= 20190100){
 	python "from maya.plugin.evaluator.cache_optionvar_states import CachePreferenceCacheSmoothMeshes";
 }
+
+if (`about -api` >= 20200000){
+	python "from maya.plugin.evaluator.cache_preferences import CachePreferenceDynamicsSupportEnabled";
+}
+
 
 // Source main scripts
 source May9_scripts.mel;
