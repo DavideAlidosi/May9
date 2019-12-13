@@ -404,6 +404,14 @@ menuItem -bld 1
 -c "IKSplineHandleToolOptions"
 -i "kinSplineHandle.png";
 
+if (`about -api` >= 20200000){
+menuItem -bld 1 
+-l "Proximity Wrap..."
+-c "ProximityWrapOptions;AttributeEditor"
+-i "out_baseLattice.png"
+-en (size($myCurTransform) == 0);
+}
+
 menuItem -bld 1 
 -l "Connection Editor..."
 -c "ConnectionEditor"
@@ -3702,6 +3710,16 @@ menuItem
 -c "dR_performSymmetrize;\ninViewMessage -pos topCenter -msg \"Select simmetry edge\" -fade;"
 -i "symmetrize.png";
 
+if (`about -api` >= 20200000){
+menuItem
+-d 1;
+
+menuItem
+-l "Remesh"
+-c "polyRemesh"
+-i "polyRemesh.png";
+}
+
 setParent -m ..;
 
 menuItem
@@ -5116,6 +5134,11 @@ menuItem
 -l "blendMatrix" 
 -c "createNode blendMatrix;" 
 -i "nodeGridDisplay.png";
+
+menuItem
+-l "pickMatrix" 
+-c "createNode pickMatrix;" 
+-i "pickPointComp.png";
 }
 
 menuItem
@@ -7176,6 +7199,11 @@ menuItem
 -l "blendMatrix" 
 -c "createNode blendMatrix;" 
 -i "nodeGridDisplay.png";
+
+menuItem
+-l "pickMatrix" 
+-c "createNode pickMatrix;" 
+-i "pickPointComp.png";
 }
 
 menuItem
@@ -10389,13 +10417,6 @@ menuItem
 -c "CreateShrinkWrapOptions;"
 -i "shrinkwrap.png";
 
-if (`about -api` >= 20200000){
-menuItem
--l "ProxWrap"
--c "ProxWrap"
--i "out_baseLattice.png";
-}
-
 menuItem
 -l "UV Based"
 -c "da_DeformerUV"
@@ -11379,13 +11400,6 @@ menuItem
 -l "Membrane"
 -c "createMembrane"
 -i "da_membrane.png";
-
-if (`about -api` >= 20200000){
-menuItem
--l "ProxWrap"
--c "ProxWrap"
--i "out_baseLattice.png";
-}
 
 menuItem
 -l "Texture Deformer"
