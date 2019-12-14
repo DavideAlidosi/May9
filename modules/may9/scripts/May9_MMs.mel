@@ -241,6 +241,9 @@ menuItem -bld 1
 -c "CreateTextOptions"
 -i "text.png";
 
+menuItem
+-d 1;
+
 menuItem -bld 1 
 -l "Interactive Creation"
 -c "da_TogglePrimitiveAsTool"
@@ -505,6 +508,9 @@ menuItem -bld 1
 setParent -m ..;
 }
 
+menuItem
+-d 1;
+
 if (`gmatch $currentPanel "modelPanel*"` && `about -api` >= 20180000){
 menuItem
 -l "Controllers Visibility" -bld 1  
@@ -751,6 +757,9 @@ menuItem -bld 1
 -c "MASHOutliner"
 -i "MASH_Editor.png";
 
+menuItem
+-d 1;
+
 menuItem -bld 1 
 -l "Play Max Real-time"
 -c "da_maxPlaybackSpeedToggle"
@@ -760,6 +769,11 @@ menuItem -bld 1
 -l "Stepped Tangent"
 -c "da_ToggleKeyTangent"
 -cb ($myKeyTangent[0] == "step");
+
+menuItem -bld 1 
+-l "Auto Snap Key"
+-c "da_AutoSnapKeyToggle"
+-cb (`optionVar -q scaleKeyAutoSnap`);
 
 setParent -m ..;
 
@@ -974,6 +988,9 @@ menuItem -bld 1
 
 if (!(catchQuiet (`getAttr ($myCurTransform[0] + ".drp")`))){
 int $myDrpSetting = getAttr ($myCurTransform[0] + ".drp");
+
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Pivot Visibility" 
