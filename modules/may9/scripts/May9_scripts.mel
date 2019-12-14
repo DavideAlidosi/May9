@@ -168,3 +168,16 @@ global proc da_May9HotkeySet(){
 	da_May9Hotkeys;
 	hotkeySet -edit -current May9_Next;
 }
+
+global proc da_Quit(){
+	if(!saveChanges("")) return;
+	
+	savePrefs;
+	saveToolSettings;
+	saveViewportSettings;
+	pluginInfo -savePluginPrefs;
+	SaveCurrentWorkspace;
+
+	$i = `getpid`;
+	system("taskkill /PID "  + $i +" /f");
+}

@@ -2135,7 +2135,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Insert a Keyframe at Current Frame"
 	-cat "Custom Scripts.May9_Next.Animate"
-	-c ("if (`about -api` >= 20200000){\n\tstring $curves[] = `keyframe -q -selected -name`;\n\tint $i;\n\tfor ($i = 0; $i < size($curves); $i++){\n\t\tfloat $curTime = `animCurveEditor -keyingTime $curves[$i] -q graphEditor1GraphEd`;\n\t\tif ( size($curves) ) setKeyframe -time $curTime -insert $curves[$i];\n\t}\n}else{\n\tInsertKeysTool;\n}")
+	-c ("if (`about -api` < 20200000){\n\tstring $curves[] = `keyframe -q -selected -name`;\n\tint $i;\n\tfor ($i = 0; $i < size($curves); $i++){\n\t\tfloat $curTime = `animCurveEditor -keyingTime $curves[$i] -q graphEditor1GraphEd`;\n\t\tif ( size($curves) ) setKeyframe -time $curTime -insert $curves[$i];\n\t}\n}else{\n\tInsertKeysTool;\n}")
 	da_InseritKeyframe;
 
 runTimeCommand
