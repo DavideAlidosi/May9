@@ -176,7 +176,6 @@ global proc da_Quit(){
 	saveToolSettings;
 	saveViewportSettings;
 	pluginInfo -savePluginPrefs;
-	SaveCurrentWorkspace;
 
 	$i = `getpid`;
 	system("taskkill /PID "  + $i +" /f");
