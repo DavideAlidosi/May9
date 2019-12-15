@@ -87,7 +87,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "i" -ctl -alt -n ("ToggleIsolateSelectNameCommand");
 	hotkey -k "l" -ctl -sht -name ("da_SelectLayerObjectNameCommand");
 
-	// Changed hotkeys
+	// Resigned hotkeys
 	hotkey -k "1" -ctl -alt -n ("da_SmoothPreviewOffNameCommand");
 	hotkey -k "2" -ctl -alt -n ("da_HighQualitySmoothMeshNameCommand");
 	hotkey -k "3" -ctl -alt -n ("da_HighQualityDispMeshNameCommand");
@@ -97,6 +97,18 @@ global proc da_May9Hotkeys(){
 	hotkey -k "~" -ctl -alt -n ("SmoothingDisplayShowBothNameCommand");hotkey -k "|" -ctl -alt -n ("SmoothingDisplayShowBothNameCommand");//Italian layout
 	hotkey -k "Return" -ctl -alt -n ("TogglePanZoomPressNameCommand");//Italian layout fix
 	hotkey -k "Return" -ctl -alt -rn ("TogglePanZoomReleaseNameCommand");//Italian layout fix
+	if (`about -api` >= 20200000){
+	hotkey -k "a" -ctl -alt -n ("switchDisplayModeNameCommand");
+	}
+
+	// Viewport Visibility resigned hotkeys
+	if (`about -api` >= 20200000){
+	hotkey -k "F1" -ctl -alt -n ("toggleNurbsCurvesOptionNameCommand");
+	hotkey -k "F2" -ctl -alt -n ("togglePolygonsOptionNameCommand");
+	hotkey -k "F3" -ctl -alt -n ("toggleDisplacementNameCommand");
+	hotkey -k "F4" -ctl -alt -n ("toggleImagePlaneOptionNameCommand");
+	hotkey -k "F5" -ctl -alt -n ("toggleWireframeOnShadedOptionNameCommand");
+	}
 
 	// Italian keyboard layout hotkeys
 	hotkey -k "|" -ctl -n ("SmoothProxyNameCommand");
@@ -110,7 +122,6 @@ global proc da_May9Hotkeys(){
 	hotkey -k "F1" -rn ("TypeToFindNameCommand");
 	hotkey -k "F1" -sht -n ("HelpNameCommand");
 	}
-
 
 	// nameCommand set
 
@@ -520,6 +531,38 @@ global proc da_May9Hotkeys(){
 		da_CopyAttributeEditorTabNameCommand;
 
 	if (`about -api` >= 20200000){
+	nameCommand
+		-ann "toggleNurbsCurvesOptionNameCommand"
+		-c ("toggleNurbsCurvesOption")
+		toggleNurbsCurvesOptionNameCommand;
+
+	nameCommand
+		-ann "togglePolygonsOptionNameCommand"
+		-c ("togglePolygonsOption")
+		togglePolygonsOptionNameCommand;
+
+	nameCommand
+		-ann "toggleDisplacementNameCommand"
+		-c ("toggleDisplacement")
+		toggleDisplacementNameCommand;
+
+	nameCommand
+		-ann "toggleImagePlaneOptionNameCommand"
+		-c ("toggleImagePlaneOption")
+		toggleImagePlaneOptionNameCommand;
+
+	nameCommand
+		-ann "toggleWireframeOnShadedOptionNameCommand"
+		-c ("toggleWireframeOnShadedOption")
+		toggleWireframeOnShadedOptionNameCommand;
+
+	nameCommand
+		-ann "switchDisplayModeNameCommand"
+		-c ("switchDisplayMode")
+		switchDisplayModeNameCommand;
+	}
+
+	if (`about -api` >= 20210000){
 	nameCommand
 		-ann "HelpNameCommand"
 		-c ("Help")

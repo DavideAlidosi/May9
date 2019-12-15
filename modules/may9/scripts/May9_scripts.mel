@@ -171,11 +171,6 @@ global proc da_May9HotkeySet(){
 
 global proc da_Quit(){
 	if(!saveChanges("")) return;
-	
-	savePrefs;
-	saveToolSettings;
-	saveViewportSettings;
-	pluginInfo -savePluginPrefs;
 
 	$i = `getpid`;
 	system("taskkill /PID "  + $i +" /f");
