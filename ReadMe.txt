@@ -1,4 +1,4 @@
-May9 Next.2.3 - A new user experience for Autodesk Maya 2019
+May9 Next.2.4 - A new user experience for Autodesk Maya 2019
 
 
 General info
@@ -18,8 +18,7 @@ Installation
 
 
 Release Note
-Tested and develop on Autodesk Maya 2019.2 and MtoA 3.2.2
-Autodesk Arnold MtoA 3.2.2 or higher is highly suggested
+Tested and develop on Autodesk Maya 2020
 
 
 Licenses
