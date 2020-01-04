@@ -15,9 +15,11 @@ global proc da_May9Hotkeys(){
 	hotkey -k "m" -ctl -alt -n ("toggleShelfTabsNameCommand");
 	hotkey -k "t" -ctl -alt -n ("da_TitleBarToggleNameCommand");
 	hotkey -k "l" -ctl -alt -n ("da_ListInputOperationsNameCommand");
-	hotkey -k "." -ctl -alt -n ("da_moveKeyframeToNextNameCommand");
-	hotkey -k "," -ctl -alt -n ("da_moveKeyframeToPrevNameCommand");
 	hotkey -k "Space" -ctl -alt -n ("da_InteractivePlaybackNameCommand");
+	if (`about -api` < 20200000){
+		hotkey -k "." -ctl -alt -n ("da_moveKeyframeToNextNameCommand");
+		hotkey -k "," -ctl -alt -n ("da_moveKeyframeToPrevNameCommand");
+	}
 
 	// CTRL Shift Alt Hotkeys
 	hotkey -k "c" -ctl -alt -sht -n ("da_CopySelectionNameCommand");
@@ -32,6 +34,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "a" -ctl -alt -sht -n ("da_CtrlAimConstraintNameCommand");
 	hotkey -k "i" -ctl -alt -sht -n ("da_CtrlPoleVectorConstraintNameCommand");
 	hotkey -k "l" -ctl -alt -sht -n ("da_LastOpInStackNameCommand");
+	hotkey -k "x" -ctl -alt -sht -n ("da_QuitNameCommand");
 
 	// Rigging hotkeys
 	hotkey -k "d" -ctl -alt -sht -n ("MatchPivotsNameCommand");
@@ -92,22 +95,21 @@ global proc da_May9Hotkeys(){
 	hotkey -k "2" -ctl -alt -n ("da_HighQualitySmoothMeshNameCommand");
 	hotkey -k "3" -ctl -alt -n ("da_HighQualityDispMeshNameCommand");
 	hotkey -k "-" -alt -n ("da_ToggleColorFeedbackNameCommand");
-	hotkey -k "i" -alt -n ("da_ToggleWireframeInArtisanNameCommand");
 	hotkey -k "n" -sht -n ("da_FullHotboxDisplayNameCommand");
 	hotkey -k "~" -ctl -alt -n ("SmoothingDisplayShowBothNameCommand");hotkey -k "|" -ctl -alt -n ("SmoothingDisplayShowBothNameCommand");//Italian layout
 	hotkey -k "Return" -ctl -alt -n ("TogglePanZoomPressNameCommand");//Italian layout fix
 	hotkey -k "Return" -ctl -alt -rn ("TogglePanZoomReleaseNameCommand");//Italian layout fix
 	if (`about -api` >= 20200000){
-	hotkey -k "a" -ctl -alt -n ("switchDisplayModeNameCommand");
+		hotkey -k "a" -ctl -alt -n ("switchDisplayModeNameCommand");
 	}
 
 	// Viewport Visibility resigned hotkeys
 	if (`about -api` >= 20200000){
-	hotkey -k "F1" -ctl -alt -n ("toggleNurbsCurvesOptionNameCommand");
-	hotkey -k "F2" -ctl -alt -n ("togglePolygonsOptionNameCommand");
-	hotkey -k "F3" -ctl -alt -n ("toggleDisplacementNameCommand");
-	hotkey -k "F4" -ctl -alt -n ("toggleImagePlaneOptionNameCommand");
-	hotkey -k "F5" -ctl -alt -n ("toggleWireframeOnShadedOptionNameCommand");
+		hotkey -k "F1" -ctl -alt -n ("toggleNurbsCurvesOptionNameCommand");
+		hotkey -k "F2" -ctl -alt -n ("togglePolygonsOptionNameCommand");
+		hotkey -k "F3" -ctl -alt -n ("toggleDisplacementNameCommand");
+		hotkey -k "F4" -ctl -alt -n ("toggleImagePlaneOptionNameCommand");
+		hotkey -k "F5" -ctl -alt -n ("toggleWireframeOnShadedOptionNameCommand");
 	}
 
 	// Italian keyboard layout hotkeys
@@ -118,9 +120,9 @@ global proc da_May9Hotkeys(){
 
 	// TTF and resigned Help hotkeys
 	if (`about -api` >= 20210000){
-	hotkey -k "F1" -n ("");
-	hotkey -k "F1" -rn ("TypeToFindNameCommand");
-	hotkey -k "F1" -sht -n ("HelpNameCommand");
+		hotkey -k "F1" -n ("");
+		hotkey -k "F1" -rn ("TypeToFindNameCommand");
+		hotkey -k "F1" -sht -n ("HelpNameCommand");
 	}
 
 	// nameCommand set
@@ -386,11 +388,6 @@ global proc da_May9Hotkeys(){
 		da_ToggleAttributeNameCommand;
 
 	nameCommand
-		-ann "da_ToggleWireframeInArtisanNameCommand"
-		-c ("ToggleWireframeInArtisan")
-		da_ToggleWireframeInArtisanNameCommand;
-
-	nameCommand
 		-ann "da_ToggleColorFeedbackNameCommand"
 		-c ("ToggleColorFeedback")
 		da_ToggleColorFeedbackNameCommand;
@@ -460,15 +457,17 @@ global proc da_May9Hotkeys(){
 		-c ("da_TitleBarToggle")
 		da_TitleBarToggleNameCommand;
 
-	nameCommand
-		-ann "da_moveKeyframeToNextNameCommand"
-		-c ("da_moveKeyframeToNext")
-		da_moveKeyframeToNextNameCommand;
+	if (`about -api` < 20200000){
+		nameCommand
+			-ann "da_moveKeyframeToNextNameCommand"
+			-c ("da_moveKeyframeToNext")
+			da_moveKeyframeToNextNameCommand;
 
-	nameCommand
-		-ann "da_moveKeyframeToPrevNameCommand"
-		-c ("da_moveKeyframeToPrev")
-		da_moveKeyframeToPrevNameCommand;
+		nameCommand
+			-ann "da_moveKeyframeToPrevNameCommand"
+			-c ("da_moveKeyframeToPrev")
+			da_moveKeyframeToPrevNameCommand;
+	}
 
 	nameCommand
 		-ann "da_KeyKeyedOnlyNameCommand"
@@ -530,42 +529,47 @@ global proc da_May9Hotkeys(){
 		-c ("da_CopyAttributeEditorTab")
 		da_CopyAttributeEditorTabNameCommand;
 
+	nameCommand
+		-ann "da_QuitNameCommand"
+		-c ("da_Quit")
+		da_QuitNameCommand;
+
 	if (`about -api` >= 20200000){
-	nameCommand
-		-ann "toggleNurbsCurvesOptionNameCommand"
-		-c ("toggleNurbsCurvesOption")
-		toggleNurbsCurvesOptionNameCommand;
+		nameCommand
+			-ann "toggleNurbsCurvesOptionNameCommand"
+			-c ("toggleNurbsCurvesOption")
+			toggleNurbsCurvesOptionNameCommand;
 
-	nameCommand
-		-ann "togglePolygonsOptionNameCommand"
-		-c ("togglePolygonsOption")
-		togglePolygonsOptionNameCommand;
+		nameCommand
+			-ann "togglePolygonsOptionNameCommand"
+			-c ("togglePolygonsOption")
+			togglePolygonsOptionNameCommand;
 
-	nameCommand
-		-ann "toggleDisplacementNameCommand"
-		-c ("toggleDisplacement")
-		toggleDisplacementNameCommand;
+		nameCommand
+			-ann "toggleDisplacementNameCommand"
+			-c ("toggleDisplacement")
+			toggleDisplacementNameCommand;
 
-	nameCommand
-		-ann "toggleImagePlaneOptionNameCommand"
-		-c ("toggleImagePlaneOption")
-		toggleImagePlaneOptionNameCommand;
+		nameCommand
+			-ann "toggleImagePlaneOptionNameCommand"
+			-c ("toggleImagePlaneOption")
+			toggleImagePlaneOptionNameCommand;
 
-	nameCommand
-		-ann "toggleWireframeOnShadedOptionNameCommand"
-		-c ("toggleWireframeOnShadedOption")
-		toggleWireframeOnShadedOptionNameCommand;
+		nameCommand
+			-ann "toggleWireframeOnShadedOptionNameCommand"
+			-c ("toggleWireframeOnShadedOption")
+			toggleWireframeOnShadedOptionNameCommand;
 
-	nameCommand
-		-ann "switchDisplayModeNameCommand"
-		-c ("switchDisplayMode")
-		switchDisplayModeNameCommand;
+		nameCommand
+			-ann "switchDisplayModeNameCommand"
+			-c ("switchDisplayMode")
+			switchDisplayModeNameCommand;
 	}
 
 	if (`about -api` >= 20210000){
-	nameCommand
-		-ann "HelpNameCommand"
-		-c ("Help")
-		HelpNameCommand;
+		nameCommand
+			-ann "HelpNameCommand"
+			-c ("Help")
+			HelpNameCommand;
 	}
 }

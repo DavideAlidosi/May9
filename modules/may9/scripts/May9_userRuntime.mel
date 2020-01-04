@@ -1015,7 +1015,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create Offset Parent Matrix Connection"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myResult = `confirmDialog -title \"Offset Parent Matrix Connector\" -message \"Before continue please check if you have select for first the parent transform.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $mySel[] = `ls -sl`;\n    int $numObj = size($mySel); \n    for($i=1; $i<$numObj; $i++){\n        connectAttr -f ($createConnect[0] + \".matrix\") ($createConnect[$i] + \".offsetParentMatrix\");\n    }\n}")
+	-c ("string $myResult = `confirmDialog -title \"Offset Parent Matrix Connector\" -message \"Before continue please check if you have select for first the parent transform.\" \n-button \"Connect\" -button \"Cancel\" -cancelButton \"Cancel\" -defaultButton \"Cancel\"`;\nif ($myResult == \"Connect\") {\n    string $mySel[] = `ls -sl`;\n    int $numObj = size($mySel); \n    for($i=1; $i<$numObj; $i++){\n        string $myPickMatrix = `createNode pickMatrix`;\n        connectAttr -f ($mySel[0] + \".matrix\") ($myPickMatrix + \".inputMatrix\");\n        connectAttr -f ($myPickMatrix + \".outputMatrix\") ($mySel[$i] + \".offsetParentMatrix\");\n    }\n}")
 	da_OffsetParentMatrix;
 
 runTimeCommand
