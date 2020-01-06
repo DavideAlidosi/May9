@@ -770,10 +770,12 @@ menuItem -bld 1
 -c "da_ToggleKeyTangent"
 -cb ($myKeyTangent[0] == "step");
 
+if (`about -api` >= 20200000){
 menuItem -bld 1 
 -l "Auto Snap Key"
 -c "da_AutoSnapKeyToggle"
 -cb (`optionVar -q scaleKeyAutoSnap`);
+}
 
 setParent -m ..;
 
