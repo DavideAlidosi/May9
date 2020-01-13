@@ -1,4 +1,4 @@
-May9 Next.2.4 - A new user experience for Autodesk Maya 2019
+May9 Next.2.4 - A new user experience for Autodesk Maya 2020
 
 
 General info
