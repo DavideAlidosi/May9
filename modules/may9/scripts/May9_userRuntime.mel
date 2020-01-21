@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ClusterRelative`);
+
+catchQuiet (`runTimeCommand -e -del da_ClusterNoRelative`);
+
 catchQuiet (`runTimeCommand -e -del da_AutoSnapKeyToggle`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleSmoothDynamics`);
@@ -998,6 +1002,18 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Enable Cluster Relative"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myCluster[] = `listConnections -s 0 -d 1 -t \"cluster\"`;\n\nfor ($each in $myCluster){\n    setAttr ($each +\".relative\") 1;\n}\n\ninViewMessage -pos topCenter -msg \"Relative On\" -fade;")
+	da_ClusterRelative;
+
+runTimeCommand
+	-ann "Disable Cluster Relative"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myCluster[] = `listConnections -s 0 -d 1 -t \"cluster\"`;\n\nfor ($each in $myCluster){\n    setAttr ($each +\".relative\") 0;\n}\n\ninViewMessage -pos topCenter -msg \"Relative Off\" -fade;")
+	da_ClusterNoRelative;
 
 runTimeCommand
 	-ann "Toggle Auto Snap Key"

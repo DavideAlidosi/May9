@@ -1451,6 +1451,22 @@ menuItem
 -rp "E" 
 -i "da_deformerSetEditor.png";
 
+menuItem
+-l "Relative" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_ClusterRelative" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_ClusterNoRelative" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
 setParent -m ..;
 
 } 
