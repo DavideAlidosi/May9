@@ -3841,6 +3841,11 @@ menuItem
 -i "polyAutoProj.png";
 
 menuItem
+-l "Planar"
+-c "polyProjection -ch 1 -type Planar -ibd on -kir -md b; ShowManipulators;"
+-i "polyPlanProjLarge.png";
+
+menuItem
 -l "Spherical"
 -c "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";"
 -i "polySphereProj.png";
