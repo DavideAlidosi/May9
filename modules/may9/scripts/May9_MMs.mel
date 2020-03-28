@@ -12276,6 +12276,12 @@ setParent -m ..;
 global proc SkyDomeLight_MM_May9(){
 
 menuItem
+-l "Toggle Visibility" 
+-c "da_ToggleAiSkyDome" 
+-rp "N" 
+-i "RS_visible.png";
+
+menuItem
 -l "Light Linking..." 
 -c "LightCentricLightLinkingEditor;" 
 -rp "W" 

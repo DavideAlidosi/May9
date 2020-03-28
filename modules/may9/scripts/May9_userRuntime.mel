@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleAiSkyDome`);
+
 catchQuiet (`runTimeCommand -e -del da_ClusterRelative`);
 
 catchQuiet (`runTimeCommand -e -del da_ClusterNoRelative`);
@@ -1002,6 +1004,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Toggle aiSkyDome in Viewport"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -f -s`;\n\nif (getAttr($mySel[0] +\".skyRadius\") > 0){\n    setAttr ($mySel[0] + \".skyRadius\") 0;\n    setAttr ($myShape[0] + \".camera\") 0;\n}else{\n    setAttr ($mySel[0] + \".skyRadius\") 1000;\n    setAttr ($myShape[0] + \".camera\") 1;\n}")
+	da_ToggleAiSkyDome;
 
 runTimeCommand
 	-ann "Enable Cluster Relative"
