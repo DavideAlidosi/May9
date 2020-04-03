@@ -3841,11 +3841,6 @@ menuItem
 -i "polyAutoProj.png";
 
 menuItem
--l "Planar"
--c "polyProjection -ch 1 -type Planar -ibd on -kir -md b; ShowManipulators;"
--i "polyPlanProjLarge.png";
-
-menuItem
 -l "Spherical"
 -c "performPolyProjectionArgList \"1\" {\"0\", \"Spherical\", \"ls -selection\", \"0\"} \"\";"
 -i "polySphereProj.png";
@@ -3854,6 +3849,19 @@ menuItem
 -l "Per Face..."
 -c "da_MapFacesFacesUV"
 -i "polyNormalProj.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Planar"
+-c "polyProjection -ch 1 -type Planar -ibd on -md b; ShowManipulators;"
+-i "polyPlanProjLarge.png";
+
+menuItem
+-l "Planar Keep Ratio"
+-c "polyProjection -ch 1 -type Planar -ibd on -kir -md b; ShowManipulators;"
+-i "polyPlanProjLarge.png";
 
 setParent -m ..;
 
