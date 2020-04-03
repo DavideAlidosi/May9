@@ -683,7 +683,7 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Paint Effects..."
--c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
+-c "PaintOnPaintableObjects;MakePaintable;PaintEffectsToolOptions"
 -i "userPaint.png";
 
 setParent -m ..;
@@ -8778,6 +8778,12 @@ menuItem
 -rp "E" 
 -i "paintFXtoCurve.png";
 
+menuItem 
+-l "Paint Effects Tool..." 
+-c "PaintEffectsToolOptions" 
+-rp "SE"
+-i "paintEffectsTool.png";
+
 menuItem
 -l "Simplify Stroke Curves" 
 -c "SimplifyStrokePathCurves;" 
@@ -10178,7 +10184,7 @@ menuItem
 
 menuItem
 -l "Paint Effects..."
--c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
+-c "PaintOnPaintableObjects;MakePaintable;PaintEffectsToolOptions"
 -rp "SW"
 -i "paintEffectsTool.png";
 
@@ -11168,7 +11174,7 @@ menuItem
 
 menuItem
 -l "Paint Effects..."
--c "PaintOnPaintableObjects;\nMakePaintable;\nContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\")"
+-c "PaintOnPaintableObjects;MakePaintable;PaintEffectsToolOptions"
 -rp "SW"
 -i "paintEffectsTool.png";
 
@@ -13035,12 +13041,14 @@ menuItem -itl 1
 menuItem -itl 1 
 -l "Get Settings from Selected Stroke" 
 -c "GetSettingsFromSelectedStroke" 
--rp "W";
+-rp "W"
+-i "RS_isolate.png";
 
 menuItem -itl 1 
 -l "Apply Settings to Selected Strokes" 
 -c "ApplySettingsToSelectedStroke" 
--rp "E";
+-rp "E"
+-i "RS_import_layer.png";
 
 setParent -m ..;
 

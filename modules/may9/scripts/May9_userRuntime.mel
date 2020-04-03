@@ -1171,7 +1171,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Toggle Fogging"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("string $selectedPanel = `getPanel -wf`;\n\nif (`modelEditor -q -fg $selectedPanel`)\n\tmodelEditor -e -fg 0 $selectedPanel;\nelse\n\tmodelEditor -e -fg 1 $selectedPanel;")
+	-c ("string $selectedPanel = `getPanel -wf`;\n\nif (`modelEditor -q -fg $selectedPanel`){\n\tmodelEditor -e -fg 0 $selectedPanel;\n\tsetAttr \"hardwareRenderingGlobals.hwFogEnable\" 0;\n}\nelse{\n\tmodelEditor -e -fg 1 $selectedPanel;\n\tsetAttr \"hardwareRenderingGlobals.hwFogEnable\" 1;\n}")
 	da_ToggleFogging;
 
 runTimeCommand
