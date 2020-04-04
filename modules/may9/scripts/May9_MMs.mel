@@ -967,6 +967,11 @@ menuItem -bld 1
 -i "out_buttonManip.png";
 
 menuItem -bld 1 
+-l "Bake Simulation..."
+-c "BakeSimulationOptions"
+-i "bakeAnimation.png";
+
+menuItem -bld 1 
 -l "Bake Pivot..."
 -c "BakeCustomPivotOptions"
 -i "menuIconModify.png";
@@ -8773,7 +8778,7 @@ global proc PaintFX_MM_May9(){
 menuItem
 -l "PaintFX to Polygon" 
 -c "PaintEffectsToPoly;" 
--rp "N" 
+-rp "E" 
 -i "paintFXtoPoly.png";
 
 menuItem
@@ -8783,13 +8788,19 @@ menuItem
 menuItem
 -l "PaintFX To Curve" 
 -c "PaintEffectsToCurve;" 
--rp "E" 
+-rp "NE" 
 -i "paintFXtoCurve.png";
+
+menuItem
+-l "PaintFX To NURBS" 
+-c "PaintEffectsToNurbs;" 
+-rp "SE" 
+-i "paintFXtoNurbs.png";
 
 menuItem 
 -l "Paint Effects Tool..." 
 -c "PaintEffectsToolOptions" 
--rp "SE"
+-rp "NW"
 -i "paintEffectsTool.png";
 
 menuItem
@@ -8807,7 +8818,7 @@ menuItem
 menuItem
 -l "Get Brush..." 
 -c "ContentBrowserWindow;contentBrowserSetContext(\"WindowsMenu\", \"examples\", \"Examples/Paint Effects/Airbrush\");" 
--rp "NE" 
+-rp "N" 
 -i "paintEffectsBrushesLarge.png";
 
 menuItem
@@ -8865,6 +8876,27 @@ menuItem
 -l "Off" 
 -c "da_BrushNoOccupyAttraction" 
 -i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Brush Animation" 
+-sm 1;
+
+menuItem
+-l "Loop Brush Animation..." 
+-c "LoopBrushAnimationOptions" 
+-i "playbackLoopingContinuous.png";
+
+menuItem
+-l "Make Brush Spring" 
+-c "MakeBrushSpring" 
+-i "out_spring.png";
+
+menuItem
+-l "Bake Spring Animation..." 
+-c "BakeSpringAnimationOptions" 
+-i "bakeAnimation.png";
 
 setParent -m ..;
 
