@@ -742,6 +742,12 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 1);
 
 menuItem -bld 1 
+-l "Bake Simulation..."
+-c "BakeSimulationOptions"
+-i "bakeAnimation.png" 
+-en (size($myCurTransform) >= 1);
+
+menuItem -bld 1 
 -l "Editable Motion Trail..."
 -c "CreateMotionTrailOptions"
 -i "motionTrail.png"
@@ -965,11 +971,6 @@ menuItem -bld 1
 -c "da_ResetTransform"
 -rp "W"
 -i "out_buttonManip.png";
-
-menuItem -bld 1 
--l "Bake Simulation..."
--c "BakeSimulationOptions"
--i "bakeAnimation.png";
 
 menuItem -bld 1 
 -l "Bake Pivot..."
