@@ -1613,6 +1613,8 @@ select $mySel;
 
 if (stringArrayContains("dragField", $myQueryArrayNodeType) || stringArrayContains("gravityField", $myQueryArrayNodeType) || stringArrayContains("newtonField", $myQueryArrayNodeType) || stringArrayContains("radialField", $myQueryArrayNodeType) || stringArrayContains("turbulenceField", $myQueryArrayNodeType) || stringArrayContains("uniformField", $myQueryArrayNodeType) || stringArrayContains("vortexField", $myQueryArrayNodeType)){
 Field_MM_May9;
+}else if (stringArrayContains("joint", $myQueryArrayNodeType) && stringArrayContains("mesh", $myQueryArrayNodeType)){
+JointPoly_MM_May9;
 }else{
 switch ($myQueryArrayNodeType[0]){
 case "joint": Joint_MM_May9; break;

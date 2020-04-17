@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_BindSkinFix`);
+
 catchQuiet (`runTimeCommand -e -del da_ToggleAiSkyDome`);
 
 catchQuiet (`runTimeCommand -e -del da_ClusterRelative`);
@@ -1004,6 +1006,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Fix Bind Skin no Click Command"
+	-cat "Custom Scripts.May9_Next.System"
+	-c ("string $mySel[] = `ls -sl`;\nstring $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;\n\nselect $mySel;\n\nif (stringArrayContains(\"joint\", $myQueryArrayNodeType) && stringArrayContains(\"mesh\", $myQueryArrayNodeType)){\n    SmoothBindSkinOptions;\n}else{\n    ParentConstraintOptions;\n}")
+	da_BindSkinFix;
 
 runTimeCommand
 	-ann "Toggle aiSkyDome in Viewport"
