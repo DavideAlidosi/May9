@@ -3535,7 +3535,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Layout Hypershade"
 	-cat "Custom Scripts.May9_Next.System"
-	-c ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daHyperShade\";\n    inViewMessage -pos topCenter -msg \"Hypershade layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n\n\tsetOutlinerVisible 0;\n\tda_ChannelBox;\n}else{\n    panePop;\n\tsetOutlinerVisible 0;\n\tda_ChannelBox;\n}\n\nint $myLayout = 10")
+	-c ("if ($myLayout != 10){\n    //Get Current Camera\n    string $myCurPanel = `playblast -ae`;\n    string $myCurPane = `match \"[^|]*$\" $myCurPanel`;\n    string $myCurCam = `modelPanel -q -cam $myCurPane`;\n    \n    //Change Layout\n    setNamedPanelLayout \"daHyperShade\";\n    inViewMessage -pos topCenter -msg \"Hypershade layout\" -fade;\n    \n    //Switch back to Current Camera\n    lookThru $myCurPane $myCurCam;\n\n\tAttributeEditor;\n}else{\n    panePop;\n\tAttributeEditor;\n}\n\nint $myLayout = 10")
 	da_LayoutHypershade;
 
 runTimeCommand
