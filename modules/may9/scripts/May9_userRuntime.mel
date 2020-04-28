@@ -3637,7 +3637,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Auto Bevel Mesh"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("polyPerformAction \"polySoftEdge -a 30\" e 0;\nda_EdgeHard;\npolyBevel3 -f 0.05 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 2 -ws 1 -sa 47 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;\nda_BackToObjectMode;\nShowManipulators;")
+	-c ("da_EdgeHard;\nstring $actualHardEdge[] = `ls -sl`;\nda_BackToObjectMode;\n\npolySoftEdge -a 30 -ch 1;\nda_EdgeHard;\nstring $autoHardEdge[] = `ls -sl`;\n\nselect $actualHardEdge;\nselect -add $autoHardEdge;\n\npolyBevel3 -f 0.05 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 2 -ws 1 -sa 47 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;\nda_BackToObjectMode;\nShowManipulators;")
 	da_AutoBevel;
 
 runTimeCommand
