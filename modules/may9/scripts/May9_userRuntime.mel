@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_symmetryConstraint`);
+
 catchQuiet (`runTimeCommand -e -del da_BindSkinFix`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleAiSkyDome`);
@@ -1006,6 +1008,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Symmetry Constraint"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\nstring $mySymmetryConstraint = `createNode symmetryConstraint`;\nstring $mySymmetryLocator = `CreateLocator`;\n\nconnectAttr -f ($mySel[0] + \".translate\") ($mySymmetryConstraint + \".target.targetTranslate\");\nconnectAttr -f ($mySel[0] + \".rotate\") ($mySymmetryConstraint + \".target.targetJointOrient\");\nconnectAttr -f ($mySel[0] + \".scale\") ($mySymmetryConstraint + \".target.targetScale\");\n\nconnectAttr -f ($mySel[0] + \".parentMatrix\") ($mySymmetryConstraint + \".target.targetParentMatrix\");\nconnectAttr -f ($mySel[0] + \".worldMatrix\") ($mySymmetryConstraint + \".target.targetWorldMatrix\");\n\nconnectAttr -f ($mySel[0] + \".rotateOrder\") ($mySymmetryConstraint + \".target.targetRotateOrder\");\n\nconnectAttr -f ($mySymmetryLocator + \".translate\") ($mySymmetryConstraint + \".symmetryRootOffset\");\nsetAttr -lock true ($mySymmetryLocator + \".rx\");\nsetAttr -lock true ($mySymmetryLocator + \".ry\");\nsetAttr -lock true ($mySymmetryLocator + \".rz\");\n//connectAttr -f ($mySymmetryLocator + \".rotate\") ($mySymmetryConstraint + \".rotateAxis\");\n//connectAttr -f ($mySymmetryConstraint + \".rotateAxis\") ($mySel[1] + \".rotateAxis\");\n\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintTranslate\") ($mySel[1] + \".translate\");\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintJointOrient\") ($mySel[1] + \".rotate\");\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintScale\") ($mySel[1] + \".scale\");\n\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintRotateOrder\") ($mySel[1] + \".rotateOrder\");\n\nconnectAttr -f ($mySel[1] + \".parentInverseMatrix\") ($mySymmetryConstraint + \".constraintInverseParentWorldMatrix\");\n\nrename \"symmetryLocator1\";")
+	da_symmetryConstraint;
 
 runTimeCommand
 	-ann "Fix Bind Skin no Click Command"
