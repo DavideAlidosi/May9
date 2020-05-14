@@ -5,6 +5,16 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_superDuplicate`);
+
+catchQuiet (`runTimeCommand -e -del da_recursiveParent`);
+
+catchQuiet (`runTimeCommand -e -del da_ikHierarchy`);
+
+catchQuiet (`runTimeCommand -e -del da_ikSplineHierarchy`);
+
+catchQuiet (`runTimeCommand -e -del da_ikSplineAutoHierarchy`);
+
 catchQuiet (`runTimeCommand -e -del da_symmetryConstraint`);
 
 catchQuiet (`runTimeCommand -e -del da_BindSkinFix`);
@@ -1010,9 +1020,39 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Duplicate History and Transform"
+	-cat "Custom Scripts.Edit"
+	-c ("duplicate -rr -un -st")
+	da_superDuplicate;
+
+runTimeCommand
+	-ann "Create a Recursive Parent based on Selection"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=1 ; $i<size($mySel); $i++){\n    select $mySel[$i];\n    select -add $mySel[$i-1];\n    parent;\n}\n")
+	da_recursiveParent;
+
+runTimeCommand
+	-ann "Auto Create an IK Based on Selection Hierarchy"
+	-cat"Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\n\nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n    select -hierarchy;\n    \n    string $myLocalSel[] = `ls -sl`;\n    string $myLastSel[] = `ls -sl -tl 1`;\n    \n    select -r $myLocalSel[0];\n    select -add $myLastSel;\n    ikHandle;\n}\n")
+	da_ikHierarchy;
+
+runTimeCommand
+	-ann "Auto Create an IK Spline Based on Selection Hierarchy"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\nstring $myCurveSel[] = `filterExpand -sm 9`;\n\nfor ($i=0; $i<size($myJointSel); $i++){\n    select $myJointSel[$i];\n    select -hierarchy;\n    \n    string $myLocalSel[] = `ls -sl`;\n    string $myLastSel[] = `ls -sl -tl 1`;\n    \n    select -r $myLocalSel[0];\n    select -add $myLastSel;\n    select -add $myCurveSel[$i];\n    ikHandle -sol ikSplineSolver -ccv 0;\n}")
+	da_ikSplineHierarchy;
+
+runTimeCommand
+	-ann "Auto Create an IK Spline Based on Selection Hierarchy"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n    select -hierarchy;\n    \n    string $myLocalSel[] = `ls -sl`;\n    string $myLastSel[] = `ls -sl -tl 1`;\n    \n    select -r $myLocalSel[0];\n    select -add $myLastSel;\n    ikHandle -sol ikSplineSolver;;\n}\n")
+	da_ikSplineAutoHierarchy;
+
+runTimeCommand
 	-ann "Symmetry Constraint"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `ls -sl`;\nstring $mySymmetryConstraint = `createNode symmetryConstraint`;\nstring $mySymmetryLocator = `CreateLocator`;\n\nconnectAttr -f ($mySel[0] + \".translate\") ($mySymmetryConstraint + \".target.targetTranslate\");\nconnectAttr -f ($mySel[0] + \".rotate\") ($mySymmetryConstraint + \".target.targetJointOrient\");\nconnectAttr -f ($mySel[0] + \".scale\") ($mySymmetryConstraint + \".target.targetScale\");\n\nconnectAttr -f ($mySel[0] + \".parentMatrix\") ($mySymmetryConstraint + \".target.targetParentMatrix\");\nconnectAttr -f ($mySel[0] + \".worldMatrix\") ($mySymmetryConstraint + \".target.targetWorldMatrix\");\n\nconnectAttr -f ($mySel[0] + \".rotateOrder\") ($mySymmetryConstraint + \".target.targetRotateOrder\");\n\nconnectAttr -f ($mySymmetryLocator + \".translate\") ($mySymmetryConstraint + \".symmetryRootOffset\");\nsetAttr -lock true ($mySymmetryLocator + \".rx\");\nsetAttr -lock true ($mySymmetryLocator + \".ry\");\nsetAttr -lock true ($mySymmetryLocator + \".rz\");\n//connectAttr -f ($mySymmetryLocator + \".rotate\") ($mySymmetryConstraint + \".rotateAxis\");\n//connectAttr -f ($mySymmetryConstraint + \".rotateAxis\") ($mySel[1] + \".rotateAxis\");\n\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintTranslate\") ($mySel[1] + \".translate\");\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintJointOrient\") ($mySel[1] + \".rotate\");\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintScale\") ($mySel[1] + \".scale\");\n\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintRotateOrder\") ($mySel[1] + \".rotateOrder\");\n\nconnectAttr -f ($mySel[1] + \".parentInverseMatrix\") ($mySymmetryConstraint + \".constraintInverseParentWorldMatrix\");\n\nrename \"symmetryLocator1\";")
+	-c ("string $mySel[] = `ls -sl`;\nstring $mySymmetryConstraint = `createNode symmetryConstraint`;\nstring $mySymmetryLocator = `CreateLocator`;\n\nconnectAttr -f ($mySel[0] + \".translate\") ($mySymmetryConstraint + \".target.targetTranslate\");\nconnectAttr -f ($mySel[0] + \".rotate\") ($mySymmetryConstraint + \".target.targetJointOrient\");\nconnectAttr -f ($mySel[0] + \".scale\") ($mySymmetryConstraint + \".target.targetScale\");\n\nconnectAttr -f ($mySel[0] + \".parentMatrix\") ($mySymmetryConstraint + \".target.targetParentMatrix\");\nconnectAttr -f ($mySel[0] + \".worldMatrix\") ($mySymmetryConstraint + \".target.targetWorldMatrix\");\n\nconnectAttr -f ($mySel[0] + \".rotateOrder\") ($mySymmetryConstraint + \".target.targetRotateOrder\");\n\nconnectAttr -f ($mySymmetryLocator + \".translate\") ($mySymmetryConstraint + \".symmetryRootOffset\");\nconnectAttr -f ($mySymmetryLocator + \".rotate\") ($mySymmetryConstraint + \".rotateAxis\");\nconnectAttr -f ($mySymmetryConstraint + \".rotateAxis\") ($mySel[1] + \".rotateAxis\");\n\nsetAttr -l 1 ($mySymmetryLocator + \".rx\");\nsetAttr -l 1 ($mySymmetryLocator + \".ry\");\nsetAttr -l 1 ($mySymmetryLocator + \".rz\");\n\nsetAttr -l 1 ($mySymmetryLocator + \".sx\");\nsetAttr -l 1 ($mySymmetryLocator + \".sy\");\nsetAttr -l 1 ($mySymmetryLocator + \".sz\");\n\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintTranslate\") ($mySel[1] + \".translate\");\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintJointOrient\") ($mySel[1] + \".rotate\");\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintScale\") ($mySel[1] + \".scale\");\n\nconnectAttr -f ($mySymmetryConstraint + \".constrained.constraintRotateOrder\") ($mySel[1] + \".rotateOrder\");\n\nconnectAttr -f ($mySel[1] + \".parentInverseMatrix\") ($mySymmetryConstraint + \".constraintInverseParentWorldMatrix\");\n\nrename \"symmetryLocator1\";\n\nselect $mySymmetryConstraint;\nselect -add $mySel[1];\nparent;\n\nrename ($mySel[1] + \"_\" + $mySymmetryConstraint);")
 	da_symmetryConstraint;
 
 runTimeCommand
