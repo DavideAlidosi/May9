@@ -3237,11 +3237,20 @@ menuItem
 -rp "NW"
 -i "polyBevel.png";
 
+if (size($myComponents) > 1){
 menuItem
 -l "Bridge"
--c "BridgeEdge;"
+-c "BridgeEdge"
 -rp "NE"
 -i "polyBridge.png";
+} else {
+menuItem
+-l "Append to Polygon"
+-c "AppendToPolygonTool"
+-rp "NE"
+-i "polyAppendFacet.png";
+}
+
 
 menuItem
 -l "Multi Cut"
@@ -11292,6 +11301,11 @@ menuItem
 -l "Advance Smooth Proxy"
 -c "da_SmoothProxy"
 -i "polySmoothProxy.png";
+
+menuItem
+-l "Append to Polygon"
+-c "AppendToPolygonTool"
+-i "polyAppendFacet.png";
 
 menuItem
 -l "Fill Hole"
