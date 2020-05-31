@@ -8566,9 +8566,8 @@ global string $da_underPointerPanel;
 $da_underPointerPanel = `getPanel -underPointer`;
 
 string $mySel[] = `ls -sl`;
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 string $myContainer[] = `ls -sl -containers`;
-string $myNodeType[] = `da_QueryArrayNodeType`;
-select $mySel;
 
 if ( `size($myContainer)` == 0 ){
 int $DAGCheck = `outlinerEditor -q -dag $da_underPointerPanel`;
@@ -8599,12 +8598,20 @@ menuItem
 -rp "SE" 
 -cb ($MaterialCheck);
 
-if ($MaterialCheck || $DAGCheck == 0){
+if ( size($myCurTransform) > 1 ){
+menuItem
+-l "Recursive Parent" 
+-c "da_recursiveParent" 
+-rp "S" 
+-i "currentNamespaceParent.png";
+}else{
+if ($MaterialCheck && size($mySel) > 0 || $DAGCheck == 0 && size($mySel) > 0){
 menuItem
 -l "Select by Shader" 
 -c "da_SelectObjectMaterial" 
 -rp "S" 
 -i "out_layeredShader.png";
+} 
 }
 
 menuItem
@@ -8754,6 +8761,8 @@ menuItem
 setParent -m ..;
 
 }else{
+string $myNodeType[] = `da_QueryArrayNodeType`;
+select $mySel;
 if($myNodeType[0] == "character"){
 
 menuItem
@@ -8762,6 +8771,7 @@ menuItem
 -c "characterEditor( true )"
 -i "HIKcreateControlRig.png";
 }else{
+
 menuItem
 -l "Edit in Hypergraph..." 
 -c "da_EditContainer" 
