@@ -362,36 +362,36 @@ menuItem -bld 1
 -i "kinJoint.png";
 
 menuItem -bld 1 
--l "Parent Constraint..."
--c "ParentConstraintOptions"
+-l "Parent Constraint"
+-c "pointConstraint -mo -weight 1"
 -rp "S"
 -i "parentConstraint.png"
 -en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
--l "Orient Constraint..."
--c "OrientConstraintOptions"
+-l "Orient Constraint"
+-c "orientConstraint -mo -weight 1;"
 -rp "E"
 -i "orientConstraint.png"
 -en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
--l "Aim Constraint..."
--c "AimConstraintOptions"
+-l "Aim Constraint"
+-c "aimConstraint -mo -weight 1 -aimVector 1 0 0 -upVector 0 1 0 -worldUpType \"vector\" -worldUpVector 0 1 0" 
 -rp "N"
 -i "aimConstraint.png"
 -en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
--l "Point Constraint..."
--c "PointConstraintOptions"
+-l "Point Constraint"
+-c "pointConstraint -mo -weight 1"
 -rp "SE"
 -i "posConstraint.png"
 -en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
--l "Scale Constraint..."
--c "ScaleConstraintzOptions"
+-l "Scale Constraint"
+-c "scaleConstraint -mo -weight 1"
 -rp "NW"
 -i "scaleConstraint.png"
 -en (size($myCurTransform) >= 2);
@@ -1664,10 +1664,10 @@ menuItem
 -i "orientConstraint.png";
 
 menuItem
--l "IK Spline Handle..." 
--c "IKSplineHandleToolOptions" 
+-l "Reset Constraint Offset" 
+-c "da_ResetConstraintOffset" 
 -rp "W" 
--i "kinSplineHandle.png";
+-i "out_aimConstraint.png";
 
 menuItem 
 -l "Match Pivots"

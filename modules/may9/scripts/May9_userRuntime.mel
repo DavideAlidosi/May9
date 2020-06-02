@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ResetConstraintOffset`);
+
 catchQuiet (`runTimeCommand -e -del da_superDuplicate`);
 
 catchQuiet (`runTimeCommand -e -del da_recursiveParent`);
@@ -1018,6 +1020,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Reset Constraint Offset"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i<size($mySel); $i++){\n    select $mySel[$i];\n    string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;\n    \n    switch ($myQueryArrayNodeType[0]){\n        case \"parentConstraint\":\n            setAttr ($mySel[$i] + \".target[0].targetOffsetTranslateX\") 0;\n            setAttr ($mySel[$i] + \".target[0].targetOffsetTranslateY\") 0;\n            setAttr ($mySel[$i] + \".target[0].targetOffsetTranslateZ\") 0;\n            \n            setAttr ($mySel[$i] + \".target[0].targetOffsetRotateX\") 0;\n            setAttr ($mySel[$i] + \".target[0].targetOffsetRotateY\") 0;\n            setAttr ($mySel[$i] + \".target[0].targetOffsetRotateZ\") 0;\n        break;\n        case \"scaleConstraint\":\n            setAttr ($mySel[$i] + \".offsetX\") 1;\n            setAttr ($mySel[$i] + \".offsetY\") 1;\n            setAttr ($mySel[$i] + \".offsetZ\") 1;\n        break;\n        default:\n            setAttr ($mySel[$i] + \".offsetX\") 0;\n            setAttr ($mySel[$i] + \".offsetY\") 0;\n            setAttr ($mySel[$i] + \".offsetZ\") 0;\n        break;\n    }\n}")
+	da_ResetConstraintOffset;
 
 runTimeCommand
 	-ann "Duplicate History and Transform"
