@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_PaintableCluster`);
+
 catchQuiet (`runTimeCommand -e -del da_ResetConstraintOffset`);
 
 catchQuiet (`runTimeCommand -e -del da_superDuplicate`);
@@ -1020,6 +1022,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Make a Paintable Cluster"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("CreateCluster;\n\nstring $myClusterSet[] = `listConnections -s 0 -d 1 -t \"objectSet\"`;\nstring $myClusterMesh[] = `listConnections -s 0 -d 1 -t \"mesh\"`;\n\nfor ($i=0; $i<size($myClusterMesh); $i++) {\n    sets -fe $myClusterSet[0] ($myClusterMesh[$i] + \".vtx[0:100000000000000000000]\");\n}\n\nselect $myClusterMesh;\nArtPaintAttrToolOptions")
+	da_PaintableCluster;
 
 runTimeCommand
 	-ann "Reset Constraint Offset"
