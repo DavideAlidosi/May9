@@ -1026,7 +1026,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Make a Paintable Cluster"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("CreateCluster;\n\nstring $myClusterSet[] = `listConnections -s 0 -d 1 -t \"objectSet\"`;\nstring $myClusterMesh[] = `listConnections -s 0 -d 1 -t \"mesh\"`;\n\nfor ($i=0; $i<size($myClusterMesh); $i++) {\n    sets -fe $myClusterSet[0] ($myClusterMesh[$i] + \".vtx[0:100000000000000000000]\");\n}\n\nselect $myClusterMesh;\nArtPaintAttrToolOptions")
+	-c ("string $mySel[] = `ls -sl`;\n\nCreateCluster;\nstring $myCluster[] = `ls -sl`;\n\nstring $myClusterSet[] = `listConnections -s 0 -d 1 -t \"objectSet\"`;\nstring $myClusterMesh[] = `listConnections -s 0 -d 1 -t \"mesh\"`;\n\nfor ($i=0; $i<size($myClusterMesh); $i++) {\n    sets -fe $myClusterSet[0] ($myClusterMesh[$i] + \".vtx[0:100000000000000000000]\");\n}\n\nselect $mySel;\nInvertSelection;\npercent -v 0 $myCluster[1];\nselect $myCluster[0];")
 	da_PaintableCluster;
 
 runTimeCommand
