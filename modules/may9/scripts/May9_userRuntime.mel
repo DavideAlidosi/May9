@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_PaintableRiggedCluster`);
+
 catchQuiet (`runTimeCommand -e -del da_PaintableCluster`);
 
 catchQuiet (`runTimeCommand -e -del da_ResetConstraintOffset`);
@@ -1024,9 +1026,15 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Paintable Rigged Cluster"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\nstring $myNewCluster[] = `newCluster \"-relative -envelope 1\"`;\nstring $myClusterSet[] = `listConnections -s 0 -d 1 -t \"objectSet\"`;\nstring $myClusterMesh[] = `listConnections -s 0 -d 1 -t \"mesh\"`;\n\nfor ($i=0; $i<size($myClusterMesh); $i++) {\n    sets -fe $myClusterSet[0] ($myClusterMesh[$i] + \".vtx[0:100000000000000000000]\");\n}\n\nselect $mySel;\nConvertSelectionToVertices;\nInvertSelection;\npercent -v 0 $myNewCluster[0];\nselect $myNewCluster[1];\n\nstring $myNewCTRLCurve0[] = `circle -c 0 0 0 -nr 0 1 0 -sw 360 -r .5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 0`;\nstring $myNewCTRLCurve1[] = `circle -c 0 0 0 -nr 1 0 0 -sw 360 -r .5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 0`;\nstring $myNewCTRLCurve2[] = `circle -c 0 0 0 -nr 0 0 1 -sw 360 -r .5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 0`;\n\nselect -add $myNewCTRLCurve0;\nselect -add $myNewCTRLCurve1;\nda_CombineCurves;\n\nstring $myNewCTRLCurve[] = `ls -sl`;\n\nselect $myNewCTRLCurve[0];\nselect -add $myNewCluster[1];\n\nmatchTransform;\n\nperformFreezeTransformations(0);\n\nconnectAttr -f ($myNewCTRLCurve[0] + \".t\") ($myNewCluster[1] + \".t\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".r\") ($myNewCluster[1] + \".r\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".s\") ($myNewCluster[1] + \".s\");\n\nstring $myNewGroup = `group`;\n\nselect -add $myNewCTRLCurve[0];\n\nMatchPivots;\n\nselect $myNewCluster[1];\nrename \"Cluster\";\n\nda_EnableReference;\n\nselect $myNewGroup;\nrename \"RiggedCluster1\";\n\nselect $myNewCTRLCurve[0];\nrename \"ClusterCTRL\";\n\nTagAsController")
+	da_PaintableRiggedCluster;
+
+runTimeCommand
 	-ann "Make a Paintable Cluster"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `ls -sl`;\n\nCreateCluster;\nstring $myCluster[] = `ls -sl`;\n\nstring $myClusterSet[] = `listConnections -s 0 -d 1 -t \"objectSet\"`;\nstring $myClusterMesh[] = `listConnections -s 0 -d 1 -t \"mesh\"`;\n\nfor ($i=0; $i<size($myClusterMesh); $i++) {\n    sets -fe $myClusterSet[0] ($myClusterMesh[$i] + \".vtx[0:100000000000000000000]\");\n}\n\nselect $mySel;\nInvertSelection;\npercent -v 0 $myCluster[1];\nselect $myCluster[0];")
+	-c ("string $mySel[] = `ls -sl`;\nstring $myCluster[] = `newCluster \"-relative -envelope 1\"`;\nstring $myClusterSet[] = `listConnections -s 0 -d 1 -t \"objectSet\"`;\nstring $myClusterMesh[] = `listConnections -s 0 -d 1 -t \"mesh\"`;\n\nfor ($i=0; $i<size($myClusterMesh); $i++) {\n    sets -fe $myClusterSet[0] ($myClusterMesh[$i] + \".vtx[0:100000000000000000000]\");\n}\n\nselect $mySel;\nConvertSelectionToVertices;\nInvertSelection;\npercent -v 0 $myCluster[0];\nselect $myCluster[1];")
 	da_PaintableCluster;
 
 runTimeCommand
@@ -1359,7 +1367,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create a Rigged Culster"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myNewCluster[] = `newCluster \"-relative -envelope 1\"`;\nstring $myNewCTRLCurve[] = `circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1`;\n\nselect $myNewCTRLCurve[0];\nselect -add $myNewCluster[1];\n\nmatchTransform;\n\nperformFreezeTransformations(0);\n\nconnectAttr -f ($myNewCTRLCurve[0] + \".t\") ($myNewCluster[1] + \".t\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".r\") ($myNewCluster[1] + \".r\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".s\") ($myNewCluster[1] + \".s\");\n\nstring $myNewGroup = `group`;\n\nselect -add $myNewCTRLCurve[0];\n\nMatchPivots;\n\nselect $myNewCluster[1];\nrename \"Cluster\";\n\nda_EnableReference;\n\nselect $myNewGroup;\nrename \"RiggedCluster1\";\n\nselect $myNewCTRLCurve[0];\nrename \"ClusterCTRL\";\n\nTagAsController;")
+	-c ("string $myNewCluster[] = `newCluster \"-relative -envelope 1\"`;\n\nstring $myNewCTRLCurve0[] = `circle -c 0 0 0 -nr 0 1 0 -sw 360 -r .5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 0`;\nstring $myNewCTRLCurve1[] = `circle -c 0 0 0 -nr 1 0 0 -sw 360 -r .5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 0`;\nstring $myNewCTRLCurve2[] = `circle -c 0 0 0 -nr 0 0 1 -sw 360 -r .5 -d 3 -ut 0 -tol 0.01 -s 8 -ch 0`;\n\nselect -add $myNewCTRLCurve0;\nselect -add $myNewCTRLCurve1;\nda_CombineCurves;\n\nstring $myNewCTRLCurve[] = `ls -sl`;\n\nselect $myNewCTRLCurve[0];\nselect -add $myNewCluster[1];\n\nmatchTransform;\n\nperformFreezeTransformations(0);\n\nconnectAttr -f ($myNewCTRLCurve[0] + \".t\") ($myNewCluster[1] + \".t\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".r\") ($myNewCluster[1] + \".r\");\nconnectAttr -f ($myNewCTRLCurve[0] + \".s\") ($myNewCluster[1] + \".s\");\n\nstring $myNewGroup = `group`;\n\nselect -add $myNewCTRLCurve[0];\n\nMatchPivots;\n\nselect $myNewCluster[1];\nrename \"Cluster\";\n\nda_EnableReference;\n\nselect $myNewGroup;\nrename \"RiggedCluster1\";\n\nselect $myNewCTRLCurve[0];\nrename \"ClusterCTRL\";\n\nTagAsController;")
 	da_RiggedCluster;
 
 runTimeCommand
