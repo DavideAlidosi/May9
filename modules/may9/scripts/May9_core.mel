@@ -1,9 +1,9 @@
 print "May9 console: Source May9_core.mel \n";
 
 // Store May9 Version
-string $may9Version = "May9 Next.2.4";
-string $may9SecondLine = "Happy BDay Man!";
-int $may9Value = "10243";
+string $may9Version = "May9 Next.2.5";
+string $may9SecondLine = "Powered by MMtoKey core";
+int $may9Value = "10250";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -34,6 +34,10 @@ if (`about -api` >= 20190100){
 if (`about -api` >= 20200000){
 	python "from maya.plugin.evaluator.cache_preferences import CachePreferenceDynamicsSupportEnabled";
 }
+
+// Inizialize additionals IK solvers
+ikSpringSolver;
+ik2Bsolver;
 
 
 // Source main scripts
@@ -121,6 +125,7 @@ if (`optionVar -q "May9ActivationCheck"` < 10000){
 
 	print "May9 console: Initialized installer preference \n";
 }
+
 
 // Complete installation or update release
 if (`optionVar -q "May9ActivationCheck"` < $may9Value){
