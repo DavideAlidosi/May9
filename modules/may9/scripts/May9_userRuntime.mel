@@ -3825,7 +3825,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Subdivide by Using Subdivs Preview"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("SmoothPolygon;\ndR_modeObject;\ndR_modeObject;\nShowManipulators")
+	-c ("string $mySel[] = `ls -sl`;\nSmoothPolygon;\ndR_modeObject;\ndR_modeObject;\nShowManipulators;\n\nselect $mySel;")
 	da_Subdivision;
 
 runTimeCommand
