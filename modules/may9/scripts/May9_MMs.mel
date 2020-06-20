@@ -6272,6 +6272,7 @@ setParent -m ..;
 } 
 // Define Locator marking menu
 global proc Locator_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Controller Orient" 
@@ -6302,6 +6303,14 @@ menuItem
 -c "da_CtrlPoleVectorConstraint" 
 -rp "SE" 
 -i "poleVectorConstraint.png";
+
+if (size($myCurTransform) >= 2){
+menuItem
+-l "Add Distance" 
+-c "da_LocatorDistance" 
+-rp "S" 
+-i "out_distanceBetween.png";
+}
 
 menuItem
 -l "Increase Size" 
