@@ -35,9 +35,10 @@ global proc da_May9Hotkeys(){
 	hotkey -k "i" -ctl -alt -sht -n ("da_CtrlPoleVectorConstraintNameCommand");
 	hotkey -k "l" -ctl -alt -sht -n ("da_LastOpInStackNameCommand");
 	hotkey -k "x" -ctl -alt -sht -n ("da_QuitNameCommand");
+	hotkey -k "d" -ctl -alt -sht -n ("da_superDuplicateNameCommand");
 
 	// Rigging hotkeys
-	hotkey -k "d" -ctl -alt -sht -n ("MatchPivotsNameCommand");
+	hotkey -k "Ins" -ctl -alt -sht -n ("MatchPivotsNameCommand");
 	hotkey -k "d" -ctl -alt -n ("da_ResetPivotNameCommand");
 	hotkey -k "o" -ctl -alt -n ("TagAsControllerNameCommand");
 	hotkey -k "p" -ctl -alt -n ("TagAsControllerParentNameCommand");
@@ -457,18 +458,6 @@ global proc da_May9Hotkeys(){
 		-c ("da_TitleBarToggle")
 		da_TitleBarToggleNameCommand;
 
-	if (`about -api` < 20200000){
-		nameCommand
-			-ann "da_moveKeyframeToNextNameCommand"
-			-c ("da_moveKeyframeToNext")
-			da_moveKeyframeToNextNameCommand;
-
-		nameCommand
-			-ann "da_moveKeyframeToPrevNameCommand"
-			-c ("da_moveKeyframeToPrev")
-			da_moveKeyframeToPrevNameCommand;
-	}
-
 	nameCommand
 		-ann "da_KeyKeyedOnlyNameCommand"
 		-c ("da_KeyKeyedOnly")
@@ -534,7 +523,23 @@ global proc da_May9Hotkeys(){
 		-c ("da_Quit")
 		da_QuitNameCommand;
 
+	nameCommand
+		-ann "da_superDuplicateNameCommand"
+		-c ("da_superDuplicate")
+		da_superDuplicateNameCommand;
+
+
 	if (`about -api` >= 20200000){
+		nameCommand
+			-ann "da_moveKeyframeToNextNameCommand"
+			-c ("da_moveKeyframeToNext")
+			da_moveKeyframeToNextNameCommand;
+
+		nameCommand
+			-ann "da_moveKeyframeToPrevNameCommand"
+			-c ("da_moveKeyframeToPrev")
+			da_moveKeyframeToPrevNameCommand;
+
 		nameCommand
 			-ann "toggleNurbsCurvesOptionNameCommand"
 			-c ("toggleNurbsCurvesOption")
