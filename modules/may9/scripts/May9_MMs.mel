@@ -5520,12 +5520,7 @@ default: PolyJoint_MM_May9; break;
 } 
 // Define Joint marking menu
 global proc Joint_MM_May9(){
-
-menuItem
--l "Joint Orientation..." 
--c "OrientJointOptions" 
--rp "N" 
--i "orientJoint.png";
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Go To Bind Pose" 
@@ -5536,12 +5531,39 @@ menuItem
 menuItem
 -l "Mirror Joint" 
 -c "mirrorJoint" 
--rp "NW" 
+-rp "N" 
 -i "kinMirrorJoint_S.png";
 
 menuItem
 -c "MirrorJointOptions" 
 -ob 1;
+
+menuItem
+-l "IK Spline on Hierarchy" 
+-c "da_ikSplineAutoHierarchy" 
+-rp "W" 
+-i "out_ikSplineSolver.png";
+
+menuItem
+-l "IK on Hierarchy" 
+-c "da_ikHierarchy" 
+-rp "NW" 
+-i "out_ikHandleGadget.png";
+
+if (size($myCurTransform) > 1){
+menuItem
+-l "IK Spline on Curves" 
+-c "da_ikSplineHierarchy" 
+-rp "SW" 
+-i "fitBSpline.png";
+}else{
+menuItem
+-l "IK Handle" 
+-c "IKHandleTool" 
+-rp "SW" 
+-i "kinHandle.png";
+}
+
 
 menuItem
 -l "Remove Joints" 
@@ -5560,18 +5582,6 @@ menuItem
 -c "InsertJointTool" 
 -rp "E" 
 -i "kinInsert.png";
-
-menuItem
--l "IK Spline Handle..." 
--c "IKSplineHandleToolOptions" 
--rp "W" 
--i "kinSplineHandle.png";
-
-menuItem
--l "IK Handle" 
--c "IKHandleTool" 
--rp "SW" 
--i "kinHandle.png";
 
 menuItem
 -l "Show Local Axes" 
@@ -5612,9 +5622,22 @@ menuItem
 -d 1;
 
 menuItem
--l "IK on Selected Joints" 
+-l "Joint Orientation..." 
+-c "OrientJointOptions" 
+-i "orientJoint.png";
+
+menuItem
+-l "IK Spline Handle..." 
+-c "IKSplineHandleToolOptions" 
+-i "kinSplineHandle.png";
+
+menuItem
+-l "IK on Selected Joints..." 
 -c "da_IkOnJoint" 
 -i "out_ikRPsolver.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Select Weighted Vertices" 
