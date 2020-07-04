@@ -1,4 +1,4 @@
-May9 Next.2.4 - A new user experience for Autodesk Maya 2020
+May9 Next.2.5 - A new user experience for Autodesk Maya 2020
 
 
 General info
@@ -18,7 +18,7 @@ Installation
 
 
 Release Note
-Tested and develop on Autodesk Maya 2020
+Tested and develop on Autodesk Maya 2020.1
 
 
 Licenses
