@@ -668,7 +668,7 @@ if (`pluginInfo -q -l bifrostGraph`){
 menuItem -bld 1 
 -l "Bifrost Graph..."
 -c "CreateNewBifrostGraph"
--i "out_bifrostBoard.png";
+-i "da_bifrostBoard.png";
 }
 
 menuItem -bld 1 
@@ -3309,7 +3309,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Edge Edit"
+-l "Edit"
 -sm 1
 -i "edges_NEX.png";
 
@@ -3746,7 +3746,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Face Edit"
+-l "Edit"
 -sm 1
 -i "faces_NEX.png";
 
@@ -6859,7 +6859,7 @@ menuItem
 -i "polyDelEdgeVertex.png";
 
 menuItem
--l "Mesh Edit"
+-l "Edit"
 -sm 1
 -i "polyMesh.png";
 
@@ -10412,7 +10412,7 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Mesh Edit"
+-l "Edit"
 -sm 1
 -i "polyMesh.png";
 
@@ -11380,7 +11380,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Mesh Edit"
+-l "Edit"
 -sm 1
 -i "polyMesh.png";
 
@@ -14326,7 +14326,7 @@ menuItem
 -d 1;
 
 menuItem
--l "Vertex Edit"
+-l "Edit"
 -sm 1
 -i "vertex_NEX.png";
 
@@ -14339,6 +14339,11 @@ menuItem
 -l "Detach"
 -c "da_DetachVertex"
 -i "polySplitVertex.png";
+
+menuItem
+-l "Chamfer"
+-c "polyChamferVtx 1 0.25 0"
+-i "polyChamfer.png";
 
 menuItem
 -l "Crease Tool"
