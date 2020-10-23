@@ -78,7 +78,7 @@ class Command(object):
         if language == cls.MEL:
             mel.eval(command)
         elif language == cls.PYTHON:
-            exec command
+            exec(command)
         else:
             importlib.import_module("May9_Next.commands." + command).run()
 

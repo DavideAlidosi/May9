@@ -120,11 +120,11 @@ global proc da_May9Hotkeys(){
 	hotkey -k "\\" -rn ("STRSTweakModeOffNameCommand");
 
 	// TTF and resigned Help hotkeys
-	if (`about -api` >= 20210000){
+	/*if (`about -api` >= 20210000){
 		hotkey -k "F1" -n ("");
 		hotkey -k "F1" -rn ("TypeToFindNameCommand");
 		hotkey -k "F1" -sht -n ("HelpNameCommand");
-	}
+	}*/
 
 	// nameCommand set
 

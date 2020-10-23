@@ -2,7 +2,7 @@ import os
 import sys
 import maya.cmds as cmds
 import maya.mel as mel
-import Engine
+from . import Engine
 
 mel.eval('source "May9_menu.mel"')
 mel.eval('source "May9_core.mel"')
