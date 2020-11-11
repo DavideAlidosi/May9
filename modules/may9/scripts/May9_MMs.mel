@@ -13413,6 +13413,14 @@ menuItem -itl 1
 -rp "SE";
 
 if (`gmatch $currentPanel "modelPanel*"`){
+
+if (size(`ls -lv`) > 0 ){
+menuItem -itl 1 
+-l "Add Live Smooth" 
+-c "da_SubdivQuadDraw"
+-i "polySmoothProxy.png";
+}
+
 menuItem -itl 1
 -l "Isolate Select" 
 -c "ToggleIsolateSelect" 

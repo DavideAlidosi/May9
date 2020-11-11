@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_SubdivQuadDraw`);
+
 catchQuiet (`runTimeCommand -e -del da_LocatorDistance`);
 
 catchQuiet (`runTimeCommand -e -del da_CurveCTRL`);
@@ -1028,6 +1030,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Subdivide QuadDraw Live"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("setToolTo selectSuperContext;\nda_BackToObjectMode;\n\nstring $myRetopo[] = `ls -sl`;\nduplicate;\nstring $mySmooth[] = `ls -sl`;\n\nstring $myLive[] = `ls -lv`;\n\nif( `size($mySmooth[0])` > 0 && `size($myLive[0])` > 0){\n    connectAttr -f ($myRetopo[0] + \".outMesh\") ($mySmooth[0] + \".inMesh\");\n    \n    da_Subdivision;\n    \n    select $mySmooth[0];\n    select -add $myLive[0];\n    \n    doShrinkWrapArgList \"1\" { \"1\", \"3\", \"0\", \"0\", \"1\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"0\", \"1\" };\n    \n    select $mySmooth[0];\n    rename ($myRetopo[0] + \"_Smooth\");\n    \n    select $myLive[0];\n    statusLineSetMakeLive;\n    \n    select $myRetopo[0];\n}\n\ndR_quadDrawTool;\ndR_DoCmd(\"quadDrawTool\");\nsetToolTo nexQuadDrawCtx1;")
+	da_SubdivQuadDraw;
 
 runTimeCommand
 	-ann "Add Distance to Locators"
