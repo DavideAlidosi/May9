@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_AutoIkCTRL`);
+
 catchQuiet (`runTimeCommand -e -del da_SubdivQuadDraw`);
 
 catchQuiet (`runTimeCommand -e -del da_LocatorDistance`);
@@ -1030,6 +1032,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Create IK CTRL on Selected Joint"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\n\nstring $myCTRLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    performNurbsCircle 0;\n    rename \"CTRL_Auto_IK1\";\n    appendStringArray ( $myCTRLs, `ls -sl`, size(`ls -sl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    da_FreezeDelNonDef;\n    TagAsController;\n\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n}\n\nselect $myCTRLs;\nda_recursiveParent;\n\nclear $myCTRLs;")
+	da_AutoIkCTRL;
 
 runTimeCommand
 	-ann "Subdivide QuadDraw Live"
