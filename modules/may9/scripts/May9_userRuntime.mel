@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_YellowOverrides`);
+
 catchQuiet (`runTimeCommand -e -del da_AutoIkCTRL`);
 
 catchQuiet (`runTimeCommand -e -del da_SubdivQuadDraw`);
@@ -4022,4 +4024,11 @@ runTimeCommand
 	-cat "Custom Scripts.May9_Next.Object"
 	-c ("string $myCombineSel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -f -s`;\n$myShapeSize = size($myShape);\nfor($i=0; $i<$myShapeSize; $i++){\n    select $myCombineSel[0];\n    pickWalkDown;\n    da_ExtractCurveShape;\n}\nselect $myCombineSel[0];\ndelete;")
 	da_SepareCurves;
+}
+
+runTimeCommand
+	-ann "Enable Yellow Overrides on Selected Shape"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myShape[] = `listRelatives -f -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 17;\n}")
+	da_YellowOverrides;
 }
