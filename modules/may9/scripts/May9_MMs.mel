@@ -2482,6 +2482,41 @@ menuItem
 -rp "N" 
 -i "out_nurbsCurve.png";
 
+menuItem
+-l "Wire Color" 
+-sm 1
+-i "da_blue.png";
+
+menuItem
+-l "Default" 
+-c "da_NoColorOverrides" 
+-i "da_blue.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Red" 
+-c "da_RedOverrides" 
+-i "da_red.png";
+
+menuItem
+-l "Green" 
+-c "da_GreenOverrides" 
+-i "da_green.png";
+
+menuItem
+-l "Yellow" 
+-c "da_YellowOverrides" 
+-i "da_yellow.png";
+
+menuItem
+-l "Blue" 
+-c "da_BlueOverrides" 
+-i "da_lightBlue.png";
+
+setParent -m ..;
+
 setParent -m ..;
 
 } 
