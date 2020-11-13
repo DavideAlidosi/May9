@@ -1036,9 +1036,16 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Enable Yellow Overrides on Selected Shape"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myShape[] = `listRelatives -f -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 17;\n}")
+	da_YellowOverrides;
+}
+
+runTimeCommand
 	-ann "Create IK CTRL on Selected Joint"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\n\nstring $myCTRLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    performNurbsCircle 0;\n    rename \"CTRL_Auto_IK1\";\n    appendStringArray ( $myCTRLs, `ls -sl`, size(`ls -sl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    performFreezeTransformations(0);\n    \n    setAttr -l 1 \".tx\";\n    setAttr -l 1 \".ty\";\n    setAttr -l 1 \".tz\";\n\n    setAttr -l 1 \".sx\";\n    setAttr -l 1 \".sy\";\n    setAttr -l 1 \".sz\";\n    \n    TagAsController;\n\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n}\n\nselect $myCTRLs;\nda_recursiveParent;\n\nclear $myCTRLs;")
+	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\n\nstring $myCTRLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    performNurbsCircle 0;\n    rename \"CTRL_Auto_IK1\";\n    appendStringArray ( $myCTRLs, `ls -sl`, size(`ls -sl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    performFreezeTransformations(0);\n    \n    setAttr -l 1 \".tx\";\n    setAttr -l 1 \".ty\";\n    setAttr -l 1 \".tz\";\n\n    setAttr -l 1 \".sx\";\n    setAttr -l 1 \".sy\";\n    setAttr -l 1 \".sz\";\n    \n    TagAsController;\n\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n}\n\nselect $myCTRLs;\nda_recursiveParent;\n\nselect $myCTRLs;\n\nclear $myCTRLs;")
 	da_AutoIkCTRL;
 
 runTimeCommand
@@ -4024,11 +4031,4 @@ runTimeCommand
 	-cat "Custom Scripts.May9_Next.Object"
 	-c ("string $myCombineSel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -f -s`;\n$myShapeSize = size($myShape);\nfor($i=0; $i<$myShapeSize; $i++){\n    select $myCombineSel[0];\n    pickWalkDown;\n    da_ExtractCurveShape;\n}\nselect $myCombineSel[0];\ndelete;")
 	da_SepareCurves;
-}
-
-runTimeCommand
-	-ann "Enable Yellow Overrides on Selected Shape"
-	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myShape[] = `listRelatives -f -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 17;\n}")
-	da_YellowOverrides;
 }

@@ -2485,15 +2485,16 @@ menuItem
 menuItem
 -l "Search and Replace..."
 -c "SearchAndReplaceNames"
+-rp "S" 
 -i "text.png";
-
-menuItem
--d 1;
 
 menuItem
 -l "Default Color" 
 -c "da_NoColorOverrides" 
 -i "da_blue.png";
+
+menuItem
+-d 1;
 
 menuItem
 -l "Red Curve" 
@@ -5653,6 +5654,11 @@ Sup_JointLabel_MM_May9;
 
 menuItem
 -d 1;
+
+menuItem
+-l "Add IK Controls" 
+-c "da_AutoIkCTRL" 
+-i "circle.png";
 
 menuItem
 -l "Joint Orientation..." 
