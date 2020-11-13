@@ -1038,7 +1038,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create IK CTRL on Selected Joint"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\n\nstring $myCTRLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    performNurbsCircle 0;\n    rename \"CTRL_Auto_IK1\";\n    appendStringArray ( $myCTRLs, `ls -sl`, size(`ls -sl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    da_FreezeDelNonDef;\n    TagAsController;\n\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n}\n\nselect $myCTRLs;\nda_recursiveParent;\n\nclear $myCTRLs;")
+	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\n\nstring $myCTRLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    performNurbsCircle 0;\n    rename \"CTRL_Auto_IK1\";\n    appendStringArray ( $myCTRLs, `ls -sl`, size(`ls -sl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    performFreezeTransformations(0);\n    \n    setAttr -l 1 \".tx\";\n    setAttr -l 1 \".ty\";\n    setAttr -l 1 \".tz\";\n\n    setAttr -l 1 \".sx\";\n    setAttr -l 1 \".sy\";\n    setAttr -l 1 \".sz\";\n    \n    TagAsController;\n\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n}\n\nselect $myCTRLs;\nda_recursiveParent;\n\nclear $myCTRLs;")
 	da_AutoIkCTRL;
 
 runTimeCommand

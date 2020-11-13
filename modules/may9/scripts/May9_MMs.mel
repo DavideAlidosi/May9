@@ -2483,39 +2483,37 @@ menuItem
 -i "out_nurbsCurve.png";
 
 menuItem
--l "Wire Color" 
--sm 1
--i "da_blue.png";
-
-menuItem
--l "Default" 
--c "da_NoColorOverrides" 
--i "da_blue.png";
+-l "Search and Replace..."
+-c "SearchAndReplaceNames"
+-i "text.png";
 
 menuItem
 -d 1;
 
 menuItem
--l "Red" 
+-l "Default Color" 
+-c "da_NoColorOverrides" 
+-i "da_blue.png";
+
+menuItem
+-l "Red Curve" 
 -c "da_RedOverrides" 
 -i "da_red.png";
 
 menuItem
--l "Green" 
+-l "Green Curve" 
 -c "da_GreenOverrides" 
 -i "da_green.png";
 
 menuItem
--l "Yellow" 
+-l "Yellow Curve" 
 -c "da_YellowOverrides" 
 -i "da_yellow.png";
 
 menuItem
--l "Blue" 
+-l "Blue Curve" 
 -c "da_BlueOverrides" 
 -i "da_lightBlue.png";
-
-setParent -m ..;
 
 setParent -m ..;
 
@@ -5566,7 +5564,7 @@ menuItem
 menuItem
 -l "Mirror Joint" 
 -c "mirrorJoint" 
--rp "N" 
+-rp "S" 
 -i "kinMirrorJoint_S.png";
 
 menuItem
@@ -5609,7 +5607,7 @@ menuItem
 menuItem
 -l "Select Hierarchy" 
 -c "SelectHierarchy" 
--rp "S" 
+-rp "N" 
 -i "selectByHierarchy.png";
 
 menuItem
@@ -8732,6 +8730,11 @@ menuItem
 -l "Namespace Editor..."
 -c "NamespaceEditor"
 -i "QR_rename.png";
+
+menuItem
+-l "Search and Replace..."
+-c "SearchAndReplaceNames"
+-i "text.png";
 
 menuItem
 -d 1;
