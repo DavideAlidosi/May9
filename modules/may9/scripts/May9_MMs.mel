@@ -763,6 +763,13 @@ menuItem -bld 1
 -c "SetDrivenKeyOptions"
 -i "setDrivenKeyframe.png";
 
+if (`about -api` >= 20210000){
+menuItem -bld 1 
+-l "Ghosting Editor..."
+-c "OpenGhostEditor"
+-i "ghostingEditor.png";
+}
+
 menuItem -bld 1 
 -l "MASH Editor..."
 -c "MASHOutliner"
@@ -1974,10 +1981,17 @@ menuItem
 -c "AttachBrushToCurves"
 -i "paintFXtoCurve.png";
 
+if (`about -api` >= 20210000){
+menuItem
+-l "Sweep Mesh"
+-c "sweepMeshFromCurve -oneNodePerCurve false"
+-i "shelf_sweepMeshFromCurve.png";
+}else{
 menuItem
 -l "Convert to Polygons"
 -c "da_curveToPoly"
 -i "da_curveToPoly.png";
+}
 
 menuItem
 -l "Create Curve Collector"
@@ -2837,10 +2851,17 @@ menuItem
 -c "AttachBrushToCurves"
 -i "paintFXtoCurve.png";
 
+if (`about -api` >= 20210000){
+menuItem
+-l "Sweep Mesh"
+-c "sweepMeshFromCurve -oneNodePerCurve false"
+-i "shelf_sweepMeshFromCurve.png";
+}else{
 menuItem
 -l "Convert to Polygons"
 -c "da_curveToPoly"
 -i "da_curveToPoly.png";
+}
 
 menuItem
 -l "Create Curve Collector"
