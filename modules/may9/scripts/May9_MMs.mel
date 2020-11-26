@@ -8694,8 +8694,23 @@ setParent -m ..;
 setParent -m ..;
 
 } 
+
 // Define Outliner marking menu
 global proc Outliner_MM_May9(){
+string $mySel[] = `ls -sl`;
+string $myQueryArrayNodeType[] = `da_QueryArrayNodeType`;
+
+select $mySel;
+
+if (stringArrayContains("mayaUsdProxyShape", $myQueryArrayNodeType)){
+USD_MM_May9;
+}else{
+OutlinerGlobal_MM_May9;
+}
+}
+
+// Define OutlinerGlobal marking menu
+global proc OutlinerGlobal_MM_May9(){
 global string $da_underPointerPanel;
 $da_underPointerPanel = `getPanel -underPointer`;
 
@@ -15466,6 +15481,19 @@ menuItem
 setParent -m ..;
 
 } 
+
+// Define Support SoftSelect marking menu
+global proc USD_MM_May9(){
+
+menuItem 
+-l "USD Layer Editor" 
+-c "UsdLayerEditor" 
+-i "USD_generic.png"
+-rp "N";
+
+setParent -m ..;
+
+}
 // Support MMs
 
 // Define Support SoftSelect marking menu
@@ -15478,7 +15506,7 @@ menuItem
 -l "Soft Selection"
 -i "customSoftSelectFalloffCurve.png"
 -sm 1
--radialPosition	"S";
+-rp "S";
 
 menuItem 
 -l "Colour Feedback"
