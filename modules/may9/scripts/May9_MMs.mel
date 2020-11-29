@@ -671,6 +671,13 @@ menuItem -bld 1
 -i "da_bifrostBoard.png";
 }
 
+if (`pluginInfo -q -l mayaUsdPlugin`){
+menuItem -bld 1 
+-l "USD Stage..."
+-c "mayaUsdCreateStageWithNewLayer;UsdLayerEditor"
+-i "USD_stage.png";
+}
+
 menuItem -bld 1 
 -l "Constuct Plane..."
 -c "CreateConstructionPlaneOptions" 
@@ -867,6 +874,13 @@ menuItem -bld 1
 -l "Bifrost Browser..."
 -c "bifrostBrowser"
 -i "out_bifrostBoard.png";
+}
+
+if (`pluginInfo -q -l mayaUsdPlugin`){
+menuItem -bld 1 
+-l "USD Stage from File..."
+-c "mayaUsdCreateStageFromFile"
+-i "USD_stage.png";
 }
 
 menuItem -bld 1 
