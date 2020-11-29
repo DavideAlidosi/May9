@@ -1644,7 +1644,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Define Outliner no Click Command"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("string $mySel[] = `ls -sl`;\nstring $myContainer[] = `ls -sl -containers`;\nstring $myNodeType[] = `da_QueryArrayNodeType`;\nselect $mySel;\n\nif ( `size($myContainer)` == 0 ){\n    outlinerEditor -e -sc 1 `getPanel -underPointer`;\n}else if ( $myNodeType[0] == \"character\" ){\n    characterEditor( true );\n}else{\n    da_EditContainer;\n}")
+	-c ("string $mySel[] = `ls -sl`;\nstring $myContainer[] = `ls -sl -containers`;\nstring $myNodeType[] = `da_QueryArrayNodeType`;\nselect $mySel;\n\nif ( $myNodeType[0] == \"mayaUsdProxyShape\" ){\n    UsdLayerEditor;\n} else {\n    if ( `size($myContainer)` == 0 ){\n        outlinerEditor -e -sc 1 `getPanel -underPointer`;\n    } else if ( $myNodeType[0] == \"character\" ){\n        characterEditor( true );\n    } else {\n        da_EditContainer;\n    }\n}\n")
 	da_OutlinerNoClick;
 
 runTimeCommand
