@@ -9819,6 +9819,8 @@ setParent -m ..;
 }
 // Define PolyBevel marking menu
 global proc PolyBevel_MM_May9(){
+string $mySel[] = `ls -sl -typ "polyBevel3"`;
+string $myActualComponents[] = `getAttr ($mySel[0] + ".inputComponents")`;
 
 menuItem
 -l "Show Manips" 
@@ -9831,6 +9833,20 @@ menuItem
 -c "AttributeEditor" 
 -rp "S" 
 -i "attributes.png";
+
+if (size($myActualComponents) > 0){
+menuItem
+-l "Empty Components" 
+-c "da_ClearBevelComponents" 
+-rp "E" 
+-i "RS_disable.png";
+}else{
+menuItem
+-l "Assing Components" 
+-c "da_AssingBevelComponents" 
+-rp "E" 
+-i "enabled.png";
+}
 
 menuItem
 -l "Chamfer On" 

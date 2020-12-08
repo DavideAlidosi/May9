@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_AssingBevelComponents`);
+
+catchQuiet (`runTimeCommand -e -del da_ClearBevelComponents`);
+
 catchQuiet (`runTimeCommand -e -del da_YellowOverrides`);
 
 catchQuiet (`runTimeCommand -e -del da_AutoIkCTRL`);
@@ -1034,13 +1038,25 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+}
+
+runTimeCommand
+	-ann "Assing Selected Components to Bevel Node"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("string $mySel[] = `ls -sl`;\n\nstring $mySelComponents[] = `ls -sl -fl`;\nstring $mySelObject[] = `ls -fl -hl`;\nstring $myModifier[] = `ls -sl -typ \"polyBevel3\"`;\n\nstring $mySelComponentsOnly[] = stringArrayRemovePrefix($mySel,$myModifier[0]);\nstring $mySelComponentsNoPrefix[] = stringArrayRemovePrefix($mySelComponentsOnly,$mySelObject[0]);\nstring $mySelComponentsNoDot[] = stringArrayRemovePrefix($mySelComponentsNoPrefix,\".\");\n\nstring $mySelComponentsNoDotToString = stringArrayToString($mySelComponentsNoDot, \" \");\n\nint $myComponentSize = `size ($mySelComponentsNoPrefix)`;\nint $myComponentFixedSize = ($myComponentSize - 1);\n\n// Write inputComponentssetAttr\n$da_evalString = \"setAttr \" + $mySel[0] + \".inputComponents -type \\\"componentList\\\" \" + $myComponentFixedSize + $mySelComponentsNoDotToString;\neval $da_evalString;\n\nselect -cl;\nselect $myModifier[0];")
+	da_AssingBevelComponents;
+
+runTimeCommand
+	-ann "Clear Current Components to Bevel Node\n"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("string $myModifier[] = `ls -sl -typ \"polyBevel3\"`;\nstring $mySelObject[] = `ls -fl -hl`;\n\nstring $myActualComponents[] = `getAttr ($myModifier[0] + \".inputComponents\")`;\nstring $myActualComponentsObj[] = stringArrayAddPrefix($myActualComponents, $mySelObject[0] + \".\");\nstring $myActualComponentsObjNoDotToString = stringArrayToString($myActualComponentsObj, \" \");\n\nda_SelectMulti;\n\n// Empty inputComponents\nsetAttr -type \"componentList\" ($myModifier[0] + \".inputComponents\") 0;\n\n$da_evalString = \"select -add \" + $myActualComponentsObjNoDotToString;\neval $da_evalString;")
+	da_ClearBevelComponents;
 
 runTimeCommand
 	-ann "Enable Yellow Overrides on Selected Shape"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $myShape[] = `listRelatives -f -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 17;\n}")
 	da_YellowOverrides;
-}
 
 runTimeCommand
 	-ann "Create IK CTRL on Selected Joint"
