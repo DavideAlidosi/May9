@@ -12507,11 +12507,13 @@ global proc Sets_MM_May9(){
 global string $da_underPointerPanel;
 $da_underPointerPanel = `getPanel -underPointer`;
 
+if (`gmatch $da_underPointerPanel "outlinerPanel*"`){
 menuItem
 -l "Select Set" 
 -c "selectAllSetMembers $da_underPointerPanel" 
 -rp "N" 
 -i "aselect.png";
+}
 
 menuItem
 -l "Delete Set" 
