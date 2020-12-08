@@ -4961,6 +4961,16 @@ menuItem
 -en (`animCurveEditor -q -af $da_currentGraphPanel`);
 }
 
+if (`about -api` >= 20200400){
+menuItem
+-d 1;
+
+menuItem
+-l "Snap Time to Selection" 
+-c "optionVar -intValue snapTimeToSelection (!`optionVar -query snapTimeToSelection`)" 
+-cb (`optionVar -query snapTimeToSelection`);
+}
+
 setParent -m ..;
 
 } 
