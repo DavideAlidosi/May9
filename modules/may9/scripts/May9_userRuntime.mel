@@ -1048,7 +1048,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Clear Current Components to Bevel Node\n"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $myModifier[] = `ls -sl -typ \"polyBevel3\"`;\nstring $mySelObject[] = `ls -fl -hl`;\n\nstring $myActualComponents[] = `getAttr ($myModifier[0] + \".inputComponents\")`;\nstring $myActualComponentsObj[] = stringArrayAddPrefix($myActualComponents, $mySelObject[0] + \".\");\nstring $myActualComponentsObjNoDotToString = stringArrayToString($myActualComponentsObj, \" \");\n\nda_SelectMulti;\n\n// Empty inputComponents\nsetAttr -type \"componentList\" ($myModifier[0] + \".inputComponents\") 0;\n\n$da_evalString = \"select -add \" + $myActualComponentsObjNoDotToString;\neval $da_evalString;")
+	-c ("string $myModifier[] = `ls -sl -typ \"polyBevel3\"`;\nstring $mySelObject[] = `ls -fl -hl`;\n\nstring $myActualComponents[] = `getAttr ($myModifier[0] + \".inputComponents\")`;\nstring $myActualComponentsObj[] = stringArrayAddPrefix($myActualComponents, $mySelObject[0] + \".\");\nstring $myActualComponentsObjNoDotToString = stringArrayToString($myActualComponentsObj, \" \");\n\nda_SelectMulti;\n\n// Empty inputComponents\nsetAttr -type \"componentList\" ($myModifier[0] + \".inputComponents\") 0;\n\n$da_evalString = \"select -add \" + $myActualComponentsObjNoDotToString;\neval $da_evalString;\neval $da_evalString;")
 	da_ClearBevelComponents;
 
 runTimeCommand
@@ -3765,7 +3765,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Auto Bevel Mesh"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("da_EdgeHard;\nstring $actualHardEdge[] = `ls -sl`;\nda_BackToObjectMode;\n\npolySoftEdge -a 30 -ch 1;\nda_EdgeHard;\nstring $autoHardEdge[] = `ls -sl`;\n\nselect $actualHardEdge;\nselect -add $autoHardEdge;\n\npolyBevel3 -f 0.05 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 2 -ws 1 -sa 47 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1;\nda_BackToObjectMode;\nShowManipulators;")
+	-c ("da_EdgeHard;\nstring $actualHardEdge[] = `ls -sl`;\nda_BackToObjectMode;\n\nstring $hardEdgeNode[] = `polySoftEdge -a 30 -ch 1`;\nda_EdgeHard;\nstring $autoHardEdge[] = `ls -sl`;\n\nselect $actualHardEdge;\nselect -add $autoHardEdge;\n\nstring $myModifier[] = `polyBevel3 -f 0.05 -oaf 1 -af 1 -d 1 -m 0 -mia 0 -c 1 -sg 2 -ws 1 -sa 47 -sn 1 -mv 1 -mvt 0.0001 -ma 180 -at 180 -ch 1`;\ndelete $hardEdgeNode[0];\n\nShowManipulators;\nselect -add $myModifier[0];")
 	da_AutoBevel;
 
 runTimeCommand
