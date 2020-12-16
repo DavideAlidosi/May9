@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_BatchSeparate`);
+
 catchQuiet (`runTimeCommand -e -del da_AssingBevelComponents`);
 
 catchQuiet (`runTimeCommand -e -del da_ClearBevelComponents`);
@@ -1040,6 +1042,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Separate Multiple Combined Object"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("string $myCombined[] = `ls -sl`;\n\nfor ($i=0; $i<size($myCombined); $i++) {\n    select $myCombined[$i];\n    catchQuiet (`da_PolySeparate`);\n}")
+	da_BatchSeparate;
+
+runTimeCommand
 	-ann "Assing Selected Components to Bevel Node"
 	-cat "Custom Scripts.May9_Next.Modeling"
 	-c ("string $mySel[] = `ls -sl`;\n\nstring $mySelComponents[] = `ls -sl -fl`;\nstring $mySelObject[] = `ls -fl -hl`;\nstring $myModifier[] = `ls -sl -typ \"polyBevel3\"`;\n\nstring $mySelComponentsOnly[] = stringArrayRemovePrefix($mySel,$myModifier[0]);\nstring $mySelComponentsNoPrefix[] = stringArrayRemovePrefix($mySelComponentsOnly,$mySelObject[0]);\nstring $mySelComponentsNoDot[] = stringArrayRemovePrefix($mySelComponentsNoPrefix,\".\");\n\nstring $mySelComponentsNoDotToString = stringArrayToString($mySelComponentsNoDot, \" \");\n\nint $myComponentSize = `size ($mySelComponentsNoPrefix)`;\nint $myComponentFixedSize = ($myComponentSize - 1);\n\n// Write inputComponentssetAttr\n$da_evalString = \"setAttr \" + $mySel[0] + \".inputComponents -type \\\"componentList\\\" \" + $myComponentFixedSize + $mySelComponentsNoDotToString;\neval $da_evalString;\n\nselect -cl;\nselect $myModifier[0];")
@@ -1295,7 +1303,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Separate Poly Mesh"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $mySel[] = `ls -sl`;\nif(size(`findRelatedSkinCluster $mySel[0]`)){\n    string $mySkinnedMesh[] = `ls -sl`;\n    BakeNonDefHistory;\n    polySeparate -ch 1;\n    pickWalkUp;\n    pickWalkDown;\n    pickWalkLeft;\n    delete;\n}else{\n    polySeparate -ch 0;\n}")
+	-c ("string $mySel[] = `ls -sl`;\nif(size(`findRelatedSkinCluster $mySel[0]`)){\n    string $mySkinnedMesh[] = `ls -sl`;\n    BakeNonDefHistory;\n    polySeparate -ch 1;\n\tCenterPivot;\n    pickWalkUp;\n    pickWalkDown;\n    pickWalkLeft;\n    delete;\n}else{\n    polySeparate -ch 0;\n\tCenterPivot;\n}")
 	da_PolySeparate;
 
 runTimeCommand
