@@ -10717,6 +10717,13 @@ menuItem
 -c "Tension"
 -i "da_tensionDef.png";
 
+if (`about -api` >= 20210000){
+menuItem
+-l "Solidify"
+-c "Solidify"
+-i "polyPlatonicSolid.png";
+}
+
 menuItem
 -l "Jiggle"
 -c "MASHaddJiggleDeformer"
@@ -11720,6 +11727,13 @@ menuItem
 -l "Tension"
 -c "Tension"
 -i "da_tensionDef.png";
+
+if (`about -api` >= 20210000){
+menuItem
+-l "Solidify"
+-c "Solidify"
+-i "polyPlatonicSolid.png";
+}
 
 menuItem
 -l "Jiggle"
