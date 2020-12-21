@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_SwapMotionPath`);
+
 catchQuiet (`runTimeCommand -e -del da_BatchSeparate`);
 
 catchQuiet (`runTimeCommand -e -del da_AssingBevelComponents`);
@@ -1042,6 +1044,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Swap Motion Path Curve"
+	-cat "Custom Scripts.May9_Next.Animate"
+	-c ("string $myMotionPath[] = `ls -sl -typ \"motionPath\"`;\nstring $myNurbsCurve[] = `ls -sl -typ \"nurbsCurve\"`;\n\n\nconnectAttr -f ($myNurbsCurve[0] + \".worldSpace[0]\") ($myMotionPath[0] + \".geometryPath\");")
+	da_SwapMotionPath;
+
+runTimeCommand
 	-ann "Separate Multiple Combined Object"
 	-cat "Custom Scripts.May9_Next.Modeling"
 	-c ("string $myCombined[] = `ls -sl`;\n\nfor ($i=0; $i<size($myCombined); $i++) {\n    select $myCombined[$i];\n    catchQuiet (`da_PolySeparate`);\n}")
@@ -1667,7 +1675,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Define Outliner no Click Command"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("string $mySel[] = `ls -sl`;\nstring $myContainer[] = `ls -sl -containers`;\nstring $myNodeType[] = `da_QueryArrayNodeType`;\nselect $mySel;\n\nif ( $myNodeType[0] == \"mayaUsdProxyShape\" ){\n    UsdLayerEditor;\n} else {\n    if ( `size($myContainer)` == 0 ){\n        outlinerEditor -e -sc 1 `getPanel -underPointer`;\n    } else if ( $myNodeType[0] == \"character\" ){\n        characterEditor( true );\n    } else {\n        da_EditContainer;\n    }\n}\n")
+	-c ("string $mySel[] = `ls -sl`;\nstring $myContainer[] = `ls -sl -containers`;\nstring $myNodeType[] = `da_QueryArrayNodeType`;\nselect $mySel;\n\nif ( $myNodeType[0] == \"mayaUsdProxyShape\" ){\n    UsdLayerEditor;\n} else {\n    if ( `size($myContainer)` == 0 ){\n        OutlinerToggleDAGOnly;\n    } else if ( $myNodeType[0] == \"character\" ){\n        characterEditor( true );\n    } else {\n        da_EditContainer;\n    }\n}\n")
 	da_OutlinerNoClick;
 
 runTimeCommand

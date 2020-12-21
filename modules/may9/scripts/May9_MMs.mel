@@ -1842,7 +1842,6 @@ menuItem
 setParent -m ..;
 
 }
-
 // Define CurveCreate marking menu
 global proc CurveCreate_MM_May9(){
 
@@ -2543,6 +2542,18 @@ menuItem
 -l "Blue Curve" 
 -c "da_BlueOverrides" 
 -i "da_lightBlue.png";
+
+setParent -m ..;
+
+}
+// Define CurveCreate marking menu
+global proc CurveMotionPath_MM_May9(){
+
+menuItem
+-l "Swap Motion Path" 
+-c "da_SwapMotionPath" 
+-rp "N" 
+-i "offsetCurve.png";
 
 setParent -m ..;
 
@@ -3838,6 +3849,11 @@ menuItem
 -l "Duplicate"
 -c "performPolyChipOff 0 1"
 -i "polyDuplicateFacet.png";
+
+menuItem
+-l "Poke"
+-c "PokePolygon"
+-i "polyPoke.png";
 
 menuItem
 -d 1;
