@@ -1842,6 +1842,7 @@ menuItem
 setParent -m ..;
 
 }
+
 // Define CurveCreate marking menu
 global proc CurveCreate_MM_May9(){
 
@@ -1854,6 +1855,7 @@ menuItem
 setParent -m ..;
 
 } 
+
 // Define CurveCurve marking menu
 global proc CurveCurve_MM_May9(){
 
@@ -2546,6 +2548,7 @@ menuItem
 setParent -m ..;
 
 }
+
 // Define CurveCreate marking menu
 global proc CurveMotionPath_MM_May9(){
 
@@ -2558,6 +2561,7 @@ menuItem
 setParent -m ..;
 
 } 
+
 // Define CurvesOnSurface marking menu
 global proc CurvesOnSurface_MM_May9(){
 
@@ -2737,6 +2741,7 @@ setParent -m ..;
 } 
 // Define Curves marking menu
 global proc Curves_MM_May9(){
+string $myIKHandleCheck[] = `ls -sl -typ "ikHandle"`;
 
 menuItem
 -l "Add CV"
@@ -2779,6 +2784,14 @@ menuItem
 -c "da_CtrlPoleVectorConstraint" 
 -rp "SE" 
 -i "poleVectorConstraint.png";
+
+if (size($myIKHandleCheck) > 0){
+menuItem
+-l "IK" 
+-c "da_CtrlIKConstraint" 
+-rp "S" 
+-i "out_ikHandle.png";
+}
 
 setParent -m ..;
 

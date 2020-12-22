@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_CtrlIKConstraint`);
+
 catchQuiet (`runTimeCommand -e -del da_SwapMotionPath`);
 
 catchQuiet (`runTimeCommand -e -del da_BatchSeparate`);
@@ -1042,6 +1044,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Auto IK Constraint For Controller"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl -o`;\nstring $myIKHandle[] = `ls -sl -typ \"ikHandle\"`;\nstring $myEffector[] = `listConnections -s 1 -d 0 -t \"ikEffector\"`;\nselect $myEffector;\nstring $myEndJoint[] = stringArrayRemoveDuplicates(`listConnections -s 1 -d 0 -t \"joint\"`);\n\nif ( `size($mySel)` == 2 ){\n    select $mySel[0] $myIKHandle[0];\n    MatchPivots;\n}\n\nfor ($i=0; $i<size($myIKHandle); $i++){\n    select $mySel[0] $myIKHandle[$i];\n    doCreatePointConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n}\n\nfor ($i=0; $i<size($myEndJoint); $i++){\n    select $mySel[0] $myEndJoint[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n}\n\nselect $mySel[0];\nda_FreezeDelNonDef;\nTagAsController;")
+	da_CtrlIKConstraint;
 
 runTimeCommand
 	-ann "Swap Motion Path Curve"
