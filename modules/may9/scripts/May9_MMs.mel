@@ -2108,10 +2108,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
--l "Rigged Cluster"
--c "da_RiggedCluster"
+-l "Rigged Cluster" 
+-c "da_RiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Lattice..."
@@ -2363,10 +2371,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Lattice..." 
@@ -2988,10 +3004,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
--l "Rigged Cluster"
--c "da_RiggedCluster"
+-l "Rigged Cluster" 
+-c "da_RiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Lattice..."
@@ -3505,10 +3529,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
--l "Rigged Cluster"
--c "da_PaintableRiggedCluster"
+-l "Rigged Cluster" 
+-c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Lattice..."
@@ -3931,10 +3963,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
--l "Rigged Cluster"
--c "da_PaintableRiggedCluster"
+-l "Rigged Cluster" 
+-c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Lattice..."
@@ -5826,11 +5866,20 @@ menuItem
 -rp "W" 
 -i "setEdit.png";
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_RiggedCluster" 
 -rp "E" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-rp "E" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Bend" 
@@ -5892,11 +5941,20 @@ menuItem
 -rp "NW" 
 -i "da_deformerSetEditor.png";
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_RiggedCluster" 
 -rp "E" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-rp "E" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Bend" 
@@ -5948,11 +6006,20 @@ menuItem
 -rp "NE" 
 -i "lattice.png";
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_RiggedCluster" 
 -rp "E" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-rp "E" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Deformers"
@@ -6019,11 +6086,20 @@ menuItem
 -rp "NE" 
 -i "lattice.png";
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_RiggedCluster" 
 -rp "E" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-rp "E" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Set Initial State" 
@@ -8022,10 +8098,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Rigged Sculpt"
@@ -8494,10 +8578,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Rigged Sculpt"
@@ -9225,11 +9317,20 @@ menuItem
 -rp "NE" 
 -i "lattice.png";
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_RiggedCluster" 
 -rp "E" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-rp "E" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Deformers"
@@ -9520,10 +9621,18 @@ menuItem
 menuItem
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
 -l "Rigged Cluster" 
 -c "da_RiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_RiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Lattice..." 
@@ -10720,10 +10829,18 @@ menuItem
 
 setParent -m ..;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
--l "Rigged Cluster"
--c "da_PaintableRiggedCluster"
+-l "Rigged Cluster" 
+-c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Rigged Sculpt"
@@ -11726,10 +11843,18 @@ menuItem
 
 setParent -m ..;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
--l "Rigged Cluster"
--c "da_PaintableRiggedCluster"
+-l "Rigged Cluster" 
+-c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Rigged Sculpt"
@@ -14601,10 +14726,18 @@ menuItem
 menuItem 
 -d 1;
 
+string $myComponentSel[] = `ls -sl -fl`;
+if (size($myComponentSel) == 1){
 menuItem
--l "Rigged Cluster"
--c "da_PaintableRiggedCluster"
+-l "Rigged Cluster" 
+-c "da_PaintableRiggedCluster" 
 -i "cluster.png";
+} else {
+menuItem
+-l "Rigged Cluster..." 
+-c "da_PaintableRiggedClusterUI" 
+-i "cluster.png";
+}
 
 menuItem
 -l "Lattice..."
