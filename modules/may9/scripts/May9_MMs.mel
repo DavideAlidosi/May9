@@ -5674,7 +5674,7 @@ default: PolyJoint_MM_May9; break;
 } 
 // Define Joint marking menu
 global proc Joint_MM_May9(){
-string $myCurTransform[] = `ls -sl -typ "transform"`;
+string $myCurCurve[] = `filterExpand -sm 9`;
 
 menuItem
 -l "Go To Bind Pose" 
@@ -5704,9 +5704,9 @@ menuItem
 -rp "NW" 
 -i "out_ikHandleGadget.png";
 
-if (size($myCurTransform) > 1){
+if (size($myCurCurve) == 1){
 menuItem
--l "IK Spline on Curves" 
+-l "IK Spline on Curve" 
 -c "da_ikSplineHierarchy" 
 -rp "SW" 
 -i "fitBSpline.png";
