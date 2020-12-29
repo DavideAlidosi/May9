@@ -1440,7 +1440,9 @@ setParent -m ..;
 } 
 // Define Cluster marking menu
 global proc Cluster_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
+if (size($myCurTransform) >= 2){
 menuItem
 -l "Controller Orient" 
 -c "da_CtrlOrientConstraint" 
@@ -1460,16 +1462,17 @@ menuItem
 -i "aimConstraint.png";
 
 menuItem
--l "Create Flexor" 
--c "createFlexorWin" 
--rp "W" 
--i "lattice.png";
-
-menuItem
 -l "Controller Parent" 
 -c "da_CtrlParentConstraint" 
 -rp "N" 
 -i "parentConstraint.png";
+}
+
+menuItem
+-l "Create Flexor" 
+-c "createFlexorWin" 
+-rp "W" 
+-i "lattice.png";
 
 menuItem
 -l "Edit Membership Tool" 
@@ -1647,6 +1650,7 @@ default: Constraints_MM_May9; break;
 } 
 // Define Constraints marking menu
 global proc Constraints_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Shape to Joint(s)" 
@@ -1654,6 +1658,7 @@ menuItem
 -rp "E" 
 -i "XRayJoints.png";
 
+if (size($myCurTransform) >= 2){
 menuItem
 -l "Controller Aim" 
 -c "da_CtrlAimConstraint" 
@@ -1683,18 +1688,19 @@ menuItem
 -c "da_CtrlOrientConstraint" 
 -rp "NW" 
 -i "orientConstraint.png";
-
-menuItem
--l "Reset Constraint Offset" 
--c "da_ResetConstraintOffset" 
--rp "W" 
--i "out_aimConstraint.png";
+}
 
 menuItem 
 -l "Match Pivots"
 -c "MatchPivots"
 -rp "S"
 -i "pickPivotComp.png";
+
+menuItem
+-l "Reset Constraint Offset" 
+-c "da_ResetConstraintOffset" 
+-rp "W" 
+-i "out_aimConstraint.png";
 
 menuItem
 -l "IK on Selected Joints" 
@@ -1858,6 +1864,7 @@ setParent -m ..;
 
 // Define CurveCurve marking menu
 global proc CurveCurve_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Loft"
@@ -1869,6 +1876,7 @@ menuItem
 -c "LoftOptions"
 -ob 1;
 
+if (size($myCurTransform) >= 2){
 menuItem
 -l "Controller"
 -sm 1
@@ -1899,13 +1907,8 @@ menuItem
 -rp "N" 
 -i "parentConstraint.png";
 
-menuItem
--l "Pole Vector" 
--c "da_CtrlPoleVectorConstraint" 
--rp "SE" 
--i "poleVectorConstraint.png";
-
 setParent -m ..;
+}
 
 menuItem
 -l "Attach"
@@ -2758,6 +2761,7 @@ setParent -m ..;
 // Define Curves marking menu
 global proc Curves_MM_May9(){
 string $myIKHandleCheck[] = `ls -sl -typ "ikHandle"`;
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Add CV"
@@ -2765,6 +2769,7 @@ menuItem
 -rp "S"
 -i "curveAddPt.png";
 
+if (size($myCurTransform) >= 2){
 menuItem
 -l "Controller"
 -sm 1
@@ -2795,18 +2800,19 @@ menuItem
 -rp "N" 
 -i "parentConstraint.png";
 
+if (size($myIKHandleCheck) > 0){
 menuItem
 -l "Pole Vector" 
 -c "da_CtrlPoleVectorConstraint" 
 -rp "SE" 
 -i "poleVectorConstraint.png";
 
-if (size($myIKHandleCheck) > 0){
 menuItem
 -l "IK" 
 -c "da_CtrlIKConstraint" 
 -rp "S" 
 -i "out_ikHandle.png";
+}
 }
 
 setParent -m ..;
@@ -6486,6 +6492,7 @@ setParent -m ..;
 global proc Locator_MM_May9(){
 string $myCurTransform[] = `ls -sl -typ "transform"`;
 
+if (size($myCurTransform) >= 2){
 menuItem
 -l "Controller Orient" 
 -c "da_CtrlOrientConstraint" 
@@ -6515,14 +6522,13 @@ menuItem
 -c "da_CtrlPoleVectorConstraint" 
 -rp "SE" 
 -i "poleVectorConstraint.png";
+}
 
-if (size($myCurTransform) >= 2){
 menuItem
 -l "Add Distance" 
 -c "da_LocatorDistance" 
 -rp "S" 
 -i "out_distanceBetween.png";
-}
 
 menuItem
 -l "Increase Size" 
@@ -10127,7 +10133,9 @@ setParent -m ..;
 } 
 // Define PolyCurve marking menu
 global proc PolyCurve_MM_May9(){
+string $myCurTransform[] = `ls -sl -typ "transform"`;
 
+if (size($myCurTransform) >= 2){
 menuItem
 -l "Controller Orient" 
 -c "da_CtrlOrientConstraint" 
@@ -10151,6 +10159,7 @@ menuItem
 -c "da_CtrlParentConstraint" 
 -rp "N" 
 -i "parentConstraint.png";
+}
 
 menuItem
 -l "Project Curve On Mesh" 
