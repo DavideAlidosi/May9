@@ -169,9 +169,99 @@ global proc da_May9HotkeySet(){
 	hotkeySet -edit -current May9_Next;
 }
 
+// Define da_Quit
 global proc da_Quit(){
 	if(!saveChanges("")) return;
 
 	$i = `getpid`;
 	system("taskkill /PID "  + $i +" /f");
+}
+
+
+// Define jh_getComponentId by Jefri Haryono under MIT license
+global proc int jh_getComponentId(string $component){
+    string $suffix=match("\\[(.)+", $component);
+    int $id=match("[0-9]+", $suffix);
+
+    return $id;
+}
+
+// Define jh_rainCurvesFromEdges by Jefri Haryono under MIT license
+global proc string[] jh_rainCurvesFromEdges(){
+    string $resultCurveGrp[];
+    string $edges[]=`filterExpand -ex 1 -sm 32`;
+
+    if(size($edges)<1)
+        return $resultCurveGrp;
+
+    string $obj[]=`ls -sl -o`;
+    int $edgeNum[]=`polyEvaluate -edge $obj[0]`;
+    int $isSelect[];
+    int $isProcessed[];
+
+    for($i=0;$i<$edgeNum[0];$i++){
+        $isSelect[size($isSelect)] = 0;
+        $isProcessed[size($isProcessed)] = 0;
+    }
+
+    for($edge in $edges){    
+        $currId = jh_getComponentId($edge);
+        $isSelect[$currId] = 1;
+    }
+
+    string $edgeGroups[];
+
+    for($iter=0;$iter<size($edges);$iter++){
+        int $edgeId = jh_getComponentId($edges[$iter]);
+        
+        if($isProcessed[$edgeId])
+            continue;
+       
+        $isProcessed[$edgeId] = 1;
+        
+        string $currEdge = $edges[$iter];
+        string $edgeStack[] = {$currEdge};
+        int $stackSize = 1;
+
+        string $currEdgeList = "";
+
+        while($stackSize>0){
+            $currEdge = $edgeStack[$stackSize-1];
+            $edgeStack[$stackSize-1] = "";
+            $stackSize -= 1 ;
+            $currEdgeList = $currEdgeList + $currEdge + ";";
+            
+            select -r $currEdge;
+            PolySelectTraverse 1;
+            select -d $currEdge;
+            string $nEdges[] =`filterExpand -ex 1 -sm 32`;
+
+            for($nEdge in $nEdges){
+                int $nId = jh_getComponentId($nEdge);
+                if($isProcessed[$nId])
+                    continue; 
+                    
+                if (!$isSelect[$nId])
+                    continue;
+                    
+                $isProcessed[$nId] = 1;
+                $edgeStack[$stackSize] = $nEdge;
+                $stackSize+=1;
+            }
+        }
+        $edgeGroups[size($edgeGroups)] = $currEdgeList;
+    }
+    
+    for($edgeGroup in $edgeGroups){
+        string $tokens[];
+        int $numTokens = tokenize($edgeGroup,";",$tokens);
+        select -r $tokens;
+        string $newCurve[] = `polyToCurve -form 2 -degree 3 -conformToSmoothMeshPreview 1`;
+        $resultCurveGrp[size($resultCurveGrp)] = $newCurve[0];
+    }
+
+    if(size($resultCurveGrp)>0)
+        select -r $resultCurveGrp;
+
+    return $resultCurveGrp;
 }

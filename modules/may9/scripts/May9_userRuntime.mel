@@ -3759,7 +3759,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Convert Edge to Curve in UV Editor"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $mySel[] = `ls -sl -o`;\nCreateCurveFromPoly;\nselect $mySel[0];\nsetSelectMode components Components; selectType -smp 0 -sme 1 -smf 0 -smu 0 -pv 0 -pe 1 -pf 0 -puv 0")
+	-c ("string $mySel[] = `ls -sl -o`;\nstring $myComponents[] = `ls -sl`;\n\njh_rainCurvesFromEdges;\nselect $mySel[0];\nsetSelectMode components Components;\nselectType -smp 0 -sme 1 -smf 0 -smu 0 -pv 0 -pe 1 -pf 0 -puv 0;\nselect $myComponents;")
 	da_ConvertUvEdgeToCurve;
 
 runTimeCommand
