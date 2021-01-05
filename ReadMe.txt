@@ -1,4 +1,4 @@
-May9 Next.2.5 - A new user experience for Autodesk Maya 2020
+May9 Next.3.0 - A new user experience for Autodesk Maya 2020
 
 
 General info
@@ -18,9 +18,10 @@ Installation
 
 
 Release Note
-Tested and develop on Autodesk Maya 2020.1
+Tested and develop on Autodesk Maya 2020.4
 
 
 Licenses
 May9 Next is made by Davide Alidosi and licensed under MIT license
 MMtoKey is made by Andrey Menshikov and licensed under a custom non-commercial license
+Rain Curves from Edges is made by Jefri Haryono and licensed under MIT license
