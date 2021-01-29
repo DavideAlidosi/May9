@@ -11140,6 +11140,23 @@ menuItem
 
 setParent -m ..;
 
+menuItem
+-l "Arnold Subivision"
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On"
+-c "da_ArnoldSubdiv"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_NoArnoldSubdiv"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
 if ($myArnoldIntVersion < 320){
 menuItem
 -l "Opaque Mesh"
@@ -12157,6 +12174,23 @@ menuItem
 menuItem
 -l "Off"
 -c "da_AiNoExportVertexColors"
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Arnold Subivision"
+-sm 1
+-i "MtoA_Logo.png";
+
+menuItem
+-l "On"
+-c "da_ArnoldSubdiv"
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off"
+-c "da_NoArnoldSubdiv"
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;

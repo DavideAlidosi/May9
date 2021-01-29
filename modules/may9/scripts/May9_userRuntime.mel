@@ -5,6 +5,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ArnoldSubdiv`);
+
+catchQuiet (`runTimeCommand -e -del da_NoArnoldSubdiv`);
+
 catchQuiet (`runTimeCommand -e -del da_PaintableRiggedClusterUI`);
 
 catchQuiet (`runTimeCommand -e -del da_PaintableClusterUI`);
@@ -1052,6 +1056,18 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Enable Arnold Subdiv"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c("setDisplaySmoothness 0;\n\nstring $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -f -s`;\n\nfor ($i=0; $i<size($myShape); $i++) {\n    select $myShape[$i];\n    int $myPolyCounts[] =  `polyEvaluate -f`;\n\n    if ($myPolyCounts[0] <= 24) {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 9;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 9\" -fade;\n    } else if ($myPolyCounts[0] <= 96) {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 8;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 8\" -fade;\n    } else if ($myPolyCounts[0] <= 384) {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 7;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 7\" -fade;\n    } else if ($myPolyCounts[0] <= 1536) {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 6;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 6\" -fade;\n    } else if ($myPolyCounts[0] <= 6144) {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 5;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 5\" -fade;\n    } else if ($myPolyCounts[0] <= 24576) {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 4;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 4\" -fade;\n    } else if ($myPolyCounts[0] <= 98304) {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 3;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 3\" -fade;\n    } else if ($myPolyCounts[0] <= 393216){\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 2;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 2\" -fade;\n    } else if ($myPolyCounts[0] <= 1572864){\n        setAttr ($myShape[$i] + \".aiSubdivType\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 1;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 1;\n        inViewMessage -pos topCenter -msg \"Arnold Subdivision Level 1\" -fade;\n    } else {\n        setAttr ($myShape[$i] + \".aiSubdivType\") 0;\n        setAttr ($myShape[$i] + \".aiSubdivIterations\") 0;\n        setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 0;\n        inViewMessage -pos topCenter -msg \"No Arnold Subdivision Level\" -fade;\n    }\n}\n\nselect $mySel;")
+	da_ArnoldSubdiv;
+
+runTimeCommand
+	-ann "Disable Arnold Subdiv"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("setDisplaySmoothness 0;\n\nstring $mySel[] = `ls -sl`;\nstring $myShape[] = `listRelatives -f -s`;\n\nfor ($i=0; $i<size($myShape); $i++) {\n    select $myShape[$i];\n\n    setAttr ($myShape[$i] + \".aiSubdivType\") 0;\n    setAttr ($myShape[$i] + \".aiSubdivIterations\") 0;\n    setAttr ($myShape[$i] + \".aiSubdivSmoothDerivs\") 0;\n    inViewMessage -pos topCenter -msg \"No Arnold Subdivision Level\" -fade;\n}\n\nselect $mySel;")
+	da_NoArnoldSubdiv;
+
+runTimeCommand
 	-ann "Paintable Rigged Cluster"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $myResult = `confirmDialog -title \"Paintable Rigged Cluster\" -message \"Did you want a single cluster or multiple clusters?\" \n-button \"Single\" -button \"Multiple\" -button \"Close\" -defaultButton \"Close\" \n-cancelButton \"Close\" -dismissString \"Close\"`;\n\nif ($myResult == \"Multiple\") {\n    string $myComponentSel[] = `ls -sl -fl`;\n    select -cl;\n    \n    for ($each in $myComponentSel){\n        select $each;\n        da_PaintableRiggedCluster;\n        select -cl;\n    }\n}\n\nelse if ($myResult == \"Single\") {\n    da_PaintableRiggedCluster;\n}")
@@ -1108,7 +1124,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create IK CTRL on Selected Joint"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\n\nstring $myCTRLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    performNurbsCircle 0;\n    rename \"CTRL_Auto_IK1\";\n    appendStringArray ( $myCTRLs, `ls -sl`, size(`ls -sl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    performFreezeTransformations(0);\n    \n    setAttr -l 1 \".tx\";\n    setAttr -l 1 \".ty\";\n    setAttr -l 1 \".tz\";\n\n    setAttr -l 1 \".sx\";\n    setAttr -l 1 \".sy\";\n    setAttr -l 1 \".sz\";\n    \n    TagAsController;\n\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n}\n\nselect $myCTRLs;\nda_recursiveParent;\n\nselect $myCTRLs;\n\nclear $myCTRLs;")
+	-c ("string $myJointSel[] = `ls -sl -typ \"joint\"`;\n\nstring $myCTRLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    performNurbsCircle 0;\n    rename \"CTRL_Auto_FK1\";\n    appendStringArray ( $myCTRLs, `ls -sl`, size(`ls -sl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    performFreezeTransformations(0);\n    \n    setAttr -l 1 \".tx\";\n    setAttr -l 1 \".ty\";\n    setAttr -l 1 \".tz\";\n\n    setAttr -l 1 \".sx\";\n    setAttr -l 1 \".sy\";\n    setAttr -l 1 \".sz\";\n    \n    TagAsController;\n\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n}\n\nselect $myCTRLs;\nda_recursiveParent;\n\nselect $myCTRLs;\n\nclear $myCTRLs;")
 	da_AutoIkCTRL;
 
 runTimeCommand
