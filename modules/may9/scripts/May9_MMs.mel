@@ -10740,6 +10740,11 @@ menuItem
 -i "da_borderEdge.png";
 
 menuItem
+-l "Soft Edge"
+-c "int $g_cond[1]=`polyOptions -q -ae`; if ($g_cond[0]) polyOptions -se; else polyOptions -ae;"
+-i "polyDuplicateEdgeLoop.png";
+
+menuItem
 -d 1;
 
 menuItem
@@ -11786,6 +11791,11 @@ menuItem
 -l "Border Edges"
 -c "ToggleBorderEdges;"
 -i "da_borderEdge.png";
+
+menuItem
+-l "Soft Edge"
+-c "int $g_cond[1]=`polyOptions -q -ae`; if ($g_cond[0]) polyOptions -se; else polyOptions -ae;"
+-i "polyDuplicateEdgeLoop.png";
 
 menuItem
 -d 1;
