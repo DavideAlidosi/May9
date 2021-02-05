@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_CreateBuffer`);
+
 catchQuiet (`runTimeCommand -e -del da_ArnoldSubdiv`);
 
 catchQuiet (`runTimeCommand -e -del da_NoArnoldSubdiv`);
@@ -1054,6 +1056,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Create a Buffer Group form current selection"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\nstring $myBuffer = `group`;\n\nrename $myBuffer \"Buffer_GRP1\";")
+	da_CreateBuffer;
 
 runTimeCommand
 	-ann "Enable Arnold Subdiv"

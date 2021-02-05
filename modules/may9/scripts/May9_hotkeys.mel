@@ -15,6 +15,10 @@ global proc da_May9Hotkeys(){
 	hotkey -k "m" -ctl -alt -n ("toggleShelfTabsNameCommand");
 	hotkey -k "t" -ctl -alt -n ("da_TitleBarToggleNameCommand");
 	hotkey -k "l" -ctl -alt -n ("da_ListInputOperationsNameCommand");
+	hotkey -k "d" -ctl -alt -n ("da_ResetPivotNameCommand");
+	hotkey -k "o" -ctl -alt -n ("TagAsControllerNameCommand");
+	hotkey -k "p" -ctl -alt -n ("TagAsControllerParentNameCommand");
+	hotkey -k "g" -ctl -alt -n ("da_CreateSetNameCommand");
 	hotkey -k "Space" -ctl -alt -n ("da_InteractivePlaybackNameCommand");
 	if (`about -api` < 20200000){
 		hotkey -k "." -ctl -alt -n ("da_moveKeyframeToNextNameCommand");
@@ -24,7 +28,6 @@ global proc da_May9Hotkeys(){
 	// CTRL Shift Alt Hotkeys
 	hotkey -k "c" -ctl -alt -sht -n ("da_CopySelectionNameCommand");
 	hotkey -k "v" -ctl -alt -sht -n ("da_PasteSelectionNameCommand");
-	hotkey -k "g" -ctl -alt -sht -n ("da_CreateSetNameCommand");
 	hotkey -k "m" -ctl -alt -sht -n ("da_ToggleShelfNameCommand");
 	hotkey -k "r" -ctl -alt -sht -n ("da_ToggleResolutionGateNameCommand");
 	hotkey -k "s" -ctl -alt -sht -n ("da_KeyKeyedOnlyNameCommand");
@@ -36,19 +39,15 @@ global proc da_May9Hotkeys(){
 	hotkey -k "l" -ctl -alt -sht -n ("da_LastOpInStackNameCommand");
 	hotkey -k "x" -ctl -alt -sht -n ("da_QuitNameCommand");
 	hotkey -k "d" -ctl -alt -sht -n ("da_superDuplicateNameCommand");
-
-	// Rigging hotkeys
+	hotkey -k "g" -ctl -alt -sht -n ("da_CreateBufferNameCommand");
 	hotkey -k "Ins" -ctl -alt -sht -n ("MatchPivotsNameCommand");
-	hotkey -k "d" -ctl -alt -n ("da_ResetPivotNameCommand");
-	hotkey -k "o" -ctl -alt -n ("TagAsControllerNameCommand");
-	hotkey -k "p" -ctl -alt -n ("TagAsControllerParentNameCommand");
-	hotkey -k "Return" -ctl -n ("da_FreezeDelNonDefNameCommand");
 
 	// CTRL hotkeys
 	hotkey -k "f" -ctl -n ("da_FrameOnlySelectedNameCommand");
 	hotkey -k "p" -ctl -n ("da_ParentAndPositionNameCommand");
 	hotkey -k "j" -ctl -n ("ConnectionEditorNameCommand");
 	hotkey -k "k" -ctl -n ("ChannelControlEditorNameCommand");
+	hotkey -k "Return" -ctl -n ("da_FreezeDelNonDefNameCommand");
 
 	// Alt hotkeys
 	hotkey -k "1" -alt -n ("da_TogglePerspNameCommand");
@@ -528,6 +527,10 @@ global proc da_May9Hotkeys(){
 		-c ("da_superDuplicate")
 		da_superDuplicateNameCommand;
 
+	nameCommand
+		-ann "da_CreateBufferNameCommand"
+		-c ("da_CreateBuffer")
+		da_CreateBufferNameCommand;
 
 	if (`about -api` >= 20200000){
 		nameCommand
