@@ -43,7 +43,7 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Undo Queue" -c "da_ToggleUndoState" -cb (`undoInfo -q -st`);
     menuItem -p $menuMain -l "Wheel Zoom" -c "da_ToggleMouseWheel" -cb (`optionVar -q "useScrollWheel"`);
     if (`about -api` >= 20190200){
-        menuItem -p $menuMain -l "Bifrost Graph" -c "da_MayaCore" -cb (`pluginInfo -q -autoload Boss` || `pluginInfo -q -autoload bifmeshio` || `pluginInfo -q -autoload bifrostGraph` || `pluginInfo -q -autoload bifrostshellnode` || `pluginInfo -q -autoload bifrostvisplugin` || `pluginInfo -q -autoload mayaVnnPlugin`);
+        menuItem -p $menuMain -l "Bifrost Graph" -c "da_ToggleBifrostGraph" -cb (`pluginInfo -q -autoload bifrostGraph` || `pluginInfo -q -autoload mayaVnnPlugin`);
     }
 
     menuItem -d 1 -l "May9 Next";
