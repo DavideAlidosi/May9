@@ -5,7 +5,11 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
-catchQuiet (`runTimeCommand -e -del da_CreateBuffer`);
+catchQuiet (`runTimeCommand -e -del da_MayaCore`);
+
+catchQuiet (`runTimeCommand -e -del da_VisibilityOverride`);
+
+catchQuiet (`runTimeCommand -e -del da_NoVisibilityOverride`);
 
 catchQuiet (`runTimeCommand -e -del da_ArnoldSubdiv`);
 
@@ -1058,10 +1062,22 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
-	-ann "Create a Buffer Group form current selection"
+	-ann "Enable or disable Maya Core Plug-in configuration"
+	-cat "Custom Scripts.May9_Next.System"
+	-c ("int $PluginCheck = \n    `pluginInfo -q -autoload Boss` \n    || `pluginInfo -q -autoload bifmeshio` \n    || `pluginInfo -q -autoload bifrostGraph` \n    || `pluginInfo -q -autoload bifrostshellnode`\n    || `pluginInfo -q -autoload bifrostvisplugin`\n    || `pluginInfo -q -autoload mayaVnnPlugin`;\n\nif ($PluginCheck == false){\n    catchQuiet (`pluginInfo -e -autoload 1 Boss`);\n    catchQuiet (`pluginInfo -e -autoload 1 bifmeshio`);\n    catchQuiet (`pluginInfo -e -autoload 1 bifrostGraph`);\n    catchQuiet (`pluginInfo -e -autoload 1 bifrostshellnode`);\n    catchQuiet (`pluginInfo -e -autoload 1 bifrostvisplugin`);\n    catchQuiet (`pluginInfo -e -autoload 1 mayaVnnPlugin`);\n    \n    catchQuiet (`loadPluginCmd Boss`);\n    catchQuiet (`loadPluginCmd bifmeshio`); \n    catchQuiet (`loadPluginCmd bifrostGraph`); \n    catchQuiet (`loadPluginCmd bifrostshellnode`);\n    catchQuiet (`loadPluginCmd bifrostvisplugin`);\n    catchQuiet (`loadPluginCmd mayaVnnPlugin`);\n}else{\n    catchQuiet (`pluginInfo -e -autoload 0 Boss`);\n    catchQuiet (`pluginInfo -e -autoload 0 bifmeshio`); \n    catchQuiet (`pluginInfo -e -autoload 0 bifrostGraph`); \n    catchQuiet (`pluginInfo -e -autoload 0 bifrostshellnode`);\n    catchQuiet (`pluginInfo -e -autoload 0 bifrostvisplugin`);\n    catchQuiet (`pluginInfo -e -autoload 0 mayaVnnPlugin`);\n    \n    catchQuiet (`unloadPluginWithCheck Boss 0`);\n    catchQuiet (`unloadPluginWithCheck bifmeshio 0`); \n    catchQuiet (`unloadPluginWithCheck bifrostGraph 0`); \n    catchQuiet (`unloadPluginWithCheck bifrostshellnode 0`);\n    catchQuiet (`unloadPluginWithCheck bifrostvisplugin 0`);\n    catchQuiet (`unloadPluginWithCheck mayaVnnPlugin 0`);\n}")
+	da_MayaCore;
+
+runTimeCommand
+	-ann "Hide the Shape of an Object"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `ls -sl`;\nstring $myBuffer = `group`;\n\nrename $myBuffer \"Buffer_GRP1\";")
-	da_CreateBuffer;
+	-c ("string $myShape[] = `listRelatives -f -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideVisibility\") 0;\n}")
+	da_VisibilityOverride;
+
+runTimeCommand
+	-ann "Show the Shape of an Object"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myShape[] = `listRelatives -f -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideVisibility\") 1;\n}\n")
+	da_NoVisibilityOverride;
 
 runTimeCommand
 	-ann "Enable Arnold Subdiv"

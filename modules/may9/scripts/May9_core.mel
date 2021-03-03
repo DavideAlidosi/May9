@@ -1,9 +1,9 @@
 print "May9 console: Source May9_core.mel \n";
 
 // Store May9 Version
-string $may9Version = "May9 Next.3.1";
-string $may9SecondLine = "You are 3.1 too Man!";
-int $may9Value = "10310";
+string $may9Version = "May9 Next.3.2";
+string $may9SecondLine = "You are 3.2 too Man!";
+int $may9Value = "10320";
 
 // Inizialize DAG Menu Procedure
 catchQuiet(dagMenuProc("", ""));
@@ -75,6 +75,9 @@ scriptJob -e "SceneOpened" da_May9MenuRefresh;
 // Define layout state startup
 string $myLayoutReset = "int $myLayout = 0";
 scriptJob -e "SceneOpened" $myLayoutReset;
+
+// Set Hot Box Transparency to 0
+hotBox -tr 0;
 
 print "May9 console: Complete standard procedures \n";
 

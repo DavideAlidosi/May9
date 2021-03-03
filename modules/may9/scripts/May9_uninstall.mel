@@ -40,6 +40,9 @@ global proc May9_uninstall(){
 	optionVar -rm da_useScenePanelConfig;
 	optionVar -rm da_DuplicateVariableWarnings;
 
+	// Set Hot Box transparency to 25%
+	hotBox -tr 25;
+
 	// Set May9 Intallation in idle mode
 	optionVar -iv May9ActivationCheck 1;
 

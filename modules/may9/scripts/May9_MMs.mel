@@ -420,6 +420,11 @@ menuItem -bld 1
 -c "CreateClusterOptions"
 -i "cluster.png";
 
+menuItem
+-l "Connect Attribute Manager..."
+-c "da_ConnectAttributesUI"
+-i "da_OneToMany.png";
+
 menuItem -bld 1 
 -l "Connection Editor..."
 -c "ConnectionEditor"
@@ -3457,6 +3462,9 @@ menuItem
 -i "polySplitVertex.png";
 
 menuItem
+-d 1;
+
+menuItem
 -l "Crease Tool"
 -c "PolyCreaseTool"
 -i "polyCrease.png";
@@ -3464,6 +3472,11 @@ menuItem
 menuItem
 -c "python \"creaseSetEditor.showCreaseSetEditor()\";"
 -ob 1;
+
+menuItem
+-l "Remove Crease"
+-c "polyCrease -op 1"
+-i "trash.png";
 
 menuItem
 -d 1;
@@ -5328,6 +5341,11 @@ menuItem
 setParent -m ..;
 
 menuItem
+-l "Connect Attribute Manager..."
+-c "da_ConnectAttributesUI"
+-i "da_OneToMany.png";
+
+menuItem
 -l "Connection Editor..."
 -c "ConnectionEditor"
 -i "out_list.png";
@@ -5551,6 +5569,11 @@ menuItem
 -l "TX Manager..." 
 -c "da_TxManager" 
 -i "TXManagerShelf.png";
+
+menuItem
+-l "Connect Attribute Manager..."
+-c "da_ConnectAttributesUI"
+-i "da_OneToMany.png";
 
 menuItem
 -l "Connection Editor..."
@@ -7064,6 +7087,9 @@ menuItem
 -i "polyMoveVertex.png";
 
 menuItem
+-d 1;
+
+menuItem
 -l "Crease Tool" 
 -c "PolyCreaseTool" 
 -i "polyCrease.png";
@@ -7071,6 +7097,11 @@ menuItem
 menuItem
 -c "python \"creaseSetEditor.showCreaseSetEditor()\";" 
 -ob 1;
+
+menuItem
+-l "Remove Crease"
+-c "polyCrease -op 1"
+-i "trash.png";
 
 setParent -m ..;
 
@@ -7457,6 +7488,11 @@ menuItem
 -i "showDepend.png";
 
 setParent -m ..;
+
+menuItem
+-l "Connect Attribute Manager..."
+-c "da_ConnectAttributesUI"
+-i "da_OneToMany.png";
 
 menuItem
 -l "Connection Editor..."
@@ -8981,14 +9017,27 @@ menuItem
 -d 1;
 
 menuItem
--l "Show Selection" 
+-l "Show Transform" 
 -c "ShowSelectedObjects" 
 -i "RS_visible.png";
 
 menuItem
--l "Hide Selection" 
+-l "Hide Transform" 
 -c "HideSelectedObjects" 
 -i "RS_disable.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Show Shape" 
+-c "da_NoVisibilityOverride" 
+-i "settings-show.png";
+
+menuItem
+-l "Hide Shape" 
+-c "da_VisibilityOverride" 
+-i "settings-hide.png";
 
 setParent -m ..;
 
@@ -11723,6 +11772,11 @@ menuItem
 -l "Shell Proxy"
 -c "da_shell"
 -i "da_ShellProxy.png";
+
+menuItem
+-l "Remove Crease"
+-c "polyCrease -op 2"
+-i "trash.png";
 
 menuItem
 -d 1;
@@ -14708,6 +14762,9 @@ menuItem
 -i "polyChamfer.png";
 
 menuItem
+-d 1;
+
+menuItem
 -l "Crease Tool"
 -c "PolyCreaseTool"
 -i "polyCrease.png";
@@ -14715,6 +14772,11 @@ menuItem
 menuItem
 -c "python \"creaseSetEditor.showCreaseSetEditor()\";"
 -ob 1;
+
+menuItem
+-l "Remove Crease"
+-c "polyCrease -op 1"
+-i "trash.png";
 
 menuItem
 -d 1;

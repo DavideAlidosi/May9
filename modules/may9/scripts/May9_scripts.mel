@@ -186,6 +186,39 @@ global proc int jh_getComponentId(string $component){
     return $id;
 }
 
+// Define da_ConnectAttributes
+global proc da_ConnectAttributes(){
+    global string $outputAttribute;
+    global string $inputAttribute;
+    
+    string $myNodes[] = `ls -sl`;
+    
+    string $outputAttribute = `textFieldGrp -query -tx outputAttribute`;
+    string $inputAttribute = `textFieldGrp -query -tx inputAttribute`;
+    
+    for($i=1; $i<size($myNodes); $i++){
+        connectAttr -f ($myNodes[0] + "." + $outputAttribute) ($myNodes[$i] + "." + $inputAttribute);
+    }
+    deleteUI ConnectAttribute;
+}
+
+global proc da_ConnectAttributesUI(){
+    if(`window -exists ConnectAttribute`){
+    deleteUI ConnectAttribute;
+    }
+    global string $outputAttribute;
+    global string $inputAttribute;
+    
+    window -rtf 1 -t "Connect Attribute Manager" -wh 1 1 ConnectAttribute;
+    
+    columnLayout;
+    textFieldGrp -l "First Object Output Attr" outputAttribute;
+    textFieldGrp -l "Other Object(s) Input Attr" inputAttribute;
+    
+    button -c da_SelectObject -l "Connect";
+    showWindow ConnectAttribute;
+}
+
 // Define jh_rainCurvesFromEdges by Jefri Haryono under MIT license
 global proc string[] jh_rainCurvesFromEdges(){
     string $resultCurveGrp[];
