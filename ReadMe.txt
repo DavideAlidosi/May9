@@ -1,4 +1,4 @@
-May9 Next.3.0 - A new user experience for Autodesk Maya 2020
+May9 Next.3.2 - A new user experience for Autodesk Maya 2020
 
 
 General info
