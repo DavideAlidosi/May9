@@ -775,7 +775,7 @@ menuItem -bld 1
 -c "SetDrivenKeyOptions"
 -i "setDrivenKeyframe.png";
 
-if (`about -api` >= 20210000){
+if (`about -api` >= 20220000){
 menuItem -bld 1 
 -l "Ghosting Editor..."
 -c "OpenGhostEditor"
@@ -2004,7 +2004,7 @@ menuItem
 -c "AttachBrushToCurves"
 -i "paintFXtoCurve.png";
 
-if (`about -api` >= 20210000){
+if (`about -api` >= 20220000){
 menuItem
 -l "Sweep Mesh"
 -c "sweepMeshFromCurve -oneNodePerCurve false"
@@ -2922,7 +2922,7 @@ menuItem
 -c "AttachBrushToCurves"
 -i "paintFXtoCurve.png";
 
-if (`about -api` >= 20210000){
+if (`about -api` >= 20220000){
 menuItem
 -l "Sweep Mesh"
 -c "sweepMeshFromCurve -oneNodePerCurve false"
@@ -3505,7 +3505,7 @@ menuItem
 -i "polyEdgeToCurves.png";
 
 menuItem
--l "Edges to Curve"
+-l "Multiple Edges to Curve"
 -c "jh_rainCurvesFromEdges"
 -i "polyEdgeToCurves.png";
 
@@ -10932,7 +10932,7 @@ menuItem
 -c "Tension"
 -i "da_tensionDef.png";
 
-if (`about -api` >= 20210000){
+if (`about -api` >= 20220000){
 menuItem
 -l "Solidify"
 -c "Solidify"
@@ -11395,6 +11395,7 @@ menuItem
 
 setParent -m ..;
 
+if (`pluginInfo -q -l bifrostshellnode`){
 menuItem
 -d 1;
 
@@ -11405,8 +11406,9 @@ menuItem
 
 menuItem
 -l "Create Bifrost Liquid"
--c "CreateBifrostLiquid;"
+-c "CreateBifrostLiquid"
 -i "out_bifrostShape.png";
+}
 
 setParent -m ..;
 
@@ -11978,7 +11980,7 @@ menuItem
 -c "Tension"
 -i "da_tensionDef.png";
 
-if (`about -api` >= 20210000){
+if (`about -api` >= 20220000){
 menuItem
 -l "Solidify"
 -c "Solidify"
@@ -12449,13 +12451,9 @@ menuItem
 
 setParent -m ..;
 
+if (`pluginInfo -q -l bifrostshellnode`){
 menuItem
 -d 1;
-
-menuItem
--l "Create Bifrost Liquid"
--c "CreateBifrostLiquid;"
--i "out_bifrostShape.png";
 
 menuItem
 -l "Create Bifrost Aero"
@@ -12463,9 +12461,17 @@ menuItem
 -i "out_bifrostShape.png";
 
 menuItem
+-l "Create Bifrost Liquid"
+-c "CreateBifrostLiquid"
+-i "out_bifrostShape.png";
+}
+
+if (`pluginInfo -q -l Boss`){
+menuItem
 -l "Bifrost Ocean..."
 -c "da_OpenBossEditor"
 -i "fluidCreate2D.png";
+}
 
 setParent -m ..;
 
