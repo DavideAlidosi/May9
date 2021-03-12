@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_AutoFkCTRL`);
+
 catchQuiet (`runTimeCommand -e -del da_ToggleBifrostGraph`);
 
 catchQuiet (`runTimeCommand -e -del da_VisibilityOverride`);
@@ -1062,6 +1064,12 @@ runTimeCommand
 	da_MMtoKey_release;
 
 runTimeCommand
+	-ann "Create IK CTRL on Selected Joint"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myJointSel[] = `ls -sl -fl -typ \"joint\"`;\n\nstring $myCTRLs[];\nstring $myNULLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    float $jointRadius = `getAttr ($myJointSel[$i] +\".radius\")`;\n    circle -c 0 0 0 -nr 0 1 0 -sw 360 -r ($jointRadius * 1.4) -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\n    rename (\"CTRL_Auto_FK\" + ($i + 1) + \"_id_\" + `rand 10000`);\n    appendStringArray ( $myCTRLs, `ls -sl -fl`, size(`ls -sl -fl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    performFreezeTransformations(0);\n    \n    setAttr -l 1 \".tx\";\n    setAttr -l 1 \".ty\";\n    setAttr -l 1 \".tz\";\n\n    setAttr -l 1 \".sx\";\n    setAttr -l 1 \".sy\";\n    setAttr -l 1 \".sz\";\n    \n    TagAsController;\n    group;\n    rename (\"NULL_Auto_FK\" + ($i + 1) );\n    appendStringArray ( $myNULLs, `ls -sl -fl`, size(`ls -sl -fl`) );\n    \n    select $myJointSel[$i];\n    select  -add $myNULLs[$i];\n    doCreateOrientConstraintArgList 1 { \"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n    select $myNULLs[$i];\n    string $myOrientTMP[] = `listConnections -s 1 -d 0 -t \"orientConstraint\"`;\n    delete $myOrientTMP[0];\n    \n    select $myCTRLs[$i];\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n}\n\nfor ($i=0 ; $i<(size($myNULLs)-1); $i++){\n    select $myNULLs[$i];\n    select -add $myCTRLs[$i+1];\n    parent;\n}\n\nfor ($i=0 ; $i<size($myCTRLs); $i++){\n    select $myCTRLs[$i];\n    da_GoToCVsNURBS;\n    SelectAll;\n    rotate -r -eu -fo 0 0 90 ;\n    da_BackToObjectMode;\n    rename (\"CTRL_Auto_FK\" + ($i + 1));\n}\n\nselect -cl;\nclear $myCTRLs;\nclear $myNULLs;")
+	da_AutoFkCTRL;
+
+runTimeCommand
 	-ann "Enable or disable Maya Core Plug-in configuration"
 	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("int $PluginCheck = \n    `pluginInfo -q -autoload bifrostGraph` \n    || `pluginInfo -q -autoload mayaVnnPlugin`;\n\nif ($PluginCheck){\n    catchQuiet (`pluginInfo -e -autoload 0 bifrostGraph`); \n    catchQuiet (`pluginInfo -e -autoload 0 mayaVnnPlugin`);\n}else{\n    catchQuiet (`pluginInfo -e -autoload 1 bifrostGraph`);\n    catchQuiet (`pluginInfo -e -autoload 1 mayaVnnPlugin`);\n}")
@@ -1144,12 +1152,6 @@ runTimeCommand
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $myShape[] = `listRelatives -f -s`; \nfor ($each in $myShape){\n    setAttr ($each +\".overrideEnabled\") 1;\n    setAttr ($each +\".overrideColor\") 17;\n}")
 	da_YellowOverrides;
-
-runTimeCommand
-	-ann "Create IK CTRL on Selected Joint"
-	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $myJointSel[] = `ls -sl -fl -typ \"joint\"`;\n\nstring $myCTRLs[];\nstring $myNULLs[];\n\nfor ($i=0 ; $i<size($myJointSel); $i++){\n    circle -c 0 0 0 -nr 0 1 0 -sw 360 -r 1 -d 3 -ut 0 -tol 0.01 -s 8 -ch 1;\n    rename (\"CTRL_Auto_FK\" + ($i + 1) + \"_id_\" + `rand 10000`);\n    appendStringArray ( $myCTRLs, `ls -sl -fl`, size(`ls -sl -fl`) );\n    \n    select -add $myJointSel[$i];\n    \n    parent;\n    da_ResetTransform;\n    Unparent;\n    performFreezeTransformations(0);\n    \n    setAttr -l 1 \".tx\";\n    setAttr -l 1 \".ty\";\n    setAttr -l 1 \".tz\";\n\n    setAttr -l 1 \".sx\";\n    setAttr -l 1 \".sy\";\n    setAttr -l 1 \".sz\";\n    \n    TagAsController;\n    group;\n    rename (\"NULL_Auto_FK\" + ($i + 1) );\n    appendStringArray ( $myNULLs, `ls -sl -fl`, size(`ls -sl -fl`) );\n    \n    select $myJointSel[$i];\n    select  -add $myNULLs[$i];\n    doCreateOrientConstraintArgList 1 { \"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n    \n    select $myNULLs[$i];\n    string $myOrientTMP[] = `listConnections -s 1 -d 0 -t \"orientConstraint\"`;\n    delete $myOrientTMP[0];\n    \n    select $myCTRLs[$i];\n    select -add $myJointSel[$i];\n    doCreateOrientConstraintArgList 1 { \"1\",\"0\",\"0\",\"0\",\"0\",\"0\",\"0\",\"1\",\"\",\"1\" };\n}\n\nfor ($i=0 ; $i<(size($myNULLs)-1); $i++){\n    select $myNULLs[$i];\n    select -add $myCTRLs[$i+1];\n    parent;\n}\n\nfor ($i=0 ; $i<size($myCTRLs); $i++){\n    select $myCTRLs[$i];\n    da_GoToCVsNURBS;\n    SelectAll;\n    rotate -r -eu -fo 0 0 90 ;\n    da_BackToObjectMode;\n    rename (\"CTRL_Auto_FK\" + ($i + 1));\n}\n\nselect -cl;\nclear $myCTRLs;\nclear $myNULLs;")
-	da_AutoIkCTRL;
 
 runTimeCommand
 	-ann "Subdivide QuadDraw Live"
