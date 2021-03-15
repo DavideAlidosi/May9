@@ -10334,6 +10334,8 @@ setParent -m ..;
 } 
 // Define PolyExtrudeEdge marking menu
 global proc PolyExtrudeEdge_MM_May9(){
+string $mySel[] = `ls -sl -typ "polyExtrudeEdge"`;
+string $myActualComponents[] = `getAttr ($mySel[0] + ".inputComponents")`;
 
 menuItem
 -l "Show Manips" 
@@ -10347,10 +10349,24 @@ menuItem
 -rp "S" 
 -i "attributes.png";
 
+if (size($myActualComponents) > 0){
+menuItem
+-l "Empty Components" 
+-c "da_ClearExtrudeEdgeComponents" 
+-rp "E" 
+-i "RS_disable.png";
+}else{
+menuItem
+-l "Assing Components" 
+-c "da_AssignExtrudeEdgeComponents" 
+-rp "E" 
+-i "enabled.png";
+}
+
 menuItem
 -l "Extrude" 
 -c "PolyExtrude" 
--rp "E" 
+-rp "NE" 
 -i "polyExtrudeFacet.png";
 
 menuItem
@@ -10368,6 +10384,8 @@ setParent -m ..;
 } 
 // Define PolyExtrudeFace marking menu
 global proc PolyExtrudeFace_MM_May9(){
+string $mySel[] = `ls -sl -typ "polyExtrudeFace"`;
+string $myActualComponents[] = `getAttr ($mySel[0] + ".inputComponents")`;
 
 menuItem
 -l "Edit Attributes..." 
@@ -10384,12 +10402,26 @@ menuItem
 menuItem
 -l "Extrude" 
 -c "PolyExtrude" 
--rp "E" 
+-rp "NE" 
 -i "polyExtrudeFacet.png";
+
+if (size($myActualComponents) > 0){
+menuItem
+-l "Empty Components" 
+-c "da_ClearExtrudeComponents" 
+-rp "E" 
+-i "RS_disable.png";
+}else{
+menuItem
+-l "Assing Components" 
+-c "da_AssignExtrudeComponents" 
+-rp "E" 
+-i "enabled.png";
+}
 
 menuItem
 -l "Bevel" 
--c "BevelPolygon;" 
+-c "BevelPolygon" 
 -rp "NW" 
 -i "polyBevel.png";
 
@@ -10408,9 +10440,11 @@ setParent -m ..;
 } 
 // Define PolyExtrudeVertex marking menu
 global proc PolyExtrudeVertex_MM_May9(){
+string $mySel[] = `ls -sl -typ "polyExtrudeVertex"`;
+string $myActualComponents[] = `getAttr ($mySel[0] + ".inputComponents")`;
 
 menuItem
--l "Show Manips" 
+-l "Show IVE" 
 -c "setToolTo ShowManips" 
 -rp "N" 
 -i "showManip.png";
@@ -10424,14 +10458,36 @@ menuItem
 menuItem
 -l "Extrude" 
 -c "PolyExtrude" 
--rp "E" 
+-rp "NE" 
 -i "polyExtrudeFacet.png";
+
+menuItem
+-l "Bevel" 
+-c "BevelPolygon" 
+-rp "NW" 
+-i "polyBevel.png";
+
+if (size($myActualComponents) > 0){
+menuItem
+-l "Empty Components" 
+-c "da_ClearExtrudeVertexComponents" 
+-rp "E" 
+-i "RS_disable.png";
+}else{
+menuItem
+-l "Assing Components" 
+-c "da_AssignExtrudeVertexComponents" 
+-rp "E" 
+-i "enabled.png";
+}
 
 setParent -m ..;
 
 } 
 // Define PolyExtrude marking menu
 global proc PolyExtrude_MM_May9(){
+string $mySel[] = `ls -sl -typ "polyExtrudeFace"`;
+string $myActualComponents[] = `getAttr ($mySel[0] + ".inputComponents")`;
 
 menuItem
 -l "Show Manips" 
@@ -10448,8 +10504,22 @@ menuItem
 menuItem
 -l "Extrude" 
 -c "PolyExtrude" 
--rp "E" 
+-rp "NE" 
 -i "polyExtrudeFacet.png";
+
+if (size($myActualComponents) > 0){
+menuItem
+-l "Empty Components" 
+-c "da_ClearExtrudeComponents" 
+-rp "E" 
+-i "RS_disable.png";
+}else{
+menuItem
+-l "Assing Components" 
+-c "da_AssignExtrudeComponents" 
+-rp "E" 
+-i "enabled.png";
+}
 
 menuItem
 -l "Keep Faces Together On" 
