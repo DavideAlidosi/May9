@@ -5,6 +5,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_HierarchyReversed`);
+
 catchQuiet (`runTimeCommand -e -del da_AutoFkCTRL`);
 
 catchQuiet (`runTimeCommand -e -del da_AssignExtrudeVertexComponents`);
@@ -1074,6 +1076,12 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+
+runTimeCommand
+	-ann "Select the Hierarchy Reversed of a selection"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("SelectHierarchy;\n$myHierarchy = `ls -sl`;\n\nstring $myHierarchyReversed[];\nint $myHierarchySize = size($myHierarchy);\nfor($n=0; $n<$myHierarchySize; ++$n) {\n    $myHierarchyReversed[$myHierarchySize - 1 - $n] = $myHierarchy[$n];\n}\nselect $myHierarchyReversed;")
+	da_HierarchyReversed;
 
 runTimeCommand
 	-ann "Create IK CTRL on Selected Joint"
