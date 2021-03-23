@@ -1,5 +1,0 @@
-+ alshaders any ./alshaders
-ALSHADERS_LOCATION :=
-ARNOLD_PLUGIN_PATH +:= bin
-MTOA_TEMPLATES_PATH +:= ae
-MAYA_CUSTOM_TEMPLATE_PATH +:= aexml
