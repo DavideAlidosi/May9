@@ -1991,6 +1991,13 @@ menuItem
 -c "da_PivotToCurvesOrigin"
 -i "selectFirstCV.png";
 
+if (size(`filterExpand -sm 12`)){
+menuItem
+-l "Follicle by Curves Intersection" 
+-c "da_FollicleFromCurves" 
+-i "out_follicle.png";
+}
+
 menuItem
 -d 1;
 
@@ -10253,6 +10260,11 @@ menuItem
 -l "Snap Curve to Mesh" 
 -c "da_SnapCurveToMesh" 
 -i "snapPlane.png";
+
+menuItem
+-l "Follicle by Curve Intersection" 
+-c "da_FollicleFromCurves" 
+-i "out_follicle.png";
 
 menuItem
 -l "Make Curves Dynamic" 
