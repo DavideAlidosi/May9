@@ -7,7 +7,7 @@ global proc May9(){
 	print "May9 console: Load May9 Next Plug-in \n";
 
 		if (`about -lt`){
-			python "import May9_Next";
+			python "import May9_NextLT";
 		}else{
 			// Load May9 Plug-in
 			loadPlugin May9_Next;

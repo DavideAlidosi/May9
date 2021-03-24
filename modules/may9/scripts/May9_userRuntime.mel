@@ -3,6 +3,8 @@ global proc May9_runTimeCommandsRemover(){
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKeyLT_press`);
 
+catchQuiet (`runTimeCommand -e -del da_MMtoKeyLT_release`);
+
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
@@ -1072,8 +1074,15 @@ runTimeCommand
 	-ann "Enable MMtoKey"
 	-cat "Custom Scripts.May9_Next.System"
 	-cl "python"
-	-c ("import sys\n\nmay9module = 'May9_Next'\nif may9module not in sys.modules:\n    import May9_Next\n\ntry:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
+	-c ("import sys\n\nmay9module = 'May9_NextLT'\nif may9module not in sys.modules:\n    import May9_NextLT\n\ntry:\n    May9_NextLT.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
 	da_MMtoKeyLT_press;
+
+runTimeCommand
+	-ann "Disable MMtoKey"
+	-cat "Custom Scripts.May9_Next.System"
+	-cl "python"
+	-c ("May9_NextLT.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
+	da_MMtoKeyLT_release;
 }else{
 runTimeCommand
 	-ann "Enable MMtoKey"
@@ -1081,7 +1090,6 @@ runTimeCommand
 	-cl "python"
 	-c ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
 	da_MMtoKey_press;
-}
 
 runTimeCommand
 	-ann "Disable MMtoKey"
@@ -1089,6 +1097,7 @@ runTimeCommand
 	-cl "python"
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
+}
 
 runTimeCommand
 	-ann "Create a Follicle from Curves and a Mesh Intersection"

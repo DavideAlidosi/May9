@@ -3,10 +3,11 @@ global proc da_May9Hotkeys(){
 	// MMtoKey Contextual Workflow hotkeys
 	if (`about -lt`){
 		hotkey -k "z" -n ("da_MMtoKeyLT_pressNameCommand");
+		hotkey -k "z" -rn ("da_MMtoKeyLT_releaseNameCommand");
 	}else{
 		hotkey -k "z" -n ("da_MMtoKey_pressNameCommand");
+		hotkey -k "z" -rn ("da_MMtoKey_releaseNameCommand");
 	}
-	hotkey -k "z" -rn ("da_MMtoKey_releaseNameCommand");
 
 	// Shift Alt Hotkeys
 	hotkey -k "z" -alt -sht -n ("da_ZeroTransfomationsNameCommand");
@@ -131,6 +132,28 @@ global proc da_May9Hotkeys(){
 
 	// nameCommand set
 
+	if (`about -lt`){
+	nameCommand
+		-ann "da_MMtoKeyLT_press"
+		-c ("da_MMtoKeyLT_press")
+		da_MMtoKeyLT_pressNameCommand;
+	
+	nameCommand
+		-ann "da_MMtoKeyLT_release"
+		-c ("da_MMtoKeyLT_release")
+		da_MMtoKeyLT_releaseNameCommand;
+	}else{
+	nameCommand
+		-ann "da_MMtoKey_press"
+		-c ("da_MMtoKey_press")
+		da_MMtoKey_pressNameCommand;
+
+	nameCommand
+		-ann "da_MMtoKey_release"
+		-c ("da_MMtoKey_release")
+		da_MMtoKey_releaseNameCommand;
+	}
+
 	nameCommand
 		-ann "da_CtrlPointConstraintNameCommand"
 		-c ("da_CtrlPointConstraint")
@@ -215,23 +238,6 @@ global proc da_May9Hotkeys(){
 		-ann "da_RenderViewsNameCommand"
 		-c ("da_RenderViews")
 		da_RenderViewsNameCommand;
-
-	if (`about -lt`){
-	nameCommand
-		-ann "da_MMtoKeyLT_press"
-		-c ("da_MMtoKeyLT_press")
-		da_MMtoKeyLT_pressNameCommand;
-	}else{
-	nameCommand
-		-ann "da_MMtoKey_press"
-		-c ("da_MMtoKey_press")
-		da_MMtoKey_pressNameCommand;
-	}
-
-	nameCommand
-		-ann "da_MMtoKey_release"
-		-c ("da_MMtoKey_release")
-		da_MMtoKey_releaseNameCommand;
 
 	nameCommand
 		-ann "da_UniversalManipNameCommand"
