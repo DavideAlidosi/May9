@@ -1,6 +1,8 @@
 // Remove May9 RunTime Commands
 global proc May9_runTimeCommandsRemover(){
 
+catchQuiet (`runTimeCommand -e -del da_MMtoKeyLT_press`);
+
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
@@ -1065,12 +1067,21 @@ if(!(catchQuiet (`da_MMtoKey_press`))){
 	May9_runTimeCommandsRemover;
 }
 
+if (`about -lt`){
+runTimeCommand
+	-ann "Enable MMtoKey"
+	-cat "Custom Scripts.May9_Next.System"
+	-cl "python"
+	-c ("import sys\n\nmay9module = 'May9_Next'\nif may9module not in sys.modules:\n    import May9_Next\n\ntry:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
+	da_MMtoKeyLT_press;
+}else{
 runTimeCommand
 	-ann "Enable MMtoKey"
 	-cat "Custom Scripts.May9_Next.System"
 	-cl "python"
 	-c ("try:\n    May9_Next.pressSelected(ctl=False, alt=False, sh=False)\nexcept Exception: \n    pass")
 	da_MMtoKey_press;
+}
 
 runTimeCommand
 	-ann "Disable MMtoKey"
