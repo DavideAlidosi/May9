@@ -5,11 +5,13 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKeyLT_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKeyLT_release`);
 
-catchQuiet (`runTimeCommand -e -del da_ToggleComponentTags`);
-
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
+
+catchQuiet (`runTimeCommand -e -del da_CtrlMesh`);
+
+catchQuiet (`da_ToggleComponentTags`);
 
 catchQuiet (`runTimeCommand -e -del da_FollicleFromCurves`);
 
@@ -1100,6 +1102,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Create a CTRL Mesh from Polygons Faces"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("da_BackToObjectMode;\nstring $myBaseMesh[] = `ls -sl`;\nstring $myControlMesh[] = `duplicate`;\nselect $myBaseMesh[0];\nselect -add $myControlMesh[0];\n\nstring $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n}\n\nselect $myControlMesh[0];\nda_ToggleComponentMode;\nInvertSelection;\ndoDelete;\n\nda_BackToObjectMode;\nCenterPivot;\nFreezeTransformations;\n\naddAttr -ln \"Offset\" -at double -dv 0 $myControlMesh[0];\nsetAttr -e -k 1 ($myControlMesh[0] + \".Offset\");\n\nstring $myOffset = `MovePolygonComponent`;\nconnectAttr -f ($myControlMesh[0] + \".Offset\") ($myOffset + \".localTranslateZ\");\n\nbuildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode;\nTagAsController;\nrename \"CTRL_Mesh1\";\nsetAttr \".Offset\" .1;\n\ninViewMessage -pos topCenter -msg \"CTRL Mesh Created\" -fade;")
+	da_CtrlMesh;
 
 runTimeCommand
 	-ann "Toggle Deformers Component Tags"
