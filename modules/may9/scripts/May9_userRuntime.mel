@@ -1069,7 +1069,7 @@ if(!(catchQuiet (`da_MMtoKey_press`))){
 	May9_runTimeCommandsRemover;
 }
 
-if (`about -lt`){
+if (`about -lt` && `about -api` >= 20220000){
 runTimeCommand
 	-ann "Enable MMtoKey"
 	-cat "Custom Scripts.May9_Next.System"

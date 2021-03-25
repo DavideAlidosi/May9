@@ -6,7 +6,7 @@ global proc May9(){
 	}else{
 	print "May9 console: Load May9 Next Plug-in \n";
 
-		if (`about -lt`){
+		if (`about -lt` && `about -api` >= 20220000){
 			python "import May9_NextLT";
 		}else{
 			// Load May9 Plug-in

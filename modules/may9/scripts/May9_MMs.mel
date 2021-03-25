@@ -1488,11 +1488,13 @@ menuItem
 -rp "S" 
 -i "setEdit.png";
 
+if (`about -api` < 20220000){
 menuItem
--l "Deformer Set Editor..." 
--c "DeformerSetEditor" 
+-l "Deformer Set Editor..."
+-c "DeformerSetEditor"
 -rp "E" 
 -i "da_deformerSetEditor.png";
+}
 
 menuItem
 -l "Cluster Relative" 
@@ -2072,6 +2074,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -2079,6 +2082,7 @@ menuItem
 
 menuItem
 -d 1;
+}
 
 menuItem
 -l "Create Blend Shape"
@@ -2990,6 +2994,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -2997,6 +3002,7 @@ menuItem
 
 menuItem
 -d 1;
+}
 
 menuItem
 -l "Bend"
@@ -3258,10 +3264,12 @@ menuItem
 -rp "N" 
 -i "setEdit.png";
 
+if (`about -api` < 20220000){
 menuItem
--l "Deformer Set Editor..." 
--c "DeformerSetEditor" 
+-l "Deformer Set Editor..."
+-c "DeformerSetEditor"
 -i "da_deformerSetEditor.png";
+}
 
 menuItem
 -l "Deformer Manipulators" 
@@ -4015,6 +4023,13 @@ menuItem
 -l "Lattice..."
 -c "CreateLatticeOptions"
 -i "lattice.png";
+
+if (`about -api` >= 20220000){
+menuItem
+-l "Solidify"
+-c "Solidify"
+-i "polyPlatonicSolid.png";
+}
 
 setParent -m ..;
 
@@ -5907,11 +5922,13 @@ menuItem
 -rp "NE" 
 -i "lattice.png";
 
+if (`about -api` < 20220000){
 menuItem
--l "Deformer Set Editor..." 
--c "DeformerSetEditor" 
+-l "Deformer Set Editor..."
+-c "DeformerSetEditor"
 -rp "NW" 
 -i "da_deformerSetEditor.png";
+}
 
 menuItem
 -l "Edit Membership Tool" 
@@ -5988,11 +6005,13 @@ menuItem
 -rp "W" 
 -i "setEdit.png";
 
+if (`about -api` < 20220000){
 menuItem
--l "Deformer Set Editor..." 
--c "DeformerSetEditor" 
+-l "Deformer Set Editor..."
+-c "DeformerSetEditor"
 -rp "NW" 
 -i "da_deformerSetEditor.png";
+}
 
 string $myComponentSel[] = `ls -sl -fl`;
 if (size($myComponentSel) == 1){
@@ -8105,6 +8124,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -8117,6 +8137,7 @@ menuItem
 
 menuItem
 -d 1;
+}
 
 menuItem
 -l "Create Blend Shape"
@@ -8598,6 +8619,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -8610,6 +8632,7 @@ menuItem
 
 menuItem
 -d 1;
+}
 
 menuItem
 -l "Bend"
@@ -10740,10 +10763,12 @@ menuItem
 -rp "N"
 -i "out_brush.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Paint Set Membership..."
 -c "PaintSetMembershipToolOptions"
 -i "paintSetMembership.png";
+}
 
 menuItem
 -l "Paint Vertex Color..."
@@ -10929,6 +10954,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -10936,6 +10962,7 @@ menuItem
 
 menuItem
 -d 1;
+}
 
 menuItem
 -l "Blend Shape"
@@ -11748,10 +11775,12 @@ menuItem
 -rp "N"
 -i "out_brush.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Paint Set Membership..."
 -c "PaintSetMembershipToolOptions"
 -i "paintSetMembership.png";
+}
 
 menuItem
 -l "Paint Vertex Color..."
@@ -11989,6 +12018,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
+if (`about -api` < 20220000){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -11996,6 +12026,7 @@ menuItem
 
 menuItem
 -d 1;
+}
 
 menuItem
 -l "Nonlinear"
