@@ -39,6 +39,9 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Current Workspace" -c "da_CloseAllPanel" -i "RS_refresh_layer.png";
 
     menuItem -d 1 -l "Preferences";
+    if (`about -api` >= 20220000){
+		menuItem -p $menuMain -l "Component Tags" -c "da_ToggleComponentTags" -cb (`optionVar -q deformationUseComponentTags`);
+	}
     menuItem -p $menuMain -l "Anti Alias" -c "da_AntiAliasPrefs" -cb (`optionVar -q da_AntiAliasEnable`);
     menuItem -p $menuMain -l "Undo Queue" -c "da_ToggleUndoState" -cb (`undoInfo -q -st`);
     menuItem -p $menuMain -l "Wheel Zoom" -c "da_ToggleMouseWheel" -cb (`optionVar -q "useScrollWheel"`);

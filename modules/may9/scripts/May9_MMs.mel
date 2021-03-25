@@ -1488,7 +1488,7 @@ menuItem
 -rp "S" 
 -i "setEdit.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -2074,7 +2074,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -2994,7 +2994,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -3264,7 +3264,7 @@ menuItem
 -rp "N" 
 -i "setEdit.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -5922,7 +5922,7 @@ menuItem
 -rp "NE" 
 -i "lattice.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -6005,7 +6005,7 @@ menuItem
 -rp "W" 
 -i "setEdit.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -8124,7 +8124,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -8619,7 +8619,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -10763,7 +10763,7 @@ menuItem
 -rp "N"
 -i "out_brush.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Paint Set Membership..."
 -c "PaintSetMembershipToolOptions"
@@ -10954,7 +10954,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
@@ -11775,7 +11775,7 @@ menuItem
 -rp "N"
 -i "out_brush.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Paint Set Membership..."
 -c "PaintSetMembershipToolOptions"
@@ -12018,7 +12018,7 @@ menuItem
 -sm 1
 -i "bendNLD.png";
 
-if (`about -api` < 20220000){
+if (!`optionVar -q deformationUseComponentTags`){
 menuItem
 -l "Deformer Set Editor..."
 -c "DeformerSetEditor"
