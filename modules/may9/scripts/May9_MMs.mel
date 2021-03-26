@@ -3913,7 +3913,7 @@ menuItem
 menuItem
 -l "CTRL Mesh" 
 -c "da_CtrlMesh" 
--i "componentTag_face.png";
+-i "polySplitVertex.png";
 
 menuItem
 -d 1;
@@ -9111,9 +9111,9 @@ menuItem
 setParent -m ..;
 
 menuItem
--l "Bounding Box    " 
+-l "Bounding Box" 
 -sm 1
--i "blackbox.png";
+-i "volumeCube.png";
 
 menuItem
 -l "On" 
@@ -9140,6 +9140,23 @@ menuItem
 menuItem
 -l "Off" 
 -c "da_PolyNoShade" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Renderable" 
+-sm 1
+-i "polyBevel.png";
+
+menuItem
+-l "On" 
+-c "da_PolyRender" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_PolyNoRender" 
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
