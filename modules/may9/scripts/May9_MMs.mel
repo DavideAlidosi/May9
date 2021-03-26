@@ -7455,6 +7455,16 @@ menuItem
 setParent -m ..;
 
 } 
+// Define Name_shellBase marking menu
+global proc Name_CTRL_MM_May9(){
+menuItem
+-l "Select Hierarchy" 
+-c "SelectHierarchy" 
+-rp "N" 
+-i "selectByHierarchy.png";
+
+setParent -m ..;
+}
 // Define NodeEditor marking menu
 global proc NodeEditor_MM_May9(){
 global string $da_underPointerPanel;
