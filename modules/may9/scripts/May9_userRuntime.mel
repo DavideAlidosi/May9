@@ -9,9 +9,13 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_PolyNoRender`);
+
+catchQuiet (`runTimeCommand -e -del da_PolyRender`);
+
 catchQuiet (`runTimeCommand -e -del da_CtrlMesh`);
 
-catchQuiet (`da_ToggleComponentTags`);
+catchQuiet (`runTimeCommand -e -del da_ToggleComponentTags`);
 
 catchQuiet (`runTimeCommand -e -del da_FollicleFromCurves`);
 
@@ -1104,9 +1108,21 @@ runTimeCommand
 }
 
 runTimeCommand
+	-ann "Disable Render Mesh Visibility"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $mySel[] = `listRelatives -f -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 0;\n    setAttr ($each + \".castsShadows\") 0;\n    setAttr ($each + \".receiveShadows\") 0;\n    setAttr ($each + \".motionBlur\") 0;\n    setAttr ($each + \".smoothShading\") 0;\n    setAttr ($each + \".visibleInReflections\") 0;\n    setAttr ($each + \".visibleInRefractions\") 0;\n    \n    catchQuiet (`setAttr ($each + \".aiVisibleInDiffuseReflection\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularReflection\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInDiffuseTransmission\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularTransmission\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInVolume\") 0`);\n    catchQuiet (`setAttr ($each + \".aiSelfShadows\") 0`);\n}")
+	da_PolyNoRender;
+
+runTimeCommand
+	-ann "Enable Render Mesh Visibility"
+	-cat "Custom Scripts.May9_Next.Object"
+	-c ("string $mySel[] = `listRelatives -f -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 1;\n    setAttr ($each + \".castsShadows\") 1;\n    setAttr ($each + \".receiveShadows\") 1;\n    setAttr ($each + \".motionBlur\") 1;\n    setAttr ($each + \".smoothShading\") 1;\n    setAttr ($each + \".visibleInReflections\") 1;\n    setAttr ($each + \".visibleInRefractions\") 1;\n    \n    catchQuiet (`setAttr ($each + \".aiVisibleInDiffuseReflection\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularReflection\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInDiffuseTransmission\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularTransmission\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInVolume\") 1`);\n    catchQuiet (`setAttr ($each + \".aiSelfShadows\") 1`);\n}")
+	da_PolyRender;
+
+runTimeCommand
 	-ann "Create a CTRL Mesh from Polygons Faces"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("da_BackToObjectMode;\nstring $myBaseMesh[] = `ls -sl`;\nstring $myControlMesh[] = `duplicate`;\nselect $myBaseMesh[0];\nselect -add $myControlMesh[0];\n\nstring $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n}\n\nselect $myControlMesh[0];\nda_ToggleComponentMode;\nInvertSelection;\ndoDelete;\n\nda_BackToObjectMode;\nCenterPivot;\nFreezeTransformations;\n\naddAttr -ln \"Offset\" -at double -dv 0 $myControlMesh[0];\nsetAttr -e -k 1 ($myControlMesh[0] + \".Offset\");\n\nstring $myOffset = `MovePolygonComponent`;\nconnectAttr -f ($myControlMesh[0] + \".Offset\") ($myOffset + \".localTranslateZ\");\n\nbuildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode;\nTagAsController;\nrename \"CTRL_Mesh1\";\nsetAttr \".Offset\" .1;\n\ninViewMessage -pos topCenter -msg \"CTRL Mesh Created\" -fade;")
+	-c ("da_BackToObjectMode;\nstring $myBaseMesh[] = `ls -sl`;\nstring $myControlMesh[] = `duplicate`;\nstring $myTempShader = `shadingNode -asShader lambert`;\nselect $myBaseMesh[0];\nselect -add $myControlMesh[0];\n\nstring $createConnect[] = `ls -sl`;\nint $numObj = size($createConnect); \nfor($i=1; $i<$numObj; $i++){\n    connectAttr -f ($createConnect[0] + \".outMesh\") ($createConnect[$i] + \".inMesh\");\n}\n\nselect $myControlMesh[0];\nda_ToggleComponentMode;\nInvertSelection;\ndoDelete;\n\nda_BackToObjectMode;\nCenterPivot;\nFreezeTransformations;\n\naddAttr -ln \"Offset\" -at double -dv 0 $myControlMesh[0];\nsetAttr -e -k 1 ($myControlMesh[0] + \".Offset\");\n\nstring $myOffset = `MovePolygonComponent`;\nconnectAttr -f ($myControlMesh[0] + \".Offset\") ($myOffset + \".localTranslateZ\");\n\nbuildSelectMM;MarkingMenuPopDown;\nda_BackToObjectMode;\n\nhyperShade -assign $myTempShader;\ndelete $myTempShader;\nTagAsController;\nrename \"CTRL_Mesh1\";\nsetAttr \".Offset\" .1;\n\nda_PolyNoRender;\n\ninViewMessage -pos topCenter -msg \"CTRL Mesh Created\" -fade;\n\nselect $myBaseMesh[0];\nSelectFacetMask;\nselect -cl;")
 	da_CtrlMesh;
 
 runTimeCommand
@@ -3739,13 +3755,13 @@ runTimeCommand
 runTimeCommand
 	-ann "Enable Poly Shade"
 	-cat "Custom Scripts.May9_Next.Object"
-	-c ("string $mySel[] = `listRelatives -f -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 1;\n    setAttr ($each + \".overrideEnabled\") 0;\n    setAttr ($each + \".overrideShading\") 1;\n    setAttr ($each + \".castsShadows\") 1;\n    setAttr ($each + \".receiveShadows\") 1;\n    setAttr ($each + \".motionBlur\") 1;\n    setAttr ($each + \".smoothShading\") 1;\n    setAttr ($each + \".visibleInReflections\") 1;\n    setAttr ($each + \".visibleInRefractions\") 1;\n}")
+	-c ("string $mySel[] = `listRelatives -f -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 1;\n    setAttr ($each + \".overrideEnabled\") 0;\n    setAttr ($each + \".overrideShading\") 1;\n    setAttr ($each + \".castsShadows\") 1;\n    setAttr ($each + \".receiveShadows\") 1;\n    setAttr ($each + \".motionBlur\") 1;\n    setAttr ($each + \".smoothShading\") 1;\n    setAttr ($each + \".visibleInReflections\") 1;\n    setAttr ($each + \".visibleInRefractions\") 1;\n\n    catchQuiet (`setAttr ($each + \".aiVisibleInDiffuseReflection\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularReflection\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInDiffuseTransmission\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularTransmission\") 1`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInVolume\") 1`);\n    catchQuiet (`setAttr ($each + \".aiSelfShadows\") 1`);\n}")
 	da_PolyShade;
 
 runTimeCommand
 	-ann "Disable Poly Shade"
 	-cat "Custom Scripts.May9_Next.Object"
-	-c ("string $mySel[] = `listRelatives -f -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 0;\n    setAttr ($each + \".overrideEnabled\") 1;\n    setAttr ($each + \".overrideShading\") 0;\n    setAttr ($each + \".castsShadows\") 0;\n    setAttr ($each + \".receiveShadows\") 0;\n    setAttr ($each + \".motionBlur\") 0;\n    setAttr ($each + \".smoothShading\") 0;\n    setAttr ($each + \".visibleInReflections\") 0;\n    setAttr ($each + \".visibleInRefractions\") 0;\n}")
+	-c ("string $mySel[] = `listRelatives -f -s`; \nfor ($each in $mySel){\n    setAttr ($each + \".primaryVisibility\") 0;\n    setAttr ($each + \".overrideEnabled\") 1;\n    setAttr ($each + \".overrideShading\") 0;\n    setAttr ($each + \".castsShadows\") 0;\n    setAttr ($each + \".receiveShadows\") 0;\n    setAttr ($each + \".motionBlur\") 0;\n    setAttr ($each + \".smoothShading\") 0;\n    setAttr ($each + \".visibleInReflections\") 0;\n    setAttr ($each + \".visibleInRefractions\") 0;\n\n\tcatchQuiet (`setAttr ($each + \".aiVisibleInDiffuseReflection\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularReflection\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInDiffuseTransmission\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInSpecularTransmission\") 0`);\n    catchQuiet (`setAttr ($each + \".aiVisibleInVolume\") 0`);\n    catchQuiet (`setAttr ($each + \".aiSelfShadows\") 0`);\n}")
 	da_PolyNoShade;
 
 runTimeCommand
