@@ -9,6 +9,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_CreateBufferGRP`);
+
+catchQuiet (`runTimeCommand -e -del da_ToggleTitleBar`);
+
 catchQuiet (`runTimeCommand -e -del da_PolyNoRender`);
 
 catchQuiet (`runTimeCommand -e -del da_PolyRender`);
@@ -1106,6 +1110,18 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Create Buffer Group"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    group;\n    string $myCleanNameControl = stringRemovePrefix ($mySel[$i],\"CTRL_\");\n    rename (\"BUFFER_\" + $myCleanNameControl);\n}")
+	da_CreateBufferGRP;
+
+runTimeCommand
+	-ann "Toggle Title Bar"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("if(`window -q -titleBar $gMainWindow`){\n  window -e -titleBar 0 $gMainWindow; \n}else{\n  window -e -titleBar 1 $gMainWindow; \n}")
+	da_ToggleTitleBar;
 
 runTimeCommand
 	-ann "Disable Render Mesh Visibility"

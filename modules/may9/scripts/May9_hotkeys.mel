@@ -45,6 +45,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "x" -ctl -alt -sht -n ("da_QuitNameCommand");
 	hotkey -k "d" -ctl -alt -sht -n ("da_superDuplicateNameCommand");
 	hotkey -k "g" -ctl -alt -sht -n ("da_CreateBufferNameCommand");
+	hotkey -k "n" -ctl -alt -sht -n ("da_ToggleTitleBarNameCommand");
 	hotkey -k "Ins" -ctl -alt -sht -n ("MatchPivotsNameCommand");
 
 	// CTRL hotkeys
@@ -548,6 +549,11 @@ global proc da_May9Hotkeys(){
 		-ann "da_CreateBufferNameCommand"
 		-c ("da_CreateBuffer")
 		da_CreateBufferNameCommand;
+
+	nameCommand
+		-ann "da_ToggleTitleBarNameCommand"
+		-c ("da_ToggleTitleBar")
+		da_ToggleTitleBarNameCommand;
 
 	if (`about -api` >= 20200000){
 		nameCommand

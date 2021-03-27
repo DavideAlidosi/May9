@@ -490,7 +490,7 @@ menuItem -bld 1
 setParent -m ..;
 
 menuItem -bld 1 
--l "Controllers"
+-l "Controller"
 -sm 1
 -i "teLockUnchecked.png";
 
@@ -517,6 +517,14 @@ menuItem -bld 1
 -c "da_ControllerNoProssimity"
 -i "rvViewingPipelineOff.png";
 }
+
+menuItem
+-d 1;
+
+menuItem -bld 1 
+-l "Create Buffer"
+-c "da_CreateBufferGRP" 
+-i "out_transform.png";
 
 setParent -m ..;
 }
@@ -7484,6 +7492,12 @@ menuItem
 -rp "N" 
 -i "selectByHierarchy.png";
 
+menuItem
+-l "Reset Transforms"
+-c "da_ResetTransform"
+-rp "NE"
+-i "out_buttonManip.png";
+
 if (size($myCurTransform) >= 2){
 menuItem
 -l "Controller"
@@ -7531,27 +7545,6 @@ menuItem
 
 setParent -m ..;
 }
-
-menuItem
--l "Controllers"
--sm 1
--rp "NE" 
--i "teLockUnchecked.png";
-
-menuItem
--l "Tag As Controller"
--c "TagAsController"
--rp "NE" 
--i "circle.png";
-
-menuItem
--l "Parent Controller"
--c "TagAsControllerParent"
--rp "N" 
--i "parent.png"
--en (size($myCurTransform) >= 2);
-
-setParent -m ..;
 
 if (`about -api` >= 20180000){
 
@@ -7654,6 +7647,40 @@ menuItem
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
+}
+
+menuItem
+-l "Tag As Controller"
+-c "TagAsController"
+-i "circle.png";
+
+menuItem
+-l "Parent Controller"
+-c "TagAsControllerParent"
+-i "parent.png"
+-en (size($myCurTransform) >= 2);
+
+menuItem
+-d 1;
+
+menuItem
+-l "Create Buffer"
+-c "da_CreateBufferGRP" 
+-i "out_transform.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "Freeze/Delete Non-Deform"
+-c "da_FreezeDelNonDef" 
+-i "FreezeTransform.png";
+
+if (size($myCurTransform) >= 2){
+menuItem 
+-l "Match Pivots"
+-c "MatchPivots"
+-i "pickPivotComp.png";
 }
 
 setParent -m ..;
