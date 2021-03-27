@@ -7457,11 +7457,186 @@ setParent -m ..;
 } 
 // Define Name_shellBase marking menu
 global proc Name_CTRL_MM_May9(){
+string $myIKHandleCheck[] = `ls -sl -typ "ikHandle"`;
+string $myCurTransform[] = `ls -sl -typ "transform"`;
+
 menuItem
 -l "Select Hierarchy" 
 -c "SelectHierarchy" 
 -rp "N" 
 -i "selectByHierarchy.png";
+
+if (size($myCurTransform) >= 2){
+menuItem
+-l "Controller"
+-sm 1
+-rp "E"
+-i "teLockUnchecked.png";
+
+menuItem
+-l "Orient" 
+-c "da_CtrlOrientConstraint" 
+-rp "NW" 
+-i "orientConstraint.png";
+
+menuItem
+-l "Point" 
+-c "da_CtrlPointConstraint" 
+-rp "NE" 
+-i "posConstraint.png";
+
+menuItem
+-l "Aim" 
+-c "da_CtrlAimConstraint" 
+-rp "E" 
+-i "aimConstraint.png";
+
+menuItem
+-l "Parent" 
+-c "da_CtrlParentConstraint" 
+-rp "N" 
+-i "parentConstraint.png";
+
+if (size($myIKHandleCheck) > 0){
+menuItem
+-l "Pole Vector" 
+-c "da_CtrlPoleVectorConstraint" 
+-rp "SE" 
+-i "poleVectorConstraint.png";
+
+menuItem
+-l "IK" 
+-c "da_CtrlIKConstraint" 
+-rp "S" 
+-i "out_ikHandle.png";
+}
+
+setParent -m ..;
+}
+
+menuItem
+-l "Controllers"
+-sm 1
+-rp "NE" 
+-i "teLockUnchecked.png";
+
+menuItem
+-l "Tag As Controller"
+-c "TagAsController"
+-rp "NE" 
+-i "circle.png";
+
+menuItem
+-l "Parent Controller"
+-c "TagAsControllerParent"
+-rp "N" 
+-i "parent.png"
+-en (size($myCurTransform) >= 2);
+
+setParent -m ..;
+
+if (`about -api` >= 20180000){
+
+menuItem
+-l "Prossimity"
+-sm 1 
+-rp "SE" 
+-i "circle.png";
+
+menuItem -bld 1 
+-l "On"
+-c "da_ControllerProssimity"
+-rp "SE" 
+-i "rvViewingPipelineOn.png";
+
+menuItem -bld 1 
+-l "Off"
+-c "da_ControllerNoProssimity"
+-rp "E" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+}
+
+menuItem
+-l "Wire Color" 
+-sm 1
+-rp "S" 
+-i "da_blue.png";
+
+menuItem
+-l "Red" 
+-c "da_RedOverrides" 
+-rp "SW" 
+-i "da_red.png";
+
+menuItem
+-l "Yellow" 
+-c "da_YellowOverrides" 
+-rp "S" 
+-i "da_yellow.png";
+
+menuItem
+-l "Blue" 
+-c "da_BlueOverrides" 
+-rp "SE" 
+-i "da_lightBlue.png";
+
+menuItem
+-l "Green" 
+-c "da_GreenOverrides"
+-rp "E" 
+-i "da_green.png";
+
+menuItem
+-l "Default" 
+-c "da_NoColorOverrides" 
+-rp "W" 
+-i "da_blue.png";
+
+setParent -m ..;
+
+if (size(`filterExpand -sm 12`)){
+menuItem
+-l "Renderable" 
+-sm 1
+-rp "W" 
+-i "polyBevel.png";
+
+menuItem
+-l "On" 
+-c "da_PolyRender" 
+-rp "SW" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_PolyNoRender" 
+-rp "W" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Shading" 
+-sm 1
+-rp "SW" 
+-i "bevel.png";
+
+menuItem
+-l "On" 
+-c "da_PolyShade" 
+-rp "S" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_PolyNoShade" 
+-rp "SW" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+}
 
 setParent -m ..;
 }
