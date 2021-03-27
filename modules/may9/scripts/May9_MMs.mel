@@ -7434,6 +7434,24 @@ menuItem
 -i "polyDelEdgeVertex.png";
 }
 
+menuItem
+-l "Shading" 
+-sm 1
+-rp "SW" 
+-i "bevel.png";
+
+menuItem
+-l "On" 
+-c "da_PolyShade" 
+-rp "S" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_PolyNoShade" 
+-rp "SW" 
+-i "rvViewingPipelineOff.png";
+
 setParent -m ..;
 
 } 
