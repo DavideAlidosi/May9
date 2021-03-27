@@ -7655,18 +7655,10 @@ menuItem
 -i "circle.png";
 
 menuItem
--l "Parent Controller"
+-l "Tag As Parent Controller"
 -c "TagAsControllerParent"
 -i "parent.png"
 -en (size($myCurTransform) >= 2);
-
-menuItem
--d 1;
-
-menuItem
--l "Create Buffer"
--c "da_CreateBufferGRP" 
--i "out_transform.png";
 
 menuItem
 -d 1;
@@ -7676,12 +7668,16 @@ menuItem
 -c "da_FreezeDelNonDef" 
 -i "FreezeTransform.png";
 
-if (size($myCurTransform) >= 2){
 menuItem 
 -l "Match Pivots"
 -c "MatchPivots"
--i "pickPivotComp.png";
-}
+-i "pickPivotComp.png"
+-en (size($myCurTransform) >= 2);
+
+menuItem
+-l "Create Buffer"
+-c "da_CreateBufferGRP" 
+-i "out_transform.png";
 
 setParent -m ..;
 }
