@@ -973,7 +973,7 @@ menuItem -bld 1
 -en (size($myCurTransform) >= 2);
 
 menuItem -bld 1 
--l "Match Transforms"
+-l "Match Transform"
 -c "MatchTransform"
 -rp "SW"
 -i "move_M.png"
@@ -7650,6 +7650,34 @@ setParent -m ..;
 }
 
 menuItem
+-l "Freeze Transformations"
+-c "FreezeTransformations" 
+-i "FreezeTransform.png";
+
+menuItem
+-l "Delete Non-Deform History"
+-c "BakeNonDefHistory" 
+-i "DeleteHistory.png";
+
+menuItem
+-d 1;
+
+menuItem 
+-l "Match Pivots"
+-c "MatchPivots"
+-i "pickPivotComp.png"
+-en (size($myCurTransform) >= 2);
+
+menuItem 
+-l "Match Transform"
+-c "MatchTransform"
+-i "move_M.png"
+-en (size($myCurTransform) >= 2);
+
+menuItem
+-d 1;
+
+menuItem
 -l "Tag As Controller"
 -c "TagAsController"
 -i "circle.png";
@@ -7664,15 +7692,9 @@ menuItem
 -d 1;
 
 menuItem
--l "Freeze/Delete Non-Deform"
--c "da_FreezeDelNonDef" 
--i "FreezeTransform.png";
-
-menuItem 
--l "Match Pivots"
--c "MatchPivots"
--i "pickPivotComp.png"
--en (size($myCurTransform) >= 2);
+-l "Remove Prefix CTRL"
+-c "da_RemovePrefixCTRL"
+-i "HIKCharacterToolSelection.png";
 
 menuItem
 -l "Create Buffer"
@@ -9406,6 +9428,12 @@ setParent -m ..;
 
 menuItem
 -d 1;
+
+menuItem
+-l "Add Prefix CTRL"
+-c "da_AddPrefixCTRL"
+-i "HIKCharacterToolFullBody.png"
+-en (size($myCurTransform) >= 1);
 
 menuItem
 -l "Duplicate Window"
