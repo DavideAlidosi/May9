@@ -9,6 +9,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_RemovePrefixCTRL`);
+
+catchQuiet (`runTimeCommand -e -del da_AddPrefixCTRL`);
+
 catchQuiet (`runTimeCommand -e -del da_CreateBufferGRP`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleTitleBar`);
@@ -1110,6 +1114,18 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Remove Prefix CTRL"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    string $myCleanNameControl = stringRemovePrefix ($mySel[$i],\"CTRL_\");\n    rename $myCleanNameControl;\n}")
+	da_RemovePrefixCTRL;
+
+runTimeCommand
+	-ann "Add Prefix CTRL"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    rename (\"CTRL_\" + $mySel[$i]);\n}")
+	da_AddPrefixCTRL;
 
 runTimeCommand
 	-ann "Create Buffer Group"
