@@ -1120,7 +1120,7 @@ runTimeCommand
 runTimeCommand
 	-anno "Create Relative Morph Like Blend Shape"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `ls -sl`;\nfor($i=1; $i < size($mySel); $i++){\n    select $mySel[0];\n    select -add $mySel[$i];\n    Morph;\n    string $myMorph[] = `ls -sl -typ \"morph\"`;\n\n    setAttr ($myMorph[0] + \".morphMode\") 1;\n    setAttr ($myMorph[0] + \".morphSpace\") 0;\n    setAttr ($myMorph[0] + \".useOriginalMorphTarget\") 0;\n    setAttr ($myMorph[0] + \".useComponentLookup\") 0;\n    setAttr ($myMorph[0] + \".envelope\") 1;\n}")
+	-c ("string $mySel[] = `ls -sl`;\nfor($i=1; $i < size($mySel); $i++){\n    select $mySel[0];\n    select -add $mySel[$i];\n    Morph;\n    string $myMorph[] = `ls -sl -typ \"morph\"`;\n\n    setAttr ($myMorph[0] + \".morphMode\") 1;\n    setAttr ($myMorph[0] + \".morphSpace\") 0;\n    setAttr ($myMorph[0] + \".useOriginalMorphTarget\") 0;\n    setAttr ($myMorph[0] + \".useComponentLookup\") 0;\n    \n    addAttr -ln $mySel[$i] -at double -dv 1 -max 1 -min 0 $mySel[0];\n    setAttr -e -k 1 ($mySel[0] + \".\" + $mySel[$i]);\n    \n    connectAttr -f ($mySel[0] + \".\" + $mySel[$i]) ($myMorph[0] + \".envelope\");\n}\n\nselect $mySel[0];")
 	da_Morph;
 
 runTimeCommand
