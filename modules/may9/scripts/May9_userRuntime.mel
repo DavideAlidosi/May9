@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_Morph`);
+
 catchQuiet (`runTimeCommand -e -del da_RemovePrefixCTRL`);
 
 catchQuiet (`runTimeCommand -e -del da_AddPrefixCTRL`);
@@ -1114,6 +1116,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-anno "Create Relative Morph Like Blend Shape"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\nfor($i=1; $i < size($mySel); $i++){\n    select $mySel[0];\n    select -add $mySel[$i];\n    Morph;\n    string $myMorph[] = `ls -sl -typ \"morph\"`;\n\n    setAttr ($myMorph[0] + \".morphMode\") 1;\n    setAttr ($myMorph[0] + \".morphSpace\") 0;\n    setAttr ($myMorph[0] + \".useOriginalMorphTarget\") 0;\n    setAttr ($myMorph[0] + \".useComponentLookup\") 0;\n    setAttr ($myMorph[0] + \".envelope\") 1;\n}")
+	da_Morph;
 
 runTimeCommand
 	-ann "Remove Prefix CTRL"

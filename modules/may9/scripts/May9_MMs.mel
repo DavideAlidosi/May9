@@ -2092,6 +2092,12 @@ menuItem
 -d 1;
 }
 
+if (`about -api` >= 20220000){
+menuItem
+-l "Morph"
+-c "da_Morph"
+-i "blendShape.png";
+}else{
 menuItem
 -l "Create Blend Shape"
 -c "CreateBlendShape"
@@ -2101,6 +2107,7 @@ menuItem
 -l "Add Shape"
 -c "AddBlendShape"
 -i "ts-add.png";
+}
 
 menuItem 
 -d 1;
@@ -8392,6 +8399,12 @@ menuItem
 -d 1;
 }
 
+if (`about -api` >= 20220000){
+menuItem
+-l "Morph"
+-c "da_Morph"
+-i "blendShape.png";
+}else{
 menuItem
 -l "Create Blend Shape"
 -c "CreateBlendShape"
@@ -8401,6 +8414,7 @@ menuItem
 -l "Add Shape"
 -c "AddBlendShape;"
 -i "ts-add.png";
+}
 
 menuItem 
 -d 1;
@@ -11240,13 +11254,14 @@ menuItem
 -d 1;
 }
 
+if (`about -api` >= 20220000){
 menuItem
--l "Blend Shape"
--sm 1
+-l "Morph"
+-c "da_Morph"
 -i "blendShape.png";
-
+}else{
 menuItem
--l "Create"
+-l "Create Blend Shape"
 -c "CreateBlendShape"
 -i "blendShape.png";
 
@@ -11254,8 +11269,10 @@ menuItem
 -l "Add Shape"
 -c "AddBlendShape;"
 -i "ts-add.png";
+}
 
-setParent -m ..;
+menuItem 
+-d 1;
 
 menuItem
 -l "Nonlinear"
