@@ -2399,19 +2399,19 @@ runTimeCommand
 runTimeCommand
 	-ann "Part of Shell Modifier"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("da_BackToObjectMode;\n\nstring $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myShape[] = `listRelatives -f -s`;\n\nsetAttr ($myShape[0] + \".primaryVisibility\") 1;\nsetAttr ($myShape[0] + \".overrideEnabled\") 0;\nsetAttr ($myShape[0] + \".overrideShading\") 1;\nsetAttr ($myShape[0] + \".visibility\") 1;\nsetAttr ($myShape[0] + \".castsShadows\") 1;\nsetAttr ($myShape[0] + \".receiveShadows\") 1;\nsetAttr ($myShape[0] + \".motionBlur\") 1;\nsetAttr ($myShape[0] + \".smoothShading\") 1;\nsetAttr ($myShape[0] + \".visibleInReflections\") 1;\nsetAttr ($myShape[0] + \".visibleInRefractions\") 1;\n\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -sh 1 -s 0 -d 1`;\n\nsetAttr ($myShell[0] +\".overrideEnabled\") 1;\nsetAttr ($myShell[0] +\".overrideDisplayType\") 0;\n\ndeleteAttr ($myTransform[0] + \".Thickness\");\ndeleteAttr ($myTransform[0] + \".Bevel\");\ndeleteAttr ($myTransform[0] + \".Chamfer\");\ndeleteAttr ($myTransform[0] + \".Offset\");\ndeleteAttr ($myTransform[0] + \".Segments\");\n\nselect $myShape;\npickWalk -d up;\nrename da_exShellBase1;\n\nselect $myShell;\npickWalk -d up;\nrename da_extractShell1;\nda_ClearFreeze;")
+	-c ("da_BackToObjectMode;\n\nstring $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myShape[] = `listRelatives -f -s`;\n\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -s 1 -d 0`;\n\ndeleteAttr ($myTransform[0] + \".Thickness\");\ndeleteAttr ($myTransform[0] + \".Bevel\");\ndeleteAttr ($myTransform[0] + \".Chamfer\");\ndeleteAttr ($myTransform[0] + \".Offset\");\ndeleteAttr ($myTransform[0] + \".Segments\");\n\nselect $myShape;\npickWalk -d up;\nrename da_exShellBase1;\nda_PolyShade;\n\nselect $myShell[1];\nrename da_extractShell1;\nda_DisableReference;")
 	da_shellDetach;
 
 runTimeCommand
 	-ann "Part of Shell Modifier"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -sh 1 -s 0 -d 1`;\n\nselect $myShell;\nHighQualityDisplay;\n\nselect $myTransform;")
+	-c ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -s 1 -d 0`;\n\nselect $myShell[1];\nda_HighQualitySmoothMesh;\n\nselect $myTransform;")
 	da_shellSubdiv;
 
 runTimeCommand
 	-ann "Part of Shell Modifier"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -sh 1 -s 0 -d 1`;\n\nselect $myShell;\nLowQualityDisplay;\n\nselect $myTransform;")
+	-c ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -s 1 -d 0`;\n\nselect $myShell[1];\nLowQualityDisplay;\n\nselect $myTransform;")
 	da_shellNoSubdiv;
 
 runTimeCommand
@@ -4187,19 +4187,19 @@ runTimeCommand
 runTimeCommand
 	-ann "Clean HUD"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("setFrameRateVisibility 0;\nsetCurrentFrameVisibility 0;\nsetObjectDetailsVisibility 0;\nsetSceneTimecodeVisibility 0;\nsetPolyCountVisibility 0;\nsetFocalLengthVisibility 0;\nSetEvaluationManagerHUDVisibility 0;\nif (`about -api` >= 20190000)da_NoEvalCacheHUD;")
+	-c ("setFrameRateVisibility 0;\nsetCurrentFrameVisibility 0;\nsetObjectDetailsVisibility 0;\nsetSceneTimecodeVisibility 0;\nsetPolyCountVisibility 0;\nsetFocalLengthVisibility 0;\nSetEvaluationManagerHUDVisibility 0;\nif (`about -api` >= 20190000)da_NoEvalCacheHUD;\nif (`pluginInfo -q -l gameVertexCount`)setGameVertexCountVisibility 0;")
 	da_CleanHUD;
 
 runTimeCommand
 	-ann "Enable HUD"
 	-cat "Custom Scripts.May9_Next.Scene"
-	-c ("setFrameRateVisibility 1;\nsetCurrentFrameVisibility 1;\nsetObjectDetailsVisibility 1;\nsetSceneTimecodeVisibility 1;\nsetPolyCountVisibility 1;\nsetFocalLengthVisibility 1;\nSetEvaluationManagerHUDVisibility 1;\nif (`about -api` >= 20190000)da_EvalCacheHUD;")
+	-c ("setFrameRateVisibility 1;\nsetCurrentFrameVisibility 1;\nsetObjectDetailsVisibility 1;\nsetSceneTimecodeVisibility 1;\nsetPolyCountVisibility 1;\nsetFocalLengthVisibility 1;\nSetEvaluationManagerHUDVisibility 1;\nif (`about -api` >= 20190000)da_EvalCacheHUD;\nif (`pluginInfo -q -l gameVertexCount`)setGameVertexCountVisibility 1;")
 	da_EnableHUD;
 
 runTimeCommand
 	-ann "Toggle HUD"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("if (`about -api` >= 20190000){\n    int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility` && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility` && `optionVar -q cacheVisibility`;\n        if ($HUDCheck == false)\n            da_EnableHUD;\n    \n        if ($HUDCheck == true)\n            da_CleanHUD;\n}else{\n    int $HUDCheck = `optionVar -q frameRateVisibility` && `optionVar -q currentFrameVisibility` && `optionVar -q objectDetailsVisibility` && `optionVar -q sceneTimecodeVisibility` && `optionVar -q polyCountVisibility` && `optionVar -q focalLengthVisibility` && `optionVar -q evaluationVisibility`;\n        if ($HUDCheck == false)\n            da_EnableHUD;\n    \n        if ($HUDCheck == true)\n            da_CleanHUD;\n}")
+	-c ("if (`about -api` >= 20190000){\n    int $HUDCheck = \n    `optionVar -q frameRateVisibility` && \n    `optionVar -q currentFrameVisibility` && \n    `optionVar -q objectDetailsVisibility` && \n    `optionVar -q sceneTimecodeVisibility` && \n    `optionVar -q polyCountVisibility` && \n    `optionVar -q focalLengthVisibility` && \n    `optionVar -q evaluationVisibility` && \n    `optionVar -q cacheVisibility`;\n        if ($HUDCheck == false)\n            da_EnableHUD;\n    \n        if ($HUDCheck == true)\n            da_CleanHUD;\n}else{\n    int $HUDCheck =\n    `optionVar -q frameRateVisibility` && \n    `optionVar -q currentFrameVisibility` && \n    `optionVar -q objectDetailsVisibility` && \n    `optionVar -q sceneTimecodeVisibility` && \n    `optionVar -q polyCountVisibility` && \n    `optionVar -q focalLengthVisibility` && \n    `optionVar -q evaluationVisibility`;\n        if ($HUDCheck == false)\n            da_EnableHUD;\n    \n        if ($HUDCheck == true)\n            da_CleanHUD;\n}")
 	da_ToggleHUD;
 
 runTimeCommand
