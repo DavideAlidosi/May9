@@ -2405,7 +2405,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Part of Shell Modifier"
 	-cat "Custom Scripts.May9_Next.Modeling"
-	-c ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -s 1 -d 0`;\n\nselect $myShell[1];\nda_HighQualitySmoothMesh;\n\nselect $myTransform;")
+	-c ("string $myTransform[] = `ls -sl -typ \"transform\"`;\nstring $myPolyBevel[] = `listConnections -s 0 -d 1 -t \"polyBevel3\"`;\nselect $myPolyBevel[0];\nstring $myShell[] = `listConnections -s 1 -d 0`;\n\nselect $myShell[1];\nsetDisplaySmoothness 2;\nsetAttr ($myShell[1] + \".useGlobalSmoothDrawType\") 0;\nsetAttr ($myShell[1] + \".smoothDrawType\") 3;\nsetAttr ($myShell[1] + \".smoothLevel\") 1;\n\nselect $myTransform;")
 	da_shellSubdiv;
 
 runTimeCommand
