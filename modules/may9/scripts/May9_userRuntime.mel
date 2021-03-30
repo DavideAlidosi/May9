@@ -1138,7 +1138,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create Buffer Group"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `ls -sl`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    group;\n    string $myCleanNameControl = stringRemovePrefix ($mySel[$i],\"CTRL_\");\n    rename (\"BUFFER_\" + $myCleanNameControl);\n}")
+	-c ("string $mySel[] = `ls -sl -tr`;\n\nfor ($i=0; $i < size($mySel); $i++){\n    select $mySel[$i];\n    string $myBuffer = `group`;\n    select -add $mySel[$i];\n    MatchPivots;\n    select $myBuffer;\n    string $myCleanNameControl = stringRemovePrefix ($mySel[$i],\"CTRL_\");\n    rename (\"BUFFER_\" + $myCleanNameControl);\n}")
 	da_CreateBufferGRP;
 
 runTimeCommand
