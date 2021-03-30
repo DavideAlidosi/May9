@@ -844,7 +844,7 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Select Hierarchy"
--c "SelectHierarchy"
+-c "da_SelectHierarchy"
 -rp "N"
 -i "selectByHierarchy.png"
 -en (size($myCurTransform) >= 1);
@@ -1550,7 +1550,7 @@ menuItem
 
 menuItem
 -l "Select Hierarchy" 
--c "SelectHierarchy" 
+-c "da_SelectHierarchy" 
 -rp "S" 
 -i "selectByHierarchy.png";
 
@@ -2850,7 +2850,7 @@ menuItem
 }else{
 menuItem
 -l "Select Hierarchy" 
--c "SelectHierarchy" 
+-c "da_SelectHierarchy" 
 -rp "E" 
 -i "selectByHierarchy.png";
 }
@@ -5801,7 +5801,7 @@ menuItem
 
 menuItem
 -l "Select Hierarchy" 
--c "SelectHierarchy" 
+-c "da_SelectHierarchy" 
 -rp "N" 
 -i "selectByHierarchy.png";
 
@@ -7495,7 +7495,7 @@ string $myCurTransform[] = `ls -sl -typ "transform"`;
 
 menuItem
 -l "Select Hierarchy" 
--c "SelectHierarchy" 
+-c "da_SelectHierarchy" 
 -rp "N" 
 -i "selectByHierarchy.png";
 
@@ -9226,7 +9226,7 @@ int $MaterialCheck = `outlinerEditor -q -sam $da_underPointerPanel`;
 
 menuItem
 -l "Select Hierarchy" 
--c "SelectHierarchy" 
+-c "da_SelectHierarchy" 
 -rp "N" 
 -i "selectByHierarchy.png";
 
