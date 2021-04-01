@@ -1236,7 +1236,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Enable or disable Maya Core Plug-in configuration"
 	-cat "Custom Scripts.May9_Next.Toggle"
-	-c ("int $PluginCheck = \n    `pluginInfo -q -autoload bifrostGraph` \n    || `pluginInfo -q -autoload mayaVnnPlugin`;\n\nif ($PluginCheck){\n    catchQuiet (`pluginInfo -e -autoload 0 bifrostGraph`); \n    catchQuiet (`pluginInfo -e -autoload 0 mayaVnnPlugin`);\n}else{\n    catchQuiet (`pluginInfo -e -autoload 1 bifrostGraph`);\n    catchQuiet (`pluginInfo -e -autoload 1 mayaVnnPlugin`);\n}")
+	-c ("int $PluginCheck = \n    `pluginInfo -q -autoload bifrostGraph` \n    || `pluginInfo -q -autoload mayaVnnPlugin`;\n\nif ($PluginCheck){\n    catchQuiet (`pluginInfo -e -autoload 0 bifrostGraph`); \n    catchQuiet (`pluginInfo -e -autoload 0 mayaVnnPlugin`);\n\tinViewMessage -pos topCenter -msg \"Bifrost Graph Autoload OFF\" -fade;\n}else{\n    catchQuiet (`pluginInfo -e -autoload 1 bifrostGraph`);\n    catchQuiet (`loadPlugin bifrostGraph`);\n    catchQuiet (`pluginInfo -e -autoload 1 mayaVnnPlugin`);\n    catchQuiet (`loadPlugin mayaVnnPlugin`);\n\tinViewMessage -pos topCenter -msg \"Bifrost Graph Loaded and Autoload ON\" -fade;\n}")
 	da_ToggleBifrostGraph;
 
 runTimeCommand
