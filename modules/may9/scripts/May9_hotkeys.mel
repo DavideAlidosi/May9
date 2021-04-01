@@ -44,7 +44,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "l" -ctl -alt -sht -n ("da_LastOpInStackNameCommand");
 	hotkey -k "x" -ctl -alt -sht -n ("da_QuitNameCommand");
 	hotkey -k "d" -ctl -alt -sht -n ("da_superDuplicateNameCommand");
-	hotkey -k "g" -ctl -alt -sht -n ("da_CreateBufferNameCommand");
+	hotkey -k "g" -ctl -alt -sht -n ("da_CreateBufferGRPNameCommand");
 	hotkey -k "n" -ctl -alt -sht -n ("da_ToggleTitleBarNameCommand");
 	hotkey -k "Ins" -ctl -alt -sht -n ("MatchPivotsNameCommand");
 
@@ -546,9 +546,9 @@ global proc da_May9Hotkeys(){
 		da_superDuplicateNameCommand;
 
 	nameCommand
-		-ann "da_CreateBufferNameCommand"
-		-c ("da_CreateBuffer")
-		da_CreateBufferNameCommand;
+		-ann "da_CreateBufferGRPNameCommand"
+		-c ("da_CreateBufferGRP")
+		da_CreateBufferGRPNameCommand;
 
 	nameCommand
 		-ann "da_ToggleTitleBarNameCommand"
