@@ -2179,19 +2179,19 @@ runTimeCommand
 runTimeCommand
 	-ann "Transform Mirror on Negative YZ plane"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleX\") -1;\n\nselect $mySel;\nUnparent;\nGroup;\nrename \"MirroredTransform1\";\n\ndelete $myBuffer[0];\n")
+	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleX\") -1;\n\nrename \"MirroredTransformX1\";\n\ndelete $myBuffer[0];")
 	da_TransformMirrorNegX;
 
 runTimeCommand
 	-ann "Transform Mirror on Negative XZ plane"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleY\") -1;\n\nselect $mySel;\nUnparent;\nGroup;\nrename \"MirroredTransform1\";\n\ndelete $myBuffer[0];\n")
+	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleY\") -1;\n\nrename \"MirroredTransformY1\";\n\ndelete $myBuffer[0];\n")
 	da_TransformMirrorNegY;
 
 runTimeCommand
 	-ann "Transform Mirror on Negative XY plane"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleZ\") -1;\n\nselect $mySel;\nUnparent;\nGroup;\nrename \"MirroredTransform1\";\n\ndelete $myBuffer[0];\n")
+	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleZ\") -1;\n\nrename \"MirroredTransformZ1\";\n\ndelete $myBuffer[0];\n")
 	da_TransformMirrorNegZ;
 
 runTimeCommand
