@@ -2179,19 +2179,19 @@ runTimeCommand
 runTimeCommand
 	-ann "Transform Mirror on Negative YZ plane"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleX\") -1;\n\nrename \"MirroredTransformX1\";\n\ndelete $myBuffer[0];")
+	-c ("string $mySel[] = `duplicate -rr`;\nstring $mySelType[] = `da_QueryArrayNodeType`;\n\nif (stringArrayContains (\"transform\", $mySelType)){\n    select $mySel;\n} else {\n    select $mySel;\n    doGroup 0 1 1;\n}\n\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleX\") -1;\n\npickWalk -d up;\nstring $myParent[] = `pickWalk -d up`;\n\nif($myBuffer[0] == $myParent[0]){\n    rename \"MirroredTransformX1\";\n} else {\n    select $myBuffer;\n    select -add $myParent;\n    catchQuiet (`parent`);\n    select $myBuffer;\n    rename \"MirroredTransformX1\";\n}")
 	da_TransformMirrorNegX;
 
 runTimeCommand
 	-ann "Transform Mirror on Negative XZ plane"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleY\") -1;\n\nrename \"MirroredTransformY1\";\n\ndelete $myBuffer[0];\n")
+	-c ("string $mySel[] = `duplicate -rr`;\nstring $mySelType[] = `da_QueryArrayNodeType`;\n\nif (stringArrayContains (\"transform\", $mySelType)){\n    select $mySel;\n} else {\n    select $mySel;\n    doGroup 0 1 1;\n}\n\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleY\") -1;\n\npickWalk -d up;\nstring $myParent[] = `pickWalk -d up`;\n\nif($myBuffer[0] == $myParent[0]){\n    rename \"MirroredTransformY1\";\n} else {\n    select $myBuffer;\n    select -add $myParent;\n    catchQuiet (`parent`);\n    select $myBuffer;\n    rename \"MirroredTransformY1\";\n}")
 	da_TransformMirrorNegY;
 
 runTimeCommand
 	-ann "Transform Mirror on Negative XY plane"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("string $mySel[] = `duplicate -rr`;\ndoGroup 0 1 1;\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleZ\") -1;\n\nrename \"MirroredTransformZ1\";\n\ndelete $myBuffer[0];\n")
+	-c ("string $mySel[] = `duplicate -rr`;\nstring $mySelType[] = `da_QueryArrayNodeType`;\n\nif (stringArrayContains (\"transform\", $mySelType)){\n    select $mySel;\n} else {\n    select $mySel;\n    doGroup 0 1 1;\n}\n\nstring $myBuffer[] = `ls -sl`;\nsetAttr ($myBuffer[0] + \".scaleZ\") -1;\n\npickWalk -d up;\nstring $myParent[] = `pickWalk -d up`;\n\nif($myBuffer[0] == $myParent[0]){\n    rename \"MirroredTransformZ1\";\n} else {\n    select $myBuffer;\n    select -add $myParent;\n    catchQuiet (`parent`);\n    select $myBuffer;\n    rename \"MirroredTransformZ1\";\n}")
 	da_TransformMirrorNegZ;
 
 runTimeCommand
