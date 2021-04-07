@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleTransformShape`);
+
 catchQuiet (`runTimeCommand -e -del da_SelectHierarchy`);
 
 catchQuiet (`runTimeCommand -e -del da_Morph`);
@@ -1118,6 +1120,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Toggle Transform Shape"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $mySel[] = `ls -sl`;\n\nif (size($mySel)){\n    string $myObj[] = `ls -sl -tr`;\n    \n    if (size($myObj)){\n        string $myShapes[] = `listRelatives  -f -s`;\n        select $myShapes;\n    } else {\n        string $transform[] = `listRelatives -p -typ \"transform\"`;\n        select $transform;\n    }\n} else {\n    warning \"No object selected\";\n}\n\n")
+	da_ToggleTransformShape;
 
 runTimeCommand
 	-ann "Select Only Transform in the Hierarchy"
