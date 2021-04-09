@@ -46,6 +46,7 @@ global proc da_May9Hotkeys(){
 	hotkey -k "d" -ctl -alt -sht -n ("da_superDuplicateNameCommand");
 	hotkey -k "g" -ctl -alt -sht -n ("da_CreateBufferGRPNameCommand");
 	hotkey -k "n" -ctl -alt -sht -n ("da_ToggleTitleBarNameCommand");
+	hotkey -k "q" -ctl -alt -sht -n ("da_ToggleTransformShapeNameCommand");
 	hotkey -k "Ins" -ctl -alt -sht -n ("MatchPivotsNameCommand");
 
 	// CTRL hotkeys
@@ -154,6 +155,11 @@ global proc da_May9Hotkeys(){
 		-c ("da_MMtoKey_release")
 		da_MMtoKey_releaseNameCommand;
 	}
+
+	nameCommand
+		-ann "da_ToggleTransformShapeNameCommand"
+		-c ("da_ToggleTransformShape")
+		da_ToggleTransformShapeNameCommand;
 
 	nameCommand
 		-ann "da_CtrlPointConstraintNameCommand"

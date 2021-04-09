@@ -396,6 +396,16 @@ menuItem -bld 1
 -i "scaleConstraint.png"
 -en (size($myCurTransform) >= 2);
 
+
+menuItem -bld 1 
+-l "Symmetry Constraint"
+-c "da_symmetryConstraint"
+-i "symmetryConstraint.svg"
+-en (size($myCurTransform) >= 2);
+
+menuItem
+-d 1;
+
 menuItem -bld 1 
 -l "IK Handle"
 -c "IKHandleTool"
