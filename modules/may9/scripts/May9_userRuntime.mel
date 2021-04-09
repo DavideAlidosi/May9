@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleSteadyStroke`);
+
 catchQuiet (`runTimeCommand -e -del da_ToggleTransformShape`);
 
 catchQuiet (`runTimeCommand -e -del da_SelectHierarchy`);
@@ -1120,6 +1122,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Toggle Steady Stroke when Scupt"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("string $currentTool = `currentCtx`;\nint $steadyStrokeCheck = `sculptMeshCacheCtx -q -useSteadyStroke $currentTool`;\n\nif ($steadyStrokeCheck == 1){\n    sculptMeshCacheCtx -e -useSteadyStroke 0 $currentTool;\n} else {\n    sculptMeshCacheCtx -e -useSteadyStroke 1 $currentTool;\n}")
+	da_ToggleSteadyStroke;
 
 runTimeCommand
 	-ann "Toggle Transform Shape"

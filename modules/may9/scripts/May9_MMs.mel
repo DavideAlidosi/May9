@@ -14348,6 +14348,7 @@ Sup_Symmetry_MM_May9;
 }
 string $currentCtx = `currentCtx`;
 int $wireframeCheck = `sculptMeshCacheCtx -q -displayWireframe $currentCtx`;
+int $steadyStrokeCheck = `sculptMeshCacheCtx -q -useSteadyStroke $currentCtx`;
 int $axisDirection = `sculptMeshCacheCtx -q -mirror $currentCtx`;
 
 menuItem -itl 1 
@@ -14369,10 +14370,16 @@ menuItem -itl 1
 -i "Grab.png";
 
 menuItem -itl 1 
+-l "Steady Stroke" 
+-c "da_ToggleSteadyStroke" 
+-cb (1 == $steadyStrokeCheck)
+-rp "W";
+
+menuItem -itl 1 
 -l "Wireframe" 
 -c "da_ToggleSculptWireframe" 
 -cb (1 == $wireframeCheck)
--rp "W";
+-rp "SW";
 
 if (`about -api` >= 20180000){
 menuItem -itl 1 
@@ -14403,7 +14410,6 @@ menuItem -itl 1
 
 menuItem -itl 1 
 -l "Flatten..." 
--rp "SW" 
 -c "SetMeshFlattenTool; da_OpenToolSettings" 
 -i "Flatten.png";
 
