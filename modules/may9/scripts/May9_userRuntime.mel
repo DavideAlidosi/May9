@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_DeleteConstraint`);
+
 catchQuiet (`runTimeCommand -e -del da_ToggleSteadyStroke`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleTransformShape`);
@@ -1122,6 +1124,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Delete Constraint of Selected Transform"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl -tr`;\n\nif (size($mySel)){\n    string $myConstraint[] = `listConnections -s 1 -d 0 -t \"constraint\"`;\n    \n    if (size($myConstraint)){\n        select $myConstraint;\n        delete;\n        select $mySel;\n    } else {\n        warning \"Selected Transform Has no Constraint\";\n    }\n} else {\n    error \"No Transform Selected\";\n}")
+	da_DeleteConstraint;
 
 runTimeCommand
 	-ann "Toggle Steady Stroke when Scupt"

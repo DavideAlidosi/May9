@@ -182,6 +182,7 @@ int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -
 string $currentPanel = `getPanel -wf`;
 string $myKeyTangent[] = `keyTangent -q -global -ott`;
 string $myCurTransform[] = `ls -sl -typ "transform"`;
+string $myConstraint[] = `listConnections -s 1 -d 0 -t "constraint"`;
 
 menuItem -bld 1 
 -l "Poly/NURBS"
@@ -354,6 +355,14 @@ menuItem -bld 1
 -sm 1
 -rp "SW"
 -i "humanIK_CharCtrl.png";
+
+if (size($myConstraint)){
+menuItem -bld 1 
+-l "Delete Constraint"
+-c "da_DeleteConstraint"
+-rp "NE"
+-i "Erase.png";
+}
 
 menuItem -bld 1 
 -l "Create Joint"
