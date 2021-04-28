@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_CopyPasteSkinWeight`);
+
 catchQuiet (`runTimeCommand -e -del da_DeleteConstraint`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleSteadyStroke`);
@@ -1124,6 +1126,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-annotation "Copy and Paste Skin Weight Between Vertex"
+	-category "Custom Scripts.May9_Next.Rigging"
+	-command ("string $mySel[] = `ls -sl`;\n\nselect $mySel[0];\nCopyVertexWeights;\n\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[$i];\n    PasteVertexWeights;\n}\n    \nselect $mySel;")
+	da_CopyPasteSkinWeight;
 
 runTimeCommand
 	-ann "Delete Constraint of Selected Transform"
@@ -2659,14 +2667,8 @@ runTimeCommand
 runTimeCommand
 	-ann "Map Per Face UV"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command create a per face UV shell and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n    string $mySel[] = `ls -sl`;\n    $mySelSize = size($mySel);\n    for($i=0; $i<$mySelSize; $i++){\n        select $mySel[$i];\n    \tFreezeTransformations;\n    \tpolyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;\n    \tdR_DoCmd(\"modeEdge\");\n    \tSelectAll;\n    \tCutUVs;\n    \tu3dOptimize -ite 1 -pow 1 -sa 1 -bi 0 -tf 1 -ms 1024 -rs 0;\n    \tConvertSelectionToUVs;\n    \tuvTkDoSetTexelDensity;\n    \tperformStackSimilarShells 0;\n        UVOrientShells;\n    \tu3dLayout -res 256 -scl 1 -spc 9.765625e-05 -mar 9.765625e-05 -box 0 1 0 1;\n    \tdR_modeObject;\n    }\n}")
+	-c ("performPolyForceUVArgList \"1\" {\"0\", \"unitize\", \"ls -sl\", \"0\"} \"\";\nu3dUnfold -ite 1 -p 0 -bi 1 -tf 1 -ms 1024 -rs 0;\npolyMultiLayoutUV -lm 1 -sc 1 -rbf 1 -fr 1 -ps 0.05 -l 2 -gu 1 -gv 1 -psc 0 -su 1 -sv 1 -ou 0 -ov 0;\n\nif (size(`filterExpand -sm 34`) == 0){\n    da_BackToObjectMode;   \n}")
 	da_MapFacesUV;
-
-runTimeCommand
-	-ann "Map Per Face UV on Selected Face(s)"
-	-cat "Custom Scripts.May9_Next.Render"
-	-c ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command create a per face UV shell and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n\tstring $myFaces[] = `ls -sl`;\n\tda_BackToObjectMode;\n\tFreezeTransformations;\n\tdR_DoCmd(\"modePoly\");\n\tselect $myFaces;\n\tpolyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;\n\tConvertSelectionToEdges;\n\tCutUVs;\n\tselect $myFaces;\n\tu3dOptimize -ite 1 -pow 1 -sa 1 -bi 0 -tf 1 -ms 1024 -rs 0;\n\tConvertSelectionToUVs;\n\tuvTkDoGetTexelDensity;\n\tuvTkDoSetTexelDensity;\n\tperformStackSimilarShells 0;\n\tUVOrientShells;\n\tu3dLayout -res 256 -scl 1 -spc 9.765625e-05 -mar 9.765625e-05 -box 0 1 0 1;\n\tdR_modeObject;\n}")
-	da_MapFacesFacesUV;
 
 runTimeCommand
 	-ann "Create AiVolumes"

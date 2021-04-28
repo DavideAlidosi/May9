@@ -182,7 +182,6 @@ int $IntCreationCheck = `optionVar -q createPolyPrimitiveAsTool` && `optionVar -
 string $currentPanel = `getPanel -wf`;
 string $myKeyTangent[] = `keyTangent -q -global -ott`;
 string $myCurTransform[] = `ls -sl -typ "transform"`;
-string $myConstraint[] = `listConnections -s 1 -d 0 -t "constraint"`;
 
 menuItem -bld 1 
 -l "Poly/NURBS"
@@ -192,13 +191,13 @@ menuItem -bld 1
 
 menuItem -bld 1 
 -l "Cube"
--c "CreatePolygonCube;"
+-c "CreatePolygonCube;ShowManipulators"
 -rp "W"
 -i "polyCube.png";
 
 menuItem -bld 1 
 -l "Plane"
--c "polyPlane -w 1 -h 1 -sx 1 -sy 1 -ax 0 1 0 -cuv 2 -ch 1"
+-c "polyPlane -w 1 -h 1 -sx 1 -sy 1 -ax 0 1 0 -cuv 2 -ch 1;ShowManipulators"
 -rp "SW"
 -i "polyMesh.png";
 
@@ -356,12 +355,14 @@ menuItem -bld 1
 -rp "SW"
 -i "humanIK_CharCtrl.png";
 
-if (size($myConstraint)){
+if (size($myCurTransform)){
+if (size(`listConnections -s 1 -d 0 -t "constraint"`)){
 menuItem -bld 1 
 -l "Delete Constraint"
 -c "da_DeleteConstraint"
 -rp "NE"
 -i "Erase.png";
+}
 }
 
 menuItem -bld 1 
@@ -4106,8 +4107,8 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face..."
--c "da_MapFacesFacesUV"
+-l "Per Face"
+-c "da_MapFacesUV"
 -i "polyNormalProj.png";
 
 menuItem
@@ -11498,7 +11499,7 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face..."
+-l "Per Face"
 -c "da_MapFacesUV"
 -i "polyNormalProj.png";
 
@@ -12540,7 +12541,7 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face..."
+-l "Per Face"
 -c "da_MapFacesUV"
 -i "polyNormalProj.png";
 
@@ -15339,14 +15340,9 @@ menuItem
 -i "weightHammer.png";
 
 menuItem
--l "Copy Skin Weights"
--c "artAttrSkinWeightCopy"
+-l "Copy and Paste Skin Weights"
+-c "da_CopyPasteSkinWeight"
 -i "polyCopyUV.png";
-
-menuItem
--l "Paste Skin Weights"
--c "artAttrSkinWeightPaste"
--i "polyPasteUV.png";
 
 setParent -m ..;
 
@@ -15678,8 +15674,8 @@ menuItem
 -i "polyScaleUV.png";
 
 menuItem
--l "Per Face Map..."
--c "da_MapFacesFacesUV"
+-l "Per Face Map"
+-c "da_MapFacesUV"
 -rp "S" 
 -i "polyNormalProj.png";
 
@@ -15747,7 +15743,7 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face Map..."
+-l "Per Face Map"
 -c "da_MapFacesUV"
 -rp "E"
 -i "polyNormalProj.png";
