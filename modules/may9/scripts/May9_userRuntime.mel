@@ -2671,6 +2671,12 @@ runTimeCommand
 	da_MapFacesUV;
 
 runTimeCommand
+	-ann "Map Per Face UV on Selected Face(s)"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("string $myResult = `confirmDialog -title \"Confirm\" -message \"This command create a per face UV shell and Freeze Transformation, continue?\" \n-button \"Yes\" -button \"No\" -defaultButton \"Yes\" \n-cancelButton \"No\" -dismissString \"No\"`;\nif ($myResult == \"Yes\"){\n\tstring $myFaces[] = `ls -sl`;\n\tda_BackToObjectMode;\n\tFreezeTransformations;\n\tdR_DoCmd(\"modePoly\");\n\tselect $myFaces;\n\tpolyAutoProjection -lm 0 -pb 0 -ibd 1 -cm 0 -l 2 -sc 1 -o 1 -p 6 -ps 0.2 -ws 0;\n\tConvertSelectionToEdges;\n\tCutUVs;\n\tselect $myFaces;\n\tu3dOptimize -ite 1 -pow 1 -sa 1 -bi 0 -tf 1 -ms 1024 -rs 0;\n\tConvertSelectionToUVs;\n\tuvTkDoGetTexelDensity;\n\tuvTkDoSetTexelDensity;\n\tperformStackSimilarShells 0;\n\tUVOrientShells;\n\tu3dLayout -res 256 -scl 1 -spc 9.765625e-05 -mar 9.765625e-05 -box 0 1 0 1;\n\tdR_modeObject;\n}")
+	da_MapFacesFacesUV;
+
+runTimeCommand
 	-ann "Create AiVolumes"
 	-cat "Custom Scripts.May9_Next.Render"
 	-c ("python(\"import mtoa.ui.arnoldmenu as arnoldmenu;arnoldmenu.createVolume()\");\nPickWalkUp;\n\nstring $mySelShape[] = `listRelatives -f -s`;\nstring $shadingEngine = `createNode shadingEngine -n aiVolumeShapeSG1`;\nstring $myStandardVolume = `createNode aiStandardVolume`;\n\nconnectAttr -f ($mySelShape[0] + \".instObjGroups[0]\") ($shadingEngine + \".dagSetMembers[0]\");\nconnectAttr -f ($myStandardVolume + \".outColor\") ($shadingEngine + \".volumeShader\");\n\nselect $mySelShape[0];\nPickWalkUp;")

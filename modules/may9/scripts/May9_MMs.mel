@@ -355,16 +355,6 @@ menuItem -bld 1
 -rp "SW"
 -i "humanIK_CharCtrl.png";
 
-if (size($myCurTransform)){
-if (size(`listConnections -s 1 -d 0 -t "constraint"`)){
-menuItem -bld 1 
--l "Delete Constraint"
--c "da_DeleteConstraint"
--rp "NE"
--i "Erase.png";
-}
-}
-
 menuItem -bld 1 
 -l "Create Joint"
 -c "JointTool"
@@ -406,12 +396,20 @@ menuItem -bld 1
 -i "scaleConstraint.png"
 -en (size($myCurTransform) >= 2);
 
-
 menuItem -bld 1 
 -l "Symmetry Constraint"
 -c "da_symmetryConstraint"
 -i "symmetryConstraint.svg"
 -en (size($myCurTransform) >= 2);
+
+if (size($myCurTransform)){
+if (size(`listConnections -s 1 -d 0 -t "constraint"`)){
+menuItem -bld 1 
+-l "Delete Constraint"
+-c "da_DeleteConstraint"
+-i "Erase.png";
+}
+}
 
 menuItem
 -d 1;
@@ -4107,8 +4105,8 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face"
--c "da_MapFacesUV"
+-l "Per Face..."
+-c "da_MapFacesFacesUV"
 -i "polyNormalProj.png";
 
 menuItem
@@ -11499,8 +11497,8 @@ menuItem
 -i "polySphereProj.png";
 
 menuItem
--l "Per Face"
--c "da_MapFacesUV"
+-l "Per Face..."
+-c "da_MapFacesFacesUV"
 -i "polyNormalProj.png";
 
 menuItem
@@ -15674,8 +15672,8 @@ menuItem
 -i "polyScaleUV.png";
 
 menuItem
--l "Per Face Map"
--c "da_MapFacesUV"
+-l "Per Face Map..."
+-c "da_MapFacesFacesUV"
 -rp "S" 
 -i "polyNormalProj.png";
 
