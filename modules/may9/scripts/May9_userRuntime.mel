@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleViewCube`);
+
 catchQuiet (`runTimeCommand -e -del da_CopyPasteSkinWeight`);
 
 catchQuiet (`runTimeCommand -e -del da_DeleteConstraint`);
@@ -1128,9 +1130,15 @@ runTimeCommand
 }
 
 runTimeCommand
-	-annotation "Copy and Paste Skin Weight Between Vertex"
-	-category "Custom Scripts.May9_Next.Rigging"
-	-command ("string $mySel[] = `ls -sl`;\n\nselect $mySel[0];\nCopyVertexWeights;\n\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[$i];\n    PasteVertexWeights;\n}\n    \nselect $mySel;")
+	-ann "Toggle View Cube"
+	-cat "Custom Scripts.May9_Nest.Toggle"
+	-c ("int $myViewCube = `optionVar -q \"viewCubeShowCube\"`;\n\nif ($myViewCube == 0){\n    viewManip -visible on; optionVar -iv viewCubeShowCube 1;\n    savePrefsChanges;\n}else{\n    viewManip -visible off; optionVar -iv viewCubeShowCube 0;\n\tsavePrefsChanges;\n}")
+	da_ToggleViewCube;
+
+runTimeCommand
+	-ann "Copy and Paste Skin Weight Between Vertex"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nselect $mySel[0];\nCopyVertexWeights;\n\nfor ($i=1; $i<size($mySel); $i++){\n    select $mySel[$i];\n    PasteVertexWeights;\n}\n    \nselect $mySel;")
 	da_CopyPasteSkinWeight;
 
 runTimeCommand

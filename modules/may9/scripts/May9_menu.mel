@@ -49,6 +49,9 @@ global proc da_May9Menu(){
     menuItem -p $menuMain -l "Anti Alias" -c "da_AntiAliasPrefs" -cb (`optionVar -q da_AntiAliasEnable`);
     menuItem -p $menuMain -l "Undo Queue" -c "da_ToggleUndoState" -cb (`undoInfo -q -st`);
     menuItem -p $menuMain -l "Wheel Zoom" -c "da_ToggleMouseWheel" -cb (`optionVar -q "useScrollWheel"`);
+    if (`about -api` >= 20220100){
+        menuItem -p $menuMain -l "View Cube" -c "da_ToggleViewCube" -cb (`optionVar -q "viewCubeShowCube"`);
+    }
 
     menuItem -d 1 -l "May9 Next";
     menuItem -p $menuMain -l "About..." -c "da_AboutMay9" -i "menuIconHelp.png";
