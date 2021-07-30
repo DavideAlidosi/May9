@@ -2045,8 +2045,15 @@ menuItem
 if (`about -api` >= 20220000){
 menuItem
 -l "Sweep Mesh"
--c "sweepMeshFromCurve -oneNodePerCurve false"
+-c "sweepMeshFromCurve"
 -i "shelf_sweepMeshFromCurve.png";
+
+if (`about -api` >= 20220100){
+menuItem
+-c "performSweepMesh 1"
+-ob 1;
+}
+
 }else{
 menuItem
 -l "Convert to Polygons"
@@ -2972,7 +2979,7 @@ menuItem
 if (`about -api` >= 20220000){
 menuItem
 -l "Sweep Mesh"
--c "sweepMeshFromCurve -oneNodePerCurve false"
+-c "sweepMeshFromCurve"
 -i "shelf_sweepMeshFromCurve.png";
 }else{
 menuItem
