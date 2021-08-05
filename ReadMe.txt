@@ -1,4 +1,4 @@
-May9 Next.3.3 - A new user experience for Autodesk Maya 2022
+May9 Next.3.7 - A new user experience for Autodesk Maya 2022.1
 
 
 General info
@@ -18,7 +18,7 @@ Installation
 
 
 Release Note
-Tested and develop on Autodesk Maya 2022
+Tested and develop on Autodesk Maya 2022.1
 
 
 Licenses
