@@ -1131,7 +1131,7 @@ runTimeCommand
 
 runTimeCommand
 	-ann "Toggle View Cube"
-	-cat "Custom Scripts.May9_Nest.Toggle"
+	-cat "Custom Scripts.May9_Next.Toggle"
 	-c ("int $myViewCube = `optionVar -q \"viewCubeShowCube\"`;\n\nif ($myViewCube == 0){\n    viewManip -visible on; optionVar -iv viewCubeShowCube 1;\n    savePrefsChanges;\n}else{\n    viewManip -visible off; optionVar -iv viewCubeShowCube 0;\n\tsavePrefsChanges;\n}")
 	da_ToggleViewCube;
 
