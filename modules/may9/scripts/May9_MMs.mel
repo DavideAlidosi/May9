@@ -11021,6 +11021,52 @@ menuItem
 -rp "SW"
 -i "polyBooleansIntersection.png";
 
+if (`about -api` >= 20230000){
+menuItem
+-l "Union"
+-c "PolygonBooleanUnion"
+-rp "NW"
+-i "polyBooleansUnion.png";
+
+menuItem
+-l "Difference AB"
+-c "PolygonBooleanDifference"
+-rp "SW"
+-i "polyBooleansDifference.png";
+
+menuItem
+-l "Difference BA"
+-c "PolygonBooleanDifferenceBA"
+-rp "SE"
+-i "Bool_BMinusA.png";
+
+menuItem
+-l "Intersection"
+-c "PolygonBooleanIntersection"
+-rp "W"
+-i "polyBooleansIntersection.png";
+
+menuItem
+-l "Slice"
+-c "PolygonBooleanSlice"
+-rp "S"
+-i "Bool_Slice.png";
+
+menuItem
+-l "Hole Punch"
+-c "PolygonBooleanHolePunch"
+-i "Bool_HolePunch.png";
+
+menuItem
+-l "Cut Out"
+-c "PolygonBooleanCutOut"
+-i "Bool_CutOut.png";
+
+menuItem
+-l "Split Edges"
+-c "PolygonBooleanSplitEdges"
+-i "Bool_SplitEdges.png";
+}else{
 menuItem
 -l "Live Union"
 -c "da_interactiveUnion"
@@ -11044,6 +11090,7 @@ menuItem
 -c "da_BooleanFullIntersect"
 -rp "S"
 -i "da_booleanFullIntersect.png";
+}
 
 setParent -m ..;
 
