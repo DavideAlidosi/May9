@@ -257,23 +257,25 @@ menuItem -bld 1
 -rp "W"
 -i "render.png";
 
+if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 menuItem -bld 1 
--l "Render Frame"
--c "RenderIntoNewWindow"
--rp "N"
--i "RS_render.png";
+-l "Render View"
+-c "da_AiRenderView"
+-rp "NW"
+-i "RenderViewShelf.png";
+}else{
+menuItem -bld 1 
+-l "Render View"
+-c "RenderViewWindow"
+-rp "NW"
+-i "rvOpenWindow.png";
+}
 
 menuItem -bld 1 
 -l "Select Camera"
 -c "da_SelectCamera"
--rp "NE"
+-rp "W"
 -i "Camera.png";
-
-menuItem -bld 1 
--l "Render Sequence"
--c "RenderSequence"
--rp "NW"
--i "batchRender.png";
 
 menuItem -bld 1 
 -l "Color Management"
@@ -281,11 +283,19 @@ menuItem -bld 1
 -rp "S"
 -cb (`colorManagementPrefs -q -cme`);
 
+if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
+menuItem -bld 1 
+-l "Start Render"
+-c "da_RenderViews"
+-rp "N"
+-i "RenderShelf.png";
+}else{
 menuItem -bld 1 
 -l "Start IPR Render"
 -c "da_RenderViews"
--rp "W"
--i "render.png";
+-rp "N"
+-i "rvIprRender.png";
+}
 
 menuItem -bld 1 
 -l "Resolution Gate"
@@ -296,8 +306,16 @@ menuItem -bld 1
 menuItem -bld 1 
 -l "Playblast"
 -c "performPlayblast 3"
--rp "SE"
+-rp "NE"
 -i "playblast.png";
+
+menuItem -bld 1 
+-l "Render Sequence..."
+-c "RenderSequenceOptions"
+-i "batchRender.png";
+
+menuItem
+-d 1;
 
 menuItem -bld 1 
 -l "Render Settings..."
@@ -1100,6 +1118,8 @@ int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 if (`about -api` >= 20180000 && $myArnoldIntVersion >= 320){
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
 
+if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
+
 menuItem 
 -d 1;
 
@@ -1121,6 +1141,7 @@ menuItem -bld 1
 
 menuItem 
 -d 1;
+}
 }
 }
 }else{
