@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ToggleBluePencil`);
+
 catchQuiet (`runTimeCommand -e -del da_AiRenderView`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleViewCube`);
@@ -1130,6 +1132,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Toggle Blue Pencil"
+	-cat "Custom Scripts.May9_Next.Toggle"
+	-c ("if (python(\"from maya.plugin.bluepencil.bluePencilToolBar import BluePencilToolBar; BluePencilToolBar.toolBarVisible()\")){\n    if(checkAndLoadPlugin(\"bluePencil\")){bpToggleToolBar;};\n    buildSelectMM;MarkingMenuPopDown;\n}else{\n    if(checkAndLoadPlugin(\"bluePencil\")){bpToggleToolBar;};\n}")
+	da_ToggleBluePencil;
 
 runTimeCommand
 	-ann "Open Arnold RenderView"

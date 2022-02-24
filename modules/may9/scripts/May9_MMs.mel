@@ -812,10 +812,17 @@ menuItem -bld 1
 -i "motionTrail.png"
 -en (size($myCurTransform) >= 1);
 
+if (`about -api` >= 20230000){
+menuItem -bld 1 
+-l "Blue Pencil Tool..."
+-c "da_ToggleBluePencil"
+-i "BluePencil.png";
+}else{
 menuItem -bld 1 
 -l "Grease Pencil Tool..."
 -c "GreasePencilTool"
 -i "GreasePencil.png";
+}
 
 menuItem -bld 1 
 -l "Set Driven Key..."
@@ -14291,6 +14298,64 @@ menuItem -itl 1
 -l "Anti-Aliasing" 
 -c "da_AntiAliasToggle"  
 -cb (`getAttr "hardwareRenderingGlobals.multiSampleEnable"`);
+
+setParent -m ..;
+
+} 
+// Define Tool_BluePencil marking menu
+global proc Tool_BluePencil_MM_May9(){
+menuItem -itl 1 
+-l "Pencil" 
+-c "bluePencilUtil -pencilTool" 
+-rp "N" 
+-i "BP_pencil.png";
+
+menuItem -itl 1 
+-l "Eraser" 
+-c "bluePencilUtil -eraserTool" 
+-rp "NW" 
+-i "BP_eraser.png";
+
+menuItem -itl 1 
+-l "Text" 
+-c "bluePencilUtil -textTool" 
+-rp "S" 
+-i "BP_text.png";
+
+menuItem -itl 1 
+-l "Remove Frame" 
+-c "bluePencilFrame -delete" 
+-rp "W" 
+-i "BP_deleteFrame.png";
+
+menuItem -itl 1 
+-l "Add Frame" 
+-c "bluePencilFrame -insert" 
+-rp "E" 
+-i "BP_addFrame.png";
+
+menuItem -itl 1 
+-l "Copy Frame" 
+-c "bluePencilFrame -copy" 
+-rp "SW" 
+-i "BP_copyFrame.png";
+
+menuItem -itl 1 
+-l "Paste Frame" 
+-c "bluePencilFrame -paste" 
+-rp "SE" 
+-i "BP_pasteFrame.png";
+
+menuItem -itl 1 
+-l "Brush Pencil" 
+-c "bluePencilUtil -brushTool" 
+-rp "NE" 
+-i "BP_brush.png";
+
+menuItem -itl 1 
+-l "Complete Tool" 
+-c "da_ToggleBluePencil" 
+-i "aselect.png";
 
 setParent -m ..;
 

@@ -162,55 +162,6 @@ class UserData(object):
             if not os.path.isfile(directory + "/__init__.py"):
                 open(directory + "/__init__.py", "w").close()
 
-    @staticmethod
-    def _import():
-        """import from version 1.0.5"""
-
-        def loadNode(is_panel=False, add_prefix=False):
-            """convert nodes into cluster one"""
-            nodes = {}
-            for i in xrange(ord(file_data.read(1))):
-                node = DefaultData.node()
-                node["menu"] = file_data.read(ord(file_data.read(1)))[:-4]
-                node["command"] = file_data.read(ord(file_data.read(1)))
-                node["menu_type"] = ord(file_data.read(1))
-                if ord(file_data.read(1)) and os.path.isfile("%s/scripts/%s.script" % (location, node["command"])):
-                    with open("%s/scripts/%s.script" % (location, node["command"]), "r") as command_file:
-                        node["command"] = command_file.read()
-                if is_panel:
-                    node["search_filter"] = ord(file_data.read(1))
-                    node["search_name"] = max(0, ord(file_data.read(1)))
-                    panel_name = file_data.read(ord(file_data.read(1))).rstrip(string.digits)
-                    nodes["any" if panel_name == "AllPanels" else panel_name] = node
-                else:
-                    nodes[("any " if add_prefix else "") + file_data.read(ord(file_data.read(1)))] = node
-            return nodes
-
-        preferences, cluster = DefaultData.preferences(), DefaultData.cluster()
-        try:
-            with open(location + "/UserData.mm", "rb") as file_data:
-                assert ord(file_data.read(1)) == 1  # version 1.0.5 supported only
-                ord(file_data.read(1))  # save into file (obsolete)
-                preferences["same_non_dag"] = bool(ord(file_data.read(1)))
-                preferences["same_dag"] = bool(ord(file_data.read(1)))
-                ord(file_data.read(1))  # check for errors (obsolete)
-                preferences["preset_hud"] = bool(ord(file_data.read(1)))
-                preferences["preset_hud_s"] = ord(file_data.read(1))
-                preferences["preset_hud_b"] = ord(file_data.read(1))
-                preferences["preset_radial"] = bool(ord(file_data.read(1)))
-                preferences["default_lmb"] = file_data.read(ord(file_data.read(1)))
-                preferences["default_mmb"] = file_data.read(ord(file_data.read(1)))
-                cluster["panel"] = loadNode(True)
-                cluster["name"] = loadNode(False)
-                cluster["non dag"] = loadNode(False, True)
-                cluster["dag"] = loadNode(False, True)
-                cluster["tool"] = loadNode(False, True)
-                cluster["preset"] = loadNode(False)
-        finally:
-            os.remove(location + "/UserData.mm")
-            shutil.rmtree(location + "/scripts", ignore_errors=True)
-            return preferences, cluster
-
     @classmethod
     def exporter(cls, *args):
         """export to zip archive"""
