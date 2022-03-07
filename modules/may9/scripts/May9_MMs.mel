@@ -1127,7 +1127,12 @@ string $myArnoldVersion = substituteAllString(`pluginInfo -q -v mtoa`, ".", "");
 int $myArnoldIntVersion = `substring $myArnoldVersion 1 3`;
 
 if (`about -api` >= 20180000 && $myArnoldIntVersion >= 320){
+
+int $myRenderDevice;
+
+if(`objExists defaultArnoldRenderOptions`) {
 int $myRenderDevice = `getAttr "defaultArnoldRenderOptions.renderDevice"`;
+}
 
 if (`getAttr defaultRenderGlobals.currentRenderer` == "arnold"){
 
@@ -1154,6 +1159,13 @@ menuItem
 -d 1;
 }
 }
+}else{
+menuItem 
+-d 1;
+menuItem -bld 1
+-l "Enable Arnold" 
+-c "da_EnableArnold"
+-cb 0;
 }
 }else{
 if (`gmatch $currentPanel "hyperShadePanel*"`){

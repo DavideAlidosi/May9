@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_EnableArnold`);
+
 catchQuiet (`runTimeCommand -e -del da_ToggleBluePencil`);
 
 catchQuiet (`runTimeCommand -e -del da_AiRenderView`);
@@ -1132,6 +1134,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Arnold Enabler"
+	-cat "Custom Scripts.May9_Next.Render"
+	-c ("loadPlugin mtoa;\nevalDeferred \"setCurrentRenderer arnold\"")
+	da_EnableArnold;
 
 runTimeCommand
 	-ann "Toggle Blue Pencil"
