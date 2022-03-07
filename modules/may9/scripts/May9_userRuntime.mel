@@ -1138,7 +1138,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Arnold Enabler"
 	-cat "Custom Scripts.May9_Next.Render"
-	-c ("loadPlugin mtoa;\nevalDeferred \"setCurrentRenderer arnold\"")
+	-c ("if (!`pluginInfo -q -l mtoa`){\n\tloadPlugin mtoa;\n}\nif(`getAttr defaultRenderGlobals.currentRenderer` != \"arnold\"){\n    inViewMessage -pos topCenter -msg \"Arnold Render Enable\" -fade;\n    evalDeferred \"setCurrentRenderer arnold\";\n}")
 	da_EnableArnold;
 
 runTimeCommand

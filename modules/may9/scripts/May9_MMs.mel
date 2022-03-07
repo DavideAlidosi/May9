@@ -1155,13 +1155,22 @@ menuItem -bld 1
 -c "da_ToggleRenderDevice" 
 -cb ($myRenderDevice);
 
+}else{
+
 menuItem 
 -d 1;
+
+menuItem -bld 1
+-l "Enable Arnold" 
+-c "da_EnableArnold"
+-cb 0;
 }
 }
 }else{
+
 menuItem 
 -d 1;
+
 menuItem -bld 1
 -l "Enable Arnold" 
 -c "da_EnableArnold"
