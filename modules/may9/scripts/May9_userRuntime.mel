@@ -9,6 +9,10 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_LocatorOnTransform`);
+
+catchQuiet (`runTimeCommand -e -del da_PointLocator`);
+
 catchQuiet (`runTimeCommand -e -del da_EnableArnold`);
 
 catchQuiet (`runTimeCommand -e -del da_ToggleBluePencil`);
@@ -1134,6 +1138,18 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Add a Locator On Selected Transform"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c("string $myTransform[] = `ls -sl -tr`;\n\nfor ($i=0 ; $i<size($myTransform); $i++){\n    select $myTransform[$i];\n    \n    float $myCurTX = `getAttr .tx`;\n    float $myCurTY = `getAttr .ty`;\n    float $myCurTZ = `getAttr .tz`;\n\n    move -rpr 0 0 0;\n\n    da_PointLocator;\n\n    select -add $myTransform[$i];\n    \n    parent;\n    \n    setAttr ($myTransform[$i] + \".tx\") $myCurTX;\n    setAttr ($myTransform[$i] + \".ty\") $myCurTY;\n    setAttr ($myTransform[$i] + \".tz\") $myCurTZ;\n}")
+	da_LocatorOnTransform;
+
+runTimeCommand
+	-ann "Create a Point Locator"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("CreateLocator;\n\nsetAttr \".localScaleX\" 0.001;\nsetAttr \".localScaleY\" 0.001;\nsetAttr \".localScaleZ\" 0.001;\nsetAttr \".drp\" 1;\n\nsetAttr -l 1 \".rx\";\nsetAttr -l 1 \".ry\";\nsetAttr -l 1 \".rz\";\n\nsetAttr -l 1 \".sx\";\nsetAttr -l 1 \".sy\";\nsetAttr -l 1 \".sz\";\n\nrename PointLocator1;")
+	da_PointLocator;
 
 runTimeCommand
 	-ann "Arnold Enabler"
