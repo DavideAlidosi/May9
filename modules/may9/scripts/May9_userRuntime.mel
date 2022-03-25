@@ -1146,7 +1146,7 @@ runTimeCommand
 }
 
 runTimeCommand
-	-anno "Locator to Point Locator"
+	-ann "Locator to Point Locator"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c ("string $mySel[] = `ls -sl`;\n\nfor ($each in $mySel){\n    setAttr ($each +\".localScaleX\") 0.001;\n    setAttr ($each +\".localScaleY\") 0.001;\n    setAttr ($each +\".localScaleZ\") 0.001;\n\n    setAttr ($each +\".sx\") 1;\n    setAttr ($each +\".sy\") 1;\n    setAttr ($each +\".sz\") 1;\n    \n    setAttr ($each +\".drp\") 1;\n    \n    setAttr ($each +\".rx\") -l 1;\n    setAttr ($each +\".ry\") -l 1;\n    setAttr ($each +\".rz\") -l 1;\n    \n    setAttr ($each +\".sx\") -l 1;\n    setAttr ($each +\".sy\") -l 1;\n    setAttr ($each +\".sz\") -l 1;\n\n    setAttr ($each +\".localScaleX\") -l 1;\n    setAttr ($each +\".localScaleY\") -l 1;\n    setAttr ($each +\".localScaleZ\") -l 1;\n}")
 	da_LocatorToPointLocator;

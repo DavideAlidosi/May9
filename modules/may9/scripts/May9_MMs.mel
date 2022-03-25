@@ -7909,6 +7909,11 @@ menuItem
 -c "ExpressionEditor" 
 -i "out_expression.png";
 
+menuItem
+-l "Channel Control..."
+-c "ChannelControlEditor"
+-i "channelBox.png";
+
 if (`about -api` >= 20200000 && size($myCurTransform) >= 2){
 menuItem
 -l "Offset Parent Matrix..." 
@@ -7947,23 +7952,6 @@ menuItem
 -l "vectorProduct" 
 -c "createNode vectorProduct;" 
 -i "render_vectorProduct.png";
-
-if (`about -api` >= 20200000){
-menuItem
--l "blendMatrix" 
--c "createNode blendMatrix;" 
--i "nodeGridDisplay.png";
-
-menuItem
--l "pickMatrix" 
--c "createNode pickMatrix;" 
--i "pickPointComp.png";
-}
-
-menuItem
--l "decomposeMatrix" 
--c "createNode decomposeMatrix;" 
--i "out_decomposeMatrix.png";
 
 menuItem
 -l "multiplyDivide" 
@@ -8009,6 +7997,31 @@ menuItem
 -l "combinationShape" 
 -c "createNode combinationShape" 
 -i "swapBlendShape.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "composeMatrix" 
+-c "createNode composeMatrix;" 
+-i "render_decomposeMatrix.png";
+
+menuItem
+-l "decomposeMatrix" 
+-c "createNode decomposeMatrix;" 
+-i "out_decomposeMatrix.png";
+
+if (`about -api` >= 20200000){
+menuItem
+-l "blendMatrix" 
+-c "createNode blendMatrix;" 
+-i "nodeGridDisplay.png";
+
+menuItem
+-l "pickMatrix" 
+-c "createNode pickMatrix;" 
+-i "pickPointComp.png";
+}
 
 menuItem
 -d 1;
