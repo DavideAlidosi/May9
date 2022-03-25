@@ -9,6 +9,12 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_LocatorToPointLocator`);
+
+catchQuiet (`runTimeCommand -e -del da_PointLocatorToLocator`);
+
+catchQuiet (`runTimeCommand -e -del da_LocatorSize1`);
+
 catchQuiet (`runTimeCommand -e -del da_LocatorOnTransform`);
 
 catchQuiet (`runTimeCommand -e -del da_PointLocator`);
@@ -1140,6 +1146,24 @@ runTimeCommand
 }
 
 runTimeCommand
+	-anno "Locator to Point Locator"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($each in $mySel){\n    setAttr ($each +\".localScaleX\") 0.001;\n    setAttr ($each +\".localScaleY\") 0.001;\n    setAttr ($each +\".localScaleZ\") 0.001;\n\n    setAttr ($each +\".sx\") 1;\n    setAttr ($each +\".sy\") 1;\n    setAttr ($each +\".sz\") 1;\n    \n    setAttr ($each +\".drp\") 1;\n    \n    setAttr ($each +\".rx\") -l 1;\n    setAttr ($each +\".ry\") -l 1;\n    setAttr ($each +\".rz\") -l 1;\n    \n    setAttr ($each +\".sx\") -l 1;\n    setAttr ($each +\".sy\") -l 1;\n    setAttr ($each +\".sz\") -l 1;\n\n    setAttr ($each +\".localScaleX\") -l 1;\n    setAttr ($each +\".localScaleY\") -l 1;\n    setAttr ($each +\".localScaleZ\") -l 1;\n}")
+	da_LocatorToPointLocator;
+
+runTimeCommand
+	-ann "Point Locator to Locator"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($each in $mySel){\n    setAttr ($each +\".drp\") 0;\n    \n    setAttr ($each +\".rx\") -l 0;\n    setAttr ($each +\".ry\") -l 0;\n    setAttr ($each +\".rz\") -l 0;\n    \n    setAttr ($each +\".sx\") -l 0;\n    setAttr ($each +\".sy\") -l 0;\n    setAttr ($each +\".sz\") -l 0;\n\n    setAttr ($each +\".localScaleX\") -l 0;\n    setAttr ($each +\".localScaleY\") -l 0;\n    setAttr ($each +\".localScaleZ\") -l 0;\n\n    setAttr ($each +\".localScaleX\") 1;\n    setAttr ($each +\".localScaleY\") 1;\n    setAttr ($each +\".localScaleZ\") 1;\n\n    setAttr ($each +\".sx\") 1;\n    setAttr ($each +\".sy\") 1;\n    setAttr ($each +\".sz\") 1;\n}")
+	da_PointLocatorToLocator;
+
+runTimeCommand
+	-ann "Set the Locator Size to One"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($each in $mySel){\n    setAttr ($each +\".localScaleX\") 1;\n    setAttr ($each +\".localScaleY\") 1;\n    setAttr ($each +\".localScaleZ\") 1;\n\n    setAttr ($each +\".sx\") 1;\n    setAttr ($each +\".sy\") 1;\n    setAttr ($each +\".sz\") 1;\n}")
+	da_LocatorSize1;
+
+runTimeCommand
 	-ann "Add a Locator On Selected Transform"
 	-cat "Custom Scripts.May9_Next.Rigging"
 	-c("string $myTransform[] = `ls -sl -tr`;\n\nfor ($i=0 ; $i<size($myTransform); $i++){\n    select $myTransform[$i];\n    \n    float $myCurTX = `getAttr .tx`;\n    float $myCurTY = `getAttr .ty`;\n    float $myCurTZ = `getAttr .tz`;\n\n    move -rpr 0 0 0;\n\n    da_PointLocator;\n\n    select -add $myTransform[$i];\n    \n    parent;\n    \n    setAttr ($myTransform[$i] + \".tx\") $myCurTX;\n    setAttr ($myTransform[$i] + \".ty\") $myCurTY;\n    setAttr ($myTransform[$i] + \".tz\") $myCurTZ;\n}")
@@ -1148,7 +1172,7 @@ runTimeCommand
 runTimeCommand
 	-ann "Create a Point Locator"
 	-cat "Custom Scripts.May9_Next.Rigging"
-	-c ("CreateLocator;\n\nsetAttr \".localScaleX\" 0.001;\nsetAttr \".localScaleY\" 0.001;\nsetAttr \".localScaleZ\" 0.001;\nsetAttr \".drp\" 1;\n\nsetAttr -l 1 \".rx\";\nsetAttr -l 1 \".ry\";\nsetAttr -l 1 \".rz\";\n\nsetAttr -l 1 \".sx\";\nsetAttr -l 1 \".sy\";\nsetAttr -l 1 \".sz\";\n\nrename PointLocator1;")
+	-c ("CreateLocator;\n\nsetAttr \".localScaleX\" 0.001;\nsetAttr \".localScaleY\" 0.001;\nsetAttr \".localScaleZ\" 0.001;\n\nsetAttr \".drp\" 1;\n\nsetAttr -l 1 \".rx\";\nsetAttr -l 1 \".ry\";\nsetAttr -l 1 \".rz\";\n\nsetAttr -l 1 \".sx\";\nsetAttr -l 1 \".sy\";\nsetAttr -l 1 \".sz\";\n\nsetAttr -l 1 \".localScaleX\";\nsetAttr -l 1 \".localScaleY\";\nsetAttr -l 1 \".localScaleZ\";\n\nrename PointLocator1;")
 	da_PointLocator;
 
 runTimeCommand

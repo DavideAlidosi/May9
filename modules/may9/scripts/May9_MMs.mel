@@ -6707,6 +6707,14 @@ menuItem
 -i "moveUVDown.png";
 
 menuItem
+-l "Reset Locator Size" 
+-c "da_LocatorSize1" 
+-i "locator.png";
+
+menuItem
+-d 1;
+
+menuItem
 -l "Shape Visibility" 
 -sm 1;
 
@@ -6718,6 +6726,22 @@ menuItem
 menuItem
 -l "Off" 
 -c "da_LocatorNoVisibility" 
+-i "rvViewingPipelineOff.png";
+
+setParent -m ..;
+
+menuItem
+-l "Point Locator" 
+-sm 1;
+
+menuItem
+-l "On" 
+-c "da_LocatorToPointLocator" 
+-i "rvViewingPipelineOn.png";
+
+menuItem
+-l "Off" 
+-c "da_PointLocatorToLocator" 
 -i "rvViewingPipelineOff.png";
 
 setParent -m ..;
