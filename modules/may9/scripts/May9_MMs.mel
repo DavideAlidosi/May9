@@ -1717,6 +1717,26 @@ menuItem
 setParent -m ..;
 
 }
+// Define Compose Matrix marking menu
+global proc composeMatrix_MM_May9(){
+menuItem
+-l "composeMatrix" 
+-c "AddDeformer" 
+-rp "N" 
+-i "collapseContainer.png";
+
+setParent -m ..;
+}
+// Define Compose Matrix Transform marking menu
+global proc composeMatrixTransform_MM_May9(){
+menuItem
+-l "composeMatrixTransform" 
+-c "AddDeformer" 
+-rp "N" 
+-i "collapseContainer.png";
+
+setParent -m ..;
+}
 // Define Constraint marking menu
 global proc Constraint_MM_May9(){
 string $mySel[] = `ls -sl`;
