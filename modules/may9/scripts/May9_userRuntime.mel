@@ -9,6 +9,12 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_ExposeComposeMatrixInput`);
+
+catchQuiet (`runTimeCommand -e -del da_HideComposeMatrixInput`);
+
+catchQuiet (`runTimeCommand -e -del da_ConnectComposeMatrixTransform`);
+
 catchQuiet (`runTimeCommand -e -del da_LocatorToPointLocator`);
 
 catchQuiet (`runTimeCommand -e -del da_PointLocatorToLocator`);
@@ -1144,6 +1150,24 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Expose Compose Matrix Input"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($each in $mySel){\n    setAttr -k 1 ($each +\".inputRotateX\");\n    setAttr -k 1 ($each +\".inputRotateY\");\n    setAttr -k 1 ($each +\".inputRotateZ\");\n\n    setAttr -k 1 ($each +\".inputScaleX\");\n    setAttr -k 1 ($each +\".inputScaleY\");\n    setAttr -k 1 ($each +\".inputScaleZ\");\n    \n    setAttr -k 1 ($each +\".inputTranslateX\");\n    setAttr -k 1 ($each +\".inputTranslateY\");\n    setAttr -k 1 ($each +\".inputTranslateZ\");\n}")
+	da_ExposeComposeMatrixInput;
+
+runTimeCommand
+	-ann "Hide Compose Matrix Input"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $mySel[] = `ls -sl`;\n\nfor ($each in $mySel){\n    setAttr -k 0 ($each +\".inputRotateX\");\n    setAttr -k 0 ($each +\".inputRotateY\");\n    setAttr -k 0 ($each +\".inputRotateZ\");\n\n    setAttr -k 0 ($each +\".inputScaleX\");\n    setAttr -k 0 ($each +\".inputScaleY\");\n    setAttr -k 0 ($each +\".inputScaleZ\");\n    \n    setAttr -k 0 ($each +\".inputTranslateX\");\n    setAttr -k 0 ($each +\".inputTranslateY\");\n    setAttr -k 0 ($each +\".inputTranslateZ\");\n}")
+	da_HideComposeMatrixInput;
+
+runTimeCommand
+	-ann "Connect Compose Matrix to Transform"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myComposeMatrix[] = `ls -sl -typ \"composeMatrix\"`;\nstring $myTransform[] = `ls -sl -typ \"transform\"`;\n\nfor ($i=0 ; $i<size($myTransform); $i++){\n    connectAttr -f ($myComposeMatrix[0] + \".outputMatrix\") ($myTransform[$i] + \".offsetParentMatrix\");\n}")
+	da_ConnectComposeMatrixTransform;
 
 runTimeCommand
 	-ann "Locator to Point Locator"

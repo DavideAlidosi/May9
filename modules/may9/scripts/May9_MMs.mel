@@ -801,8 +801,7 @@ menuItem -bld 1
 -l "Delete Static Channels" 
 -c "delete -staticChannels -unitlessAnimationCurves false -hierarchy none -controlPoints 0 -shape 1" 
 -rp "E"
--i "deleteGeneric.png"
--en (size($myCurTransform) >= 1);
+-i "deleteGeneric.png";
 
 menuItem -bld 1 
 -l "Bake Simulation..."
@@ -1720,20 +1719,26 @@ setParent -m ..;
 // Define Compose Matrix marking menu
 global proc composeMatrix_MM_May9(){
 menuItem
--l "composeMatrix" 
--c "AddDeformer" 
+-l "Expose Input" 
+-c "da_ExposeComposeMatrixInput" 
 -rp "N" 
--i "collapseContainer.png";
+-i "nodeGrapherDisplayAllExcept.png";
+
+menuItem
+-l "Hide Input" 
+-c "da_HideComposeMatrixInput" 
+-rp "S" 
+-i "nodeGrapherDisplayNone.png";
 
 setParent -m ..;
 }
 // Define Compose Matrix Transform marking menu
 global proc composeMatrixTransform_MM_May9(){
 menuItem
--l "composeMatrixTransform" 
--c "AddDeformer" 
+-l "Compose Matrix to Transform" 
+-c "da_ConnectComposeMatrixTransform" 
 -rp "N" 
--i "collapseContainer.png";
+-i "da_OneToMany.png";
 
 setParent -m ..;
 }
