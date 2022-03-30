@@ -1082,6 +1082,14 @@ menuItem -bld 1
 -i "da_OneToMany.png"
 -en (size($myCurTransform) >= 2);
 
+if (`about -api` >= 20220000){
+menuItem -bld 1 
+-l "Expose Input Matrix"
+-c "da_AddInputMatrixToTransform"
+-i "render_decomposeMatrix.png"
+-en (size($myCurTransform) >= 1);
+}
+
 if (!(catchQuiet (`getAttr ($myCurTransform[0] + ".drp")`))){
 int $myDrpSetting = getAttr ($myCurTransform[0] + ".drp");
 
@@ -5510,6 +5518,11 @@ menuItem
 -i "out_expression.png";
 
 menuItem
+-l "Channel Control..."
+-c "ChannelControlEditor"
+-i "channelBox.png";
+
+menuItem
 -d 1;
 
 if (`pluginInfo -q -l bifrostGraph` == 1){
@@ -5540,23 +5553,6 @@ menuItem
 -l "vectorProduct" 
 -c "createNode vectorProduct;" 
 -i "render_vectorProduct.png";
-
-if (`about -api` >= 20200000){
-menuItem
--l "blendMatrix" 
--c "createNode blendMatrix;" 
--i "nodeGridDisplay.png";
-
-menuItem
--l "pickMatrix" 
--c "createNode pickMatrix;" 
--i "pickPointComp.png";
-}
-
-menuItem
--l "decomposeMatrix" 
--c "createNode decomposeMatrix;" 
--i "out_decomposeMatrix.png";
 
 menuItem
 -l "multiplyDivide" 
@@ -5602,6 +5598,31 @@ menuItem
 -l "combinationShape" 
 -c "createNode combinationShape" 
 -i "swapBlendShape.png";
+
+menuItem
+-d 1;
+
+menuItem
+-l "composeMatrix" 
+-c "createNode composeMatrix;" 
+-i "render_decomposeMatrix.png";
+
+menuItem
+-l "decomposeMatrix" 
+-c "createNode decomposeMatrix;" 
+-i "out_decomposeMatrix.png";
+
+if (`about -api` >= 20200000){
+menuItem
+-l "blendMatrix" 
+-c "createNode blendMatrix;" 
+-i "nodeGridDisplay.png";
+
+menuItem
+-l "pickMatrix" 
+-c "createNode pickMatrix;" 
+-i "pickPointComp.png";
+}
 
 menuItem
 -d 1;
@@ -5738,6 +5759,11 @@ menuItem
 -l "Expression Editor..." 
 -c "ExpressionEditor" 
 -i "out_expression.png";
+
+menuItem
+-l "Channel Control..."
+-c "ChannelControlEditor"
+-i "channelBox.png";
 
 menuItem
 -d 1;

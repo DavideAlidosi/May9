@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_AddInputMatrixToTransform`);
+
 catchQuiet (`runTimeCommand -e -del da_ExposeComposeMatrixInput`);
 
 catchQuiet (`runTimeCommand -e -del da_HideComposeMatrixInput`);
@@ -1150,6 +1152,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Add Input Matrix to Transform"
+	-cat "Custom Scripts.May9_Next.Rigging"
+	-c ("string $myTransform[] = `ls -sl -typ \"transform\"`;\n\ncreateNode composeMatrix;\n\nstring $myComposeMatrix[] = `ls -sl -typ \"composeMatrix\"`;\n\n\nconnectAttr -f ($myComposeMatrix[0] + \".outputMatrix\") ($myTransform[0] + \".offsetParentMatrix\");\n\n\naddAttr -ln \"Translate_X_Matrix\" -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Translate_X_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Translate_X_Matrix\") ($myComposeMatrix[0] + \".inputTranslateX\");\n\n\naddAttr -ln \"Translate_Y_Matrix\" -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Translate_Y_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Translate_Y_Matrix\") ($myComposeMatrix[0] + \".inputTranslateY\");\n\n\naddAttr -ln \"Translate_Z_Matrix\" -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Translate_Z_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Translate_Z_Matrix\") ($myComposeMatrix[0] + \".inputTranslateZ\");\n\n\n\naddAttr -ln \"Rotate_X_Matrix\" -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Rotate_X_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Rotate_X_Matrix\") ($myComposeMatrix[0] + \".inputRotateX\");\n\n\naddAttr -ln \"Rotate_Y_Matrix\" -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Rotate_Y_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Rotate_Y_Matrix\") ($myComposeMatrix[0] + \".inputRotateY\");\n\n\naddAttr -ln \"Rotate_Z_Matrix\" -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Rotate_Z_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Rotate_Z_Matrix\") ($myComposeMatrix[0] + \".inputRotateZ\");\n\n\n\n\naddAttr -ln \"Scale_X_Matrix\" -dv 1 -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Scale_X_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Scale_X_Matrix\") ($myComposeMatrix[0] + \".inputScaleX\");\n\n\naddAttr -ln \"Scale_Y_Matrix\" -dv 1 -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Scale_Y_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Scale_Y_Matrix\") ($myComposeMatrix[0] + \".inputScaleY\");\n\n\naddAttr -ln \"Scale_Z_Matrix\" -dv 1 -at \"float\" $myTransform[0];\nsetAttr -e -k 1 ($myTransform[0] + \".Scale_Z_Matrix\");\n\nconnectAttr -f ($myTransform[0] + \".Scale_Z_Matrix\") ($myComposeMatrix[0] + \".inputScaleZ\");\n\n\nselect $myTransform[0];")
+	da_AddInputMatrixToTransform;
 
 runTimeCommand
 	-ann "Expose Compose Matrix Input"
