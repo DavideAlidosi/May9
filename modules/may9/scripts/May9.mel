@@ -1,10 +1,10 @@
 global proc May9(){
 	print "May9 console: Run May9 Next installer \n";
 
-	if (`about -api` < 201740){
-		warning "May9 Next required Autodesk Maya 2017 update 4 and newer to install, please update your Autodesk Maya before install it";
+	if (`about -api` < 20220000){
+		warning "May9 Next required Autodesk Maya 2022 or newer to install, please update your Autodesk Maya before install it";
 	}else{
-	print "May9 console: Load May9 Next Plug-in \n";
+		print "May9 console: Load May9 Next Plug-in \n";
 
 		if (`about -lt` && `about -api` >= 20220000){
 			python "import May9_NextLT";
@@ -21,9 +21,8 @@ global proc May9(){
 
 		// Install confimation
 		inViewMessage -pos midCenterTop -msg "May9 Next is installed and ready" -fade;
+		print "May9 console: Complete May9 Next installation \n";
 	}
-
-	print "May9 console: Complete May9 Next installation \n";
 }
 
 May9();

@@ -18,7 +18,7 @@ Installation
 
 
 Release Note
-Tested and develop on Autodesk Maya 2023, compatible with Autodesk Maya 2017.4 and above.
+Tested and develop on Autodesk Maya 2023, compatible with Autodesk Maya 2022 or newer.
 
 
 Licenses
