@@ -4092,8 +4092,8 @@ menuItem
 -d 1;
 
 menuItem
--l "Remesh"
--c "polyRemesh"
+-l "Remesh..."
+-c "PolyRemeshOptions"
 -i "polyRemesh.png";
 }
 
@@ -5529,12 +5529,12 @@ if (`pluginInfo -q -l bifrostGraph` == 1){
 menuItem 
 -l "Bifrost Graph"
 -sm 1
--i "out_bifrostBoard.png";
+-i "out_bifrostCompound.png";
 
 menuItem 
 -l "Create Graph"
 -c "createNode bifrostBoard; rename bifrostGraph1; showDGLevel ($da_underPointerPanel + \"HyperGraphEd\")"
--i "out_bifrostBoard.png";
+-i "out_bifrostCompound.png";
 
 menuItem 
 -l "Create bifShape"
@@ -7979,12 +7979,12 @@ if (`pluginInfo -q -l bifrostGraph` == 1){
 menuItem 
 -l "Bifrost Graph"
 -sm 1
--i "out_bifrostBoard.png";
+-i "out_bifrostCompound.png";
 
 menuItem 
 -l "Create Graph"
 -c "createNode bifrostBoard; rename bifrostGraph1"
--i "out_bifrostBoard.png";
+-i "out_bifrostCompound.png";
 
 menuItem 
 -l "Create bifShape"
@@ -11235,12 +11235,21 @@ menuItem
 
 setParent -m ..;
 
+if (`about -api` >= 20230000){
+menuItem
+-l "Cut by Plane"
+-c "da_NewPlaneCutter"
+-rp "S"
+-i "polyCut.png"
+-en (size($myCurTransform) == 2);
+}else{
 menuItem
 -l "Cut by Plane..."
 -c "da_PlaneCutter"
 -rp "S"
 -i "polyCut.png"
 -en (size($myCurTransform) == 2);
+}
 
 menuItem
 -l "Smart Combine"
@@ -12429,13 +12438,13 @@ menuItem
 
 if (`about -api` >= 20200000){
 menuItem
--l "Remesh"
--c "polyRemesh"
+-l "Remesh..."
+-c "PolyRemeshOptions"
 -i "polyRemesh.png";
 
 menuItem
--l "Retopo"
--c "polyRetopo"
+-l "Retopo..."
+-c "PolyRetopoOptions"
 -i "polyRetopo.png";
 }
 

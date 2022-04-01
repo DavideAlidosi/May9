@@ -9,6 +9,8 @@ catchQuiet (`runTimeCommand -e -del da_MMtoKey_press`);
 
 catchQuiet (`runTimeCommand -e -del da_MMtoKey_release`);
 
+catchQuiet (`runTimeCommand -e -del da_NewPlaneCutter`);
+
 catchQuiet (`runTimeCommand -e -del da_AddInputMatrixToTransform`);
 
 catchQuiet (`runTimeCommand -e -del da_ExposeComposeMatrixInput`);
@@ -1152,6 +1154,12 @@ runTimeCommand
 	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
 	da_MMtoKey_release;
 }
+
+runTimeCommand
+	-ann "Plane Cutter for Maya 2023"
+	-cat "Custom Scripts.May9_Next.Modeling"
+	-c ("string $myGeoSel[] = `ls -sl`;\n\nselect $myGeoSel[1];\ndR_convertSelectionToFace;\n\nstring $myFaces[] = `ls -sl`;\n\nstring $myHigherChipOff[] = `polyChipOff -dup on -ltz 0.1`;\nda_BackToObjectMode;\n\n\nselect $myFaces;\nstring $myLowerChipOff[] = `polyChipOff -dup on -ltz -0.1`;\nReversePolygonNormals;\n\nda_BackToObjectMode;\n\nselect $myGeoSel[1];\npolySeparate -ch 1;\n\nstring $myNewSel[] = `ls -sl`;\n\nselect $myGeoSel[0];\nduplicate;\nselect -add $myNewSel[2];\npolyPerformBooleanAction 2 o 0;\n\nselect $myGeoSel[0];\nselect -add $myNewSel[1];\npolyPerformBooleanAction 2 o 0;\n\nselect $myNewSel[0];\nda_RedOverrides;\nda_PolyNoShade;\n\nselect $myNewSel[1];\nselect -add $myNewSel[2];\nselect -add $myNewSel[0];\nparent;\n\naddAttr -ln \"High_Thick\" -at \"float\" -dv 0.1 -min 0.001 $myNewSel[0];\nsetAttr -e -k 1 ($myNewSel[0] + \".High_Thick\");\n\naddAttr -ln \"Low_Thick\" -at \"float\" -dv -.1 -max -0.001 $myNewSel[0];\nsetAttr -e -k 1 ($myNewSel[0] + \".Low_Thick\");\n\n\nconnectAttr -f ($myNewSel[0] + \".High_Thick\") ($myHigherChipOff[0] + \".localTranslateZ\");\nconnectAttr -f ($myNewSel[0] + \".Low_Thick\") ($myLowerChipOff[0] + \".localTranslateZ\");\n\nselect $myNewSel[0];")
+	da_NewPlaneCutter;
 
 runTimeCommand
 	-ann "Add Input Matrix to Transform"
