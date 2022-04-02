@@ -40,6 +40,13 @@ global proc May9_uninstall(){
 	optionVar -rm da_useScenePanelConfig;
 	optionVar -rm da_DuplicateVariableWarnings;
 
+	// Reset Color Scheme in Maya 2023
+	if (`about -api` >= 20230000){
+		displayRGBColor -c background 0.36 0.36 0.36 1;
+		displayRGBColor -c polymeshDormant 0 0.0159987 0.376 1;
+		displayRGBColor -c live 0 0.6 0.329 1;
+	}
+
 	// Set Hot Box transparency to 25%
 	hotBox -tr 25;
 

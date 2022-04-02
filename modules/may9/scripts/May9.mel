@@ -19,6 +19,13 @@ global proc May9(){
 			pluginInfo -spp;
 		}
 
+		// Initialize Color Scheme in Maya 2023
+		if (`about -api` >= 20230000){
+			displayRGBColor -c background 0.34 0.36 0.38 1;
+			displayRGBColor -c polymeshDormant 0 0.0159987 0.376 0.6;
+			displayRGBColor -c live 0 0.6 0.329 0.6;
+		}
+
 		// Install confimation
 		inViewMessage -pos midCenterTop -msg "May9 Next is installed and ready" -fade;
 		print "May9 console: Complete May9 Next installation \n";
