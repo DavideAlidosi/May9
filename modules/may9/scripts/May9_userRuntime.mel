@@ -1137,7 +1137,7 @@ runTimeCommand
 	-ann "Disable MMtoKey"
 	-cat "Custom Scripts.May9_Next.System"
 	-cl "python"
-	-c ("May9_NextLT.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
+	-c ("May9_NextLT.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)\n\ncmds.MarkingMenuPopDown")
 	da_MMtoKeyLT_release;
 }else{
 runTimeCommand
@@ -1151,7 +1151,7 @@ runTimeCommand
 	-ann "Disable MMtoKey"
 	-cat "Custom Scripts.May9_Next.System"
 	-cl "python"
-	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)")
+	-c ("May9_Next.releaseSelected()\n\ndef run(parent):\n    cmds.deleteUI(parent)\n\ncmds.MarkingMenuPopDown")
 	da_MMtoKey_release;
 }
 
